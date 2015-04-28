@@ -70,7 +70,7 @@ namespace RFFGen
    * @param F initial deformation gradient
    */
   template <class Matrix>
-  auto incompressibleSkin_Hendriks(const Matrix& F = LinearAlgebra::unitMatrix<Matrix>())
+  auto incompressibleSkin_Hendriks(const Matrix& F)
   {
     return incompressibleSkin_Hendriks(9.4,82.,F);
   }
@@ -116,7 +116,7 @@ namespace RFFGen
    * @param F initial deformation gradient
    */
   template <class InflationPenalty, class CompressionPenalty, class Matrix>
-  auto compressibleSkin_Hendriks(double d0, double d1, const Matrix& F=LinearAlgebra::unitMatrix<Matrix>())
+  auto compressibleSkin_Hendriks(double d0, double d1, const Matrix& F)
   {
     return compressibleSkin_Hendriks<InflationPenalty,CompressionPenalty>(9.4,82.,d0,d1,F);
   }

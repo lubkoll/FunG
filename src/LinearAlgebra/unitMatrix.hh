@@ -21,10 +21,10 @@
 #ifndef RFFGEN_LINEAR_ALGEBRA_UNIT_MATRIX_HH
 #define RFFGEN_LINEAR_ALGEBRA_UNIT_MATRIX_HH
 
-#include "dimension.hh"
 #include "../Util/at.hh"
 #include "../Util/voider.hh"
 #include "../Util/zero.hh"
+#include "dimension.hh"
 #include "extractRowsAndCols.hh"
 
 namespace RFFGen

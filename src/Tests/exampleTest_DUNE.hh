@@ -82,9 +82,9 @@ void testExamples_DUNE()
 {
   using std::cout;
   using std::endl;
-  using RFFGen::LN;
-  using RFFGen::Pow;
-  using RFFGen::Invariant;
+  using RFFGen::CMath::LN;
+  using RFFGen::CMath::Pow;
+  using RFFGen::LinearAlgebra::Invariant;
   constexpr int dim = 3;
   using M = Dune::FieldMatrix<double,dim,dim>;
 
@@ -94,25 +94,25 @@ void testExamples_DUNE()
   auto c1 = 1.;
   auto d0 = 1.;
   auto d1 = 1.;
-  M fiberTensor = RFFGen::zero<M>(), I = RFFGen::unitMatrix<M>();
-  fiberTensor[0][0] = 1.;
+  M fiberTensor(0.), I(0.);
+  I[0][0] = I[1][1] = I[2][2] = fiberTensor[0][0] = 1.;
 
-  auto incompressibleNeoHooke = RFFGen::incompressibleNeoHooke<M>(c0);
-  auto incompressibleModifiedNeoHooke = RFFGen::modifiedIncompressibleNeoHooke<M>(c0);
-  auto compressibleNeoHooke = RFFGen::compressibleNeoHooke<Pow<2>,LN,M>(c0,d0,d1);
-  auto compressibleModifiedNeoHooke = RFFGen::modifiedCompressibleNeoHooke<Pow<2>,LN,M>(c0,d0,d1);
+  auto incompressibleNeoHooke = RFFGen::incompressibleNeoHooke(c0,I);
+  auto incompressibleModifiedNeoHooke = RFFGen::modifiedIncompressibleNeoHooke(c0,I);
+  auto compressibleNeoHooke = RFFGen::compressibleNeoHooke<Pow<2>,LN>(c0,d0,d1,I);
+  auto compressibleModifiedNeoHooke = RFFGen::modifiedCompressibleNeoHooke<Pow<2>,LN>(c0,d0,d1,I);
 
-  auto incompressibleMooneyRivlin = RFFGen::incompressibleMooneyRivlin<M>(c0,c1);
-  auto compressibleMooneyRivlin = RFFGen::compressibleMooneyRivlin<M,Pow<2>,LN>(c0,c1,d0,d1);
+  auto incompressibleMooneyRivlin = RFFGen::incompressibleMooneyRivlin(c0,c1,I);
+  auto compressibleMooneyRivlin = RFFGen::compressibleMooneyRivlin<Pow<2>,LN>(c0,c1,d0,d1,I);
 
-  auto incompressibleSkin = RFFGen::incompressibleSkin_Hendriks<M>();
-  auto compressibleSkin = RFFGen::compressibleSkin_Hendriks<Pow<2>,LN,M>(d0,d1);
+  auto incompressibleSkin = RFFGen::incompressibleSkin_Hendriks(I);
+  auto compressibleSkin = RFFGen::compressibleSkin_Hendriks<Pow<2>,LN>(d0,d1,I);
 
-  auto incompressibleAdipose = RFFGen::incompressibleAdiposeTissue_SommerHolzapfel(fiberTensor);
-  auto compressibleAdipose = RFFGen::compressibleAdiposeTissue_SommerHolzapfel<Pow<2>,LN>(d0,d1,fiberTensor);
+  auto incompressibleAdipose = RFFGen::incompressibleAdiposeTissue_SommerHolzapfel(fiberTensor,I);
+  auto compressibleAdipose = RFFGen::compressibleAdiposeTissue_SommerHolzapfel<Pow<2>,LN>(d0,d1,fiberTensor,I);
 
-  auto incompressibleMuscle = RFFGen::incompressibleMuscleTissue_Martins(fiberTensor);
-  auto compressibleMuscle = RFFGen::compressibleMuscleTissue_Martins<Pow<2>,LN>(d0,d1,fiberTensor);
+  auto incompressibleMuscle = RFFGen::incompressibleMuscleTissue_Martins(fiberTensor,I);
+  auto compressibleMuscle = RFFGen::compressibleMuscleTissue_Martins<Pow<2>,LN>(d0,d1,fiberTensor,I);
 
   boost::timer::cpu_timer timer;
   cout << "incompressible neo-Hooke" << endl;

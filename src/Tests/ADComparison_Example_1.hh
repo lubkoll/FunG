@@ -133,7 +133,7 @@ void ADComparison_Example_1()
 {
   using std::cout;
   using std::endl;
-  using namespace FunctionGeneration;
+  using namespace RFFGen;
   auto iter = 10u * 1000u * 1000u;
 
   cout << "Comparing different automatic differentation implementations\n" << endl;

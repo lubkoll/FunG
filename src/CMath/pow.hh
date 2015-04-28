@@ -116,8 +116,8 @@ namespace RFFGen
 
       void update(double x_)
       {
-        x = x_;
-        x2 = x*x;
+        x = 2*x_;
+        x2 = x_*x_;
       }
 
       double operator()() const noexcept
@@ -135,7 +135,7 @@ namespace RFFGen
       template < int = -1 >
       double  d1(double dx) const
       {
-        return 2 * x * dx;
+        return x * dx;
       }
 
       /// Second (directinal) derivative.

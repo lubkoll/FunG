@@ -25,7 +25,6 @@
 #include "../../LinearAlgebra/mixedInvariants.hh"
 #include "../../LinearAlgebra/strainTensor.hh"
 #include "../../LinearAlgebra/tensorProduct.hh"
-#include "../../LinearAlgebra/unitMatrix.hh"
 #include "../../CMath/exp.hh"
 #include "../../generate.hh"
 
@@ -100,7 +99,7 @@ namespace RFFGen
    * @param F initial deformation gradient
    */
   template <class Matrix>
-  auto incompressibleAdiposeTissue_SommerHolzapfel(const Matrix& M, const Matrix& F = LinearAlgebra::unitMatrix<Matrix>())
+  auto incompressibleAdiposeTissue_SommerHolzapfel(const Matrix& M, const Matrix& F)
   {
     return incompressibleAdiposeTissue_SommerHolzapfel(0.15,0.8,47.3,0.09,M,F);
   }
@@ -146,7 +145,7 @@ namespace RFFGen
    * @param F initial deformation gradient
    */
   template <class Inflation, class Compression, class Matrix>
-  auto compressibleAdiposeTissue_SommerHolzapfel(double d0, double d1, const Matrix& M, const Matrix& F = LinearAlgebra::unitMatrix<Matrix>())
+  auto compressibleAdiposeTissue_SommerHolzapfel(double d0, double d1, const Matrix& M, const Matrix& F)
   {
     return compressibleAdiposeTissue_SommerHolzapfel<Inflation,Compression>(0.15,0.8,47.3,0.09,d0,d1,M,F);
   }

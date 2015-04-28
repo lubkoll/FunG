@@ -41,7 +41,7 @@ namespace RFFGen
    * \brief Generate an "incompressible" neo-Hookean material law \f$ W(F)=c\iota_1(F^T F) \f$, where \f$\iota_1\f$ is the first principal matrix invariant .
    */
   template <class Matrix>
-  auto incompressibleNeoHooke(double c, const Matrix& F = LinearAlgebra::unitMatrix<Matrix>())
+  auto incompressibleNeoHooke(double c, const Matrix& F)
   {
     using namespace LinearAlgebra;
     using Inv = typename InvariantTraits<Invariant::PRINCIPAL>::template ShiftedFirstInvariant<Matrix>;
@@ -55,7 +55,7 @@ namespace RFFGen
    * \brief Generate an "incompressible" neo-Hookean material law \f$ W(F)=c\bar\iota_1(F^T F) \f$, where \f$\bar\iota_1\f$ is the modified first principal matrix invariant.
    */
   template <class Matrix>
-  auto modifiedIncompressibleNeoHooke(double c, const Matrix& F = LinearAlgebra::unitMatrix<Matrix>())
+  auto modifiedIncompressibleNeoHooke(double c, const Matrix& F)
   {
     using namespace LinearAlgebra;
     using Inv = typename InvariantTraits<Invariant::MODIFIED>::template ShiftedFirstInvariant<Matrix>;
@@ -87,7 +87,7 @@ namespace RFFGen
    * where \f$\iota_1\f$ is the first principal matrix invariant.
    */
   template <class InflationPenalty, class CompressionPenalty, class Matrix>
-  auto compressibleNeoHooke(double c, double d0, double d1, const Matrix& F=LinearAlgebra::unitMatrix<Matrix>())
+  auto compressibleNeoHooke(double c, double d0, double d1, const Matrix& F)
   {
     return NeoHookeDetail::compressibleNeoHookeImpl<InflationPenalty,CompressionPenalty,Matrix>(c,d0,d1,F);
   }
@@ -98,7 +98,7 @@ namespace RFFGen
    * where \f$\bar\iota_1\f$ is the modified first principal matrix invariant.
    */
   template <class InflationPenalty, class CompressionPenalty, class Matrix>
-  auto modifiedCompressibleNeoHooke(double c, double d0, double d1, const Matrix& F=LinearAlgebra::unitMatrix<Matrix>())
+  auto modifiedCompressibleNeoHooke(double c, double d0, double d1, const Matrix& F)
   {
     return NeoHookeDetail::compressibleNeoHookeImpl<InflationPenalty,CompressionPenalty,Matrix,LinearAlgebra::Invariant::MODIFIED>(c,d0,d1,F);
   }

@@ -87,7 +87,6 @@
      * \brief Static checks for requirements specified in Concepts.
      */
 
-
   // Namespaces
 
   /**
@@ -116,4 +115,9 @@
    * \namespace LinearAlgebra
    * \brief Functionality from linear algebra such as (modified) principal and mixed matrix invariants.
    * \see LinearAlgebraGroup
+   */
+
+  /**
+   * \namespace Checks
+   * \brief Static checks for the presence of different operators and functions.
    */

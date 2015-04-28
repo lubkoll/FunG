@@ -54,14 +54,14 @@ namespace RFFGen
     };
 
 
-    /// Check if type is variable.
+    /// Check if Type is variable.
     template <class> struct IsVariable : std::false_type {};
 
     template <class T, int n>
     struct IsVariable< Variable<T,n> > : std::true_type {};
 
 
-    /// Check is contains has variable.
+    /// Check if Type contains has variable.
     template <class Type> struct HasVariable : IsVariable<Type> {};
 
     template <template <class,class> class G, class F, class CheckF>
@@ -69,12 +69,6 @@ namespace RFFGen
 
     template <template <class,class,class,class> class H, class F, class G, class CheckF, class CheckG>
     struct HasVariable< H<G,F,CheckF,CheckG> > : std::integral_constant< bool , HasVariable<F>::value || HasVariable<G>::value > {};
-
-//    template <template <class> class G, class F>
-//    struct HasVariable< G<F> > : std::integral_constant< bool, HasVariable<F>::value > {};
-
-//    template <template <class,class> class H, class F, class G>
-//    struct HasVariable< H<G,F> > : std::integral_constant< bool , HasVariable<F>::value || HasVariable<G>::value > {};
 
 
     template <class, int id> struct HasVariableId : std::false_type {};
@@ -87,12 +81,6 @@ namespace RFFGen
 
     template <template <class,class,class,class> class H, class F, class G, int id, class CheckF, class CheckG>
     struct HasVariableId< H<F,G,CheckF,CheckG> , id > : std::integral_constant< bool , HasVariableId<F,id>::value || HasVariableId<G,id>::value > {};
-
-//    template <template <class> class G, class F, int id>
-//    struct HasVariableId< G<F> , id > : std::integral_constant< bool, HasVariableId<F,id>::value > {};
-
-//    template <template <class,class> class H, class F, class G, int id>
-//    struct HasVariableId< H<G,F> , id > : std::integral_constant< bool , HasVariableId<F,id>::value || HasVariableId<G,id>::value > {};
   }
   /**
    * \endcond

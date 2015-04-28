@@ -25,7 +25,6 @@
 #include "../../LinearAlgebra/modifiedMixedInvariants.hh"
 #include "../../LinearAlgebra/strainTensor.hh"
 #include "../../LinearAlgebra/tensorProduct.hh"
-#include "../../LinearAlgebra/unitMatrix.hh"
 #include "../../CMath/exp.hh"
 #include "../volumetricPenaltyFunctions.hh"
 #include "../../generate.hh"
@@ -44,7 +43,7 @@ namespace RFFGen
   namespace MuscleTissueDetail
   {
     template <class Matrix>
-    auto generateIncompressibleMuscleTissue_Martins(double c, double b, double A, double a, const Matrix& M, const Matrix& F = LinearAlgebra::unitMatrix<Matrix>())
+    auto generateIncompressibleMuscleTissue_Martins(double c, double b, double A, double a, const Matrix& M, const Matrix& F )
     {
       using namespace LinearAlgebra;
       using I1 = ShiftedFirstModifiedPrincipalInvariant<Matrix>;
@@ -75,7 +74,7 @@ namespace RFFGen
    * \param F deformation gradient
    */
   template <class Matrix>
-  auto incompressibleMuscleTissue_Martins(double c, double b, double A, double a, const Matrix& M, const Matrix& F=LinearAlgebra::unitMatrix<Matrix>())
+  auto incompressibleMuscleTissue_Martins(double c, double b, double A, double a, const Matrix& M, const Matrix& F)
   {
     return MuscleTissueDetail::generateIncompressibleMuscleTissue_Martins(c,b,A,a,M,F);
   }
@@ -95,7 +94,7 @@ namespace RFFGen
    * \param F deformation gradient
    */
   template <class Matrix>
-  auto incompressibleMuscleTissue_Martins(const Matrix& M, const Matrix& F = LinearAlgebra::unitMatrix<Matrix>())
+  auto incompressibleMuscleTissue_Martins(const Matrix& M, const Matrix& F)
   {
     return incompressibleMuscleTissue_Martins(0.387, 23.46, 0.584, 12.43, M, F);
   }
@@ -118,7 +117,7 @@ namespace RFFGen
    * \param F deformation gradient
    */
   template <class Inflation, class Compression, class Matrix>
-  auto compressibleMuscleTissue_Martins(double c, double b, double A, double a, double d0, double d1, const Matrix& M, const Matrix& F = LinearAlgebra::unitMatrix<Matrix>())
+  auto compressibleMuscleTissue_Martins(double c, double b, double A, double a, double d0, double d1, const Matrix& M, const Matrix& F)
   {
     return MuscleTissueDetail::generateIncompressibleMuscleTissue_Martins(c,b,A,a,M,F) + volumetricPenalty<Inflation,Compression>(d0,d1,F);
   }
@@ -140,7 +139,7 @@ namespace RFFGen
    * \param F deformation gradient
    */
   template <class Inflation, class Compression, class Matrix>
-  auto compressibleMuscleTissue_Martins(double d0, double d1, const Matrix& M, const Matrix& F = LinearAlgebra::unitMatrix<Matrix>())
+  auto compressibleMuscleTissue_Martins(double d0, double d1, const Matrix& M, const Matrix& F)
   {
     return compressibleMuscleTissue_Martins<Inflation,Compression>(0.387, 23.46, 0.584, 12.43, d0, d1, M, F);
   }
