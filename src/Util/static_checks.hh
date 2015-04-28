@@ -154,7 +154,7 @@ namespace RFFGen
     template < class Arg , class ScalarArg >
     constexpr bool multiplicationWithArithmeticFromLeft()
     {
-      return MultiplicationWithArithmeticFromLeft<Arg,ScalarArg,!std::is_base_of<Base,Arg>()>::value;
+      return MultiplicationWithArithmeticFromLeft<Arg,ScalarArg,!std::is_base_of<Base,Arg>() && !std::is_arithmetic<Arg>()>::value;
     }
 
     /**
@@ -164,7 +164,7 @@ namespace RFFGen
     template < class Arg , class ScalarArg >
     constexpr bool multiplicationWithArithmeticFromRight()
     {
-      return MultiplicationWithArithmeticFromRight<Arg,ScalarArg,!std::is_base_of<Base,Arg>()>::value;
+      return MultiplicationWithArithmeticFromRight<Arg,ScalarArg,!std::is_base_of<Base,Arg>() && !std::is_arithmetic<Arg>()>::value;
     }
 
     /**
@@ -174,7 +174,7 @@ namespace RFFGen
     template < class Arg , class ScalarArg >
     constexpr bool inPlaceMultiplicationWithArithmetic()
     {
-      return InPlaceMultiplicationWithArithmetic<Arg,ScalarArg,!std::is_base_of<Base,Arg>()>::value;
+      return InPlaceMultiplicationWithArithmetic<Arg,ScalarArg,!std::is_base_of<Base,Arg>() && !std::is_arithmetic<Arg>()>::value;
     }
 
     /**
@@ -184,7 +184,7 @@ namespace RFFGen
     template < class Arg1 , class Arg2 >
     constexpr bool multiplication()
     {
-      return Multiplication<Arg1,Arg2,!std::is_base_of<Base,Arg1>() && !std::is_base_of<Base,Arg2>()>::value;
+      return Multiplication<Arg1,Arg2,!std::is_base_of<Base,Arg1>() && !std::is_base_of<Base,Arg2>() && !std::is_arithmetic<Arg1>() && !std::is_arithmetic<Arg2>()>::value;
     }
 
     /**
@@ -194,7 +194,7 @@ namespace RFFGen
     template < class Arg1 , class Arg2 >
     constexpr bool inPlaceMultiplication()
     {
-      return InPlaceMultiplication<Arg1,Arg2,!std::is_base_of<Base,Arg1>() && !std::is_base_of<Base,Arg2>()>::value;
+      return InPlaceMultiplication<Arg1,Arg2,!std::is_base_of<Base,Arg1>() && !std::is_base_of<Base,Arg2>() && !std::is_arithmetic<Arg1>() && !std::is_arithmetic<Arg2>()>::value;
     }
 
     /**
@@ -204,7 +204,7 @@ namespace RFFGen
     template < class Arg1 , class Arg2 >
     constexpr bool callToRightMultiply()
     {
-      return CallToRightMultiply<Arg1,Arg2,!std::is_base_of<Base,Arg1>() && !std::is_base_of<Base,Arg2>()>::value;
+      return CallToRightMultiply<Arg1,Arg2,!std::is_base_of<Base,Arg1>() && !std::is_base_of<Base,Arg2>() && !std::is_arithmetic<Arg1>() && !std::is_arithmetic<Arg2>()>::value;
     }
 
     /**
@@ -214,7 +214,7 @@ namespace RFFGen
     template < class Arg >
     constexpr bool summation()
     {
-      return Summation<Arg,!std::is_base_of<Base,Arg>()>::value;
+      return Summation<Arg,!std::is_base_of<Base,Arg>() && !std::is_arithmetic<Arg>()>::value;
     }
 
     /**
@@ -224,7 +224,7 @@ namespace RFFGen
     template < class Arg >
     constexpr bool inPlaceSummation()
     {
-      return InPlaceSummation<Arg,!std::is_base_of<Base,Arg>()>::value;
+      return InPlaceSummation<Arg,!std::is_base_of<Base,Arg>() && !std::is_arithmetic<Arg>()>::value;
     }
 
     /**
