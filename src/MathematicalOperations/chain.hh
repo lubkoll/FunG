@@ -32,6 +32,14 @@
 
 namespace RFFGen
 {
+  /**
+   * \cond DOCUMENT_FORWARD_DECLARATIONS
+   */
+  template <class> struct Chainer;
+  /**
+   * \endcond
+   */
+
   namespace MathematicalOperations
   {
     /**
@@ -50,8 +58,9 @@ namespace RFFGen
     template < class F , class G ,
                class = FunctionConceptCheck<F>,
                class = FunctionConceptCheck<G> >
-    struct Chain : Base
+    struct Chain : Base , Chainer< Chain<F,G,FunctionConceptCheck<F>,FunctionConceptCheck<G> > >
     {
+      using Chainer< Chain<F,G,FunctionConceptCheck<F>,FunctionConceptCheck<G> > >::operator ();
     private:
       using FArg = decltype(std::declval<G>().d0());
 
@@ -79,7 +88,7 @@ namespace RFFGen
       template <class... InitFunction>
       Chain(const InitFunction&... init)
         : g(init...), f(g.d0())
-      { updateResultOfD0(); }
+      { updateValue(); }
 
       /**
        * @brief Constructor taking copies of the functions to be chained.
@@ -89,7 +98,7 @@ namespace RFFGen
       Chain(const F& f_, const G& g_) : g(g_), f(f_)
       {
         f.update(g.d0());
-        updateResultOfD0();
+        updateValue();
       }
 
       /// Reset point of evaluation.
@@ -98,7 +107,7 @@ namespace RFFGen
       {
         g.update(x);
         f.update(g.d0());
-        updateResultOfD0();
+        updateValue();
       }
 
       /// Propagate call to updateVariable() to f and g.
@@ -126,7 +135,7 @@ namespace RFFGen
       /// Function value.
       const auto& d0() const noexcept
       {
-        return resultOfD0;
+        return value;
       }
 
       /**
@@ -190,14 +199,14 @@ namespace RFFGen
       }
 
     private:
-      void updateResultOfD0()
+      void updateValue()
       {
-        resultOfD0 = f.d0();
+        value = f.d0();
       }
 
       G g;
       F f;
-      std::remove_const_t<std::remove_reference_t<decltype(std::declval<F>().d0())> > resultOfD0;
+      std::remove_const_t<std::remove_reference_t<decltype(std::declval<F>().d0())> > value;
     };
   }
 }

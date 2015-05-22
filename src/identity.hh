@@ -33,7 +33,7 @@ namespace RFFGen
    * \endcond
    */
 
-  /// Identity mapping \f$ f(x)=x \f$.
+  /// %Identity mapping \f$ f(x)=x \f$.
   template <class Arg, class = ArithmeticConceptCheck<Arg> >
   struct Identity : Base
   {
@@ -60,7 +60,7 @@ namespace RFFGen
 
     /// First directional derivative.
     template <int>
-    const Arg& d1(const Arg& dA1) const noexcept { return dA1; }
+    const Arg& d1(const Arg& dx) const noexcept { return dx; }
 
   private:
     Arg x_;

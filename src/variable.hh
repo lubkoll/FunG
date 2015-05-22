@@ -90,8 +90,10 @@ namespace RFFGen
    * \brief Independent variable. Can be uniquely identified by its id.
    */
   template <class T, int id>
-  struct Variable : Base, std::integral_constant<int,id>
+  struct Variable : Base/*, std::integral_constant<int,id>*/
   {
+    Variable() = default;
+
     /// Construct variable with meaningful default value.
     explicit Variable(const T& t_) : t(t_) {}
 

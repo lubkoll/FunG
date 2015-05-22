@@ -25,14 +25,17 @@
 #include <utility>
 
 #include "dimension.hh"
+#include "rowsAndCols.hh"
 #include "../Util/base.hh"
 #include "../Util/at.hh"
+#include "../Util/exceptions.hh"
 
 namespace RFFGen
 {
   /**
    * \cond DOCUMENT_FORWARD_DECLARATIONS
    */
+  template <class> struct Chainer;
   namespace Concepts { template <class> struct SymmetricMatrixConceptCheck; }
   /**
    * \endcond
@@ -52,7 +55,7 @@ namespace RFFGen
       auto trace(Matrix const& A)
       {
         auto val = at(A,0,0);
-        for(int i = 1; i < dimension<Matrix>(); ++i) val += at(A,i,i);
+        for(int i = 1; i < rows<Matrix>(); ++i) val += at(A,i,i);
         return val;
       }
 
@@ -88,16 +91,17 @@ namespace RFFGen
      * \brief %Trace of a matrix, i.e. sum of diagonal elements.
      */
     template <class Matrix, class = Concepts::SymmetricMatrixConceptCheck<Matrix> >
-    struct Trace : Base
+    struct ConstantSizeTrace : Base , Chainer< ConstantSizeTrace< Matrix , Concepts::SymmetricMatrixConceptCheck<Matrix> > >
     {
+      using Chainer< ConstantSizeTrace< Matrix , Concepts::SymmetricMatrixConceptCheck<Matrix> > >::operator ();
       /// Default constructor.
-      Trace() = default;
+      ConstantSizeTrace() = default;
 
       /**
        * @brief Constructor.
        * @param A point of evaluation.
        */
-      explicit Trace(const Matrix& A) { update(A); }
+      explicit ConstantSizeTrace(const Matrix& A) { update(A); }
 
       /// Reset point of evaluation.
       void update(const Matrix& A)
@@ -132,8 +136,73 @@ namespace RFFGen
       }
 
     private:
-      std::remove_const_t<std::remove_reference_t< at_t<Matrix> > > trace = 0.;
+      std::decay_t< at_t<Matrix> > trace = 0.;
     };
+
+    /**
+     * \ingroup LinearAlgebraGroup
+     * \brief %Trace of a matrix, i.e. sum of diagonal elements.
+     */
+    template <class Matrix/*, class = Concepts::SymmetricMatrixConceptCheck<Matrix> */>
+    struct DynamicSizeTrace : Base , Chainer< DynamicSizeTrace<Matrix> >
+    {
+      using Chainer< DynamicSizeTrace<Matrix> >::operator ();
+      /// Default constructor.
+      DynamicSizeTrace() = default;
+
+      /**
+       * @brief Constructor.
+       * @param A point of evaluation.
+       */
+      explicit DynamicSizeTrace(const Matrix& A) { update(A); }
+
+      /// Reset point of evaluation.
+      void update(const Matrix& A)
+      {
+#ifndef RFFGEN_DISABLE_DYNAMIC_CHECKS
+        if( rows(A) != cols(A) ) throw NonSymmetricMatrixException("DynamicSizeTrace",rows(A),cols(A),__FILE__,__LINE__);
+#endif
+
+        using Index = decltype(rows(std::declval<Matrix>()));
+        trace = 0.;
+        for(Index i = 0; i < rows(A); ++i) trace += at(A,i,i);
+      }
+
+      /// Function value. Convenient access to d0.
+      const auto& operator()() const noexcept
+      {
+        return d0();
+      }
+
+      /// Function value. Convenient access to d0 with prior call to update(A).
+      const auto& operator()(const Matrix& A) const
+      {
+        update(A);
+        return d0();
+      }
+
+      /// Function value.
+      const auto& d0() const noexcept
+      {
+        return trace;
+      }
+
+      /// First directional derivative.
+      template <int>
+      auto d1(const Matrix& dA) const
+      {
+        using Index = decltype(rows(std::declval<Matrix>()));
+        auto result = decltype(at(dA,0,0))(0.);
+        for(Index i = 0; i < rows(dA); ++i) result += at(dA,i,i);
+        return result;
+      }
+
+    private:
+      std::decay_t< at_t<Matrix> > trace = 0.;
+    };
+
+    template< class Matrix >
+    using Trace = std::conditional_t< Checks::isConstantSizeMatrix<Matrix>() , ConstantSizeTrace<Matrix> , DynamicSizeTrace<Matrix> >;
 
     /**
      * \ingroup LinearAlgebraGroup
@@ -141,9 +210,21 @@ namespace RFFGen
      * \return Trace<Matrix>(A)
      */
     template <class Matrix>
-    auto trace(const Matrix& A)
+    auto trace_impl(const Matrix& A, std::true_type)
     {
       return Trace<Matrix>(A);
+    }
+
+    template <class Function>
+    auto trace_impl(const Function& f, std::false_type)
+    {
+      return Trace< std::decay_t<decltype(f.d0())> >( f.d0() )( f );
+    }
+
+    template <class Arg>
+    auto trace(const Arg& arg)
+    {
+      return trace_impl( arg , std::integral_constant<bool,!std::is_base_of<Base,Arg>::value>() );
     }
   }
 }

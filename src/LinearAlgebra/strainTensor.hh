@@ -46,15 +46,15 @@ namespace RFFGen
      * Caches both \f$ F^T \f$ and \f$ F^T F \f$.
      */
     template <class Matrix, class = Concepts::SymmetricMatrixConceptCheck<Matrix> >
-    class CauchyGreenStrainTensor : Base
+    class LeftCauchyGreenStrainTensor : Base
     {
     public:
-      CauchyGreenStrainTensor() = default;
+      LeftCauchyGreenStrainTensor() = default;
       /**
        * @brief Constructor.
        * @param F point of evaluation.
        */
-      explicit CauchyGreenStrainTensor(Matrix const& F) { update(F); }
+      explicit LeftCauchyGreenStrainTensor(Matrix const& F) { update(F); }
 
       /// Reset point of evaluation.
       void update(Matrix const& F)
@@ -141,7 +141,7 @@ namespace RFFGen
      * \brief Model of the geometric nonlinearity in elasticity theory.
      * Implemented as template-alias to CauchyGreenStrainTensor.
      */
-    template <class Matrix> using GeometricNonlinearity = CauchyGreenStrainTensor<Matrix>;
+    template <class Matrix> using GeometricNonlinearity = LeftCauchyGreenStrainTensor<Matrix>;
 
     /**
      * \ingroup LinearAlgebraGroup

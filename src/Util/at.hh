@@ -23,7 +23,7 @@
 
 #include <type_traits>
 #include <utility>
-#include "static_checks.hh"
+#include "staticChecks.hh"
 
 namespace RFFGen
 {
@@ -34,23 +34,35 @@ namespace RFFGen
   {
 
 
-    template <class Matrix, bool accessViaSquareBrackets, bool accessViaRoundBrackets>
+    template <class Matrix, bool accessViaSquareBrackets, bool accessViaRoundBrackets, bool isMatrix>
     struct ValueTypeImpl;
 
     template <class Matrix, bool accessViaRoundBrackets>
-    struct ValueTypeImpl<Matrix,true,accessViaRoundBrackets>
+    struct ValueTypeImpl<Matrix,true,accessViaRoundBrackets,true>
     {
       using type = decltype(std::declval<Matrix>()[0][0]);
     };
 
     template <class Matrix>
-    struct ValueTypeImpl<Matrix,false,true>
+    struct ValueTypeImpl<Matrix,false,true,true>
     {
       using type = decltype(std::declval<Matrix>()(0,0));
     };
 
+    template <class Vector, bool accessViaRoundBrackets>
+    struct ValueTypeImpl<Vector,true,accessViaRoundBrackets,false>
+    {
+      using type = decltype(std::declval<Vector>()[0]);
+    };
+
+    template <class Vector>
+    struct ValueTypeImpl<Vector,false,true,false>
+    {
+      using type = decltype(std::declval<Vector>()(0));
+    };
+
     template <class Matrix>
-    using ValueType = ValueTypeImpl<Matrix,Checks::accessViaSquareBrackets<Matrix>(),Checks::accessViaRoundBrackets<Matrix>()>;
+    using ValueType = ValueTypeImpl<Matrix,Checks::accessViaSquareBrackets<Matrix>(),Checks::accessViaRoundBrackets<Matrix>(),Checks::isConstantSizeMatrix<Matrix>()>;
 
     template <class Matrix, bool whatever>
     __attribute__((always_inline)) auto& at(Matrix& A, int i, int j, std::true_type, std::integral_constant<bool,whatever>)
@@ -58,16 +70,29 @@ namespace RFFGen
       return A[i][j];
     }
 
-    template <class Matrix, bool whatever>
-    __attribute__((always_inline)) auto& at(Matrix& A, int i, int j, std::false_type, std::integral_constant<bool,whatever>)
+    template <class Matrix>
+    __attribute__((always_inline)) auto& at(Matrix& A, int i, int j, std::false_type, std::true_type)
     {
       return A(i,j);
+    }
+
+
+    template <class Vector, bool whatever>
+    __attribute__((always_inline)) auto& at(Vector& v, int i, std::true_type, std::integral_constant<bool,whatever>)
+    {
+      return v[i];
+    }
+
+    template <class Vector>
+    __attribute__((always_inline)) auto& at(Vector& v, int i, std::false_type, std::true_type)
+    {
+      return v(i);
     }
   }
 
   /// Access underlying value type of Matrix.
-  template <class Matrix>
-  using at_t = typename AtDetail::ValueType<Matrix>::type;
+  template <class Arg>
+  using at_t = typename AtDetail::ValueType<Arg>::type;
 
 
   template <class Matrix>
@@ -75,6 +100,14 @@ namespace RFFGen
   {
     return AtDetail::at<Matrix>(A,i,j,std::integral_constant<bool,Checks::accessViaSquareBrackets<Matrix>()>(),
                                       std::integral_constant<bool,Checks::accessViaRoundBrackets<Matrix>()>());
+  }
+
+
+  template <class Vector>
+  __attribute__((always_inline)) auto& at(Vector& v, int i)
+  {
+    return AtDetail::at<Vector>(v,i,std::integral_constant<bool,Checks::accessViaSquareBrackets<Vector>()>(),
+                                    std::integral_constant<bool,Checks::accessViaRoundBrackets<Vector>()>());
   }
   /**
    * \endcond

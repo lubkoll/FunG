@@ -23,9 +23,12 @@
 
 #include <type_traits>
 #include <utility>
+
 #include "dimension.hh"
+#include "rowsAndCols.hh"
 #include "../Util/at.hh"
 #include "../Util/base.hh"
+#include "../Util/exceptions.hh"
 
 namespace RFFGen
 {
@@ -44,6 +47,28 @@ namespace RFFGen
      */
     namespace Detail
     {
+      template < class Matrix >
+      inline auto composeResult(Matrix const& A, Matrix const& B)
+      {
+        return at(A,0,0) * at(B,1,1) + at(A,1,1) * at(B,0,0) - ( at(A,0,1) * at(B,1,0) + at(A,1,0) * at(B,0,1) );
+      }
+
+      template < class Matrix >
+      inline auto composeResult(Matrix const& dA, Matrix const& dB, Matrix const& dC)
+      {
+        return at(dB,1,1) * ( at(dA,0,0) * at(dC,2,2) - at(dA,2,0) * at(dC,0,2) ) +
+            at(dB,1,2) * ( at(dA,0,1) * at(dC,2,0) - at(dA,2,1) * at(dC,0,0) ) +
+            at(dB,1,0) * ( at(dA,0,2) * at(dC,2,1) - at(dA,2,2) * at(dC,0,1) );
+      }
+
+      template < class Matrix >
+      inline auto composeSemiSymmetricResult(Matrix const& dA, Matrix const& dB, Matrix const& dC)
+      {
+        return at(dB,1,1) * ( at(dA,0,0) * at(dC,2,2) + at(dA,2,2) * at(dC,0,0) - at(dA,2,0) * at(dC,0,2) - at(dA,0,2) * at(dC,2,0) ) +
+            at(dB,1,2) * ( at(dA,0,1) * at(dC,2,0) + at(dA,2,0) * at(dC,0,1) - at(dA,2,1) * at(dC,0,0) - at(dA,0,0) * at(dC,2,1) ) +
+            at(dB,1,0) * ( at(dA,0,2) * at(dC,2,1) + at(dA,2,1) * at(dC,0,2) - at(dA,2,2) * at(dC,0,1) - at(dA,0,1) * at(dC,2,2) );
+      }
+
       template <class Matrix, int dim, class = Concepts::SymmetricMatrixConceptCheck<Matrix> >
       class DeterminantImpl;
 
@@ -81,17 +106,12 @@ namespace RFFGen
         }
 
       private:
-        auto composeResult(Matrix const& A, Matrix const& B) const
-        {
-          return at(A,0,0) * at(B,1,1) + at(A,1,1) * at(B,0,0) - ( at(A,0,1) * at(B,1,0) + at(A,1,0) * at(B,0,1) );
-        }
-
         Matrix A;
-        std::remove_const_t<std::remove_reference_t< at_t<Matrix> > > resultOfD0 = 0.;
+        std::decay_t< at_t<Matrix> > resultOfD0 = 0.;
       };
 
       template <class Matrix>
-      class DeterminantImpl<Matrix,3,Concepts::SymmetricMatrixConceptCheck<Matrix>> : Base
+      class DeterminantImpl<Matrix,3,Concepts::SymmetricMatrixConceptCheck<Matrix> > : Base
       {
       public:
         DeterminantImpl() = default;
@@ -127,22 +147,8 @@ namespace RFFGen
         }
 
       private:
-        auto composeResult(Matrix const& dA, Matrix const& dB, Matrix const& dC) const
-        {
-          return at(dB,1,1) * ( at(dA,0,0) * at(dC,2,2) - at(dA,2,0) * at(dC,0,2) ) +
-              at(dB,1,2) * ( at(dA,0,1) * at(dC,2,0) - at(dA,2,1) * at(dC,0,0) ) +
-              at(dB,1,0) * ( at(dA,0,2) * at(dC,2,1) - at(dA,2,2) * at(dC,0,1) );
-        }
-
-        auto composeSemiSymmetricResult(Matrix const& dA, Matrix const& dB, Matrix const& dC) const
-        {
-          return at(dB,1,1) * ( at(dA,0,0) * at(dC,2,2) + at(dA,2,2) * at(dC,0,0) - at(dA,2,0) * at(dC,0,2) - at(dA,0,2) * at(dC,2,0) ) +
-              at(dB,1,2) * ( at(dA,0,1) * at(dC,2,0) + at(dA,2,0) * at(dC,0,1) - at(dA,2,1) * at(dC,0,0) - at(dA,0,0) * at(dC,2,1) ) +
-              at(dB,1,0) * ( at(dA,0,2) * at(dC,2,1) + at(dA,2,1) * at(dC,0,2) - at(dA,2,2) * at(dC,0,1) - at(dA,0,1) * at(dC,2,2) );
-        }
-
         Matrix A;
-        std::remove_const_t<std::remove_reference_t< at_t<Matrix> > > resultOfD0 = 0.;
+        std::decay_t< at_t<Matrix> > resultOfD0 = 0.;
       };
     }
 
@@ -152,10 +158,66 @@ namespace RFFGen
 
     /**
      * \ingroup LinearAlgebraGroup
-     * \brief Determinant with first three derivatives.
+     * \brief Determinant of static matrix with first three derivatives.
      */
     template <class Matrix>
-    using Determinant = Detail::DeterminantImpl<Matrix,dimension<Matrix>()>;
+    using ConstantSizeDeterminant = Detail::DeterminantImpl<Matrix,dimension<Matrix>()>;
+
+    template <class Matrix>
+    class DynamicSizeDeterminant : Base
+    {
+    public:
+      DynamicSizeDeterminant() = default;
+
+      DynamicSizeDeterminant(Matrix const& A) : dim(rows(A))
+      {
+#ifndef RFFGEN_DISABLE_DYNAMIC_CHECKS
+        if( rows(A) != cols(A) ) throw NonSymmetricMatrixException("DynamicSizeTrace",rows(A),cols(A),__FILE__,__LINE__);
+#endif
+        if( dim == 2 ) det2D.update(A);
+        if( dim == 3 ) det3D.update(A);
+      }
+
+      void update(Matrix const& A)
+      {
+#ifndef RFFGEN_DISABLE_DYNAMIC_CHECKS
+        if( rows(A) != cols(A) ) throw NonSymmetricMatrixException("DynamicSizeTrace",rows(A),cols(A),__FILE__,__LINE__);
+#endif
+        dim = rows(A);
+        if( dim == 2 ) det2D.update(A);
+        if( dim == 3 ) det3D.update(A);
+      }
+
+      auto operator()() const { return d0(); }
+
+      auto d0() const { return ( dim==2 ) ? det2D.d0() : det3D.d0(); }
+
+      template <int id>
+      auto d1(Matrix const& dA1) const
+      {
+        return ( dim==2 ) ? det2D.template d1<id>(dA1) : det3D.template d1<id>(dA1) ;//composeResult(dA1,A,A) + composeResult(A,dA1,A) + composeResult(A,A,dA1);
+      }
+
+      template < int idx , int idy >
+      auto d2(Matrix const& dA1, Matrix const& dA2) const
+      {
+        return ( dim==2 ) ? det2D.template d2<idx,idy>(dA1,dA2) : det3D.template d2<idx,idy>(dA1,dA2);// composeSemiSymmetricResult(A,dA2,dA1) + composeSemiSymmetricResult(dA1,A,dA2) + composeSemiSymmetricResult(A,dA1,dA2);
+      }
+
+      template < int idx , int idy , int idz >
+      auto d3(Matrix const& dA1, Matrix const& dA2, Matrix const& dA3) const
+      {
+        return ( dim==2 ) ? 0 : det3D.template d3<idx,idy,idz>(dA1,dA2,dA3);// composeSemiSymmetricResult(dA1,dA2,dA3) + composeSemiSymmetricResult(dA1,dA3,dA2) + composeSemiSymmetricResult(dA2,dA1,dA3);
+      }
+
+    private:
+      int dim = 0;
+      Detail::DeterminantImpl<Matrix,2> det2D;
+      Detail::DeterminantImpl<Matrix,3> det3D;
+    };
+
+    template < class Matrix >
+    using Determinant = std::conditional_t< Checks::isConstantSizeMatrix<Matrix>() , ConstantSizeDeterminant<Matrix> , DynamicSizeDeterminant<Matrix> >;
 
     /**
      * \ingroup LinearAlgebraGroup

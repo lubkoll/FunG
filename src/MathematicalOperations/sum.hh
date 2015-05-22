@@ -31,6 +31,8 @@
 
 namespace RFFGen
 {
+  template <class> struct Chainer;
+
   namespace MathematicalOperations
   {
     /**
@@ -47,10 +49,11 @@ namespace RFFGen
      * \brief %Sum of functions of type F and G (F and G must satisfy the requirements of Concepts::FunctionConcept).
      */
     template <class F, class G,
-              class = FunctionConceptCheck<F> ,
-              class = FunctionConceptCheck<G> >
-    struct Sum : Base
+              class CheckF = FunctionConceptCheck<F> ,
+              class CheckG = FunctionConceptCheck<G> >
+    struct Sum : Base , Chainer< Sum<F,G,CheckF,CheckG> >
     {
+      using Chainer< Sum<F,G,CheckF,CheckG> >::operator ();
       Sum() = default;
 
       /**
@@ -83,7 +86,8 @@ namespace RFFGen
       }
 
       /// Function value. Convenient access to d0() with prior call to update(x).
-      template <class Arg>
+      template < class Arg ,
+                 class = std::enable_if_t<!std::is_base_of<Base,Arg>::value> >
       const auto& operator()(const Arg& x) const noexcept
       {
         update(x);

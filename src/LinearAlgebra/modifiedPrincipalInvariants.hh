@@ -91,15 +91,15 @@ namespace RFFGen
      * \ingroup LinearAlgebraGroup
      * \brief Shifted first modified principal invariant \f$ \bar\iota_1(A) - n \f$ for \f$ A\in\mathbb{R}^{n,n} \f$.
      */
-    template <class Matrix>
-    using ShiftedFirstModifiedPrincipalInvariant  = ShiftedInvariant< FirstModifiedPrincipalInvariant<Matrix>  , dimension<Matrix>() >;
+    template < class Matrix , int offset = LinearAlgebra::dimension<Matrix>() >
+    using ShiftedFirstModifiedPrincipalInvariant  = ShiftedInvariant< FirstModifiedPrincipalInvariant<Matrix>  , offset >;
 
     /**
      * \ingroup LinearAlgebraGroup
      * \brief Shifted second modified principal invariant \f$ \bar\iota_2(A) - n \f$ for \f$ A\in\mathbb{R}^{n,n} \f$.
      */
-    template <class Matrix>
-    using ShiftedSecondModifiedPrincipalInvariant = ShiftedInvariant< SecondModifiedPrincipalInvariant<Matrix> , dimension<Matrix>() >;
+    template < class Matrix , int offset = LinearAlgebra::dimension<Matrix>() >
+    using ShiftedSecondModifiedPrincipalInvariant = ShiftedInvariant< SecondModifiedPrincipalInvariant<Matrix> , offset >;
 
     /**
      * \ingroup LinearAlgebraGroup

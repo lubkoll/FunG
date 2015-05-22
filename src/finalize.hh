@@ -52,7 +52,7 @@ namespace RFFGen
     struct FinalizeD1<id,ReturnType,true>
     {
       template <class F, class Arg>
-      ReturnType operator()(const F& f, const Arg& dx) const
+      __attribute__((always_inline)) ReturnType operator()(const F& f, const Arg& dx) const
       {
         return f.template d1<id>(dx);
       }
@@ -66,7 +66,7 @@ namespace RFFGen
     struct FinalizeD2<idx,idy,ReturnType,true>
     {
       template <class F, class ArgX, class ArgY>
-      ReturnType operator()(const F& f, const ArgX& dx, const ArgY& dy) const
+      __attribute__((always_inline)) ReturnType operator()(const F& f, const ArgX& dx, const ArgY& dy) const
       {
         return f.template d2<idx,idy>(dx,dy);
       }
@@ -80,7 +80,7 @@ namespace RFFGen
     struct FinalizeD3<idx,idy,idz,ReturnType,true>
     {
       template <class F, class Arg>
-      ReturnType operator()(const F& f, const Arg& dx, const Arg& dy, const Arg& dz) const { return f.template d3<idx,idy,idz>(dx,dy,dz); }
+      __attribute__((always_inline)) ReturnType operator()(const F& f, const Arg& dx, const Arg& dy, const Arg& dz) const { return f.template d3<idx,idy,idz>(dx,dy,dz); }
     };
 
 

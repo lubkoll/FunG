@@ -26,6 +26,8 @@
 #include "extractRowsAndCols.hh"
 #include "../Util/zero.hh"
 #include "../Util/at.hh"
+#include "../Util/staticChecks.hh"
+#include "../Util/staticChecks_nRows_nCols.hh"
 
 namespace RFFGen
 {
@@ -35,7 +37,9 @@ namespace RFFGen
      * \ingroup LinearAlgebraGroup
      * \brief Compute transpose of square matrix.
      */
-    template <class Matrix, class TransposedMatrix = Matrix , class = std::enable_if_t<std::is_same<Matrix,TransposedMatrix>::value> >
+    template <class Matrix, class TransposedMatrix = Matrix ,
+              class = std::enable_if_t<std::is_same<Matrix,TransposedMatrix>::value> ,
+              class = std::enable_if_t<Checks::isConstantSizeMatrix<Matrix>()> >
     TransposedMatrix transpose(Matrix A)
     {
       auto a = at(A,0,0);
@@ -54,7 +58,9 @@ namespace RFFGen
      * \ingroup LinearAlgebraGroup
      * \brief Compute transpose of non-square matrix.
      */
-    template <class Matrix, class TransposedMatrix , class = std::enable_if_t<!std::is_same<Matrix,TransposedMatrix>::value> >
+    template <class TransposedMatrix, class Matrix ,
+              class = std::enable_if_t<!std::is_same<Matrix,TransposedMatrix>::value> ,
+              class = std::enable_if_t<Checks::isConstantSizeMatrix<Matrix>() && Checks::isConstantSizeMatrix<TransposedMatrix>()> >
     TransposedMatrix transpose(const Matrix& A)
     {
       TransposedMatrix B = zero<TransposedMatrix>();
@@ -62,6 +68,30 @@ namespace RFFGen
         for(int j=0; j<numberOfColumns<Matrix>(); ++j)
           at(B,j,i) = A(i,j);
       return B;
+    }
+
+
+    /**
+     * \ingroup LinearAlgebraGroup
+     * \brief Compute transpose of square matrix.
+     */
+    template <class Matrix ,
+              class = std::enable_if_t<!Checks::isConstantSizeMatrix<Matrix>()> ,
+              class = std::enable_if_t<Checks::isDynamicMatrix<Matrix>()> >
+    Matrix transpose(Matrix A)
+    {
+      assert(rows(A) == cols(A));
+      using Index = decltype(rows(std::declval<Matrix>()));
+      auto a = std::remove_const_t<std::remove_reference_t<decltype(at(A,0,0))> >(0.);
+      for(Index i=0; i<rows(A); ++i)
+        for(Index j=i+1; j<cols(A); ++j)
+        {
+          a = at(A,i,j);
+          at(A,i,j) = at(A,j,i);
+          at(A,j,i) = a;
+        }
+
+      return A;
     }
   }
 }

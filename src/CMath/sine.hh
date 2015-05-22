@@ -26,6 +26,8 @@
 
 namespace RFFGen
 {
+  template <class> struct Chainer;
+
   namespace CMath
   {
     /**
@@ -36,13 +38,15 @@ namespace RFFGen
      * For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur
      * during applications of the chain rule.
      */
-    struct Sin : Base
+    struct Sin : Base , Chainer<Sin>
     {
+      using Chainer<Sin>::operator ();
+
       /**
        * @brief Constructor.
        * @param x point of evaluation
        */
-      explicit Sin(double x=0.)
+      explicit Sin(double x=0)
       {
         update(x);
       }
@@ -50,14 +54,8 @@ namespace RFFGen
       /// Reset point of evaluation.
       void update(double x)
       {
-        sinx = sin(x);
-        cosx = cos(x);
-      }
-
-      /// Function value. Convenient access to d0().
-      double operator()() const noexcept
-      {
-        return d0();
+        sinx = ::sin(x);
+        cosx = ::cos(x);
       }
 
       /// Function value.
@@ -77,9 +75,18 @@ namespace RFFGen
 
     private:
       double sinx, cosx;
-    } sine ; ///< Object of type Sine for the convenient generation of functions.
+    };
+
+    /**
+     * \brief Plug f into sine function.
+     * \return object of type Chain<Sin,Function>.
+     */
+    template <class Function, class = std::enable_if_t<std::is_base_of<Base,Function>::value> >
+    auto sin(const Function& f)
+    {
+      return Sin()(f);
+    }
   }
 }
-
 
 #endif // RFFGEN_CMATH_SINE_HH

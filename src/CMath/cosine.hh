@@ -26,6 +26,8 @@
 
 namespace RFFGen
 {
+  template <class> struct Chainer;
+
   namespace CMath
   {
     /**
@@ -38,8 +40,9 @@ namespace RFFGen
      *
      * \see cosine
      */
-    struct Cos : Base
+    struct Cos : Base , Chainer<Cos>
     {
+      using Chainer<Cos>::operator ();
       /**
        * @brief Constructor.
        * @param x point of evaluation
@@ -50,14 +53,11 @@ namespace RFFGen
       }
 
       /// Reset point of evaluation.
-      void update(double x)
+      void update(const double& x)
       {
-        sinx = sin(x);
-        cosx = cos(x);
+        sinx = ::sin(x);
+        cosx = ::cos(x);
       }
-
-      /// Function value. Convenient access to d0().
-      double operator()() const noexcept { return d0(); }
 
       /// Function value.
       double d0() const noexcept { return cosx; }
@@ -76,7 +76,18 @@ namespace RFFGen
 
     private:
       double sinx, cosx;
-    } cosine ; ///< Object of type Cos for the convenient generation of functions.
+    };
+
+    /**
+     * \brief Plug f into cosine.
+     * \return object of type Chain<Cos,Function>.
+     */
+    template < class Function ,
+               class = std::enable_if_t< std::is_base_of<Base,Function>::value > >
+    auto cos(const Function& f)
+    {
+      return Cos()(f);
+    }
   }
 }
 

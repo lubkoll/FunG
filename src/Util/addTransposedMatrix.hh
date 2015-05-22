@@ -21,21 +21,44 @@
 #ifndef RFFGEN_UTIL_ADDTRANSPOSEDMATRIX_HH
 #define RFFGEN_UTIL_ADDTRANSPOSEDMATRIX_HH
 
+#include <cassert>
+#include <type_traits>
 #include "../LinearAlgebra/dimension.hh"
+#include "../Util/staticChecks.hh"
 
 namespace RFFGen
 {
   /**
-   * Overwrites \f$A\f$ with \f$A+A^T\f$.
+   * \brief Overwrites \f$A\f$ with \f$A+A^T\f$.
    * \return \f$A+A^T\f$
    */
-  template <class Matrix>
+  template <class Matrix ,
+            class = std::enable_if_t<Checks::isConstantSizeMatrix<Matrix>()> >
   Matrix addTransposed(Matrix& A)
   {
-    for(int i=0; i<LinearAlgebra::dimension<Matrix>(); ++i)
-      for(int j=i+1; j<LinearAlgebra::dimension<Matrix>(); ++j)
+    using Index = decltype(LinearAlgebra::dimension<Matrix>());
+    for(Index i=0; i<LinearAlgebra::dimension<Matrix>(); ++i)
+      for(Index j=i+1; j<LinearAlgebra::dimension<Matrix>(); ++j)
         at(A,j,i) = at(A,i,j) = at(A,i,j) + at(A,j,i);
-    for(int i=0; i<LinearAlgebra::dimension<Matrix>(); ++i) at(A,i,i) *= 2;
+    for(Index i=0; i<LinearAlgebra::dimension<Matrix>(); ++i) at(A,i,i) *= 2;
+    return A;
+  }
+
+  /**
+   * \brief Overwrites \f$A\f$ with \f$A+A^T\f$.
+   * \return \f$A+A^T\f$
+   */
+  template <class Matrix ,
+            class = std::enable_if_t<!Checks::isConstantSizeMatrix<Matrix>()> ,
+            class = std::enable_if_t<Checks::isDynamicMatrix<Matrix>()> >
+  Matrix addTransposed(Matrix& A)
+  {
+    assert( LinearAlgebra::rows(A) == LinearAlgebra::cols(A) );
+    using Index = decltype(LinearAlgebra::rows(std::declval<Matrix>()));
+    for(Index i=0; i<LinearAlgebra::rows(A); ++i)
+      for(Index j=i+1; j<LinearAlgebra::cols(A); ++j)
+        at(A,j,i) = at(A,i,j) = at(A,i,j) + at(A,j,i);
+    for(Index i=0; i<LinearAlgebra::rows(A); ++i) at(A,i,i) *= 2;
     return A;
   }
 }

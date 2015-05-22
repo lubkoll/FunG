@@ -38,7 +38,7 @@ namespace RFFGen
   {
     /// Specialize this for your matrix class. Dimension (number of rows/columns for square matrices) must be provided by a static member variable called value.
     template <class Matrix, class = Concepts::SymmetricMatrixConceptCheck<Matrix> >
-    struct ExtractDimension : ExtractNumberOfRows<Matrix> {};
+    struct ExtractDimension : NumberOfRows<Matrix> {};
 
     /// Dimension \f$n\f$ of a fixed size matrix in \f$\mathbb{R}^{n,n}\f$.
     template <class Matrix>

@@ -23,7 +23,7 @@
 
 #include "LinearAlgebra/extractRowsAndCols.hh"
 #include "Util/consistencyCheck.hh"
-#include "Util/static_checks.hh"
+#include "Util/staticChecks.hh"
 
 namespace RFFGen
 {
@@ -111,6 +111,18 @@ namespace RFFGen
                     "MatrixConcept: Currently only matrices that allow access to their elements via A[i][j] or A(i,j) are supported.\nYou may contact the developer to ask for further access or provide your own patch.");
     };
 
+
+    /**
+     * \ingroup ConceptCheck
+     * \brief Static check if the requirements of VectorConcept are satisfied.
+     */
+    template < class Vector >
+    struct VectorConceptCheck : ArithmeticConceptCheck<Vector>
+    {
+      static_assert(Checks::accessViaSquareBrackets<Vector>() ||
+                    Checks::accessViaRoundBrackets<Vector>(),
+                    "VectorConcept: Currently only vectors that allow access to their elements via v[i] or v(i) are supported.\nYou may contact the developer to ask for further access or provide your own patch.");
+    };
 
     /**
      * \ingroup ConceptCheck

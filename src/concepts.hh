@@ -143,6 +143,21 @@ namespace RFFGen
 
     /**
      * \ingroup Concepts
+     * \brief Requirements for vectors.
+     *
+     * Access to vector elements must be possible either via A[i] or A(i). Moreover the requirements of ArithmeticConcept must be satisfied.
+     */
+    struct VectorConcept : ArithmeticConcept
+    {
+      /// Access to entry.
+      unspecified operator[](int);
+      /// Access to entry.
+      unspecified operator()(int);
+    };
+
+
+    /**
+     * \ingroup Concepts
      * \brief Requirements for symmetric matrices.
      *
      * The requirements of MatrixConcept must be satisfied and the number of rows and columns must be equal.

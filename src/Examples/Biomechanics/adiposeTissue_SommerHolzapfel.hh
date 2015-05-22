@@ -42,20 +42,19 @@ namespace RFFGen
    */
   namespace Detail
   {
-    template <class Matrix>
+    template < class Matrix , int offset = LinearAlgebra::dimension<Matrix>() >
     auto generateIncompressibleAdiposeTissue_SommerHolzapfel(double cCells, double k1, double k2, double kappa, const Matrix& M, const Matrix& F)
     {
+      using CMath::exp;
       using namespace LinearAlgebra;
       using I1 = FirstPrincipalInvariant<Matrix>;
-      using SI1 = ShiftedFirstPrincipalInvariant<Matrix>;
+      using SI1 = ShiftedFirstPrincipalInvariant<Matrix,offset>;
       using I4 = FirstMixedInvariant<Matrix>;
 
       auto aniso = kappa*I1(F) + (((1-3*kappa)*I4(F,M)) - 1.);
-      auto exparg = k2*(aniso^2);
-
       return ( cCells*SI1(F) +
-               (k1/k2)*( ( CMath::Exp() << exparg ) - 1.)
-             ) << CauchyGreenStrainTensor<Matrix>(F);
+               (k1/k2)*( exp( k2*(aniso^2) ) - 1.)
+             ) << LeftCauchyGreenStrainTensor<Matrix>(F);
     }
   }
   /**
@@ -78,10 +77,10 @@ namespace RFFGen
    * @param M structural tensor describing the fiber direction of the interlobular septa, i.e. \f$M=v\otimesv\f$ for a fiber direction \f$v\f$
    * @param F initial deformation gradient
    */
-  template <class Matrix>
+  template < class Matrix , int offset = LinearAlgebra::dimension<Matrix>()>
   auto incompressibleAdiposeTissue_SommerHolzapfel(double cCells, double k1, double k2, double kappa, const Matrix& M, const Matrix& F)
   {
-    return Detail::generateIncompressibleAdiposeTissue_SommerHolzapfel(cCells,k1,k2,kappa,M,F);
+    return Detail::generateIncompressibleAdiposeTissue_SommerHolzapfel<Matrix,offset>(cCells,k1,k2,kappa,M,F);
   }
 
   /**
@@ -98,10 +97,10 @@ namespace RFFGen
    * @param M structural tensor describing the fiber direction of the interlobular septa, i.e. \f$M=v\otimesv\f$ for a fiber direction \f$v\f$
    * @param F initial deformation gradient
    */
-  template <class Matrix>
+  template < class Matrix , int offset = LinearAlgebra::dimension<Matrix>()>
   auto incompressibleAdiposeTissue_SommerHolzapfel(const Matrix& M, const Matrix& F)
   {
-    return incompressibleAdiposeTissue_SommerHolzapfel(0.15,0.8,47.3,0.09,M,F);
+    return incompressibleAdiposeTissue_SommerHolzapfel<Matrix,offset>(0.15,0.8,47.3,0.09,M,F);
   }
 
 
@@ -123,10 +122,10 @@ namespace RFFGen
    * @param d1 scaling of the penalty function for compression
    * @param F initial deformation gradient
    */
-  template <class Inflation, class Compression, class Matrix>
+  template <class Inflation, class Compression, class Matrix , int offset = LinearAlgebra::dimension<Matrix>()>
   auto compressibleAdiposeTissue_SommerHolzapfel(double cCells, double k1, double k2, double kappa, double d0, double d1, const Matrix& M, const Matrix& F)
   {
-    return Detail::generateIncompressibleAdiposeTissue_SommerHolzapfel(cCells,k1,k2,kappa,M,F) + volumetricPenalty<Inflation,Compression>(d0,d1,F);
+    return Detail::generateIncompressibleAdiposeTissue_SommerHolzapfel<Matrix,offset>(cCells,k1,k2,kappa,M,F) + volumetricPenalty<Inflation,Compression>(d0,d1,F);
   }
 
   /**
@@ -144,10 +143,10 @@ namespace RFFGen
    * @param M structural tensor describing the fiber direction of the interlobular septa, i.e. \f$M=v\otimesv\f$ for a fiber direction \f$v\f$
    * @param F initial deformation gradient
    */
-  template <class Inflation, class Compression, class Matrix>
+  template <class Inflation, class Compression, class Matrix , int offset = LinearAlgebra::dimension<Matrix>()>
   auto compressibleAdiposeTissue_SommerHolzapfel(double d0, double d1, const Matrix& M, const Matrix& F)
   {
-    return compressibleAdiposeTissue_SommerHolzapfel<Inflation,Compression>(0.15,0.8,47.3,0.09,d0,d1,M,F);
+    return compressibleAdiposeTissue_SommerHolzapfel<Inflation,Compression,Matrix,offset>(0.15,0.8,47.3,0.09,d0,d1,M,F);
   }
 }
 

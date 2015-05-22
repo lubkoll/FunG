@@ -23,35 +23,43 @@
 
 #include <cmath>
 #include "../Util/base.hh"
-#include "../Util/third.hh"
+#include "../Util/exceptions.hh"
 
 namespace RFFGen
 {
+  template <class> struct Chainer;
+
   namespace CMath
   {
     /**
      * \ingroup CMathGroup
      *
-     * \brief Power function with integral exponent including first three derivatives.
+     * \brief Power function with rational exponent \f$ k = \frac{dividend}{divisor} \f$ including first three derivatives.
      *
      * For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur
      * during applications of the chain rule.
      * For the cases \f$k=-1\f$ and \f$k=2\f$ specializations are used that avoid the use of std::pow.
      */
-    template <int k>
-    struct Pow : Base
+    template <int dividend, int divisor=1>
+    struct Pow : Base , Chainer< Pow<dividend,divisor> >
     {
+      using Chainer< Pow<dividend,divisor> >::operator ();
+
+      constexpr Pow() = default;
       /**
        * @brief Constructor.
        * @param x point of evaluation
        */
-      explicit Pow(double x=1.) { update(x); }
+      explicit Pow(double x) { update(x); }
 
       /// Reset point of evaluation.
       void update(double x)
       {
-        assert( k-3 >= 0 || x != 0);
-        xk = x * (xk1 = x * (xk2 = x * ( xk3 = pow(x,k-3)) ) );
+#ifndef RFFGEN_DISABLE_DYNAMIC_CHECKS
+        if( k < 3 &&  x == 0 ) throw OutOfDomainException("Pow<" + std::to_string(dividend) + "," + std::to_string(divisor) + ">",
+                                                          "]-inf,inf[\{0}",x,__FILE__,__LINE__);
+#endif
+        xk = x * (xk1 = x * (xk2 = x * ( xk3 = ::pow(x,k-3)) ) );
       }
 
       /// Function value. Convenient access to d0().
@@ -88,17 +96,18 @@ namespace RFFGen
       }
 
     private:
+      const double k = static_cast<double>(dividend)/divisor;
       double xk, xk1, xk2, xk3;
     };
 
     /**
-     * \ingroup STLMATH
+     * \ingroup CMathGroup
      * \return Default initialized object of type Pow<k>.
      */
-    template <int k>
+    template <int dividend, int divisor=1>
     auto power()
     {
-      return Pow<k>();
+      return Pow<dividend,divisor>();
     }
     /**
      * \cond DOCUMENT_IMPLEMENTATION_DETAILS
@@ -110,11 +119,15 @@ namespace RFFGen
      * during applications of the chain rule.
      */
     template <>
-    struct Pow<2> : Base
+    struct Pow<2,1> : Base, Chainer< Pow<2,1> >
     {
-      explicit Pow(double x_=0.) { update(x_); }
+      using Chainer< Pow<2,1> >::operator ();
 
-      void update(double x_)
+      constexpr Pow() = default;
+
+      explicit Pow(double x_) { update(x_); }
+
+      void update(const double& x_)
       {
         x = 2*x_;
         x2 = x_*x_;
@@ -133,14 +146,14 @@ namespace RFFGen
 
       /// First (directional) derivative.
       template < int = -1 >
-      double  d1(double dx) const
+      double  d1(double dx=1.) const
       {
         return x * dx;
       }
 
       /// Second (directinal) derivative.
       template < int = -1 , int = -1 >
-      double  d2(double dx, double dy) const
+      double  d2(double dx=1, double dy=1) const
       {
         return 2 * dx * dy;
       }
@@ -150,9 +163,13 @@ namespace RFFGen
     };
 
     template <>
-    struct Pow<3> : Base
+    struct Pow<3,1> : Base , Chainer< Pow<3,1> >
     {
-      explicit Pow(double x_=0.) { update(x_); }
+      using Chainer< Pow<3,1> >::operator ();
+
+      constexpr Pow() = default;
+
+      explicit Pow(double x_) { update(x_); }
 
       void update(double x_)
       {
@@ -174,20 +191,20 @@ namespace RFFGen
 
       /// First (directional) derivative.
       template < int = -1 >
-      double d1(double dx) const
+      double d1(double dx=1) const
       {
         return 3 * x2 * dx;
       }
 
       /// Second (directinal) derivative.
       template < int = -1 , int = -1 >
-      double d2(double dx, double dy) const
+      double d2(double dx=1, double dy=1) const
       {
         return 6 * x * dx * dy;
       }
 
       template < int = -1 , int = -1 , int = -1 >
-      double d3(double dx,double dy,double dz) const
+      double d3(double dx=1,double dy=1,double dz=1) const
       {
         return 6*dx*dy*dz;
       }
@@ -202,13 +219,19 @@ namespace RFFGen
      * during applications of the chain rule.
      */
     template <>
-    struct Pow<-1> : Base
+    struct Pow<-1,1> : Base , Chainer< Pow<-1,1> >
     {
-      explicit Pow(double x=1.) { update(x); }
+      using Chainer< Pow<-1,1> >::operator ();
+
+      constexpr Pow() = default;
+
+      explicit Pow(double x) { update(x); }
 
       void update(double x)
       {
-        assert(x!=0);
+#ifndef RFFGEN_DISABLE_DYNAMIC_CHECKS
+        if( x == 0 ) throw OutOfDomainException("Pow<-1,1>","]-inf,inf[\{0}",x,__FILE__,__LINE__);
+#endif
         x_inv = 1. / x;
         x_inv2 = x_inv*x_inv;
       }
@@ -248,32 +271,97 @@ namespace RFFGen
     private:
       double x_inv = 1., x_inv2 = 1.;
     };
-    /**
-     * \endcond
-     */
+
+    template <>
+    struct Pow<1,2> : Base, Chainer< Pow<1,2> >
+    {
+      using Chainer< Pow<1,2> >::operator ();
+
+      constexpr Pow() = default;
+
+      /**
+       * @brief Constructor.
+       * @param x point of evaluation
+       */
+      explicit Pow(double x) { update(x); }
+
+      /// Reset point of evaluation.
+      void update(double x)
+      {
+#ifndef RFFGEN_DISABLE_DYNAMIC_CHECKS
+        if( x < 0 ) throw OutOfDomainException("Pow<1,2>","[0,inf[",x,__FILE__,__LINE__);
+#endif
+        x_ = x;
+        sqrt_x = ::sqrt(x);
+      }
+
+      /// Function value. Convenient access to d0().
+      double operator()() const noexcept
+      {
+        return d0();
+      }
+
+      /// Function value.
+      double d0() const noexcept
+      {
+        return sqrt_x;
+      }
+
+      /// First (directional) derivative.
+      template < int = -1 >
+      double d1(double dx = 1.) const
+      {
+        return 0.5 / sqrt_x * dx;
+      }
+
+      /// Second (directinal) derivative.
+      template < int = -1 , int = -1 >
+      double d2(double dx = 1., double dy = 1.) const
+      {
+        return -0.25 / (x_*sqrt_x) * dx * dy;
+      }
+
+      /// Third (directional) derivative.
+      template < int = -1 , int = -1 , int = -1 >
+      double d3(double dx = 1., double dy = 1., double dz = 1.) const
+      {
+        return 0.375 / (x_*x_*sqrt_x) * dx * dy * dz;
+      }
+
+    private:
+      double x_ = 0., sqrt_x = 1.;
+    };
 
     /**
      * \ingroup CMathGroup
-     * @brief The function \f$ t\mapsto t^{1/3} \f$ with first three derivatives.
+     * @brief The function \f$ t\mapsto t^{-1/3} \f$ with first three derivatives.
      */
-    struct OverThirdRoot : Base
+    template <>
+    struct Pow<-1,3> : Base , Chainer< Pow<-1,3> >
     {
+      using Chainer< Pow<-1,3> >::operator ();
+
+      constexpr Pow() = default;
+
       /**
        * @brief Constructor.
        * @param t point of evaluation
        */
-      explicit OverThirdRoot(double t=1.) { update(t); }
+      explicit Pow(double t) { update(t); }
 
       /// Reset point of evaluation.
-      void update(double t)
+      void update(double x)
       {
-        double  p = pow(t,third);
+#ifndef RFFGEN_DISABLE_DYNAMIC_CHECKS
+        if( x < 0 ) throw OutOfDomainException("Pow<1,3>","[0,inf[",x,__FILE__,__LINE__);
+#endif
+        auto p = cbrt(x);
         d0val =  1/p;
-        p *= t;
+        p *= x;
         d1val = -1/(3*p);
-        p *= t;
+        p *= x;
         d2val =  4/(9*p);
-        p *= t;
+        p *= x;
         d3val = -28/(27*p);
       }
 
@@ -296,7 +384,6 @@ namespace RFFGen
       double d3(double dt0=1, double dt1=1, double dt2=1) const { return d3val*dt0*dt1*dt2; }
 
     private:
-      double third = RFFGen::third();
       double d0val = 0, d1val = 0, d2val = 0, d3val = 0;
     };
 
@@ -305,24 +392,33 @@ namespace RFFGen
      * \ingroup CMathGroup
      * @brief The function \f$ t\mapsto t^{2/3} \f$ with first three derivatives.
      */
-    struct OverThirdRootSquared : Base
+    template <>
+    struct Pow<-2,3> : Base , Chainer< Pow<-2,3> >
     {
+      using Chainer< Pow<-2,3> >::operator ();
+
+      constexpr Pow() = default;
+
       /**
        * @brief Constructor.
        * @param t point of evaluation
        */
-      explicit OverThirdRootSquared(double t=1.)  { update(t); }
+      explicit Pow(double t)  { update(t); }
 
       /// Reset point of evaluation.
-      void update(double t)
+      void update(double x)
       {
-        double  p = pow(t,twothird);
+#ifndef RFFGEN_DISABLE_DYNAMIC_CHECKS
+        if( x < 0 ) throw OutOfDomainException("Pow<2,3>","[0,inf[",x,__FILE__,__LINE__);
+#endif
+        auto p0 = cbrt(x);
+        auto p = p0*p0;
         d0val =   1/p;
-        p *= t;
+        p *= x;
         d1val =  -2/(3*p);
-        p *= t;
+        p *= x;
         d2val =   10/(9*p);
-        p *= t;
+        p *= x;
         d3val = -80/(27*p);
       }
 
@@ -334,20 +430,82 @@ namespace RFFGen
 
       /// First (directional) derivative.
       template < int = -1 >
-      double d1(double dt) const { return d1val*dt; }
+      double d1(double dt=1) const { return d1val*dt; }
 
       /// Second (directional) derivative.
       template < int = -1 , int = -1 >
-      double d2(double dt0, double dt1) const { return d2val*dt0*dt1; }
+      double d2(double dt0=1, double dt1=1) const { return d2val*dt0*dt1; }
 
       /// Third (directional) derivative.
       template < int = -1 , int = -1 , int = -1 >
-      double d3(double dt0, double dt1, double dt2) const { return d3val*dt0*dt1*dt2; }
+      double d3(double dt0=1, double dt1=1, double dt2=1) const { return d3val*dt0*dt1*dt2; }
 
     private:
-      double twothird = RFFGen::twothirds();
       double d0val = 0, d1val = 0, d2val = 0, d3val = 0;
     };
+    /**
+     * \endcond
+     */
+
+    /**
+     * \ingroup CMathGroup
+     * \brief Square root including first three derivatives (based on sqrt(double) in \<cmath\>).
+     */
+    using Sqrt = Pow<1,2>;
+
+    /**
+     * \ingroup CMathGroup
+     * \brief Third root including first three derivatives (based on sqrt(double) in \<cmath\>).
+     */
+    using Cbrt = Pow<1,3>;
+
+    /**
+     * \ingroup CMathGroup
+     * \brief Third root squared including first three derivatives (based on sqrt(double) in \<cmath\>).
+     */
+    using Cbrt2 = Pow<2,3>;
+
+    /**
+     * \brief Plug f into square root function.
+     * \return object of type Chain<Sqrt,Function>.
+     */
+    template <class Function, class = std::enable_if_t<std::is_base_of<Base,Function>::value> >
+    auto sqrt(const Function& f)
+    {
+      return Sqrt()(f);
+    }
+
+    /**
+     * \brief Plug f into third root function.
+     * \return object of type Chain<Cbrt,Function>.
+     */
+    template <class Function, class = std::enable_if_t<std::is_base_of<Base,Function>::value> >
+    auto cbrt(const Function& f)
+    {
+      return Cbrt()(f);
+    }
+
+    /**
+     * \brief Plug f into third root squared function.
+     * \return object of type Chain<Cbrt2,Function>.
+     */
+    template <class Function, class = std::enable_if_t<std::is_base_of<Base,Function>::value> >
+    auto cbrt2(const Function& f)
+    {
+      return Cbrt2()(f);
+    }
+
+    /**
+     * \brief Plug f into pow function.
+     * \return object of type Chain< Pow<dividend,divisor> , Function >.
+     */
+    template <int dividend, int divisor,
+              class Function,
+              class = std::enable_if_t<std::is_base_of<Base,Function>::value> >
+    auto pow(const Function& f)
+    {
+      return Pow<dividend,divisor>()(f);
+    }
   }
 }
 

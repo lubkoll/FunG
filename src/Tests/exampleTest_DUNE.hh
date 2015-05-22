@@ -21,9 +21,8 @@
 #ifndef RFFGEN_PERFORMANCE_TEST_EXAMPLE_TEST_DUNE_HH
 #define RFFGEN_PERFORMANCE_TEST_EXAMPLE_TEST_DUNE_HH
 
+#include <chrono>
 #include <iostream>
-
-#include <boost/timer/timer.hpp>
 
 #include <dune/common/fmatrix.hh>
 
@@ -38,7 +37,8 @@ void runTest_DUNE(Function& f)
 {
   using std::cout;
   using std::endl;
-  auto nUpdates = 10u * 1000u * 1000u;
+  using namespace std::chrono;
+  auto nUpdates = 10'000'000u;
   auto nTimes = 1;
   auto nEval = nUpdates * nTimes;
 
@@ -51,29 +51,25 @@ void runTest_DUNE(Function& f)
   auto val = 0.;
 
   cout << "number of updates: " << nUpdates << endl;
-  boost::timer::cpu_timer timer;
-  for(auto i=0u; i<nUpdates; ++i) f.update(a);
-  cout << "updates: " << boost::timer::format(timer.elapsed());
-  timer.stop();
+  auto startTime = high_resolution_clock::now();
+  for(auto i=0u; i<nUpdates; ++i){ if(i%2==0) a*=1.01; else a*=1./1.01; f.update(a); }
+  cout << "updates: " << duration_cast<milliseconds>(high_resolution_clock::now() - startTime).count() << "ms\n";
   cout << "number of evaluations: " << nEval << endl;
-  timer.start();
+  startTime = high_resolution_clock::now();
   for(auto i=0u; i<nEval; ++i) val = f();
-  cout << "d0: " << boost::timer::format(timer.elapsed());
+  cout << "d0: " << duration_cast<nanoseconds>(high_resolution_clock::now() - startTime).count() << "ns\n";
   cout << "value: " << val << endl;
-  timer.stop();
-  timer.start();
-  for(auto i=0u; i<nEval; ++i) val = f.template d1<0>(da0);
-  cout << "d1: " << boost::timer::format(timer.elapsed());
+  startTime = high_resolution_clock::now();
+  for(auto i=0u; i<nEval; ++i){ if(i%2==0) da0 *= 1.01; else da0 *= 1./1.01; val = f.template d1<0>(da0); }
+  cout << "d1: " << duration_cast<milliseconds>(high_resolution_clock::now() - startTime).count() << "ms\n";
   cout << "value: " << val << endl;
-  timer.stop();
-  timer.start();
-  for(auto i=0u; i<nEval; ++i) val = f.template d2<0,0>(da0,da1);
-  cout << "d2: " << boost::timer::format(timer.elapsed());
+  startTime = high_resolution_clock::now();
+  for(auto i=0u; i<nEval; ++i){ if(i%2==0) da0 *= 1.01; else da0 *= 1./1.01; da1 = da0; val = f.template d2<0,0>(da0,da1); }
+  cout << "d2: " << duration_cast<milliseconds>(high_resolution_clock::now() - startTime).count() << "ms\n";
   cout << "value: " << val << endl;
-  timer.stop();
-  timer.start();
-  for(auto i=0u; i<nEval; ++i) val = f.template d3<0,0,0>(da0,da1,da2);
-  cout << "d3: " << boost::timer::format(timer.elapsed());
+  startTime = high_resolution_clock::now();
+  for(auto i=0u; i<nEval; ++i){ if(i%2==0) da0 *= 1.01; else da0 *= 1./1.01; da1 = da2 = da0; val = f.template d3<0,0,0>(da0,da1,da2); }
+  cout << "d3: " << duration_cast<milliseconds>(high_resolution_clock::now() - startTime).count() << "ms\n";
   cout << "value: " << val << endl;
   cout << endl;
 }
@@ -114,7 +110,8 @@ void testExamples_DUNE()
   auto incompressibleMuscle = RFFGen::incompressibleMuscleTissue_Martins(fiberTensor,I);
   auto compressibleMuscle = RFFGen::compressibleMuscleTissue_Martins<Pow<2>,LN>(d0,d1,fiberTensor,I);
 
-  boost::timer::cpu_timer timer;
+  using namespace std::chrono;
+  auto startTime = high_resolution_clock::now();
   cout << "incompressible neo-Hooke" << endl;
   runTest_DUNE<M>(incompressibleNeoHooke);
 
@@ -152,7 +149,6 @@ void testExamples_DUNE()
   runTest_DUNE<M>(compressibleMuscle);
 
   cout << "Terminating performance test with DUNE matrices.\n" << endl;
-  cout << "Overall computation time: " << boost::timer::format(timer.elapsed());
-}
+  cout << "Overall computation time: " << duration_cast<seconds>(high_resolution_clock::now() - startTime).count() << "s\n";}
 
 #endif /* RFFGEN_PERFORMANCE_TEST_EXAMPLE_TEST_DUNE_HH */

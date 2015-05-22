@@ -23,7 +23,7 @@
 
 #include <type_traits>
 #include "base.hh"
-#include "static_checks.hh"
+#include "staticChecks.hh"
 
 namespace RFFGen
 {

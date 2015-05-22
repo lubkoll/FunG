@@ -109,8 +109,10 @@ namespace RFFGen
    */
   template <class Scalar, class F,
             class = std::enable_if_t< std::is_base_of<Base,F>() && std::is_arithmetic<Scalar>() > >
-  auto operator* (Scalar a, const F& f)
+  auto operator* (const Scalar& a, const F& f)
   {
+//    using namespace MathematicalOperations;
+//    return Product< Constant<Scalar> , F >(a,f);
     return MathematicalOperations::Scale<F>(a,f);
   }
 

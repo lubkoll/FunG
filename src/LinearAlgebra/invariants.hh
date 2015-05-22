@@ -59,12 +59,12 @@ namespace RFFGen
 
 
       /// Shifted first principal invariant.
-      template <class Matrix>
-      using ShiftedFirstInvariant   = ShiftedFirstPrincipalInvariant<Matrix>;
+      template < class Matrix , int offset = LinearAlgebra::dimension<Matrix>() >
+      using ShiftedFirstInvariant   = ShiftedFirstPrincipalInvariant<Matrix,offset>;
 
       /// Shifted second principal invariant.
-      template <class Matrix>
-      using ShiftedSecondInvariant  = ShiftedSecondPrincipalInvariant<Matrix>;
+      template < class Matrix , int offset = LinearAlgebra::dimension<Matrix>() >
+      using ShiftedSecondInvariant  = ShiftedSecondPrincipalInvariant<Matrix,offset>;
 
       /// Shifted third principal invariant.
       template <class Matrix>
@@ -92,12 +92,12 @@ namespace RFFGen
 
 
       /// Shifted first modified principal invariant.
-      template <class Matrix>
-      using ShiftedFirstInvariant   = ShiftedFirstModifiedPrincipalInvariant<Matrix>;
+      template < class Matrix , int offset = LinearAlgebra::dimension<Matrix>() >
+      using ShiftedFirstInvariant   = ShiftedFirstModifiedPrincipalInvariant<Matrix,offset>;
 
       /// Shifted second modified principal invariant.
-      template <class Matrix>
-      using ShiftedSecondInvariant  = ShiftedSecondModifiedPrincipalInvariant<Matrix>;
+      template < class Matrix , int offset = LinearAlgebra::dimension<Matrix>() >
+      using ShiftedSecondInvariant  = ShiftedSecondModifiedPrincipalInvariant<Matrix,offset>;
 
       /// Shifted third modified principal invariant.
       template <class Matrix>

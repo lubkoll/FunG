@@ -26,7 +26,7 @@
 #include "LinearAlgebra/deviatoricInvariants.hh"
 #include "LinearAlgebra/dimension.hh"
 #include "LinearAlgebra/invariants.hh"
-#include "LinearAlgebra/matrixNorm.hh"
+#include "LinearAlgebra/euclideanNorm.hh"
 #include "LinearAlgebra/strainTensor.hh"
 #include "LinearAlgebra/tensorProduct.hh"
 #include "LinearAlgebra/trace.hh"

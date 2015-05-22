@@ -41,14 +41,14 @@ namespace RFFGen
    * \brief Generate an "incompressible" Mooney-Rivlin material law \f$ W(F)=c_0\iota_1(F^T F) + c_1\iota_2(F^T F) \f$,
    * where \f$\iota_1\f$ is the first and \f$\iota_2\f$ the second principal matrix invariant.
    */
-  template <class Matrix>
+  template < class Matrix , int offset = LinearAlgebra::dimension<Matrix>() >
   auto incompressibleMooneyRivlin(double c0, double c1, const Matrix& F)
   {
     using namespace LinearAlgebra;
-    using I1 = ShiftedFirstPrincipalInvariant<Matrix>;
-    using I2 = ShiftedSecondPrincipalInvariant<Matrix>;
+    using I1 = ShiftedFirstPrincipalInvariant<Matrix,offset>;
+    using I2 = ShiftedSecondPrincipalInvariant<Matrix,offset>;
 
-    return ( c0*I1() + c1*I2() ) << CauchyGreenStrainTensor<Matrix>(F); // function definition
+    return ( c0*I1() + c1*I2() ) << LeftCauchyGreenStrainTensor<Matrix>(F); // function definition
   }
 
 
@@ -57,15 +57,15 @@ namespace RFFGen
    * \brief Generate a compressible Mooney-Rivlin material law \f$ W(F)=c_0\iota_1(F^T F) + c_1\iota_2(F^T F) + d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F))  \f$,
    * where \f$\iota_1\f$ is the first and \f$\iota_2\f$ the second principal matrix invariant.
    */
-  template <class InflationPenalty, class CompressionPenalty, class Matrix>
+  template <class InflationPenalty, class CompressionPenalty, class Matrix , int offset = LinearAlgebra::dimension<Matrix>() >
   auto compressibleMooneyRivlin(double c0, double c1, double d0, double d1, const Matrix& F)
   {
     using namespace LinearAlgebra;
-    using I1 = ShiftedFirstPrincipalInvariant<Matrix>;
-    using I2 = ShiftedSecondPrincipalInvariant<Matrix>;
+    using I1 = ShiftedFirstPrincipalInvariant<Matrix,offset>;
+    using I2 = ShiftedSecondPrincipalInvariant<Matrix,offset>;
 
-    return ( ( c0*I1() + c1*I2() ) << CauchyGreenStrainTensor<Matrix>(F) ) +                  // function definition
-             ( ( d0*InflationPenalty() + d1*CompressionPenalty()) << Determinant<Matrix>(F) );
+    return ( ( c0*I1() + c1*I2() ) << LeftCauchyGreenStrainTensor<Matrix>(F) ) + volumetricPenalty<InflationPenalty,CompressionPenalty>(d0,d1,F);                 // function definition
+//             ( ( d0*InflationPenalty() + d1*CompressionPenalty()) << Determinant<Matrix>(F) );
   }
 
 

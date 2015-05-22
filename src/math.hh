@@ -23,9 +23,8 @@
 
 #include "CMath/cosine.hh"
 #include "CMath/exp.hh"
-#include "CMath/ln.hh"
+#include "CMath/log.hh"
 #include "CMath/sine.hh"
-#include "CMath/sqrt.hh"
 #include "CMath/pow.hh"
 
 #endif // RFFGEN_MATH_HH

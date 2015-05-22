@@ -25,18 +25,25 @@
 #include <utility>
 
 #include "../Util/base.hh"
-#include "../Util/computeScale.hh"
 #include "../Util/derivativeWrappers.hh"
 #include "../Util/indexedType.hh"
 
 namespace RFFGen
 {
+  /**
+   * \cond DOCUMENT_FORWARD_DECLARATIONS
+   */
+  template <class> struct Chainer;
+  /**
+   * \endcond
+   */
+
   namespace MathematicalOperations
   {
     /**
      * \cond DOCUMENT_FORWARD_DECLARATIONS
      */
-      template <class> struct FunctionConceptCheck;
+    template <class> struct FunctionConceptCheck;
     /**
      * \endcond
      */
@@ -47,8 +54,9 @@ namespace RFFGen
      * \brief Scaling \f$ af \f$ of some function \f$ f \f$ with a double \f$ a \f$ (F must satisfy the requirements of Concepts::FunctionConcept).
      */
     template <class F, class = FunctionConceptCheck<F> >
-    struct Scale : Base
+    struct Scale : Base , Chainer< Scale< F , FunctionConceptCheck<F> > >
     {
+      using Chainer< Scale< F , FunctionConceptCheck<F> > >::operator();
       /// Default constructor. May leave member variables uninitialized! Call update before using evaluation.
       Scale() = default;
 
@@ -102,12 +110,12 @@ namespace RFFGen
        * \brief First directional derivative.
        * \param dx direction for which the derivative is computed
        */
-        template < int id , class Arg ,
-                 class IndexedArg = IndexedType<Arg,id> ,
-                 class = std::enable_if_t< ComputeScale< D1<F,IndexedArg> >::present> >
+        template < int idx , class Arg ,
+                 class IndexedArg = IndexedType<Arg,idx> ,
+                 class = std::enable_if_t< D1<F,IndexedArg>::present> >
       auto d1(Arg const& dx) const
       {
-        return ComputeScale< D1<F,IndexedArg> >( a, f, dx )();
+        return a * f.template d1<idx>(dx);
       }
 
       /**
@@ -118,10 +126,10 @@ namespace RFFGen
         template < int idx , int idy , class ArgX , class ArgY ,
                  class IndexedArgX = IndexedType<ArgX,idx> ,
                  class IndexedArgY = IndexedType<ArgY,idy> ,
-                 class = std::enable_if_t< ComputeScale< D2<F,IndexedArgX,IndexedArgY> >::present> >
+                 class = std::enable_if_t< D2<F,IndexedArgX,IndexedArgY>::present> >
       auto d2(ArgX const& dx, ArgY const& dy) const
       {
-        return ComputeScale< D2<F,IndexedArgX,IndexedArgY> >(a,f,dx,dy)();
+        return a * f.template d2<idx,idy>(dx,dy);
       }
 
       /**
@@ -134,10 +142,10 @@ namespace RFFGen
                  class IndexedArgX = IndexedType<ArgX,idx> ,
                  class IndexedArgY = IndexedType<ArgY,idy> ,
                  class IndexedArgZ = IndexedType<ArgZ,idz> ,
-                 class = std::enable_if_t< ComputeScale< D3<F,IndexedArgX,IndexedArgY,IndexedArgZ> >::present > >
+                 class = std::enable_if_t< D3<F,IndexedArgX,IndexedArgY,IndexedArgZ>::present > >
       auto d3(ArgX const& dx, ArgY const& dy, ArgZ const& dz) const
       {
-        return ComputeScale< D3<F,IndexedArgX,IndexedArgY,IndexedArgZ> >(a,f,dx,dy,dz)();
+        return a * f.template d3<idx,idy,idz>(dx,dy,dz);
       }
 
     private:

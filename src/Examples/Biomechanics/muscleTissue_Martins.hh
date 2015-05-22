@@ -42,16 +42,17 @@ namespace RFFGen
    */
   namespace MuscleTissueDetail
   {
-    template <class Matrix>
+    template < class Matrix , int offset = LinearAlgebra::dimension<Matrix>() >
     auto generateIncompressibleMuscleTissue_Martins(double c, double b, double A, double a, const Matrix& M, const Matrix& F )
     {
+      using CMath::exp;
       using namespace LinearAlgebra;
-      using I1 = ShiftedFirstModifiedPrincipalInvariant<Matrix>;
-      using I6 = ShiftedThirdModifiedMixedInvariant<Matrix>;
+      auto i1 = ShiftedFirstModifiedPrincipalInvariant<Matrix,offset>();
+      auto i6 = ShiftedThirdModifiedMixedInvariant<Matrix>(F,M);
 
-      return ( c * ( ( CMath::Exp() << ( b * I1() ) ) - 1 ) +
-               A * ( ( CMath::Exp() << ( a * ( I6(F,M)^2 ) ) ) - 1 )
-             ) << CauchyGreenStrainTensor<Matrix>(F);
+      return ( c * ( exp( b * i1 ) - 1 ) +
+               A * ( exp( a * ( i6^2 ) ) - 1 )
+             ) << LeftCauchyGreenStrainTensor<Matrix>(F);
     }
   }
   /**
@@ -73,10 +74,10 @@ namespace RFFGen
    * \param M structural (rank-one) tensor describing the initial orientation of muscle fibers for \f$F=I\f$, where \f$I\f$ is the unit matrix.
    * \param F deformation gradient
    */
-  template <class Matrix>
+  template < class Matrix , int offset = LinearAlgebra::dimension<Matrix>()>
   auto incompressibleMuscleTissue_Martins(double c, double b, double A, double a, const Matrix& M, const Matrix& F)
   {
-    return MuscleTissueDetail::generateIncompressibleMuscleTissue_Martins(c,b,A,a,M,F);
+    return MuscleTissueDetail::generateIncompressibleMuscleTissue_Martins<Matrix,offset>(c,b,A,a,M,F);
   }
 
   /**
@@ -93,10 +94,10 @@ namespace RFFGen
    * \param M structural (rank-one) tensor describing the initial orientation of muscle fibers for \f$F=I\f$, where \f$I\f$ is the unit matrix.
    * \param F deformation gradient
    */
-  template <class Matrix>
+  template < class Matrix , int offset = LinearAlgebra::dimension<Matrix>()>
   auto incompressibleMuscleTissue_Martins(const Matrix& M, const Matrix& F)
   {
-    return incompressibleMuscleTissue_Martins(0.387, 23.46, 0.584, 12.43, M, F);
+    return incompressibleMuscleTissue_Martins<Matrix,offset>(0.387, 23.46, 0.584, 12.43, M, F);
   }
 
   /**
@@ -116,10 +117,10 @@ namespace RFFGen
    * \param M structural (rank-one) tensor describing the initial orientation of muscle fibers for \f$F=I\f$, where \f$I\f$ is the unit matrix.
    * \param F deformation gradient
    */
-  template <class Inflation, class Compression, class Matrix>
+  template < class Inflation , class Compression , class Matrix , int offset = LinearAlgebra::dimension<Matrix>()>
   auto compressibleMuscleTissue_Martins(double c, double b, double A, double a, double d0, double d1, const Matrix& M, const Matrix& F)
   {
-    return MuscleTissueDetail::generateIncompressibleMuscleTissue_Martins(c,b,A,a,M,F) + volumetricPenalty<Inflation,Compression>(d0,d1,F);
+    return MuscleTissueDetail::generateIncompressibleMuscleTissue_Martins<Matrix,offset>(c,b,A,a,M,F) + volumetricPenalty<Inflation,Compression>(d0,d1,F);
   }
 
   /**
@@ -138,10 +139,10 @@ namespace RFFGen
    * \param M structural (rank-one) tensor describing the initial orientation of muscle fibers for \f$F=I\f$, where \f$I\f$ is the unit matrix.
    * \param F deformation gradient
    */
-  template <class Inflation, class Compression, class Matrix>
+  template < class Inflation , class Compression , class Matrix , int offset = LinearAlgebra::dimension<Matrix>()>
   auto compressibleMuscleTissue_Martins(double d0, double d1, const Matrix& M, const Matrix& F)
   {
-    return compressibleMuscleTissue_Martins<Inflation,Compression>(0.387, 23.46, 0.584, 12.43, d0, d1, M, F);
+    return compressibleMuscleTissue_Martins<Inflation,Compression,Matrix,offset>(0.387, 23.46, 0.584, 12.43, d0, d1, M, F);
   }
 }
 

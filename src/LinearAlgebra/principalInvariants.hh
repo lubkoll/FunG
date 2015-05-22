@@ -59,12 +59,19 @@ namespace RFFGen
         return computeCofactor<0,0>(A) + computeCofactor<1,1>(A) + computeCofactor<2,2>(A);
       }
 
+      template < class Matrix >
+      auto computeCofactors(const Matrix& A, std::integral_constant<int,-1>)
+      {
+        if(rows(A) == 2) return computeCofactors(A,std::integral_constant<int,2>());
+        /*if(rows(A) == 3)*/ return computeCofactors(A,std::integral_constant<int,3>());
+      }
 
       template <int row, class Matrix>
       auto symmetricCofactorDerivative(const Matrix& A, const Matrix& dA)
       {
         return computeCofactorDirectionalDerivative<row,row>(A,dA) + computeCofactorDirectionalDerivative<row,row>(dA,A);
       }
+
 
       template <class Matrix>
       auto computeSymmetricCofactorDerivatives(const Matrix& A, const Matrix& B, std::integral_constant<int,2>)
@@ -76,6 +83,15 @@ namespace RFFGen
       auto computeSymmetricCofactorDerivatives(const Matrix& A, const Matrix& B, std::integral_constant<int,3>)
       {
         return symmetricCofactorDerivative<0>(A,B) + symmetricCofactorDerivative<1>(A,B) + symmetricCofactorDerivative<2>(A,B);
+      }
+
+
+      template < class Matrix >
+      auto computeSymmetricCofactorDerivatives(const Matrix& A, const Matrix& B, std::integral_constant<int,-1>)
+      {
+        if(rows(A) == 2) return computeSymmetricCofactorDerivatives(A,B,std::integral_constant<int,2>());
+        /*if(rows(A) == 3)*/ return computeSymmetricCofactorDerivatives(A,B,std::integral_constant<int,3>());
+
       }
     }
     /**
@@ -144,7 +160,7 @@ namespace RFFGen
 
     private:
       Matrix A_;
-      std::remove_reference_t< at_t<Matrix> > resultOfD0 = 0.;
+      std::decay_t< at_t<Matrix> > resultOfD0 = 0.;
       DimIdentifier dimIdentifier;
     };
 
@@ -160,21 +176,21 @@ namespace RFFGen
      * \ingroup LinearAlgebraGroup
      * \brief Shifted first principal invariant \f$ \iota_1(A) - n \f$ for \f$ A\in\mathbb{R}^{n,n} \f$.
      */
-    template <class Matrix>
-    using ShiftedFirstPrincipalInvariant  = ShiftedInvariant< FirstPrincipalInvariant<Matrix>  , dimension<Matrix>() >;
+    template < class Matrix , int offset = dimension<Matrix>() >
+    using ShiftedFirstPrincipalInvariant  = ShiftedInvariant< FirstPrincipalInvariant<Matrix> , offset >;
 
     /**
      * \ingroup LinearAlgebraGroup
      * \brief Shifted second principal invariant \f$ \iota_2(A) - n \f$ for \f$ A\in\mathbb{R}^{n,n} \f$.
      */
-    template <class Matrix>
-    using ShiftedSecondPrincipalInvariant = ShiftedInvariant< SecondPrincipalInvariant<Matrix> , dimension<Matrix>() >;
+    template < class Matrix , int offset = dimension<Matrix>() >
+    using ShiftedSecondPrincipalInvariant = ShiftedInvariant< SecondPrincipalInvariant<Matrix> , offset >;
 
     /**
      * \ingroup LinearAlgebraGroup
      * \brief Shifted third principal invariant \f$ \iota_3(A) - 1 \f$ for \f$ A\in\mathbb{R}^{n,n} \f$.
      */
-    template <class Matrix>
+    template < class Matrix >
     using ShiftedThirdPrincipalInvariant  = ShiftedInvariant< ThirdPrincipalInvariant<Matrix>   , 1 >;
   }
 }

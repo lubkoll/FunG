@@ -25,7 +25,6 @@
 #include <utility>
 
 #include "../Util/base.hh"
-#include "../Util/computeScale.hh"
 #include "../Util/computeSum.hh"
 #include "../Util/computeProduct.hh"
 #include "../Util/derivativeWrappers.hh"
@@ -33,6 +32,14 @@
 
 namespace RFFGen
 {
+  /**
+   * \cond DOCUMENT_FORWARD_DECLARATIONS
+   */
+  template <class> struct Chainer;
+  /**
+   * \endcond
+   */
+
   namespace MathematicalOperations
   {
     /**
@@ -49,27 +56,19 @@ namespace RFFGen
      * \brief %Squared function (F must satisfy the requirements of Concepts::FunctionConcept).
      */
     template <class F, class = FunctionConceptCheck<F> >
-    struct Squared : Base
+    struct Squared : Base , Chainer< Squared< F , FunctionConceptCheck<F> > >
     {
+      using Chainer< Squared< F , FunctionConceptCheck<F> > >::operator();
     private:
-      template <class IndexedArg>
-      using D1Type = ComputeScale< ComputeProduct< D0<F> , D1<F,IndexedArg> > >;
-
       template < class IndexedArgX , class IndexedArgY >
       using D2Sum = ComputeSum< ComputeProduct< D0<F> , D2<F,IndexedArgX,IndexedArgY> >,
       ComputeProduct< D1<F,IndexedArgY> , D1<F,IndexedArgX> > >;
-
-      template < class IndexedArgX , class IndexedArgY >
-      using D2Type = ComputeScale< D2Sum< IndexedArgX , IndexedArgY > >;
 
       template < class IndexedArgX , class IndexedArgY , class IndexedArgZ >
       using D3Sum = ComputeSum< ComputeProduct< D0<F> , D3<F,IndexedArgX,IndexedArgY,IndexedArgZ> > ,
       ComputeProduct< D1<F,IndexedArgZ> , D2<F,IndexedArgX,IndexedArgY> > ,
       ComputeProduct< D1<F,IndexedArgY> , D2<F,IndexedArgX,IndexedArgZ> > ,
       ComputeProduct< D2<F,IndexedArgY,IndexedArgZ> , D1<F,IndexedArgX> > >;
-
-      template < class IndexedArgX , class IndexedArgY , class IndexedArgZ >
-      using D3Type = ComputeScale< D3Sum< IndexedArgX , IndexedArgY , IndexedArgZ > >;
 
     public:
       /// Default constructor. May leave member variables uninitialized! Call update before using evaluation.
@@ -125,10 +124,10 @@ namespace RFFGen
        * \brief First directional derivative.
        * \param dx direction for which the derivative is computed
        */
-      template < int id , class Arg , class IndexedArg = IndexedType<Arg,id> , class = std::enable_if_t< D1Type<IndexedArg>::present > >
+      template < int id , class Arg , class IndexedArg = IndexedType<Arg,id> , class = std::enable_if_t< ComputeProduct< D0<F> , D1<F,IndexedArg> >::present > >
       auto d1(Arg const& dx) const
       {
-        return D1Type<IndexedArg>( 2. , ComputeProduct< D0<F> , D1<F,IndexedArg> >( D0<F>(f) , D1<F,IndexedArg>(f,dx) ) )();
+        return 2 * f.d0() * f.template d1<id>(dx);
       }
 
       /**
@@ -139,15 +138,12 @@ namespace RFFGen
       template < int idx , int idy , class ArgX , class ArgY ,
                  class IndexedArgX = IndexedType<ArgX,idx> ,
                  class IndexedArgY = IndexedType<ArgY,idy> ,
-                 class = std::enable_if_t< D2Type<IndexedArgX,IndexedArgY>::present > >
+                 class = std::enable_if_t< D2Sum<IndexedArgX,IndexedArgY>::present > >
       auto d2(ArgX const& dx, ArgY const& dy) const
       {
-        return D2Type<IndexedArgX,IndexedArgY>( 2.,
-                                                D2Sum<IndexedArgX,IndexedArgY>
-                                                ( ComputeProduct< D0<F>             , D2<F,IndexedArgX,IndexedArgY> >( D0<F>(f)        , D2<F,IndexedArgX,IndexedArgY>(f,dx,dy) ),
+        return 2 * D2Sum<IndexedArgX,IndexedArgY>(  ComputeProduct< D0<F>             , D2<F,IndexedArgX,IndexedArgY> >( D0<F>(f)        , D2<F,IndexedArgX,IndexedArgY>(f,dx,dy) ),
                                                   ComputeProduct< D1<F,IndexedArgY> , D1<F,IndexedArgX> >( D1<F,IndexedArgY>(f,dy)     , D1<F,IndexedArgX>(f,dx) )
-                                                  )
-                                                )();
+                                             )();
       }
 
       /**
@@ -160,17 +156,14 @@ namespace RFFGen
                  class IndexedArgX = IndexedType<ArgX,idx> ,
                  class IndexedArgY = IndexedType<ArgY,idy> ,
                  class IndexedArgZ = IndexedType<ArgZ,idz> ,
-                 class = std::enable_if_t< D3Type<IndexedArgX,IndexedArgY,IndexedArgZ>::present > >
+                 class = std::enable_if_t< D3Sum<IndexedArgX,IndexedArgY,IndexedArgZ>::present > >
       auto d3(ArgX const& dx, ArgY const& dy, ArgZ const& dz) const
       {
-        return D3Type<IndexedArgX,IndexedArgY,IndexedArgZ>
-            ( 2.,
-              D3Sum<IndexedArgX,IndexedArgY,IndexedArgZ>
+        return 2 * D3Sum<IndexedArgX,IndexedArgY,IndexedArgZ>
               ( ComputeProduct< D0<F> , D3<F,IndexedArgX,IndexedArgY,IndexedArgZ> > ( D0<F>(f) , D3<F,IndexedArgX,IndexedArgY,IndexedArgZ>(f,dx,dy,dz) ),
                 ComputeProduct< D1<F,IndexedArgZ> , D2<F,IndexedArgX,IndexedArgY> > ( D1<F,IndexedArgZ>(f,dz) , D2<F,IndexedArgX,IndexedArgY>(f,dx,dy) ),
                 ComputeProduct< D1<F,IndexedArgY> , D2<F,IndexedArgX,IndexedArgZ> > ( D1<F,IndexedArgY>(f,dy) , D2<F,IndexedArgX,IndexedArgZ>(f,dx,dz) ),
                 ComputeProduct< D2<F,IndexedArgY,IndexedArgZ> , D1<F,IndexedArgX> > ( D2<F,IndexedArgY,IndexedArgZ>(f,dy,dz) , D1<F,IndexedArgX>(f,dx) )
-                )
               )();
       }
 

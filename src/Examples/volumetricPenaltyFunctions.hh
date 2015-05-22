@@ -22,7 +22,7 @@
 #define RFFGEN_EXAMPLES_VOLUMETRIC_PENALTY_FUNCTIONS_HH
 
 #include "../LinearAlgebra/determinant.hh"
-#include "../CMath/ln.hh"
+#include "../CMath/log.hh"
 #include "../CMath/pow.hh"
 #include "../generate.hh"
 
@@ -32,10 +32,9 @@ namespace RFFGen
   template <class Inflation, class Compression, class Matrix>
   auto volumetricPenalty(double d0, double d1, const Matrix& A)
   {
-    auto det = LinearAlgebra::Determinant<Matrix>(LinearAlgebra::unitMatrix<Matrix>());
+    auto det = LinearAlgebra::Determinant<Matrix>(A);
     auto f = ( d0*Inflation(det()) + d1*Compression(det()) ) << det;
     auto g = f - f.d0();
-    g.update(A);
     return g;
   }
 

@@ -25,7 +25,6 @@
 #include <utility>
 
 #include "../Util/base.hh"
-#include "../Util/computeScale.hh"
 #include "../Util/computeSum.hh"
 #include "../Util/computeProduct.hh"
 #include "../Util/derivativeWrappers.hh"
@@ -33,12 +32,20 @@
 
 namespace RFFGen
 {
+  /**
+   * \cond DOCUMENT_FORWARD_DECLARATIONS
+   */
+  template <class> struct Chainer;
+  /**
+   * \endcond
+   */
+
   namespace MathematicalOperations
   {
     /**
      * \cond DOCUMENT_FORWARD_DECLARATIONS
      */
-      template <class> struct FunctionConceptCheck;
+    template <class> struct FunctionConceptCheck;
     /**
      * \endcond
      */
@@ -51,8 +58,9 @@ namespace RFFGen
       template <class F, class G,
               class = FunctionConceptCheck<F> ,
               class = FunctionConceptCheck<G> >
-    struct Product: Base
+    struct Product: Base , Chainer<Product<F,G,FunctionConceptCheck<F>,FunctionConceptCheck<G> > >
     {
+      using Chainer<Product<F,G,FunctionConceptCheck<F>,FunctionConceptCheck<G> > >::operator();
     private:
       template <class IndexedArg>
       using D1Type = ComputeSum< ComputeProduct< D1<F,IndexedArg> , D0<G> >,

@@ -45,14 +45,14 @@ namespace RFFGen
    * @param c1 scaling of the product of shifted first and second principal invariant
    * @param F initial deformation gradient
    */
-  template <class Matrix>
+  template < class Matrix , int offset = LinearAlgebra::dimension<Matrix>()>
   auto incompressibleSkin_Hendriks(double c0, double c1, const Matrix& F)
   {
     using namespace LinearAlgebra;
-    using I1 = ShiftedFirstPrincipalInvariant<Matrix>;
-    using I2 = ShiftedSecondPrincipalInvariant<Matrix>;
+    using I1 = ShiftedFirstPrincipalInvariant<Matrix,offset>;
+    using I2 = ShiftedSecondPrincipalInvariant<Matrix,offset>;
 
-    auto S = CauchyGreenStrainTensor<Matrix>(F);
+    auto S = LeftCauchyGreenStrainTensor<Matrix>(F);
     return ( c0*I1() + c1*I1()*I2() ) << S;
 
   }
@@ -69,10 +69,10 @@ namespace RFFGen
    *
    * @param F initial deformation gradient
    */
-  template <class Matrix>
+  template <class Matrix , int offset = LinearAlgebra::dimension<Matrix>()>
   auto incompressibleSkin_Hendriks(const Matrix& F)
   {
-    return incompressibleSkin_Hendriks(9.4,82.,F);
+    return incompressibleSkin_Hendriks<Matrix,offset>(9.4,82.,F);
   }
 
 
@@ -89,14 +89,14 @@ namespace RFFGen
    * @param d1 scaling of the penalty function for compression
    * @param F initial deformation gradient
    */
-  template <class InflationPenalty, class CompressionPenalty, class Matrix>
+  template <class InflationPenalty, class CompressionPenalty, class Matrix, int offset = LinearAlgebra::dimension<Matrix>()>
   auto compressibleSkin_Hendriks(double c0, double c1, double d0, double d1, const Matrix& F)
   {
     using namespace LinearAlgebra;
-    using I1 = ShiftedFirstPrincipalInvariant<Matrix>;
-    using I2 = ShiftedSecondPrincipalInvariant<Matrix>;
+    using I1 = ShiftedFirstPrincipalInvariant<Matrix,offset>;
+    using I2 = ShiftedSecondPrincipalInvariant<Matrix,offset>;
 
-    auto S = CauchyGreenStrainTensor<Matrix>(F);
+    auto S = LeftCauchyGreenStrainTensor<Matrix>(F);
     return ( ( c0*I1() + c1*I1()*I2() ) << S ) + volumetricPenalty<InflationPenalty,CompressionPenalty>(d0,d1,F);
 
   }
@@ -115,10 +115,10 @@ namespace RFFGen
    * @param d1 scaling of the penalty function for compression
    * @param F initial deformation gradient
    */
-  template <class InflationPenalty, class CompressionPenalty, class Matrix>
+  template < class InflationPenalty , class CompressionPenalty , class Matrix , int offset = LinearAlgebra::dimension<Matrix>() >
   auto compressibleSkin_Hendriks(double d0, double d1, const Matrix& F)
   {
-    return compressibleSkin_Hendriks<InflationPenalty,CompressionPenalty>(9.4,82.,d0,d1,F);
+    return compressibleSkin_Hendriks<InflationPenalty,CompressionPenalty,Matrix,offset>(9.4,82.,d0,d1,F);
   }
 }
 

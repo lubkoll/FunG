@@ -26,5 +26,6 @@
 #include "MathematicalOperations/scale.hh"
 #include "MathematicalOperations/squared.hh"
 #include "MathematicalOperations/sum.hh"
+#include "Util/chainer.hh"
 
 #endif // FUNCTION_GENERATION_OPERATIONS_HH

@@ -21,16 +21,16 @@
 #ifndef ADCOMPARISON_EXAMPLE_2_HH
 #define ADCOMPARISON_EXAMPLE_2_HH
 
+#include <chrono>
 #include <iostream>
 #include <vector>
-
-#include <boost/timer/timer.hpp>
-
 
 #include <fadiff.h>
 #include <badiff.h>
 
 #include <Sacado.hpp>
+
+#include <adept.h>
 
 #include <casadi/casadi.hpp>
 #include <casadi/core/function/custom_function.hpp>
@@ -90,17 +90,19 @@ namespace Example_2
 
   };
 
+  template <class adouble>
+  adouble adeptFunc(const adouble x)
+  {
+    adouble z = exp(sqrt(x))+1;
+    return x*z+sin(z);
+  }
+
   auto generateTestFunction()
   {
     using namespace RFFGen;
-//    auto v0 = variable<0>(1.);
-//    auto f = ( v0 * identity(1.) ) << ( Sqrt() << v0);
-//    auto f = ( ( Pow<2>() << ( Exp() + 1 ) ) + ( sine << ( Exp() + 1 ) ) ) << Sqrt();
-//    auto f = ( v0 * identity(1.) ) << ( Sqrt() << v0 );
-//    auto f = Pow<3>() << ( Sqrt() << v0 );
-    auto f = ( identity(1.)*( ( Exp() << Sqrt() ) + 1 ) ) + ( sine << ( ( Exp() << Sqrt() ) + 1 ) );
-//    auto f = ( ( v0 * identity(1.) ) + sine ) << ( ( ( Exp() + 1 ) << Sqrt() ) << v0 );
-//    auto f = ( Identity<double>() + Sin() ) << ( Exp() << Sqrt() ) + 1;
+    using namespace RFFGen::CMath;
+    auto g = exp(root) + 1;//( Exp() << Sqrt() ) + 1;
+    auto f = identity(1.) * g + sin(g);
     return Finalize<decltype(f),true>(f);
   }
 
@@ -145,7 +147,7 @@ void ADComparison_Example_2()
 {
   using std::cout;
   using std::endl;
-  using namespace FunctionGeneration;
+  using namespace std::chrono;
   auto iter = 10u * 1000u * 1000u;
 
   cout << "Comparing different automatic differentation implementations\n" << endl;
@@ -157,41 +159,41 @@ void ADComparison_Example_2()
 
   cout << "FADBAD++ (forward)" << endl;
   Example_2::FDiff<Example_2::Func> FFunc;         // Functor for function and derivatives
-  boost::timer::cpu_timer timer;
+  auto startTime = high_resolution_clock::now();
   for(auto i=0u; i<iter; ++i)
   {
     x*=1.00000001;
     f=FFunc(dfdx,x);    // Evaluate function and derivatives
   }
-  cout << "computation time: " << boost::timer::format(timer.elapsed());
+  cout << "computation time: " << duration_cast<milliseconds>(high_resolution_clock::now() - startTime).count()/1000. << "s\n";
   cout << "function value: " << f << endl;
   cout << "first derivative: " << dfdx << endl << endl;
   x=1;
   cout << "FADBAD++ (backward)" << endl;
   Example_2::BDiff<Example_2::Func> BFunc;         // Functor for function and derivatives
-  timer.stop(); timer.start();
+  startTime = high_resolution_clock::now();
   for(auto i=0u; i<iter; ++i){
     x*=1.00000001;
     f=BFunc(dfdx,x);    // Evaluate function and derivatives
   }
-  cout << "computation time: " << boost::timer::format(timer.elapsed());
+  cout << "computation time: " << duration_cast<milliseconds>(high_resolution_clock::now() - startTime).count()/1000. << "s\n";
   cout << "function value: " << f << endl;
   cout << "first derivative: " << dfdx << endl << endl;
 
   cout << "SACADO (FAD): FAILED\n" << endl;
   cout << "SACADO (ELRFAD): FAILED\n" << endl;
 //  int num_deriv = 1;
-  /// SACADO (FAD) and SACADO (ELRFAD) fails on this example
+//  // SACADO (FAD) and SACADO (ELRFAD) fails on this example
 //  x=1;
 //  cout << "SACADO (FAD)" << endl;
-//  Sacado::Fad::DFad<double> rfad;
-//  timer.stop(); timer.start();
+//  Sacado::Fad::SFad<double,1> rfad;
+//  startTime = high_resolution_clock::now();
 //  for(auto i=0u; i<iter; ++i){
 //    x*=1.00000001;
-//    Sacado::Fad::DFad<double> xfad(num_deriv,0,x);
+//    Sacado::Fad::SFad<double,1> xfad(num_deriv,0,x);
 //    rfad = Example_2::func(xfad);
 //  }
-//  cout << "computation time: " << boost::timer::format(timer.elapsed());
+//  cout << "computation time: " << duration_cast<milliseconds>(high_resolution_clock::now() - startTime).count()/1000. << "s\n";
 //  cout << "function value: " << rfad.val() << endl;
 //  cout << "first derivative: " << rfad.dx(0) << endl << endl;
 
@@ -214,7 +216,7 @@ void ADComparison_Example_2()
       outs = { Sparsity::dense(1,1) };
 
   CustomFunction casadiF(Example_2::casadiFunction,ins,outs);
-  timer.stop(); timer.start();
+  startTime = high_resolution_clock::now();
   std::remove_reference_t<decltype(casadiF.output())> cf;
   for(auto i=0u; i<iter; ++i)
   {
@@ -223,28 +225,47 @@ void ADComparison_Example_2()
     casadiF.evaluate();
     cf = casadiF.output();
   }
-  cout << "computation time: " << boost::timer::format(timer.elapsed());
+  cout << "computation time: " << duration_cast<milliseconds>(high_resolution_clock::now() - startTime).count()/1000. << "s\n";
   cout << "function value: " << cf << endl;
+  x=1;
 
+  cout << "ADEPT" << endl;
+  startTime = high_resolution_clock::now();
+  adept::Stack stack;
+  using adept::adouble;
+  adouble ax = x;
+  adouble y;
+  for(auto i=0u; i<iter; ++i)
+  {
+    x*=1.00000001;
+    ax = x;
+    stack.new_recording();
+    y = Example_2::adeptFunc(ax);
+    y.set_gradient(1.);
+    stack.compute_adjoint();
+    f = y.value();
+    dfdx = ax.get_gradient();
+  }
+  cout << "computation time: " << duration_cast<milliseconds>(high_resolution_clock::now()-startTime).count()/1000. << "s\n";
+  cout << "function value: " << f << endl;
+  cout << "first derivative: " << dfdx << endl << endl;
   x=1;
   cout << "SFGEN" << endl;
   auto testF = Example_2::generateTestFunction();
-  timer.stop(); timer.start();
-
+  startTime = high_resolution_clock::now();
   for(auto i=0u; i<iter; ++i)
   {
     x*=1.00000001;
     testF.update(x);
     f = testF();
-    dfdx = testF.template d1<0>();
+    dfdx = testF.d1();
   }
-  cout << "computation time: " << boost::timer::format(timer.elapsed(),9);
+  cout << "computation time: " << duration_cast<milliseconds>(high_resolution_clock::now() - startTime).count()/1000. << "s\n";
   cout << "function value: " << f << endl;
   cout << "first derivative: " << dfdx << endl << endl;
 
   x=1;
-  timer.stop(); timer.start();
-
+  startTime = high_resolution_clock::now();
   Example_2::Func function;
   for(auto i=0u; i<iter; ++i)
   {
@@ -252,19 +273,19 @@ void ADComparison_Example_2()
     f = function(x);
     dfdx = function.d1(x);
   }
-  cout << "manual computation time: " << boost::timer::format(timer.elapsed(),9);
+  cout << "manual computation time: " << duration_cast<milliseconds>(high_resolution_clock::now() - startTime).count()/1000. << "s\n";
   cout << "function value: " << f << endl;
   cout << "first derivative: " << dfdx << endl << endl;
   x=1;
-  timer.stop(); timer.start();
   Example_2::Func2<double> optfunction;
+  startTime = high_resolution_clock::now();
   for(auto i=0u; i<iter; ++i)
   {
     x*=1.00000001;
     f = optfunction(x);
     dfdx = optfunction.d1(x);
   }
-  cout << "optimized manual computation time: " << boost::timer::format(timer.elapsed(),9);
+  cout << "optimized manual computation time: " << duration_cast<milliseconds>(high_resolution_clock::now() - startTime).count()/1000. << "s\n";
   cout << "function value: " << f << endl;
   cout << "first derivative: " << dfdx << endl << endl;
 }

@@ -32,10 +32,10 @@ namespace RFFGen
   namespace Detail
   {
     template <class Matrix,class FirstInvariant>
-    using FirstPrincipalInvariantBase = MathematicalOperations::Product< MathematicalOperations::Chain<CMath::OverThirdRoot , LinearAlgebra::ThirdPrincipalInvariant<Matrix> > , FirstInvariant >;
+    using FirstPrincipalInvariantBase  = MathematicalOperations::Product< MathematicalOperations::Chain<CMath::Pow<-1,3>  , LinearAlgebra::ThirdPrincipalInvariant<Matrix> > , FirstInvariant >;
 
     template <class Matrix,class SecondInvariant>
-    using SecondPrincipalInvariantBase = MathematicalOperations::Product< MathematicalOperations::Chain<CMath::OverThirdRootSquared , LinearAlgebra::ThirdPrincipalInvariant<Matrix> > , SecondInvariant >;
+    using SecondPrincipalInvariantBase = MathematicalOperations::Product< MathematicalOperations::Chain<CMath::Pow<-2,3> , LinearAlgebra::ThirdPrincipalInvariant<Matrix> > , SecondInvariant >;
   }
 
   template <class Matrix, class FirstInvariant>
