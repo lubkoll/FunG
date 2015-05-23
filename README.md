@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/lubkoll/RFFGen.svg?branch=master)](https://travis-ci.org/lubkoll/RFFGen/builds)
+
 # RFFGen
 A fast and easy to use function generation library that gives provides access to the first three derivatives of a function.
 
