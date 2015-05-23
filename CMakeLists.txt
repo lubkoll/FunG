@@ -49,7 +49,6 @@ add_subdirectory(test/CMath)
 add_executable(
     unit_tests
     ${SRC_LIST}
-    test/CMath/arcsine_unittest
     )
 
 add_dependencies(unit_tests gtest)
