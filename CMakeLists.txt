@@ -12,11 +12,12 @@ set(CMAKE_MODULE_PATH
 
 include(ConfigSafeGuards)
 
+set(CMAKE_BUILD_TYPE Debug)
 if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
     set(CMAKE_CXX_FLAGS         "-Wall -Wno-unknown-pragmas -Wno-sign-compare -Woverloaded-virtual -Wwrite-strings -Wno-unused")
-    set(CMAKE_CXX_FLAGS_DEBUG   "-O0 -g3")
-    set(CMAKE_CXX_FLAGS_RELEASE "-O3")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage -fprofile-arcs -ftest-coverage -std=c++1y")
+    set(CMAKE_CXX_FLAGS_DEBUG   "-O0 -g")
+    set(CMAKE_CXX_FLAGS_RELEASE "-O0 -g")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage -std=c++1y")
 #    set(CMAKE_CXX_LINK_FLAGS "-fprofile-arcs -ftest-coverage")
 endif()
 
@@ -45,11 +46,13 @@ set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest-
 set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest_main.cc PROPERTIES GENERATED 1)
 
 aux_source_directory(test SRC_LIST)
-aux_source_directory(test/CMath SRC_LIST)
+add_subdirectory(test/CMath)
+#aux_source_directory(test/CMath SRC_LIST)
 
 add_executable(
     unit_tests
     ${SRC_LIST}
+    test/CMath/arcsine_unittest
     )
 
 add_dependencies(unit_tests gtest)
@@ -58,4 +61,10 @@ target_link_libraries(
     unit_tests
     gtest
     pthread
+    gcov
     )
+    
+include(CTest)
+enable_testing()
+
+add_test(unit ${PROJECT_BINARY_DIR}/unit_tests)
