@@ -23,11 +23,10 @@
 
 #include <cmath>
 #include "../Util/base.hh"
+#include "../Util/chainer.hh"
 
 namespace RFFGen
 {
-  template <class> struct Chainer;
-
   namespace CMath
   {
     /**
