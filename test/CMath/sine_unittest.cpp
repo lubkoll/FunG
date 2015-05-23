@@ -1,4 +1,3 @@
-#include "../../src/Util/chainer.hh"
 #include "../../src/CMath/sine.hh"
 
 #include <gtest/gtest.h>
