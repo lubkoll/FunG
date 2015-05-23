@@ -47,7 +47,7 @@ set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest_
 set_source_files_properties(${PROJECT_SOURCE_DIR}/test/test.cpp PROPERTIES COMPILE_FLAGS -std=c++1y)
 
 aux_source_directory(test SRC_LIST)
-#aux_source_directory(test/CMath SRC_LIST)
+aux_source_directory(test/CMath SRC_LIST)
 
 add_executable(
     unit_tests
