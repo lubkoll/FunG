@@ -10,7 +10,7 @@ add_library (tan_unittest OBJECT tan_unittest.cpp)
 
 # Make sure the compiler can find include files for our Hello library
 # when other libraries or executables link to Hello
-target_include_directories (arcsine_unittest PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+#target_include_directories (arcsine_unittest PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 #target_include_directories (cosine_unittest PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 #target_include_directories (sine_unittest PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 #target_include_directories (exp_unittest PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
