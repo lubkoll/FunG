@@ -11,9 +11,10 @@ set(CMAKE_MODULE_PATH
     )
 
 include(ConfigSafeGuards)
+include(CodeCoverage)
 
 if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
-    set(CMAKE_CXX_FLAGS         "-g -O0 -Wall -Wno-unknown-pragmas -Wno-sign-compare -Woverloaded-virtual -Wwrite-strings -Wno-unused -fprofile-arcs -ftest-coverage -std=c++1y")
+    set(CMAKE_CXX_FLAGS         "-g -O0 -fprofile-arcs -ftest-coverage -std=c++1y")
 #    set(CMAKE_CXX_LINK_FLAGS "-fprofile-arcs -ftest-coverage")
 endif()
 
@@ -59,8 +60,9 @@ target_link_libraries(
     pthread
     gcov
     )
-    
-include(CTest)
-enable_testing()
+ 
+SETUP_TARGET_FOR_COVERAGE(unit_tests_coverage unit_tests coverage)
+#include(CTest)
+#enable_testing()
 
-add_test(unit ${PROJECT_BINARY_DIR}/unit_tests)
+#add_test(unit ${PROJECT_BINARY_DIR}/unit_tests)

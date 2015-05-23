@@ -1,6 +1,6 @@
 # Create a library called "Hello" which includes the source file "hello.cxx".
 # The extension is already found. Any number of sources could be listed here.
-add_library (arcsine_unittest OBJECT arcsine_unittest.cpp)
+add_library (arcsine_unittest arcsine_unittest.cpp)
 add_library (cosine_unittest OBJECT cosine_unittest.cpp)
 add_library (sine_unittest OBJECT sine_unittest.cpp)
 add_library (exp_unittest OBJECT exp_unittest.cpp)
