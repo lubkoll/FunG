@@ -1,13 +1,27 @@
 language: cpp
-install:
-  - sudo pip install cpp-coveralls
+
 compiler:
-  - gcc  
+  - gcc 
+  
+before_install:
+  - if [ "$CXX" == "g++" ]; then sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test; fi
+  
+  - sudo apt-get update -qq
+  
+install:
+  - if [ "$CXX" == "g++" ]; then sudo apt-get install -qq g++-4.9; fi
+  
+  - if [ "$CXX" == "g++" ]; then export CXX="g++-4.9"; fi
+  
+  - sudo pip install cpp-coveralls
+  
 script:
+  - $CXX --version
   - mkdir build
   - cd build
   - cmake ..
   - make
   - ./unit_tests
+  
 after_success:
   - coveralls --root .. -E ".*external.*" -E ".*CMakeFiles.*" -E ".*test/.*.cpp.*"
