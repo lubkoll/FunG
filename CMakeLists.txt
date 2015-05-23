@@ -44,7 +44,7 @@ add_dependencies(gtest git_update)
 set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest-all.cc  PROPERTIES GENERATED 1)
 set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest_main.cc PROPERTIES GENERATED 1)
 
-#set_source_files_properties(${PROJECT_SOURCE_DIR}/test/test.cpp PROPERTIES COMPILE_FLAGS -std=c++11)
+set_source_files_properties(${PROJECT_SOURCE_DIR}/test/test.cpp PROPERTIES COMPILE_FLAGS -std=c++1y)
 
 aux_source_directory(test SRC_LIST)
 #aux_source_directory(test/CMath SRC_LIST)
