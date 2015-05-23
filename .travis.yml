@@ -1,17 +1,14 @@
 language: cpp
-
 compiler:
   - gcc 
-  
 before_install:
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo apt-get update -qq
   - sudo apt-get install -qq g++-4.9
   - export CXX="g++-4.9" CC="gcc-4.9"
-  
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 50
 install:
   - sudo pip install cpp-coveralls
-  
 script:
   - $CXX --version
   - mkdir build
@@ -19,6 +16,5 @@ script:
   - cmake ..
   - make
   - ./unit_tests
-  
 after_success:
   - coveralls --root .. -E ".*external.*" -E ".*CMakeFiles.*" -E ".*test/.*.cpp.*"
