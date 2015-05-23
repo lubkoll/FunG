@@ -1,6 +1,8 @@
 language: cpp
 install:
   - sudo pip install cpp-coveralls
+compiler:
+  - gcc  
 script:
   - mkdir build
   - cd build
