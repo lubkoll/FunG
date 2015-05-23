@@ -17,7 +17,8 @@ if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
     set(CMAKE_CXX_FLAGS_DEBUG   "-O0 -g3")
     set(CMAKE_CXX_FLAGS_RELEASE "-O3")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
-#   set(CMAKE_CXX_LINK_FLAGS "-fprofile-arcs -ftest-coverage")
+    set(CMAKE_CXX_LINK_FLAGS "-fprofile-arcs -ftest-coverage")
+    set(CMAKE_CXX_FLAGS "-std=c++1y")
 endif()
 
 include_directories(
@@ -43,9 +44,6 @@ add_dependencies(gtest git_update)
 
 set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest-all.cc  PROPERTIES GENERATED 1)
 set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest_main.cc PROPERTIES GENERATED 1)
-
-set(CMAKE_CXX_FLAGS "-std=c++1y")
-#set_source_files_properties(${PROJECT_SOURCE_DIR}/test/test.cpp PROPERTIES COMPILE_FLAGS -std=c++1y)
 
 aux_source_directory(test SRC_LIST)
 aux_source_directory(test/CMath SRC_LIST)
