@@ -68,18 +68,19 @@ set(COVERAGE_SRCS
     ${TEST_SRC}/CMath/tan_unittest.cpp
     )
 
-coveralls_setup( "${COVERAGE_SRCS}" ON "${PROJECT_SOURCE_DIR}/CMakeModules")
+coveralls_setup( "${COVERAGE_SRCS}" ON "${PROJECT_SOURCE_DIR}/cmake")
 
+enable_testing()
 add_executable(
     unit_tests
     ${SRC_LIST}
-    ${TEST_LIBS}
     )
 
 add_dependencies(unit_tests gtest)
 
 target_link_libraries(
     unit_tests
+    ${TEST_LIBS}
     gtest
     pthread
     gcov
@@ -87,6 +88,5 @@ target_link_libraries(
  
 #SETUP_TARGET_FOR_COVERAGE(unit_tests_coverage unit_tests coverage)
 #include(CTest)
-enable_testing()
 
 add_test(unit ${PROJECT_BINARY_DIR}/unit_tests)
