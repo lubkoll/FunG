@@ -1,12 +1,12 @@
 # Create a library called "Hello" which includes the source file "hello.cxx".
 # The extension is already found. Any number of sources could be listed here.
 add_library (arcsine_unittest arcsine_unittest.cpp)
-add_library (cosine_unittest OBJECT cosine_unittest.cpp)
-add_library (sine_unittest OBJECT sine_unittest.cpp)
-add_library (exp_unittest OBJECT exp_unittest.cpp)
-add_library (log_unittest OBJECT log_unittest.cpp)
-add_library (pow_unittest OBJECT pow_unittest.cpp)
-add_library (tan_unittest OBJECT tan_unittest.cpp)
+add_library (cosine_unittest cosine_unittest.cpp)
+add_library (sine_unittest sine_unittest.cpp)
+add_library (exp_unittest exp_unittest.cpp)
+add_library (log_unittest log_unittest.cpp)
+add_library (pow_unittest pow_unittest.cpp)
+add_library (tan_unittest tan_unittest.cpp)
 
 # Make sure the compiler can find include files for our Hello library
 # when other libraries or executables link to Hello
