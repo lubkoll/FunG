@@ -1,124 +1,97 @@
-# Check prereqs
-FIND_PROGRAM( GCOV_PATH gcov )
-FIND_PROGRAM( LCOV_PATH lcov )
-FIND_PROGRAM( GENHTML_PATH genhtml )
-FIND_PROGRAM( GCOVR_PATH gcovr PATHS ${CMAKE_SOURCE_DIR}/tests)
+function(coveralls_setup _COVERAGE_SRCS _COVERALLS_UPLOAD)
 
-IF(NOT GCOV_PATH)
-	MESSAGE(FATAL_ERROR "gcov not found! Aborting...")
-ENDIF() # NOT GCOV_PATH
+	if (ARGC GREATER 2)
+		set(_CMAKE_SCRIPT_PATH ${ARGN})
+		message("Coveralls: Using alternate CMake script dir: ${_CMAKE_SCRIPT_PATH}")
+	else()
+		set(_CMAKE_SCRIPT_PATH ${PROJECT_SOURCE_DIR}/cmake)
+	endif()
 
-IF(NOT CMAKE_COMPILER_IS_GNUCXX)
-	# Clang version 3.0.0 and greater now supports gcov as well.
-	MESSAGE(WARNING "Compiler is not GNU gcc! Clang Version 3.0.0 and greater supports gcov as well, but older versions don't.")
+	if (NOT EXISTS "${_CMAKE_SCRIPT_PATH}/CoverallsClear.cmake")
+		message(FATAL_ERROR "Coveralls: Missing ${_CMAKE_SCRIPT_PATH}/CoverallsClear.cmake")
+	endif()
 
-	IF(NOT "${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
-		MESSAGE(FATAL_ERROR "Compiler is not GNU gcc! Aborting...")
-	ENDIF()
-ENDIF() # NOT CMAKE_COMPILER_IS_GNUCXX
+	if (NOT EXISTS "${_CMAKE_SCRIPT_PATH}/CoverallsGenerateGcov.cmake")
+		message(FATAL_ERROR "Coveralls: Missing ${_CMAKE_SCRIPT_PATH}/CoverallsGenerateGcov.cmake")
+	endif()
 
-SET(CMAKE_CXX_FLAGS_COVERAGE
-    "-g -O0 --coverage -fprofile-arcs -ftest-coverage"
-    CACHE STRING "Flags used by the C++ compiler during coverage builds."
-    FORCE )
-SET(CMAKE_C_FLAGS_COVERAGE
-    "-g -O0 --coverage -fprofile-arcs -ftest-coverage"
-    CACHE STRING "Flags used by the C compiler during coverage builds."
-    FORCE )
-SET(CMAKE_EXE_LINKER_FLAGS_COVERAGE
-    ""
-    CACHE STRING "Flags used for linking binaries during coverage builds."
-    FORCE )
-SET(CMAKE_SHARED_LINKER_FLAGS_COVERAGE
-    ""
-    CACHE STRING "Flags used by the shared libraries linker during coverage builds."
-    FORCE )
-MARK_AS_ADVANCED(
-    CMAKE_CXX_FLAGS_COVERAGE
-    CMAKE_C_FLAGS_COVERAGE
-    CMAKE_EXE_LINKER_FLAGS_COVERAGE
-    CMAKE_SHARED_LINKER_FLAGS_COVERAGE )
+	# When passing a CMake list to an external process, the list
+	# will be converted from the format "1;2;3" to "1 2 3".
+	# This means the script we're calling won't see it as a list
+	# of sources, but rather just one long path. We remedy this
+	# by replacing ";" with "*" and then reversing that in the script
+	# that we're calling.
+	# http://cmake.3232098.n2.nabble.com/Passing-a-CMake-list-quot-as-is-quot-to-a-custom-target-td6505681.html
+	set(COVERAGE_SRCS_TMP ${_COVERAGE_SRCS})
+	set(COVERAGE_SRCS "")
+	foreach (COVERAGE_SRC ${COVERAGE_SRCS_TMP})
+		set(COVERAGE_SRCS "${COVERAGE_SRCS}*${COVERAGE_SRC}")
+	endforeach()
 
-IF ( NOT (CMAKE_BUILD_TYPE STREQUAL "Debug" OR CMAKE_BUILD_TYPE STREQUAL "Coverage"))
-  MESSAGE( WARNING "Code coverage results with an optimized (non-Debug) build may be misleading" )
-ENDIF() # NOT CMAKE_BUILD_TYPE STREQUAL "Debug"
+	#message("Coverage sources: ${COVERAGE_SRCS}")
+	set(COVERALLS_FILE ${PROJECT_BINARY_DIR}/coveralls.json)
 
+	add_custom_target(coveralls_generate
 
-# Param _targetname     The name of new the custom make target
-# Param _testrunner     The name of the target which runs the tests.
-#						MUST return ZERO always, even on errors.
-#						If not, no coverage report will be created!
-# Param _outputname     lcov output is generated as _outputname.info
-#                       HTML report is generated in _outputname/index.html
-# Optional fourth parameter is passed as arguments to _testrunner
-#   Pass them in list form, e.g.: "-j;2" for -j 2
-FUNCTION(SETUP_TARGET_FOR_COVERAGE _targetname _testrunner _outputname)
+		# Zero the coverage counters.
+		COMMAND ${CMAKE_COMMAND}
+				-P "${_CMAKE_SCRIPT_PATH}/CoverallsClear.cmake"
 
-	IF(NOT LCOV_PATH)
-		MESSAGE(FATAL_ERROR "lcov not found! Aborting...")
-	ENDIF() # NOT LCOV_PATH
+		# Run regress tests.
+		COMMAND ${CMAKE_CTEST_COMMAND} --output-on-failure
 
-	IF(NOT GENHTML_PATH)
-		MESSAGE(FATAL_ERROR "genhtml not found! Aborting...")
-	ENDIF() # NOT GENHTML_PATH
+		# Generate Gcov and translate it into coveralls JSON.
+		# We do this by executing an external CMake script.
+		# (We don't want this to run at CMake generation time, but after compilation and everything has run).
+		COMMAND ${CMAKE_COMMAND}
+				-DCOVERAGE_SRCS="${COVERAGE_SRCS}" # TODO: This is passed like: "a b c", not "a;b;c"
+				-DCOVERALLS_OUTPUT_FILE="${COVERALLS_FILE}"
+				-DCOV_PATH="${PROJECT_BINARY_DIR}"
+				-DPROJECT_ROOT="${PROJECT_SOURCE_DIR}"
+				-P "${_CMAKE_SCRIPT_PATH}/CoverallsGenerateGcov.cmake"
 
-	# Setup target
-	ADD_CUSTOM_TARGET(${_targetname}
+		WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
+		COMMENT "Generating coveralls output..."
+		)
 
-		# Cleanup lcov
-		${LCOV_PATH} --directory . --zerocounters
+	if (_COVERALLS_UPLOAD)
+		message("COVERALLS UPLOAD: ON")
 
-		# Run tests
-		COMMAND ${_testrunner} ${ARGV3}
+		find_program(CURL_EXECUTABLE curl)
 
-		# Capturing lcov counters and generating report
-		COMMAND ${LCOV_PATH} --directory . --capture --output-file ${_outputname}.info
-		COMMAND ${LCOV_PATH} --remove ${_outputname}.info 'tests/*' '/usr/*' --output-file ${_outputname}.info.cleaned
-		COMMAND ${GENHTML_PATH} -o ${_outputname} ${_outputname}.info.cleaned
-		COMMAND ${CMAKE_COMMAND} -E remove ${_outputname}.info ${_outputname}.info.cleaned
+		if (NOT CURL_EXECUTABLE)
+			message(FATAL_ERROR "Coveralls: curl not found! Aborting")
+		endif()
 
-		WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
-		COMMENT "Resetting code coverage counters to zero.\nProcessing code coverage counters and generating report."
-	)
+		add_custom_target(coveralls_upload
+			# Upload the JSON to coveralls.
+			COMMAND ${CURL_EXECUTABLE}
+					-S -F json_file=@${COVERALLS_FILE}
+					https://coveralls.io/api/v1/jobs
 
-	# Show info where to find the report
-	ADD_CUSTOM_COMMAND(TARGET ${_targetname} POST_BUILD
-		COMMAND ;
-		COMMENT "Open ./${_outputname}/index.html in your browser to view the coverage report."
-	)
+			DEPENDS coveralls_generate
 
-ENDFUNCTION() # SETUP_TARGET_FOR_COVERAGE
+			WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
+			COMMENT "Uploading coveralls output...")
 
-# Param _targetname     The name of new the custom make target
-# Param _testrunner     The name of the target which runs the tests
-# Param _outputname     cobertura output is generated as _outputname.xml
-# Optional fourth parameter is passed as arguments to _testrunner
-#   Pass them in list form, e.g.: "-j;2" for -j 2
-FUNCTION(SETUP_TARGET_FOR_COVERAGE_COBERTURA _targetname _testrunner _outputname)
+		add_custom_target(coveralls DEPENDS coveralls_upload)
+	else()
+		message("COVERALLS UPLOAD: OFF")
+		add_custom_target(coveralls DEPENDS coveralls_generate)
+	endif()
 
-	IF(NOT PYTHON_EXECUTABLE)
-		MESSAGE(FATAL_ERROR "Python not found! Aborting...")
-	ENDIF() # NOT PYTHON_EXECUTABLE
+endfunction()
 
-	IF(NOT GCOVR_PATH)
-		MESSAGE(FATAL_ERROR "gcovr not found! Aborting...")
-	ENDIF() # NOT GCOVR_PATH
+macro(coveralls_turn_on_coverage)
+	if(NOT (CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
+		AND (NOT "${CMAKE_C_COMPILER_ID}" STREQUAL "Clang"))
+		message(FATAL_ERROR "Coveralls: Compiler ${CMAKE_C_COMPILER_ID} is not GNU gcc! Aborting... You can set this on the command line using CC=/usr/bin/gcc CXX=/usr/bin/g++ cmake <options> ..")
+	endif()
 
-	ADD_CUSTOM_TARGET(${_targetname}
+	if(NOT CMAKE_BUILD_TYPE STREQUAL "Debug")
+		message(FATAL_ERROR "Coveralls: Code coverage results with an optimised (non-Debug) build may be misleading! Add -DCMAKE_BUILD_TYPE=Debug")
+	endif()
 
-		# Run tests
-		${_testrunner} ${ARGV3}
-
-		# Running gcovr
-		COMMAND ${GCOVR_PATH} -x -r ${CMAKE_SOURCE_DIR} -e '${CMAKE_SOURCE_DIR}/tests/'  -o ${_outputname}.xml
-		WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
-		COMMENT "Running gcovr to produce Cobertura code coverage report."
-	)
-
-	# Show info where to find the report
-	ADD_CUSTOM_COMMAND(TARGET ${_targetname} POST_BUILD
-		COMMAND ;
-		COMMENT "Cobertura code coverage report saved in ${_outputname}.xml."
-	)
-
-ENDFUNCTION() # SETUP_TARGET_FOR_COVERAGE_COBERTURA
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 -fprofile-arcs -ftest-coverage")
+	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -O0 -fprofile-arcs -ftest-coverage")
+endmacro()

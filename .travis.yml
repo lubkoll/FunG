@@ -2,7 +2,6 @@ language: cpp
 compiler:
   - gcc 
 before_install:
-  - sudo apt-get install lcov
   - $CXX --version
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo apt-get update -qq
@@ -17,6 +16,6 @@ script:
   - cd build
   - cmake ..
   - make
-  - ./unit_tests
+  - make coveralls
 after_success:
   - coveralls --exclude lib --exclude tests --gcov-options '\-lp'

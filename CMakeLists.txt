@@ -12,9 +12,9 @@ set(CMAKE_MODULE_PATH
 
 include(ConfigSafeGuards)
 include(CodeCoverage)
-
+coveralls_turn_on_coverage()
 if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
-    set(CMAKE_CXX_FLAGS         "-g -O0 -fprofile-arcs -ftest-coverage -std=c++1y")
+    set(CMAKE_CXX_FLAGS         "${CMAKE_CXX_FLAGS} -std=c++1y")
 #    set(CMAKE_CXX_LINK_FLAGS "-fprofile-arcs -ftest-coverage")
 endif()
 
@@ -45,6 +45,10 @@ set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest_
 aux_source_directory(test SRC_LIST)
 add_subdirectory(test/CMath)
 #aux_source_directory(test/CMath SRC_LIST)
+
+set(COVERAGE_SRCS test/test.cpp test/CMath/arcsine_unittest.cpp test/CMath/sine_unittest.cpp test/CMath/cosine_unittest.cpp test/CMath/pow_unittest.cpp test/CMath/log_unittest.cpp test/CMath/exp_unittest.cpp test/CMath/tan_unittest.cpp)
+
+coveralls_setup( "${COVERAGE_SRCS}" ON "${PROJECT_SOURCE_DIR}/CMakeModules/")
 
 add_executable(
     unit_tests
