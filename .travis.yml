@@ -17,4 +17,4 @@ script:
   - make
   - ./unit_tests
 after_success:
-  - coveralls --root .. -E ".*external.*" -E ".*CMakeFiles.*" -E ".*test/.*.cpp.*"
+  - coveralls --root .. -E ".*external.*" -E ".*CMakeFiles.*" -E ".*test/.*.cpp.*" --gcov 'gcov-4.9'
