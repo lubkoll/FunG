@@ -19,6 +19,7 @@ if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
 endif()
 
 include_directories(
+    ${PROJECT_SOURCE_DIR}
     ${PROJECT_SOURCE_DIR}/external/googletest
     ${PROJECT_SOURCE_DIR}/external/googletest/include
     )
