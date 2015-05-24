@@ -13,11 +13,13 @@ set(CMAKE_MODULE_PATH
 include(ConfigSafeGuards)
 if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
     set(CMAKE_CXX_FLAGS         "${CMAKE_CXX_FLAGS} -g -O0 -fprofile-arcs -ftest-coverage -std=c++1y")
+    set(CMAKE_CXX_FLAGS_DEBUG   "-O0 -g")
+    set(CMAKE_CXX_FLAGS_RELEASE "-O0 -g")
 #    set(CMAKE_CXX_LINK_FLAGS "-fprofile-arcs -ftest-coverage")
 endif()
 
 include_directories(
-    ${PROJECT_SOURCE_DIR}/src
+    ${PROJECT_SOURCE_DIR}/test
     ${PROJECT_SOURCE_DIR}/external/googletest
     ${PROJECT_SOURCE_DIR}/external/googletest/include
     )
