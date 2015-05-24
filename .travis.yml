@@ -1,6 +1,5 @@
 language: cpp
-compiler:
-  - gcc 
+compiler: gcc 
 before_install:
   - $CXX --version
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
@@ -16,4 +15,5 @@ script:
   - cd build
   - cmake ..
   - make
-  - make coveralls
+after_success:
+  - coveralls --root .. -E ".*googletest.*" -E ".*CMakeFiles.*" -E ".*test/.*.cpp.*"

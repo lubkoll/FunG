@@ -11,10 +11,8 @@ set(CMAKE_MODULE_PATH
     )
 
 include(ConfigSafeGuards)
-include(Coveralls)
-coveralls_turn_on_coverage()
 if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
-    set(CMAKE_CXX_FLAGS         "${CMAKE_CXX_FLAGS} -std=c++1y")
+    set(CMAKE_CXX_FLAGS         "${CMAKE_CXX_FLAGS} -g -O0 -fprofile-arcs -ftest-coverage -std=c++1y")
 #    set(CMAKE_CXX_LINK_FLAGS "-fprofile-arcs -ftest-coverage")
 endif()
 
@@ -42,50 +40,25 @@ add_dependencies(gtest git_update)
 set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest-all.cc  PROPERTIES GENERATED 1)
 set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest_main.cc PROPERTIES GENERATED 1)
 
+
 aux_source_directory(test SRC_LIST)
 #add_subdirectory(test/CMath)
 aux_source_directory(test/CMath SRC_LIST)
 
-set(TEST_SRC ${PROJECT_SOURCE_DIR}/test)
-set(TEST_LIBS 
-    ${PROJECT_BINARY_DIR}/test/CMath/arcsine_unittest 
-    ${PROJECT_BINARY_DIR}/test/CMath/sine_unittest 
-    ${PROJECT_BINARY_DIR}/test/CMath/cosine_unittest 
-    ${PROJECT_BINARY_DIR}/test/CMath/pow_unittest 
-    ${PROJECT_BINARY_DIR}/test/CMath/log_unittest 
-    ${PROJECT_BINARY_DIR}/test/CMath/exp_unittest 
-    ${PROJECT_BINARY_DIR}/test/CMath/tan_unittest
-    )
-    
-set(COVERAGE_SRCS 
-    ${TEST_SRC}/test.cpp 
-    ${TEST_SRC}/CMath/arcsine_unittest.cpp 
-    ${TEST_SRC}/CMath/sine_unittest.cpp 
-    ${TEST_SRC}/CMath/cosine_unittest.cpp 
-    ${TEST_SRC}/CMath/pow_unittest.cpp 
-    ${TEST_SRC}/CMath/log_unittest.cpp 
-    ${TEST_SRC}/CMath/exp_unittest.cpp 
-    ${TEST_SRC}/CMath/tan_unittest.cpp
-    )
-
-coveralls_setup( "${COVERAGE_SRCS}" ON "${PROJECT_SOURCE_DIR}/cmake")
-
-enable_testing()
 add_executable(
     unit_tests
     ${SRC_LIST}
     )
-
+    
 add_dependencies(unit_tests gtest)
 
 target_link_libraries(
     unit_tests
     gtest
     pthread
-    gcov
     )
  
-#SETUP_TARGET_FOR_COVERAGE(unit_tests_coverage unit_tests coverage)
-#include(CTest)
+include(CTest)
+enable_testing()
 
 add_test(unit ${PROJECT_BINARY_DIR}/unit_tests)
