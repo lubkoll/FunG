@@ -66,6 +66,6 @@ target_link_libraries(
  
 #SETUP_TARGET_FOR_COVERAGE(unit_tests_coverage unit_tests coverage)
 #include(CTest)
-#enable_testing()
+enable_testing()
 
-#add_test(unit ${PROJECT_BINARY_DIR}/unit_tests)
+add_test(unit ${PROJECT_BINARY_DIR}/unit_tests)
