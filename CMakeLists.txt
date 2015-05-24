@@ -48,13 +48,13 @@ add_subdirectory(test/CMath)
 
 set(TEST_SRC ${PROJECT_SOURCE_DIR}/test)
 set(TEST_LIBS 
-    ${TEST_SRC}/CMath/arcsine_unittest 
-    ${TEST_SRC}/CMath/sine_unittest 
-    ${TEST_SRC}/CMath/cosine_unittest 
-    ${TEST_SRC}/CMath/pow_unittest 
-    ${TEST_SRC}/CMath/log_unittest 
-    ${TEST_SRC}/CMath/exp_unittest 
-    ${TEST_SRC}/CMath/tan_unittest
+    ${PROJECT_BINARY_DIR}/test/CMath/arcsine_unittest 
+    ${PROJECT_BINARY_DIR}/test/CMath/sine_unittest 
+    ${PROJECT_BINARY_DIR}/test/CMath/cosine_unittest 
+    ${PROJECT_BINARY_DIR}/test/CMath/pow_unittest 
+    ${PROJECT_BINARY_DIR}/test/CMath/log_unittest 
+    ${PROJECT_BINARY_DIR}/test/CMath/exp_unittest 
+    ${PROJECT_BINARY_DIR}/test/CMath/tan_unittest
     )
     
 set(COVERAGE_SRCS 
