@@ -19,7 +19,6 @@ if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
 endif()
 
 include_directories(
-    ${PROJECT_SOURCE_DIR}/test
     ${PROJECT_SOURCE_DIR}/external/googletest
     ${PROJECT_SOURCE_DIR}/external/googletest/include
     )
@@ -43,13 +42,17 @@ set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest-
 set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest_main.cc PROPERTIES GENERATED 1)
 
 
-aux_source_directory(test SRC_LIST)
+#aux_source_directory(test SRC_LIST)
 #add_subdirectory(test/CMath)
-aux_source_directory(test/CMath SRC_LIST)
+#aux_source_directory(test/CMath SRC_LIST)
 
 add_executable(
     unit_tests
-    ${SRC_LIST}
+    test/test.cpp
+    test/CMath/arcsine_unittest.cpp
+    test/CMath/sine_unittest.cpp
+    test/CMath/cosine_unittest.cpp
+    #${SRC_LIST}
     )
     
 add_dependencies(unit_tests gtest)
