@@ -39,7 +39,7 @@ namespace RFFGen
      * For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur
      * during applications of the chain rule.
      */
-    class ASin : Base , Chainer<ASin>
+    class ASin : public Base , public Chainer<ASin>
     {
     public:
       using Chainer<ASin>::operator ();
