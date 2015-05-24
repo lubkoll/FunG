@@ -11,7 +11,7 @@ set(CMAKE_MODULE_PATH
     )
 
 include(ConfigSafeGuards)
-include(CodeCoverage)
+include(Coveralls)
 coveralls_turn_on_coverage()
 if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
     set(CMAKE_CXX_FLAGS         "${CMAKE_CXX_FLAGS} -std=c++1y")
