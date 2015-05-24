@@ -46,19 +46,20 @@ aux_source_directory(test SRC_LIST)
 add_subdirectory(test/CMath)
 #aux_source_directory(test/CMath SRC_LIST)
 
-set(
-    COVERAGE_SRCS 
-    "${PROJECT_SOURCE_DIR}/test/test.cpp
-    "${PROJECT_SOURCE_DIR}/test/CMath/arcsine_unittest.cpp
-    "${PROJECT_SOURCE_DIR}/test/CMath/sine_unittest.cpp
-    "${PROJECT_SOURCE_DIR}/test/CMath/cosine_unittest.cpp
-    "${PROJECT_SOURCE_DIR}/test/CMath/pow_unittest.cpp
-    "${PROJECT_SOURCE_DIR}/test/CMath/log_unittest.cpp
-    "${PROJECT_SOURCE_DIR}/test/CMath/exp_unittest.cpp
-    "${PROJECT_SOURCE_DIR}/test/CMath/tan_unittest.cpp
+set(TEST_SRC ${PROJECT_SOURCE_DIR}/test)
+
+set(COVERAGE_SRCS 
+    ${TEST_SRC}/test.cpp 
+    ${TEST_SRC}/CMath/arcsine_unittest.cpp 
+    ${TEST_SRC}/CMath/sine_unittest.cpp 
+    ${TEST_SRC}/CMath/cosine_unittest.cpp 
+    ${TEST_SRC}/CMath/pow_unittest.cpp 
+    ${TEST_SRC}/CMath/log_unittest.cpp 
+    ${TEST_SRC}/CMath/exp_unittest.cpp 
+    ${TEST_SRC}/CMath/tan_unittest.cpp
     )
 
-coveralls_setup( "${COVERAGE_SRCS}" ON ${PROJECT_SOURCE_DIR}/cmake)
+coveralls_setup( "${COVERAGE_SRCS}" ON "${PROJECT_SOURCE_DIR}/CMakeModules")
 
 add_executable(
     unit_tests
