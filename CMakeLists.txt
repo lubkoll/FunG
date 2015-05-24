@@ -43,8 +43,8 @@ set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest-
 set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest_main.cc PROPERTIES GENERATED 1)
 
 aux_source_directory(test SRC_LIST)
-add_subdirectory(test/CMath)
-#aux_source_directory(test/CMath SRC_LIST)
+#add_subdirectory(test/CMath)
+aux_source_directory(test/CMath SRC_LIST)
 
 set(TEST_SRC ${PROJECT_SOURCE_DIR}/test)
 
