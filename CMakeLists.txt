@@ -43,11 +43,20 @@ set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest-
 set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest_main.cc PROPERTIES GENERATED 1)
 
 aux_source_directory(test SRC_LIST)
-#add_subdirectory(test/CMath)
-aux_source_directory(test/CMath SRC_LIST)
+add_subdirectory(test/CMath)
+#aux_source_directory(test/CMath SRC_LIST)
 
 set(TEST_SRC ${PROJECT_SOURCE_DIR}/test)
-
+set(TEST_LIBS 
+    ${TEST_SRC}/CMath/arcsine_unittest 
+    ${TEST_SRC}/CMath/sine_unittest 
+    ${TEST_SRC}/CMath/cosine_unittest 
+    ${TEST_SRC}/CMath/pow_unittest 
+    ${TEST_SRC}/CMath/log_unittest 
+    ${TEST_SRC}/CMath/exp_unittest 
+    ${TEST_SRC}/CMath/tan_unittest
+    )
+    
 set(COVERAGE_SRCS 
     ${TEST_SRC}/test.cpp 
     ${TEST_SRC}/CMath/arcsine_unittest.cpp 
@@ -64,6 +73,7 @@ coveralls_setup( "${COVERAGE_SRCS}" ON "${PROJECT_SOURCE_DIR}/CMakeModules")
 add_executable(
     unit_tests
     ${SRC_LIST}
+    ${TEST_LIBS}
     )
 
 add_dependencies(unit_tests gtest)
