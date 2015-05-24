@@ -48,7 +48,7 @@ add_subdirectory(test/CMath)
 
 set(COVERAGE_SRCS test/test.cpp test/CMath/arcsine_unittest.cpp test/CMath/sine_unittest.cpp test/CMath/cosine_unittest.cpp test/CMath/pow_unittest.cpp test/CMath/log_unittest.cpp test/CMath/exp_unittest.cpp test/CMath/tan_unittest.cpp)
 
-coveralls_setup( "${COVERAGE_SRCS}" ON "${PROJECT_SOURCE_DIR}/CMakeModules")
+coveralls_setup( "${COVERAGE_SRCS}" ON "${PROJECT_SOURCE_DIR}")
 
 add_executable(
     unit_tests
