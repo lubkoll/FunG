@@ -64,7 +64,7 @@ target_link_libraries(
     gcov
     )
  
-SETUP_TARGET_FOR_COVERAGE(unit_tests_coverage unit_tests coverage)
+#SETUP_TARGET_FOR_COVERAGE(unit_tests_coverage unit_tests coverage)
 #include(CTest)
 #enable_testing()
 
