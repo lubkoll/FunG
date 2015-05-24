@@ -53,9 +53,6 @@ add_executable(
     unit_tests
     test/test.cpp
     test/CMath/arcsine_unittest.cpp
-    test/CMath/sine_unittest.cpp
-    test/CMath/cosine_unittest.cpp
-    #${SRC_LIST}
     )
     
 add_dependencies(unit_tests gtest)
