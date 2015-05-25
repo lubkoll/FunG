@@ -55,8 +55,7 @@ namespace RFFGen
       void update(double x)
       {
 #ifndef RFFGEN_DISABLE_DYNAMIC_CHECKS
-        if( k < 3 &&  x == 0 ) throw OutOfDomainException("Pow<" + std::to_string(dividend) + "," + std::to_string(divisor) + ">",
-                                                          "]-inf,inf[\{0}",x,__FILE__,__LINE__);
+        if( k < 3 &&  x == 0 ) throw OutOfDomainException("Pow<" + std::to_string(dividend) + "," + std::to_string(divisor) + ">", "]-inf,inf[\{0}",x,__FILE__,__LINE__);
 #endif
         xk = x * (xk1 = x * (xk2 = x * ( xk3 = ::pow(x,k-3)) ) );
       }

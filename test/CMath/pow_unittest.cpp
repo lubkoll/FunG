@@ -58,6 +58,12 @@ TEST(PowCubedTest,D3)
 
 
 ///
+TEST(PowInverseTest,Update)
+{
+  const RFFGen::CMath::Pow<-1> fun(1.);
+  EXPECT_THROW(fun.update(0), OutOfDomainException);
+}
+
 TEST(PowInverseTest,D0)
 {
   const RFFGen::CMath::Pow<-1> fun(1.);
@@ -90,6 +96,12 @@ TEST(PowInverseTest,D3)
 
 
 ///
+TEST(PowSqrtTest,Update)
+{
+  const RFFGen::CMath::Pow<1,2> fun(1.);
+  EXPECT_THROW(fun.update(-1), OutOfDomainException);
+}
+
 TEST(PowSqrtTest,D0)
 {
   const RFFGen::CMath::Pow<1,2> fun(2.);
@@ -125,6 +137,12 @@ TEST(PowSqrtTest,D3)
 
 
 ///
+TEST(PowOverThirdRootTest,Update)
+{
+  const RFFGen::CMath::Pow<-1,3> fun(1.);
+  EXPECT_THROW(fun.update(-0.1), OutOfDomainException);
+}
+
 TEST(PowOverThirdRootTest,D0)
 {
   const RFFGen::CMath::Pow<-1,3> fun(2.);
@@ -160,6 +178,12 @@ TEST(PowOverThirdRootTest,D3)
 
 
 ///
+TEST(PowOverThirdRootSquaredTest,Update)
+{
+  const RFFGen::CMath::Pow<-2,3> fun(1.);
+  EXPECT_THROW(fun.update(-0.1), OutOfDomainException);
+}
+
 TEST(PowOverThirdRootSquaredTest,D0)
 {
   const RFFGen::CMath::Pow<-2,3> fun(2.);
@@ -199,6 +223,12 @@ TEST(PowOverThirdRootSquaredTest,D3)
 
 
 ///
+TEST(PowDefaultTest,Update)
+{
+  const RFFGen::CMath::Pow<3,2> fun(1.);
+  EXPECT_THROW(fun.update(-0.1), OutOfDomainException);
+}
+
 TEST(PowDefaultTest,D0)
 {
   const RFFGen::CMath::Pow<5,2> fun(2.);
