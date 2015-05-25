@@ -276,6 +276,18 @@ namespace RFFGen
    */
   template <class F, bool arithmeticArgument = false>
   using Finalize = Detail::FinalizeImpl< F , arithmeticArgument , Checks::hasVariable<F>() >;
+
+  template <class F>
+  auto finalize(const F& f)
+  {
+    return Finalize<F>(f);
+  }
+
+  template <class F>
+  auto finalize_scalar(const F& f)
+  {
+    return Finalize<F,true>(f);
+  }
 }
 
 #endif // RFFGEN_FINALIZE_HH
