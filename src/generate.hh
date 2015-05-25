@@ -29,6 +29,7 @@
 #include "operations.hh"
 #include "Util/addMissingOperators.hh"
 #include "Util/base.hh"
+#include "variable.hh"
 
 namespace RFFGen
 {
