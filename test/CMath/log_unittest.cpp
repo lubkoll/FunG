@@ -2,6 +2,12 @@
 
 #include <gtest/gtest.h>
 
+TEST(LNTest,Update)
+{
+  RFFGen::CMath::LN fun(1.);
+  EXPECT_THROW(fun.update(0), RFFGen::OutOfDomainException);
+}
+
 TEST(LNTest,D0)
 {
   const RFFGen::CMath::LN fun(1.);
@@ -34,6 +40,12 @@ TEST(LNTest,D3)
 
 
 ///
+TEST(Log2Test,Update)
+{
+  RFFGen::CMath::Log2 fun(1.);
+  EXPECT_THROW(fun.update(0), RFFGen::OutOfDomainException);
+}
+
 TEST(Log2Test,D0)
 {
   const RFFGen::CMath::Log2 fun(1.);
@@ -69,6 +81,12 @@ TEST(Log2Test,D3)
 
 
 ///
+TEST(Log10Test,Update)
+{
+  RFFGen::CMath::Log10 fun(1.);
+  EXPECT_THROW(fun.update(0), RFFGen::OutOfDomainException);
+}
+
 TEST(Log10Test,D0)
 {
   const RFFGen::CMath::Log10 fun(1.);
