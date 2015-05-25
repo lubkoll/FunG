@@ -4,7 +4,7 @@
 
 TEST(ArcsineTest,Update)
 {
-  const RFFGen::CMath::ASin fun(.5);
+  RFFGen::CMath::ASin fun(.5);
   ASSERT_THROW( fun.update(-1.1) , RFFGen::OutOfDomainException );
   ASSERT_THROW( fun.update(1.1) , RFFGen::OutOfDomainException );
 }
