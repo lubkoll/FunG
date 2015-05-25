@@ -226,7 +226,7 @@ TEST(PowOverThirdRootSquaredTest,D3)
 TEST(PowDefaultTest,Update)
 {
   RFFGen::CMath::Pow<3,2> fun(1.);
-  EXPECT_THROW(fun.update(-0.1), RFFGen::OutOfDomainException);
+  EXPECT_THROW(fun.update(0), RFFGen::OutOfDomainException);
 }
 
 TEST(PowDefaultTest,D0)
