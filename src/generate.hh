@@ -21,6 +21,7 @@
 #ifndef RFFGEN_GENERATE_HH
 #define RFFGEN_GENERATE_HH
 
+#include <cassert>
 #include <iostream>
 #include <type_traits>
 

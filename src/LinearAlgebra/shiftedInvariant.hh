@@ -23,7 +23,7 @@
 
 #include <type_traits>
 
-#include "constant.hh"
+#include "../constant.hh"
 #include "../Util/base.hh"
 #include "../Util/derivativeWrappers.hh"
 #include "../Util/evaluateIfPresent.hh"

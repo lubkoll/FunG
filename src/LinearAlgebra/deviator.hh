@@ -21,6 +21,8 @@
 #ifndef RFFGEN_LINEAR_ALGEBRA_DEVIATOR_HH
 #define RFFGEN_LINEAR_ALGEBRA_DEVIATOR_HH
 
+#include <tuple>
+
 #include "../constant.hh"
 #include "../identity.hh"
 #include "trace.hh"
