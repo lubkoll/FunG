@@ -114,21 +114,6 @@ namespace RFFGen
         g.template updateVariable<index>(x);
       }
 
-
-      /// Function value. Convenient access to d0().
-      const auto& operator()() const noexcept
-      {
-        return d0();
-      }
-
-      /// Function value. Convenient access to d0() with prior call to update(x).
-      template <class Arg>
-      const auto& operator()(const Arg& x) const noexcept
-      {
-        update(x);
-        return d0();
-      }
-
       /// Function value.
       auto d0() const noexcept
       {
