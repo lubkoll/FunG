@@ -100,12 +100,12 @@ namespace RFFGen
         : std::integral_constant< int , std::numeric_limits<int>::lowest()>
     {};
 
-    template <template <class,class> G, class F, class CheckF>
+    template <template <class,class> class G, class F, class CheckF>
     struct MaxVariableId< G<F,CheckF> >
         : std::integral_constant< int , MaxVariableId<F> >
     {};
 
-    template <template <class,class,class,class> H, class F, class G, class CheckF, class CheckG>
+    template <template <class,class,class,class> class H, class F, class G, class CheckF, class CheckG>
     struct MaxVariableId< H<F,G,CheckF,CheckG> >
         : std::integral_constant< int , ComputeMax< MaxVariableId<F> , MaxVariableId<G> >::value >
     {};
@@ -120,12 +120,12 @@ namespace RFFGen
         : std::integral_constant< int , std::numeric_limits<int>::max()>
     {};
 
-    template <template <class,class> G, class F, class CheckF>
+    template <template <class,class> class G, class F, class CheckF>
     struct MinVariableId< G<F,CheckF> >
         : std::integral_constant< int , MinVariableId<F> >
     {};
 
-    template <template <class,class,class,class> H, class F, class G, class CheckF, class CheckG>
+    template <template <class,class,class,class> class H, class F, class G, class CheckF, class CheckG>
     struct MinVariableId< H<F,G,CheckF,CheckG> >
         : std::integral_constant< int , ComputeMax< MinVariableId<F> , MinVariableId<G> >::value >
     {};
