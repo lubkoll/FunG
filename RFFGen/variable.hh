@@ -102,7 +102,7 @@ namespace RFFGen
 
     template <template <class,class> class G, class F, class CheckF>
     struct MaxVariableId< G<F,CheckF> >
-        : std::integral_constant< int , MaxVariableId<F> >
+        : std::integral_constant< int , MaxVariableId<F>::value >
     {};
 
     template <template <class,class,class,class> class H, class F, class G, class CheckF, class CheckG>
@@ -122,7 +122,7 @@ namespace RFFGen
 
     template <template <class,class> class G, class F, class CheckF>
     struct MinVariableId< G<F,CheckF> >
-        : std::integral_constant< int , MinVariableId<F> >
+        : std::integral_constant< int , MinVariableId<F>::value >
     {};
 
     template <template <class,class,class,class> class H, class F, class G, class CheckF, class CheckG>
