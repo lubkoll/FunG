@@ -21,7 +21,7 @@ TEST(SumTest,D0)
   auto fun = Pow<3,1>(2.) + Pow<3,2>(1.);
   EXPECT_DOUBLE_EQ( fun.d0() , 9. );
   fun.update(1.);
-  EXPECT_DOUBLE_EQ( fun.d0() , 2s. );
+  EXPECT_DOUBLE_EQ( fun.d0() , 2. );
 }
 
 TEST(SumTest,D1)
