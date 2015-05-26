@@ -13,7 +13,7 @@ This library is header-only and no installation is required.
 Usage is illustrated using three different examples. Further examples can be found in RFFGen/Tests and RFFGen/Examples.
 
 ### A simple example
-We begin with the function \f$f(x)=\sqrt(x^3)+\sin(\sqrt(x))=(h\circ g)(x)\f$ with \f$ h(x) = x^3+\sin(x) \f$ and \f$ g(x) = \sqrt(x) \f$:
+We begin with the function $f(x)=\sqrt(x^3)+\sin(\sqrt(x))=(h\circ g)(x)$ with \f$ h(x) = x^3+\sin(x) \f$ and \f$ g(x) = \sqrt(x) \f$:
 ```
 #include "RFFGen.hh"
 
