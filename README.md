@@ -13,8 +13,7 @@ This library is header-only and no installation is required.
 Usage is illustrated using three different examples. Further examples can be found in RFFGen/Tests and RFFGen/Examples.
 
 ### A simple example
-![equation](http://latex.codecogs.com/gif.latex?1%2Bsin%28mc%5E2%29%0D%0A)
-We begin with the function $f(x)=\sqrt(x^3)+\sin(\sqrt(x))=(h\circ g)(x)$ with \f$ h(x) = x^3+\sin(x) \f$ and \f$ g(x) = \sqrt(x) \f$:
+We begin with the function ![equation](http://latex.codecogs.com/gif.latex?f%28x%29%3D%5Csqrt%28x%5E3%29+%5Csin%28%5Csqrt%28x%29%29%3D%28h%5Ccirc%20g%29%28x%29) with \f$ h(x) = x^3+\sin(x) \f$ and \f$ g(x) = \sqrt(x) \f$:
 ```
 #include "RFFGen.hh"
 
