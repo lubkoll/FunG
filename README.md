@@ -13,7 +13,7 @@ This library is header-only and no installation is required.
 Usage is illustrated using three different examples. Further examples can be found in RFFGen/Tests and RFFGen/Examples.
 
 ### A simple example
-We begin with the function ![equation](http://latex.codecogs.com/gif.latex?f%28x%29%3D%5Csqrt%28x%5E3%29+%5Csin%28%5Csqrt%28x%29%29%3D%28h%5Ccirc%20g%29%28x%29) with \f$ h(x) = x^3+\sin(x) \f$ and \f$ g(x) = \sqrt(x) \f$:
+We begin with the function ![equation](http://latex.codecogs.com/gif.latex?f%28x%29%3D%5Csqrt%7Bx%5E3%7D+%5Csin%28%5Csqrt%7Bx%7D%29%3D%28h%5Ccirc%20g%29%28x%29) with ![equation](http://latex.codecogs.com/gif.latex?h%28x%29%3Dx%5E3+%5Csin%28x%29) and ![equation](http://latex.codecogs.com/gif.latex?g%28x%29%3D%5Csqrt%7Bx%7D):
 ```
 #include "RFFGen.hh"
 
