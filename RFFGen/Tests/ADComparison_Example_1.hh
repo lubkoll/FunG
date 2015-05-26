@@ -37,7 +37,7 @@
 
 #include <adept.h>
 
-#include "RFFGen.hh"
+#include "../RFFGen.hh"
 
 using CustomEvaluateCPtr = void (*)(casadi::CustomFunction& f, void* user_data);
 
@@ -96,8 +96,8 @@ namespace Example_1
   {
     using namespace RFFGen::CMath;
     auto h = Pow<3>() + Sin();
-    auto f = h( root );
-    return RFFGen::Finalize<decltype(f),true>(f);
+    auto g = Sqrt();
+    return RFFGen::finalize_scalar( h(g) );
   }
 
   template <class Scalar>
