@@ -92,5 +92,42 @@ double thirdDerivative  = f.d3(dF0,dF1,dF2);
 Observe that the derivatives are DIRECTIONAL derivatives. This approach admits to work with any (reasonable) input types. In the first example, where the input variable was a scalar, the call to finalize_scalar did generate 
 suitable default values for the directions. Here this is not admissible. 
 
+### An example with two variables
+Eventually we consider a function with two variables, a scalar variable x and a matrix valued variable F.
+
+![equation](http://latex.codecogs.com/gif.latex?f%28x%2CF%29%3D%5Csqrt%7Bx%7D%5Cmathrm%7Btr%7D%28F%29)
+
+```
+#include "RFFGen.hh"
+
+template <class Mat>
+auto generateFunction()
+{
+  using RFFGen::CMath::sqrt;
+  using RFFGen::LinearAlgebra::trace;
+  using RFFGen::Variable;
+  
+  auto x = Variable<double,0>();
+  auto F = Variable<Mat,1>();
+  
+  return RFFGen::finalize( sqrt(x)*trace(F) );
+}
+```
+
+When computing derivatives we now have to specify the variable ids for which the derivative will be computed. The same holds for setting the function values.
+
+```
+auto f = generateFunction<Mat>();
+
+f.template update<0>(x);
+f.template update<1>(F);
+
+double value       = f(); // or f.d0()
+double df_dx       = f.template d1<0>(dx1);
+double df_dF       = f.template d1<1>(dF)
+double ddf_dFdx    = f.template d2<1,0>(dF,dx1);
+double dddf_dxdxdF = f.template d3<0,0,1>(dx1,dx2,dF);
+```
+
 
 Contact: lars.lubkoll@posteo.de

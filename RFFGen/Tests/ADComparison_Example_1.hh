@@ -89,7 +89,6 @@ namespace Example_1
       T z = sqrt(x);
       return 1.5*z+0.5*cos(z)/z;
     }
-
   };
 
   auto generateTestFunction()

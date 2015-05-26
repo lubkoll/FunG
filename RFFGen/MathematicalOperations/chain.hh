@@ -115,7 +115,6 @@ namespace RFFGen
       void updateVariable(const Arg & x)
       {
         g.template updateVariable<index>(x);
-        f.template updateVariable<index>(x);
       }
 
       /// Function value.

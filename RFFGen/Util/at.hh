@@ -68,7 +68,7 @@ namespace RFFGen
     template <class Matrix, class = void>
     struct At
     {
-      static auto& apply(const Matrix& A, int i, int j)
+      static auto& apply(Matrix& A, int i, int j)
       {
         return A(i,j);
       }
@@ -77,7 +77,7 @@ namespace RFFGen
     template <class Matrix>
     struct At< Matrix , void_t< Checks::AccessViaSquareBracketsForMatrix<Matrix> > >
     {
-      static auto& apply(const Matrix& A, int i, int j)
+      static auto& apply(Matrix& A, int i, int j)
       {
         return A[i][j];
       }
@@ -86,7 +86,7 @@ namespace RFFGen
     template <class Vector, class = void>
     struct At_v
     {
-      static auto& apply(const Vector& v, int i)
+      static auto& apply(Vector& v, int i)
       {
         return v(i);
       }
@@ -95,7 +95,7 @@ namespace RFFGen
     template <class Vector>
     struct At_v< Vector , void_t< Checks::AccessViaSquareBracketsForVector<Vector> > >
     {
-      static auto& apply(const Vector& v, int i)
+      static auto& apply(Vector& v, int i)
       {
         return v(i);
       }
