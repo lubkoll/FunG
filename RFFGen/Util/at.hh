@@ -64,30 +64,42 @@ namespace RFFGen
     template <class Matrix>
     using ValueType = ValueTypeImpl<Matrix,Checks::accessViaSquareBrackets<Matrix>(),Checks::accessViaRoundBrackets<Matrix>(),Checks::isConstantSizeMatrix<Matrix>()>;
 
-    template <class Matrix, bool whatever>
-    __attribute__((always_inline)) auto& at(Matrix& A, int i, int j, std::true_type, std::integral_constant<bool,whatever>)
+
+    template <class Matrix, class = void>
+    struct At
     {
-      return A[i][j];
-    }
+      static operator()(const Matrix& A, int i, int j)
+      {
+        return A(i,j);
+      }
+    };
 
     template <class Matrix>
-    __attribute__((always_inline)) auto& at(Matrix& A, int i, int j, std::false_type, std::true_type)
+    struct At< Matrix , void_t< Checks::AccessViaSquareBracketsForMatrix<Matrix> > >
     {
-      return A(i,j);
-    }
+      static::operator()(const Matrix& A, int i, int j)
+      {
+        return A[i][j];
+      }
+    };
 
-
-    template <class Vector, bool whatever>
-    __attribute__((always_inline)) auto& at(Vector& v, int i, std::true_type, std::integral_constant<bool,whatever>)
+    template <class Vector, class = void>
+    struct At_v
     {
-      return v[i];
-    }
+      static operator()(const Vector& v, int i, )
+      {
+        return v(i);
+      }
+    };
 
     template <class Vector>
-    __attribute__((always_inline)) auto& at(Vector& v, int i, std::false_type, std::true_type)
+    struct At_v< Vector , void_t< Checks::AccessViaSquareBracketsForVector<Vector> > >
     {
-      return v(i);
-    }
+      static::operator()(const Vector& v, int i)
+      {
+        return v(i);
+      }
+    };
   }
 
   /// Access underlying value type of Matrix.
@@ -98,16 +110,13 @@ namespace RFFGen
   template <class Matrix>
   __attribute__((always_inline)) auto& at(Matrix& A, int i, int j)
   {
-    return AtDetail::at<Matrix>(A,i,j,std::integral_constant<bool,Checks::accessViaSquareBrackets<Matrix>()>(),
-                                      std::integral_constant<bool,Checks::accessViaRoundBrackets<Matrix>()>());
+    return AtDetail::At<Matrix>()(A,i,j);
   }
-
 
   template <class Vector>
   __attribute__((always_inline)) auto& at(Vector& v, int i)
   {
-    return AtDetail::at<Vector>(v,i,std::integral_constant<bool,Checks::accessViaSquareBrackets<Vector>()>(),
-                                    std::integral_constant<bool,Checks::accessViaRoundBrackets<Vector>()>());
+    return AtDetail::At_v<Vector>()(v,i);
   }
   /**
    * \endcond

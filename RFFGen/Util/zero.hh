@@ -21,10 +21,18 @@
 #ifndef RFFGEN_UTIL_ZERO_HH
 #define RFFGEN_UTIL_ZERO_HH
 
+#include <utility>
+
 namespace RFFGen
 {
+  namespace Checks
+  {
+    template <class Matrix>
+    using TryCallToZeroes = decltype(std::declval<Matrix>().zeroes());
+  }
+
   /// Specialize this struct for your matrix type if a zero matrix cannot be generated via Matrix(0.).
-  template <class Matrix>
+  template <class Matrix, class = void>
   struct Zero
   {
     /**
@@ -33,6 +41,17 @@ namespace RFFGen
     Matrix operator()() const
     {
       return Matrix(0.);
+    }
+  };
+
+  template <class Matrix>
+  struct Zero< Matrix , void_t<Checks::TryCallToZeroes<Matrix> > >
+  {
+    Matrix operator()() const
+    {
+      Matrix m;
+      m.zeroes();
+      return m;
     }
   };
 

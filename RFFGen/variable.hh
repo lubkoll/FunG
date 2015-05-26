@@ -81,6 +81,58 @@ namespace RFFGen
 
     template <template <class,class,class,class> class H, class F, class G, int id, class CheckF, class CheckG>
     struct HasVariableId< H<F,G,CheckF,CheckG> , id > : std::integral_constant< bool , HasVariableId<F,id>::value || HasVariableId<G,id>::value > {};
+
+
+    template <class F, class G>
+    struct ComputeMax
+    {
+      static constexpr int value = F::value > G::value ? F::value : G::value;
+    };
+
+    template <class F, class G>
+    struct ComputeMin
+    {
+      static constexpr int value = F::value < G::value ? F::value : G::value;
+    };
+
+    template <class Type>
+    struct MaxVariableId
+        : std::integral_constant< int , std::numeric_limits<int>::lowest()>
+    {};
+
+    template <template <class,class> G, class F, class CheckF>
+    struct MaxVariableId< G<F,CheckF> >
+        : std::integral_constant< int , MaxVariableId<F> >
+    {};
+
+    template <template <class,class,class,class> H, class F, class G, class CheckF, class CheckG>
+    struct MaxVariableId< H<F,G,CheckF,CheckG> >
+        : std::integral_constant< int , ComputeMax< MaxVariableId<F> , MaxVariableId<G> >::value >
+    {};
+
+    template <class T, int id>
+    struct MaxVariableId< Variable<T,id> > : std::integral_constant< int , id >
+    {};
+
+
+    template <class Type>
+    struct MinVariableId
+        : std::integral_constant< int , std::numeric_limits<int>::max()>
+    {};
+
+    template <template <class,class> G, class F, class CheckF>
+    struct MinVariableId< G<F,CheckF> >
+        : std::integral_constant< int , MinVariableId<F> >
+    {};
+
+    template <template <class,class,class,class> H, class F, class G, class CheckF, class CheckG>
+    struct MinVariableId< H<F,G,CheckF,CheckG> >
+        : std::integral_constant< int , ComputeMax< MinVariableId<F> , MinVariableId<G> >::value >
+    {};
+
+    template <class T, int id>
+    struct MinVariableId< Variable<T,id> > : std::integral_constant< int , id >
+    {};
   }
   /**
    * \endcond
@@ -142,25 +194,35 @@ namespace RFFGen
   namespace Checks
   {
     /**
-   * \ingroup Checks
-   * \brief Check if T is of type Variable<Type,n>.
-   */
+     * \ingroup Checks
+     * \brief Check if T is of type Variable<Type,n>.
+     */
     template <class T>
     constexpr bool isVariable() { return VariableDetail::IsVariable<T>::value; }
 
     /**
-   * \ingroup Checks
-   * \brief Check if T contains a type Variable<Type,n>.
-   */
+     * \ingroup Checks
+     * \brief Check if T contains a type Variable<Type,n>.
+     */
     template <class T>
     constexpr bool hasVariable() { return VariableDetail::HasVariable<T>::value; }
 
     /**
-   * \ingroup Checks
-   * \brief Check if T contains a type Variable<Type,id>.
-   */
+     * \ingroup Checks
+     * \brief Check if T contains a type Variable<Type,id>.
+     */
     template <class T, int id>
     constexpr bool hasVariableId() { return VariableDetail::HasVariableId<T,id>::value; }
+
+    /**
+     * \ingroup Checks
+     * \brief Check if T contains at least two variables.
+     */
+    template <class Type>
+    constexpr bool hasMoreThanOneVariable()
+    {
+      return MinVariableId<Type>::value < MaxVariableId<Type>::value;
+    }
   }
 }
 

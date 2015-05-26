@@ -44,12 +44,11 @@ namespace RFFGen
     {
       using Chainer< Pow<dividend,divisor> >::operator ();
 
-      constexpr Pow() = default;
       /**
        * @brief Constructor.
        * @param x point of evaluation
        */
-      explicit Pow(double x) { update(x); }
+      explicit Pow(double x=1) { update(x); }
 
       /// Reset point of evaluation.
       void update(double x)
@@ -58,12 +57,6 @@ namespace RFFGen
         if( k < 3 &&  x == 0 ) throw OutOfDomainException("Pow<" + std::to_string(dividend) + "," + std::to_string(divisor) + ">", "]-inf,inf[\{0}",x,__FILE__,__LINE__);
 #endif
         xk = x * (xk1 = x * (xk2 = x * ( xk3 = ::pow(x,k-3)) ) );
-      }
-
-      /// Function value. Convenient access to d0().
-      double operator()() const noexcept
-      {
-        return d0();
       }
 
       /// Function value.
@@ -121,9 +114,7 @@ namespace RFFGen
     {
       using Chainer< Pow<2,1> >::operator ();
 
-      constexpr Pow() = default;
-
-      explicit Pow(double x_) { update(x_); }
+      explicit Pow(double x_=0) { update(x_); }
 
       void update(const double& x_)
       {
@@ -131,27 +122,22 @@ namespace RFFGen
         x2 = x_*x_;
       }
 
-      double operator()() const noexcept
-      {
-        return d0();
-      }
-
       /// Function value.
-      double  d0() const noexcept
+      double d0() const noexcept
       {
         return x2;
       }
 
       /// First (directional) derivative.
       template < int = -1 >
-      double  d1(double dx=1.) const
+      double d1(double dx=1.) const
       {
         return x * dx;
       }
 
       /// Second (directinal) derivative.
       template < int = -1 , int = -1 >
-      double  d2(double dx=1, double dy=1) const
+      double d2(double dx=1, double dy=1) const
       {
         return 2 * dx * dy;
       }
@@ -165,20 +151,13 @@ namespace RFFGen
     {
       using Chainer< Pow<3,1> >::operator ();
 
-      constexpr Pow() = default;
-
-      explicit Pow(double x_) { update(x_); }
+      explicit Pow(double x_=0) { update(x_); }
 
       void update(double x_)
       {
         x = x_;
         x2 = x*x;
         x3 = x2*x;
-      }
-
-      double operator()() const noexcept
-      {
-        return d0();
       }
 
       /// Function value.
@@ -221,9 +200,7 @@ namespace RFFGen
     {
       using Chainer< Pow<-1,1> >::operator ();
 
-      constexpr Pow() = default;
-
-      explicit Pow(double x) { update(x); }
+      explicit Pow(double x=1.) { update(x); }
 
       void update(double x)
       {
@@ -234,11 +211,6 @@ namespace RFFGen
         x_inv2 = x_inv*x_inv;
       }
 
-      double operator()() const noexcept
-      {
-        return d0();
-      }
-
       /// Function value.
       double d0() const noexcept
       {
@@ -247,21 +219,21 @@ namespace RFFGen
 
       /// First (directional) derivative.
       template < int = -1 >
-      double  d1(double dx = 1.) const
+      double d1(double dx = 1.) const
       {
         return -1 * x_inv2 * dx;
       }
 
       /// Second (directinal) derivative.
       template < int = -1 , int = -1 >
-      double  d2(double dx = 1., double dy = 1.) const
+      double d2(double dx = 1., double dy = 1.) const
       {
         return 2 * x_inv2 * x_inv * dx * dy;
       }
 
       /// Third (directional) derivative.
       template < int = -1 , int = -1 , int = -1 >
-      double  d3(double dx = 1., double dy = 1., double dz = 1.) const
+      double d3(double dx = 1., double dy = 1., double dz = 1.) const
       {
         return -6 * x_inv2 * x_inv2 * dx * dy * dz;
       }
@@ -275,13 +247,11 @@ namespace RFFGen
     {
       using Chainer< Pow<1,2> >::operator ();
 
-      constexpr Pow() = default;
-
       /**
        * @brief Constructor.
        * @param x point of evaluation
        */
-      explicit Pow(double x) { update(x); }
+      explicit Pow(double x=0) { update(x); }
 
       /// Reset point of evaluation.
       void update(double x)
@@ -291,12 +261,6 @@ namespace RFFGen
 #endif
         x_ = x;
         sqrt_x = ::sqrt(x);
-      }
-
-      /// Function value. Convenient access to d0().
-      double operator()() const noexcept
-      {
-        return d0();
       }
 
       /// Function value.
@@ -339,13 +303,11 @@ namespace RFFGen
     {
       using Chainer< Pow<-1,3> >::operator ();
 
-      constexpr Pow() = default;
-
       /**
        * @brief Constructor.
        * @param t point of evaluation
        */
-      explicit Pow(double t) { update(t); }
+      explicit Pow(double t=1) { update(t); }
 
       /// Reset point of evaluation.
       void update(double x)
@@ -362,9 +324,6 @@ namespace RFFGen
         p *= x;
         d3val = -28/(27*p);
       }
-
-      /// Function value. Convenient access to d0().
-      double operator()() const noexcept { return d0(); }
 
       /// Function value.
       double d0() const noexcept { return d0val; }
@@ -395,13 +354,11 @@ namespace RFFGen
     {
       using Chainer< Pow<-2,3> >::operator ();
 
-      constexpr Pow() = default;
-
       /**
        * @brief Constructor.
        * @param t point of evaluation
        */
-      explicit Pow(double t)  { update(t); }
+      explicit Pow(double t=1.)  { update(t); }
 
       /// Reset point of evaluation.
       void update(double x)
@@ -419,9 +376,6 @@ namespace RFFGen
         p *= x;
         d3val = -80/(27*p);
       }
-
-      /// Function value. Convenient access to d0().
-      double operator()() const noexcept { return d0(); }
 
       /// Function value. Convenient access to d0().
       double d0() const noexcept { return d0val; }

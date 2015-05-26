@@ -33,7 +33,6 @@ namespace RFFGen
      * \ingroup CMathGroup
      *
      * \brief Tangent function including first three derivatives.
-     * \todo Test!
      *
      * For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur
      * during applications of the chain rule.

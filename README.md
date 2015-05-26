@@ -60,8 +60,8 @@ which constitutes a model for adipose tissue. In this context the invariants dep
 #include "RFFGen.hh"
 
 template <class Mat>
-auto generateAdiposeTissue(double cCells, double k1, 
-  double k2, double kappa, const Matrix& M, const Matrix& F)
+auto generateAdiposeTissue(double cCells, double k1, double k2,
+             double kappa, const Matrix& M, const Matrix& F)
 {
   using namespace RFFGen::LinearAlgebra;
   using RFFGen::CMath::exp;
