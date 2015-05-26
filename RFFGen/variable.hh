@@ -221,7 +221,7 @@ namespace RFFGen
     template <class Type>
     constexpr bool hasMoreThanOneVariable()
     {
-      return MinVariableId<Type>::value < MaxVariableId<Type>::value;
+      return VariableDetail::MinVariableId<Type>::value < VariableDetail::MaxVariableId<Type>::value;
     }
   }
 }
