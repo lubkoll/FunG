@@ -38,7 +38,7 @@
 #include <casadi/core/function/custom_function.hpp>
 #include <casadi/core/functor.hpp>
 
-#include "RFFGen.hh"
+#include "../RFFGen.hh"
 
 using namespace casadi;
 
@@ -102,10 +102,16 @@ namespace Example_5
   template <class Mat>
   auto generateTestFunction()
   {
-    using namespace RFFGen::LinearAlgebra;
+    using RFFGen::LinearAlgebra::trace;
+    using RFFGen::CMath::sqrt;
+    using RFFGen::Variable;
 
-    auto f = Trace<Mat>();
-    return RFFGen::Finalize<decltype(f)>(f);
+    auto x = Variable<double,0>();
+    auto F = Variable<Mat,1>();
+
+    return RFFGen::finalize( sqrt(x)*trace(F) );
+//    auto f = Trace<Mat>();
+//    return RFFGen::Finalize<decltype(f)>(f);
   }
 
   template <class T0>
@@ -130,21 +136,21 @@ namespace Example_5
     }
   };
 
-  template <typename C>
-  struct BDiff
-  {
-    template <typename T0, typename T1>
-    auto operator()( T0& o_dfdx, const T1& i_y) const
-    {
-      using namespace fadbad;
-      B<T1> y(i_y); // Initialize arguments
-      C func;             // Instantiate functor
-      B<T0> f(func(y));  // Evaluate function and record DAG
-      f.diff(0,1);        // Differentiate
-      o_dfdx=y.d(0);      // Value of df/dx
-      return f.x();       // Return function value
-    }
-  };
+//  template <typename C>
+//  struct BDiff
+//  {
+//    template <typename T0, typename T1>
+//    auto operator()( T0& o_dfdx, const T1& i_y) const
+//    {
+//      using namespace fadbad;
+//      B<T1> y(i_y); // Initialize arguments
+//      C func;             // Instantiate functor
+//      B<T0> f(func(y));  // Evaluate function and record DAG
+//      f.diff(0,1);        // Differentiate
+//      o_dfdx=y.d(0);      // Value of df/dx
+//      return f.x();       // Return function value
+//    }
+//  };
 }
 
 void ADComparison_Example_5()
@@ -177,17 +183,17 @@ void ADComparison_Example_5()
   cout << "function value: " << f << endl;
   cout << "first derivative(0): " << dfdx << endl;
 //  x=5;
-  y = RFFGen::LinearAlgebra::unitMatrix<Mat>();
-  cout << "FADBAD++ (backward)" << endl;
-  Example_5::BDiff<Example_5::Func> BFunc;         // Functor for function and derivatives
-  startTime = high_resolution_clock::now();
-  for(auto i=0u; i<iter; ++i){
-    y*=1.00000001;
-    f=BFunc(dfdx,y);    // Evaluate function and derivatives
-  }
-  cout << "computation time: " << duration_cast<milliseconds>(high_resolution_clock::now() - startTime).count()/1000. << "s\n";
-  cout << "function value: " << f << endl;
-  cout << "first derivative(0): " << dfdx << endl << endl;
+//  y = RFFGen::LinearAlgebra::unitMatrix<Mat>();
+//  cout << "FADBAD++ (backward)" << endl;
+//  Example_5::BDiff<Example_5::Func> BFunc;         // Functor for function and derivatives
+//  startTime = high_resolution_clock::now();
+//  for(auto i=0u; i<iter; ++i){
+//    y*=1.00000001;
+//    f=BFunc(dfdx,y);    // Evaluate function and derivatives
+//  }
+//  cout << "computation time: " << duration_cast<milliseconds>(high_resolution_clock::now() - startTime).count()/1000. << "s\n";
+//  cout << "function value: " << f << endl;
+//  cout << "first derivative(0): " << dfdx << endl << endl;
 //  x=5;
   cout << "SACADO (FAD)" << endl;
   int num_deriv = 1;
@@ -269,9 +275,10 @@ void ADComparison_Example_5()
   for(auto i=0u; i<iter; ++i)
   {
     y*=1.00000001;
-    testF.update(y);
+    testF.update<0>(x);
+    testF.update<1>(y);
     f = testF();
-    dfdx = testF.d1(y);
+    dfdx = testF.d1<1>(y);
   }
   cout << "computation time: " << duration_cast<milliseconds>(high_resolution_clock::now() - startTime).count()/1000. << "s\n";
   cout << "function value: " << f << endl;

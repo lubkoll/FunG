@@ -37,7 +37,6 @@
 #include <casadi/core/function/custom_function.hpp>
 #include <casadi/core/functor.hpp>
 
-#include "Util/armadillo.hh"
 #include "RFFGen.hh"
 
 using namespace fadbad;

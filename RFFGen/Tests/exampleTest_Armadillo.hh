@@ -24,13 +24,14 @@
 #include <chrono>
 #include <iostream>
 
+#include <armadillo>
+
 #include "Examples/Rubber/neoHooke.hh"
 #include "Examples/Rubber/mooneyRivlin.hh"
 #include "Examples/Biomechanics/skinTissue_Hendriks.hh"
 #include "Examples/Biomechanics/adiposeTissue_SommerHolzapfel.hh"
 #include "Examples/Biomechanics/muscleTissue_Martins.hh"
 #include "math.hh"
-#include "../Util/armadillo.hh"
 
 namespace ArmadilloDetail
 {
