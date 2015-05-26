@@ -4,6 +4,13 @@
 
 #include <gtest/gtest.h>
 
+TEST(ScaleTest,Update)
+{
+  auto fun = 2*RFFGen::CMath::Pow<3,1>(2.);
+  EXPECT_NO_THROW( fun.update(-1) );
+  EXPECT_DOUBLE_EQ( fun.d0() , -2. );
+}
+
 TEST(ScaleTest,D0)
 {
   using RFFGen::CMath::Pow;

@@ -70,6 +70,7 @@ namespace RFFGen
       {
         updateResultOfD0();
       }
+
       /// Reset point of evaluation.
       template <class Arg>
       void update(Arg const& arg)
