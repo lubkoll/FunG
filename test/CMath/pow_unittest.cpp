@@ -1,4 +1,4 @@
-#include "../../src/CMath/pow.hh"
+#include "../../RFFGen/CMath/pow.hh"
 
 #include <gtest/gtest.h>
 

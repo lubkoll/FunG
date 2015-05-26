@@ -6,6 +6,6 @@ A fast and easy to use function generation library that gives provides access to
 Function arguments can be matrices and/or scalars. Vectors are also possible but most functionality targets on matrices.
 
 # Installation
-This library is header-only and thus no installation is required.
+This library is header-only and no installation is required.
 
 Contact: lars.lubkoll@posteo.de

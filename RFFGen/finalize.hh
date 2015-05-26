@@ -277,12 +277,22 @@ namespace RFFGen
   template <class F, bool arithmeticArgument = false>
   using Finalize = Detail::FinalizeImpl< F , arithmeticArgument , Checks::hasVariable<F>() >;
 
+  /**
+   * \brief Finish function definition.
+   *
+   * Adds the definition of possibly undefined vanishing higher order derivatives.
+   */
   template <class F>
   auto finalize(const F& f)
   {
     return Finalize<F>(f);
   }
 
+  /**
+   * \brief Finish function definition.
+   *
+   * Adds the definition of possibly undefined vanishing higher order derivatives.
+   */
   template <class F>
   auto finalize_scalar(const F& f)
   {

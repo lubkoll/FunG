@@ -1,4 +1,4 @@
-#include "../../src/CMath/arcsine.hh"
+#include "../../RFFGen/CMath/arcsine.hh"
 
 #include <gtest/gtest.h>
 

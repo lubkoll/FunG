@@ -1,4 +1,4 @@
-#include "../../src/CMath/log.hh"
+#include "../../RFFGen/CMath/log.hh"
 
 #include <gtest/gtest.h>
 

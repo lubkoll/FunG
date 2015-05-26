@@ -49,11 +49,11 @@ namespace RFFGen
   auto incompressibleSkin_Hendriks(double c0, double c1, const Matrix& F)
   {
     using namespace LinearAlgebra;
-    using I1 = ShiftedFirstPrincipalInvariant<Matrix,offset>;
-    using I2 = ShiftedSecondPrincipalInvariant<Matrix,offset>;
+    auto i1 = ShiftedFirstPrincipalInvariant<Matrix,offset>();
+    auto i2 = ShiftedSecondPrincipalInvariant<Matrix,offset>();
 
     auto S = LeftCauchyGreenStrainTensor<Matrix>(F);
-    return ( c0*I1() + c1*I1()*I2() ) << S;
+    return ( c0*i1 + c1*i1*i2 ) << S;
 
   }
 
@@ -92,13 +92,7 @@ namespace RFFGen
   template <class InflationPenalty, class CompressionPenalty, class Matrix, int offset = LinearAlgebra::dimension<Matrix>()>
   auto compressibleSkin_Hendriks(double c0, double c1, double d0, double d1, const Matrix& F)
   {
-    using namespace LinearAlgebra;
-    using I1 = ShiftedFirstPrincipalInvariant<Matrix,offset>;
-    using I2 = ShiftedSecondPrincipalInvariant<Matrix,offset>;
-
-    auto S = LeftCauchyGreenStrainTensor<Matrix>(F);
-    return ( ( c0*I1() + c1*I1()*I2() ) << S ) + volumetricPenalty<InflationPenalty,CompressionPenalty>(d0,d1,F);
-
+    return incompressibleSkin_Hendriks(c0,c1,F) + volumetricPenalty<InflationPenalty,CompressionPenalty>(d0,d1,F);
   }
 
   /**

@@ -47,13 +47,13 @@ namespace RFFGen
     {
       using CMath::exp;
       using namespace LinearAlgebra;
-      using I1 = FirstPrincipalInvariant<Matrix>;
-      using SI1 = ShiftedFirstPrincipalInvariant<Matrix,offset>;
-      using I4 = FirstMixedInvariant<Matrix>;
+      auto i1 = FirstPrincipalInvariant<Matrix>(F);
+      auto si1 = ShiftedFirstPrincipalInvariant<Matrix,offset>(F);
+      auto i4 = FirstMixedInvariant<Matrix>(F,M);
 
-      auto aniso = kappa*I1(F) + (((1-3*kappa)*I4(F,M)) - 1.);
-      return ( cCells*SI1(F) +
-               (k1/k2)*( exp( k2*(aniso^2) ) - 1.)
+      auto aniso = kappa*i1 + (1-3*kappa)*i4 - 1;
+      return ( cCells*si1 +
+               (k1/k2)*( exp( k2*(aniso^2) ) - 1)
              ) << LeftCauchyGreenStrainTensor<Matrix>(F);
     }
   }

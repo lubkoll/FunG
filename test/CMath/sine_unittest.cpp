@@ -1,4 +1,4 @@
-#include "../../src/CMath/sine.hh"
+#include "../../RFFGen/CMath/sine.hh"
 
 #include <gtest/gtest.h>
 

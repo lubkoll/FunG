@@ -1,4 +1,4 @@
-#include "../../src/CMath/exp.hh"
+#include "../../RFFGen/CMath/exp.hh"
 
 #include <gtest/gtest.h>
 

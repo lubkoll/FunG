@@ -1,6 +1,6 @@
-#include "../../src/CMath/pow.hh"
-#include "../../src/generate.hh"
-#include "../../src/finalize.hh"
+#include "../../RFFGen/CMath/pow.hh"
+#include "../../RFFGen/generate.hh"
+#include "../../RFFGen/finalize.hh"
 
 #include <gtest/gtest.h>
 
