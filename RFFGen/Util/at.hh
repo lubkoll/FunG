@@ -75,7 +75,7 @@ namespace RFFGen
     };
 
     template <class Matrix>
-    struct At< Matrix , void_t< Checks::AccessViaSquareBracketsForMatrix<Matrix> > >
+    struct At< Matrix , void_t< Checks::TryAccessViaSquareBracketsForMatrix<Matrix> > >
     {
       static auto& apply(Matrix& A, int i, int j)
       {
@@ -97,7 +97,7 @@ namespace RFFGen
     {
       static auto& apply(Vector& v, int i)
       {
-        return v(i);
+        return v[i];
       }
     };
   }
