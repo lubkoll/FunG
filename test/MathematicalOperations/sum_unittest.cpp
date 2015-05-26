@@ -6,7 +6,7 @@
 
 TEST(SumTest,UpdateVariable)
 {
-  auto x = variable<0>(1.);
+  auto x = RFFGen::variable<0>(1.);
   using RFFGen::CMath::Pow;
   auto fun = ( Pow<3,1>(2.) + Pow<3,2>(1.) ) << x;
   EXPECT_DOUBLE_EQ( fun.d0() , 2. );
