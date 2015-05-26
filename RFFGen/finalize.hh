@@ -275,7 +275,7 @@ namespace RFFGen
    * Adds the definition of possibly undefined vanishing higher order derivatives.
    */
   template <class F, bool arithmeticArgument = false>
-  using Finalize = Detail::FinalizeImpl< F , arithmeticArgument , Checks::hasMoreThanOneVariable<F>() >;
+  using Finalize = Detail::FinalizeImpl< F , arithmeticArgument , Checks::hasVariable<F>() >;
 
   /**
    * \brief Finish function definition.
