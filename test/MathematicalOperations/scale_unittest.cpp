@@ -1,6 +1,7 @@
 #include "../../RFFGen/CMath/pow.hh"
 #include "../../RFFGen/generate.hh"
 #include "../../RFFGen/finalize.hh"
+#include "../../RFFGen/variable.hh"
 
 #include <gtest/gtest.h>
 
@@ -8,6 +9,15 @@ TEST(ScaleTest,Update)
 {
   auto fun = 2*RFFGen::CMath::Pow<3,1>(2.);
   EXPECT_NO_THROW( fun.update(-1) );
+  EXPECT_DOUBLE_EQ( fun.d0() , -2. );
+}
+
+TEST(ScaleTest,UpdateVariable)
+{
+  auto x = variable<0>(2.);
+  auto fun = ( 2*RFFGen::CMath::Pow<3,1>() ) << x;
+  EXPECT_DOUBLE_EQ( fun.d0() , 16. );
+  EXPECT_NO_THROW( fun.updateVariable<0>(-1) );
   EXPECT_DOUBLE_EQ( fun.d0() , -2. );
 }
 
