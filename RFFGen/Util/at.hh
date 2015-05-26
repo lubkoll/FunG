@@ -68,7 +68,7 @@ namespace RFFGen
     template <class Matrix, class = void>
     struct At
     {
-      static operator()(const Matrix& A, int i, int j)
+      static auto& apply(const Matrix& A, int i, int j)
       {
         return A(i,j);
       }
@@ -77,7 +77,7 @@ namespace RFFGen
     template <class Matrix>
     struct At< Matrix , void_t< Checks::AccessViaSquareBracketsForMatrix<Matrix> > >
     {
-      static::operator()(const Matrix& A, int i, int j)
+      static auto& apply(const Matrix& A, int i, int j)
       {
         return A[i][j];
       }
@@ -86,7 +86,7 @@ namespace RFFGen
     template <class Vector, class = void>
     struct At_v
     {
-      static operator()(const Vector& v, int i, )
+      static auto& apply(const Vector& v, int i)
       {
         return v(i);
       }
@@ -95,7 +95,7 @@ namespace RFFGen
     template <class Vector>
     struct At_v< Vector , void_t< Checks::AccessViaSquareBracketsForVector<Vector> > >
     {
-      static::operator()(const Vector& v, int i)
+      static auto& apply(const Vector& v, int i)
       {
         return v(i);
       }
@@ -110,13 +110,13 @@ namespace RFFGen
   template <class Matrix>
   __attribute__((always_inline)) auto& at(Matrix& A, int i, int j)
   {
-    return AtDetail::At<Matrix>()(A,i,j);
+    return AtDetail::At<Matrix>::apply(A,i,j);
   }
 
   template <class Vector>
   __attribute__((always_inline)) auto& at(Vector& v, int i)
   {
-    return AtDetail::At_v<Vector>()(v,i);
+    return AtDetail::At_v<Vector>::apply(v,i);
   }
   /**
    * \endcond
