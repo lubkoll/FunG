@@ -111,7 +111,7 @@ namespace RFFGen
       template < int id , class Arg >
       ReturnType d1(const Arg& dx) const
       {
-        static_assert( Checks::hasVariableId< F , id >() , "You are trying to compute the first derivative with respect to a variable that is not present");
+        static_assert( Checks::hasVariableId< F , id >() , "You are trying to compute the first derivative with respect to a variable that is not present" );
         static_assert( Checks::checkArgument<F,Arg,id>() , "Incompatible argument in computation of first derivative." );
         static_assert( hasConsistentFirstDerivative< F >() , "Inconsistent functional definition encountered.");
 
@@ -121,10 +121,11 @@ namespace RFFGen
       template < int idx , int idy , class ArgX , class ArgY >
       ReturnType d2(const ArgX& dx, const ArgY& dy) const
       {
-        static_assert(Checks::hasVariableId< F , idx >() && Checks::hasVariableId< F , idy>(), "You are trying to compute the second derivative with respect to at least one variable that is not present");
+        static_assert( Checks::hasVariableId< F , idx >() && Checks::hasVariableId< F , idy>(),
+                       "You are trying to compute the second derivative with respect to at least one variable that is not present" );
         static_assert( Checks::checkArgument<F,ArgX,idx>() , "Incompatible first argument in computation of second derivative." );
         static_assert( Checks::checkArgument<F,ArgY,idy>() , "Incompatible second argument in computation of second derivative." );
-        static_assert(hasConsistentSecondDerivative< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> >(), "Inconsistent functional definition encountered.");
+        static_assert( hasConsistentSecondDerivative< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> >(), "Inconsistent functional definition encountered." );
 
         return FinalizeD2< idx , idy , ReturnType , HasD2MemberFunction< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> >::value>()(static_cast<const F&>(*this),dx,dy);
       }
@@ -132,8 +133,8 @@ namespace RFFGen
       template < int idx , int idy , int idz , class ArgX , class ArgY , class ArgZ >
       ReturnType d3(const ArgX& dx, const ArgY& dy, const ArgZ& dz) const
       {
-        static_assert(Checks::hasVariableId< F , idx >() && Checks::hasVariableId< F , idy>() && Checks::hasVariableId< F , idz >(),
-                      "You are trying to compute the third derivative with respect to at least one variable that is not present");
+        static_assert( Checks::hasVariableId< F , idx >() && Checks::hasVariableId< F , idy>() && Checks::hasVariableId< F , idz >(),
+                      "You are trying to compute the third derivative with respect to at least one variable that is not present" );
         static_assert( Checks::checkArgument<F,ArgX,idx>() , "Incompatible first argument in computation of third derivative." );
         static_assert( Checks::checkArgument<F,ArgY,idy>() , "Incompatible second argument in computation of third derivative." );
         static_assert( Checks::checkArgument<F,ArgZ,idz>() , "Incompatible third argument in computation of third derivative." );
@@ -168,25 +169,34 @@ namespace RFFGen
       template < int id , class Arg = double >
       ReturnType d1(Arg dx=1) const
       {
-        static_assert(hasConsistentFirstDerivative< F >(), "");
-        static_assert(Checks::hasVariableId< F , id >(), "You are trying to compute the first derivative with respect to a variable that is not present");
+        static_assert( Checks::hasVariableId< F , id >(), "You are trying to compute the first derivative with respect to a variable that is not present" );
+        static_assert( Checks::checkArgument<F,Arg,id>() , "Incompatible argument in computation of first derivative." );
+        static_assert( hasConsistentFirstDerivative< F >(), "Inconsistent functional definition encountered." );
         return FinalizeD1< id , ReturnType , HasD1MemberFunction< F , IndexedType<Arg,id> >::value >()(static_cast<const F&>(*this),dx);
       }
 
       template < int idx , int idy , class ArgX = double , class ArgY = double >
       ReturnType d2(ArgX dx=1, ArgY dy=1) const
       {
-        static_assert(hasConsistentSecondDerivative< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> >(), "");
-        static_assert(Checks::hasVariableId< F , idx >() && Checks::hasVariableId< F , idy>(), "You are trying to compute the second derivative with respect to at least one variable that is not present");
+        static_assert(Checks::hasVariableId< F , idx >() && Checks::hasVariableId< F , idy>(),
+                      "You are trying to compute the second derivative with respect to at least one variable that is not present");
+        static_assert( Checks::checkArgument<F,ArgX,idx>() , "Incompatible first argument in computation of second derivative." );
+        static_assert( Checks::checkArgument<F,ArgY,idy>() , "Incompatible second argument in computation of second derivative." );
+        static_assert(hasConsistentSecondDerivative< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> >(), "Inconsistent functional definition encountered." );
+
         return FinalizeD2< idx , idy , ReturnType , HasD2MemberFunction< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> >::value >()(static_cast<const F&>(*this),dx,dy);
       }
 
       template < int idx , int idy , int idz , class ArgX = double , class ArgY = double , class ArgZ = double>
       ReturnType d3(ArgX dx=1, ArgY dy=1, ArgZ dz=1) const
       {
-        static_assert(hasConsistentThirdDerivative< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> , IndexedType<ArgZ,idz> >(), "");
         static_assert(Checks::hasVariableId< F , idx >() && Checks::hasVariableId< F , idy>() && Checks::hasVariableId< F , idz >(),
                       "You are trying to compute the third derivative with respect to at least one variable that is not present");
+        static_assert( Checks::checkArgument<F,ArgX,idx>() , "Incompatible first argument in computation of third derivative." );
+        static_assert( Checks::checkArgument<F,ArgY,idy>() , "Incompatible second argument in computation of third derivative." );
+        static_assert( Checks::checkArgument<F,ArgZ,idz>() , "Incompatible third argument in computation of third derivative." );
+        static_assert(hasConsistentThirdDerivative< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> , IndexedType<ArgZ,idz> >(), "Inconsistent functional definition encountered.");
+
         return FinalizeD3< idx , idy , idy , ReturnType ,
                            HasD3MemberFunction< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> , IndexedType<ArgZ,idz> >::value >()(static_cast<const F&>(*this),dx,dy,dz);
       }
