@@ -144,7 +144,7 @@ namespace RFFGen
       using type = typename VariableType<F,id>::type;
     };
 
-    template <template <class,class,class,class> class H, class F, class G, class CheckF, class CheckG>
+    template <template <class,class,class,class> class H, class F, class G, class CheckF, class CheckG, int id>
     struct VariableType< H<F,G,CheckF,CheckG> , id >
     {
       using type = std::conditional_t< std::is_same<void,typename VariableType<F,id>::type>::value ,
