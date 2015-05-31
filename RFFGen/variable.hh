@@ -133,6 +133,26 @@ namespace RFFGen
     template <class T, int id>
     struct MinVariableId< Variable<T,id> > : std::integral_constant< int , id >
     {};
+
+
+
+    template <class Type, int id> struct VariableType { using type = void; };
+
+    template <template <class,class> class G, class F, class CheckF, int id>
+    struct VariableType< G<F,CheckF> , id >
+    {
+      using type = typename VariableType<F,id>::type;
+    };
+
+    template <template <class,class,class,class> class H, class F, class G, class CheckF, class CheckG>
+    struct VariableType< H<F,G,CheckF,CheckG> , id >
+    {
+      using type = std::conditional_t< std::is_same<void,typename VariableType<F,id>::type>::value ,
+                                       typename VariableType<G,id>::type, typename VariableType<F,id>::type>;
+    };
+
+    template <class T, int id>
+    struct VariableType< Variable<T,id>, id > { using type = T; };
   }
   /**
    * \endcond
@@ -142,7 +162,7 @@ namespace RFFGen
    * \brief Independent variable. Can be uniquely identified by its id.
    */
   template <class T, int id>
-  struct Variable : Base/*, std::integral_constant<int,id>*/
+  struct Variable : Base
   {
     Variable() = default;
 
@@ -222,6 +242,16 @@ namespace RFFGen
     constexpr bool hasMoreThanOneVariable()
     {
       return VariableDetail::MinVariableId<Type>::value < VariableDetail::MaxVariableId<Type>::value;
+    }
+
+    /**
+     * \ingroup Checks
+     * \brief Check if variable with index id has type Type.
+     */
+    template <class F, class Type, int id>
+    constexpr bool checkArgument()
+    {
+      return std::is_same<typename VariableDetail::VariableType<F,id>::type, Type>::value;
     }
   }
 }
