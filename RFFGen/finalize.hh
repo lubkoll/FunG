@@ -224,24 +224,24 @@ namespace RFFGen
         return F::d0();
       }
 
-      template < int id = -1 , class Arg = double >
+      template < int id = 0 , class Arg = double >
       ReturnType d1(Arg dx=1) const
       {
-        static_assert(hasConsistentFirstDerivative< F >(), "Inconsistent functional definition encountered.");
+        static_assert( hasConsistentFirstDerivative< F >(), "Inconsistent functional definition encountered." );
         return FinalizeD1< id , ReturnType , HasD1MemberFunction< F , IndexedType<Arg,id> >::value >()(static_cast<const F&>(*this),dx);
       }
 
-      template < int idx = -1 , int idy = -1 , class ArgX = double , class ArgY = double >
+      template < int idx = 0 , int idy = 0 , class ArgX = double , class ArgY = double >
       ReturnType d2(ArgX dx=1, ArgY dy=1) const
       {
-        static_assert(hasConsistentSecondDerivative< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> >(), "Inconsistent functional definition encountered.");
+        static_assert( hasConsistentSecondDerivative< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> >(), "Inconsistent functional definition encountered." );
         return FinalizeD2< idx , idy , ReturnType , HasD2MemberFunction< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> >::value >()(static_cast<const F&>(*this),dx,dy);
       }
 
-      template < int idx = -1 , int idy = -1 , int idz = -1 , class ArgX = double , class ArgY = double , class ArgZ = double>
+      template < int idx = 0 , int idy = 0 , int idz = 0 , class ArgX = double , class ArgY = double , class ArgZ = double>
       ReturnType d3(ArgX dx=1, ArgY dy=1, ArgZ dz=1) const
       {
-        static_assert(hasConsistentThirdDerivative< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> , IndexedType<ArgZ,idz> >(), "Inconsistent functional definition encountered.");
+        static_assert( hasConsistentThirdDerivative< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> , IndexedType<ArgZ,idz> >(), "Inconsistent functional definition encountered." );
         return FinalizeD3< idx , idy , idy , ReturnType ,
                            HasD3MemberFunction< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> , IndexedType<ArgZ,idz> >::value >()(static_cast<const F&>(*this),dx,dy,dz);
       }
@@ -261,24 +261,24 @@ namespace RFFGen
         return F::d0();
       }
 
-      template < int id = -1 , class Arg = double >
+      template < int id = 0 , class Arg = double >
       ReturnType d1(const Arg& dx) const
       {
-        static_assert(hasConsistentFirstDerivative< F >(), "Inconsistent functional definition encountered.");
+        static_assert( hasConsistentFirstDerivative< F >(), "Inconsistent functional definition encountered." );
         return FinalizeD1< id , ReturnType , HasD1MemberFunction< F , IndexedType<Arg,id> >::value >()(static_cast<const F&>(*this),dx);
       }
 
-      template < int idx = -1 , int idy = -1 , class ArgX = double , class ArgY = double >
+      template < int idx = 0 , int idy = 0 , class ArgX = double , class ArgY = double >
       ReturnType d2(const ArgX& dx, const ArgY& dy) const
       {
-        static_assert(hasConsistentSecondDerivative< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> >(), "Inconsistent functional definition encountered.");
+        static_assert( hasConsistentSecondDerivative< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> >(), "Inconsistent functional definition encountered." );
         return FinalizeD2< idx , idy , ReturnType , HasD2MemberFunction< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> >::value >()(static_cast<const F&>(*this),dx,dy);
       }
 
-      template < int idx = -1 , int idy = -1 , int idz = -1 , class ArgX = double , class ArgY = double , class ArgZ = double>
+      template < int idx = 0 , int idy = 0 , int idz = 0 , class ArgX = double , class ArgY = double , class ArgZ = double>
       ReturnType d3(const ArgX& dx, const ArgY& dy, const ArgZ& dz) const
       {
-        static_assert(hasConsistentThirdDerivative< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> , IndexedType<ArgZ,idz> >(), "Inconsistent functional definition encountered.");
+        static_assert( hasConsistentThirdDerivative< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> , IndexedType<ArgZ,idz> >(), "Inconsistent functional definition encountered." );
         return FinalizeD3< idx , idy , idy , ReturnType ,
                            HasD3MemberFunction< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> , IndexedType<ArgZ,idz> >::value >()(static_cast<const F&>(*this),dx,dy,dz);
       }
