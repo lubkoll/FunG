@@ -111,8 +111,10 @@ namespace RFFGen
       template < int id , class Arg >
       ReturnType d1(const Arg& dx) const
       {
-        static_assert(hasConsistentFirstDerivative< F >(), "");
-        static_assert(Checks::hasVariableId< F , id >(), "You are trying to compute the first derivative with respect to a variable that is not present");
+        static_assert( Checks::hasVariableId< F , id >() , "You are trying to compute the first derivative with respect to a variable that is not present");
+        static_assert( Checks::checkArgument<F,Arg,id>() , "Inconsistent argument in computation of first derivative." );
+        static_assert( hasConsistentFirstDerivative< F >() , "Inconsistent functional definition encountered.");
+
         return FinalizeD1< id , ReturnType , HasD1MemberFunction< F , IndexedType<Arg,id> >::value>()(static_cast<const F&>(*this),dx);
       }
 
