@@ -21,10 +21,12 @@
 #ifndef RFFGEN_MATH_HH
 #define RFFGEN_MATH_HH
 
+#include "CMath/arcsine.hh"
 #include "CMath/cosine.hh"
 #include "CMath/exp.hh"
 #include "CMath/log.hh"
 #include "CMath/sine.hh"
 #include "CMath/pow.hh"
+#include "CMath/tan.hh"
 
 #endif // RFFGEN_MATH_HH
