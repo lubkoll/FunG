@@ -136,7 +136,7 @@ namespace RFFGen
 
 
 
-    template <class Type, int id> struct VariableType { using type = void; };
+    template <class F, int id> struct VariableType { using type = void; };
 
     template <template <class,class> class G, class F, class CheckF, int id>
     struct VariableType< G<F,CheckF> , id >
@@ -210,6 +210,11 @@ namespace RFFGen
     return Variable<T,id>(t);
   }
 
+  /**
+   * \brief Get underlying type of variable with index id.
+   */
+  template <class F, int id>
+  using Variable_t = typename VariableDetail::VariableType<F,id>::type;
 
   namespace Checks
   {
