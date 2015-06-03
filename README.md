@@ -65,6 +65,7 @@ auto generateAdiposeTissue(double cCells, double k1, double k2,
 {
   using namespace RFFGen::LinearAlgebra;
   using RFFGen::CMath::exp;
+  using RFFGen::finalize;
 
   auto i1 = FirstPrincipalInvariant<Matrix>();
   auto si1 = ShiftedFirstPrincipalInvariant<Matrix>();
