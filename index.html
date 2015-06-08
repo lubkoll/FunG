@@ -230,10 +230,10 @@ of generated temporaries by directly performing simple computations. </p>
 matrices, where only few operations are of higher order, this significantly reduces the computation times of the second and third derivative. </p>
 
 <p>
-A good example for the effects of this optimization strategy is the product <span lang="latex">f=M(F^TF)</span>, which occurs in the computation of the first mixed strain invariant. In this context $M$ is treated as a constant 
-and $F$ denotes the unknown and both are matrices in $\mathbb{R}^{3,3}$. For simplicity  we assume that we have a function $C=F^T F$.
+A good example for the effects of this optimization strategy is the product <span lang="latex">f=M(F^TF)</span>, which occurs in the computation of the first mixed strain invariant. In this context <span lang="latex">M</span> 
+is treated as a constant and <span lang="latex">F</span> denotes the unknown and both are matrices in <span lang="latex">\mathbb{R}^{3,3}</span>. For simplicity  we assume that we have a function <span lang="latex">C=F^T F</span>.
 The following graphs illustrate the mathematical operations that are performed when evaluating this product and its second derivative wrt. directions 
-$\delta F_1$ and $\delta F_2$.
+<span lang="latex">\delta F_1</span> and <span lang="latex">\delta F_2</span>.
 </p>
 <figure>
 <img src="images/product_rule_d2.gif">
