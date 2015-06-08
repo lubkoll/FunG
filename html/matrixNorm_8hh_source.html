@@ -38,6 +38,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -68,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -183,7 +185,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    };</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix&gt;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keyword">using</span> MatrixNorm = MathematicalOperations::Chain&lt; CMath::Sqrt , SquaredMatrixNorm&lt;Matrix&gt; &gt;;</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#gaa59381731a80fe009e56f86f78ebc703">  122</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html">MatrixNorm</a> = <a class="code" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html">MathematicalOperations::Chain&lt; CMath::Sqrt , SquaredMatrixNorm&lt;Matrix&gt;</a> &gt;;</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  }</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
@@ -193,6 +195,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_html_a12a675f8253661fb62915ba3f6f2d6e6"><div class="ttname"><a href="structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm.html#a12a675f8253661fb62915ba3f6f2d6e6">RFFGen::LinearAlgebra::SquaredMatrixNorm::SquaredMatrixNorm</a></div><div class="ttdeci">SquaredMatrixNorm()=default</div><div class="ttdoc">Default constructor. </div></div>
 <div class="ttc" id="structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_html_a3b7bbeb2d36bea1117a551c8d168c4d6"><div class="ttname"><a href="structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm.html#a3b7bbeb2d36bea1117a551c8d168c4d6">RFFGen::LinearAlgebra::SquaredMatrixNorm::update</a></div><div class="ttdeci">void update(const Matrix &amp;A)</div><div class="ttdoc">Reset matrix to compute squared norm from. </div><div class="ttdef"><b>Definition:</b> matrixNorm.hh:59</div></div>
 <div class="ttc" id="structRFFGen_1_1Base_html"><div class="ttname"><a href="structRFFGen_1_1Base.html">RFFGen::Base</a></div><div class="ttdoc">Base class for functions satisfying FunctionConcept. Required for enabling the operators in generate...</div><div class="ttdef"><b>Definition:</b> base.hh:27</div></div>
+<div class="ttc" id="structRFFGen_1_1MathematicalOperations_1_1Chain_html"><div class="ttname"><a href="structRFFGen_1_1MathematicalOperations_1_1Chain.html">RFFGen::MathematicalOperations::Chain</a></div><div class="ttdoc">Chain  of functions  and  of type F resp. G (F and G must satisfy the requirements of Concepts::Funct...</div><div class="ttdef"><b>Definition:</b> chain.hh:61</div></div>
 <div class="ttc" id="structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_html_a6aee4181a9dfb2a146f2cee3cca6a562"><div class="ttname"><a href="structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm.html#a6aee4181a9dfb2a146f2cee3cca6a562">RFFGen::LinearAlgebra::SquaredMatrixNorm::operator()</a></div><div class="ttdeci">auto operator()() const noexcept</div><div class="ttdoc">Squared matrix norm. Convenient access to d0(). </div><div class="ttdef"><b>Definition:</b> matrixNorm.hh:66</div></div>
 <div class="ttc" id="structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_html_ae27b37478ba3e246f73d8383e11c1f84"><div class="ttname"><a href="structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm.html#ae27b37478ba3e246f73d8383e11c1f84">RFFGen::LinearAlgebra::SquaredMatrixNorm::d1</a></div><div class="ttdeci">auto d1(const Matrix &amp;dA) const </div><div class="ttdoc">First directional derivative. </div><div class="ttdef"><b>Definition:</b> matrixNorm.hh:79</div></div>
 <div class="ttc" id="structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_html_aaf6162ac724beec933f9f531e2a353f1"><div class="ttname"><a href="structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm.html#aaf6162ac724beec933f9f531e2a353f1">RFFGen::LinearAlgebra::SquaredMatrixNorm::d2</a></div><div class="ttdeci">auto d2(const Matrix &amp;dA1, const Matrix &amp;dA2) const </div><div class="ttdoc">Second directional derivative. </div><div class="ttdef"><b>Definition:</b> matrixNorm.hh:86</div></div>
@@ -200,7 +203,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 20:43:10 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 8 2015 20:47:59 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

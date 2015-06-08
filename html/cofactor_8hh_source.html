@@ -38,6 +38,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -68,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -163,7 +165,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">template</span> &lt; <span class="keywordtype">int</span> row , <span class="keywordtype">int</span> col , <span class="keyword">class </span>Matrix ,</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;               <span class="keyword">class </span>= std::enable_if_t&lt;Checks::isConstantSizeMatrix&lt;Matrix&gt;()&gt; ,</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;               <span class="keyword">class</span> = Concepts::MatrixConceptCheck&lt;Matrix&gt; &gt;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">auto</span> computeCofactor(Matrix <span class="keyword">const</span>&amp; A)</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#ga6001dbc498c56902aeda2d2e6f93758e">   92</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__LinearAlgebraGroup.html#gaf18f1bcaac9b24ebae5c7020363ef827">computeCofactor</a>(Matrix <span class="keyword">const</span>&amp; A)</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    {</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      static_assert( dimension&lt;Matrix&gt;() == 2 || dimension&lt;Matrix&gt;() == 3 ,</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                     <span class="stringliteral">&quot;Cofactors are currently only implemented for 2x2 and 3x3 matrices. Efficient general implementations are non-trivial and may or may not be implemented in the future.&quot;</span> );</div>
@@ -174,7 +176,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;               <span class="keyword">class </span>= std::enable_if_t&lt;!Checks::isConstantSizeMatrix&lt;Matrix&gt;()&gt; ,</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;               <span class="keyword">class</span> = std::enable_if_t&lt;Checks::isDynamicMatrix&lt;Matrix&gt;()&gt; ,</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;               <span class="keyword">class </span>= Concepts::MatrixConceptCheck&lt;Matrix&gt; &gt;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    auto computeCofactor(Matrix const&amp; A)</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#gaf18f1bcaac9b24ebae5c7020363ef827">  110</a></span>&#160;    auto <a class="code" href="group__LinearAlgebraGroup.html#gaf18f1bcaac9b24ebae5c7020363ef827">computeCofactor</a>(Matrix const&amp; A)</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    {</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      assert( ( rows(A)==2 &amp;&amp; cols(A)==2 ) || ( rows(A)==3 &amp;&amp; cols(A)==3) );</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      <span class="keywordflow">if</span>( rows(A) == 2 ) <span class="keywordflow">return</span> Detail::computeCofactorImpl&lt;row,col&gt;(A, A, std::integral_constant&lt;int,2&gt;());</div>
@@ -184,7 +186,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keyword">template</span> &lt; <span class="keywordtype">int</span> row , <span class="keywordtype">int</span> col , <span class="keyword">class </span>Matrix ,</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;               <span class="keyword">class </span>= std::enable_if_t&lt;Checks::isConstantSizeMatrix&lt;Matrix&gt;()&gt; ,</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;               <span class="keyword">class</span> = Concepts::MatrixConceptCheck&lt;Matrix&gt; &gt;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keyword">auto</span> computeCofactorDirectionalDerivative(Matrix <span class="keyword">const</span>&amp; A, Matrix <span class="keyword">const</span>&amp; B)</div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#ga5194f473d8619836b838de8029bc3172">  129</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__LinearAlgebraGroup.html#gae69e50e6a283915070eda9758e96aaaf">computeCofactorDirectionalDerivative</a>(Matrix <span class="keyword">const</span>&amp; A, Matrix <span class="keyword">const</span>&amp; B)</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    {</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;      static_assert( dimension&lt;Matrix&gt;() == 2 || dimension&lt;Matrix&gt;() == 3 ,</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                     <span class="stringliteral">&quot;Cofactors are currently only implemented for 2x2 and 3x3 matrices. Efficient general implementations are non-trivial and may or may not be implemented in the future.&quot;</span> );</div>
@@ -195,7 +197,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;               <span class="keyword">class </span>= std::enable_if_t&lt;!Checks::isConstantSizeMatrix&lt;Matrix&gt;()&gt; ,</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;               <span class="keyword">class</span> = std::enable_if_t&lt;Checks::isDynamicMatrix&lt;Matrix&gt;()&gt; ,</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;               <span class="keyword">class </span>= Concepts::MatrixConceptCheck&lt;Matrix&gt; &gt;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    auto computeCofactorDirectionalDerivative(Matrix const&amp; A, Matrix <span class="keyword">const</span>&amp; B)</div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#gae69e50e6a283915070eda9758e96aaaf">  149</a></span>&#160;    auto <a class="code" href="group__LinearAlgebraGroup.html#gae69e50e6a283915070eda9758e96aaaf">computeCofactorDirectionalDerivative</a>(Matrix const&amp; A, Matrix <span class="keyword">const</span>&amp; B)</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    {</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;      assert( ( rows(A)==2 &amp;&amp; cols(A)==2 ) || ( rows(A)==3 &amp;&amp; cols(A)==3) );</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      <span class="keywordflow">if</span> ( rows(A)==2 ) <span class="keywordflow">return</span> Detail::computeCofactorImpl&lt;row,col&gt;(A, B, std::integral_constant&lt;int,2&gt;());</div>
@@ -205,10 +207,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;}</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="preprocessor">#endif // RFFGEN_LINEAR_ALGEBRA_COFACTOR_HH</span></div>
+<div class="ttc" id="group__LinearAlgebraGroup_html_gaf18f1bcaac9b24ebae5c7020363ef827"><div class="ttname"><a href="group__LinearAlgebraGroup.html#gaf18f1bcaac9b24ebae5c7020363ef827">RFFGen::LinearAlgebra::computeCofactor</a></div><div class="ttdeci">auto computeCofactor(Matrix const &amp;A)</div><div class="ttdoc">Compute the -cofactor of . Implemented for  with . </div><div class="ttdef"><b>Definition:</b> cofactor.hh:110</div></div>
+<div class="ttc" id="group__LinearAlgebraGroup_html_gae69e50e6a283915070eda9758e96aaaf"><div class="ttname"><a href="group__LinearAlgebraGroup.html#gae69e50e6a283915070eda9758e96aaaf">RFFGen::LinearAlgebra::computeCofactorDirectionalDerivative</a></div><div class="ttdeci">auto computeCofactorDirectionalDerivative(Matrix const &amp;A, Matrix const &amp;B)</div><div class="ttdoc">Compute the first directional derivative in direction  of the -cofactor of . Implemented for  with ...</div><div class="ttdef"><b>Definition:</b> cofactor.hh:149</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 20:43:10 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 8 2015 20:47:59 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

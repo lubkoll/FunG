@@ -38,6 +38,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -68,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -163,14 +165,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    };</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">template</span> &lt;<span class="keywordtype">int</span> div<span class="keywordtype">id</span>end, <span class="keywordtype">int</span> divisor=1&gt;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">auto</span> power()</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="group__CMathGroup.html#gaad5ee8ed4c0e87842e3ec66b54cf25e0">   99</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__CMathGroup.html#gaad5ee8ed4c0e87842e3ec66b54cf25e0">power</a>()</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      <span class="keywordflow">return</span> Pow&lt;dividend,divisor&gt;();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="structRFFGen_1_1CMath_1_1Pow.html">Pow&lt;dividend,divisor&gt;</a>();</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">struct </span>Pow&lt;2,1&gt; : Base, Chainer&lt; Pow&lt;2,1&gt; &gt;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">struct </span>Pow&lt;2,1&gt; : <a class="code" href="structRFFGen_1_1Base.html">Base</a>, <a class="code" href="structRFFGen_1_1Chainer.html">Chainer</a>&lt; Pow&lt;2,1&gt; &gt;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      <span class="keyword">using</span> Chainer&lt; Pow&lt;2,1&gt; &gt;::operator ();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      <span class="keyword">using</span> <a class="code" href="structRFFGen_1_1Chainer.html">Chainer&lt; Pow&lt;2,1&gt;</a> &gt;::operator ();</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      <span class="keyword">explicit</span> <a class="code" href="structRFFGen_1_1CMath_1_1Pow.html#a6b1f2413fa8ce7ae9064ee7e948da7eb">Pow</a>(<span class="keywordtype">double</span> x_=0) { <a class="code" href="structRFFGen_1_1CMath_1_1Pow.html#aabed9b037ca197924bf683c04d175449">update</a>(x_); }</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
@@ -403,28 +405,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;      <span class="keywordtype">double</span> d0val = 0, d1val = 0, d2val = 0, d3val = 0;</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    };</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="keyword">using</span> Sqrt = Pow&lt;1,2&gt;;</div>
+<div class="line"><a name="l00406"></a><span class="lineno"><a class="line" href="group__CMathGroup.html#ga1df0427b70721cce09aabcb0b12cdde5">  406</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="structRFFGen_1_1CMath_1_1Pow.html">Sqrt</a> = <a class="code" href="structRFFGen_1_1CMath_1_1Pow.html">Pow&lt;1,2&gt;</a>;</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    <span class="keyword">using</span> Cbrt = Pow&lt;1,3&gt;;</div>
+<div class="line"><a name="l00412"></a><span class="lineno"><a class="line" href="group__CMathGroup.html#gaadddd06c274ebfff6e54908a36c0d98f">  412</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="structRFFGen_1_1CMath_1_1Pow.html">Cbrt</a> = <a class="code" href="structRFFGen_1_1CMath_1_1Pow.html">Pow&lt;1,3&gt;</a>;</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <span class="keyword">using</span> Cbrt2 = Pow&lt;2,3&gt;;</div>
+<div class="line"><a name="l00418"></a><span class="lineno"><a class="line" href="group__CMathGroup.html#gae78a14bfd1a9ab12eed3309d102c2538">  418</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="structRFFGen_1_1CMath_1_1Pow.html">Cbrt2</a> = <a class="code" href="structRFFGen_1_1CMath_1_1Pow.html">Pow&lt;2,3&gt;</a>;</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;</div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    template &lt;class Function, class = std::enable_if_t&lt;std::is_base_of&lt;Base,Function&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    <span class="keyword">auto</span> sqrt(<span class="keyword">const</span> Function&amp; f)</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    {</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;      <span class="keywordflow">return</span> Sqrt()(f);</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="group__CMathGroup.html#ga1df0427b70721cce09aabcb0b12cdde5">Sqrt</a>()(f);</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    }</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    template &lt;class Function, class = std::enable_if_t&lt;std::is_base_of&lt;Base,Function&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    <span class="keyword">auto</span> cbrt(<span class="keyword">const</span> Function&amp; f)</div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    {</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;      <span class="keywordflow">return</span> Cbrt()(f);</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="group__CMathGroup.html#gaadddd06c274ebfff6e54908a36c0d98f">Cbrt</a>()(f);</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    }</div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    template &lt;class Function, class = std::enable_if_t&lt;std::is_base_of&lt;Base,Function&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    <span class="keyword">auto</span> cbrt2(<span class="keyword">const</span> Function&amp; f)</div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    {</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;      <span class="keywordflow">return</span> Cbrt2()(f);</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="group__CMathGroup.html#gae78a14bfd1a9ab12eed3309d102c2538">Cbrt2</a>()(f);</div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    }</div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;</div>
 <div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    <span class="keyword">template</span> &lt;<span class="keywordtype">int</span> dividend, <span class="keywordtype">int</span> divisor,</div>
@@ -438,20 +440,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;}</div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;</div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;<span class="preprocessor">#endif // RFFGEN_CMATH_POW_HH</span></div>
+<div class="ttc" id="group__CMathGroup_html_gae78a14bfd1a9ab12eed3309d102c2538"><div class="ttname"><a href="group__CMathGroup.html#gae78a14bfd1a9ab12eed3309d102c2538">RFFGen::CMath::Cbrt2</a></div><div class="ttdeci">Pow&lt; 2, 3 &gt; Cbrt2</div><div class="ttdoc">Third root squared including first three derivatives (based on sqrt(double) in &lt;cmath&gt;). </div><div class="ttdef"><b>Definition:</b> pow.hh:418</div></div>
 <div class="ttc" id="structRFFGen_1_1Base_html"><div class="ttname"><a href="structRFFGen_1_1Base.html">RFFGen::Base</a></div><div class="ttdoc">Base class for functions satisfying FunctionConcept. Required for enabling the operators in generate...</div><div class="ttdef"><b>Definition:</b> base.hh:27</div></div>
 <div class="ttc" id="structRFFGen_1_1CMath_1_1Pow_html_ac733ea45c6cfccdc11e7c4206c4641ab"><div class="ttname"><a href="structRFFGen_1_1CMath_1_1Pow.html#ac733ea45c6cfccdc11e7c4206c4641ab">RFFGen::CMath::Pow::d2</a></div><div class="ttdeci">double d2(double dx=1., double dy=1.) const </div><div class="ttdoc">Second (directinal) derivative. </div><div class="ttdef"><b>Definition:</b> pow.hh:77</div></div>
 <div class="ttc" id="structRFFGen_1_1CMath_1_1Pow_html"><div class="ttname"><a href="structRFFGen_1_1CMath_1_1Pow.html">RFFGen::CMath::Pow</a></div><div class="ttdoc">Power function with rational exponent  including first three derivatives. </div><div class="ttdef"><b>Definition:</b> pow.hh:43</div></div>
 <div class="ttc" id="structRFFGen_1_1CMath_1_1Pow_html_a62c4da4570b12af2e56861600f9ce420"><div class="ttname"><a href="structRFFGen_1_1CMath_1_1Pow.html#a62c4da4570b12af2e56861600f9ce420">RFFGen::CMath::Pow::d0</a></div><div class="ttdeci">double d0() const noexcept</div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> pow.hh:63</div></div>
+<div class="ttc" id="group__CMathGroup_html_gaad5ee8ed4c0e87842e3ec66b54cf25e0"><div class="ttname"><a href="group__CMathGroup.html#gaad5ee8ed4c0e87842e3ec66b54cf25e0">RFFGen::CMath::power</a></div><div class="ttdeci">auto power()</div><div class="ttdef"><b>Definition:</b> pow.hh:99</div></div>
 <div class="ttc" id="classRFFGen_1_1OutOfDomainException_html"><div class="ttname"><a href="classRFFGen_1_1OutOfDomainException.html">RFFGen::OutOfDomainException</a></div><div class="ttdoc">Exception for scalar function arguments that are outside the domain of the function. </div><div class="ttdef"><b>Definition:</b> exceptions.hh:20</div></div>
 <div class="ttc" id="structRFFGen_1_1CMath_1_1Pow_html_a6b1f2413fa8ce7ae9064ee7e948da7eb"><div class="ttname"><a href="structRFFGen_1_1CMath_1_1Pow.html#a6b1f2413fa8ce7ae9064ee7e948da7eb">RFFGen::CMath::Pow::Pow</a></div><div class="ttdeci">Pow(double x=1)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> pow.hh:51</div></div>
+<div class="ttc" id="group__CMathGroup_html_gaadddd06c274ebfff6e54908a36c0d98f"><div class="ttname"><a href="group__CMathGroup.html#gaadddd06c274ebfff6e54908a36c0d98f">RFFGen::CMath::Cbrt</a></div><div class="ttdeci">Pow&lt; 1, 3 &gt; Cbrt</div><div class="ttdoc">Third root including first three derivatives (based on sqrt(double) in &lt;cmath&gt;). </div><div class="ttdef"><b>Definition:</b> pow.hh:412</div></div>
 <div class="ttc" id="structRFFGen_1_1Chainer_html"><div class="ttname"><a href="structRFFGen_1_1Chainer.html">RFFGen::Chainer</a></div><div class="ttdef"><b>Definition:</b> sum.hh:34</div></div>
 <div class="ttc" id="structRFFGen_1_1CMath_1_1Pow_html_aa98931e90793bd54740c056dde37c9d8"><div class="ttname"><a href="structRFFGen_1_1CMath_1_1Pow.html#aa98931e90793bd54740c056dde37c9d8">RFFGen::CMath::Pow::d3</a></div><div class="ttdeci">double d3(double dx=1., double dy=1., double dz=1.) const </div><div class="ttdoc">Third (directional) derivative. </div><div class="ttdef"><b>Definition:</b> pow.hh:84</div></div>
 <div class="ttc" id="structRFFGen_1_1CMath_1_1Pow_html_aabed9b037ca197924bf683c04d175449"><div class="ttname"><a href="structRFFGen_1_1CMath_1_1Pow.html#aabed9b037ca197924bf683c04d175449">RFFGen::CMath::Pow::update</a></div><div class="ttdeci">void update(double x)</div><div class="ttdoc">Reset point of evaluation. </div><div class="ttdef"><b>Definition:</b> pow.hh:54</div></div>
+<div class="ttc" id="group__CMathGroup_html_ga1df0427b70721cce09aabcb0b12cdde5"><div class="ttname"><a href="group__CMathGroup.html#ga1df0427b70721cce09aabcb0b12cdde5">RFFGen::CMath::Sqrt</a></div><div class="ttdeci">Pow&lt; 1, 2 &gt; Sqrt</div><div class="ttdoc">Square root including first three derivatives (based on sqrt(double) in &lt;cmath&gt;). ...</div><div class="ttdef"><b>Definition:</b> pow.hh:406</div></div>
 <div class="ttc" id="structRFFGen_1_1CMath_1_1Pow_html_af2d6a3bee0ab59865f309e5a27f0bf9f"><div class="ttname"><a href="structRFFGen_1_1CMath_1_1Pow.html#af2d6a3bee0ab59865f309e5a27f0bf9f">RFFGen::CMath::Pow::d1</a></div><div class="ttdeci">double d1(double dx=1.) const </div><div class="ttdoc">First (directional) derivative. </div><div class="ttdef"><b>Definition:</b> pow.hh:70</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 20:43:10 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 8 2015 20:47:59 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

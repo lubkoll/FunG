@@ -38,6 +38,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -68,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -120,7 +122,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">namespace </span>RFFGen</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix , <span class="keywordtype">int</span> offset = LinearAlgebra::dimension&lt;Matrix&gt;() &gt;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">auto</span> incompressibleNeoHooke(<span class="keywordtype">double</span> c, <span class="keyword">const</span> Matrix&amp; F)</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="group__Rubber.html#ga554b9bf515aa99d3bdc9e230f2a65bca">   44</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Rubber.html#ga554b9bf515aa99d3bdc9e230f2a65bca">incompressibleNeoHooke</a>(<span class="keywordtype">double</span> c, <span class="keyword">const</span> Matrix&amp; F)</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  {</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">using namespace </span>LinearAlgebra;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">using</span> Inv = <span class="keyword">typename</span> InvariantTraits&lt;Invariant::PRINCIPAL&gt;::template ShiftedFirstInvariant&lt;Matrix,offset&gt;;</div>
@@ -130,7 +132,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  }</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix , <span class="keywordtype">int</span> offset = LinearAlgebra::dimension&lt;Matrix&gt;() &gt;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">auto</span> modifiedIncompressibleNeoHooke(<span class="keywordtype">double</span> c, <span class="keyword">const</span> Matrix&amp; F)</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="group__Rubber.html#ga1b6f97c769ead09a5b1dcdf4733e85aa">   58</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Rubber.html#ga1b6f97c769ead09a5b1dcdf4733e85aa">modifiedIncompressibleNeoHooke</a>(<span class="keywordtype">double</span> c, <span class="keyword">const</span> Matrix&amp; F)</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  {</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">using namespace </span>LinearAlgebra;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">using</span> Inv = <span class="keyword">typename</span> InvariantTraits&lt;Invariant::MODIFIED&gt;::template ShiftedFirstInvariant&lt;Matrix,offset&gt;;</div>
@@ -151,23 +153,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  }</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> InflationPenalty, <span class="keyword">class</span> CompressionPenalty, <span class="keyword">class</span> Matrix , <span class="keywordtype">int</span> offset = LinearAlgebra::dimension&lt;Matrix&gt;() &gt;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keyword">auto</span> compressibleNeoHooke(<span class="keywordtype">double</span> c, <span class="keywordtype">double</span> d0, <span class="keywordtype">double</span> d1, <span class="keyword">const</span> Matrix&amp; F)</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="group__Rubber.html#ga35a60a5ae50481becd543140ba82c171">   91</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Rubber.html#ga35a60a5ae50481becd543140ba82c171">compressibleNeoHooke</a>(<span class="keywordtype">double</span> c, <span class="keywordtype">double</span> d0, <span class="keywordtype">double</span> d1, <span class="keyword">const</span> Matrix&amp; F)</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  {</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">return</span> NeoHookeDetail::compressibleNeoHookeImpl&lt;InflationPenalty,CompressionPenalty,Matrix,LinearAlgebra::Invariant::PRINCIPAL,offset&gt;(c,d0,d1,F);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  }</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> InflationPenalty, <span class="keyword">class</span> CompressionPenalty, <span class="keyword">class</span> Matrix , <span class="keywordtype">int</span> offset = LinearAlgebra::dimension&lt;Matrix&gt;() &gt;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keyword">auto</span> modifiedCompressibleNeoHooke(<span class="keywordtype">double</span> c, <span class="keywordtype">double</span> d0, <span class="keywordtype">double</span> d1, <span class="keyword">const</span> Matrix&amp; F)</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="group__Rubber.html#gad4985bcfe7726155b3b53f94094ebb3e">  102</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Rubber.html#gad4985bcfe7726155b3b53f94094ebb3e">modifiedCompressibleNeoHooke</a>(<span class="keywordtype">double</span> c, <span class="keywordtype">double</span> d0, <span class="keywordtype">double</span> d1, <span class="keyword">const</span> Matrix&amp; F)</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  {</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">return</span> NeoHookeDetail::compressibleNeoHookeImpl&lt;InflationPenalty,CompressionPenalty,Matrix,LinearAlgebra::Invariant::MODIFIED,offset&gt;(c,d0,d1,F);</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  }</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif // RFFGEN_NEO_HOOKE_HH</span></div>
+<div class="ttc" id="group__Rubber_html_ga35a60a5ae50481becd543140ba82c171"><div class="ttname"><a href="group__Rubber.html#ga35a60a5ae50481becd543140ba82c171">RFFGen::compressibleNeoHooke</a></div><div class="ttdeci">auto compressibleNeoHooke(double c, double d0, double d1, const Matrix &amp;F)</div><div class="ttdoc">Generate a compressible neo-Hookean material law , where  is the first principal matrix invariant...</div><div class="ttdef"><b>Definition:</b> neoHooke.hh:91</div></div>
+<div class="ttc" id="group__Rubber_html_ga1b6f97c769ead09a5b1dcdf4733e85aa"><div class="ttname"><a href="group__Rubber.html#ga1b6f97c769ead09a5b1dcdf4733e85aa">RFFGen::modifiedIncompressibleNeoHooke</a></div><div class="ttdeci">auto modifiedIncompressibleNeoHooke(double c, const Matrix &amp;F)</div><div class="ttdoc">Generate an &quot;incompressible&quot; neo-Hookean material law , where  is the modified first principal matrix...</div><div class="ttdef"><b>Definition:</b> neoHooke.hh:58</div></div>
+<div class="ttc" id="group__Rubber_html_ga554b9bf515aa99d3bdc9e230f2a65bca"><div class="ttname"><a href="group__Rubber.html#ga554b9bf515aa99d3bdc9e230f2a65bca">RFFGen::incompressibleNeoHooke</a></div><div class="ttdeci">auto incompressibleNeoHooke(double c, const Matrix &amp;F)</div><div class="ttdoc">Generate an &quot;incompressible&quot; neo-Hookean material law , where  is the first principal matrix invarian...</div><div class="ttdef"><b>Definition:</b> neoHooke.hh:44</div></div>
+<div class="ttc" id="group__Rubber_html_gad4985bcfe7726155b3b53f94094ebb3e"><div class="ttname"><a href="group__Rubber.html#gad4985bcfe7726155b3b53f94094ebb3e">RFFGen::modifiedCompressibleNeoHooke</a></div><div class="ttdeci">auto modifiedCompressibleNeoHooke(double c, double d0, double d1, const Matrix &amp;F)</div><div class="ttdoc">Generate a compressible neo-Hookean material law , where  is the modified first principal matrix inva...</div><div class="ttdef"><b>Definition:</b> neoHooke.hh:102</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 20:43:10 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 8 2015 20:47:59 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

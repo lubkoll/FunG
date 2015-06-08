@@ -38,6 +38,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -68,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -129,7 +131,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
 <div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html#a73dbd1543b5f4bf0c13b23b9962fc222">   60</a></span>&#160;      <span class="keywordtype">void</span> <a class="code" href="classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html#a73dbd1543b5f4bf0c13b23b9962fc222">update</a>(Matrix <span class="keyword">const</span>&amp; F)</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        FT = transpose(F);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        FT = <a class="code" href="group__LinearAlgebraGroup.html#ga547f56fe3fddb39aad3e80e94866a98b">transpose</a>(F);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        FTF = FT * F;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      }</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
@@ -147,14 +149,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html#a3a49e4c9105a4a466c43d5cd262fe725">   80</a></span>&#160;      Matrix <a class="code" href="classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html#a3a49e4c9105a4a466c43d5cd262fe725">d1</a>(Matrix <span class="keyword">const</span>&amp; dF1)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">      </span>{</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        Matrix FTdF1 = FT * dF1;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">return</span> addTransposed(FTdF1);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceRFFGen.html#aa35cec985ea0b25a40ada14189fba44d">addTransposed</a>(FTdF1);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      <span class="keyword">template</span> &lt;<span class="keywordtype">int</span>,<span class="keywordtype">int</span>&gt;</div>
 <div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html#ad15848883104beb2265dfb459d96dff2">   88</a></span>&#160;      Matrix <a class="code" href="classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html#ad15848883104beb2265dfb459d96dff2">d2</a>(Matrix <span class="keyword">const</span>&amp; dF1, Matrix <span class="keyword">const</span>&amp; dF2)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">      </span>{</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        Matrix dF2TdF1 = transpose(dF2) * dF1;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">return</span> addTransposed(dF2TdF1);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        Matrix dF2TdF1 = <a class="code" href="group__LinearAlgebraGroup.html#ga547f56fe3fddb39aad3e80e94866a98b">transpose</a>(dF2) * dF1;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceRFFGen.html#aa35cec985ea0b25a40ada14189fba44d">addTransposed</a>(dF2TdF1);</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      }</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">private</span>:</div>
@@ -169,7 +171,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
 <div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classRFFGen_1_1LinearAlgebra_1_1LinearizedStrainTensor.html#a56675ad7e1c0cf4f4c92fb06b4b003b5">  116</a></span>&#160;      <span class="keywordtype">void</span> <a class="code" href="classRFFGen_1_1LinearAlgebra_1_1LinearizedStrainTensor.html#a56675ad7e1c0cf4f4c92fb06b4b003b5">update</a>(Matrix <span class="keyword">const</span>&amp; F)</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      {</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        d0Result = F + transpose(F);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        d0Result = F + <a class="code" href="group__LinearAlgebraGroup.html#ga547f56fe3fddb39aad3e80e94866a98b">transpose</a>(F);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        d0Result *= 0.5;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;      }</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
@@ -181,14 +183,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;      <span class="keyword">template</span> &lt;<span class="keywordtype">int</span>&gt;</div>
 <div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="classRFFGen_1_1LinearAlgebra_1_1LinearizedStrainTensor.html#a62288bd627caf2cf7878d7eed0856d13">  130</a></span>&#160;      Matrix <a class="code" href="classRFFGen_1_1LinearAlgebra_1_1LinearizedStrainTensor.html#a62288bd627caf2cf7878d7eed0856d13">d1</a>(<span class="keyword">const</span> Matrix&amp; dF)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="keyword">      </span>{</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">return</span> 0.5*(dF + transpose(dF));</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">return</span> 0.5*(dF + <a class="code" href="group__LinearAlgebraGroup.html#ga547f56fe3fddb39aad3e80e94866a98b">transpose</a>(dF));</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      }</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;      Matrix d0Result = Matrix{0.};</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    };</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix&gt; <span class="keyword">using</span> GeometricNonlinearity = LeftCauchyGreenStrainTensor&lt;Matrix&gt;;</div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#ga435378ac8a773de0a3a8b3b8f67fee0c">  144</a></span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix&gt; <span class="keyword">using</span> <a class="code" href="classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html">GeometricNonlinearity</a> = <a class="code" href="classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html">LeftCauchyGreenStrainTensor&lt;Matrix&gt;</a>;</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix&gt;</div>
 <div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="classRFFGen_1_1LinearAlgebra_1_1StrainTensor.html">  154</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classRFFGen_1_1LinearAlgebra_1_1StrainTensor.html">StrainTensor</a> : <a class="code" href="structRFFGen_1_1MathematicalOperations_1_1Sum.html">MathematicalOperations::Sum</a>&lt; LinearizedStrainTensor&lt;Matrix&gt; , GeometricNonlinearity&lt;Matrix&gt; &gt;</div>
@@ -206,8 +208,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classRFFGen_1_1LinearAlgebra_1_1LinearizedStrainTensor_html_a56675ad7e1c0cf4f4c92fb06b4b003b5"><div class="ttname"><a href="classRFFGen_1_1LinearAlgebra_1_1LinearizedStrainTensor.html#a56675ad7e1c0cf4f4c92fb06b4b003b5">RFFGen::LinearAlgebra::LinearizedStrainTensor::update</a></div><div class="ttdeci">void update(Matrix const &amp;F)</div><div class="ttdoc">Reset point of evaluation. </div><div class="ttdef"><b>Definition:</b> strainTensor.hh:116</div></div>
 <div class="ttc" id="classRFFGen_1_1LinearAlgebra_1_1StrainTensor_html"><div class="ttname"><a href="classRFFGen_1_1LinearAlgebra_1_1StrainTensor.html">RFFGen::LinearAlgebra::StrainTensor</a></div><div class="ttdoc">Strain tensor . </div><div class="ttdef"><b>Definition:</b> strainTensor.hh:154</div></div>
 <div class="ttc" id="classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor_html_a7cc082254e1cd5ef9bcd80e984adac9b"><div class="ttname"><a href="classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html#a7cc082254e1cd5ef9bcd80e984adac9b">RFFGen::LinearAlgebra::LeftCauchyGreenStrainTensor::LeftCauchyGreenStrainTensor</a></div><div class="ttdeci">LeftCauchyGreenStrainTensor(Matrix const &amp;F)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> strainTensor.hh:57</div></div>
+<div class="ttc" id="group__LinearAlgebraGroup_html_ga547f56fe3fddb39aad3e80e94866a98b"><div class="ttname"><a href="group__LinearAlgebraGroup.html#ga547f56fe3fddb39aad3e80e94866a98b">RFFGen::LinearAlgebra::transpose</a></div><div class="ttdeci">TransposedMatrix transpose(Matrix A)</div><div class="ttdoc">Compute transpose of square matrix. </div><div class="ttdef"><b>Definition:</b> transpose.hh:43</div></div>
 <div class="ttc" id="classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor_html_a3a49e4c9105a4a466c43d5cd262fe725"><div class="ttname"><a href="classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html#a3a49e4c9105a4a466c43d5cd262fe725">RFFGen::LinearAlgebra::LeftCauchyGreenStrainTensor::d1</a></div><div class="ttdeci">Matrix d1(Matrix const &amp;dF1) const </div><div class="ttdoc">First directional derivative . </div><div class="ttdef"><b>Definition:</b> strainTensor.hh:80</div></div>
 <div class="ttc" id="structRFFGen_1_1Base_html"><div class="ttname"><a href="structRFFGen_1_1Base.html">RFFGen::Base</a></div><div class="ttdoc">Base class for functions satisfying FunctionConcept. Required for enabling the operators in generate...</div><div class="ttdef"><b>Definition:</b> base.hh:27</div></div>
+<div class="ttc" id="namespaceRFFGen_html_aa35cec985ea0b25a40ada14189fba44d"><div class="ttname"><a href="namespaceRFFGen.html#aa35cec985ea0b25a40ada14189fba44d">RFFGen::addTransposed</a></div><div class="ttdeci">Matrix addTransposed(Matrix &amp;A)</div><div class="ttdoc">Overwrites  with . </div><div class="ttdef"><b>Definition:</b> addTransposedMatrix.hh:37</div></div>
 <div class="ttc" id="classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor_html_ad15848883104beb2265dfb459d96dff2"><div class="ttname"><a href="classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html#ad15848883104beb2265dfb459d96dff2">RFFGen::LinearAlgebra::LeftCauchyGreenStrainTensor::d2</a></div><div class="ttdeci">Matrix d2(Matrix const &amp;dF1, Matrix const &amp;dF2) const </div><div class="ttdoc">Second directional derivative . </div><div class="ttdef"><b>Definition:</b> strainTensor.hh:88</div></div>
 <div class="ttc" id="classRFFGen_1_1LinearAlgebra_1_1LinearizedStrainTensor_html_a62288bd627caf2cf7878d7eed0856d13"><div class="ttname"><a href="classRFFGen_1_1LinearAlgebra_1_1LinearizedStrainTensor.html#a62288bd627caf2cf7878d7eed0856d13">RFFGen::LinearAlgebra::LinearizedStrainTensor::d1</a></div><div class="ttdeci">Matrix d1(const Matrix &amp;dF) const </div><div class="ttdoc">First directional derivative . </div><div class="ttdef"><b>Definition:</b> strainTensor.hh:130</div></div>
 <div class="ttc" id="classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor_html"><div class="ttname"><a href="classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html">RFFGen::LinearAlgebra::LeftCauchyGreenStrainTensor</a></div><div class="ttdoc">Left Cauchy-Green strain tensor  for a symmetric matrix . </div><div class="ttdef"><b>Definition:</b> strainTensor.hh:49</div></div>
@@ -220,7 +224,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 20:43:10 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 8 2015 20:47:59 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

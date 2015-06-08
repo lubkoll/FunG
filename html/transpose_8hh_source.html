@@ -38,6 +38,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -68,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -125,7 +127,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class </span>Matrix, <span class="keyword">class </span>TransposedMatrix = Matrix ,</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;              <span class="keyword">class </span>= std::enable_if_t&lt;std::is_same&lt;Matrix,TransposedMatrix&gt;::value&gt; ,</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;              <span class="keyword">class </span>= std::enable_if_t&lt;Checks::isConstantSizeMatrix&lt;Matrix&gt;()&gt; &gt;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    TransposedMatrix transpose(Matrix A)</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#ga547f56fe3fddb39aad3e80e94866a98b">   43</a></span>&#160;    TransposedMatrix <a class="code" href="group__LinearAlgebraGroup.html#ga21731f4340490258f50b39535b20ffac">transpose</a>(Matrix A)</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="keyword">auto</span> a = at(A,0,0);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;numberOfRows&lt;Matrix&gt;(); ++i)</div>
@@ -142,7 +144,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class </span>TransposedMatrix, <span class="keyword">class </span>Matrix ,</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;              <span class="keyword">class </span>= std::enable_if_t&lt;!std::is_same&lt;Matrix,TransposedMatrix&gt;::value&gt; ,</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;              <span class="keyword">class </span>= std::enable_if_t&lt;Checks::isConstantSizeMatrix&lt;Matrix&gt;() &amp;&amp; Checks::isConstantSizeMatrix&lt;TransposedMatrix&gt;()&gt; &gt;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    TransposedMatrix transpose(const Matrix&amp; A)</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#ga0d90e6ad4304aa185d8dd54c109b1a0c">   64</a></span>&#160;    TransposedMatrix <a class="code" href="group__LinearAlgebraGroup.html#ga21731f4340490258f50b39535b20ffac">transpose</a>(const Matrix&amp; A)</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      TransposedMatrix B = zero&lt;TransposedMatrix&gt;();</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;numberOfRows&lt;Matrix&gt;(); ++i)</div>
@@ -155,7 +157,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class </span>Matrix ,</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;              <span class="keyword">class </span>= std::enable_if_t&lt;!Checks::isConstantSizeMatrix&lt;Matrix&gt;()&gt; ,</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;              <span class="keyword">class</span> = std::enable_if_t&lt;Checks::isDynamicMatrix&lt;Matrix&gt;()&gt; &gt;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    Matrix transpose(Matrix A)</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#ga21731f4340490258f50b39535b20ffac">   81</a></span>&#160;    Matrix <a class="code" href="group__LinearAlgebraGroup.html#ga21731f4340490258f50b39535b20ffac">transpose</a>(Matrix A)</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    {</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      assert(rows(A) == cols(A));</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      <span class="keyword">using</span> Index = decltype(rows(std::declval&lt;Matrix&gt;()));</div>
@@ -174,10 +176,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif // RFFGEN_LINEAR_ALGEBRA_TRANSPOSE_HH</span></div>
+<div class="ttc" id="group__LinearAlgebraGroup_html_ga21731f4340490258f50b39535b20ffac"><div class="ttname"><a href="group__LinearAlgebraGroup.html#ga21731f4340490258f50b39535b20ffac">RFFGen::LinearAlgebra::transpose</a></div><div class="ttdeci">Matrix transpose(Matrix A)</div><div class="ttdoc">Compute transpose of square matrix. </div><div class="ttdef"><b>Definition:</b> transpose.hh:81</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 20:43:10 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 8 2015 20:47:59 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

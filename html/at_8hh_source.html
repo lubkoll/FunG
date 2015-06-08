@@ -38,6 +38,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -68,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -161,7 +163,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    };</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix&gt;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">struct </span>At&lt; Matrix , void_t&lt; Checks::TryAccessViaSquareBracketsForMatrix&lt;Matrix&gt; &gt; &gt;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">struct </span>At&lt; Matrix , <a class="code" href="namespaceRFFGen.html#a20e18569d04cc91cf19632c12cd4a0d8">void_t</a>&lt; Checks::TryAccessViaSquareBracketsForMatrix&lt;Matrix&gt; &gt; &gt;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      <span class="keyword">static</span> <span class="keyword">auto</span>&amp; apply(Matrix&amp; A, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j)</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      {</div>
@@ -179,7 +181,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    };</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Vector&gt;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">struct </span>At_v&lt; Vector , void_t&lt; Checks::AccessViaSquareBracketsForVector&lt;Vector&gt; &gt; &gt;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">struct </span>At_v&lt; Vector , <a class="code" href="namespaceRFFGen.html#a20e18569d04cc91cf19632c12cd4a0d8">void_t</a>&lt; Checks::AccessViaSquareBracketsForVector&lt;Vector&gt; &gt; &gt;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    {</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      <span class="keyword">static</span> <span class="keyword">auto</span>&amp; apply(Vector&amp; v, <span class="keywordtype">int</span> i)</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      {</div>
@@ -206,10 +208,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor">#endif // RFFGEN_UTIL_AT_HH</span></div>
+<div class="ttc" id="namespaceRFFGen_html_a20e18569d04cc91cf19632c12cd4a0d8"><div class="ttname"><a href="namespaceRFFGen.html#a20e18569d04cc91cf19632c12cd4a0d8">RFFGen::void_t</a></div><div class="ttdeci">typename Detail::voider&lt; Types...&gt;::type void_t</div><div class="ttdoc">Most fascinating type ever. Is always void. </div><div class="ttdef"><b>Definition:</b> voider.hh:40</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 20:43:10 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 8 2015 20:47:59 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

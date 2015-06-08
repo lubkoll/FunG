@@ -38,6 +38,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -68,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -84,9 +86,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">skinTissue_Hendriks.hh File Reference</div>  </div>
+<div class="title">skinTissue_Hendriks.hh File Reference<div class="ingroups"><a class="el" href="group__Biomechanics.html">Biomechanics</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -99,31 +102,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <p><a href="skinTissue__Hendriks_8hh_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespaceRFFGen"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html">RFFGen</a></td></tr>
+<tr class="memdesc:namespaceRFFGen"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main namespace of the <a class="el" href="namespaceRFFGen.html" title="Main namespace of the RFFGen library. ">RFFGen</a> library. <br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2c1299d3275e15fee450d33b69f3c537"><td class="memTemplParams" colspan="2">template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
-<tr class="memitem:a2c1299d3275e15fee450d33b69f3c537"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>RFFGen::incompressibleSkin_Hendriks</b> (double c0, double c1, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:a2c1299d3275e15fee450d33b69f3c537"><td class="mdescLeft">&#160;</td><td class="mdescRight">Model for skin tissue of Hendriks: Mechanical behavior of human epidermal and dermal layers in vivo. PhD thesis, Technische Universiteit Eindhoven, 2005.  <a href="#a2c1299d3275e15fee450d33b69f3c537">More...</a><br/></td></tr>
-<tr class="separator:a2c1299d3275e15fee450d33b69f3c537"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae120c2a20a841a63c19cee23f7eba317"><td class="memTemplParams" colspan="2">template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
-<tr class="memitem:ae120c2a20a841a63c19cee23f7eba317"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>RFFGen::incompressibleSkin_Hendriks</b> (const Matrix &amp;F)</td></tr>
-<tr class="memdesc:ae120c2a20a841a63c19cee23f7eba317"><td class="mdescLeft">&#160;</td><td class="mdescRight">Model for skin tissue of Hendriks: Mechanical behavior of human epidermal and dermal layers in vivo. PhD thesis, Technische Universiteit Eindhoven, 2005.  <a href="#ae120c2a20a841a63c19cee23f7eba317">More...</a><br/></td></tr>
-<tr class="separator:ae120c2a20a841a63c19cee23f7eba317"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a749204473b9790e8479bbbbe0b703694"><td class="memTemplParams" colspan="2">template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
-<tr class="memitem:a749204473b9790e8479bbbbe0b703694"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>RFFGen::compressibleSkin_Hendriks</b> (double c0, double c1, double d0, double d1, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:a749204473b9790e8479bbbbe0b703694"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compressible version of the model for skin tissue of Hendriks: Mechanical behavior of human epidermal and dermal layers in vivo. PhD thesis, Technische Universiteit Eindhoven, 2005.  <a href="#a749204473b9790e8479bbbbe0b703694">More...</a><br/></td></tr>
-<tr class="separator:a749204473b9790e8479bbbbe0b703694"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3118f1e205132778f07607cf852d40d9"><td class="memTemplParams" colspan="2">template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
-<tr class="memitem:a3118f1e205132778f07607cf852d40d9"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>RFFGen::compressibleSkin_Hendriks</b> (double d0, double d1, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:a3118f1e205132778f07607cf852d40d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compressible version of the model for skin tissue of Hendriks: Mechanical behavior of human epidermal and dermal layers in vivo. PhD thesis, Technische Universiteit Eindhoven, 2005.  <a href="#a3118f1e205132778f07607cf852d40d9">More...</a><br/></td></tr>
-<tr class="separator:a3118f1e205132778f07607cf852d40d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2c1299d3275e15fee450d33b69f3c537"><td class="memTemplParams" colspan="2">template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
+<tr class="memitem:ga2c1299d3275e15fee450d33b69f3c537"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#ga2c1299d3275e15fee450d33b69f3c537">RFFGen::incompressibleSkin_Hendriks</a> (double c0, double c1, const Matrix &amp;F)</td></tr>
+<tr class="memdesc:ga2c1299d3275e15fee450d33b69f3c537"><td class="mdescLeft">&#160;</td><td class="mdescRight">Model for skin tissue of Hendriks: Mechanical behavior of human epidermal and dermal layers in vivo. PhD thesis, Technische Universiteit Eindhoven, 2005.  <a href="group__Biomechanics.html#ga2c1299d3275e15fee450d33b69f3c537">More...</a><br/></td></tr>
+<tr class="separator:ga2c1299d3275e15fee450d33b69f3c537"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae120c2a20a841a63c19cee23f7eba317"><td class="memTemplParams" colspan="2">template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
+<tr class="memitem:gae120c2a20a841a63c19cee23f7eba317"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#gae120c2a20a841a63c19cee23f7eba317">RFFGen::incompressibleSkin_Hendriks</a> (const Matrix &amp;F)</td></tr>
+<tr class="memdesc:gae120c2a20a841a63c19cee23f7eba317"><td class="mdescLeft">&#160;</td><td class="mdescRight">Model for skin tissue of Hendriks: Mechanical behavior of human epidermal and dermal layers in vivo. PhD thesis, Technische Universiteit Eindhoven, 2005.  <a href="group__Biomechanics.html#gae120c2a20a841a63c19cee23f7eba317">More...</a><br/></td></tr>
+<tr class="separator:gae120c2a20a841a63c19cee23f7eba317"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga749204473b9790e8479bbbbe0b703694"><td class="memTemplParams" colspan="2">template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
+<tr class="memitem:ga749204473b9790e8479bbbbe0b703694"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#ga749204473b9790e8479bbbbe0b703694">RFFGen::compressibleSkin_Hendriks</a> (double c0, double c1, double d0, double d1, const Matrix &amp;F)</td></tr>
+<tr class="memdesc:ga749204473b9790e8479bbbbe0b703694"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compressible version of the model for skin tissue of Hendriks: Mechanical behavior of human epidermal and dermal layers in vivo. PhD thesis, Technische Universiteit Eindhoven, 2005.  <a href="group__Biomechanics.html#ga749204473b9790e8479bbbbe0b703694">More...</a><br/></td></tr>
+<tr class="separator:ga749204473b9790e8479bbbbe0b703694"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3118f1e205132778f07607cf852d40d9"><td class="memTemplParams" colspan="2">template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
+<tr class="memitem:ga3118f1e205132778f07607cf852d40d9"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#ga3118f1e205132778f07607cf852d40d9">RFFGen::compressibleSkin_Hendriks</a> (double d0, double d1, const Matrix &amp;F)</td></tr>
+<tr class="memdesc:ga3118f1e205132778f07607cf852d40d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compressible version of the model for skin tissue of Hendriks: Mechanical behavior of human epidermal and dermal layers in vivo. PhD thesis, Technische Universiteit Eindhoven, 2005.  <a href="group__Biomechanics.html#ga3118f1e205132778f07607cf852d40d9">More...</a><br/></td></tr>
+<tr class="separator:ga3118f1e205132778f07607cf852d40d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Versions of the skin model of Hendriks: Mechanical behavior of human epidermal and dermal layers in vivo. PhD thesis, Technische Universiteit Eindhoven, 2005. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 20:43:10 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 8 2015 20:47:59 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

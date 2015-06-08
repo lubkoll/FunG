@@ -38,6 +38,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -68,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -119,14 +121,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">namespace </span>LinearAlgebra</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix&gt;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">using</span> SecondDeviatoricInvariant = MathematicalOperations::Chain&lt; EuclideanNorm&lt;Matrix&gt; , Deviator&lt;Matrix&gt; &gt;;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#gad7970e9633f69d0b8d0afd300209e63d">   37</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html">SecondDeviatoricInvariant</a> = <a class="code" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html">MathematicalOperations::Chain&lt; EuclideanNorm&lt;Matrix&gt;</a> , <a class="code" href="structRFFGen_1_1LinearAlgebra_1_1Deviator.html">Deviator&lt;Matrix&gt;</a> &gt;;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  }</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif // RFFGEN_LINEAR_ALGEBRA_DEVIATORIC_INVARIANTS_HH</span></div>
+<div class="ttc" id="structRFFGen_1_1LinearAlgebra_1_1Deviator_html"><div class="ttname"><a href="structRFFGen_1_1LinearAlgebra_1_1Deviator.html">RFFGen::LinearAlgebra::Deviator</a></div><div class="ttdoc">Deviator of a matrix , i.e. . </div><div class="ttdef"><b>Definition:</b> deviator.hh:51</div></div>
+<div class="ttc" id="structRFFGen_1_1MathematicalOperations_1_1Chain_html"><div class="ttname"><a href="structRFFGen_1_1MathematicalOperations_1_1Chain.html">RFFGen::MathematicalOperations::Chain</a></div><div class="ttdoc">Chain  of functions  and  of type F resp. G (F and G must satisfy the requirements of Concepts::Funct...</div><div class="ttdef"><b>Definition:</b> chain.hh:61</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 20:43:10 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 8 2015 20:47:59 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

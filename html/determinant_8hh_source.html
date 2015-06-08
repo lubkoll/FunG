@@ -38,6 +38,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -68,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -232,7 +234,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix&gt;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keyword">using</span> ConstantSizeDeterminant = Detail::DeterminantImpl&lt;Matrix,dimension&lt;Matrix&gt;()&gt;;</div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#ga3db2e748fee631cc5180eaf9d703e124">  164</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="group__LinearAlgebraGroup.html#ga3db2e748fee631cc5180eaf9d703e124">ConstantSizeDeterminant</a> = Detail::DeterminantImpl&lt;Matrix,dimension&lt;Matrix&gt;()&gt;;</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix&gt;</div>
 <div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="classRFFGen_1_1LinearAlgebra_1_1DynamicSizeDeterminant.html">  167</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classRFFGen_1_1LinearAlgebra_1_1DynamicSizeDeterminant.html">DynamicSizeDeterminant</a> : <a class="code" href="structRFFGen_1_1Base.html">Base</a></div>
@@ -288,16 +290,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    };</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix &gt;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keyword">using</span> Determinant = std::conditional_t&lt; Checks::isConstantSizeMatrix&lt;Matrix&gt;() , ConstantSizeDeterminant&lt;Matrix&gt; , <a class="code" href="classRFFGen_1_1LinearAlgebra_1_1DynamicSizeDeterminant.html">DynamicSizeDeterminant&lt;Matrix&gt;</a> &gt;;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keyword">using</span> Determinant = std::conditional_t&lt; Checks::isConstantSizeMatrix&lt;Matrix&gt;() , <a class="code" href="group__LinearAlgebraGroup.html#ga3db2e748fee631cc5180eaf9d703e124">ConstantSizeDeterminant&lt;Matrix&gt;</a> , <a class="code" href="classRFFGen_1_1LinearAlgebra_1_1DynamicSizeDeterminant.html">DynamicSizeDeterminant&lt;Matrix&gt;</a> &gt;;</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Matrix&gt;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keyword">auto</span> det(Matrix <span class="keyword">const</span>&amp; A)</div>
+<div class="line"><a name="l00227"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#gaf7734d2f5a3026db85ddaca74322db6a">  227</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__LinearAlgebraGroup.html#gaf7734d2f5a3026db85ddaca74322db6a">det</a>(Matrix <span class="keyword">const</span>&amp; A)</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    {</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;      <span class="keywordflow">return</span> Determinant&lt;Matrix&gt;(A);</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    }</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Matrix&gt;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keyword">auto</span> determinant(Matrix <span class="keyword">const</span>&amp; A)</div>
+<div class="line"><a name="l00237"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#ga6cbd9a0f6299e29fae3d47c2c229c816">  237</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__LinearAlgebraGroup.html#ga6cbd9a0f6299e29fae3d47c2c229c816">determinant</a>(Matrix <span class="keyword">const</span>&amp; A)</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    {</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;      <span class="keywordflow">return</span> Determinant&lt;Matrix&gt;(A)();</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    }</div>
@@ -305,13 +307,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;}</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="preprocessor">#endif // RFFGEN_LINEAR_ALGEBRA_DETERMINANT_HH</span></div>
+<div class="ttc" id="group__LinearAlgebraGroup_html_gaf7734d2f5a3026db85ddaca74322db6a"><div class="ttname"><a href="group__LinearAlgebraGroup.html#gaf7734d2f5a3026db85ddaca74322db6a">RFFGen::LinearAlgebra::det</a></div><div class="ttdeci">auto det(Matrix const &amp;A)</div><div class="ttdoc">Convenient generation of Determinant&lt;Matrix&gt;(A). </div><div class="ttdef"><b>Definition:</b> determinant.hh:227</div></div>
 <div class="ttc" id="classRFFGen_1_1NonSymmetricMatrixException_html"><div class="ttname"><a href="classRFFGen_1_1NonSymmetricMatrixException.html">RFFGen::NonSymmetricMatrixException</a></div><div class="ttdoc">Exception for non-symmetric matrices if symmetric matrices are required. </div><div class="ttdef"><b>Definition:</b> exceptions.hh:42</div></div>
 <div class="ttc" id="structRFFGen_1_1Base_html"><div class="ttname"><a href="structRFFGen_1_1Base.html">RFFGen::Base</a></div><div class="ttdoc">Base class for functions satisfying FunctionConcept. Required for enabling the operators in generate...</div><div class="ttdef"><b>Definition:</b> base.hh:27</div></div>
 <div class="ttc" id="classRFFGen_1_1LinearAlgebra_1_1DynamicSizeDeterminant_html"><div class="ttname"><a href="classRFFGen_1_1LinearAlgebra_1_1DynamicSizeDeterminant.html">RFFGen::LinearAlgebra::DynamicSizeDeterminant</a></div><div class="ttdef"><b>Definition:</b> determinant.hh:167</div></div>
+<div class="ttc" id="group__LinearAlgebraGroup_html_ga6cbd9a0f6299e29fae3d47c2c229c816"><div class="ttname"><a href="group__LinearAlgebraGroup.html#ga6cbd9a0f6299e29fae3d47c2c229c816">RFFGen::LinearAlgebra::determinant</a></div><div class="ttdeci">auto determinant(Matrix const &amp;A)</div><div class="ttdoc">Convenient computation determinant. </div><div class="ttdef"><b>Definition:</b> determinant.hh:237</div></div>
+<div class="ttc" id="group__LinearAlgebraGroup_html_ga3db2e748fee631cc5180eaf9d703e124"><div class="ttname"><a href="group__LinearAlgebraGroup.html#ga3db2e748fee631cc5180eaf9d703e124">RFFGen::LinearAlgebra::ConstantSizeDeterminant</a></div><div class="ttdeci">Detail::DeterminantImpl&lt; Matrix, dimension&lt; Matrix &gt;()&gt; ConstantSizeDeterminant</div><div class="ttdoc">Determinant of static matrix with first three derivatives. </div><div class="ttdef"><b>Definition:</b> determinant.hh:164</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 20:43:10 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 8 2015 20:47:59 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

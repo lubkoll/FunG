@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['tan',['Tan',['../structRFFGen_1_1CMath_1_1Tan.html#aab69e654f41b935e2b769f8e707da514',1,'RFFGen::CMath::Tan']]],
-  ['thirdmodifiedmixedinvariant',['ThirdModifiedMixedInvariant',['../structRFFGen_1_1LinearAlgebra_1_1ThirdModifiedMixedInvariant.html#a1739098d1de2ffbdaa0f148e9d1adba1',1,'RFFGen::LinearAlgebra::ThirdModifiedMixedInvariant::ThirdModifiedMixedInvariant()=default'],['../structRFFGen_1_1LinearAlgebra_1_1ThirdModifiedMixedInvariant.html#aea5e2e2d814d5bfe7f483ba6ea4bfd1d',1,'RFFGen::LinearAlgebra::ThirdModifiedMixedInvariant::ThirdModifiedMixedInvariant(const Matrix &amp;A, const Constant&lt; Matrix &gt; &amp;M)'],['../structRFFGen_1_1LinearAlgebra_1_1ThirdModifiedMixedInvariant.html#acc8f71842804062958f2e2068fb70609',1,'RFFGen::LinearAlgebra::ThirdModifiedMixedInvariant::ThirdModifiedMixedInvariant(const std::tuple&lt; Matrix, Constant&lt; Matrix &gt; &gt; &amp;t)']]]
+  ['pow',['Pow',['../structRFFGen_1_1CMath_1_1Pow.html#a6b1f2413fa8ce7ae9064ee7e948da7eb',1,'RFFGen::CMath::Pow']]],
+  ['power',['power',['../group__CMathGroup.html#gaad5ee8ed4c0e87842e3ec66b54cf25e0',1,'RFFGen::CMath']]],
+  ['product',['Product',['../structRFFGen_1_1MathematicalOperations_1_1Product.html#a8f90fefe7c771b6dcb3b714c85be41fa',1,'RFFGen::MathematicalOperations::Product::Product()=default'],['../structRFFGen_1_1MathematicalOperations_1_1Product.html#aaa4efed57c0ed72f39d363c88fa04da0',1,'RFFGen::MathematicalOperations::Product::Product(const InitF &amp;f_, const InitG &amp;g_)']]]
 ];

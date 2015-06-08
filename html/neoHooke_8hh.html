@@ -38,6 +38,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -68,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -84,9 +86,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">neoHooke.hh File Reference</div>  </div>
+<div class="title">neoHooke.hh File Reference<div class="ingroups"><a class="el" href="group__Rubber.html">Rubber</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -101,35 +104,41 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <p><a href="neoHooke_8hh_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespaceRFFGen"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html">RFFGen</a></td></tr>
+<tr class="memdesc:namespaceRFFGen"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main namespace of the <a class="el" href="namespaceRFFGen.html" title="Main namespace of the RFFGen library. ">RFFGen</a> library. <br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a554b9bf515aa99d3bdc9e230f2a65bca"><td class="memTemplParams" colspan="2"><a class="anchor" id="a554b9bf515aa99d3bdc9e230f2a65bca"></a>
+<tr class="memitem:ga554b9bf515aa99d3bdc9e230f2a65bca"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga554b9bf515aa99d3bdc9e230f2a65bca"></a>
 template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
-<tr class="memitem:a554b9bf515aa99d3bdc9e230f2a65bca"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>RFFGen::incompressibleNeoHooke</b> (double c, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:a554b9bf515aa99d3bdc9e230f2a65bca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an "incompressible" neo-Hookean material law <img class="formulaInl" alt="$ W(F)=c\iota_1(F^T F) $" src="form_14.png"/>, where <img class="formulaInl" alt="$\iota_1$" src="form_3.png"/> is the first principal matrix invariant . <br/></td></tr>
-<tr class="separator:a554b9bf515aa99d3bdc9e230f2a65bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b6f97c769ead09a5b1dcdf4733e85aa"><td class="memTemplParams" colspan="2"><a class="anchor" id="a1b6f97c769ead09a5b1dcdf4733e85aa"></a>
+<tr class="memitem:ga554b9bf515aa99d3bdc9e230f2a65bca"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#ga554b9bf515aa99d3bdc9e230f2a65bca">RFFGen::incompressibleNeoHooke</a> (double c, const Matrix &amp;F)</td></tr>
+<tr class="memdesc:ga554b9bf515aa99d3bdc9e230f2a65bca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an "incompressible" neo-Hookean material law <img class="formulaInl" alt="$ W(F)=c\iota_1(F^T F) $" src="form_14.png"/>, where <img class="formulaInl" alt="$\iota_1$" src="form_3.png"/> is the first principal matrix invariant . <br/></td></tr>
+<tr class="separator:ga554b9bf515aa99d3bdc9e230f2a65bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1b6f97c769ead09a5b1dcdf4733e85aa"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga1b6f97c769ead09a5b1dcdf4733e85aa"></a>
 template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
-<tr class="memitem:a1b6f97c769ead09a5b1dcdf4733e85aa"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>RFFGen::modifiedIncompressibleNeoHooke</b> (double c, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:a1b6f97c769ead09a5b1dcdf4733e85aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an "incompressible" neo-Hookean material law <img class="formulaInl" alt="$ W(F)=c\bar\iota_1(F^T F) $" src="form_15.png"/>, where <img class="formulaInl" alt="$\bar\iota_1$" src="form_16.png"/> is the modified first principal matrix invariant. <br/></td></tr>
-<tr class="separator:a1b6f97c769ead09a5b1dcdf4733e85aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35a60a5ae50481becd543140ba82c171"><td class="memTemplParams" colspan="2"><a class="anchor" id="a35a60a5ae50481becd543140ba82c171"></a>
+<tr class="memitem:ga1b6f97c769ead09a5b1dcdf4733e85aa"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#ga1b6f97c769ead09a5b1dcdf4733e85aa">RFFGen::modifiedIncompressibleNeoHooke</a> (double c, const Matrix &amp;F)</td></tr>
+<tr class="memdesc:ga1b6f97c769ead09a5b1dcdf4733e85aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an "incompressible" neo-Hookean material law <img class="formulaInl" alt="$ W(F)=c\bar\iota_1(F^T F) $" src="form_15.png"/>, where <img class="formulaInl" alt="$\bar\iota_1$" src="form_16.png"/> is the modified first principal matrix invariant. <br/></td></tr>
+<tr class="separator:ga1b6f97c769ead09a5b1dcdf4733e85aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga35a60a5ae50481becd543140ba82c171"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga35a60a5ae50481becd543140ba82c171"></a>
 template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
-<tr class="memitem:a35a60a5ae50481becd543140ba82c171"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>RFFGen::compressibleNeoHooke</b> (double c, double d0, double d1, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:a35a60a5ae50481becd543140ba82c171"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a compressible neo-Hookean material law <img class="formulaInl" alt="$ W(F)=c\iota_1(F^T F)+d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) $" src="form_17.png"/>, where <img class="formulaInl" alt="$\iota_1$" src="form_3.png"/> is the first principal matrix invariant. <br/></td></tr>
-<tr class="separator:a35a60a5ae50481becd543140ba82c171"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4985bcfe7726155b3b53f94094ebb3e"><td class="memTemplParams" colspan="2"><a class="anchor" id="ad4985bcfe7726155b3b53f94094ebb3e"></a>
+<tr class="memitem:ga35a60a5ae50481becd543140ba82c171"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#ga35a60a5ae50481becd543140ba82c171">RFFGen::compressibleNeoHooke</a> (double c, double d0, double d1, const Matrix &amp;F)</td></tr>
+<tr class="memdesc:ga35a60a5ae50481becd543140ba82c171"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a compressible neo-Hookean material law <img class="formulaInl" alt="$ W(F)=c\iota_1(F^T F)+d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) $" src="form_17.png"/>, where <img class="formulaInl" alt="$\iota_1$" src="form_3.png"/> is the first principal matrix invariant. <br/></td></tr>
+<tr class="separator:ga35a60a5ae50481becd543140ba82c171"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad4985bcfe7726155b3b53f94094ebb3e"><td class="memTemplParams" colspan="2"><a class="anchor" id="gad4985bcfe7726155b3b53f94094ebb3e"></a>
 template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
-<tr class="memitem:ad4985bcfe7726155b3b53f94094ebb3e"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>RFFGen::modifiedCompressibleNeoHooke</b> (double c, double d0, double d1, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:ad4985bcfe7726155b3b53f94094ebb3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a compressible neo-Hookean material law <img class="formulaInl" alt="$ W(F)=c\bar\iota_1(F^T F)+d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) $" src="form_18.png"/>, where <img class="formulaInl" alt="$\bar\iota_1$" src="form_16.png"/> is the modified first principal matrix invariant. <br/></td></tr>
-<tr class="separator:ad4985bcfe7726155b3b53f94094ebb3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad4985bcfe7726155b3b53f94094ebb3e"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#gad4985bcfe7726155b3b53f94094ebb3e">RFFGen::modifiedCompressibleNeoHooke</a> (double c, double d0, double d1, const Matrix &amp;F)</td></tr>
+<tr class="memdesc:gad4985bcfe7726155b3b53f94094ebb3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a compressible neo-Hookean material law <img class="formulaInl" alt="$ W(F)=c\bar\iota_1(F^T F)+d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) $" src="form_18.png"/>, where <img class="formulaInl" alt="$\bar\iota_1$" src="form_16.png"/> is the modified first principal matrix invariant. <br/></td></tr>
+<tr class="separator:gad4985bcfe7726155b3b53f94094ebb3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Models based on the neo-Hookean material law. Input argument is the deformation gradient. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 20:43:10 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 8 2015 20:47:59 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

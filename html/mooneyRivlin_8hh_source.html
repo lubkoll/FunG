@@ -38,6 +38,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -68,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -121,7 +123,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">namespace </span>RFFGen</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix , <span class="keywordtype">int</span> offset = LinearAlgebra::dimension&lt;Matrix&gt;() &gt;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">auto</span> incompressibleMooneyRivlin(<span class="keywordtype">double</span> c0, <span class="keywordtype">double</span> c1, <span class="keyword">const</span> Matrix&amp; F)</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="group__Rubber.html#ga8626dcc0c5d11d3d2d796d09457e5e5d">   45</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Rubber.html#ga8626dcc0c5d11d3d2d796d09457e5e5d">incompressibleMooneyRivlin</a>(<span class="keywordtype">double</span> c0, <span class="keywordtype">double</span> c1, <span class="keyword">const</span> Matrix&amp; F)</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">using namespace </span>LinearAlgebra;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">using</span> I1 = ShiftedFirstPrincipalInvariant&lt;Matrix,offset&gt;;</div>
@@ -132,7 +134,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> InflationPenalty, <span class="keyword">class</span> CompressionPenalty, <span class="keyword">class</span> Matrix , <span class="keywordtype">int</span> offset = LinearAlgebra::dimension&lt;Matrix&gt;() &gt;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">auto</span> compressibleMooneyRivlin(<span class="keywordtype">double</span> c0, <span class="keywordtype">double</span> c1, <span class="keywordtype">double</span> d0, <span class="keywordtype">double</span> d1, <span class="keyword">const</span> Matrix&amp; F)</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="group__Rubber.html#ga1522c73c1e2eec5516b73b203150c7e1">   61</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Rubber.html#ga1522c73c1e2eec5516b73b203150c7e1">compressibleMooneyRivlin</a>(<span class="keywordtype">double</span> c0, <span class="keywordtype">double</span> c1, <span class="keywordtype">double</span> d0, <span class="keywordtype">double</span> d1, <span class="keyword">const</span> Matrix&amp; F)</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  {</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">using namespace </span>LinearAlgebra;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">using</span> I1 = ShiftedFirstPrincipalInvariant&lt;Matrix,offset&gt;;</div>
@@ -203,10 +205,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">#endif // RFFGEN_MOONEY_RIVLIN_HH</span></div>
+<div class="ttc" id="group__Rubber_html_ga1522c73c1e2eec5516b73b203150c7e1"><div class="ttname"><a href="group__Rubber.html#ga1522c73c1e2eec5516b73b203150c7e1">RFFGen::compressibleMooneyRivlin</a></div><div class="ttdeci">auto compressibleMooneyRivlin(double c0, double c1, double d0, double d1, const Matrix &amp;F)</div><div class="ttdoc">Generate a compressible Mooney-Rivlin material law , where  is the first and  the second principal ma...</div><div class="ttdef"><b>Definition:</b> mooneyRivlin.hh:61</div></div>
+<div class="ttc" id="group__Rubber_html_ga8626dcc0c5d11d3d2d796d09457e5e5d"><div class="ttname"><a href="group__Rubber.html#ga8626dcc0c5d11d3d2d796d09457e5e5d">RFFGen::incompressibleMooneyRivlin</a></div><div class="ttdeci">auto incompressibleMooneyRivlin(double c0, double c1, const Matrix &amp;F)</div><div class="ttdoc">Generate an &quot;incompressible&quot; Mooney-Rivlin material law , where  is the first and  the second princip...</div><div class="ttdef"><b>Definition:</b> mooneyRivlin.hh:45</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 20:43:10 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 8 2015 20:47:59 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
