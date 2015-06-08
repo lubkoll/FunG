@@ -101,7 +101,7 @@ namespace Example_2
   {
     using namespace RFFGen;
     using namespace RFFGen::CMath;
-    auto g = exp(root) + 1;//( Exp() << Sqrt() ) + 1;
+    auto g = exp(Sqrt()) + 1;//( Exp() << Sqrt() ) + 1;
     auto f = identity(1.) * g + sin(g);
     return Finalize<decltype(f),true>(f);
   }
