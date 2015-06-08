@@ -32,7 +32,7 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <p><a href="https://travis-ci.org/lubkoll/RFFGen/builds"><img src="https://travis-ci.org/lubkoll/RFFGen.svg?branch=master" alt="Build Status"></a> <a href="https://coveralls.io/r/lubkoll/RFFGen"><img src="https://coveralls.io/repos/lubkoll/RFFGen/badge.svg" alt="Coverage Status"></a></p>
+        <p><a href="https://travis-ci.org/lubkoll/RFFGen/builds"><img src="https://travis-ci.org/lubkoll/RFFGen.svg?branch=master" alt="Build Status"></a>
 
 
 <h1>
@@ -48,9 +48,9 @@
 <ul>
   <li><a href=#installation>Installation</a></li>
   <li><a href=#examples>Examples</a></li>
-  <li><a href=#optimization_strategies>Optimization strategies</a></li>
-  <li><a href=#ad_comparison>Comparison with different AD libraries</a></li>
   <li><a href=#input_requirements>Input type requirements</a></li>
+  <li><a href=#ad_comparison>Comparison with different AD libraries</a></li>
+  <li><a href=#optimization_strategies>Optimization strategies</a></li>
   <li><a href="html/index.html">Documentation</a></li>
 </ul>
 
@@ -199,6 +199,13 @@ double ddf_dFdx    = f.template d2&lt;1,0&gt;(dF,dx1);
 double dddf_dxdxdF = f.template d3&lt;0,0,1&gt;(dx1,dx2,dF);
 </code></pre>
 
+
+<h1>
+<a id="input_requirements" class="anchor" href=#input_requirements aria-hidden="true"><span class="octicon octicon-link"></span></a>Input type requirements</h1>
+<h1>
+<a id="ad_comparison" class="anchor" href=#ad_comparison aria-hidden="true"><span class="octicon octicon-link"></span></a>Comparison with different AD libraries</h1>
+
+
 <h1>
 <a id="optimization_strategies" class="anchor" href=#optimization_strategies aria-hidden="true"><span class="octicon octicon-link"></span></a>Optimization strategies</h1>
 In order to get performance comparable to optimized manual implementations some optimization strategies are applied.
@@ -241,12 +248,6 @@ The following graph illustrates the mathematical operations that are performed w
 <figcaption>Mathematical operations required for the evaluation of the second derivative of the product rule.</figcaption>
 </figure>
 <p>Since all derivatives of <span lang="latex">M</span> vanish only the part marked in orange should be computed. The remaining computations are discarded at compile time.</p>
-
-<h1>
-<a id="ad_comparison" class="anchor" href=#ad_comparison aria-hidden="true"><span class="octicon octicon-link"></span></a>Comparison with different AD libraries</h1>
-
-<h1>
-<a id="input_requirements" class="anchor" href=#input_requirements aria-hidden="true"><span class="octicon octicon-link"></span></a>Input type requirements</h1>
 
 
 <p>Contact: <a href="mailto:lars.lubkoll@posteo.de">lars.lubkoll@posteo.de</a></p>
