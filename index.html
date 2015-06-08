@@ -47,7 +47,8 @@
 <ul>
   <li><a href=#installation>Installation</a></li>
   <li><a href=#examples>Examples</a></li>
-  <li><a href=#documentation>Documentation</a></li>
+  <li><a href=#optimization_strategies>Optimization strategies</a></li>
+  <li><a href="html/index.html">Documentation</a></li>
 </ul>
 
 <h1>
@@ -196,9 +197,22 @@ double dddf_dxdxdF = f.template d3&lt;0,0,1&gt;(dx1,dx2,dF);
 </code></pre>
 
 <h1>
-<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h1>
+<a id="optimization_strategies" class="anchor" href=#optimization_strategies aria-hidden="true"><span class="octicon octicon-link"></span></a>Optimization strategies</h1>
 
-<p>Doxygen documentation can be found <a href="html/index.html">here.</a></p>
+<h3>
+<a id="optimization_strategies_inlining" class="anchor" href=#optimization_strategies_inlining aria-hidden="true"><span class="octicon octicon-link"></span></a>Inlining</h3>
+
+Since this library is based on code generation with template meta-programming and inlining, compiler rules for inlining have a strong influence on performance. The default rules, which work quite well in general, 
+can be improved by adjusting specific parameters. For the examples from biomechanics in "Examples/Biomechanics" the choices
+<ul>
+<li>max-inline-insns-auto=3000</li>
+<li>early-inlining-insns=5000</li>
+<li>inline-unit-growth=100</li>
+</ul>
+for gcc-4.9.2 yields performance increases in the range of 2x-4x. 
+
+Note that adequate choices of the above parameters may be different when using this library in a larger project. For optimal performance you may think about compiling the function definition in a separate object file with 
+compiler parameters as proposed above. 
 
 <p>Contact: <a href="mailto:lars.lubkoll@posteo.de">lars.lubkoll@posteo.de</a></p>
       </section>
