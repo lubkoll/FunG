@@ -175,7 +175,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keyword">template</span> &lt; <span class="keywordtype">int</span> row , <span class="keywordtype">int</span> col , <span class="keyword">class </span>Matrix ,</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;               <span class="keyword">class </span>= std::enable_if_t&lt;!Checks::isConstantSizeMatrix&lt;Matrix&gt;()&gt; ,</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;               <span class="keyword">class</span> = std::enable_if_t&lt;Checks::isDynamicMatrix&lt;Matrix&gt;()&gt; ,</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;               <span class="keyword">class </span>= Concepts::MatrixConceptCheck&lt;Matrix&gt; &gt;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;               <span class="keyword">class </span>= <a class="code" href="structRFFGen_1_1Concepts_1_1MatrixConceptCheck.html">Concepts::MatrixConceptCheck</a>&lt;Matrix&gt; &gt;</div>
 <div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#gaf18f1bcaac9b24ebae5c7020363ef827">  110</a></span>&#160;    auto <a class="code" href="group__LinearAlgebraGroup.html#gaf18f1bcaac9b24ebae5c7020363ef827">computeCofactor</a>(Matrix const&amp; A)</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    {</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      assert( ( rows(A)==2 &amp;&amp; cols(A)==2 ) || ( rows(A)==3 &amp;&amp; cols(A)==3) );</div>
@@ -185,7 +185,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keyword">template</span> &lt; <span class="keywordtype">int</span> row , <span class="keywordtype">int</span> col , <span class="keyword">class </span>Matrix ,</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;               <span class="keyword">class </span>= std::enable_if_t&lt;Checks::isConstantSizeMatrix&lt;Matrix&gt;()&gt; ,</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;               <span class="keyword">class</span> = Concepts::MatrixConceptCheck&lt;Matrix&gt; &gt;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;               <span class="keyword">class</span> = <a class="code" href="structRFFGen_1_1Concepts_1_1MatrixConceptCheck.html">Concepts::MatrixConceptCheck&lt;Matrix&gt;</a> &gt;</div>
 <div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#ga5194f473d8619836b838de8029bc3172">  129</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__LinearAlgebraGroup.html#gae69e50e6a283915070eda9758e96aaaf">computeCofactorDirectionalDerivative</a>(Matrix <span class="keyword">const</span>&amp; A, Matrix <span class="keyword">const</span>&amp; B)</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    {</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;      static_assert( dimension&lt;Matrix&gt;() == 2 || dimension&lt;Matrix&gt;() == 3 ,</div>
@@ -196,7 +196,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keyword">template</span> &lt; <span class="keywordtype">int</span> row , <span class="keywordtype">int</span> col , <span class="keyword">class </span>Matrix ,</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;               <span class="keyword">class </span>= std::enable_if_t&lt;!Checks::isConstantSizeMatrix&lt;Matrix&gt;()&gt; ,</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;               <span class="keyword">class</span> = std::enable_if_t&lt;Checks::isDynamicMatrix&lt;Matrix&gt;()&gt; ,</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;               <span class="keyword">class </span>= Concepts::MatrixConceptCheck&lt;Matrix&gt; &gt;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;               <span class="keyword">class </span>= <a class="code" href="structRFFGen_1_1Concepts_1_1MatrixConceptCheck.html">Concepts::MatrixConceptCheck</a>&lt;Matrix&gt; &gt;</div>
 <div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#gae69e50e6a283915070eda9758e96aaaf">  149</a></span>&#160;    auto <a class="code" href="group__LinearAlgebraGroup.html#gae69e50e6a283915070eda9758e96aaaf">computeCofactorDirectionalDerivative</a>(Matrix const&amp; A, Matrix <span class="keyword">const</span>&amp; B)</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    {</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;      assert( ( rows(A)==2 &amp;&amp; cols(A)==2 ) || ( rows(A)==3 &amp;&amp; cols(A)==3) );</div>
@@ -208,11 +208,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="preprocessor">#endif // RFFGEN_LINEAR_ALGEBRA_COFACTOR_HH</span></div>
 <div class="ttc" id="group__LinearAlgebraGroup_html_gaf18f1bcaac9b24ebae5c7020363ef827"><div class="ttname"><a href="group__LinearAlgebraGroup.html#gaf18f1bcaac9b24ebae5c7020363ef827">RFFGen::LinearAlgebra::computeCofactor</a></div><div class="ttdeci">auto computeCofactor(Matrix const &amp;A)</div><div class="ttdoc">Compute the -cofactor of . Implemented for  with . </div><div class="ttdef"><b>Definition:</b> cofactor.hh:110</div></div>
+<div class="ttc" id="structRFFGen_1_1Concepts_1_1MatrixConceptCheck_html"><div class="ttname"><a href="structRFFGen_1_1Concepts_1_1MatrixConceptCheck.html">RFFGen::Concepts::MatrixConceptCheck</a></div><div class="ttdoc">Static check if the requirements of MatrixConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> conceptCheck.hh:107</div></div>
 <div class="ttc" id="group__LinearAlgebraGroup_html_gae69e50e6a283915070eda9758e96aaaf"><div class="ttname"><a href="group__LinearAlgebraGroup.html#gae69e50e6a283915070eda9758e96aaaf">RFFGen::LinearAlgebra::computeCofactorDirectionalDerivative</a></div><div class="ttdeci">auto computeCofactorDirectionalDerivative(Matrix const &amp;A, Matrix const &amp;B)</div><div class="ttdoc">Compute the first directional derivative in direction  of the -cofactor of . Implemented for  with ...</div><div class="ttdef"><b>Definition:</b> cofactor.hh:149</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 20:47:59 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jun 9 2015 01:49:09 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -1,13 +1,12 @@
 var searchData=
 [
-  ['nonsymmetricmatrixexception',['NonSymmetricMatrixException',['../classRFFGen_1_1NonSymmetricMatrixException.html',1,'RFFGen']]],
-  ['numberofcolumns',['NumberOfColumns',['../structRFFGen_1_1LinearAlgebra_1_1NumberOfColumns.html',1,'RFFGen::LinearAlgebra']]],
-  ['numberofcolumns_3c_20matrix_3c_20n_2c_20m_20_3e_2c_20matrixconceptcheck_20_3e',['NumberOfColumns&lt; Matrix&lt; n, m &gt;, MatrixConceptCheck &gt;',['../structRFFGen_1_1LinearAlgebra_1_1NumberOfColumns_3_01Matrix_3_01n_00_01m_01_4_00_01MatrixConceptCheck_01_4.html',1,'RFFGen::LinearAlgebra']]],
-  ['numberofcolumns_3c_20matrix_3c_20t_2c_20n_2c_20m_20_3e_2c_20matrixconceptcheck_20_3e',['NumberOfColumns&lt; Matrix&lt; T, n, m &gt;, MatrixConceptCheck &gt;',['../structRFFGen_1_1LinearAlgebra_1_1NumberOfColumns_3_01Matrix_3_01T_00_01n_00_01m_01_4_00_01MatrixConceptCheck_01_4.html',1,'RFFGen::LinearAlgebra']]],
-  ['numberofrows',['NumberOfRows',['../structRFFGen_1_1LinearAlgebra_1_1NumberOfRows.html',1,'RFFGen::LinearAlgebra']]],
-  ['numberofrows_3c_20matrix_20_3e',['NumberOfRows&lt; Matrix &gt;',['../structRFFGen_1_1LinearAlgebra_1_1NumberOfRows.html',1,'RFFGen::LinearAlgebra']]],
-  ['numberofrows_3c_20matrix_3c_20n_2c_20m_20_3e_2c_20matrixconceptcheck_20_3e',['NumberOfRows&lt; Matrix&lt; n, m &gt;, MatrixConceptCheck &gt;',['../structRFFGen_1_1LinearAlgebra_1_1NumberOfRows_3_01Matrix_3_01n_00_01m_01_4_00_01MatrixConceptCheck_01_4.html',1,'RFFGen::LinearAlgebra']]],
-  ['numberofrows_3c_20matrix_3c_20t_2c_20n_2c_20m_20_3e_2c_20matrixconceptcheck_20_3e',['NumberOfRows&lt; Matrix&lt; T, n, m &gt;, MatrixConceptCheck &gt;',['../structRFFGen_1_1LinearAlgebra_1_1NumberOfRows_3_01Matrix_3_01T_00_01n_00_01m_01_4_00_01MatrixConceptCheck_01_4.html',1,'RFFGen::LinearAlgebra']]],
-  ['numberofrows_3c_20vector_3c_20n_20_3e_2c_20matrixconceptcheck_20_3e',['NumberOfRows&lt; Vector&lt; n &gt;, MatrixConceptCheck &gt;',['../structRFFGen_1_1LinearAlgebra_1_1NumberOfRows_3_01Vector_3_01n_01_4_00_01MatrixConceptCheck_01_4.html',1,'RFFGen::LinearAlgebra']]],
-  ['numberofrows_3c_20vector_3c_20t_2c_20n_20_3e_2c_20matrixconceptcheck_20_3e',['NumberOfRows&lt; Vector&lt; T, n &gt;, MatrixConceptCheck &gt;',['../structRFFGen_1_1LinearAlgebra_1_1NumberOfRows_3_01Vector_3_01T_00_01n_01_4_00_01MatrixConceptCheck_01_4.html',1,'RFFGen::LinearAlgebra']]]
+  ['matrixconcept',['MatrixConcept',['../structRFFGen_1_1Concepts_1_1MatrixConcept.html',1,'RFFGen::Concepts']]],
+  ['matrixconceptcheck',['MatrixConceptCheck',['../structRFFGen_1_1Concepts_1_1MatrixConceptCheck.html',1,'RFFGen::Concepts']]],
+  ['multiplicationconcept',['MultiplicationConcept',['../structRFFGen_1_1Concepts_1_1MultiplicationConcept.html',1,'RFFGen::Concepts']]],
+  ['multiplicationconceptcheck',['MultiplicationConceptCheck',['../structRFFGen_1_1Concepts_1_1MultiplicationConceptCheck.html',1,'RFFGen::Concepts']]],
+  ['multiplicationconceptcheck_3c_20matrix_2c_20matrix_20_3e',['MultiplicationConceptCheck&lt; Matrix, Matrix &gt;',['../structRFFGen_1_1Concepts_1_1MultiplicationConceptCheck.html',1,'RFFGen::Concepts']]],
+  ['multiplywitharithmeticfromleftconcept',['MultiplyWithArithmeticFromLeftConcept',['../structRFFGen_1_1Concepts_1_1MultiplyWithArithmeticFromLeftConcept.html',1,'RFFGen::Concepts']]],
+  ['multiplywitharithmeticfromleftconceptcheck',['MultiplyWithArithmeticFromLeftConceptCheck',['../structRFFGen_1_1Concepts_1_1MultiplyWithArithmeticFromLeftConceptCheck.html',1,'RFFGen::Concepts']]],
+  ['multiplywitharithmeticfromleftconceptcheck_3c_20matrix_20_3e',['MultiplyWithArithmeticFromLeftConceptCheck&lt; Matrix &gt;',['../structRFFGen_1_1Concepts_1_1MultiplyWithArithmeticFromLeftConceptCheck.html',1,'RFFGen::Concepts']]],
+  ['multiplywitharithmeticfromleftconceptcheck_3c_20vector_20_3e',['MultiplyWithArithmeticFromLeftConceptCheck&lt; Vector &gt;',['../structRFFGen_1_1Concepts_1_1MultiplyWithArithmeticFromLeftConceptCheck.html',1,'RFFGen::Concepts']]]
 ];

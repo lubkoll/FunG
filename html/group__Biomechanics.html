@@ -115,7 +115,7 @@ Functions</h2></td></tr>
 <tr class="separator:ga4c4a1bc765b6deb392a8151f02deaea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3f3e0d2799629dab092114d59233bc03"><td class="memTemplParams" colspan="2">template&lt;class Inflation , class Compression , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
 <tr class="memitem:ga3f3e0d2799629dab092114d59233bc03"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#ga3f3e0d2799629dab092114d59233bc03">RFFGen::compressibleAdiposeTissue_SommerHolzapfel</a> (double d0, double d1, const Matrix &amp;M, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:ga3f3e0d2799629dab092114d59233bc03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compressible version of the model for adipose tissue of Sommer et al.: Multiaxial mechanical properties and constitutive modeling of human adipose tissue: A basis for preoperative simulations in plastic and reconstructive surgery. Acta Biomater., 9:9036-9048, 2013. Material parameters are taken from the same publication, Table 2, i.e. <img class="formulaInl" alt="$c_\mathrm{Cells}=0.15 (\,\mathrm{kPa})$" src="form_25.png"/>, <img class="formulaInl" alt="$k_1=0.8 (\,\mathrm{kPa})$" src="form_26.png"/>, <img class="formulaInl" alt="$k_2=47.3$" src="form_27.png"/> and <img class="formulaInl" alt="$\kappa=0.09$" src="form_28.png"/>.  <a href="#ga3f3e0d2799629dab092114d59233bc03">More...</a><br/></td></tr>
+<tr class="memdesc:ga3f3e0d2799629dab092114d59233bc03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compressible version of the model for adipose tissue of Sommer et al.: Multiaxial mechanical properties and constitutive modeling of human adipose tissue: A basis for preoperative simulations in plastic and reconstructive surgery. Acta Biomater., 9:9036-9048, 2013. Material parameters are taken from the same publication, Table 2, i.e. <img class="formulaInl" alt="$c_\mathrm{Cells}=0.15 (\,\mathrm{kPa})$" src="form_29.png"/>, <img class="formulaInl" alt="$k_1=0.8 (\,\mathrm{kPa})$" src="form_30.png"/>, <img class="formulaInl" alt="$k_2=47.3$" src="form_31.png"/> and <img class="formulaInl" alt="$\kappa=0.09$" src="form_32.png"/>.  <a href="#ga3f3e0d2799629dab092114d59233bc03">More...</a><br/></td></tr>
 <tr class="separator:ga3f3e0d2799629dab092114d59233bc03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6c85de42ee96ce8b8505dd22d2327e12"><td class="memTemplParams" colspan="2">template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
 <tr class="memitem:ga6c85de42ee96ce8b8505dd22d2327e12"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#ga6c85de42ee96ce8b8505dd22d2327e12">RFFGen::incompressibleMuscleTissue_Martins</a> (double c, double b, double A, double a, const Matrix &amp;M, const Matrix &amp;F)</td></tr>
@@ -216,14 +216,14 @@ template&lt;class Inflation , class Compression , class Matrix , int offset = Li
 </div><div class="memdoc">
 
 <p>Compressible version of the model for adipose tissue of Sommer et al.: Multiaxial mechanical properties and constitutive modeling of human adipose tissue: A basis for preoperative simulations in plastic and reconstructive surgery. Acta Biomater., 9:9036-9048, 2013. </p>
-<p>Implementation of the stored energy function <img class="formulaInl" alt="$ W(F)= c_\mathrm{Cells}(\iota_1-3) + \frac{k_1}{k_2}\exp(k_2(\kappa\iota_1+(1-3\kappa)*\iota_4)^2-1) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression} $" src="form_29.png"/>, where <img class="formulaInl" alt="$ \iota_1,\iota_4 $" src="form_20.png"/> are the first and first mixed invariant of the strain tensor <img class="formulaInl" alt="$F^T F$" src="form_21.png"/>.</p>
+<p>Implementation of the stored energy function <img class="formulaInl" alt="$ W(F)= c_\mathrm{Cells}(\iota_1-3) + \frac{k_1}{k_2}\exp(k_2(\kappa\iota_1+(1-3\kappa)*\iota_4)^2-1) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression} $" src="form_33.png"/>, where <img class="formulaInl" alt="$ \iota_1,\iota_4 $" src="form_24.png"/> are the first and first mixed invariant of the strain tensor <img class="formulaInl" alt="$F^T F$" src="form_25.png"/>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cCells</td><td>scaling of the neo-Hookean model for the description of the adipocytes as cell foam. </td></tr>
     <tr><td class="paramname">k1</td><td>stress-like parameter of the model for the interlobular septa </td></tr>
     <tr><td class="paramname">k2</td><td>dimensionless parameter of the model for the interlobular septa </td></tr>
-    <tr><td class="paramname">kappa</td><td>fiber dispersion parameter <img class="formulaInl" alt="$(0\le\kappa\le\frac{1}{3})$" src="form_22.png"/>. </td></tr>
-    <tr><td class="paramname">M</td><td>structural tensor describing the fiber direction of the interlobular septa, i.e. <img class="formulaInl" alt="$M=v\otimesv$" src="form_23.png"/> for a fiber direction <img class="formulaInl" alt="$v$" src="form_24.png"/> </td></tr>
+    <tr><td class="paramname">kappa</td><td>fiber dispersion parameter <img class="formulaInl" alt="$(0\le\kappa\le\frac{1}{3})$" src="form_26.png"/>. </td></tr>
+    <tr><td class="paramname">M</td><td>structural tensor describing the fiber direction of the interlobular septa, i.e. <img class="formulaInl" alt="$M=v\otimesv$" src="form_27.png"/> for a fiber direction <img class="formulaInl" alt="$v$" src="form_28.png"/> </td></tr>
     <tr><td class="paramname">d0</td><td>scaling of the penalty function for inflation </td></tr>
     <tr><td class="paramname">d1</td><td>scaling of the penalty function for compression </td></tr>
     <tr><td class="paramname">F</td><td>initial deformation gradient </td></tr>
@@ -271,13 +271,13 @@ template&lt;class Inflation , class Compression , class Matrix , int offset = Li
       </table>
 </div><div class="memdoc">
 
-<p>Compressible version of the model for adipose tissue of Sommer et al.: Multiaxial mechanical properties and constitutive modeling of human adipose tissue: A basis for preoperative simulations in plastic and reconstructive surgery. Acta Biomater., 9:9036-9048, 2013. Material parameters are taken from the same publication, Table 2, i.e. <img class="formulaInl" alt="$c_\mathrm{Cells}=0.15 (\,\mathrm{kPa})$" src="form_25.png"/>, <img class="formulaInl" alt="$k_1=0.8 (\,\mathrm{kPa})$" src="form_26.png"/>, <img class="formulaInl" alt="$k_2=47.3$" src="form_27.png"/> and <img class="formulaInl" alt="$\kappa=0.09$" src="form_28.png"/>. </p>
-<p>Implementation of the stored energy function <img class="formulaInl" alt="$ W(F)= c_\mathrm{Cells}(\iota_1-3) + \frac{k_1}{k_2}\exp(k_2(\kappa\iota_1+(1-3\kappa)*\iota_4)^2-1) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression} $" src="form_29.png"/>, where <img class="formulaInl" alt="$ \iota_1,\iota_4 $" src="form_20.png"/> are the first and first mixed invariant of the strain tensor <img class="formulaInl" alt="$F^T F$" src="form_21.png"/>.</p>
+<p>Compressible version of the model for adipose tissue of Sommer et al.: Multiaxial mechanical properties and constitutive modeling of human adipose tissue: A basis for preoperative simulations in plastic and reconstructive surgery. Acta Biomater., 9:9036-9048, 2013. Material parameters are taken from the same publication, Table 2, i.e. <img class="formulaInl" alt="$c_\mathrm{Cells}=0.15 (\,\mathrm{kPa})$" src="form_29.png"/>, <img class="formulaInl" alt="$k_1=0.8 (\,\mathrm{kPa})$" src="form_30.png"/>, <img class="formulaInl" alt="$k_2=47.3$" src="form_31.png"/> and <img class="formulaInl" alt="$\kappa=0.09$" src="form_32.png"/>. </p>
+<p>Implementation of the stored energy function <img class="formulaInl" alt="$ W(F)= c_\mathrm{Cells}(\iota_1-3) + \frac{k_1}{k_2}\exp(k_2(\kappa\iota_1+(1-3\kappa)*\iota_4)^2-1) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression} $" src="form_33.png"/>, where <img class="formulaInl" alt="$ \iota_1,\iota_4 $" src="form_24.png"/> are the first and first mixed invariant of the strain tensor <img class="formulaInl" alt="$F^T F$" src="form_25.png"/>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">d0</td><td>scaling of the penalty function for inflation </td></tr>
     <tr><td class="paramname">d1</td><td>scaling of the penalty function for compression </td></tr>
-    <tr><td class="paramname">M</td><td>structural tensor describing the fiber direction of the interlobular septa, i.e. <img class="formulaInl" alt="$M=v\otimesv$" src="form_23.png"/> for a fiber direction <img class="formulaInl" alt="$v$" src="form_24.png"/> </td></tr>
+    <tr><td class="paramname">M</td><td>structural tensor describing the fiber direction of the interlobular septa, i.e. <img class="formulaInl" alt="$M=v\otimesv$" src="form_27.png"/> for a fiber direction <img class="formulaInl" alt="$v$" src="form_28.png"/> </td></tr>
     <tr><td class="paramname">F</td><td>initial deformation gradient </td></tr>
   </table>
   </dd>
@@ -348,7 +348,7 @@ template&lt;class Inflation , class Compression , class Matrix , int offset = Li
 </div><div class="memdoc">
 
 <p>Compressible version of the model for muscle tissue of Martins et al.: A numerical model of passive and active bahevaior of skeletal muscles. Comp. Meth. Appl. Mech. Eng. 151:419-433, 1998. </p>
-<p>Implementation of the stored energy function <img class="formulaInl" alt="$ W(F)=c(\exp(b(\bar\iota_1-3))-1) + A(\exp(a(\bar\iota_6-1)^2)-1) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression} $" src="form_37.png"/>, where <img class="formulaInl" alt="$\bar\iota_1,\bar\iota_6=\bar\iota_4$" src="form_31.png"/> are the first modified principal and the third modified mixed invariant of the strain tensor <img class="formulaInl" alt="$F^T F$" src="form_21.png"/>.</p>
+<p>Implementation of the stored energy function <img class="formulaInl" alt="$ W(F)=c(\exp(b(\bar\iota_1-3))-1) + A(\exp(a(\bar\iota_6-1)^2)-1) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression} $" src="form_41.png"/>, where <img class="formulaInl" alt="$\bar\iota_1,\bar\iota_6=\bar\iota_4$" src="form_35.png"/> are the first modified principal and the third modified mixed invariant of the strain tensor <img class="formulaInl" alt="$F^T F$" src="form_25.png"/>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">c</td><td>first material parameter for the isotropic part </td></tr>
@@ -357,7 +357,7 @@ template&lt;class Inflation , class Compression , class Matrix , int offset = Li
     <tr><td class="paramname">a</td><td>second material parameter for the anisotropic part </td></tr>
     <tr><td class="paramname">d0</td><td>material parameter for the penalty for inflation </td></tr>
     <tr><td class="paramname">d1</td><td>material parameter for the penalty for compression </td></tr>
-    <tr><td class="paramname">M</td><td>structural (rank-one) tensor describing the initial orientation of muscle fibers for <img class="formulaInl" alt="$F=I$" src="form_32.png"/>, where <img class="formulaInl" alt="$I$" src="form_11.png"/> is the unit matrix. </td></tr>
+    <tr><td class="paramname">M</td><td>structural (rank-one) tensor describing the initial orientation of muscle fibers for <img class="formulaInl" alt="$F=I$" src="form_36.png"/>, where <img class="formulaInl" alt="$I$" src="form_15.png"/> is the unit matrix. </td></tr>
     <tr><td class="paramname">F</td><td>deformation gradient </td></tr>
   </table>
   </dd>
@@ -404,13 +404,13 @@ template&lt;class Inflation , class Compression , class Matrix , int offset = Li
 </div><div class="memdoc">
 
 <p>Compressible version of the model for muscle tissue of Martins et al.: A numerical model of passive and active bahevaior of skeletal muscles. Comp. Meth. Appl. Mech. Eng. 151:419-433, 1998. </p>
-<p>Implementation of the stored energy function <img class="formulaInl" alt="$ W(F)=c(\exp(b(\bar\iota_1-3))-1) + A(\exp(a(\bar\iota_6-1)^2)-1) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression}$" src="form_38.png"/>, where <img class="formulaInl" alt="$\bar\iota_1,\bar\iota_6=\bar\iota_4$" src="form_31.png"/> are the first modified principal and the third modified mixed invariant of the strain tensor <img class="formulaInl" alt="$F^T F$" src="form_21.png"/>.</p>
-<p>Material parameters taken from the above mentioned publication, i.e. <img class="formulaInl" alt="$a=0.387 (\,\mathrm{kPa})$" src="form_33.png"/>, <img class="formulaInl" alt="$ b = 23.46 $" src="form_34.png"/>, <img class="formulaInl" alt="$ A = 0.584 (\,\mathrm{kPa}) $" src="form_35.png"/> and <img class="formulaInl" alt="$ a = 12.43$" src="form_36.png"/>.</p>
+<p>Implementation of the stored energy function <img class="formulaInl" alt="$ W(F)=c(\exp(b(\bar\iota_1-3))-1) + A(\exp(a(\bar\iota_6-1)^2)-1) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression}$" src="form_42.png"/>, where <img class="formulaInl" alt="$\bar\iota_1,\bar\iota_6=\bar\iota_4$" src="form_35.png"/> are the first modified principal and the third modified mixed invariant of the strain tensor <img class="formulaInl" alt="$F^T F$" src="form_25.png"/>.</p>
+<p>Material parameters taken from the above mentioned publication, i.e. <img class="formulaInl" alt="$a=0.387 (\,\mathrm{kPa})$" src="form_37.png"/>, <img class="formulaInl" alt="$ b = 23.46 $" src="form_38.png"/>, <img class="formulaInl" alt="$ A = 0.584 (\,\mathrm{kPa}) $" src="form_39.png"/> and <img class="formulaInl" alt="$ a = 12.43$" src="form_40.png"/>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">d0</td><td>material parameter for the penalty for inflation </td></tr>
     <tr><td class="paramname">d1</td><td>material parameter for the penalty for compression </td></tr>
-    <tr><td class="paramname">M</td><td>structural (rank-one) tensor describing the initial orientation of muscle fibers for <img class="formulaInl" alt="$F=I$" src="form_32.png"/>, where <img class="formulaInl" alt="$I$" src="form_11.png"/> is the unit matrix. </td></tr>
+    <tr><td class="paramname">M</td><td>structural (rank-one) tensor describing the initial orientation of muscle fibers for <img class="formulaInl" alt="$F=I$" src="form_36.png"/>, where <img class="formulaInl" alt="$I$" src="form_15.png"/> is the unit matrix. </td></tr>
     <tr><td class="paramname">F</td><td>deformation gradient </td></tr>
   </table>
   </dd>
@@ -463,7 +463,7 @@ template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , i
 </div><div class="memdoc">
 
 <p>Compressible version of the model for skin tissue of Hendriks: Mechanical behavior of human epidermal and dermal layers in vivo. PhD thesis, Technische Universiteit Eindhoven, 2005. </p>
-<p>Implementation of the stored energy function <img class="formulaInl" alt="$W(F)=c_0(\iota_1-3) + c_1(\iota_1-3)(\iota_2-3) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression}$" src="form_43.png"/>, where <img class="formulaInl" alt="$\iota_1,\iota_2$" src="form_40.png"/> are the first and second principal invariants of the strain tensor <img class="formulaInl" alt="$F^T F$" src="form_21.png"/>.</p>
+<p>Implementation of the stored energy function <img class="formulaInl" alt="$W(F)=c_0(\iota_1-3) + c_1(\iota_1-3)(\iota_2-3) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression}$" src="form_47.png"/>, where <img class="formulaInl" alt="$\iota_1,\iota_2$" src="form_44.png"/> are the first and second principal invariants of the strain tensor <img class="formulaInl" alt="$F^T F$" src="form_25.png"/>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">c0</td><td>scaling of the shifted first principal invariant </td></tr>
@@ -510,8 +510,8 @@ template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , i
 </div><div class="memdoc">
 
 <p>Compressible version of the model for skin tissue of Hendriks: Mechanical behavior of human epidermal and dermal layers in vivo. PhD thesis, Technische Universiteit Eindhoven, 2005. </p>
-<p>Implementation of the stored energy function <img class="formulaInl" alt="$W(F)=c_0(\iota_1-3) + c_1(\iota_1-3)(\iota_2-3) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression}$" src="form_43.png"/>, where <img class="formulaInl" alt="$\iota_1,\iota_2$" src="form_40.png"/> are the first and second principal invariants of the strain tensor <img class="formulaInl" alt="$F^T F$" src="form_21.png"/>.</p>
-<p>Material parameters are taken from Xu and Lu: Introduction to Skin Biothermomechanics and Thermal Pain, chapter Skin Biomechanics Modeling, pages 154-206, Springer and Science Press Beijing, 2011, i.e <img class="formulaInl" alt="$c_0=9.4 (\,\mathrm{kPa})$" src="form_41.png"/> and <img class="formulaInl" alt="$ c_1 = 82 (\,\mathrm{kPa}) $" src="form_42.png"/>.</p>
+<p>Implementation of the stored energy function <img class="formulaInl" alt="$W(F)=c_0(\iota_1-3) + c_1(\iota_1-3)(\iota_2-3) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression}$" src="form_47.png"/>, where <img class="formulaInl" alt="$\iota_1,\iota_2$" src="form_44.png"/> are the first and second principal invariants of the strain tensor <img class="formulaInl" alt="$F^T F$" src="form_25.png"/>.</p>
+<p>Material parameters are taken from Xu and Lu: Introduction to Skin Biothermomechanics and Thermal Pain, chapter Skin Biomechanics Modeling, pages 154-206, Springer and Science Press Beijing, 2011, i.e <img class="formulaInl" alt="$c_0=9.4 (\,\mathrm{kPa})$" src="form_45.png"/> and <img class="formulaInl" alt="$ c_1 = 82 (\,\mathrm{kPa}) $" src="form_46.png"/>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">d0</td><td>scaling of the penalty function for inflation </td></tr>
@@ -574,14 +574,14 @@ template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()
 </div><div class="memdoc">
 
 <p>Model for adipose tissue of Sommer et al.: Multiaxial mechanical properties and constitutive modeling of human adipose tissue: A basis for preoperative simulations in plastic and reconstructive surgery. Acta Biomater., 9:9036-9048, 2013. </p>
-<p>Implementation of the stored energy function <img class="formulaInl" alt="$ W(F)= c_\mathrm{Cells}(\iota_1-3) + \frac{k_1}{k_2}\exp(k_2(\kappa\iota_1+(1-3\kappa)*\iota_4)^2-1) $" src="form_19.png"/>, where <img class="formulaInl" alt="$ \iota_1,\iota_4 $" src="form_20.png"/> are the first and first mixed invariant of the strain tensor <img class="formulaInl" alt="$F^T F$" src="form_21.png"/>.</p>
+<p>Implementation of the stored energy function <img class="formulaInl" alt="$ W(F)= c_\mathrm{Cells}(\iota_1-3) + \frac{k_1}{k_2}\exp(k_2(\kappa\iota_1+(1-3\kappa)*\iota_4)^2-1) $" src="form_23.png"/>, where <img class="formulaInl" alt="$ \iota_1,\iota_4 $" src="form_24.png"/> are the first and first mixed invariant of the strain tensor <img class="formulaInl" alt="$F^T F$" src="form_25.png"/>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cCells</td><td>scaling of the neo-Hookean model for the description of the adipocytes as cell foam. </td></tr>
     <tr><td class="paramname">k1</td><td>stress-like parameter of the model for the interlobular septa </td></tr>
     <tr><td class="paramname">k2</td><td>dimensionless parameter of the model for the interlobular septa </td></tr>
-    <tr><td class="paramname">kappa</td><td>fiber dispersion parameter <img class="formulaInl" alt="$(0\le\kappa\le\frac{1}{3})$" src="form_22.png"/>. </td></tr>
-    <tr><td class="paramname">M</td><td>structural tensor describing the fiber direction of the interlobular septa, i.e. <img class="formulaInl" alt="$M=v\otimesv$" src="form_23.png"/> for a fiber direction <img class="formulaInl" alt="$v$" src="form_24.png"/> </td></tr>
+    <tr><td class="paramname">kappa</td><td>fiber dispersion parameter <img class="formulaInl" alt="$(0\le\kappa\le\frac{1}{3})$" src="form_26.png"/>. </td></tr>
+    <tr><td class="paramname">M</td><td>structural tensor describing the fiber direction of the interlobular septa, i.e. <img class="formulaInl" alt="$M=v\otimesv$" src="form_27.png"/> for a fiber direction <img class="formulaInl" alt="$v$" src="form_28.png"/> </td></tr>
     <tr><td class="paramname">F</td><td>initial deformation gradient </td></tr>
   </table>
   </dd>
@@ -616,11 +616,11 @@ template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()
 </div><div class="memdoc">
 
 <p>Model for adipose tissue of Sommer et al.: Multiaxial mechanical properties and constitutive modeling of human adipose tissue: A basis for preoperative simulations in plastic and reconstructive surgery. Acta Biomater., 9:9036-9048, 2013. </p>
-<p>Implementation of the stored energy function <img class="formulaInl" alt="$ W(F)= c_\mathrm{Cells}(\iota_1-3) + \frac{k_1}{k_2}\exp(k_2(\kappa\iota_1+(1-3\kappa)*\iota_4)^2-1) $" src="form_19.png"/>, where <img class="formulaInl" alt="$ \iota_1,\iota_4 $" src="form_20.png"/> are the first and first mixed invariant of the strain tensor <img class="formulaInl" alt="$F^T F$" src="form_21.png"/>.</p>
-<p>Material parameters are taken from the above mentioned publication, Table 2, i.e. <img class="formulaInl" alt="$c_\mathrm{Cells}=0.15 (\,\mathrm{kPa})$" src="form_25.png"/>, <img class="formulaInl" alt="$k_1=0.8 (\,\mathrm{kPa})$" src="form_26.png"/>, <img class="formulaInl" alt="$k_2=47.3$" src="form_27.png"/> and <img class="formulaInl" alt="$\kappa=0.09$" src="form_28.png"/>.</p>
+<p>Implementation of the stored energy function <img class="formulaInl" alt="$ W(F)= c_\mathrm{Cells}(\iota_1-3) + \frac{k_1}{k_2}\exp(k_2(\kappa\iota_1+(1-3\kappa)*\iota_4)^2-1) $" src="form_23.png"/>, where <img class="formulaInl" alt="$ \iota_1,\iota_4 $" src="form_24.png"/> are the first and first mixed invariant of the strain tensor <img class="formulaInl" alt="$F^T F$" src="form_25.png"/>.</p>
+<p>Material parameters are taken from the above mentioned publication, Table 2, i.e. <img class="formulaInl" alt="$c_\mathrm{Cells}=0.15 (\,\mathrm{kPa})$" src="form_29.png"/>, <img class="formulaInl" alt="$k_1=0.8 (\,\mathrm{kPa})$" src="form_30.png"/>, <img class="formulaInl" alt="$k_2=47.3$" src="form_31.png"/> and <img class="formulaInl" alt="$\kappa=0.09$" src="form_32.png"/>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">M</td><td>structural tensor describing the fiber direction of the interlobular septa, i.e. <img class="formulaInl" alt="$M=v\otimesv$" src="form_23.png"/> for a fiber direction <img class="formulaInl" alt="$v$" src="form_24.png"/> </td></tr>
+    <tr><td class="paramname">M</td><td>structural tensor describing the fiber direction of the interlobular septa, i.e. <img class="formulaInl" alt="$M=v\otimesv$" src="form_27.png"/> for a fiber direction <img class="formulaInl" alt="$v$" src="form_28.png"/> </td></tr>
     <tr><td class="paramname">F</td><td>initial deformation gradient </td></tr>
   </table>
   </dd>
@@ -679,14 +679,14 @@ template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()
 </div><div class="memdoc">
 
 <p>Incompressible version of the model for muscle tissue of Martins et al.: A numerical model of passive and active bahevaior of skeletal muscles. Comp. Meth. Appl. Mech. Eng. 151:419-433, 1998. </p>
-<p>Implementation of the stored energy function <img class="formulaInl" alt="$ W(F)=c(\exp(b(\bar\iota_1-3))-1) + A(\exp(a(\bar\iota_6-1)^2)-1) $" src="form_30.png"/>, where <img class="formulaInl" alt="$\bar\iota_1,\bar\iota_6=\bar\iota_4$" src="form_31.png"/> are the first modified principal and the third modified mixed invariant of the strain tensor <img class="formulaInl" alt="$F^T F$" src="form_21.png"/>.</p>
+<p>Implementation of the stored energy function <img class="formulaInl" alt="$ W(F)=c(\exp(b(\bar\iota_1-3))-1) + A(\exp(a(\bar\iota_6-1)^2)-1) $" src="form_34.png"/>, where <img class="formulaInl" alt="$\bar\iota_1,\bar\iota_6=\bar\iota_4$" src="form_35.png"/> are the first modified principal and the third modified mixed invariant of the strain tensor <img class="formulaInl" alt="$F^T F$" src="form_25.png"/>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">c</td><td>first material parameter for the isotropic part </td></tr>
     <tr><td class="paramname">b</td><td>second material parameter for the isotropic part </td></tr>
     <tr><td class="paramname">A</td><td>first material parameter for the anisotropic part </td></tr>
     <tr><td class="paramname">a</td><td>second material parameter for the anisotropic part </td></tr>
-    <tr><td class="paramname">M</td><td>structural (rank-one) tensor describing the initial orientation of muscle fibers for <img class="formulaInl" alt="$F=I$" src="form_32.png"/>, where <img class="formulaInl" alt="$I$" src="form_11.png"/> is the unit matrix. </td></tr>
+    <tr><td class="paramname">M</td><td>structural (rank-one) tensor describing the initial orientation of muscle fibers for <img class="formulaInl" alt="$F=I$" src="form_36.png"/>, where <img class="formulaInl" alt="$I$" src="form_15.png"/> is the unit matrix. </td></tr>
     <tr><td class="paramname">F</td><td>deformation gradient </td></tr>
   </table>
   </dd>
@@ -721,11 +721,11 @@ template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()
 </div><div class="memdoc">
 
 <p>Incompressible version of the model for muscle tissue of Martins et al.: A numerical model of passive and active bahevaior of skeletal muscles. Comp. Meth. Appl. Mech. Eng. 151:419-433, 1998. </p>
-<p>Implementation of the stored energy function <img class="formulaInl" alt="$ W(F)=c(\exp(b(\bar\iota_1-3))-1) + A(\exp(a(\bar\iota_6-1)^2)-1) $" src="form_30.png"/>, where <img class="formulaInl" alt="$\bar\iota_1,\bar\iota_6=\bar\iota_4$" src="form_31.png"/> are the first modified principal and the third modified mixed invariant of the strain tensor <img class="formulaInl" alt="$F^T F$" src="form_21.png"/>.</p>
-<p>Material parameters taken from the same above mentioned publication, i.e. <img class="formulaInl" alt="$a=0.387 (\,\mathrm{kPa})$" src="form_33.png"/>, <img class="formulaInl" alt="$ b = 23.46 $" src="form_34.png"/>, <img class="formulaInl" alt="$ A = 0.584 (\,\mathrm{kPa}) $" src="form_35.png"/> and <img class="formulaInl" alt="$ a = 12.43$" src="form_36.png"/>.</p>
+<p>Implementation of the stored energy function <img class="formulaInl" alt="$ W(F)=c(\exp(b(\bar\iota_1-3))-1) + A(\exp(a(\bar\iota_6-1)^2)-1) $" src="form_34.png"/>, where <img class="formulaInl" alt="$\bar\iota_1,\bar\iota_6=\bar\iota_4$" src="form_35.png"/> are the first modified principal and the third modified mixed invariant of the strain tensor <img class="formulaInl" alt="$F^T F$" src="form_25.png"/>.</p>
+<p>Material parameters taken from the same above mentioned publication, i.e. <img class="formulaInl" alt="$a=0.387 (\,\mathrm{kPa})$" src="form_37.png"/>, <img class="formulaInl" alt="$ b = 23.46 $" src="form_38.png"/>, <img class="formulaInl" alt="$ A = 0.584 (\,\mathrm{kPa}) $" src="form_39.png"/> and <img class="formulaInl" alt="$ a = 12.43$" src="form_40.png"/>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">M</td><td>structural (rank-one) tensor describing the initial orientation of muscle fibers for <img class="formulaInl" alt="$F=I$" src="form_32.png"/>, where <img class="formulaInl" alt="$I$" src="form_11.png"/> is the unit matrix. </td></tr>
+    <tr><td class="paramname">M</td><td>structural (rank-one) tensor describing the initial orientation of muscle fibers for <img class="formulaInl" alt="$F=I$" src="form_36.png"/>, where <img class="formulaInl" alt="$I$" src="form_15.png"/> is the unit matrix. </td></tr>
     <tr><td class="paramname">F</td><td>deformation gradient </td></tr>
   </table>
   </dd>
@@ -766,7 +766,7 @@ template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()
 </div><div class="memdoc">
 
 <p>Model for skin tissue of Hendriks: Mechanical behavior of human epidermal and dermal layers in vivo. PhD thesis, Technische Universiteit Eindhoven, 2005. </p>
-<p>Implementation of the stored energy function <img class="formulaInl" alt="$W(F)=c_0(\iota_1-3) + c_1(\iota_1-3)(\iota_2-3)$" src="form_39.png"/>, where <img class="formulaInl" alt="$\iota_1,\iota_2$" src="form_40.png"/> are the first and second principal invariants of the strain tensor <img class="formulaInl" alt="$F^T F$" src="form_21.png"/>.</p>
+<p>Implementation of the stored energy function <img class="formulaInl" alt="$W(F)=c_0(\iota_1-3) + c_1(\iota_1-3)(\iota_2-3)$" src="form_43.png"/>, where <img class="formulaInl" alt="$\iota_1,\iota_2$" src="form_44.png"/> are the first and second principal invariants of the strain tensor <img class="formulaInl" alt="$F^T F$" src="form_25.png"/>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">c0</td><td>scaling of the shifted first principal invariant </td></tr>
@@ -795,8 +795,8 @@ template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()
 </div><div class="memdoc">
 
 <p>Model for skin tissue of Hendriks: Mechanical behavior of human epidermal and dermal layers in vivo. PhD thesis, Technische Universiteit Eindhoven, 2005. </p>
-<p>Implementation of the stored energy function <img class="formulaInl" alt="$W(F)=c_0(\iota_1-3) + c_1(\iota_1-3)(\iota_2-3)$" src="form_39.png"/>, where <img class="formulaInl" alt="$\iota_1,\iota_2$" src="form_40.png"/> are the first and second principal invariants of the strain tensor <img class="formulaInl" alt="$F^T F$" src="form_21.png"/>.</p>
-<p>Material parameters are taken from Xu and Lu: Introduction to Skin Biothermomechanics and Thermal Pain, chapter Skin Biomechanics Modeling, pages 154-206, Springer and Science Press Beijing, 2011, i.e <img class="formulaInl" alt="$c_0=9.4 (\,\mathrm{kPa})$" src="form_41.png"/> and <img class="formulaInl" alt="$ c_1 = 82 (\,\mathrm{kPa}) $" src="form_42.png"/>.</p>
+<p>Implementation of the stored energy function <img class="formulaInl" alt="$W(F)=c_0(\iota_1-3) + c_1(\iota_1-3)(\iota_2-3)$" src="form_43.png"/>, where <img class="formulaInl" alt="$\iota_1,\iota_2$" src="form_44.png"/> are the first and second principal invariants of the strain tensor <img class="formulaInl" alt="$F^T F$" src="form_25.png"/>.</p>
+<p>Material parameters are taken from Xu and Lu: Introduction to Skin Biothermomechanics and Thermal Pain, chapter Skin Biomechanics Modeling, pages 154-206, Springer and Science Press Beijing, 2011, i.e <img class="formulaInl" alt="$c_0=9.4 (\,\mathrm{kPa})$" src="form_45.png"/> and <img class="formulaInl" alt="$ c_1 = 82 (\,\mathrm{kPa}) $" src="form_46.png"/>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">F</td><td>initial deformation gradient </td></tr>
@@ -809,7 +809,7 @@ template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 20:47:59 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jun 9 2015 01:49:09 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

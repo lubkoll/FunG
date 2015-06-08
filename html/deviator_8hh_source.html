@@ -132,7 +132,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <a class="code" href="structRFFGen_1_1LinearAlgebra_1_1Deviator.html">Deviator</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="structRFFGen_1_1LinearAlgebra_1_1Deviator.html#a38235925f7702700d6adcd1265b62b31">   58</a></span>&#160;      <span class="keyword">explicit</span> <a class="code" href="structRFFGen_1_1LinearAlgebra_1_1Deviator.html#a38235925f7702700d6adcd1265b62b31">Deviator</a>(<span class="keyword">const</span> Matrix&amp; A)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        : MathematicalOperations::Sum&lt; Identity&lt;Matrix&gt; , MathematicalOperations::Product&lt; Trace&lt;Matrix&gt; , Constant&lt;Matrix&gt; &gt; &gt;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        : MathematicalOperations::Sum&lt; <a class="code" href="structRFFGen_1_1Identity.html">Identity</a>&lt;Matrix&gt; , MathematicalOperations::Product&lt; Trace&lt;Matrix&gt; , <a class="code" href="structRFFGen_1_1Constant.html">Constant</a>&lt;Matrix&gt; &gt; &gt;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;          ( A,</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            std::make_tuple( A , - 1./dimension&lt;Matrix&gt;() * <a class="code" href="group__LinearAlgebraGroup.html#gad9bd9a5f39d449a0fb84b60b27db17a5">unitMatrix</a>&lt;Matrix&gt;() ) )</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      {}</div>
@@ -149,13 +149,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif // RFFGEN_LINEAR_ALGEBRA_DEVIATOR_HH</span></div>
 <div class="ttc" id="group__LinearAlgebraGroup_html_ga374042eeb502ef4d59d18f11a8b55a80"><div class="ttname"><a href="group__LinearAlgebraGroup.html#ga374042eeb502ef4d59d18f11a8b55a80">RFFGen::LinearAlgebra::deviator</a></div><div class="ttdeci">auto deviator(const Matrix &amp;A)</div><div class="ttdoc">Create object Deviator&lt;Matrix&gt;(A). </div><div class="ttdef"><b>Definition:</b> deviator.hh:70</div></div>
 <div class="ttc" id="structRFFGen_1_1LinearAlgebra_1_1Deviator_html"><div class="ttname"><a href="structRFFGen_1_1LinearAlgebra_1_1Deviator.html">RFFGen::LinearAlgebra::Deviator</a></div><div class="ttdoc">Deviator of a matrix , i.e. . </div><div class="ttdef"><b>Definition:</b> deviator.hh:51</div></div>
+<div class="ttc" id="structRFFGen_1_1Identity_html"><div class="ttname"><a href="structRFFGen_1_1Identity.html">RFFGen::Identity</a></div><div class="ttdoc">Identity mapping . </div><div class="ttdef"><b>Definition:</b> identity.hh:38</div></div>
 <div class="ttc" id="structRFFGen_1_1LinearAlgebra_1_1Deviator_html_a38235925f7702700d6adcd1265b62b31"><div class="ttname"><a href="structRFFGen_1_1LinearAlgebra_1_1Deviator.html#a38235925f7702700d6adcd1265b62b31">RFFGen::LinearAlgebra::Deviator::Deviator</a></div><div class="ttdeci">Deviator(const Matrix &amp;A)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> deviator.hh:58</div></div>
+<div class="ttc" id="structRFFGen_1_1Constant_html"><div class="ttname"><a href="structRFFGen_1_1Constant.html">RFFGen::Constant</a></div><div class="ttdoc">Wrap a constant. </div><div class="ttdef"><b>Definition:</b> constant.hh:40</div></div>
 <div class="ttc" id="structRFFGen_1_1MathematicalOperations_1_1Sum_html"><div class="ttname"><a href="structRFFGen_1_1MathematicalOperations_1_1Sum.html">RFFGen::MathematicalOperations::Sum</a></div><div class="ttdoc">Sum of functions of type F and G (F and G must satisfy the requirements of Concepts::FunctionConcept)...</div><div class="ttdef"><b>Definition:</b> sum.hh:54</div></div>
 <div class="ttc" id="group__LinearAlgebraGroup_html_gad9bd9a5f39d449a0fb84b60b27db17a5"><div class="ttname"><a href="group__LinearAlgebraGroup.html#gad9bd9a5f39d449a0fb84b60b27db17a5">RFFGen::LinearAlgebra::unitMatrix</a></div><div class="ttdeci">Matrix unitMatrix()</div><div class="ttdoc">Compute unit matrix for the specified matrix type. This requires that a corresponding specialization ...</div><div class="ttdef"><b>Definition:</b> unitMatrix.hh:39</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 20:47:59 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jun 9 2015 01:49:09 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

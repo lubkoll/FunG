@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['zero',['Zero',['../structRFFGen_1_1Zero.html',1,'RFFGen']]],
-  ['zero_3c_20matrix_2c_20void_5ft_3c_20checks_3a_3atrycalltozeroes_3c_20matrix_20_3e_20_3e_20_3e',['Zero&lt; Matrix, void_t&lt; Checks::TryCallToZeroes&lt; Matrix &gt; &gt; &gt;',['../structRFFGen_1_1Zero_3_01Matrix_00_01void__t_3_01Checks_1_1TryCallToZeroes_3_01Matrix_01_4_01_4_01_4.html',1,'RFFGen']]]
+  ['variable',['Variable',['../structRFFGen_1_1Variable.html',1,'RFFGen']]],
+  ['vectorconcept',['VectorConcept',['../structRFFGen_1_1Concepts_1_1VectorConcept.html',1,'RFFGen::Concepts']]],
+  ['vectorconceptcheck',['VectorConceptCheck',['../structRFFGen_1_1Concepts_1_1VectorConceptCheck.html',1,'RFFGen::Concepts']]]
 ];

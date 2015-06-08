@@ -129,10 +129,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                 &gt;;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  }</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix&gt;</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="structRFFGen_1_1YieldSurface.html">   50</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structRFFGen_1_1YieldSurface.html">YieldSurface</a> : <span class="keyword">public</span> Finalize&lt; Detail::YieldSurfaceBase&lt;Matrix&gt; &gt;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="structRFFGen_1_1YieldSurface.html">   50</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structRFFGen_1_1YieldSurface.html">YieldSurface</a> : <span class="keyword">public</span> <a class="code" href="namespaceRFFGen.html#a394df0f2ab428f4a972b4d93900a5e04">Finalize</a>&lt; Detail::YieldSurfaceBase&lt;Matrix&gt; &gt;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  {</div>
 <div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="structRFFGen_1_1YieldSurface.html#a061091a108035834b402c4f6ad7a1085">   58</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="structRFFGen_1_1YieldSurface.html#a061091a108035834b402c4f6ad7a1085">YieldSurface</a>(<span class="keywordtype">double</span> beta, <span class="keywordtype">double</span> offset, Matrix sigma = unitMatrix&lt;Matrix&gt;())</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      : Finalize&lt; Detail::YieldSurfaceBase&lt;Matrix&gt; &gt;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      : <a class="code" href="namespaceRFFGen.html#a394df0f2ab428f4a972b4d93900a5e04">Finalize</a>&lt; Detail::YieldSurfaceBase&lt;Matrix&gt; &gt;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        (</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;          std::make_tuple(beta*third() , sigma), <span class="comment">// constructor argument for type Scale&lt; FirstPrincipalInvariant&lt;Matrix&gt; &gt;</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;          sigma,                                                                 <span class="comment">// constructor argument for SecondDeviatoricInvariant&lt;Matrix&gt;</span></div>
@@ -144,11 +144,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif // RFFGEN_EXAMPLES_YIELD_SURFACE_HH</span></div>
 <div class="ttc" id="structRFFGen_1_1YieldSurface_html"><div class="ttname"><a href="structRFFGen_1_1YieldSurface.html">RFFGen::YieldSurface</a></div><div class="ttdoc">Yield surface , where  is the first principal and  is the second deviatoric invariant. </div><div class="ttdef"><b>Definition:</b> yieldSurface.hh:50</div></div>
+<div class="ttc" id="namespaceRFFGen_html_a394df0f2ab428f4a972b4d93900a5e04"><div class="ttname"><a href="namespaceRFFGen.html#a394df0f2ab428f4a972b4d93900a5e04">RFFGen::Finalize</a></div><div class="ttdeci">Detail::FinalizeImpl&lt; F, arithmeticArgument, Checks::hasVariable&lt; F &gt;() &gt; Finalize</div><div class="ttdoc">Finish function definition. </div><div class="ttdef"><b>Definition:</b> finalize.hh:297</div></div>
 <div class="ttc" id="structRFFGen_1_1YieldSurface_html_a061091a108035834b402c4f6ad7a1085"><div class="ttname"><a href="structRFFGen_1_1YieldSurface.html#a061091a108035834b402c4f6ad7a1085">RFFGen::YieldSurface::YieldSurface</a></div><div class="ttdeci">YieldSurface(double beta, double offset, Matrix sigma=unitMatrix&lt; Matrix &gt;())</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> yieldSurface.hh:58</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 20:47:59 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jun 9 2015 01:49:09 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

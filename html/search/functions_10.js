@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['zero',['zero',['../namespaceRFFGen.html#a1248d7bf9320b86381dae791086c1f38',1,'RFFGen']]]
+  ['yieldsurface',['YieldSurface',['../structRFFGen_1_1YieldSurface.html#a061091a108035834b402c4f6ad7a1085',1,'RFFGen::YieldSurface']]]
 ];

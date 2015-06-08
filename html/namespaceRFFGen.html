@@ -96,13 +96,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRFFGen_1_1Constant.html">Constant</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrap a constant.  <a href="structRFFGen_1_1Constant.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRFFGen_1_1Identity.html">Identity</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identity mapping <img class="formulaInl" alt="$ f(x)=x $" src="form_3.png"/>.  <a href="structRFFGen_1_1Identity.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRFFGen_1_1Variable.html">Variable</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Independent variable. Can be uniquely identified by its id.  <a href="structRFFGen_1_1Variable.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRFFGen_1_1YieldSurface.html">YieldSurface</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yield surface <img class="formulaInl" alt="$ \frac{\beta}{3}\iota_1(\sigma) + J_2(\sigma)-offset $" src="form_2.png"/>, where <img class="formulaInl" alt="$\iota_1$" src="form_3.png"/> is the first principal and <img class="formulaInl" alt="$J_2$" src="form_4.png"/> is the second deviatoric invariant.  <a href="structRFFGen_1_1YieldSurface.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yield surface <img class="formulaInl" alt="$ \frac{\beta}{3}\iota_1(\sigma) + J_2(\sigma)-offset $" src="form_6.png"/>, where <img class="formulaInl" alt="$\iota_1$" src="form_7.png"/> is the first principal and <img class="formulaInl" alt="$J_2$" src="form_8.png"/> is the second deviatoric invariant.  <a href="structRFFGen_1_1YieldSurface.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRFFGen_1_1Chainer.html">Chainer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRFFGen_1_1Base.html">Base</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for functions satisfying FunctionConcept. Required for enabling the operators in generate.hh.  <a href="structRFFGen_1_1Base.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for functions satisfying FunctionConcept. Required for enabling the operators in <a class="el" href="generate_8hh_source.html">generate.hh</a>.  <a href="structRFFGen_1_1Base.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRFFGen_1_1OutOfDomainException.html">OutOfDomainException</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception for scalar function arguments that are outside the domain of the function.  <a href="classRFFGen_1_1OutOfDomainException.html#details">More...</a><br/></td></tr>
@@ -118,6 +127,15 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:a394df0f2ab428f4a972b4d93900a5e04"><td class="memTemplParams" colspan="2">template&lt;class F , bool arithmeticArgument = false&gt; </td></tr>
+<tr class="memitem:a394df0f2ab428f4a972b4d93900a5e04"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html#a394df0f2ab428f4a972b4d93900a5e04">Finalize</a> = Detail::FinalizeImpl&lt; F, arithmeticArgument, Checks::hasVariable&lt; F &gt;() &gt;</td></tr>
+<tr class="memdesc:a394df0f2ab428f4a972b4d93900a5e04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish function definition.  <a href="#a394df0f2ab428f4a972b4d93900a5e04">More...</a><br/></td></tr>
+<tr class="separator:a394df0f2ab428f4a972b4d93900a5e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc6abb2e40c9688574411fd42898fab4"><td class="memTemplParams" colspan="2"><a class="anchor" id="acc6abb2e40c9688574411fd42898fab4"></a>
+template&lt;class F , int id&gt; </td></tr>
+<tr class="memitem:acc6abb2e40c9688574411fd42898fab4"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html#acc6abb2e40c9688574411fd42898fab4">Variable_t</a> = typename VariableDetail::VariableType&lt; F, id &gt;::type</td></tr>
+<tr class="memdesc:acc6abb2e40c9688574411fd42898fab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get underlying type of variable with index id. <br/></td></tr>
+<tr class="separator:acc6abb2e40c9688574411fd42898fab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20e18569d04cc91cf19632c12cd4a0d8"><td class="memTemplParams" colspan="2"><a class="anchor" id="a20e18569d04cc91cf19632c12cd4a0d8"></a>
 template&lt;class... Types&gt; </td></tr>
 <tr class="memitem:a20e18569d04cc91cf19632c12cd4a0d8"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html#a20e18569d04cc91cf19632c12cd4a0d8">void_t</a> = typename Detail::voider&lt; Types...&gt;::type</td></tr>
@@ -126,6 +144,59 @@ template&lt;class... Types&gt; </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a1e5703444079774f6e6a9161a9bacc6b"><td class="memTemplParams" colspan="2">template&lt;class Arg &gt; </td></tr>
+<tr class="memitem:a1e5703444079774f6e6a9161a9bacc6b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html#a1e5703444079774f6e6a9161a9bacc6b">constRef</a> (const Arg &amp;x)</td></tr>
+<tr class="memdesc:a1e5703444079774f6e6a9161a9bacc6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a constant function that stores its argument as constant reference.  <a href="#a1e5703444079774f6e6a9161a9bacc6b">More...</a><br/></td></tr>
+<tr class="separator:a1e5703444079774f6e6a9161a9bacc6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0d4bfae5fedad4740c0ab09cb4ff0a1"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
+<tr class="memitem:ad0d4bfae5fedad4740c0ab09cb4ff0a1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html#ad0d4bfae5fedad4740c0ab09cb4ff0a1">finalize</a> (const F &amp;f)</td></tr>
+<tr class="memdesc:ad0d4bfae5fedad4740c0ab09cb4ff0a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish function definition.  <a href="#ad0d4bfae5fedad4740c0ab09cb4ff0a1">More...</a><br/></td></tr>
+<tr class="separator:ad0d4bfae5fedad4740c0ab09cb4ff0a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a6f6d638cd22c164c671c239486bb88"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
+<tr class="memitem:a8a6f6d638cd22c164c671c239486bb88"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html#a8a6f6d638cd22c164c671c239486bb88">finalize_scalar</a> (const F &amp;f)</td></tr>
+<tr class="memdesc:a8a6f6d638cd22c164c671c239486bb88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish function definition.  <a href="#a8a6f6d638cd22c164c671c239486bb88">More...</a><br/></td></tr>
+<tr class="separator:a8a6f6d638cd22c164c671c239486bb88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45fcf65f6c783e3da0a0007291f706ca"><td class="memTemplParams" colspan="2">template&lt;class F , class G , class  = std::enable_if_t&lt; std::is_base_of&lt;Base,F&gt;::value ||                                      std::is_base_of&lt;Base,G&gt;::value &gt;&gt; </td></tr>
+<tr class="memitem:a45fcf65f6c783e3da0a0007291f706ca"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html#a45fcf65f6c783e3da0a0007291f706ca">operator+</a> (const F &amp;f, const G &amp;g)</td></tr>
+<tr class="memdesc:a45fcf65f6c783e3da0a0007291f706ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "+"-operator for the generation of functions.  <a href="#a45fcf65f6c783e3da0a0007291f706ca">More...</a><br/></td></tr>
+<tr class="separator:a45fcf65f6c783e3da0a0007291f706ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62822aff0618fe8e869c7f73c82454df"><td class="memTemplParams" colspan="2">template&lt;class F , class G , class  = std::enable_if_t&lt; std::is_base_of&lt;Base,F&gt;::value &gt;, class  = std::enable_if_t&lt; std::is_base_of&lt;Base,G&gt;::value &gt;&gt; </td></tr>
+<tr class="memitem:a62822aff0618fe8e869c7f73c82454df"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html#a62822aff0618fe8e869c7f73c82454df">operator*</a> (const F &amp;f, const G &amp;g)</td></tr>
+<tr class="memdesc:a62822aff0618fe8e869c7f73c82454df"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "*"-operator for the generation of functions. This overload is restricted to multiplication of functions.  <a href="#a62822aff0618fe8e869c7f73c82454df">More...</a><br/></td></tr>
+<tr class="separator:a62822aff0618fe8e869c7f73c82454df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2e1b87874474c32b20338fc3c60be5a"><td class="memTemplParams" colspan="2">template&lt;class F , class  = std::enable_if_t&lt; std::is_base_of&lt;Base,F&gt;::value &gt;&gt; </td></tr>
+<tr class="memitem:ab2e1b87874474c32b20338fc3c60be5a"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html#ab2e1b87874474c32b20338fc3c60be5a">operator^</a> (const F &amp;f, int k)</td></tr>
+<tr class="memdesc:ab2e1b87874474c32b20338fc3c60be5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "^"-operator for the generation of functions.  <a href="#ab2e1b87874474c32b20338fc3c60be5a">More...</a><br/></td></tr>
+<tr class="separator:ab2e1b87874474c32b20338fc3c60be5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7be854ac2257ddf852ddb3ac6cfc413d"><td class="memTemplParams" colspan="2">template&lt;class Scalar , class F , class  = std::enable_if_t&lt; std::is_base_of&lt;Base,F&gt;() &amp;&amp; std::is_arithmetic&lt;Scalar&gt;() &gt;&gt; </td></tr>
+<tr class="memitem:a7be854ac2257ddf852ddb3ac6cfc413d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html#a7be854ac2257ddf852ddb3ac6cfc413d">operator*</a> (const Scalar &amp;a, const F &amp;f)</td></tr>
+<tr class="memdesc:a7be854ac2257ddf852ddb3ac6cfc413d"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "*"-operator for the generation of functions. This overload is restricted to the multiplication of functions with doubles from the left.  <a href="#a7be854ac2257ddf852ddb3ac6cfc413d">More...</a><br/></td></tr>
+<tr class="separator:a7be854ac2257ddf852ddb3ac6cfc413d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e94e177aaa2786b8d504273a402b41e"><td class="memTemplParams" colspan="2">template&lt;class F , class Scalar , class  = std::enable_if_t&lt; std::is_base_of&lt;Base,F&gt;() &amp;&amp; std::is_arithmetic&lt;Scalar&gt;() &gt;&gt; </td></tr>
+<tr class="memitem:a6e94e177aaa2786b8d504273a402b41e"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html#a6e94e177aaa2786b8d504273a402b41e">operator*</a> (const F &amp;f, Scalar a)</td></tr>
+<tr class="memdesc:a6e94e177aaa2786b8d504273a402b41e"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "*"-operator for the generation of functions. This overload is restricted to the multiplication of functions with doubles from the left.  <a href="#a6e94e177aaa2786b8d504273a402b41e">More...</a><br/></td></tr>
+<tr class="separator:a6e94e177aaa2786b8d504273a402b41e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c40e5d41ad211f6d861f2862a02e670"><td class="memTemplParams" colspan="2">template&lt;class F , class G , class  = std::enable_if_t&lt;std::is_base_of&lt;Base,F&gt;::value &amp;&amp;                                     std::is_base_of&lt;Base,G&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a2c40e5d41ad211f6d861f2862a02e670"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html#a2c40e5d41ad211f6d861f2862a02e670">operator&lt;&lt;</a> (const F &amp;f, const G &amp;g)</td></tr>
+<tr class="memdesc:a2c40e5d41ad211f6d861f2862a02e670"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "&lt;&lt;"-operator for chaining functions <img class="formulaInl" alt="$f$" src="form_0.png"/> and <img class="formulaInl" alt="$g$" src="form_1.png"/> to <img class="formulaInl" alt="$ f \circ g $" src="form_2.png"/>.  <a href="#a2c40e5d41ad211f6d861f2862a02e670">More...</a><br/></td></tr>
+<tr class="separator:a2c40e5d41ad211f6d861f2862a02e670"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a933ac482bf44b977bbe2ce057362b55a"><td class="memTemplParams" colspan="2">template&lt;class F , class T , class  = std::enable_if_t&lt;std::is_convertible&lt;T,decltype(std::declval&lt;F&gt;().d0())&gt;::value &amp;&amp;                                     std::is_base_of&lt;Base,F&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a933ac482bf44b977bbe2ce057362b55a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html#a933ac482bf44b977bbe2ce057362b55a">operator-</a> (const F &amp;f, const T &amp;t)</td></tr>
+<tr class="memdesc:a933ac482bf44b977bbe2ce057362b55a"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "-"-operator for the generation of functions. Here the second argument is a constant that is wrapped in to an object of type <a class="el" href="structRFFGen_1_1Constant.html" title="Wrap a constant. ">Constant</a>.  <a href="#a933ac482bf44b977bbe2ce057362b55a">More...</a><br/></td></tr>
+<tr class="separator:a933ac482bf44b977bbe2ce057362b55a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b334216a1a47d21c0ecb857ad279580"><td class="memTemplParams" colspan="2">template&lt;class F , class T , class  = std::enable_if_t&lt;std::is_convertible&lt;T,decltype(std::declval&lt;F&gt;().d0())&gt;::value &amp;&amp;                                     std::is_base_of&lt;Base,F&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a7b334216a1a47d21c0ecb857ad279580"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html#a7b334216a1a47d21c0ecb857ad279580">operator-</a> (const T &amp;t, const F &amp;f)</td></tr>
+<tr class="memdesc:a7b334216a1a47d21c0ecb857ad279580"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "-"-operator for the generation of functions. Here the first argument is a constant that is wrapped in to an object of type <a class="el" href="structRFFGen_1_1Constant.html" title="Wrap a constant. ">Constant</a>.  <a href="#a7b334216a1a47d21c0ecb857ad279580">More...</a><br/></td></tr>
+<tr class="separator:a7b334216a1a47d21c0ecb857ad279580"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af20942553f30cb8b3a7dc84b9581aeb3"><td class="memTemplParams" colspan="2"><a class="anchor" id="af20942553f30cb8b3a7dc84b9581aeb3"></a>
+template&lt;class Arg &gt; </td></tr>
+<tr class="memitem:af20942553f30cb8b3a7dc84b9581aeb3"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>identity</b> (const Arg &amp;x)</td></tr>
+<tr class="separator:af20942553f30cb8b3a7dc84b9581aeb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ff332846164ad83741fdb7b7f62a0d6"><td class="memTemplParams" colspan="2"><a class="anchor" id="a9ff332846164ad83741fdb7b7f62a0d6"></a>
+template&lt;int id, class T &gt; </td></tr>
+<tr class="memitem:a9ff332846164ad83741fdb7b7f62a0d6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structRFFGen_1_1Variable.html">Variable</a>&lt; T, id &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html#a9ff332846164ad83741fdb7b7f62a0d6">variable</a> (const T &amp;t)</td></tr>
+<tr class="memdesc:a9ff332846164ad83741fdb7b7f62a0d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate variable from input type. <br/></td></tr>
+<tr class="separator:a9ff332846164ad83741fdb7b7f62a0d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acecd1bb1423c34a46a1bb55f6c79d65f"><td class="memTemplParams" colspan="2"><a class="anchor" id="acecd1bb1423c34a46a1bb55f6c79d65f"></a>
 template&lt;class Inflation , class Compression , class Matrix &gt; </td></tr>
 <tr class="memitem:acecd1bb1423c34a46a1bb55f6c79d65f"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html#acecd1bb1423c34a46a1bb55f6c79d65f">volumetricPenalty</a> (double d0, double d1, const Matrix &amp;A)</td></tr>
@@ -134,42 +205,42 @@ template&lt;class Inflation , class Compression , class Matrix &gt; </td></tr>
 <tr class="memitem:a78a0e5bc2796da63afa6a1ce529975e8"><td class="memTemplParams" colspan="2"><a class="anchor" id="a78a0e5bc2796da63afa6a1ce529975e8"></a>
 template&lt;class Matrix &gt; </td></tr>
 <tr class="memitem:a78a0e5bc2796da63afa6a1ce529975e8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html#a78a0e5bc2796da63afa6a1ce529975e8">volumetricQuadAndLog</a> (double d0, double d1, const Matrix &amp;A)</td></tr>
-<tr class="memdesc:a78a0e5bc2796da63afa6a1ce529975e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the volumetric penalty function <img class="formulaInl" alt="$ d_0 j^2 + d_1 \log(j),\ j=\det(A) $" src="form_0.png"/>. <br/></td></tr>
+<tr class="memdesc:a78a0e5bc2796da63afa6a1ce529975e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the volumetric penalty function <img class="formulaInl" alt="$ d_0 j^2 + d_1 \log(j),\ j=\det(A) $" src="form_4.png"/>. <br/></td></tr>
 <tr class="separator:a78a0e5bc2796da63afa6a1ce529975e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18b1b3749e9292f521920a9cded87ca7"><td class="memTemplParams" colspan="2"><a class="anchor" id="a18b1b3749e9292f521920a9cded87ca7"></a>
 template&lt;class Matrix &gt; </td></tr>
 <tr class="memitem:a18b1b3749e9292f521920a9cded87ca7"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html#a18b1b3749e9292f521920a9cded87ca7">volumetricHartmannNeff</a> (double d0, double d1, const Matrix &amp;A)</td></tr>
-<tr class="memdesc:a18b1b3749e9292f521920a9cded87ca7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the volumetric penalty function <img class="formulaInl" alt="$ d_0 j^5 + d_1 j^{-5},\ j=\det(A) $" src="form_1.png"/>. <br/></td></tr>
+<tr class="memdesc:a18b1b3749e9292f521920a9cded87ca7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the volumetric penalty function <img class="formulaInl" alt="$ d_0 j^5 + d_1 j^{-5},\ j=\det(A) $" src="form_5.png"/>. <br/></td></tr>
 <tr class="separator:a18b1b3749e9292f521920a9cded87ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8626dcc0c5d11d3d2d796d09457e5e5d"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga8626dcc0c5d11d3d2d796d09457e5e5d"></a>
 template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
 <tr class="memitem:ga8626dcc0c5d11d3d2d796d09457e5e5d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#ga8626dcc0c5d11d3d2d796d09457e5e5d">incompressibleMooneyRivlin</a> (double c0, double c1, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:ga8626dcc0c5d11d3d2d796d09457e5e5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an "incompressible" Mooney-Rivlin material law <img class="formulaInl" alt="$ W(F)=c_0\iota_1(F^T F) + c_1\iota_2(F^T F) $" src="form_5.png"/>, where <img class="formulaInl" alt="$\iota_1$" src="form_3.png"/> is the first and <img class="formulaInl" alt="$\iota_2$" src="form_6.png"/> the second principal matrix invariant. <br/></td></tr>
+<tr class="memdesc:ga8626dcc0c5d11d3d2d796d09457e5e5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an "incompressible" Mooney-Rivlin material law <img class="formulaInl" alt="$ W(F)=c_0\iota_1(F^T F) + c_1\iota_2(F^T F) $" src="form_9.png"/>, where <img class="formulaInl" alt="$\iota_1$" src="form_7.png"/> is the first and <img class="formulaInl" alt="$\iota_2$" src="form_10.png"/> the second principal matrix invariant. <br/></td></tr>
 <tr class="separator:ga8626dcc0c5d11d3d2d796d09457e5e5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1522c73c1e2eec5516b73b203150c7e1"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga1522c73c1e2eec5516b73b203150c7e1"></a>
 template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
 <tr class="memitem:ga1522c73c1e2eec5516b73b203150c7e1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#ga1522c73c1e2eec5516b73b203150c7e1">compressibleMooneyRivlin</a> (double c0, double c1, double d0, double d1, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:ga1522c73c1e2eec5516b73b203150c7e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a compressible Mooney-Rivlin material law <img class="formulaInl" alt="$ W(F)=c_0\iota_1(F^T F) + c_1\iota_2(F^T F) + d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) $" src="form_7.png"/>, where <img class="formulaInl" alt="$\iota_1$" src="form_3.png"/> is the first and <img class="formulaInl" alt="$\iota_2$" src="form_6.png"/> the second principal matrix invariant. <br/></td></tr>
+<tr class="memdesc:ga1522c73c1e2eec5516b73b203150c7e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a compressible Mooney-Rivlin material law <img class="formulaInl" alt="$ W(F)=c_0\iota_1(F^T F) + c_1\iota_2(F^T F) + d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) $" src="form_11.png"/>, where <img class="formulaInl" alt="$\iota_1$" src="form_7.png"/> is the first and <img class="formulaInl" alt="$\iota_2$" src="form_10.png"/> the second principal matrix invariant. <br/></td></tr>
 <tr class="separator:ga1522c73c1e2eec5516b73b203150c7e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga554b9bf515aa99d3bdc9e230f2a65bca"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga554b9bf515aa99d3bdc9e230f2a65bca"></a>
 template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
 <tr class="memitem:ga554b9bf515aa99d3bdc9e230f2a65bca"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#ga554b9bf515aa99d3bdc9e230f2a65bca">incompressibleNeoHooke</a> (double c, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:ga554b9bf515aa99d3bdc9e230f2a65bca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an "incompressible" neo-Hookean material law <img class="formulaInl" alt="$ W(F)=c\iota_1(F^T F) $" src="form_14.png"/>, where <img class="formulaInl" alt="$\iota_1$" src="form_3.png"/> is the first principal matrix invariant . <br/></td></tr>
+<tr class="memdesc:ga554b9bf515aa99d3bdc9e230f2a65bca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an "incompressible" neo-Hookean material law <img class="formulaInl" alt="$ W(F)=c\iota_1(F^T F) $" src="form_18.png"/>, where <img class="formulaInl" alt="$\iota_1$" src="form_7.png"/> is the first principal matrix invariant . <br/></td></tr>
 <tr class="separator:ga554b9bf515aa99d3bdc9e230f2a65bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1b6f97c769ead09a5b1dcdf4733e85aa"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga1b6f97c769ead09a5b1dcdf4733e85aa"></a>
 template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
 <tr class="memitem:ga1b6f97c769ead09a5b1dcdf4733e85aa"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#ga1b6f97c769ead09a5b1dcdf4733e85aa">modifiedIncompressibleNeoHooke</a> (double c, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:ga1b6f97c769ead09a5b1dcdf4733e85aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an "incompressible" neo-Hookean material law <img class="formulaInl" alt="$ W(F)=c\bar\iota_1(F^T F) $" src="form_15.png"/>, where <img class="formulaInl" alt="$\bar\iota_1$" src="form_16.png"/> is the modified first principal matrix invariant. <br/></td></tr>
+<tr class="memdesc:ga1b6f97c769ead09a5b1dcdf4733e85aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an "incompressible" neo-Hookean material law <img class="formulaInl" alt="$ W(F)=c\bar\iota_1(F^T F) $" src="form_19.png"/>, where <img class="formulaInl" alt="$\bar\iota_1$" src="form_20.png"/> is the modified first principal matrix invariant. <br/></td></tr>
 <tr class="separator:ga1b6f97c769ead09a5b1dcdf4733e85aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga35a60a5ae50481becd543140ba82c171"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga35a60a5ae50481becd543140ba82c171"></a>
 template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
 <tr class="memitem:ga35a60a5ae50481becd543140ba82c171"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#ga35a60a5ae50481becd543140ba82c171">compressibleNeoHooke</a> (double c, double d0, double d1, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:ga35a60a5ae50481becd543140ba82c171"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a compressible neo-Hookean material law <img class="formulaInl" alt="$ W(F)=c\iota_1(F^T F)+d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) $" src="form_17.png"/>, where <img class="formulaInl" alt="$\iota_1$" src="form_3.png"/> is the first principal matrix invariant. <br/></td></tr>
+<tr class="memdesc:ga35a60a5ae50481becd543140ba82c171"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a compressible neo-Hookean material law <img class="formulaInl" alt="$ W(F)=c\iota_1(F^T F)+d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) $" src="form_21.png"/>, where <img class="formulaInl" alt="$\iota_1$" src="form_7.png"/> is the first principal matrix invariant. <br/></td></tr>
 <tr class="separator:ga35a60a5ae50481becd543140ba82c171"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad4985bcfe7726155b3b53f94094ebb3e"><td class="memTemplParams" colspan="2"><a class="anchor" id="gad4985bcfe7726155b3b53f94094ebb3e"></a>
 template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
 <tr class="memitem:gad4985bcfe7726155b3b53f94094ebb3e"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#gad4985bcfe7726155b3b53f94094ebb3e">modifiedCompressibleNeoHooke</a> (double c, double d0, double d1, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:gad4985bcfe7726155b3b53f94094ebb3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a compressible neo-Hookean material law <img class="formulaInl" alt="$ W(F)=c\bar\iota_1(F^T F)+d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) $" src="form_18.png"/>, where <img class="formulaInl" alt="$\bar\iota_1$" src="form_16.png"/> is the modified first principal matrix invariant. <br/></td></tr>
+<tr class="memdesc:gad4985bcfe7726155b3b53f94094ebb3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a compressible neo-Hookean material law <img class="formulaInl" alt="$ W(F)=c\bar\iota_1(F^T F)+d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) $" src="form_22.png"/>, where <img class="formulaInl" alt="$\bar\iota_1$" src="form_20.png"/> is the modified first principal matrix invariant. <br/></td></tr>
 <tr class="separator:gad4985bcfe7726155b3b53f94094ebb3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8ae9c0e3e217b82ca8020e716faac738"><td class="memTemplParams" colspan="2">template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
 <tr class="memitem:ga8ae9c0e3e217b82ca8020e716faac738"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#ga8ae9c0e3e217b82ca8020e716faac738">incompressibleAdiposeTissue_SommerHolzapfel</a> (double cCells, double k1, double k2, double kappa, const Matrix &amp;M, const Matrix &amp;F)</td></tr>
@@ -185,7 +256,7 @@ template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , i
 <tr class="separator:ga4c4a1bc765b6deb392a8151f02deaea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3f3e0d2799629dab092114d59233bc03"><td class="memTemplParams" colspan="2">template&lt;class Inflation , class Compression , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
 <tr class="memitem:ga3f3e0d2799629dab092114d59233bc03"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#ga3f3e0d2799629dab092114d59233bc03">compressibleAdiposeTissue_SommerHolzapfel</a> (double d0, double d1, const Matrix &amp;M, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:ga3f3e0d2799629dab092114d59233bc03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compressible version of the model for adipose tissue of Sommer et al.: Multiaxial mechanical properties and constitutive modeling of human adipose tissue: A basis for preoperative simulations in plastic and reconstructive surgery. Acta Biomater., 9:9036-9048, 2013. Material parameters are taken from the same publication, Table 2, i.e. <img class="formulaInl" alt="$c_\mathrm{Cells}=0.15 (\,\mathrm{kPa})$" src="form_25.png"/>, <img class="formulaInl" alt="$k_1=0.8 (\,\mathrm{kPa})$" src="form_26.png"/>, <img class="formulaInl" alt="$k_2=47.3$" src="form_27.png"/> and <img class="formulaInl" alt="$\kappa=0.09$" src="form_28.png"/>.  <a href="group__Biomechanics.html#ga3f3e0d2799629dab092114d59233bc03">More...</a><br/></td></tr>
+<tr class="memdesc:ga3f3e0d2799629dab092114d59233bc03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compressible version of the model for adipose tissue of Sommer et al.: Multiaxial mechanical properties and constitutive modeling of human adipose tissue: A basis for preoperative simulations in plastic and reconstructive surgery. Acta Biomater., 9:9036-9048, 2013. Material parameters are taken from the same publication, Table 2, i.e. <img class="formulaInl" alt="$c_\mathrm{Cells}=0.15 (\,\mathrm{kPa})$" src="form_29.png"/>, <img class="formulaInl" alt="$k_1=0.8 (\,\mathrm{kPa})$" src="form_30.png"/>, <img class="formulaInl" alt="$k_2=47.3$" src="form_31.png"/> and <img class="formulaInl" alt="$\kappa=0.09$" src="form_32.png"/>.  <a href="group__Biomechanics.html#ga3f3e0d2799629dab092114d59233bc03">More...</a><br/></td></tr>
 <tr class="separator:ga3f3e0d2799629dab092114d59233bc03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6c85de42ee96ce8b8505dd22d2327e12"><td class="memTemplParams" colspan="2">template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
 <tr class="memitem:ga6c85de42ee96ce8b8505dd22d2327e12"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#ga6c85de42ee96ce8b8505dd22d2327e12">incompressibleMuscleTissue_Martins</a> (double c, double b, double A, double a, const Matrix &amp;M, const Matrix &amp;F)</td></tr>
@@ -246,11 +317,11 @@ template&lt;class Arg1 , class Arg2 , class  = std::enable_if_t&lt; !std::is_bas
 <tr class="separator:a5a5346beba60bcf5a97585baa6d62e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa35cec985ea0b25a40ada14189fba44d"><td class="memTemplParams" colspan="2">template&lt;class Matrix , class  = std::enable_if_t&lt;Checks::isConstantSizeMatrix&lt;Matrix&gt;()&gt;&gt; </td></tr>
 <tr class="memitem:aa35cec985ea0b25a40ada14189fba44d"><td class="memTemplItemLeft" align="right" valign="top">Matrix&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html#aa35cec985ea0b25a40ada14189fba44d">addTransposed</a> (Matrix &amp;A)</td></tr>
-<tr class="memdesc:aa35cec985ea0b25a40ada14189fba44d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overwrites <img class="formulaInl" alt="$A$" src="form_119.png"/> with <img class="formulaInl" alt="$A+A^T$" src="form_120.png"/>.  <a href="#aa35cec985ea0b25a40ada14189fba44d">More...</a><br/></td></tr>
+<tr class="memdesc:aa35cec985ea0b25a40ada14189fba44d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overwrites <img class="formulaInl" alt="$A$" src="form_121.png"/> with <img class="formulaInl" alt="$A+A^T$" src="form_122.png"/>.  <a href="#aa35cec985ea0b25a40ada14189fba44d">More...</a><br/></td></tr>
 <tr class="separator:aa35cec985ea0b25a40ada14189fba44d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adef418735161dcbe64af19269329865e"><td class="memTemplParams" colspan="2">template&lt;class Matrix , class  = std::enable_if_t&lt;!Checks::isConstantSizeMatrix&lt;Matrix&gt;()&gt;, class  = std::enable_if_t&lt;Checks::isDynamicMatrix&lt;Matrix&gt;()&gt;&gt; </td></tr>
 <tr class="memitem:adef418735161dcbe64af19269329865e"><td class="memTemplItemLeft" align="right" valign="top">Matrix&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html#adef418735161dcbe64af19269329865e">addTransposed</a> (Matrix &amp;A)</td></tr>
-<tr class="memdesc:adef418735161dcbe64af19269329865e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overwrites <img class="formulaInl" alt="$A$" src="form_119.png"/> with <img class="formulaInl" alt="$A+A^T$" src="form_120.png"/>.  <a href="#adef418735161dcbe64af19269329865e">More...</a><br/></td></tr>
+<tr class="memdesc:adef418735161dcbe64af19269329865e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overwrites <img class="formulaInl" alt="$A$" src="form_121.png"/> with <img class="formulaInl" alt="$A+A^T$" src="form_122.png"/>.  <a href="#adef418735161dcbe64af19269329865e">More...</a><br/></td></tr>
 <tr class="separator:adef418735161dcbe64af19269329865e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1248d7bf9320b86381dae791086c1f38"><td class="memTemplParams" colspan="2">template&lt;class Matrix &gt; </td></tr>
 <tr class="memitem:a1248d7bf9320b86381dae791086c1f38"><td class="memTemplItemLeft" align="right" valign="top">Matrix&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html#a1248d7bf9320b86381dae791086c1f38">zero</a> ()</td></tr>
@@ -261,7 +332,25 @@ template&lt;class Arg1 , class Arg2 , class  = std::enable_if_t&lt; !std::is_bas
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="namespaceMathematicalOperations.html" title="Mathematical operations and corresponding differentation rules. ">MathematicalOperations</a> </dd>
 <dd>
 <a class="el" href="namespaceCMath.html" title="Wrappers for functions from &lt;cmath&gt;. ">CMath</a> </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="a394df0f2ab428f4a972b4d93900a5e04"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F , bool arithmeticArgument = false&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceRFFGen.html#a394df0f2ab428f4a972b4d93900a5e04">RFFGen::Finalize</a> = typedef Detail::FinalizeImpl&lt; F , arithmeticArgument , Checks::hasVariable&lt;F&gt;() &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Finish function definition. </p>
+<p>Adds the definition of possibly undefined vanishing higher order derivatives. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="aa35cec985ea0b25a40ada14189fba44d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -278,8 +367,8 @@ template&lt;class Matrix , class  = std::enable_if_t&lt;Checks::isConstantSizeMa
       </table>
 </div><div class="memdoc">
 
-<p>Overwrites <img class="formulaInl" alt="$A$" src="form_119.png"/> with <img class="formulaInl" alt="$A+A^T$" src="form_120.png"/>. </p>
-<dl class="section return"><dt>Returns</dt><dd><img class="formulaInl" alt="$A+A^T$" src="form_120.png"/> </dd></dl>
+<p>Overwrites <img class="formulaInl" alt="$A$" src="form_121.png"/> with <img class="formulaInl" alt="$A+A^T$" src="form_122.png"/>. </p>
+<dl class="section return"><dt>Returns</dt><dd><img class="formulaInl" alt="$A+A^T$" src="form_122.png"/> </dd></dl>
 
 </div>
 </div>
@@ -299,8 +388,319 @@ template&lt;class Matrix , class  = std::enable_if_t&lt;!Checks::isConstantSizeM
       </table>
 </div><div class="memdoc">
 
-<p>Overwrites <img class="formulaInl" alt="$A$" src="form_119.png"/> with <img class="formulaInl" alt="$A+A^T$" src="form_120.png"/>. </p>
-<dl class="section return"><dt>Returns</dt><dd><img class="formulaInl" alt="$A+A^T$" src="form_120.png"/> </dd></dl>
+<p>Overwrites <img class="formulaInl" alt="$A$" src="form_121.png"/> with <img class="formulaInl" alt="$A+A^T$" src="form_122.png"/>. </p>
+<dl class="section return"><dt>Returns</dt><dd><img class="formulaInl" alt="$A+A^T$" src="form_122.png"/> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1e5703444079774f6e6a9161a9bacc6b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Arg &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto RFFGen::constRef </td>
+          <td>(</td>
+          <td class="paramtype">const Arg &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generate a constant function that stores its argument as constant reference. </p>
+<p>This admits to use variable constant arguments, i.e. parameters that we want to study. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad0d4bfae5fedad4740c0ab09cb4ff0a1"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto RFFGen::finalize </td>
+          <td>(</td>
+          <td class="paramtype">const F &amp;&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Finish function definition. </p>
+<p>Adds the definition of possibly undefined vanishing higher order derivatives. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8a6f6d638cd22c164c671c239486bb88"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto RFFGen::finalize_scalar </td>
+          <td>(</td>
+          <td class="paramtype">const F &amp;&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Finish function definition. </p>
+<p>Adds the definition of possibly undefined vanishing higher order derivatives. </p>
+
+</div>
+</div>
+<a class="anchor" id="a62822aff0618fe8e869c7f73c82454df"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F , class G , class  = std::enable_if_t&lt; std::is_base_of&lt;Base,F&gt;::value &gt;, class  = std::enable_if_t&lt; std::is_base_of&lt;Base,G&gt;::value &gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto RFFGen::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const F &amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const G &amp;&#160;</td>
+          <td class="paramname"><em>g</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>overload of "*"-operator for the generation of functions. This overload is restricted to multiplication of functions. </p>
+<p>This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions. If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7be854ac2257ddf852ddb3ac6cfc413d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Scalar , class F , class  = std::enable_if_t&lt; std::is_base_of&lt;Base,F&gt;() &amp;&amp; std::is_arithmetic&lt;Scalar&gt;() &gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto RFFGen::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const Scalar &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const F &amp;&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>overload of "*"-operator for the generation of functions. This overload is restricted to the multiplication of functions with doubles from the left. </p>
+<p>This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions. If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. </p>
+
+</div>
+</div>
+<a class="anchor" id="a6e94e177aaa2786b8d504273a402b41e"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F , class Scalar , class  = std::enable_if_t&lt; std::is_base_of&lt;Base,F&gt;() &amp;&amp; std::is_arithmetic&lt;Scalar&gt;() &gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto RFFGen::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const F &amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Scalar&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>overload of "*"-operator for the generation of functions. This overload is restricted to the multiplication of functions with doubles from the left. </p>
+<p>This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions. If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. </p>
+
+</div>
+</div>
+<a class="anchor" id="a45fcf65f6c783e3da0a0007291f706ca"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F , class G , class  = std::enable_if_t&lt; std::is_base_of&lt;Base,F&gt;::value ||                                      std::is_base_of&lt;Base,G&gt;::value &gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto RFFGen::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const F &amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const G &amp;&#160;</td>
+          <td class="paramname"><em>g</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>overload of "+"-operator for the generation of functions. </p>
+<p>This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions. If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. </p>
+
+</div>
+</div>
+<a class="anchor" id="a933ac482bf44b977bbe2ce057362b55a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F , class T , class  = std::enable_if_t&lt;std::is_convertible&lt;T,decltype(std::declval&lt;F&gt;().d0())&gt;::value &amp;&amp;                                     std::is_base_of&lt;Base,F&gt;::value&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto RFFGen::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const F &amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>overload of "-"-operator for the generation of functions. Here the second argument is a constant that is wrapped in to an object of type <a class="el" href="structRFFGen_1_1Constant.html" title="Wrap a constant. ">Constant</a>. </p>
+<p>This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions. If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7b334216a1a47d21c0ecb857ad279580"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F , class T , class  = std::enable_if_t&lt;std::is_convertible&lt;T,decltype(std::declval&lt;F&gt;().d0())&gt;::value &amp;&amp;                                     std::is_base_of&lt;Base,F&gt;::value&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto RFFGen::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const F &amp;&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>overload of "-"-operator for the generation of functions. Here the first argument is a constant that is wrapped in to an object of type <a class="el" href="structRFFGen_1_1Constant.html" title="Wrap a constant. ">Constant</a>. </p>
+<p>This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions. If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2c40e5d41ad211f6d861f2862a02e670"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F , class G , class  = std::enable_if_t&lt;std::is_base_of&lt;Base,F&gt;::value &amp;&amp;                                     std::is_base_of&lt;Base,G&gt;::value&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto RFFGen::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const F &amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const G &amp;&#160;</td>
+          <td class="paramname"><em>g</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>overload of "&lt;&lt;"-operator for chaining functions <img class="formulaInl" alt="$f$" src="form_0.png"/> and <img class="formulaInl" alt="$g$" src="form_1.png"/> to <img class="formulaInl" alt="$ f \circ g $" src="form_2.png"/>. </p>
+<p>This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions. If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab2e1b87874474c32b20338fc3c60be5a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F , class  = std::enable_if_t&lt; std::is_base_of&lt;Base,F&gt;::value &gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr auto RFFGen::operator^ </td>
+          <td>(</td>
+          <td class="paramtype">const F &amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>overload of "^"-operator for the generation of functions. </p>
+<p>This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions. If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. </p>
 
 </div>
 </div>
@@ -326,7 +726,7 @@ template&lt;class Matrix &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 20:47:59 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jun 9 2015 01:49:09 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

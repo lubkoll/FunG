@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Left Cauchy-Green strain tensor <img class="formulaInl" alt="$ F^T F $" src="form_94.png"/> for a symmetric matrix <img class="formulaInl" alt="$ F $" src="form_95.png"/>.  
+<p>Left Cauchy-Green strain tensor <img class="formulaInl" alt="$ F^T F $" src="form_98.png"/> for a symmetric matrix <img class="formulaInl" alt="$ F $" src="form_99.png"/>.  
  <a href="classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="strainTensor_8hh_source.html">strainTensor.hh</a>&gt;</code></p>
@@ -125,25 +125,25 @@ Matrix const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 <tr class="separator:a7fe12398089878b93eb3031f61cf6ef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5306342041dd2fc8a24863b6a0cc7368"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5306342041dd2fc8a24863b6a0cc7368"></a>
 Matrix const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html#a5306342041dd2fc8a24863b6a0cc7368">d0</a> () const noexcept</td></tr>
-<tr class="memdesc:a5306342041dd2fc8a24863b6a0cc7368"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function value <img class="formulaInl" alt="$ F^T * F $" src="form_102.png"/>. <br/></td></tr>
+<tr class="memdesc:a5306342041dd2fc8a24863b6a0cc7368"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function value <img class="formulaInl" alt="$ F^T * F $" src="form_106.png"/>. <br/></td></tr>
 <tr class="separator:a5306342041dd2fc8a24863b6a0cc7368"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a49e4c9105a4a466c43d5cd262fe725"><td class="memTemplParams" colspan="2"><a class="anchor" id="a3a49e4c9105a4a466c43d5cd262fe725"></a>
 template&lt;int &gt; </td></tr>
 <tr class="memitem:a3a49e4c9105a4a466c43d5cd262fe725"><td class="memTemplItemLeft" align="right" valign="top">Matrix&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html#a3a49e4c9105a4a466c43d5cd262fe725">d1</a> (Matrix const &amp;dF1) const </td></tr>
-<tr class="memdesc:a3a49e4c9105a4a466c43d5cd262fe725"><td class="mdescLeft">&#160;</td><td class="mdescRight">First directional derivative <img class="formulaInl" alt="$ F^T dF_1 + dF_1^T F $" src="form_103.png"/>. <br/></td></tr>
+<tr class="memdesc:a3a49e4c9105a4a466c43d5cd262fe725"><td class="mdescLeft">&#160;</td><td class="mdescRight">First directional derivative <img class="formulaInl" alt="$ F^T dF_1 + dF_1^T F $" src="form_107.png"/>. <br/></td></tr>
 <tr class="separator:a3a49e4c9105a4a466c43d5cd262fe725"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad15848883104beb2265dfb459d96dff2"><td class="memTemplParams" colspan="2"><a class="anchor" id="ad15848883104beb2265dfb459d96dff2"></a>
 template&lt;int , int &gt; </td></tr>
 <tr class="memitem:ad15848883104beb2265dfb459d96dff2"><td class="memTemplItemLeft" align="right" valign="top">Matrix&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html#ad15848883104beb2265dfb459d96dff2">d2</a> (Matrix const &amp;dF1, Matrix const &amp;dF2) const </td></tr>
-<tr class="memdesc:ad15848883104beb2265dfb459d96dff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Second directional derivative <img class="formulaInl" alt="$ dF_2^T dF_1 + dF_1^T dF_2 $" src="form_104.png"/>. <br/></td></tr>
+<tr class="memdesc:ad15848883104beb2265dfb459d96dff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Second directional derivative <img class="formulaInl" alt="$ dF_2^T dF_1 + dF_1^T dF_2 $" src="form_108.png"/>. <br/></td></tr>
 <tr class="separator:ad15848883104beb2265dfb459d96dff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class Matrix, class = Concepts::SymmetricMatrixConceptCheck&lt;Matrix&gt;&gt;<br/>
 class RFFGen::LinearAlgebra::LeftCauchyGreenStrainTensor&lt; Matrix, class &gt;</h3>
 
-<p>Left Cauchy-Green strain tensor <img class="formulaInl" alt="$ F^T F $" src="form_94.png"/> for a symmetric matrix <img class="formulaInl" alt="$ F $" src="form_95.png"/>. </p>
-<p>This class is used for nonlinear material models based on the deformation gradient <img class="formulaInl" alt="$\nabla\varphi$" src="form_96.png"/>, which takes the role of <img class="formulaInl" alt="$F$" src="form_97.png"/>. Caches both <img class="formulaInl" alt="$ F^T $" src="form_98.png"/> and <img class="formulaInl" alt="$ F^T F $" src="form_94.png"/>. </p>
+<p>Left Cauchy-Green strain tensor <img class="formulaInl" alt="$ F^T F $" src="form_98.png"/> for a symmetric matrix <img class="formulaInl" alt="$ F $" src="form_99.png"/>. </p>
+<p>This class is used for nonlinear material models based on the deformation gradient <img class="formulaInl" alt="$\nabla\varphi$" src="form_100.png"/>, which takes the role of <img class="formulaInl" alt="$F$" src="form_101.png"/>. Caches both <img class="formulaInl" alt="$ F^T $" src="form_102.png"/> and <img class="formulaInl" alt="$ F^T F $" src="form_98.png"/>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a7cc082254e1cd5ef9bcd80e984adac9b"></a>
 <div class="memitem">
@@ -185,7 +185,7 @@ template&lt;class Matrix , class  = Concepts::SymmetricMatrixConceptCheck&lt;Mat
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 20:48:05 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jun 9 2015 01:49:19 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
