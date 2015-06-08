@@ -54,7 +54,7 @@
 <h1>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h1>
 
-<p>This library is header-only and no installation is required.</p>
+<p>This library is header-only and no installation is required. However, make sure you use a recent compiler such as gcc-x, with x>=4.9.0, with <code>-std=c++1y</code></p>
 
 <p>If you want to run the available tests, you can use cmake:</p>
 
@@ -198,6 +198,7 @@ double dddf_dxdxdF = f.template d3&lt;0,0,1&gt;(dx1,dx2,dF);
 
 <h1>
 <a id="optimization_strategies" class="anchor" href=#optimization_strategies aria-hidden="true"><span class="octicon octicon-link"></span></a>Optimization strategies</h1>
+In order to get performance comparable to optimized manual implementations some optimization strategies are applied.
 
 <h3>
 <a id="optimization_strategies_inlining" class="anchor" href=#optimization_strategies_inlining aria-hidden="true"><span class="octicon octicon-link"></span></a>Inlining</h3>
@@ -209,10 +210,27 @@ can be improved by adjusting specific parameters. For the examples from biomecha
 <li>early-inlining-insns=5000</li>
 <li>inline-unit-growth=100</li>
 </ul>
-for gcc-4.9.2 yields performance increases in the range of 2x-4x.</p>
+for gcc-4.9.2 yields performance increases in the range of 2-4x.</p>
 
 <p>Note that adequate choices of the above parameters may be different when using this library in a larger project. For optimal performance you may think about compiling the function definition in a separate object file with 
 compiler parameters as proposed above.</p>
+
+<h3>
+<a id="optimization_strategies_caching" class="anchor" href=#optimization_strategies_caching aria-hidden="true"><span class="octicon octicon-link"></span></a>Caching</h3>
+
+<p>Significant performance increases are due to caching. In contrast to lazy evaluation, here the strategy is to compute intermediate results as soon as possible. This has various impacts. First the 
+evaluation of cached results is one of the simplest function calls and will certainly be inlined. Moreover, in many expressions, the computed intermediate results can be reused in the computation of higher derivatives. Eventually, and most important, in many cases we can significantly reduce the size of temporaries as well as the number 
+of generated temporaries by directly performing simple computations. </p>
+
+<h3>
+<a id="optimization_strategies_elimination_of_zeros" class="anchor" href=#optimization_strategies_elimination_of_zeros aria-hidden="true"><span class="octicon octicon-link"></span></a>Elimination of compile-time zeros</h3>
+
+<p>Since we do not only want efficient evaluation of function values, but also of its first three derivatives, we often encounter larger number of compile-time zeros that can not be eliminated by the compiler. Thus this task must be implemented seperately. In order to completely eliminate compile-time zeros and correctly reduce involved mathematical expressions we do not define the corresponding derivatives. In particular when working with 
+matrices, where only few operations are of higher order, this significantly reduces the computation times of the second and third derivative. </p>
+
+<p>
+A good example for the effects of this optimization strategy is the product <span lang="latex">M*(F^T*F)</span>, which occurs in the computation of the first mixed strain invariant. 
+</p>
 
 <p>Contact: <a href="mailto:lars.lubkoll@posteo.de">lars.lubkoll@posteo.de</a></p>
       </section>
