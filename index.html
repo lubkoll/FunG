@@ -232,11 +232,10 @@ matrices, where only few operations are of higher order, this significantly redu
 <p>
 A good example for the effects of this optimization strategy is the product <span lang="latex">f=M(F^TF)</span>, which occurs in the computation of the first mixed strain invariant. In this context <span lang="latex">M</span> 
 is treated as a constant and <span lang="latex">F</span> denotes the unknown and both are matrices in <span lang="latex">\mathbb{R}^{3,3}</span>. For simplicity  we assume that we have a function <span lang="latex">C=F^T F</span>.
-The following graphs illustrate the mathematical operations that are performed when evaluating this product and its second derivative wrt. directions 
-<span lang="latex">\delta F_1</span> and <span lang="latex">\delta F_2</span>.
+The following graph illustrates the mathematical operations that are performed when evaluating the second derivative of this product.
 </p>
 <figure>
-<img src="images/product_rule_d2.gif">
+<img width=80% src="images/product_rule_d2_2.gif">
 <figcaption>Mathematical operations required for the evaluation of the second derivative of the product rule.</figcaption>
 </figure>
 
