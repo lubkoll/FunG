@@ -1,20 +1,27 @@
 language: cpp
-compiler: gcc 
+compiler: gcc
 before_install:
-  - $CXX --version
-  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-  - sudo apt-get update -qq
-  - sudo apt-get install -qq g++-4.9
-  - export CXX="g++-4.9" CC="gcc-4.9"
-  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 50
+- openssl aes-256-cbc -K $encrypted_25dce5acf934_key -iv $encrypted_25dce5acf934_iv
+  -in config/travisci_rsa.enc -out config/travisci_rsa -d
+- chmod 0600 config/travisce_rsa
+- cp config/travisci_rsa ~/.ssh/id_rsa
+- "$CXX --version"
+- sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+- sudo apt-get update -qq
+- sudo apt-get install -qq g++-4.9
+- export CXX="g++-4.9" CC="gcc-4.9"
+- sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 50
 install:
-  - sudo pip install cpp-coveralls
+- sudo pip install cpp-coveralls
 script:
-  - $CXX --version
-  - mkdir build
-  - cd build
-  - cmake ..
-  - make
-  - ./unit_tests
+- "$CXX --version"
+- mkdir build
+- cd build
+- cmake ..
+- make
+- "./unit_tests"
 after_success:
-  - coveralls --root .. -E ".*external.*" -E ".*CMakeFiles.*" -E ".*test/.*.cpp.*" --gcov 'gcov-4.9'
+- coveralls --root .. -E ".*external.*" -E ".*CMakeFiles.*" -E ".*test/.*.cpp.*" --gcov
+  'gcov-4.9'
+- sudo apt-get install --yes doxygen graphviz
+- ./config/publish-doc
