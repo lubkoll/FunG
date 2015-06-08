@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 REPO_PATH=https://github.com/lubkoll/RFFGen
-HTML_PATH=build/doc/html
+HTML_PATH=doc/html
 COMMIT_USER="Documentation Generator"
 COMMIT_EMAIL="lars.lubkoll@posteo.de"
 CHANGESET=$(git rev-parse --verify HEAD)

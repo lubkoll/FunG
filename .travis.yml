@@ -27,4 +27,5 @@ after_success:
 - coveralls --root .. -E ".*external.*" -E ".*CMakeFiles.*" -E ".*test/.*.cpp.*" --gcov
   'gcov-4.9'
 - sudo apt-get install --yes doxygen graphviz
+- cd ..
 - ./config/publish-doc
