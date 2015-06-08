@@ -8,6 +8,12 @@ Function arguments can be matrices and/or scalars. Vectors are also possible but
 # Installation
 This library is header-only and no installation is required.
 
+If you want to run the available tests, you can use cmake:
+ - mkdir build
+ - cd build
+ - cmake ..
+ - make
+
 # Examples
 
 Usage is illustrated using three different examples. Further examples can be found in RFFGen/Tests and RFFGen/Examples.
@@ -92,6 +98,8 @@ double thirdDerivative  = f.d3(dF0,dF1,dF2);
 
 Observe that the derivatives are DIRECTIONAL derivatives. This approach admits to work with any (reasonable) input types. In the first example, where the input variable was a scalar, the call to finalize_scalar did generate 
 suitable default values for the directions. Here this is not admissible. 
+
+Take care to not use functions such as 'exp' with built-in arithmetic types, since in this case the corresponding functions from <cmath> are called and the resulting value is treated as constant.
 
 ### An example with two variables
 Eventually we consider a function with two variables, a scalar variable x and a matrix valued variable F.

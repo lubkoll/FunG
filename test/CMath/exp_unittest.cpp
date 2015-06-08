@@ -2,15 +2,20 @@
 
 #include <gtest/gtest.h>
 
+auto generateTestExp()
+{
+  return RFFGen::CMath::Exp(1.);
+}
+
 TEST(ExpTest,D0)
 {
-  const RFFGen::CMath::Exp fun(1.);
+  auto fun = generateTestExp();
   EXPECT_DOUBLE_EQ( fun.d0() ,  exp(1.) );
 }
 
 TEST(ExpTest,D1)
 {
-  const RFFGen::CMath::Exp fun(1.);
+  auto fun = generateTestExp();
   const double dx = 2.;
   EXPECT_DOUBLE_EQ( fun.d1()   , exp(1.)    );
   EXPECT_DOUBLE_EQ( fun.d1(dx) , exp(1.)*dx );
@@ -18,7 +23,7 @@ TEST(ExpTest,D1)
 
 TEST(ExpTest,D2)
 {
-  const RFFGen::CMath::Exp fun(1.);
+  auto fun = generateTestExp();
   const double dx = 2., dy = 3.;
   EXPECT_DOUBLE_EQ( fun.d2()      , exp(1.)          );
   EXPECT_DOUBLE_EQ( fun.d2(dx,dy) , exp(1.)*dx*dy    );
@@ -26,7 +31,7 @@ TEST(ExpTest,D2)
 
 TEST(ExpTest,D3)
 {
-  const RFFGen::CMath::Exp fun(1.);
+  auto fun = generateTestExp();
   const double dx = 2., dy = 3., dz = 4.;
   EXPECT_DOUBLE_EQ( fun.d3()         ,  exp(1.)          );
   EXPECT_DOUBLE_EQ( fun.d3(dx,dy,dz) ,  exp(1.)*dx*dy*dz );

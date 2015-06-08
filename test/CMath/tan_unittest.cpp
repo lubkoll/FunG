@@ -2,16 +2,21 @@
 
 #include <gtest/gtest.h>
 
+auto generateTestTan()
+{
+  return RFFGen::CMath::Tan(1.);
+}
+
 TEST(TanTest,D0)
 {
-  const RFFGen::CMath::Tan fun(1.);
+  auto fun = generateTestTan();
   double t = ::tan(1.);
   EXPECT_DOUBLE_EQ( fun.d0() , t );
 }
 
 TEST(TanTest,D1)
 {
-  const RFFGen::CMath::Tan fun(1.);
+  auto fun = generateTestTan();
   double t = ::tan(1.);
   double dx = 2.;
   EXPECT_DOUBLE_EQ( fun.d1()   ,   1 + t*t      );
@@ -20,7 +25,7 @@ TEST(TanTest,D1)
 
 TEST(TanTest,D2)
 {
-  const RFFGen::CMath::Tan fun(1.);
+  auto fun = generateTestTan();
   double t = ::tan(1.);
   double dx = 2., dy = 3.;
   EXPECT_DOUBLE_EQ( fun.d2()      ,   2 * t * ( 1 + t*t )         );
@@ -29,7 +34,7 @@ TEST(TanTest,D2)
 
 TEST(TanTest,D3)
 {
-  const RFFGen::CMath::Tan fun(1.);
+  auto fun = generateTestTan();
   double t = ::tan(1.);
   double dx = 2., dy = 3., dz = 4.;
   EXPECT_DOUBLE_EQ( fun.d3()         , 2 * ( 1 + t*t )*( 1 + 3*t*t )          );
