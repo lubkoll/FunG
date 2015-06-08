@@ -34,7 +34,6 @@ namespace RFFGen
      * \ingroup CMathGroup
      *
      * \brief Sine function including first three derivatives (based on sin(double) in \<cmath\>).
-     * \todo Test!
      *
      * For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur
      * during applications of the chain rule.
