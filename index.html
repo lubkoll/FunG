@@ -2,7 +2,7 @@
 <html>
 
   <head>
-      <!--Load the AJAX API-->
+    <!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
 
@@ -18,25 +18,25 @@
       function drawChart() {
 
         // Create the data table.
-        var data1 = new google.visualization.DataTable();
-        data.addColumn('string', 'Library');
-        data.addColumn('number', 'Time');
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
         data.addRows([
-          ['FADBAD++', 575],
-          ['SACADO', 542],
-          ['ADEPT', 1725],
-          ['RFFGen', 517],
-          ['Manual', 507]
+          ['Mushrooms', 3],
+          ['Onions', 1],
+          ['Olives', 1],
+          ['Zucchini', 1],
+          ['Pepperoni', 2]
         ]);
 
         // Set chart options
-        var options = {'title':'Comparison with different AD implementations',
+        var options = {'title':'How Much Pizza I Ate Last Night',
                        'width':400,
                        'height':300};
 
         // Instantiate and draw our chart, passing in some options.
-        var chart1 = new google.visualization.BarChart(document.getElementById('chart1_div'));
-        chart1.draw(data1, options);
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
       }
     </script>
 
@@ -263,7 +263,7 @@ Input types requirements are statically checked with <code>static_assert</code>.
 <a id="ad_comparison" class="anchor" href=#ad_comparison aria-hidden="true"><span class="octicon octicon-link"></span></a>Comparison with different AD libraries</h1>
 
 <p>The performance of RFFGen is demonstrated by several examples comparing it with several automatic differentation (AD) libraries. We begin with the simple example <span lang="latex">f(x)=x^{3/2}+\sin(\sqrt(x))</span>.</p>
-<div id="chart1_div"></div>
+<div id="chart_div"></div>
 
 
 <h1>
@@ -308,6 +308,7 @@ The following graph illustrates the mathematical operations that are performed w
 <figcaption>Mathematical operations required for the evaluation of the second derivative of the product rule.</figcaption>
 </figure>
 <p>Since all derivatives of <span lang="latex">M</span> vanish only the part marked in orange will be computed. The remaining computations are discarded during compilation.</p>
+
 
 
 <h1>
