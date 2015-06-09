@@ -2,6 +2,45 @@
 <html>
 
   <head>
+      <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Mushrooms', 3],
+          ['Onions', 1],
+          ['Olives', 1],
+          ['Zucchini', 1],
+          ['Pepperoni', 2]
+        ]);
+
+        // Set chart options
+        var options = {'title':'How Much Pizza I Ate Last Night',
+                       'width':400,
+                       'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+
+  
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -42,6 +81,10 @@
 
 <p>Here fast has two meanings. First the generation of functions and their derivatives should be "fast". This means that no big preparation or post-processing steps are required, neither large efforts in adapting your matrix implementation. This is illustrated in the <a href=#examples>examples</a> below. Secondly the evaluation of function values and the first three derivatives should be as efficient as optimized manual implementations.</p>
 
+<p>The implementation is similar to forward automatic differentiation with expression templates. However, here a different perspective is taken. First, instead of defining a function and computing its derivative a function is 
+defined directly with its derivatives. Secondly, the first three (possibly mixed) derivatives are directly available, which is more convenient than repeated application of an automatic differetiation scheme. 
+Third, C++11-features such as <code>auto</code>, <code>decltype</code> and the incredible <code>void_t</code> (if you don't know it, <a href="https://www.youtube.com/watch?v=a0FliKwcwXE#t=1750">watch this</a>), easily admit far more general settings, working with rather arbitrary in- and output types. The few requirements are explained in the section <a href=#examples>Examples</a>.</p>
+
 <p>Function arguments can be matrices and/or scalars. Vectors are also possible but most functionality targets on matrices.</p>
 
 <h1>
@@ -53,7 +96,7 @@
   <li><a href=#input_requirements>Input type requirements</a></li>
   <li><a href=#ad_comparison>Comparison with different AD libraries</a></li>
   <li><a href=#optimization_strategies>Optimization strategies</a></li>
-  <li><a href="html/index.html">Documentation</a></li>
+  <li><a href=#documentation>Documentation</a></li>
 </ul>
 
 <h1>
@@ -202,6 +245,7 @@ double dddf_dxdxdF = f.template d3&lt;0,0,1&gt;(dx1,dx2,dF);
 </code></pre>
 
 
+
 <h1>
 <a id="input_requirements" class="anchor" href=#input_requirements aria-hidden="true"><span class="octicon octicon-link"></span></a>Input type requirements</h1>
 
@@ -210,10 +254,14 @@ Input types requirements are statically checked with <code>static_assert</code>.
 
 <p>Up to now you may consult <a href="html/concepts_8hh.html">concepts.hh</a> to understand input type requirements.</p>
 
+
+
 <h1>
 <a id="ad_comparison" class="anchor" href=#ad_comparison aria-hidden="true"><span class="octicon octicon-link"></span></a>Comparison with different AD libraries</h1>
 
-<p>Follows soon.</p>
+<p>The performance of RFFGen is demonstrated by several examples comparing it with several automatic differentation (AD) libraries.</p>
+
+
 
 <h1>
 <a id="optimization_strategies" class="anchor" href=#optimization_strategies aria-hidden="true"><span class="octicon octicon-link"></span></a>Optimization strategies</h1>
@@ -256,7 +304,14 @@ The following graph illustrates the mathematical operations that are performed w
 <img width=95% style="border-style: none" src="images/product_rule_d2_2.gif">
 <figcaption>Mathematical operations required for the evaluation of the second derivative of the product rule.</figcaption>
 </figure>
-<p>Since all derivatives of <span lang="latex">M</span> vanish only the part marked in orange should be computed. The remaining computations are discarded at compile time.</p>
+<p>Since all derivatives of <span lang="latex">M</span> vanish only the part marked in orange will be computed. The remaining computations are discarded during compilation.</p>
+
+
+<h1>
+<a id="documentation" class="anchor" href=#documentation aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h1>
+
+<p>Doxygen documentation can be found <a href="html/index.html">here</a></p>.
+
 
 
 <p>Contact: <a href="mailto:lars.lubkoll@posteo.de">lars.lubkoll@posteo.de</a></p>
