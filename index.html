@@ -22,15 +22,16 @@
         data.addColumn('string', 'Library');
         data.addColumn('number', 'Time');
         data.addRows([
-          ['FADBAD++', 0.575],
-          ['SACADO', 0.542],
-          ['ADEPT', 1.725],
-          ['RFFGen', 0.517],
-          ['Manual', 0.507]
+          ['FADBAD++', 575],
+          ['SACADO', 542],
+          ['ADEPT', 1725],
+          ['RFFGen', 517],
+          ['Manual', 507]
         ]);
 
         // Set chart options
         var options = {'title':'Comparison with different AD implementations',
+                       'width':400,
                        'height':300};
 
         // Instantiate and draw our chart, passing in some options.
