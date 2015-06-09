@@ -18,25 +18,24 @@
       function drawChart() {
 
         // Create the data table.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
+        var data1 = new google.visualization.DataTable();
+        data.addColumn('string', 'Library');
+        data.addColumn('number', 'Time');
         data.addRows([
-          ['Mushrooms', 3],
-          ['Onions', 1],
-          ['Olives', 1],
-          ['Zucchini', 1],
-          ['Pepperoni', 2]
+          ['FADBAD++', 0.575],
+          ['SACADO', 0.542],
+          ['ADEPT', 1.725],
+          ['RFFGen', 0.517],
+          ['Manual', 0.507]
         ]);
 
         // Set chart options
-        var options = {'title':'How Much Pizza I Ate Last Night',
-                       'width':400,
+        var options = {'title':'Comparison with different AD implementations',
                        'height':300};
 
         // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
+        var chart1 = new google.visualization.BarChart(document.getElementById('chart1_div'));
+        chart1.draw(data1, options);
       }
     </script>
 
@@ -81,9 +80,12 @@
 
 <p>Here fast has two meanings. First the generation of functions and their derivatives should be "fast". This means that no big preparation or post-processing steps are required, neither large efforts in adapting your matrix implementation. This is illustrated in the <a href=#examples>examples</a> below. Secondly the evaluation of function values and the first three derivatives should be as efficient as optimized manual implementations.</p>
 
-<p>The implementation is similar to forward automatic differentiation with expression templates. However, here a different perspective is taken. First, instead of defining a function and computing its derivative a function is 
-defined directly with its derivatives. Secondly, the first three (possibly mixed) derivatives are directly available, which is more convenient than repeated application of an automatic differetiation scheme. 
-Third, C++11-features such as <code>auto</code>, <code>decltype</code> and the incredible <code>void_t</code> (if you don't know it, <a href="https://www.youtube.com/watch?v=a0FliKwcwXE#t=1750">watch this</a>), easily admit far more general settings, working with rather arbitrary in- and output types. The few requirements are explained in the section <a href=#examples>Examples</a>.</p>
+<p>The implementation is similar to forward automatic differentiation (AD) with expression templates. However, here a different perspective is taken. 
+<ul>
+<li> First, instead of defining a function and computing its derivative a function is defined directly with its derivatives.</li>
+<li> Secondly, the first three (possibly mixed) derivatives are directly available, which is more convenient than repeated application of an automatic differetiation scheme.</li>
+<li> Third, C++11-features such as <code>auto</code>, <code>decltype</code> and the incredible <code>void_t</code> (if you don't know it, <a href="https://www.youtube.com/watch?v=a0FliKwcwXE#t=1750">watch this</a>), easily admit far more general settings, working with rather arbitrary in- and output types. The few requirements are explained in the section <a href=#examples>Examples</a>.</li></p>
+</ul>
 
 <p>Function arguments can be matrices and/or scalars. Vectors are also possible but most functionality targets on matrices.</p>
 
@@ -259,8 +261,8 @@ Input types requirements are statically checked with <code>static_assert</code>.
 <h1>
 <a id="ad_comparison" class="anchor" href=#ad_comparison aria-hidden="true"><span class="octicon octicon-link"></span></a>Comparison with different AD libraries</h1>
 
-<p>The performance of RFFGen is demonstrated by several examples comparing it with several automatic differentation (AD) libraries.</p>
-
+<p>The performance of RFFGen is demonstrated by several examples comparing it with several automatic differentation (AD) libraries. We begin with the simple example <span lang="latex">f(x)=x^{3/2}+\sin(\sqrt(x))</span>.</p>
+<div id="chart1_div"></div>
 
 
 <h1>
