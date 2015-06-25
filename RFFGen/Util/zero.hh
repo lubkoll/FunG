@@ -48,6 +48,9 @@ namespace RFFGen
   template <class Matrix>
   struct Zero< Matrix , void_t<Checks::TryCallToZeroes<Matrix> > >
   {
+    /**
+     * @return zero matrix
+     */
     Matrix operator()() const
     {
       Matrix m;

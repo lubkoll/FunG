@@ -29,7 +29,7 @@
 #include "voider.hh"
 
 /*!
- * \file static_checks.hh
+ * \file staticChecks.hh
  * \brief Static checks for detection of presence of different operators and functions.
  */
 

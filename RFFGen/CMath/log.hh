@@ -51,7 +51,7 @@ namespace RFFGen
       /// Reset point of evaluation.
       void update(double x)
       {
-#ifdef RFFGEN_ENABLE_DYNAMIC_CHECKS
+#ifdef RFFGEN_ENABLE_EXCEPTIONS
         if( x <= 0 ) throw OutOfDomainException("LN","]0,inf[",x,__FILE__,__LINE__);
 #endif
         x_inv = 1./x;
@@ -110,7 +110,7 @@ namespace RFFGen
       /// Reset point of evaluation.
       void update(double x)
       {
-#ifdef RFFGEN_ENABLE_DYNAMIC_CHECKS
+#ifdef RFFGEN_ENABLE_EXCEPTIONS
         if( x <= 0 ) throw OutOfDomainException("Log10","]0,inf[",x,__FILE__,__LINE__);
 #endif
         x_inv = 1./x;
@@ -169,7 +169,7 @@ namespace RFFGen
       /// Reset point of evaluation.
       void update(double x)
       {
-#ifdef RFFGEN_ENABLE_DYNAMIC_CHECKS
+#ifdef RFFGEN_ENABLE_EXCEPTIONS
         if( x <= 0 ) throw OutOfDomainException("Log2","]0,inf[",x,__FILE__,__LINE__);
 #endif
         x_inv = 1./x;

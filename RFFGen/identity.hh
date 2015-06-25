@@ -66,6 +66,7 @@ namespace RFFGen
     Arg x_;
   };
 
+  /// Construct Identity<Arg>(x).
   template <class Arg>
   auto identity(const Arg& x)
   {

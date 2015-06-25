@@ -34,7 +34,6 @@ namespace RFFGen
   namespace LinearAlgebra
   {
     /**
-     * \internal
      * \ingroup LinearAlgebraGroup
      * \brief Possibly scaled, shifted invariant \f$scaling (invariant - offset)\f$, where
      * \f$offset = dim\f$ for the first two (principal,modified) invariants and \f$offset = 1\f$

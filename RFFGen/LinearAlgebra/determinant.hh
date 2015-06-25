@@ -158,11 +158,15 @@ namespace RFFGen
 
     /**
      * \ingroup LinearAlgebraGroup
-     * \brief Determinant of static matrix with first three derivatives.
+     * \brief Determinant of constant size matrix with first three derivatives.
      */
     template <class Matrix>
     using ConstantSizeDeterminant = Detail::DeterminantImpl<Matrix,dimension<Matrix>()>;
 
+    /**
+     * \ingroup LinearAlgebraGroup
+     * \brief Determinant of dynamic size matrix with first three derivatives.
+     */
     template <class Matrix>
     class DynamicSizeDeterminant : Base
     {
@@ -171,7 +175,7 @@ namespace RFFGen
 
       DynamicSizeDeterminant(Matrix const& A) : dim(rows(A))
       {
-#ifndef RFFGEN_DISABLE_DYNAMIC_CHECKS
+#ifdef RFFGEN_ENABLE_EXCEPTIONS
         if( rows(A) != cols(A) ) throw NonSymmetricMatrixException("DynamicSizeTrace",rows(A),cols(A),__FILE__,__LINE__);
 #endif
         if( dim == 2 ) det2D.update(A);
@@ -180,7 +184,7 @@ namespace RFFGen
 
       void update(Matrix const& A)
       {
-#ifndef RFFGEN_DISABLE_DYNAMIC_CHECKS
+#ifdef RFFGEN_ENABLE_EXCEPTIONS
         if( rows(A) != cols(A) ) throw NonSymmetricMatrixException("DynamicSizeTrace",rows(A),cols(A),__FILE__,__LINE__);
 #endif
         dim = rows(A);
