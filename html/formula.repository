@@ -121,3 +121,6 @@
 \form#120:$k=2$
 \form#121:$A$
 \form#122:$A+A^T$
+\form#123:$scaling (invariant - offset)$
+\form#124:$offset = dim$
+\form#125:$offset = 1$

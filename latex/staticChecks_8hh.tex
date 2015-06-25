@@ -1,0 +1,65 @@
+\hypertarget{staticChecks_8hh}{\section{R\-F\-F\-Gen/\-Util/static\-Checks.hh File Reference}
+\label{staticChecks_8hh}\index{R\-F\-F\-Gen/\-Util/static\-Checks.\-hh@{R\-F\-F\-Gen/\-Util/static\-Checks.\-hh}}
+}
+
+
+Static checks for detection of presence of different operators and functions.  
+
+
+{\ttfamily \#include $<$type\-\_\-traits$>$}\\*
+{\ttfamily \#include $<$utility$>$}\\*
+{\ttfamily \#include \char`\"{}../\-Linear\-Algebra/extract\-Rows\-And\-Cols.\-hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}base.\-hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}voider.\-hh\char`\"{}}\\*
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceRFFGen}{R\-F\-F\-Gen}
+\begin{DoxyCompactList}\small\item\em Main namespace of the \hyperlink{namespaceRFFGen}{R\-F\-F\-Gen} library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{namespaceRFFGen_1_1Checks_a8e6714272287c8628c51ed541df85d35}{{\footnotesize template$<$class Arg , class Scalar\-Arg $>$ }\\constexpr bool {\bfseries R\-F\-F\-Gen\-::\-Checks\-::multiplication\-With\-Arithmetic\-From\-Left} ()}\label{namespaceRFFGen_1_1Checks_a8e6714272287c8628c51ed541df85d35}
+
+\begin{DoxyCompactList}\small\item\em Check if objects of type Arg support multiplication with objects of type Scalar\-Arg from the left. \end{DoxyCompactList}\item 
+\hypertarget{namespaceRFFGen_1_1Checks_a2a264e0d0d599902e5ac0a0da0f0ec1d}{{\footnotesize template$<$class Arg , class Scalar\-Arg $>$ }\\constexpr bool {\bfseries R\-F\-F\-Gen\-::\-Checks\-::multiplication\-With\-Arithmetic\-From\-Right} ()}\label{namespaceRFFGen_1_1Checks_a2a264e0d0d599902e5ac0a0da0f0ec1d}
+
+\begin{DoxyCompactList}\small\item\em Check if objects of type Arg support multiplication with objects of type Scalar\-Arg from the right. \end{DoxyCompactList}\item 
+\hypertarget{namespaceRFFGen_1_1Checks_a68a111a3031cf901e8a38c103465053d}{{\footnotesize template$<$class Arg , class Scalar\-Arg $>$ }\\constexpr bool {\bfseries R\-F\-F\-Gen\-::\-Checks\-::in\-Place\-Multiplication\-With\-Arithmetic} ()}\label{namespaceRFFGen_1_1Checks_a68a111a3031cf901e8a38c103465053d}
+
+\begin{DoxyCompactList}\small\item\em Check if objects of type Arg support in-\/place multiplication with objects of type Scalar\-Arg. \end{DoxyCompactList}\item 
+\hypertarget{namespaceRFFGen_1_1Checks_a62147f3932a0706e2d40ce9a52da283c}{{\footnotesize template$<$class Arg1 , class Arg2 $>$ }\\constexpr bool {\bfseries R\-F\-F\-Gen\-::\-Checks\-::multiplication} ()}\label{namespaceRFFGen_1_1Checks_a62147f3932a0706e2d40ce9a52da283c}
+
+\begin{DoxyCompactList}\small\item\em Check if objects of typed Arg1 and Arg2 support multiplication (free operator$\ast$). \end{DoxyCompactList}\item 
+\hypertarget{namespaceRFFGen_1_1Checks_ab0dbf2f7d2c61783e3d9238f19bf4a1d}{{\footnotesize template$<$class Arg1 , class Arg2 $>$ }\\constexpr bool {\bfseries R\-F\-F\-Gen\-::\-Checks\-::in\-Place\-Multiplication} ()}\label{namespaceRFFGen_1_1Checks_ab0dbf2f7d2c61783e3d9238f19bf4a1d}
+
+\begin{DoxyCompactList}\small\item\em Check if objects of type Arg1 support in-\/place multiplication with objects of type Arg2. \end{DoxyCompactList}\item 
+\hypertarget{namespaceRFFGen_1_1Checks_a378f4e2b01c0a0633f7574c3cc7652af}{{\footnotesize template$<$class Arg1 , class Arg2 $>$ }\\constexpr bool {\bfseries R\-F\-F\-Gen\-::\-Checks\-::call\-To\-Right\-Multiply} ()}\label{namespaceRFFGen_1_1Checks_a378f4e2b01c0a0633f7574c3cc7652af}
+
+\begin{DoxyCompactList}\small\item\em Check if objects of type Arg1 support multiplication with objects of type Arg2 via call to rightmultiplyany(\-Arg2). \end{DoxyCompactList}\item 
+\hypertarget{namespaceRFFGen_1_1Checks_a9132707e043afacd59b699d72941fbf4}{{\footnotesize template$<$class Arg $>$ }\\constexpr bool {\bfseries R\-F\-F\-Gen\-::\-Checks\-::summation} ()}\label{namespaceRFFGen_1_1Checks_a9132707e043afacd59b699d72941fbf4}
+
+\begin{DoxyCompactList}\small\item\em Check if objects of type Arg support summation. \end{DoxyCompactList}\item 
+\hypertarget{namespaceRFFGen_1_1Checks_a5c4e05c6d72041a77027e6f9eac3e7ba}{{\footnotesize template$<$class Arg $>$ }\\constexpr bool {\bfseries R\-F\-F\-Gen\-::\-Checks\-::in\-Place\-Summation} ()}\label{namespaceRFFGen_1_1Checks_a5c4e05c6d72041a77027e6f9eac3e7ba}
+
+\begin{DoxyCompactList}\small\item\em Check if objects of type Arg support in-\/place summation. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Arg $>$ }\\constexpr bool {\bfseries R\-F\-F\-Gen\-::\-Checks\-::is\-Constant\-Size\-Matrix} ()
+\begin{DoxyCompactList}\small\item\em Check if object is a static matrix for some type satisfying \hyperlink{structRFFGen_1_1Concepts_1_1MatrixConcept}{Concepts\-::\-Matrix\-Concept}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Arg $>$ }\\constexpr bool {\bfseries R\-F\-F\-Gen\-::\-Checks\-::is\-Static\-Vector} ()
+\begin{DoxyCompactList}\small\item\em Check if object is a static vector for some type satisfying \hyperlink{structRFFGen_1_1Concepts_1_1VectorConcept}{Concepts\-::\-Vector\-Concept}. \end{DoxyCompactList}\item 
+\hypertarget{namespaceRFFGen_1_1Checks_a4622021a6a620bf44875e0c0d19ed82b}{{\footnotesize template$<$class Arg $>$ }\\constexpr bool {\bfseries R\-F\-F\-Gen\-::\-Checks\-::access\-Via\-Square\-Brackets} ()}\label{namespaceRFFGen_1_1Checks_a4622021a6a620bf44875e0c0d19ed82b}
+
+\begin{DoxyCompactList}\small\item\em Check if objects of type Arg support access to its entries via square brackets, i.\-e. via A\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} for matrices or v\mbox{[}i\mbox{]} for vectors. \end{DoxyCompactList}\item 
+\hypertarget{namespaceRFFGen_1_1Checks_a3d869a871a321c008e7a577d73cbd340}{{\footnotesize template$<$class Arg $>$ }\\constexpr bool {\bfseries R\-F\-F\-Gen\-::\-Checks\-::access\-Via\-Round\-Brackets} ()}\label{namespaceRFFGen_1_1Checks_a3d869a871a321c008e7a577d73cbd340}
+
+\begin{DoxyCompactList}\small\item\em Check if objects of type Matrix support access to its entries via round brackets, i.\-e. via A(i,j). \end{DoxyCompactList}\item 
+\hypertarget{namespaceRFFGen_1_1Checks_a0b72c238e9fcf247cdb31375fc681796}{{\footnotesize template$<$class F $>$ }\\constexpr bool {\bfseries R\-F\-F\-Gen\-::\-Checks\-::has\-Update\-Function} ()}\label{namespaceRFFGen_1_1Checks_a0b72c238e9fcf247cdb31375fc681796}
+
+\begin{DoxyCompactList}\small\item\em Check if object of type F has a member function update(). \end{DoxyCompactList}\item 
+\hypertarget{namespaceRFFGen_1_1Checks_a6a8e1289d0210020d3fbebf0f0c2bb19}{{\footnotesize template$<$class F $>$ }\\constexpr bool {\bfseries R\-F\-F\-Gen\-::\-Checks\-::has\-Update\-Variable\-Function} ()}\label{namespaceRFFGen_1_1Checks_a6a8e1289d0210020d3fbebf0f0c2bb19}
+
+\begin{DoxyCompactList}\small\item\em Check if object of type F has a member function update\-Variable(). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Static checks for detection of presence of different operators and functions. 

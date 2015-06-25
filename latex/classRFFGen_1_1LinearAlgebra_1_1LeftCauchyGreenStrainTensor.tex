@@ -1,0 +1,69 @@
+\hypertarget{classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor}{\section{R\-F\-F\-Gen\-:\-:Linear\-Algebra\-:\-:Left\-Cauchy\-Green\-Strain\-Tensor$<$ Matrix, class $>$ Class Template Reference}
+\label{classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor}\index{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Left\-Cauchy\-Green\-Strain\-Tensor$<$ Matrix, class $>$@{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Left\-Cauchy\-Green\-Strain\-Tensor$<$ Matrix, class $>$}}
+}
+
+
+Left Cauchy-\/\-Green strain tensor $ F^T F $ for a symmetric matrix $ F $.  
+
+
+
+
+{\ttfamily \#include $<$strain\-Tensor.\-hh$>$}
+
+Inheritance diagram for R\-F\-F\-Gen\-:\-:Linear\-Algebra\-:\-:Left\-Cauchy\-Green\-Strain\-Tensor$<$ Matrix, class $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor_a7cc082254e1cd5ef9bcd80e984adac9b}{Left\-Cauchy\-Green\-Strain\-Tensor} (Matrix const \&F)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor_a73dbd1543b5f4bf0c13b23b9962fc222}{void \hyperlink{classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor_a73dbd1543b5f4bf0c13b23b9962fc222}{update} (Matrix const \&F)}\label{classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor_a73dbd1543b5f4bf0c13b23b9962fc222}
+
+\begin{DoxyCompactList}\small\item\em Reset point of evaluation. \end{DoxyCompactList}\item 
+\hypertarget{classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor_a7fe12398089878b93eb3031f61cf6ef8}{Matrix const \& \hyperlink{classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor_a7fe12398089878b93eb3031f61cf6ef8}{operator()} () const noexcept}\label{classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor_a7fe12398089878b93eb3031f61cf6ef8}
+
+\begin{DoxyCompactList}\small\item\em Function value. Convenient access to \hyperlink{classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor_a5306342041dd2fc8a24863b6a0cc7368}{d0()}. \end{DoxyCompactList}\item 
+\hypertarget{classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor_a5306342041dd2fc8a24863b6a0cc7368}{Matrix const \& \hyperlink{classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor_a5306342041dd2fc8a24863b6a0cc7368}{d0} () const noexcept}\label{classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor_a5306342041dd2fc8a24863b6a0cc7368}
+
+\begin{DoxyCompactList}\small\item\em Function value $ F^T * F $. \end{DoxyCompactList}\item 
+\hypertarget{classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor_a3a49e4c9105a4a466c43d5cd262fe725}{{\footnotesize template$<$int $>$ }\\Matrix \hyperlink{classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor_a3a49e4c9105a4a466c43d5cd262fe725}{d1} (Matrix const \&d\-F1) const }\label{classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor_a3a49e4c9105a4a466c43d5cd262fe725}
+
+\begin{DoxyCompactList}\small\item\em First directional derivative $ F^T dF_1 + dF_1^T F $. \end{DoxyCompactList}\item 
+\hypertarget{classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor_ad15848883104beb2265dfb459d96dff2}{{\footnotesize template$<$int , int $>$ }\\Matrix \hyperlink{classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor_ad15848883104beb2265dfb459d96dff2}{d2} (Matrix const \&d\-F1, Matrix const \&d\-F2) const }\label{classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor_ad15848883104beb2265dfb459d96dff2}
+
+\begin{DoxyCompactList}\small\item\em Second directional derivative $ dF_2^T dF_1 + dF_1^T dF_2 $. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Matrix, class = Concepts\-::\-Symmetric\-Matrix\-Concept\-Check$<$\-Matrix$>$$>$class R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Left\-Cauchy\-Green\-Strain\-Tensor$<$ Matrix, class $>$}
+
+Left Cauchy-\/\-Green strain tensor $ F^T F $ for a symmetric matrix $ F $. 
+
+This class is used for nonlinear material models based on the deformation gradient $\nabla\varphi$, which takes the role of $F$. Caches both $ F^T $ and $ F^T F $. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor_a7cc082254e1cd5ef9bcd80e984adac9b}{\index{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Left\-Cauchy\-Green\-Strain\-Tensor@{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Left\-Cauchy\-Green\-Strain\-Tensor}!Left\-Cauchy\-Green\-Strain\-Tensor@{Left\-Cauchy\-Green\-Strain\-Tensor}}
+\index{Left\-Cauchy\-Green\-Strain\-Tensor@{Left\-Cauchy\-Green\-Strain\-Tensor}!RFFGen::LinearAlgebra::LeftCauchyGreenStrainTensor@{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Left\-Cauchy\-Green\-Strain\-Tensor}}
+\subsubsection[{Left\-Cauchy\-Green\-Strain\-Tensor}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , class  = Concepts\-::\-Symmetric\-Matrix\-Concept\-Check$<$\-Matrix$>$$>$ {\bf R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Left\-Cauchy\-Green\-Strain\-Tensor}$<$ Matrix, class $>$\-::{\bf Left\-Cauchy\-Green\-Strain\-Tensor} (
+\begin{DoxyParamCaption}
+\item[{Matrix const \&}]{F}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor_a7cc082254e1cd5ef9bcd80e984adac9b}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em F} & point of evaluation. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+R\-F\-F\-Gen/\-Linear\-Algebra/strain\-Tensor.\-hh\end{DoxyCompactItemize}

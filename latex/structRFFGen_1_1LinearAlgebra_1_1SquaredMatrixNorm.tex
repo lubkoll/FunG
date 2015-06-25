@@ -1,0 +1,70 @@
+\hypertarget{structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm}{\section{R\-F\-F\-Gen\-:\-:Linear\-Algebra\-:\-:Squared\-Matrix\-Norm$<$ Matrix, class $>$ Struct Template Reference}
+\label{structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm}\index{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Squared\-Matrix\-Norm$<$ Matrix, class $>$@{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Squared\-Matrix\-Norm$<$ Matrix, class $>$}}
+}
+
+
+Compute squared matrix norm $ \|A\|^2 = A\negthinspace : \negthinspace A = \mathrm{tr}(A^TA) = \sum_{i,j} A_{ij}^2. $.  
+
+
+
+
+{\ttfamily \#include $<$matrix\-Norm.\-hh$>$}
+
+Inheritance diagram for R\-F\-F\-Gen\-:\-:Linear\-Algebra\-:\-:Squared\-Matrix\-Norm$<$ Matrix, class $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_a12a675f8253661fb62915ba3f6f2d6e6}{\hyperlink{structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_a12a675f8253661fb62915ba3f6f2d6e6}{Squared\-Matrix\-Norm} ()=default}\label{structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_a12a675f8253661fb62915ba3f6f2d6e6}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_a32420aa809b04ad2ce2f72f6e93de2f3}{Squared\-Matrix\-Norm} (const Matrix \&A)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_a3b7bbeb2d36bea1117a551c8d168c4d6}{void \hyperlink{structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_a3b7bbeb2d36bea1117a551c8d168c4d6}{update} (const Matrix \&A)}\label{structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_a3b7bbeb2d36bea1117a551c8d168c4d6}
+
+\begin{DoxyCompactList}\small\item\em Reset matrix to compute squared norm from. \end{DoxyCompactList}\item 
+\hypertarget{structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_a6aee4181a9dfb2a146f2cee3cca6a562}{auto \hyperlink{structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_a6aee4181a9dfb2a146f2cee3cca6a562}{operator()} () const noexcept}\label{structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_a6aee4181a9dfb2a146f2cee3cca6a562}
+
+\begin{DoxyCompactList}\small\item\em Squared matrix norm. Convenient access to \hyperlink{structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_abaa6151eafb9baefe973bd313920c92c}{d0()}. \end{DoxyCompactList}\item 
+\hypertarget{structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_abaa6151eafb9baefe973bd313920c92c}{auto \hyperlink{structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_abaa6151eafb9baefe973bd313920c92c}{d0} () const noexcept}\label{structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_abaa6151eafb9baefe973bd313920c92c}
+
+\begin{DoxyCompactList}\small\item\em Squared matrix norm. \end{DoxyCompactList}\item 
+\hypertarget{structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_ae27b37478ba3e246f73d8383e11c1f84}{{\footnotesize template$<$int $>$ }\\auto \hyperlink{structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_ae27b37478ba3e246f73d8383e11c1f84}{d1} (const Matrix \&d\-A) const }\label{structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_ae27b37478ba3e246f73d8383e11c1f84}
+
+\begin{DoxyCompactList}\small\item\em First directional derivative. \end{DoxyCompactList}\item 
+\hypertarget{structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_aaf6162ac724beec933f9f531e2a353f1}{{\footnotesize template$<$int , int $>$ }\\auto \hyperlink{structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_aaf6162ac724beec933f9f531e2a353f1}{d2} (const Matrix \&d\-A1, const Matrix \&d\-A2) const }\label{structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_aaf6162ac724beec933f9f531e2a353f1}
+
+\begin{DoxyCompactList}\small\item\em Second directional derivative. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Matrix, class = Concepts\-::\-Matrix\-Concept\-Check$<$\-Matrix$>$$>$struct R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Squared\-Matrix\-Norm$<$ Matrix, class $>$}
+
+Compute squared matrix norm $ \|A\|^2 = A\negthinspace : \negthinspace A = \mathrm{tr}(A^TA) = \sum_{i,j} A_{ij}^2. $. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_a32420aa809b04ad2ce2f72f6e93de2f3}{\index{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Squared\-Matrix\-Norm@{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Squared\-Matrix\-Norm}!Squared\-Matrix\-Norm@{Squared\-Matrix\-Norm}}
+\index{Squared\-Matrix\-Norm@{Squared\-Matrix\-Norm}!RFFGen::LinearAlgebra::SquaredMatrixNorm@{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Squared\-Matrix\-Norm}}
+\subsubsection[{Squared\-Matrix\-Norm}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , class  = Concepts\-::\-Matrix\-Concept\-Check$<$\-Matrix$>$$>$ {\bf R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Squared\-Matrix\-Norm}$<$ Matrix, class $>$\-::{\bf Squared\-Matrix\-Norm} (
+\begin{DoxyParamCaption}
+\item[{const Matrix \&}]{A}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm_a32420aa809b04ad2ce2f72f6e93de2f3}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & matrix to compute squared norm from. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+R\-F\-F\-Gen/\-Linear\-Algebra/matrix\-Norm.\-hh\end{DoxyCompactItemize}

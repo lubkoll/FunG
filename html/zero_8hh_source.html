@@ -37,7 +37,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
@@ -70,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -81,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_ae8dfb7974677b3a2f52781538c05dde.html">RFFGen</a></li><li class="navelem"><a class="el" href="dir_39077a42654c848fa07f9c756d4d4764.html">Util</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_312e820d1a3185ae8d6a6cb1a792b08d.html">RFFGen</a></li><li class="navelem"><a class="el" href="dir_b6932b260dda1e7c7175f00fb5d0fc44.html">Util</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -131,33 +130,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  };</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix&gt;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="structRFFGen_1_1Zero_3_01Matrix_00_01void__t_3_01Checks_1_1TryCallToZeroes_3_01Matrix_01_4_01_4_01_4.html">   48</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structRFFGen_1_1Zero.html">Zero</a>&lt; Matrix , <a class="code" href="namespaceRFFGen.html#a20e18569d04cc91cf19632c12cd4a0d8">void_t</a>&lt;Checks::TryCallToZeroes&lt;Matrix&gt; &gt; &gt;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    Matrix <a class="code" href="structRFFGen_1_1Zero.html#ad3cf2a2228843b69537b5fc67c95c43f">operator()</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      Matrix m;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      m.zeroes();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <span class="keywordflow">return</span> m;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  };</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix&gt;</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="namespaceRFFGen.html#a1248d7bf9320b86381dae791086c1f38">   63</a></span>&#160;  Matrix <a class="code" href="namespaceRFFGen.html#a1248d7bf9320b86381dae791086c1f38">zero</a>()</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structRFFGen_1_1Zero.html">Zero&lt;Matrix&gt;</a>()();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif // RFFGEN_UTIL_ZERO_HH</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix&gt;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="structRFFGen_1_1Zero_3_01Matrix_00_01void__t_3_01Checks_1_1TryCallToZeroes_3_01Matrix_01_4_01_4_01_4.html">   49</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structRFFGen_1_1Zero.html">Zero</a>&lt; Matrix , <a class="code" href="namespaceRFFGen.html#a20e18569d04cc91cf19632c12cd4a0d8">void_t</a>&lt;Checks::TryCallToZeroes&lt;Matrix&gt; &gt; &gt;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  {</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="structRFFGen_1_1Zero_3_01Matrix_00_01void__t_3_01Checks_1_1TryCallToZeroes_3_01Matrix_01_4_01_4_01_4.html#af8d182d4cfd39955e26f532f24536e77">   54</a></span>&#160;    Matrix <a class="code" href="structRFFGen_1_1Zero_3_01Matrix_00_01void__t_3_01Checks_1_1TryCallToZeroes_3_01Matrix_01_4_01_4_01_4.html#af8d182d4cfd39955e26f532f24536e77">operator()</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      Matrix m;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      m.zeroes();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="keywordflow">return</span> m;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  };</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix&gt;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="namespaceRFFGen.html#a1248d7bf9320b86381dae791086c1f38">   67</a></span>&#160;  Matrix <a class="code" href="namespaceRFFGen.html#a1248d7bf9320b86381dae791086c1f38">zero</a>()</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structRFFGen_1_1Zero.html">Zero&lt;Matrix&gt;</a>()();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif // RFFGEN_UTIL_ZERO_HH</span></div>
 <div class="ttc" id="namespaceRFFGen_html_a20e18569d04cc91cf19632c12cd4a0d8"><div class="ttname"><a href="namespaceRFFGen.html#a20e18569d04cc91cf19632c12cd4a0d8">RFFGen::void_t</a></div><div class="ttdeci">typename Detail::voider&lt; Types...&gt;::type void_t</div><div class="ttdoc">Most fascinating type ever. Is always void. </div><div class="ttdef"><b>Definition:</b> voider.hh:40</div></div>
 <div class="ttc" id="structRFFGen_1_1Zero_html"><div class="ttname"><a href="structRFFGen_1_1Zero.html">RFFGen::Zero</a></div><div class="ttdoc">Specialize this struct for your matrix type if a zero matrix cannot be generated via Matrix(0...</div><div class="ttdef"><b>Definition:</b> zero.hh:36</div></div>
-<div class="ttc" id="namespaceRFFGen_html_a1248d7bf9320b86381dae791086c1f38"><div class="ttname"><a href="namespaceRFFGen.html#a1248d7bf9320b86381dae791086c1f38">RFFGen::zero</a></div><div class="ttdeci">Matrix zero()</div><div class="ttdef"><b>Definition:</b> zero.hh:63</div></div>
+<div class="ttc" id="structRFFGen_1_1Zero_3_01Matrix_00_01void__t_3_01Checks_1_1TryCallToZeroes_3_01Matrix_01_4_01_4_01_4_html_af8d182d4cfd39955e26f532f24536e77"><div class="ttname"><a href="structRFFGen_1_1Zero_3_01Matrix_00_01void__t_3_01Checks_1_1TryCallToZeroes_3_01Matrix_01_4_01_4_01_4.html#af8d182d4cfd39955e26f532f24536e77">RFFGen::Zero&lt; Matrix, void_t&lt; Checks::TryCallToZeroes&lt; Matrix &gt; &gt; &gt;::operator()</a></div><div class="ttdeci">Matrix operator()() const </div><div class="ttdef"><b>Definition:</b> zero.hh:54</div></div>
+<div class="ttc" id="namespaceRFFGen_html_a1248d7bf9320b86381dae791086c1f38"><div class="ttname"><a href="namespaceRFFGen.html#a1248d7bf9320b86381dae791086c1f38">RFFGen::zero</a></div><div class="ttdeci">Matrix zero()</div><div class="ttdef"><b>Definition:</b> zero.hh:67</div></div>
 <div class="ttc" id="structRFFGen_1_1Zero_html_ad3cf2a2228843b69537b5fc67c95c43f"><div class="ttname"><a href="structRFFGen_1_1Zero.html#ad3cf2a2228843b69537b5fc67c95c43f">RFFGen::Zero::operator()</a></div><div class="ttdeci">Matrix operator()() const </div><div class="ttdef"><b>Definition:</b> zero.hh:41</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 9 2015 01:49:09 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 26 2015 00:53:37 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

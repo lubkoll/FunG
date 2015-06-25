@@ -1,0 +1,163 @@
+\hypertarget{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant}{\section{R\-F\-F\-Gen\-:\-:Linear\-Algebra\-:\-:Shifted\-Invariant$<$ Invariant, offset $>$ Class Template Reference}
+\label{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant}\index{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant$<$ Invariant, offset $>$@{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant$<$ Invariant, offset $>$}}
+}
+
+
+Possibly scaled, shifted invariant $scaling (invariant - offset)$, where $offset = dim$ for the first two (principal,modified) invariants and $offset = 1$ for the third (principal,modified) and mixed invariants.  
+
+
+
+
+{\ttfamily \#include $<$shifted\-Invariant.\-hh$>$}
+
+Inheritance diagram for R\-F\-F\-Gen\-:\-:Linear\-Algebra\-:\-:Shifted\-Invariant$<$ Invariant, offset $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Matrix $>$ }\\\hyperlink{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant_aebc264a312f0efff2ae7467d98eced75}{Shifted\-Invariant} (Matrix const \&A)
+\item 
+{\footnotesize template$<$class Matrix $>$ }\\\hyperlink{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant_a52e0e4abd5099d9aa5b4ee1c73589adc}{Shifted\-Invariant} (const Matrix \&A, const \hyperlink{structRFFGen_1_1Constant}{Constant}$<$ Matrix $>$ \&M)
+\item 
+{\footnotesize template$<$class Matrix $>$ }\\\hyperlink{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant_a2b15177fa88cd62ffec101d22ecea76e}{Shifted\-Invariant} (const Matrix \&A, const Matrix \&M)
+\item 
+\hypertarget{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant_a89785734ed595d7e0c7e95562ef45400}{{\footnotesize template$<$class Matrix $>$ }\\void \hyperlink{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant_a89785734ed595d7e0c7e95562ef45400}{update} (Matrix const \&A)}\label{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant_a89785734ed595d7e0c7e95562ef45400}
+
+\begin{DoxyCompactList}\small\item\em Reset matrix to compute shifted invariant from. \end{DoxyCompactList}\item 
+\hypertarget{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant_a4acc15ad6257a5871a5bf4da97efdbd8}{auto \hyperlink{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant_a4acc15ad6257a5871a5bf4da97efdbd8}{d0} () const noexcept}\label{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant_a4acc15ad6257a5871a5bf4da97efdbd8}
+
+\begin{DoxyCompactList}\small\item\em Value of the shifted invariant. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int id, class Arg , class Indexed\-Arg  = Indexed\-Type$<$\-Arg,id$>$, class  = std\-::enable\-\_\-if\-\_\-t$<$\-Evaluate\-If\-Present$<$ D1$<$\-Invariant,\-Indexed\-Arg$>$ $>$\-::present$>$$>$ }\\auto \hyperlink{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant_a4e05a73ae9cb190aee5bcb02332e7f36}{d1} (const Arg \&d\-A1) const 
+\begin{DoxyCompactList}\small\item\em First directional derivative of the (scaled) shifted invariant. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int idx, int idy, class Arg\-X , class Arg\-Y , class Indexed\-Arg\-X  = Indexed\-Type$<$\-Arg\-X,idx$>$, class Indexed\-Arg\-Y  = Indexed\-Type$<$\-Arg\-Y,idx$>$, class  = std\-::enable\-\_\-if\-\_\-t$<$\-Evaluate\-If\-Present$<$ D2$<$\-Invariant,\-Indexed\-Arg\-X,\-Indexed\-Arg\-Y$>$ $>$\-::present$>$$>$ }\\auto \hyperlink{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant_a3b1be101997bae58dcb305d63fe90505}{d2} (const Arg\-X \&d\-A1, const Arg\-Y \&d\-A2) const 
+\begin{DoxyCompactList}\small\item\em Second directional derivative of the (scaled) shifted invariant. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int idx, int idy, int idz, class Arg\-X , class Arg\-Y , class Arg\-Z , class Indexed\-Arg\-X  = Indexed\-Type$<$\-Arg\-X,idx$>$, class Indexed\-Arg\-Y  = Indexed\-Type$<$\-Arg\-Y,idy$>$, class Indexed\-Arg\-Z  = Indexed\-Type$<$\-Arg\-Z,idz$>$, class  = std\-::enable\-\_\-if\-\_\-t$<$ Evaluate\-If\-Present$<$ D3$<$\-Invariant,\-Indexed\-Arg\-X,\-Indexed\-Arg\-Y,\-Indexed\-Arg\-Z$>$ $>$\-::present $>$$>$ }\\auto \hyperlink{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant_a2467e5007ac8d84d11c1f68c15db03a4}{d3} (Arg\-X const \&d\-A1, Arg\-Y const \&d\-A2, Arg\-Z const \&d\-A3) const 
+\begin{DoxyCompactList}\small\item\em Third directional derivative of the (scaled) shifted invariant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Invariant, int offset$>$class R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant$<$ Invariant, offset $>$}
+
+Possibly scaled, shifted invariant $scaling (invariant - offset)$, where $offset = dim$ for the first two (principal,modified) invariants and $offset = 1$ for the third (principal,modified) and mixed invariants. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant_aebc264a312f0efff2ae7467d98eced75}{\index{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant@{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}!Shifted\-Invariant@{Shifted\-Invariant}}
+\index{Shifted\-Invariant@{Shifted\-Invariant}!RFFGen::LinearAlgebra::ShiftedInvariant@{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}}
+\subsubsection[{Shifted\-Invariant}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Invariant , int offset$>$ template$<$class Matrix $>$ {\bf R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}$<$ {\bf Invariant}, offset $>$\-::{\bf Shifted\-Invariant} (
+\begin{DoxyParamCaption}
+\item[{Matrix const \&}]{A}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant_aebc264a312f0efff2ae7467d98eced75}
+
+\begin{DoxyParams}{Parameters}
+{\em A} & matrix to compute invariant from. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant_a52e0e4abd5099d9aa5b4ee1c73589adc}{\index{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant@{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}!Shifted\-Invariant@{Shifted\-Invariant}}
+\index{Shifted\-Invariant@{Shifted\-Invariant}!RFFGen::LinearAlgebra::ShiftedInvariant@{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}}
+\subsubsection[{Shifted\-Invariant}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Invariant , int offset$>$ template$<$class Matrix $>$ {\bf R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}$<$ {\bf Invariant}, offset $>$\-::{\bf Shifted\-Invariant} (
+\begin{DoxyParamCaption}
+\item[{const Matrix \&}]{A, }
+\item[{const {\bf Constant}$<$ Matrix $>$ \&}]{M}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant_a52e0e4abd5099d9aa5b4ee1c73589adc}
+
+\begin{DoxyParams}{Parameters}
+{\em A} & matrix to compute invariant from. \\
+\hline
+{\em M} & structural tensor for incorporation of anisotropic information. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant_a2b15177fa88cd62ffec101d22ecea76e}{\index{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant@{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}!Shifted\-Invariant@{Shifted\-Invariant}}
+\index{Shifted\-Invariant@{Shifted\-Invariant}!RFFGen::LinearAlgebra::ShiftedInvariant@{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}}
+\subsubsection[{Shifted\-Invariant}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Invariant , int offset$>$ template$<$class Matrix $>$ {\bf R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}$<$ {\bf Invariant}, offset $>$\-::{\bf Shifted\-Invariant} (
+\begin{DoxyParamCaption}
+\item[{const Matrix \&}]{A, }
+\item[{const Matrix \&}]{M}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant_a2b15177fa88cd62ffec101d22ecea76e}
+
+\begin{DoxyParams}{Parameters}
+{\em A} & matrix to compute invariant from. \\
+\hline
+{\em M} & structural tensor for incorporation of anisotropic information. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant_a4e05a73ae9cb190aee5bcb02332e7f36}{\index{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant@{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}!d1@{d1}}
+\index{d1@{d1}!RFFGen::LinearAlgebra::ShiftedInvariant@{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}}
+\subsubsection[{d1}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Invariant , int offset$>$ template$<$int id, class Arg , class Indexed\-Arg  = Indexed\-Type$<$\-Arg,id$>$, class  = std\-::enable\-\_\-if\-\_\-t$<$\-Evaluate\-If\-Present$<$ D1$<$\-Invariant,\-Indexed\-Arg$>$ $>$\-::present$>$$>$ auto {\bf R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}$<$ {\bf Invariant}, offset $>$\-::d1 (
+\begin{DoxyParamCaption}
+\item[{const Arg \&}]{d\-A1}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant_a4e05a73ae9cb190aee5bcb02332e7f36}
+
+
+First directional derivative of the (scaled) shifted invariant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d\-A1} & direction for which the derivative is computed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+derivative in direction d\-A1 
+\end{DoxyReturn}
+\hypertarget{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant_a3b1be101997bae58dcb305d63fe90505}{\index{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant@{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}!d2@{d2}}
+\index{d2@{d2}!RFFGen::LinearAlgebra::ShiftedInvariant@{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}}
+\subsubsection[{d2}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Invariant , int offset$>$ template$<$int idx, int idy, class Arg\-X , class Arg\-Y , class Indexed\-Arg\-X  = Indexed\-Type$<$\-Arg\-X,idx$>$, class Indexed\-Arg\-Y  = Indexed\-Type$<$\-Arg\-Y,idx$>$, class  = std\-::enable\-\_\-if\-\_\-t$<$\-Evaluate\-If\-Present$<$ D2$<$\-Invariant,\-Indexed\-Arg\-X,\-Indexed\-Arg\-Y$>$ $>$\-::present$>$$>$ auto {\bf R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}$<$ {\bf Invariant}, offset $>$\-::d2 (
+\begin{DoxyParamCaption}
+\item[{const Arg\-X \&}]{d\-A1, }
+\item[{const Arg\-Y \&}]{d\-A2}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant_a3b1be101997bae58dcb305d63fe90505}
+
+
+Second directional derivative of the (scaled) shifted invariant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d\-A1} & direction for which the derivative is computed \\
+\hline
+{\em d\-A2} & direction for which the derivative is computed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+second derivative in the directions d\-A1 and d\-A2 
+\end{DoxyReturn}
+\hypertarget{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant_a2467e5007ac8d84d11c1f68c15db03a4}{\index{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant@{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}!d3@{d3}}
+\index{d3@{d3}!RFFGen::LinearAlgebra::ShiftedInvariant@{R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}}
+\subsubsection[{d3}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Invariant , int offset$>$ template$<$int idx, int idy, int idz, class Arg\-X , class Arg\-Y , class Arg\-Z , class Indexed\-Arg\-X  = Indexed\-Type$<$\-Arg\-X,idx$>$, class Indexed\-Arg\-Y  = Indexed\-Type$<$\-Arg\-Y,idy$>$, class Indexed\-Arg\-Z  = Indexed\-Type$<$\-Arg\-Z,idz$>$, class  = std\-::enable\-\_\-if\-\_\-t$<$ Evaluate\-If\-Present$<$ D3$<$\-Invariant,\-Indexed\-Arg\-X,\-Indexed\-Arg\-Y,\-Indexed\-Arg\-Z$>$ $>$\-::present $>$$>$ auto {\bf R\-F\-F\-Gen\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}$<$ {\bf Invariant}, offset $>$\-::d3 (
+\begin{DoxyParamCaption}
+\item[{Arg\-X const \&}]{d\-A1, }
+\item[{Arg\-Y const \&}]{d\-A2, }
+\item[{Arg\-Z const \&}]{d\-A3}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classRFFGen_1_1LinearAlgebra_1_1ShiftedInvariant_a2467e5007ac8d84d11c1f68c15db03a4}
+
+
+Third directional derivative of the (scaled) shifted invariant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d\-A1} & direction for which the derivative is computed \\
+\hline
+{\em d\-A2} & direction for which the derivative is computed \\
+\hline
+{\em d\-A3} & direction for which the derivative is computed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+second derivative in the directions d\-A1, d\-A2 and d\-A3 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+R\-F\-F\-Gen/\-Linear\-Algebra/shifted\-Invariant.\-hh\end{DoxyCompactItemize}

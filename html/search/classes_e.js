@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['tan',['Tan',['../structRFFGen_1_1CMath_1_1Tan.html',1,'RFFGen::CMath']]],
-  ['thirdmodifiedmixedinvariant',['ThirdModifiedMixedInvariant',['../structRFFGen_1_1LinearAlgebra_1_1ThirdModifiedMixedInvariant.html',1,'RFFGen::LinearAlgebra']]]
+  ['variable',['Variable',['../structRFFGen_1_1Variable.html',1,'RFFGen']]],
+  ['vectorconcept',['VectorConcept',['../structRFFGen_1_1Concepts_1_1VectorConcept.html',1,'RFFGen::Concepts']]],
+  ['vectorconceptcheck',['VectorConceptCheck',['../structRFFGen_1_1Concepts_1_1VectorConceptCheck.html',1,'RFFGen::Concepts']]]
 ];

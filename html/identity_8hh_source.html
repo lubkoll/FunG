@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Function Generation: RFFGen/identity.hh Source File</title>
+<title>Function Generation: identity.hh Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -37,7 +37,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
@@ -65,12 +64,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="files.html"><span>File&#160;List</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -79,11 +79,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_ae8dfb7974677b3a2f52781538c05dde.html">RFFGen</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">identity.hh</div>  </div>
@@ -140,17 +135,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    Arg x_;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  };</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Arg&gt;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">auto</span> identity(<span class="keyword">const</span> Arg&amp; x)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> Identity&lt;Arg&gt;(x);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif // RFFGEN_IDENTITY_HH</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Arg&gt;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="namespaceRFFGen.html#af20942553f30cb8b3a7dc84b9581aeb3">   71</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="namespaceRFFGen.html#af20942553f30cb8b3a7dc84b9581aeb3">identity</a>(<span class="keyword">const</span> Arg&amp; x)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structRFFGen_1_1Identity.html">Identity&lt;Arg&gt;</a>(x);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif // RFFGEN_IDENTITY_HH</span></div>
 <div class="ttc" id="structRFFGen_1_1Identity_html_ad1206bbe037c72a77aa90119f228f9e2"><div class="ttname"><a href="structRFFGen_1_1Identity.html#ad1206bbe037c72a77aa90119f228f9e2">RFFGen::Identity::Identity</a></div><div class="ttdeci">Identity(const Arg &amp;x)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> identity.hh:47</div></div>
 <div class="ttc" id="structRFFGen_1_1Identity_html_a8b78693b14060a66fe32e8a15df1873a"><div class="ttname"><a href="structRFFGen_1_1Identity.html#a8b78693b14060a66fe32e8a15df1873a">RFFGen::Identity::Identity</a></div><div class="ttdeci">Identity()=default</div><div class="ttdoc">Default constructor. </div></div>
 <div class="ttc" id="structRFFGen_1_1Identity_html_a0a2fba6a1d3326df7de1f329e20dd557"><div class="ttname"><a href="structRFFGen_1_1Identity.html#a0a2fba6a1d3326df7de1f329e20dd557">RFFGen::Identity::d1</a></div><div class="ttdeci">const Arg &amp; d1(const Arg &amp;dx) const noexcept</div><div class="ttdoc">First directional derivative. </div><div class="ttdef"><b>Definition:</b> identity.hh:63</div></div>
+<div class="ttc" id="namespaceRFFGen_html_af20942553f30cb8b3a7dc84b9581aeb3"><div class="ttname"><a href="namespaceRFFGen.html#af20942553f30cb8b3a7dc84b9581aeb3">RFFGen::identity</a></div><div class="ttdeci">auto identity(const Arg &amp;x)</div><div class="ttdoc">Construct Identity&lt;Arg&gt;(x). </div><div class="ttdef"><b>Definition:</b> identity.hh:71</div></div>
 <div class="ttc" id="structRFFGen_1_1Base_html"><div class="ttname"><a href="structRFFGen_1_1Base.html">RFFGen::Base</a></div><div class="ttdoc">Base class for functions satisfying FunctionConcept. Required for enabling the operators in generate...</div><div class="ttdef"><b>Definition:</b> base.hh:27</div></div>
 <div class="ttc" id="structRFFGen_1_1Identity_html_a2640817a78171e80daabf623f2c786d5"><div class="ttname"><a href="structRFFGen_1_1Identity.html#a2640817a78171e80daabf623f2c786d5">RFFGen::Identity::operator()</a></div><div class="ttdeci">const Arg &amp; operator()() const noexcept</div><div class="ttdoc">Function value. Convenient access to d0(). </div><div class="ttdef"><b>Definition:</b> identity.hh:56</div></div>
 <div class="ttc" id="structRFFGen_1_1Identity_html"><div class="ttname"><a href="structRFFGen_1_1Identity.html">RFFGen::Identity</a></div><div class="ttdoc">Identity mapping . </div><div class="ttdef"><b>Definition:</b> identity.hh:38</div></div>
@@ -159,7 +155,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 9 2015 01:49:09 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 26 2015 00:53:37 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

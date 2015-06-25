@@ -11,6 +11,6 @@ var searchData=
   ['constant',['Constant',['../structRFFGen_1_1Constant.html#ae2d0e64d773d967430d13e47817d6d84',1,'RFFGen::Constant']]],
   ['constantsizetrace',['ConstantSizeTrace',['../structRFFGen_1_1LinearAlgebra_1_1ConstantSizeTrace.html#a54bd89f9dbd5b2aa1845859b265571d4',1,'RFFGen::LinearAlgebra::ConstantSizeTrace::ConstantSizeTrace()=default'],['../structRFFGen_1_1LinearAlgebra_1_1ConstantSizeTrace.html#a9ed61eb129e946f682dcbb7e5bd0b028',1,'RFFGen::LinearAlgebra::ConstantSizeTrace::ConstantSizeTrace(const Matrix &amp;A)']]],
   ['constref',['constRef',['../namespaceRFFGen.html#a1e5703444079774f6e6a9161a9bacc6b',1,'RFFGen']]],
-  ['copyconcept',['CopyConcept',['../structRFFGen_1_1Concepts_1_1CopyConcept.html#a8c65652314ce23b53ff82ff5c1e6d7a2',1,'RFFGen::Concepts::CopyConcept']]],
+  ['copyconcept',['CopyConcept',['../structRFFGen_1_1Concepts_1_1CopyConcept.html#a8c65652314ce23b53ff82ff5c1e6d7a2',1,'RFFGen::Concepts::CopyConcept::CopyConcept(const CopyConcept &amp;)'],['../structRFFGen_1_1Concepts_1_1CopyConcept.html#a8c65652314ce23b53ff82ff5c1e6d7a2',1,'RFFGen::Concepts::CopyConcept::CopyConcept(const CopyConcept &amp;)']]],
   ['cos',['Cos',['../structRFFGen_1_1CMath_1_1Cos.html#a950dc0fac1e6a0df91e9beb863af9bee',1,'RFFGen::CMath::Cos']]]
 ];
