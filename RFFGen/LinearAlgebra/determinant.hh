@@ -28,6 +28,7 @@
 #include "rowsAndCols.hh"
 #include "../Util/at.hh"
 #include "../Util/base.hh"
+#include "../Util/chainer.hh"
 #include "../Util/exceptions.hh"
 
 namespace RFFGen
@@ -73,7 +74,8 @@ namespace RFFGen
       class DeterminantImpl;
 
       template<class Matrix>
-      class DeterminantImpl< Matrix , 2 , Concepts::SymmetricMatrixConceptCheck<Matrix> > : Base
+      class DeterminantImpl< Matrix , 2 , Concepts::SymmetricMatrixConceptCheck<Matrix> >
+          : public Base , public Chainer< DeterminantImpl<Matrix,2,Concepts::SymmetricMatrixConceptCheck<Matrix> >
       {
       public:
         DeterminantImpl() = default;
@@ -85,8 +87,6 @@ namespace RFFGen
           A = A_;
           resultOfD0 = at(A,0,0) * at(A,1,1) - at(A,0,1) * at(A,1,0);//A[0][0] * A[1][1] - A[0][1] * A[1][0];
         }
-
-        auto operator()() const { return d0(); }
 
         auto d0() const
         {
@@ -111,7 +111,8 @@ namespace RFFGen
       };
 
       template <class Matrix>
-      class DeterminantImpl<Matrix,3,Concepts::SymmetricMatrixConceptCheck<Matrix> > : Base
+      class DeterminantImpl<Matrix,3,Concepts::SymmetricMatrixConceptCheck<Matrix> >
+          : public Base , public Chainer< DeterminantImpl<Matrix,3,Concepts::SymmetricMatrixConceptCheck<Matrix> >
       {
       public:
         DeterminantImpl() = default;
@@ -123,8 +124,6 @@ namespace RFFGen
           A = A_;
           resultOfD0 = composeResult(A,A,A);
         }
-
-        auto operator()() const { return d0(); }
 
         auto d0() const { return resultOfD0; }
 
@@ -168,50 +167,51 @@ namespace RFFGen
      * \brief Determinant of dynamic size matrix with first three derivatives.
      */
     template <class Matrix>
-    class DynamicSizeDeterminant : Base
+    class DynamicSizeDeterminant :
+        public Base , public Chainer< DynamicSizeDeterminant<Matrix> >
     {
     public:
       DynamicSizeDeterminant() = default;
 
+      /// Constructor.
       DynamicSizeDeterminant(Matrix const& A) : dim(rows(A))
       {
-#ifdef RFFGEN_ENABLE_EXCEPTIONS
-        if( rows(A) != cols(A) ) throw NonSymmetricMatrixException("DynamicSizeTrace",rows(A),cols(A),__FILE__,__LINE__);
-#endif
-        if( dim == 2 ) det2D.update(A);
-        if( dim == 3 ) det3D.update(A);
+        update(A);
       }
 
+      /// Reset point of evaluation.
       void update(Matrix const& A)
       {
 #ifdef RFFGEN_ENABLE_EXCEPTIONS
-        if( rows(A) != cols(A) ) throw NonSymmetricMatrixException("DynamicSizeTrace",rows(A),cols(A),__FILE__,__LINE__);
+        if( rows(A) != cols(A) ) throw NonSymmetricMatrixException("DynamicSizeDeterminant",rows(A),cols(A),__FILE__,__LINE__);
 #endif
         dim = rows(A);
         if( dim == 2 ) det2D.update(A);
         if( dim == 3 ) det3D.update(A);
       }
 
-      auto operator()() const { return d0(); }
-
+      /// Function value.
       auto d0() const { return ( dim==2 ) ? det2D.d0() : det3D.d0(); }
 
+      /// First (directional) derivative.
       template <int id>
       auto d1(Matrix const& dA1) const
       {
-        return ( dim==2 ) ? det2D.template d1<id>(dA1) : det3D.template d1<id>(dA1) ;//composeResult(dA1,A,A) + composeResult(A,dA1,A) + composeResult(A,A,dA1);
+        return ( dim==2 ) ? det2D.template d1<id>(dA1) : det3D.template d1<id>(dA1) ;
       }
 
+      /// Second (directional) derivative.
       template < int idx , int idy >
       auto d2(Matrix const& dA1, Matrix const& dA2) const
       {
-        return ( dim==2 ) ? det2D.template d2<idx,idy>(dA1,dA2) : det3D.template d2<idx,idy>(dA1,dA2);// composeSemiSymmetricResult(A,dA2,dA1) + composeSemiSymmetricResult(dA1,A,dA2) + composeSemiSymmetricResult(A,dA1,dA2);
+        return ( dim==2 ) ? det2D.template d2<idx,idy>(dA1,dA2) : det3D.template d2<idx,idy>(dA1,dA2);
       }
 
+        /// Third (directional) derivative.
       template < int idx , int idy , int idz >
       auto d3(Matrix const& dA1, Matrix const& dA2, Matrix const& dA3) const
       {
-        return ( dim==2 ) ? 0 : det3D.template d3<idx,idy,idz>(dA1,dA2,dA3);// composeSemiSymmetricResult(dA1,dA2,dA3) + composeSemiSymmetricResult(dA1,dA3,dA2) + composeSemiSymmetricResult(dA2,dA1,dA3);
+        return ( dim==2 ) ? 0 : det3D.template d3<idx,idy,idz>(dA1,dA2,dA3);
       }
 
     private:
