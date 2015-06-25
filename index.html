@@ -100,7 +100,7 @@
 
 <p>A fast and easy to use function generation library that gives provides access to the first three derivatives of a function.</p>
 
-<p>Here fast has two meanings. First the generation of functions and their derivatives should be "fast". This means that no big preparation or post-processing steps are required, neither large efforts in adapting your matrix implementation. This is illustrated in the <a href=#examples>examples</a> below. Secondly the evaluation of function values and the first three derivatives should be as efficient as optimized manual implementations.</p>
+<p>Here fast has two meanings. First the generation of functions and their derivatives should be "fast". This means that no big preparation or post-processing steps are required, neither large efforts to adapt your matrix implementation. This is illustrated in the <a href=#examples>examples</a> below. Secondly the evaluation of function values and the first three derivatives should be as efficient as optimized manual implementations.</p>
 
 <p>The implementation is similar to forward automatic differentiation (AD) with expression templates. However, here a different perspective is taken. 
 <ul>
@@ -117,7 +117,7 @@
 <ul>
   <li><a href=#installation>Installation</a></li>
   <li><a href=#examples>Examples</a></li>
-  <li><a href=#input_requirements>Requirements on user-defined arithmetic types</a></li>
+  <li><a href=#input_requirements>Requirements on arithmetic types</a></li>
   <li><a href=#ad_comparison>Comparison with different AD libraries</a></li>
   <li><a href=#optimization_strategies>Optimization strategies</a></li>
   <li><a href=#documentation>Documentation</a></li>
@@ -274,7 +274,7 @@ double dddf_dxdxdF = f.template d3&lt;0,0,1&gt;(dx1,dx2,dF);
 
 
 <h1>
-<a id="input_requirements" class="anchor" href=#input_requirements aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements on user-defined arithmetic types</h1>
+<a id="input_requirements" class="anchor" href=#input_requirements aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements on arithmetic types</h1>
 
 One idea that was followed in the development of this library was to make it compatible with common matrix implementations. Currently you can directly use it with  <a href="http://arma.sourceforge.net/">Armadillo</a> and <a href="http://www.dune-project.org">DUNE</a> matrices. 
 If you use another matrix library, your own matrix or vector implementation or want to compute with something else, these must satisfy the requirements listed below (see also <a href="html/concepts_8hh.html">concepts.hh</a>). These are statically checked with <code>static_assert</code>. Thus you will get meaningful feedback if your implementation lacks some required feature. However, for most reasonable matrix implementations nothing or almost nothing must be adjusted.</p>
