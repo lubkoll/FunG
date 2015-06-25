@@ -10,6 +10,9 @@ namespace RFFGen
 {
   namespace LinearAlgebra
   {
+    /**
+     * \cond DOCUMENT_IMPLEMENTATION_DETAILS
+     */
     namespace Detail
     {
       template <class Matrix, bool accessViaRows, bool accessVia_n_rows> struct Rows;
@@ -52,8 +55,13 @@ namespace RFFGen
         }
       };
     }
+    /**
+     * \endcond
+     */
 
-
+    /**
+     * \brief Number of rows of a dynamic size matrix.
+     */
     template < class Matrix ,
                class = std::enable_if_t<!Checks::isConstantSizeMatrix<Matrix>()> ,
                class = std::enable_if_t<Checks::isDynamicMatrix<Matrix>()> >
@@ -62,6 +70,9 @@ namespace RFFGen
       return Detail::Rows<Matrix,Checks::hasRowsFunction<Matrix>(),Checks::hasMember_n_rows<Matrix>()>()(A);
     }
 
+    /**
+     * \brief Number of rows of a constant size matrix.
+     */
     template < class Matrix ,
                class = std::enable_if_t<Checks::isConstantSizeMatrix<Matrix>()> >
     constexpr auto rows() //noexcept(std::declval<Detail::Rows<Matrix,Checks::hasRowsFunction<Matrix>(),Checks::hasMember_n_rows<Matrix>()>()(A) -> decltype(Detail::Rows<Matrix,Checks::hasRowsFunction<Matrix>(),Checks::hasMember_n_rows<Matrix>()>()(std::declval<Matrix>()))
@@ -69,6 +80,9 @@ namespace RFFGen
       return numberOfRows<Matrix>();
     }
 
+    /**
+     * \brief Number of columns of a dynamic size matrix.
+     */
     template < class Matrix ,
                class = std::enable_if_t<!Checks::isConstantSizeMatrix<Matrix>()> ,
                class = std::enable_if_t<Checks::isDynamicMatrix<Matrix>()> >
@@ -77,6 +91,9 @@ namespace RFFGen
       return Detail::Cols<Matrix,Checks::hasColsFunction<Matrix>(),Checks::hasMember_n_cols<Matrix>()>()(A);
     }
 
+    /**
+     * \brief Number of columns of a constant size matrix.
+     */
     template < class Matrix ,
                class = std::enable_if_t<Checks::isConstantSizeMatrix<Matrix>()> >
     constexpr auto cols() //noexcept(std::declval<Detail::Rows<Matrix,Checks::hasRowsFunction<Matrix>(),Checks::hasMember_n_rows<Matrix>()>()(A) -> decltype(Detail::Rows<Matrix,Checks::hasRowsFunction<Matrix>(),Checks::hasMember_n_rows<Matrix>()>()(std::declval<Matrix>()))

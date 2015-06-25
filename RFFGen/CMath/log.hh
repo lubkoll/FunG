@@ -51,7 +51,7 @@ namespace RFFGen
       /// Reset point of evaluation.
       void update(double x)
       {
-#ifndef RFFGEN_DISABLE_DYNAMIC_CHECKS
+#ifdef RFFGEN_ENABLE_DYNAMIC_CHECKS
         if( x <= 0 ) throw OutOfDomainException("LN","]0,inf[",x,__FILE__,__LINE__);
 #endif
         x_inv = 1./x;
@@ -110,7 +110,7 @@ namespace RFFGen
       /// Reset point of evaluation.
       void update(double x)
       {
-#ifndef RFFGEN_DISABLE_DYNAMIC_CHECKS
+#ifdef RFFGEN_ENABLE_DYNAMIC_CHECKS
         if( x <= 0 ) throw OutOfDomainException("Log10","]0,inf[",x,__FILE__,__LINE__);
 #endif
         x_inv = 1./x;
@@ -151,7 +151,7 @@ namespace RFFGen
     /**
      * \ingroup CMathGroup
      *
-     * \brief Base 2 logarithm including first three derivatives.
+     * \brief %Base 2 logarithm including first three derivatives.
      *
      * For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur
      * during applications of the chain rule.
@@ -169,7 +169,7 @@ namespace RFFGen
       /// Reset point of evaluation.
       void update(double x)
       {
-#ifndef RFFGEN_DISABLE_DYNAMIC_CHECKS
+#ifdef RFFGEN_ENABLE_DYNAMIC_CHECKS
         if( x <= 0 ) throw OutOfDomainException("Log2","]0,inf[",x,__FILE__,__LINE__);
 #endif
         x_inv = 1./x;

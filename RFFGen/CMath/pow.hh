@@ -53,7 +53,7 @@ namespace RFFGen
       /// Reset point of evaluation.
       void update(double x)
       {
-#ifndef RFFGEN_DISABLE_DYNAMIC_CHECKS
+#ifdef RFFGEN_ENABLE_DYNAMIC_CHECKS
         if( k < 3 &&  x == 0 ) throw OutOfDomainException("Pow<" + std::to_string(dividend) + "," + std::to_string(divisor) + ">", "]-inf,inf[\{0}",x,__FILE__,__LINE__);
 #endif
         xk = x * (xk1 = x * (xk2 = x * ( xk3 = ::pow(x,k-3)) ) );
@@ -204,7 +204,7 @@ namespace RFFGen
 
       void update(double x)
       {
-#ifndef RFFGEN_DISABLE_DYNAMIC_CHECKS
+#ifdef RFFGEN_ENABLE_DYNAMIC_CHECKS
         if( x == 0 ) throw OutOfDomainException("Pow<-1,1>","]-inf,inf[\{0}",x,__FILE__,__LINE__);
 #endif
         x_inv = 1. / x;
@@ -256,7 +256,7 @@ namespace RFFGen
       /// Reset point of evaluation.
       void update(double x)
       {
-#ifndef RFFGEN_DISABLE_DYNAMIC_CHECKS
+#ifdef RFFGEN_ENABLE_DYNAMIC_CHECKS
         if( x < 0 ) throw OutOfDomainException("Pow<1,2>","[0,inf[",x,__FILE__,__LINE__);
 #endif
         x_ = x;
@@ -312,7 +312,7 @@ namespace RFFGen
       /// Reset point of evaluation.
       void update(double x)
       {
-#ifndef RFFGEN_DISABLE_DYNAMIC_CHECKS
+#ifdef RFFGEN_ENABLE_DYNAMIC_CHECKS
         if( x < 0 ) throw OutOfDomainException("Pow<1,3>","[0,inf[",x,__FILE__,__LINE__);
 #endif
         auto p = cbrt(x);
@@ -363,7 +363,7 @@ namespace RFFGen
       /// Reset point of evaluation.
       void update(double x)
       {
-#ifndef RFFGEN_DISABLE_DYNAMIC_CHECKS
+#ifdef RFFGEN_ENABLE_DYNAMIC_CHECKS
         if( x < 0 ) throw OutOfDomainException("Pow<2,3>","[0,inf[",x,__FILE__,__LINE__);
 #endif
         auto p0 = cbrt(x);

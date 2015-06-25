@@ -36,7 +36,13 @@ namespace RFFGen
      */
     enum class Invariant { PRINCIPAL, MIXED, MODIFIED, MODIFIED_MIXED };
 
+    /**
+     * \cond DOCUMENT_IMPLEMENTATION_DETAILS
+     */
     template <Invariant> struct InvariantTraits;
+    /**
+     * \endcond
+     */
 
     /**
      * \ingroup LinearAlgebraGroup

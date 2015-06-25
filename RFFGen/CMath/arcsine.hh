@@ -53,7 +53,7 @@ namespace RFFGen
       /// Reset point of evaluation.
       void update(double x)
       {
-#ifndef RFFGEN_DISABLE_DYNAMIC_CHECKS
+#ifdef RFFGEN_ENABLE_DYNAMIC_CHECKS
         if( x < -1 || x > 1 ) throw OutOfDomainException("ASin","[-1,1]",x,__FILE__,__LINE__);
 #endif
         value = ::asin(x);
