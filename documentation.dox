@@ -91,7 +91,7 @@
 
   /**
    * \namespace RFFGen
-   * \brief Main namespace of the RFFGen library.
+   * \brief Main namespace of the %RFFGen library.
    * \see MathematicalOperations
    * \see CMath
    */
