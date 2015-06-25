@@ -8,12 +8,6 @@ Function arguments can be matrices and/or scalars. Vectors are also possible but
 # Installation
 This library is header-only and no installation is required.
 
-If you want to run the available tests, you can use cmake:
- - mkdir build
- - cd build
- - cmake ..
- - make
-
 # Examples
 
 Usage is illustrated using three different examples. Further examples can be found in RFFGen/Tests and RFFGen/Examples.
