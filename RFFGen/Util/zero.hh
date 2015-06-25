@@ -44,6 +44,7 @@ namespace RFFGen
     }
   };
 
+  /// Specialization for the case that a matrix can be set to zero by calling the member function zeroes().
   template <class Matrix>
   struct Zero< Matrix , void_t<Checks::TryCallToZeroes<Matrix> > >
   {

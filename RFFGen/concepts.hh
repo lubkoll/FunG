@@ -162,7 +162,9 @@ namespace RFFGen
      *
      * The requirements of MatrixConcept must be satisfied and the number of rows and columns must be equal.
      */
-    struct SymmetricMatrixConcept : ArithmeticConcept {};
+    struct SymmetricMatrixConcept
+        : ArithmeticConcept
+    {};
 
 
     /**

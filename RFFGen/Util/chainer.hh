@@ -7,6 +7,9 @@
 
 namespace RFFGen
 {
+  /**
+   * \cond DOCUMENT_IMPLEMENTATION_DETAILS
+   */
   template <class Function>
   struct Chainer
   {
@@ -30,5 +33,8 @@ namespace RFFGen
       return MathematicalOperations::Chain<Function,OtherFunction>(*static_cast<const Function*>(this),g);
     }
   };
+  /**
+   * \endcond
+   */
 }
 #endif // RFFGEN_UTIL_CHAINER_HH
