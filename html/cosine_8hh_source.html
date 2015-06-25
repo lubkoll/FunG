@@ -119,9 +119,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">namespace </span>CMath</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  {</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="structRFFGen_1_1CMath_1_1Cos.html">   42</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structRFFGen_1_1CMath_1_1Cos.html">Cos</a> : <a class="code" href="structRFFGen_1_1Base.html">Base</a> , <a class="code" href="structRFFGen_1_1Chainer.html">Chainer</a>&lt;Cos&gt;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="structRFFGen_1_1CMath_1_1Cos.html">   42</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structRFFGen_1_1CMath_1_1Cos.html">Cos</a> : <a class="code" href="structRFFGen_1_1Base.html">Base</a> , Chainer&lt;Cos&gt;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <span class="keyword">using</span> <a class="code" href="structRFFGen_1_1Chainer.html">Chainer&lt;Cos&gt;::operator </a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <span class="keyword">using</span> Chainer&lt;Cos&gt;::operator ();</div>
 <div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="structRFFGen_1_1CMath_1_1Cos.html#a950dc0fac1e6a0df91e9beb863af9bee">   49</a></span>&#160;      <span class="keyword">explicit</span> <a class="code" href="structRFFGen_1_1CMath_1_1Cos.html#a950dc0fac1e6a0df91e9beb863af9bee">Cos</a>(<span class="keywordtype">double</span> x=0.)</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="structRFFGen_1_1CMath_1_1Cos.html#a2e962b36f84ff276ce63f6bc95d45d04">update</a>(x);</div>
@@ -164,13 +164,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="structRFFGen_1_1CMath_1_1Cos_html_a748913aa69e699b9d563ed0f44e56384"><div class="ttname"><a href="structRFFGen_1_1CMath_1_1Cos.html#a748913aa69e699b9d563ed0f44e56384">RFFGen::CMath::Cos::d2</a></div><div class="ttdeci">double d2(double dx=1., double dy=1.) const </div><div class="ttdoc">Second (directional) derivative. </div><div class="ttdef"><b>Definition:</b> cosine.hh:70</div></div>
 <div class="ttc" id="structRFFGen_1_1CMath_1_1Cos_html_a950dc0fac1e6a0df91e9beb863af9bee"><div class="ttname"><a href="structRFFGen_1_1CMath_1_1Cos.html#a950dc0fac1e6a0df91e9beb863af9bee">RFFGen::CMath::Cos::Cos</a></div><div class="ttdeci">Cos(double x=0.)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> cosine.hh:49</div></div>
 <div class="ttc" id="structRFFGen_1_1CMath_1_1Cos_html_a6d003c71b37f3d66d02f55d276b55385"><div class="ttname"><a href="structRFFGen_1_1CMath_1_1Cos.html#a6d003c71b37f3d66d02f55d276b55385">RFFGen::CMath::Cos::d3</a></div><div class="ttdeci">double d3(double dx=1., double dy=1., double dz=1.) const </div><div class="ttdoc">Third (directional) derivative. </div><div class="ttdef"><b>Definition:</b> cosine.hh:74</div></div>
-<div class="ttc" id="structRFFGen_1_1Chainer_html"><div class="ttname"><a href="structRFFGen_1_1Chainer.html">RFFGen::Chainer</a></div><div class="ttdef"><b>Definition:</b> sum.hh:34</div></div>
 <div class="ttc" id="structRFFGen_1_1CMath_1_1Cos_html_a2e962b36f84ff276ce63f6bc95d45d04"><div class="ttname"><a href="structRFFGen_1_1CMath_1_1Cos.html#a2e962b36f84ff276ce63f6bc95d45d04">RFFGen::CMath::Cos::update</a></div><div class="ttdeci">void update(const double &amp;x)</div><div class="ttdoc">Reset point of evaluation. </div><div class="ttdef"><b>Definition:</b> cosine.hh:55</div></div>
 <div class="ttc" id="structRFFGen_1_1CMath_1_1Cos_html_a1e5a7d92737ed35ce3c4d3fb5029ba2b"><div class="ttname"><a href="structRFFGen_1_1CMath_1_1Cos.html#a1e5a7d92737ed35ce3c4d3fb5029ba2b">RFFGen::CMath::Cos::d0</a></div><div class="ttdeci">double d0() const noexcept</div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> cosine.hh:62</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 26 2015 00:53:37 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 26 2015 01:06:33 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

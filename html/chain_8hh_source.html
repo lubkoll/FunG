@@ -129,9 +129,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class </span>F , <span class="keyword">class </span>G ,</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;               <span class="keyword">class </span>= FunctionConceptCheck&lt;F&gt;,</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;               <span class="keyword">class </span>= FunctionConceptCheck&lt;G&gt; &gt;</div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html">   61</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html">Chain</a> : <a class="code" href="structRFFGen_1_1Base.html">Base</a> , <a class="code" href="structRFFGen_1_1Chainer.html">Chainer</a>&lt; Chain&lt;F,G,FunctionConceptCheck&lt;F&gt;,FunctionConceptCheck&lt;G&gt; &gt; &gt;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html">   61</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html">Chain</a> : <a class="code" href="structRFFGen_1_1Base.html">Base</a> , Chainer&lt; Chain&lt;F,G,FunctionConceptCheck&lt;F&gt;,FunctionConceptCheck&lt;G&gt; &gt; &gt;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="keyword">using</span> <a class="code" href="structRFFGen_1_1Chainer.html">Chainer&lt; Chain&lt;F,G,FunctionConceptCheck&lt;F&gt;</a>,FunctionConceptCheck&lt;G&gt; &gt; &gt;::operator ();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="keyword">using</span> Chainer&lt; Chain&lt;F,G,FunctionConceptCheck&lt;F&gt;,FunctionConceptCheck&lt;G&gt; &gt; &gt;::operator ();</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <span class="keyword">using</span> FArg = decltype(std::declval&lt;G&gt;().<a class="code" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#aac13e9d28dc10dff07fa40c33b43309f">d0</a>());</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
@@ -251,11 +251,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="structRFFGen_1_1MathematicalOperations_1_1Chain_html_aebcae20e7b869fcaa9ec1039b3de8fd5"><div class="ttname"><a href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#aebcae20e7b869fcaa9ec1039b3de8fd5">RFFGen::MathematicalOperations::Chain::Chain</a></div><div class="ttdeci">Chain()=default</div><div class="ttdoc">Default constructor. May leave member variables uninitialized! Call update before using evaluation...</div></div>
 <div class="ttc" id="structRFFGen_1_1MathematicalOperations_1_1Chain_html_a313e8d55e65802fdcbbd03619dbe3bf2"><div class="ttname"><a href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#a313e8d55e65802fdcbbd03619dbe3bf2">RFFGen::MathematicalOperations::Chain::Chain</a></div><div class="ttdeci">Chain(const F &amp;f_, const G &amp;g_)</div><div class="ttdoc">Constructor taking copies of the functions to be chained. </div><div class="ttdef"><b>Definition:</b> chain.hh:98</div></div>
 <div class="ttc" id="structRFFGen_1_1MathematicalOperations_1_1Chain_html_ad1fd27be6286cadf63fff93595b83c46"><div class="ttname"><a href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#ad1fd27be6286cadf63fff93595b83c46">RFFGen::MathematicalOperations::Chain::d2</a></div><div class="ttdeci">auto d2(ArgX const &amp;dx, ArgY const &amp;dy) const </div><div class="ttdoc">Second directional derivative. </div><div class="ttdef"><b>Definition:</b> chain.hh:150</div></div>
-<div class="ttc" id="structRFFGen_1_1Chainer_html"><div class="ttname"><a href="structRFFGen_1_1Chainer.html">RFFGen::Chainer</a></div><div class="ttdef"><b>Definition:</b> sum.hh:34</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 26 2015 00:53:37 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 26 2015 01:06:33 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
