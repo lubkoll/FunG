@@ -111,7 +111,7 @@
 
 <p>Function arguments can be matrices and/or scalars. Vectors are also possible but most functionality targets on matrices.</p>
 
-<h1>
+<br><h1>
 <a id="overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h1>
 
 <ul>
@@ -123,21 +123,13 @@
   <li><a href=#documentation>Documentation</a></li>
 </ul>
 
-<h1>
+<br><h1>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h1>
 
 <p>This library is header-only and no installation is required. However, make sure you use a recent compiler such as gcc-x, with x>=4.9.0, with <code>-std=c++1y</code></p>
 
-<p>If you want to run the available tests, you can use cmake:</p>
 
-<ul>
-<li>mkdir build</li>
-<li>cd build</li>
-<li>cmake ..</li>
-<li>make</li>
-</ul>
-
-<h1>
+<br><h1>
 <a id="examples" class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h1>
 
 <p>Usage is illustrated using three different examples. Further examples can be found in RFFGen/Tests and RFFGen/Examples.</p>
@@ -273,7 +265,7 @@ double dddf_dxdxdF = f.template d3&lt;0,0,1&gt;(dx1,dx2,dF);
 
 
 
-<h1>
+<br><h1>
 <a id="input_requirements" class="anchor" href=#input_requirements aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements on arithmetic types</h1>
 
 One idea that was followed in the development of this library was to make it compatible with common matrix implementations. Currently you can directly use it with  <a href="http://arma.sourceforge.net/">Armadillo</a> and <a href="http://www.dune-project.org">DUNE</a> matrices. 
@@ -370,7 +362,7 @@ must be provided. Suitable implementations exist for the cases that a zero matri
 
 
 
-<h1>
+<br><h1>
 <a id="ad_comparison" class="anchor" href=#ad_comparison aria-hidden="true"><span class="octicon octicon-link"></span></a>Comparison with different AD libraries</h1>
 
 <p>The performance of RFFGen is demonstrated by several examples comparing it with forward mode automatic differentation of <a href="http://www.fadbad.com">FADBAD++</a> and <a href="https://trilinos.org/packages/sacado">SACADO</a>. Some other implementations were tested too. However, these were far slower and/or buggy. In particular backward mode automatic differentation is significantly slower for 
@@ -391,7 +383,7 @@ All examples were compiled with <code>-O2</code> compiler option with gcc-4.9.2.
 <div id="chart3_div" align=center></div>
 
 
-<h1>
+<br><h1>
 <a id="optimization_strategies" class="anchor" href=#optimization_strategies aria-hidden="true"><span class="octicon octicon-link"></span></a>Optimization strategies</h1>
 In order to get performance comparable to optimized manual implementations some optimization strategies are applied.
 
@@ -436,7 +428,7 @@ The following graph illustrates the mathematical operations that are performed w
 
 
 
-<h1>
+<br><h1>
 <a id="documentation" class="anchor" href=#documentation aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h1>
 
 <p>Doxygen documentation can be found <a href="html/index.html">here</a></p>.
