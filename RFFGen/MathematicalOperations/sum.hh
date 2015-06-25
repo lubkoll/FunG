@@ -31,7 +31,13 @@
 
 namespace RFFGen
 {
+  /**
+   * \cond DOCUMENT_FORWARD_DECLARATIONS
+   */
   template <class> struct Chainer;
+  /**
+   * \endcond
+   */
 
   namespace MathematicalOperations
   {
