@@ -16,10 +16,8 @@ git clone -b gh-pages "${REPO_PATH}" --single-branch ${DOC_PATH}
 cd ${HTML_PATH}
 git rm -rf .
 cd -
-cd RFFGen
 # Generate the HTML documentation.
 doxygen
-cd -
 
 # Create and commit the documentation repo.
 cd ${HTML_PATH}
