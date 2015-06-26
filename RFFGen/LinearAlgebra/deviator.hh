@@ -45,7 +45,7 @@ namespace RFFGen
   {
     /**
      * \ingroup LinearAlgebraGroup
-     * \brief Deviator of a matrix \f$ A\in\mathbb{R}^{n,n} \f$, i.e. \f$ A - \frac{\mathrm{tr}(A)}{n}I \f$.
+     * \brief %Deviator of a matrix \f$ A\in\mathbb{R}^{n,n} \f$, i.e. \f$ A - \frac{\mathrm{tr}(A)}{n}I \f$.
      */
     template <class Matrix, class = Concepts::SymmetricMatrixConceptCheck<Matrix> >
     struct Deviator : MathematicalOperations::Sum< Identity<Matrix> , MathematicalOperations::Product< Trace<Matrix> , Constant<Matrix> > >

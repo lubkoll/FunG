@@ -1,7 +1,7 @@
 
 cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 
-project(rffgen_dev)
+project(rffgen)
 
 enable_language(C CXX)
 
