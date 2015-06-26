@@ -183,7 +183,8 @@ auto thirdDerivative  = f.d3();
 
 <p><img src="http://latex.codecogs.com/gif.latex?W%28F%29%3D%20c_%7BCells%7D%28%5Ciota_1-3%29+%20%5Cfrac%7Bk_1%7D%7Bk_2%7D%5Cexp%28k_2%5B%5Ckappa%5Ciota_1+%281-3%5Ckappa%29%5Ciota_4-1%5D%5E2-1%29" alt="equation"></p>
 
-<p>which constitutes a model for adipose tissue. In this context the invariants depend on the left Cauchy-Green strain tensor. Its implementation is</p>
+<p>which constitutes a model for adipose tissue. In this context the invariants depend on the left Cauchy-Green strain tensor. The part 
+<span lang="latex">\iota_1-3</span> is represented by the <code>ShiftedFirstPrincipalInvariant</code>. The implementation of this model is</p>
 
 <pre><code>#include "RFFGen.hh"
 
