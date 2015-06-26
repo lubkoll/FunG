@@ -91,7 +91,7 @@ namespace RFFGen
    */
   template <class F,
             class = std::enable_if_t< std::is_base_of<Base,F>::value > >
-  constexpr auto operator^ (const F& f, int k)
+  auto operator^ (const F& f, int k)
   {
     assert(k==2);
     if(k!=2)
