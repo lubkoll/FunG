@@ -28,9 +28,6 @@ after_success:
 - sudo apt-get install -qq python-yaml lcov
 - lcov --directory coveralls --base-directory ./ --capture --output-file coveralls/coverage.info
 - lcov --remove coveralls/coverage.info "*/test/*" $IGNORE_COVERAGE "*/Examples/*"  -o coveralls/coverage.info
-- OTHER_LIBS=`grep "submodule .*" .gitmodules | sed 's/\[submodule\ "\(.*\)"\]/"\*\/boost\/\1\.hpp" "\*\/boost\/\1\/\*"/g'| sed "/\"\*\/boost\/$PROJECT_TO_TEST\/\*\"/d" | sed ':a;N;$!ba;s/\n/ /g'`
-- echo $OTHER_LIBS
-- eval "lcov --remove $PROJECT_DIR/coverals/coverage.info $OTHER_LIBS -o $PROJECT_DIR/coverals/coverage.info"
 - gem install coveralls-lcov
 - coveralls-lcov coveralls/coverage.info
 - sudo apt-get install --yes doxygen graphviz
