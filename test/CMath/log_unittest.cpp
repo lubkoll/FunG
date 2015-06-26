@@ -1,3 +1,4 @@
+#define RFFGEN_ENABLE_EXCEPTIONS
 #include "../../RFFGen/RFFGen/CMath/log.hh"
 
 #include <gtest/gtest.h>

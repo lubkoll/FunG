@@ -1,3 +1,4 @@
+#define RFFGEN_ENABLE_EXCEPTIONS
 #include "../../RFFGen/RFFGen/CMath/arcsine.hh"
 
 #include <gtest/gtest.h>
