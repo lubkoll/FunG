@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 481.012658
+%%BoundingBox: 0 0 500 405.063291
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,12 +19,12 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 1.039474 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 1.234375 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
 /yspacing 0 def
-/rows 38 def
+/rows 32 def
 /cols 2 def
 /scalefactor 0 def
 /boxfont /Times-Roman findfont fontheight scalefont def
@@ -176,7 +176,6 @@ boxfont setfont
 (RFFGen::Base) cw
 (RFFGen::Constant< Matrix >) cw
 (RFFGen::Identity< Matrix >) cw
-(RFFGen::Identity< Matrix >) cw
 (RFFGen::LinearAlgebra::LinearizedStrainTensor< Matrix >) cw
 (RFFGen::MathematicalOperations::Product< Trace< Matrix >, Constant< Matrix > >) cw
 (RFFGen::CMath::ASin) cw
@@ -190,13 +189,8 @@ boxfont setfont
 (RFFGen::CMath::Sin) cw
 (RFFGen::CMath::Tan) cw
 (RFFGen::Concepts::FunctionConcept) cw
-(RFFGen::Concepts::FunctionConcept) cw
 (RFFGen::Constant< Type, class >) cw
 (RFFGen::Identity< Arg, class >) cw
-(RFFGen::Identity< Arg, class >) cw
-(RFFGen::LinearAlgebra::ConstantSizeTrace< Matrix, class >) cw
-(RFFGen::LinearAlgebra::DynamicSizeDeterminant< Matrix >) cw
-(RFFGen::LinearAlgebra::DynamicSizeTrace< Matrix >) cw
 (RFFGen::LinearAlgebra::LeftCauchyGreenStrainTensor< Matrix, class >) cw
 (RFFGen::LinearAlgebra::LinearizedStrainTensor< Matrix, class >) cw
 (RFFGen::LinearAlgebra::SecondPrincipalInvariant< Matrix, class >) cw
@@ -222,30 +216,24 @@ boundx scalefactor div boundy scalefactor div scale
 
 % ----- classes -----
 
- (RFFGen::Base) 0.000000 37.000000 box
- (RFFGen::Constant< Matrix >) 1.000000 36.000000 box
- (RFFGen::Identity< Matrix >) 1.000000 35.000000 box
- (RFFGen::Identity< Matrix >) 1.000000 34.000000 box
- (RFFGen::LinearAlgebra::LinearizedStrainTensor< Matrix >) 1.000000 33.000000 box
- (RFFGen::MathematicalOperations::Product< Trace< Matrix >, Constant< Matrix > >) 1.000000 32.000000 box
- (RFFGen::CMath::ASin) 1.000000 31.000000 box
- (RFFGen::CMath::Cos) 1.000000 30.000000 box
- (RFFGen::CMath::Exp) 1.000000 29.000000 box
- (RFFGen::CMath::Exp2) 1.000000 28.000000 box
- (RFFGen::CMath::LN) 1.000000 27.000000 box
- (RFFGen::CMath::Log10) 1.000000 26.000000 box
- (RFFGen::CMath::Log2) 1.000000 25.000000 box
- (RFFGen::CMath::Pow< dividend, divisor >) 1.000000 24.000000 box
- (RFFGen::CMath::Sin) 1.000000 23.000000 box
- (RFFGen::CMath::Tan) 1.000000 22.000000 box
- (RFFGen::Concepts::FunctionConcept) 1.000000 21.000000 box
- (RFFGen::Concepts::FunctionConcept) 1.000000 20.000000 box
- (RFFGen::Constant< Type, class >) 1.000000 19.000000 box
- (RFFGen::Identity< Arg, class >) 1.000000 18.000000 box
- (RFFGen::Identity< Arg, class >) 1.000000 17.000000 box
- (RFFGen::LinearAlgebra::ConstantSizeTrace< Matrix, class >) 1.000000 16.000000 box
- (RFFGen::LinearAlgebra::DynamicSizeDeterminant< Matrix >) 1.000000 15.000000 box
- (RFFGen::LinearAlgebra::DynamicSizeTrace< Matrix >) 1.000000 14.000000 box
+ (RFFGen::Base) 0.000000 31.000000 box
+ (RFFGen::Constant< Matrix >) 1.000000 30.000000 box
+ (RFFGen::Identity< Matrix >) 1.000000 29.000000 box
+ (RFFGen::LinearAlgebra::LinearizedStrainTensor< Matrix >) 1.000000 28.000000 box
+ (RFFGen::MathematicalOperations::Product< Trace< Matrix >, Constant< Matrix > >) 1.000000 27.000000 box
+ (RFFGen::CMath::ASin) 1.000000 26.000000 box
+ (RFFGen::CMath::Cos) 1.000000 25.000000 box
+ (RFFGen::CMath::Exp) 1.000000 24.000000 box
+ (RFFGen::CMath::Exp2) 1.000000 23.000000 box
+ (RFFGen::CMath::LN) 1.000000 22.000000 box
+ (RFFGen::CMath::Log10) 1.000000 21.000000 box
+ (RFFGen::CMath::Log2) 1.000000 20.000000 box
+ (RFFGen::CMath::Pow< dividend, divisor >) 1.000000 19.000000 box
+ (RFFGen::CMath::Sin) 1.000000 18.000000 box
+ (RFFGen::CMath::Tan) 1.000000 17.000000 box
+ (RFFGen::Concepts::FunctionConcept) 1.000000 16.000000 box
+ (RFFGen::Constant< Type, class >) 1.000000 15.000000 box
+ (RFFGen::Identity< Arg, class >) 1.000000 14.000000 box
  (RFFGen::LinearAlgebra::LeftCauchyGreenStrainTensor< Matrix, class >) 1.000000 13.000000 box
  (RFFGen::LinearAlgebra::LinearizedStrainTensor< Matrix, class >) 1.000000 12.000000 box
  (RFFGen::LinearAlgebra::SecondPrincipalInvariant< Matrix, class >) 1.000000 11.000000 box
@@ -266,24 +254,12 @@ boundx scalefactor div boundy scalefactor div scale
 % ----- relations -----
 
 solid
-1 0.000000 36.250000 out
-solid
-0 0.000000 36.500000 hedge
-solid
-0 0.000000 35.500000 hedge
-solid
-0 0.000000 34.500000 hedge
-dotted
-0 0.000000 33.500000 hedge
-solid
-0 0.000000 32.500000 hedge
-solid
-0 0.000000 31.500000 hedge
+1 0.000000 30.250000 out
 solid
 0 0.000000 30.500000 hedge
 solid
 0 0.000000 29.500000 hedge
-solid
+dotted
 0 0.000000 28.500000 hedge
 solid
 0 0.000000 27.500000 hedge
@@ -342,4 +318,4 @@ solid
 solid
 0 0.000000 0.500000 hedge
 solid
-0.000000 37.000000 0.500000 vedge
+0.000000 31.000000 0.500000 vedge

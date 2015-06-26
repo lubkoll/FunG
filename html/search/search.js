@@ -10,9 +10,9 @@ var indexSectionsWithContent =
   0: "abcdefgilmnoprstuvyz",
   1: "abcdefilmnopstvyz",
   2: "clmr",
-  3: "amns",
+  3: "acmns",
   4: "acdefilmnoprstuvyz",
-  5: "cefgmstv",
+  5: "cdefgmstv",
   6: "i",
   7: "bcelmrs"
 };

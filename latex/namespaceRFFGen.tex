@@ -3,16 +3,16 @@
 }
 
 
-Main namespace of the \hyperlink{namespaceRFFGen}{R\-F\-F\-Gen} library.  
+Main namespace of the R\-F\-F\-Gen library.  
 
 
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{structRFFGen_1_1Identity}{Identity}
-\begin{DoxyCompactList}\small\item\em Identity mapping $ f(x)=x $. \end{DoxyCompactList}\item 
 struct \hyperlink{structRFFGen_1_1Constant}{Constant}
 \begin{DoxyCompactList}\small\item\em Wrap a constant. \end{DoxyCompactList}\item 
+struct \hyperlink{structRFFGen_1_1Identity}{Identity}
+\begin{DoxyCompactList}\small\item\em Identity mapping $ f(x)=x $. \end{DoxyCompactList}\item 
 struct \hyperlink{structRFFGen_1_1Variable}{Variable}
 \begin{DoxyCompactList}\small\item\em Independent variable. Can be uniquely identified by its id. \end{DoxyCompactList}\item 
 struct \hyperlink{structRFFGen_1_1YieldSurface}{Yield\-Surface}
@@ -41,9 +41,6 @@ struct \hyperlink{structRFFGen_1_1Zero_3_01Matrix_00_01void__t_3_01Checks_1_1Try
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{namespaceRFFGen_af20942553f30cb8b3a7dc84b9581aeb3}{{\footnotesize template$<$class Arg $>$ }\\auto \hyperlink{namespaceRFFGen_af20942553f30cb8b3a7dc84b9581aeb3}{identity} (const Arg \&x)}\label{namespaceRFFGen_af20942553f30cb8b3a7dc84b9581aeb3}
-
-\begin{DoxyCompactList}\small\item\em Construct Identity$<$\-Arg$>$(x). \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Arg $>$ }\\auto \hyperlink{namespaceRFFGen_a1e5703444079774f6e6a9161a9bacc6b}{const\-Ref} (const Arg \&x)
 \begin{DoxyCompactList}\small\item\em Generate a constant function that stores its argument as constant reference. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class F $>$ }\\auto \hyperlink{namespaceRFFGen_ad0d4bfae5fedad4740c0ab09cb4ff0a1}{finalize} (const F \&f)
@@ -66,6 +63,9 @@ struct \hyperlink{structRFFGen_1_1Zero_3_01Matrix_00_01void__t_3_01Checks_1_1Try
 \begin{DoxyCompactList}\small\item\em overload of \char`\"{}-\/\char`\"{}-\/operator for the generation of functions. Here the second argument is a constant that is wrapped in to an object of type \hyperlink{structRFFGen_1_1Constant}{Constant}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class F , class T , class  = std\-::enable\-\_\-if\-\_\-t$<$std\-::is\-\_\-convertible$<$\-T,decltype(std\-::declval$<$\-F$>$().\-d0())$>$\-::value \&\&                                     std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$\-::value$>$$>$ }\\auto \hyperlink{namespaceRFFGen_a7b334216a1a47d21c0ecb857ad279580}{operator-\/} (const T \&t, const F \&f)
 \begin{DoxyCompactList}\small\item\em overload of \char`\"{}-\/\char`\"{}-\/operator for the generation of functions. Here the first argument is a constant that is wrapped in to an object of type \hyperlink{structRFFGen_1_1Constant}{Constant}. \end{DoxyCompactList}\item 
+\hypertarget{namespaceRFFGen_af20942553f30cb8b3a7dc84b9581aeb3}{{\footnotesize template$<$class Arg $>$ }\\auto \hyperlink{namespaceRFFGen_af20942553f30cb8b3a7dc84b9581aeb3}{identity} (const Arg \&x)}\label{namespaceRFFGen_af20942553f30cb8b3a7dc84b9581aeb3}
+
+\begin{DoxyCompactList}\small\item\em Construct Identity$<$\-Arg$>$(x). \end{DoxyCompactList}\item 
 \hypertarget{namespaceRFFGen_a9ff332846164ad83741fdb7b7f62a0d6}{{\footnotesize template$<$int id, class T $>$ }\\\hyperlink{structRFFGen_1_1Variable}{Variable}$<$ T, id $>$ \hyperlink{namespaceRFFGen_a9ff332846164ad83741fdb7b7f62a0d6}{variable} (const T \&t)}\label{namespaceRFFGen_a9ff332846164ad83741fdb7b7f62a0d6}
 
 \begin{DoxyCompactList}\small\item\em Generate variable from input type. \end{DoxyCompactList}\item 
@@ -144,7 +144,7 @@ struct \hyperlink{structRFFGen_1_1Zero_3_01Matrix_00_01void__t_3_01Checks_1_1Try
 
 
 \subsection{Detailed Description}
-Main namespace of the \hyperlink{namespaceRFFGen}{R\-F\-F\-Gen} library. \begin{DoxySeeAlso}{See Also}
+Main namespace of the R\-F\-F\-Gen library. \begin{DoxySeeAlso}{See Also}
 \hyperlink{namespaceMathematicalOperations}{Mathematical\-Operations} 
 
 \hyperlink{namespaceCMath}{C\-Math} 

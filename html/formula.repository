@@ -124,3 +124,4 @@
 \form#123:$scaling (invariant - offset)$
 \form#124:$offset = dim$
 \form#125:$offset = 1$
+\form#126:$\det(A)$

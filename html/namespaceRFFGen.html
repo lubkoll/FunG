@@ -90,16 +90,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Main namespace of the <a class="el" href="namespaceRFFGen.html" title="Main namespace of the RFFGen library. ">RFFGen</a> library.  
+<p>Main namespace of the RFFGen library.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRFFGen_1_1Identity.html">Identity</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identity mapping <img class="formulaInl" alt="$ f(x)=x $" src="form_3.png"/>.  <a href="structRFFGen_1_1Identity.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRFFGen_1_1Constant.html">Constant</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrap a constant.  <a href="structRFFGen_1_1Constant.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRFFGen_1_1Identity.html">Identity</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identity mapping <img class="formulaInl" alt="$ f(x)=x $" src="form_3.png"/>.  <a href="structRFFGen_1_1Identity.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRFFGen_1_1Variable.html">Variable</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Independent variable. Can be uniquely identified by its id.  <a href="structRFFGen_1_1Variable.html#details">More...</a><br/></td></tr>
@@ -142,11 +142,6 @@ template&lt;class... Types&gt; </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af20942553f30cb8b3a7dc84b9581aeb3"><td class="memTemplParams" colspan="2"><a class="anchor" id="af20942553f30cb8b3a7dc84b9581aeb3"></a>
-template&lt;class Arg &gt; </td></tr>
-<tr class="memitem:af20942553f30cb8b3a7dc84b9581aeb3"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html#af20942553f30cb8b3a7dc84b9581aeb3">identity</a> (const Arg &amp;x)</td></tr>
-<tr class="memdesc:af20942553f30cb8b3a7dc84b9581aeb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct Identity&lt;Arg&gt;(x). <br/></td></tr>
-<tr class="separator:af20942553f30cb8b3a7dc84b9581aeb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e5703444079774f6e6a9161a9bacc6b"><td class="memTemplParams" colspan="2">template&lt;class Arg &gt; </td></tr>
 <tr class="memitem:a1e5703444079774f6e6a9161a9bacc6b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html#a1e5703444079774f6e6a9161a9bacc6b">constRef</a> (const Arg &amp;x)</td></tr>
 <tr class="memdesc:a1e5703444079774f6e6a9161a9bacc6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a constant function that stores its argument as constant reference.  <a href="#a1e5703444079774f6e6a9161a9bacc6b">More...</a><br/></td></tr>
@@ -191,6 +186,11 @@ template&lt;class Arg &gt; </td></tr>
 <tr class="memitem:a7b334216a1a47d21c0ecb857ad279580"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html#a7b334216a1a47d21c0ecb857ad279580">operator-</a> (const T &amp;t, const F &amp;f)</td></tr>
 <tr class="memdesc:a7b334216a1a47d21c0ecb857ad279580"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "-"-operator for the generation of functions. Here the first argument is a constant that is wrapped in to an object of type <a class="el" href="structRFFGen_1_1Constant.html" title="Wrap a constant. ">Constant</a>.  <a href="#a7b334216a1a47d21c0ecb857ad279580">More...</a><br/></td></tr>
 <tr class="separator:a7b334216a1a47d21c0ecb857ad279580"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af20942553f30cb8b3a7dc84b9581aeb3"><td class="memTemplParams" colspan="2"><a class="anchor" id="af20942553f30cb8b3a7dc84b9581aeb3"></a>
+template&lt;class Arg &gt; </td></tr>
+<tr class="memitem:af20942553f30cb8b3a7dc84b9581aeb3"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html#af20942553f30cb8b3a7dc84b9581aeb3">identity</a> (const Arg &amp;x)</td></tr>
+<tr class="memdesc:af20942553f30cb8b3a7dc84b9581aeb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct Identity&lt;Arg&gt;(x). <br/></td></tr>
+<tr class="separator:af20942553f30cb8b3a7dc84b9581aeb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ff332846164ad83741fdb7b7f62a0d6"><td class="memTemplParams" colspan="2"><a class="anchor" id="a9ff332846164ad83741fdb7b7f62a0d6"></a>
 template&lt;int id, class T &gt; </td></tr>
 <tr class="memitem:a9ff332846164ad83741fdb7b7f62a0d6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structRFFGen_1_1Variable.html">Variable</a>&lt; T, id &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceRFFGen.html#a9ff332846164ad83741fdb7b7f62a0d6">variable</a> (const T &amp;t)</td></tr>
@@ -327,7 +327,7 @@ template&lt;class Arg1 , class Arg2 , class  = std::enable_if_t&lt; !std::is_bas
 <tr class="separator:a1248d7bf9320b86381dae791086c1f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Main namespace of the <a class="el" href="namespaceRFFGen.html" title="Main namespace of the RFFGen library. ">RFFGen</a> library. </p>
+<div class="textblock"><p>Main namespace of the RFFGen library. </p>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="namespaceMathematicalOperations.html" title="Mathematical operations and corresponding differentation rules. ">MathematicalOperations</a> </dd>
 <dd>
 <a class="el" href="namespaceCMath.html" title="Wrappers for functions from &lt;cmath&gt;. ">CMath</a> </dd></dl>
@@ -725,7 +725,7 @@ template&lt;class Matrix &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 26 2015 01:06:33 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 26 2015 12:56:07 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

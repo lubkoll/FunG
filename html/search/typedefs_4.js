@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['matrixnorm',['MatrixNorm',['../group__LinearAlgebraGroup.html#gaa59381731a80fe009e56f86f78ebc703',1,'RFFGen::LinearAlgebra']]]
+  ['geometricnonlinearity',['GeometricNonlinearity',['../group__LinearAlgebraGroup.html#ga435378ac8a773de0a3a8b3b8f67fee0c',1,'RFFGen::LinearAlgebra']]]
 ];
