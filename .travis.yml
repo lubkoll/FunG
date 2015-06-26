@@ -32,7 +32,7 @@ after_success:
 - echo $OTHER_LIBS
 - eval "lcov --remove $PROJECT_DIR/coverals/coverage.info $OTHER_LIBS -o $PROJECT_DIR/coverals/coverage.info"
 - gem install coveralls-lcov
-- coveralls-lcov coverals/coverage.info
+- coveralls-lcov coveralls/coverage.info
 - sudo apt-get install --yes doxygen graphviz
 - cd ..
 - "./config/publish-doc"
