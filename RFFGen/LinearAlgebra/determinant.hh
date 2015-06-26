@@ -152,10 +152,6 @@ namespace RFFGen
     }
 
     /**
-     * \endcond
-     */
-
-    /**
      * \ingroup LinearAlgebraGroup
      * \brief Determinant of constant size matrix with first three derivatives.
      */
@@ -219,7 +215,14 @@ namespace RFFGen
       Detail::DeterminantImpl<Matrix,2> det2D;
       Detail::DeterminantImpl<Matrix,3> det3D;
     };
+    /**
+     * \endcond
+     */
 
+    /**
+     * \ingroup LinearAlgebraGroup
+     * \brief Determinant with first three derivatives.
+     */
     template < class Matrix >
     using Determinant = std::conditional_t< Checks::isConstantSizeMatrix<Matrix>() , ConstantSizeDeterminant<Matrix> , DynamicSizeDeterminant<Matrix> >;
 
@@ -235,7 +238,7 @@ namespace RFFGen
 
     /**
      * \ingroup LinearAlgebraGroup
-     * \brief Convenient computation determinant.
+     * \brief Convenient computation of \f$\det(A)\f$.
      */
     template<class Matrix>
     auto determinant(Matrix const& A)

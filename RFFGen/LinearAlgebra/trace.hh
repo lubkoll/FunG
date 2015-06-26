@@ -82,9 +82,7 @@ namespace RFFGen
         return trace(A);
       }
     }
-    /**
-     * \endcond
-     */
+
 
     /**
      * \ingroup LinearAlgebraGroup
@@ -159,7 +157,7 @@ namespace RFFGen
       /// Reset point of evaluation.
       void update(const Matrix& A)
       {
-#ifndef RFFGEN_DISABLE_DYNAMIC_CHECKS
+#ifdef RFFGEN_ENABLE_EXCEPTIONS
         if( rows(A) != cols(A) ) throw NonSymmetricMatrixException("DynamicSizeTrace",rows(A),cols(A),__FILE__,__LINE__);
 #endif
 
@@ -200,14 +198,19 @@ namespace RFFGen
     private:
       std::decay_t< at_t<Matrix> > trace = 0.;
     };
+    /**
+     * \endcond
+     */
 
+    /**
+     * \ingroup LinearAlgebraGroup
+     * \brief Trace of a matrix (sum of diagonal elements).
+     */
     template< class Matrix >
     using Trace = std::conditional_t< Checks::isConstantSizeMatrix<Matrix>() , ConstantSizeTrace<Matrix> , DynamicSizeTrace<Matrix> >;
 
     /**
-     * \ingroup LinearAlgebraGroup
-     * \brief Convenient generation of Trace<Matrix>.
-     * \return Trace<Matrix>(A)
+     * \cond DOCUMENT_IMPLEMENATION_DETAILS
      */
     template <class Matrix>
     auto trace_impl(const Matrix& A, std::true_type)
@@ -220,7 +223,15 @@ namespace RFFGen
     {
       return Trace< std::decay_t<decltype(f.d0())> >( f.d0() )( f );
     }
+    /**
+     * \endcond
+     */
 
+    /**
+     * \ingroup LinearAlgebraGroup
+     * \brief Convenient generation of Trace<Matrix>.
+     * \return Trace<Matrix>(A)
+     */
     template <class Arg>
     auto trace(const Arg& arg)
     {
