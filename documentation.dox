@@ -35,9 +35,6 @@
 /**
  * \defgroup CMathGroup CMath
  * \brief Wrappers for functions from \<cmath\>.
- *
- * Provides Cos, Sin, LN, Exp, Pow<int>, Sqrt.
- * You may also use the objects cosine, sine, ln, expo, sqr and the template function power\<int\>().
  */
 
 /**

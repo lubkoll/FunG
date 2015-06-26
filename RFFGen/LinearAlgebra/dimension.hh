@@ -36,9 +36,15 @@ namespace RFFGen
 
   namespace LinearAlgebra
   {
+    /**
+     * \cond DOCUMENT_IMPLEMENTATION_DETAILS
+     */
     /// Specialize this for your matrix class. Dimension (number of rows/columns for square matrices) must be provided by a static member variable called value.
     template <class Matrix, class = Concepts::SymmetricMatrixConceptCheck<Matrix> >
     struct ExtractDimension : NumberOfRows<Matrix> {};
+    /**
+     * \endcond
+     */
 
     /// Dimension \f$n\f$ of a fixed size matrix in \f$\mathbb{R}^{n,n}\f$.
     template <class Matrix>
