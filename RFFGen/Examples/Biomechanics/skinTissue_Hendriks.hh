@@ -92,7 +92,7 @@ namespace RFFGen
   template <class InflationPenalty, class CompressionPenalty, class Matrix, int offset = LinearAlgebra::dimension<Matrix>()>
   auto compressibleSkin_Hendriks(double c0, double c1, double d0, double d1, const Matrix& F)
   {
-    return incompressibleSkin_Hendriks(c0,c1,F) + volumetricPenalty<InflationPenalty,CompressionPenalty>(d0,d1,F);
+    return incompressibleSkin_Hendriks<Matrix,offset>(c0,c1,F) + volumetricPenalty<InflationPenalty,CompressionPenalty>(d0,d1,F);
   }
 
   /**

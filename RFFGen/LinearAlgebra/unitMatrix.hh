@@ -33,13 +33,25 @@ namespace RFFGen
   {
     /**
      * \ingroup LinearAlgebraGroup
-     * \brief Compute unit matrix for the specified matrix type. This requires that a corresponding specialization of InitZeroFunction is provided.
+     * \brief Compute unit matrix for the specified constant size matrix type. This requires that a corresponding specialization of Zero is provided.
      */
-    template <class Matrix>
+    template <class Matrix, class = std::enable_if_t<Checks::isConstantSizeMatrix<Matrix>()> >
     Matrix unitMatrix()
     {
       Matrix A = zero<Matrix>();
       for(int i=0; i<dimension<Matrix>(); ++i) at(A,i,i) = 1;
+      return A;
+    }
+
+    /**
+     * \ingroup LinearAlgebraGroup
+     * \brief Compute unit matrix for the specified dynamic size matrix type. This requires that a corresponding specialization of Zero is provided.
+     */
+    template <class Matrix, class = std::enable_if_t<!Checks::isConstantSizeMatrix<Matrix>()> >
+    Matrix unitMatrix(int rows)
+    {
+      Matrix A = zero<Matrix>(rows,rows);
+      for(int i=0; i<rows; ++i) at(A,i,i) = 1;
       return A;
     }
   }

@@ -23,6 +23,8 @@
 
 #include <utility>
 
+#include "Util/staticChecks.hh"
+
 namespace RFFGen
 {
   /**
@@ -31,7 +33,7 @@ namespace RFFGen
   namespace Checks
   {
     template <class Matrix>
-    using TryCallToZeroes = decltype(std::declval<Matrix>().zeroes());
+    using TryCallToZeroes = decltype(std::declval<Matrix>().zeros());
 
     template <class Matrix>
     using TryCallToFill   = decltype(std::declval<Matrix>().fill(0));
@@ -53,21 +55,6 @@ namespace RFFGen
     }
   };
 
-  /// Specialization for the case that a matrix can be set to zero by calling the member function zeroes().
-  template <class Matrix>
-  struct Zero< Matrix , void_t<Checks::TryCallToZeroes<Matrix> > >
-  {
-    /**
-     * @return zero matrix
-     */
-    Matrix operator()() const
-    {
-      Matrix m;
-      m.zeroes();
-      return m;
-    }
-  };
-
   /// Specialization for the case that a matrix can be set to zero by calling the member function fill(0).
   template <class Matrix>
   struct Zero< Matrix , void_t<Checks::TryCallToFill<Matrix> > >
@@ -81,17 +68,38 @@ namespace RFFGen
       m.fill(0);
       return m;
     }
+
+    /**
+     * @brief Set all entries of m to 0.
+     */
+    Matrix& operator()(Matrix& m) const
+    {
+      m.fill(0);
+      return m;
+    }
   };
 
   /**
    * Requires that a specialization of struct Zero exists for Matrix.
-   * @return zero matrix
+   * @return constant size zero matrix
    */
-  template <class Matrix>
+  template <class Matrix, class = std::enable_if_t<Checks::isConstantSizeMatrix<Matrix>()> >
   Matrix zero()
   {
     return Zero<Matrix>()();
   }
+
+  /**
+   * Requires that a specialization of struct Zero exists for Matrix.
+   * @return dynamic size zero matrix
+   */
+  template <class Matrix, class = std::enable_if_t<!Checks::isConstantSizeMatrix<Matrix>()> >
+  constexpr Matrix zero(int rows, int cols)
+  {
+    Matrix m(rows,cols);
+    return Zero<Matrix>()(m);
+  }
+
 }
 
 #endif // RFFGEN_UTIL_ZERO_HH
