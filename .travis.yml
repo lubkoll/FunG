@@ -22,7 +22,7 @@ script:
 - make
 - "./unit_tests"
 after_success:
-- coveralls --root .. --exclude ../eigen --exclude test --exclude external --gcov 'gcov-4.9' --gcov-options '\-lp'
+- coveralls --root .. --exclude ../../eigen --exclude test --exclude external --gcov 'gcov-4.9' --gcov-options '\-lp'
 - sudo apt-get install --yes doxygen graphviz
 - cd ..
 - "./config/publish-doc"
