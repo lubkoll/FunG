@@ -45,9 +45,7 @@ add_dependencies(gtest git_update)
 set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest-all.cc  PROPERTIES GENERATED 1)
 set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest_main.cc PROPERTIES GENERATED 1)
 
-include_directories(/home/ignaz/lib/eigen)
-
-link_directories(/home/ignaz/lib/armadillo-4.650.4/)
+include_directories(eigen)
 
 aux_source_directory(test/CMath SRC_LIST)
 aux_source_directory(test/Examples SRC_LIST)
