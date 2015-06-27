@@ -51,36 +51,39 @@ namespace RFFGen
       /**
        * \brief Computes the trace of \f$A\f$, i.e. the sum of diagonal elements.
        */
-      template <class Matrix>
-      auto trace(Matrix const& A)
+      template <int>
+      struct ComputeTrace
       {
-        auto val = at(A,0,0);
-        for(int i = 1; i < rows<Matrix>(); ++i) val += at(A,i,i);
-        return val;
-      }
+        template <class Matrix>
+        static auto apply(const Matrix& A)
+        {
+          auto val = at(A,0,0);
+          for(int i = 1; i < rows<Matrix>(); ++i) val += at(A,i,i);
+          return val;
+        }
+      };
 
       /// Trace of 2x2-matrix.
-      template <class Matrix>
-      auto computeTrace(const Matrix& A, std::integral_constant<int,2>)
+      template <>
+      struct ComputeTrace<2>
       {
-        return at(A,0,0) + at(A,1,1) ;
-      }
+        template <class Matrix>
+        static auto apply(const Matrix& A)
+        {
+          return at(A,0,0) + at(A,1,1) ;
+        }
+      };
 
       /// Trace of a 3x3 matrix.
-      template <class Matrix>
-      __attribute__((always_inline)) auto computeTrace(const Matrix& A, std::integral_constant<int,3>)
+      template <>
+      struct ComputeTrace<3>
       {
-        return at(A,0,0) + at(A,1,1) + at(A,2,2);
-      }
-
-      template <int a, int b> struct Bigger { static constexpr bool value = a > b; };
-
-      /// General implementation of a matrix trace.
-      template <class Matrix, int n, class = std::enable_if_t<Bigger<n,3>::value> >
-      auto computeTrace(const Matrix& A, std::integral_constant<int,n>)
-      {
-        return trace(A);
-      }
+        template <class Matrix>
+        static auto apply(const Matrix& A)
+        {
+          return at(A,0,0) + at(A,1,1) + at(A,2,2);
+        }
+      };
     }
 
 
@@ -104,7 +107,7 @@ namespace RFFGen
       /// Reset point of evaluation.
       void update(const Matrix& A)
       {
-        trace = Detail::computeTrace(A,std::integral_constant<int,dimension<Matrix>()>());
+        trace = Detail::ComputeTrace<dimension<Matrix>()>::apply(A);
       }
 
       /// Function value. Convenient access to d0.
@@ -130,7 +133,7 @@ namespace RFFGen
       template <int>
       auto d1(const Matrix& dA) const
       {
-        return Detail::computeTrace(dA,std::integral_constant<int,dimension<Matrix>()>());
+        return Detail::ComputeTrace<dimension<Matrix>()>::apply(dA);
       }
 
     private:
@@ -212,16 +215,27 @@ namespace RFFGen
     /**
      * \cond DOCUMENT_IMPLEMENATION_DETAILS
      */
-    template <class Matrix>
-    auto trace_impl(const Matrix& A, std::true_type)
+    namespace Detail
     {
-      return Trace<Matrix>(A);
-    }
+      template <bool>
+      struct TraceImpl
+      {
+        template <class Matrix>
+        static auto apply(const Matrix& A)
+        {
+          return Trace<Matrix>(A);
+        }
+      };
 
-    template <class Function>
-    auto trace_impl(const Function& f, std::false_type)
-    {
-      return Trace< std::decay_t<decltype(f.d0())> >( f.d0() )( f );
+      template <>
+      struct TraceImpl<true>
+      {
+        template <class Function>
+        static auto apply(const Function& f)
+        {
+          return Trace< std::decay_t<decltype(f.d0())> >( f.d0() )( f );
+        }
+      };
     }
     /**
      * \endcond
@@ -230,12 +244,12 @@ namespace RFFGen
     /**
      * \ingroup LinearAlgebraGroup
      * \brief Convenient generation of Trace<Matrix>.
-     * \return Trace<Matrix>(A)
+     * \return Trace< std::decay_t<decltype(f.d0())> >(arg.d0())( arg ) if arg is a function, and else Trace<Arg>(arg)
      */
     template <class Arg>
     auto trace(const Arg& arg)
     {
-      return trace_impl( arg , std::integral_constant<bool,!std::is_base_of<Base,Arg>::value>() );
+      return Detail::TraceImpl<std::is_base_of<Base,Arg>::value>::apply(arg);
     }
   }
 }
