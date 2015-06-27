@@ -45,8 +45,8 @@ namespace RFFGen
 
 
     /// Specialization for matrices.
-    template < template <class,int,int> class Matrix, class T, int n, int m, class MatrixConceptCheck>
-    struct NumberOfRows< Matrix<T,n,m> , MatrixConceptCheck > : std::integral_constant<int,n> {};
+    template < template <class,int,int...> class Matrix, class T, int n, class MatrixConceptCheck, int... m>
+    struct NumberOfRows< Matrix<T,n,m...> , MatrixConceptCheck > : std::integral_constant<int,n> {};
 
     /// Specialization for matrices.
     template < template <class,unsigned,unsigned> class Matrix, class T, unsigned n, unsigned m, class MatrixConceptCheck>
@@ -81,6 +81,10 @@ namespace RFFGen
     /// Specialization for matrices.
     template < template <class,int,int> class Matrix, class T, int n, int m, class MatrixConceptCheck>
     struct NumberOfColumns< Matrix<T,n,m> , MatrixConceptCheck > : std::integral_constant<int,m> {};
+
+    /// Specialization for matrices.
+    template < template <class,int,int,int...> class Matrix, class T, int n, int m, class MatrixConceptCheck, int... other>
+    struct NumberOfColumns< Matrix<T,n,m,other...> , MatrixConceptCheck > : std::integral_constant<int,m> {};
 
     /// Specialization for matrices.
     template < template <class,unsigned,unsigned> class Matrix, class T, unsigned n, unsigned m, class MatrixConceptCheck>

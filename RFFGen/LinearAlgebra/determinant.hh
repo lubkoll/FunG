@@ -75,7 +75,7 @@ namespace RFFGen
 
       template<class Matrix>
       class DeterminantImpl< Matrix , 2 , Concepts::SymmetricMatrixConceptCheck<Matrix> >
-          : public Base , public Chainer< DeterminantImpl<Matrix,2,Concepts::SymmetricMatrixConceptCheck<Matrix> >
+          : public Base , public Chainer< DeterminantImpl<Matrix,2,Concepts::SymmetricMatrixConceptCheck<Matrix> > >
       {
       public:
         DeterminantImpl() = default;
@@ -112,7 +112,7 @@ namespace RFFGen
 
       template <class Matrix>
       class DeterminantImpl<Matrix,3,Concepts::SymmetricMatrixConceptCheck<Matrix> >
-          : public Base , public Chainer< DeterminantImpl<Matrix,3,Concepts::SymmetricMatrixConceptCheck<Matrix> >
+          : public Base , public Chainer< DeterminantImpl<Matrix,3,Concepts::SymmetricMatrixConceptCheck<Matrix> > >
       {
       public:
         DeterminantImpl() = default;
@@ -150,6 +150,9 @@ namespace RFFGen
         std::decay_t< at_t<Matrix> > resultOfD0 = 0.;
       };
     }
+    /**
+     * \endcond
+     */
 
     /**
      * \ingroup LinearAlgebraGroup

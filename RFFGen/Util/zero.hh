@@ -25,11 +25,20 @@
 
 namespace RFFGen
 {
+  /**
+   * \cond DOCUMENT_IMPLEMENTATION_DETAILS
+   */
   namespace Checks
   {
     template <class Matrix>
     using TryCallToZeroes = decltype(std::declval<Matrix>().zeroes());
+
+    template <class Matrix>
+    using TryCallToFill   = decltype(std::declval<Matrix>().fill(0));
   }
+  /**
+   * \endcond
+   */
 
   /// Specialize this struct for your matrix type if a zero matrix cannot be generated via Matrix(0.).
   template <class Matrix, class = void>
@@ -55,6 +64,21 @@ namespace RFFGen
     {
       Matrix m;
       m.zeroes();
+      return m;
+    }
+  };
+
+  /// Specialization for the case that a matrix can be set to zero by calling the member function fill(0).
+  template <class Matrix>
+  struct Zero< Matrix , void_t<Checks::TryCallToFill<Matrix> > >
+  {
+    /**
+     * @return zero matrix
+     */
+    Matrix operator()() const
+    {
+      Matrix m;
+      m.fill(0);
       return m;
     }
   };

@@ -20,7 +20,7 @@ namespace RFFGen
       template < class Matrix , bool accessVia_n_rows >
       struct Rows<Matrix,true,accessVia_n_rows>
       {
-        auto operator()(const Matrix& A) const noexcept(std::declval<Matrix>().rows())
+        auto operator()(const Matrix& A) const
         {
           return A.rows();
         }
@@ -40,7 +40,7 @@ namespace RFFGen
       template < class Matrix , bool accessVia_n_cols >
       struct Cols<Matrix,true,accessVia_n_cols>
       {
-        auto operator()(const Matrix& A) const noexcept(std::declval<Matrix>().cols())
+        auto operator()(const Matrix& A) const
         {
           return A.cols();
         }
