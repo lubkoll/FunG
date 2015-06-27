@@ -20,7 +20,7 @@
 
 #include <tuple>
 
-#include <Eigen/Dense>
+#include <eigen/Eigen/Dense>
 #include <gtest/gtest.h>
 
 #include "Examples/Rubber/neoHooke.hh"
