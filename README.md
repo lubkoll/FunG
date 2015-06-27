@@ -3,3 +3,5 @@
 # RFFGen - Fast Function Generation
 See <a href="http://lubkoll.github.io/RFFGen">http://lubkoll.github.io/RFFGen</a>.
 
+Coverage status is not correct... Code is tested, but the unit_tests do not yet cover the linear algebra part.
+
