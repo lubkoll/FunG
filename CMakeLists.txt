@@ -63,7 +63,6 @@ target_link_libraries(
     unit_tests
     gtest
     pthread
-    armadillo
     )
  
 include(CTest)
