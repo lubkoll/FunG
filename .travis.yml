@@ -1,7 +1,6 @@
 language: cpp
 compiler: gcc
 before_install:
-- IGNORE_COVERAGE='*/external/* */test/*'
 - openssl aes-256-cbc -K $encrypted_25dce5acf934_key -iv $encrypted_25dce5acf934_iv
   -in config/travisci_rsa.enc -out config/travisci_rsa -d
 - chmod 0600 config/travisci_rsa
