@@ -65,7 +65,7 @@
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="RFFGen : A fast and easy to use function generation library that gives provides access to the first three derivatives of a (possibly matrix-valued) function.">
+    <meta name="description" content="RFFGen : A C++-library for the generation of complex functions, including first three derivatives and different variable types.">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
@@ -80,7 +80,7 @@
           <a id="forkme_banner" href="https://github.com/lubkoll/RFFGen">View on GitHub</a>
 
           <h1 id="project_title">RFFGen - <br>Fast Function Generation</h1>
-          <h2 id="project_tagline">A function generation library that provides access to the first three derivatives of a (possibly matrix-valued) function.</h2>
+          <h2 id="project_tagline">A C++-library for the generation of complex functions, including first three derivatives and different variable types.</h2>
 
             <section id="downloads">
               <a class="zip_download_link" href="https://github.com/lubkoll/RFFGen/zipball/master">Download this project as a .zip file</a>
@@ -98,7 +98,7 @@
 <h1>
 <a id="rffgen" class="anchor" href="#rffgen" aria-hidden="true"><span class="octicon octicon-link"></span></a>RFFGen</h1>
 
-<p>A fast and easy to use function generation library that provides access to the first three derivatives of a function. >Here fast has two meanings. First the generation of functions and their derivatives should be "fast". This means that no big preparation or post-processing steps are required, neither large efforts to adapt your matrix implementation. This is illustrated in the <a href=#examples>examples</a> below. Secondly the evaluation of function values and the first three derivatives should be as efficient as optimized manual implementations.</p>
+<p>With this library you can easily define complex functions, possibly depending on several variables with different types. The evaluation of function values and derivatives is (almost) as efficient as optimized manual implementations. Moreover, the generated functions directly provide access to the first three directional derivatives. This is illustrated in the <a href=#examples>examples</a> below.</p>
 
 <p>The implementation is similar to forward automatic differentiation (AD) with expression templates. However, here a different perspective is taken. 
 <ul>
@@ -106,8 +106,6 @@
 <li> Second, the first three (possibly mixed) derivatives are directly available, which is more convenient than repeated application of an automatic differentiation scheme.</li>
 <li> Third, C++11-features such as <code>auto</code>, <code>decltype</code> and the incredible <code>void_t</code> (if you don't know it, <a href="https://www.youtube.com/watch?v=a0FliKwcwXE#t=1750">watch this</a>), easily admit far more general settings, working with rather arbitrary in- and output types. The few requirements are explained in section <a href=#input_requirements>Requirements on arithmetic types</a>.</li></p>
 </ul>
-
-<p>Function arguments can be matrices and/or scalars. Vectors are supported but most functionality targets on matrices.</p>
 
 <br><h1>
 <a id="overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h1>
