@@ -11,7 +11,6 @@ before_install:
 - sudo apt-get install -qq g++-4.9
 - export CXX="g++-4.9" CC="gcc-4.9"
 - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 50
-- sudo apt-get install mercurial
 - hg clone https://bitbucket.org/eigen/eigen/
 install:
 - sudo pip install cpp-coveralls
@@ -23,7 +22,7 @@ script:
 - make
 - "./unit_tests"
 after_success:
-- coveralls --root .. --exclude test --exclude external --gcov 'gcov-4.9' --gcov-options '\-lp'
+- coveralls --root .. --exclude ../eigen --exclude test --exclude external --gcov 'gcov-4.9' --gcov-options '\-lp'
 - sudo apt-get install --yes doxygen graphviz
 - cd ..
 - "./config/publish-doc"
