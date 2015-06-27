@@ -109,7 +109,7 @@
 <li> Third, C++11-features such as <code>auto</code>, <code>decltype</code> and the incredible <code>void_t</code> (if you don't know it, <a href="https://www.youtube.com/watch?v=a0FliKwcwXE#t=1750">watch this</a>), easily admit far more general settings, working with rather arbitrary in- and output types. The few requirements are explained in section <a href=#input_requirements>Requirements on arithmetic types</a>.</li></p>
 </ul>
 
-<p>Function arguments can be matrices and/or scalars. Vectors are also possible but most functionality targets on matrices.</p>
+<p>Function arguments can be matrices and/or scalars. Vectors are supported but most functionality targets on matrices.</p>
 
 <br><h1>
 <a id="overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h1>
@@ -127,6 +127,14 @@
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h1>
 
 <p>This library is header-only and no installation is required. However, make sure you use a recent compiler such as gcc-x, with x>=4.9.0, with <code>-std=c++1y</code></p>
+
+<p>To run the available tests, you can use cmake:
+ - mkdir build
+ - cd build
+ - cmake ..
+ - make
+ - ./unit_tests
+</p>
 
 
 <br><h1>
