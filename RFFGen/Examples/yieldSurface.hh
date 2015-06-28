@@ -21,49 +21,21 @@
 #ifndef RFFGEN_EXAMPLES_YIELD_SURFACE_HH
 #define RFFGEN_EXAMPLES_YIELD_SURFACE_HH
 
-#include "../LinearAlgebra/deviatoricInvariants.hh"
-#include "../LinearAlgebra/principalInvariants.hh"
-#include "../math.hh"
+#include "../linearAlgebra.hh"
+#include "../generate.hh"
 #include "../finalize.hh"
-#include "../Util/third.hh"
 
 namespace RFFGen
 {
-  /**
-   * \cond DOCUMENT_IMPLEMENTATION_DETAILS
-   */
-  namespace Detail
-  {
-    template <class Matrix>
-    using YieldSurfaceBase = Sum < Scale< FirstPrincipalInvariant<Matrix> >,
-                                   SecondDeviatoricInvariant<Matrix>,
-                                   Constant<double>
-                                 >;
-  }
-  /**
-   * \endcond
-   */
-
-
-  /// Yield surface \f$ \frac{\beta}{3}\iota_1(\sigma) + J_2(\sigma)-offset \f$, where \f$\iota_1\f$ is the first principal and \f$J_2\f$ is the second deviatoric invariant.
+  /// Yield surface \f$ \frac{\beta}{3}\iota_1(\sigma) + J_2(\sigma)-offset \f$, where \f$\iota_1\f$ is the first principal and \f$J_2\f$ is the second deviatoric invariant.  
   template <class Matrix>
-  struct YieldSurface : public Finalize< Detail::YieldSurfaceBase<Matrix> >
+  auto yieldSurface(double beta, double offset, Matrix sigma = LinearAlgebra::unitMatrix<Matrix>())
   {
-    /**
-     * @brief Constructor.
-     * @param beta scaling
-     * @param offset offset
-     * @param sigma stress tensor
-     */
-    explicit YieldSurface(double beta, double offset, Matrix sigma = unitMatrix<Matrix>())
-      : Finalize< Detail::YieldSurfaceBase<Matrix> >
-        (
-          std::make_tuple(beta*third() , sigma), // constructor argument for type Scale< FirstPrincipalInvariant<Matrix> >
-          sigma,                                                                 // constructor argument for SecondDeviatoricInvariant<Matrix>
-          -offset                                                                // constructor argument for Constant<double>
-        )
-    {}
-  };
+    auto i1 = LinearAlgebra::FirstPrincipalInvariant<Matrix>( sigma );
+    auto j2 = LinearAlgebra::SecondDeviatoricInvariant<Matrix>( sigma );
+    auto f = (beta/LinearAlgebra::dimension<Matrix>())*i1 + j2 - offset;
+    return finalize_scalar( f );
+  }
 }
 
 #endif // RFFGEN_EXAMPLES_YIELD_SURFACE_HH

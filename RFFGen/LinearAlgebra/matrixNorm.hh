@@ -25,7 +25,7 @@
 
 #include "../LinearAlgebra/extractRowsAndCols.hh"
 #include "../MathematicalOperations/chain.hh"
-#include "../CMath/sqrt.hh"
+#include "../CMath/pow.hh"
 
 namespace RFFGen
 {

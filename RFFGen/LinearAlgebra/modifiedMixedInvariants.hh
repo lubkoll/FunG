@@ -59,14 +59,6 @@ namespace RFFGen
       FirstModifiedMixedInvariant(const Matrix& A, const Constant<Matrix>& M)
         : ModifyFirstPrincipalInvariant<Matrix,FirstMixedInvariant<Matrix> > ( A , FirstMixedInvariant<Matrix>(A,M) )
       {}
-
-      /**
-       * @brief Constructor from std::tuple.
-       * @param t st::get<0>(t): matrix to compute first modified invariant form, std::get<1>(t): structural tensor
-       */
-      FirstModifiedMixedInvariant(const std::tuple< Matrix, Constant<Matrix> >& t)
-        : FirstModifiedMixedInvariant( std::get<0>(t) , std::get<1>(t) )
-      {}
     };
 
     /**
@@ -88,14 +80,6 @@ namespace RFFGen
       SecondModifiedMixedInvariant(const Matrix& A, const Constant<Matrix>& M)
         : ModifySecondPrincipalInvariant<Matrix,SecondMixedInvariant<Matrix> > ( A , SecondMixedInvariant<Matrix>(A,M) )
       {}
-
-      /**
-       * @brief Constructor from std::tuple.
-       * @param t st::get<0>(t): matrix to compute second modified invariant form, std::get<1>(t): structural tensor
-       */
-      SecondModifiedMixedInvariant(const std::tuple<Matrix, Constant<Matrix> >& t)
-        : SecondModifiedMixedInvariant( std::get<0>(t) , std::get<1>(t) )
-      {}
     };
 
     /**
@@ -116,14 +100,6 @@ namespace RFFGen
        */
       ThirdModifiedMixedInvariant(const Matrix& A, const Constant<Matrix>& M)
         : ModifyFirstPrincipalInvariant<Matrix,ThirdMixedInvariant<Matrix> > ( A , ThirdMixedInvariant<Matrix>(A,M) )
-      {}
-
-      /**
-       * @brief Constructor from std::tuple.
-       * @param t st::get<0>(t): matrix to compute third modified invariant form, std::get<1>(t): structural tensor
-       */
-      ThirdModifiedMixedInvariant(const std::tuple<Matrix, Constant<Matrix> >& t)
-        : ThirdModifiedMixedInvariant( std::get<0>(t) , std::get<1>(t) )
       {}
     };
 

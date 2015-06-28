@@ -33,6 +33,9 @@
 
 namespace RFFGen
 {
+  /**
+   * \cond DOCUMENT_IMPLEMENATION_DETAILS
+   */
   namespace GenerateDetail
   {
     template <class F, class G>
@@ -52,7 +55,57 @@ namespace RFFGen
     {
       return MathematicalOperations::Sum< Constant<F> , G >(Constant<F>(f),g);
     }
+
+    template <class F, class G, bool FisFunction, bool GisFunction, bool FisMatrix, bool GisMatrix> struct ProductGenerator;
+
+    template <class F, class G>
+    struct ProductGenerator<F,G,true,true,false,false>
+    {
+      static auto apply(const F& f, const G& g)
+      {
+        return MathematicalOperations::Product<F,G>(f,g);
+      }
+    };
+
+    template <class F, class G>
+    struct ProductGenerator<F,G,false,true,true,false>
+    {
+      static auto apply(F f, const G& g)
+      {
+        return MathematicalOperations::Scale<G>(f,g);
+      }
+    };
+
+    template <class F, class G>
+    struct ProductGenerator<F,G,true,false,false,true>
+    {
+      static auto apply(const F& f, G g)
+      {
+        return ProductGenerator<G,F,false,true,true,false>(g,f);
+      }
+    };
+
+    template <class F, class G>
+    struct ProductGenerator<F,G,false,true,false,false>
+    {
+      static auto apply(const F& f, const G& g)
+      {
+        return MathematicalOperations::Product<Constant<F>,G>(Constant<F>(f),g);
+      }
+    };
+
+    template <class F, class G>
+    struct ProductGenerator<F,G,true,false,false,false>
+    {
+      static auto apply(const F& f, const G& g)
+      {
+        return MathematicalOperations::Product< F,Constant<G> >( f , Constant<G>(g) );
+      }
+    };
   }
+  /**
+   * \endcond
+   */
 
   /**
    * \brief overload of "+"-operator for the generation of functions.
@@ -70,18 +123,18 @@ namespace RFFGen
   }
 
   /**
-   * \brief overload of "*"-operator for the generation of functions. This overload is restricted to multiplication of functions.
+   * \brief overload of "*"-operator for the generation of functions.
    *
    * This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions.
    * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
    */
   template <class F, class G,
-            class = std::enable_if_t< std::is_base_of<Base,F>::value > ,
-            class = std::enable_if_t< std::is_base_of<Base,G>::value > >
-  auto operator* (const F& f, const G& g)
+            class = std::enable_if_t< std::is_base_of<Base,F>::value || std::is_base_of<Base,G>::value > >
+  auto operator*(const F& f, const G& g)
   {
-    return MathematicalOperations::Product<F,G>(f,g);
+    return GenerateDetail::ProductGenerator<F,G,std::is_base_of<Base,F>::value,std::is_base_of<Base,G>::value,std::is_arithmetic<F>::value,std::is_arithmetic<G>::value>::apply(f,g);
   }
+
 
   /**
    * \brief overload of "^"-operator for the generation of functions.
@@ -100,35 +153,6 @@ namespace RFFGen
       exit(1);
     }
     return MathematicalOperations::Squared<F>(f);
-  }
-
-
-  /**
-   * \brief overload of "*"-operator for the generation of functions. This overload is restricted to the multiplication of functions with doubles from the left.
-   *
-   * This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions.
-   * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
-   */
-  template <class Scalar, class F,
-            class = std::enable_if_t< std::is_base_of<Base,F>() && std::is_arithmetic<Scalar>() > >
-  auto operator* (const Scalar& a, const F& f)
-  {
-//    using namespace MathematicalOperations;
-//    return Product< Constant<Scalar> , F >(a,f);
-    return MathematicalOperations::Scale<F>(a,f);
-  }
-
-  /**
-   * \brief overload of "*"-operator for the generation of functions. This overload is restricted to the multiplication of functions with doubles from the left.
-   *
-   * This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions.
-   * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
-   */
-  template <class F, class Scalar,
-            class = std::enable_if_t< std::is_base_of<Base,F>() && std::is_arithmetic<Scalar>() > >
-  auto operator* (const F& f, Scalar a)
-  {
-    return MathematicalOperations::Scale<F>(a,f);
   }
 
   /**

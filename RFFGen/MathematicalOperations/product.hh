@@ -191,9 +191,9 @@ namespace RFFGen
       F f;
       G g;
 
-      using type = std::conditional_t<std::is_same<decltype(std::declval<F>().d0()),decltype(std::declval<G>().d0())>::value,
-      decltype(std::declval<F>().d0()),
-      decltype(std::declval<F>().d0() * std::declval<G>().d0())>;
+      using type = std::conditional_t<std::is_same<std::decay_t<decltype(std::declval<F>().d0())>,std::decay_t<decltype(std::declval<G>().d0())> >::value,
+                                      decltype(std::declval<F>().d0()),
+                                      decltype(std::declval<F>().d0() * std::declval<G>().d0())>;
       std::remove_const_t<std::remove_reference_t<type> > resultOfD0;
     };
   }

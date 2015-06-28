@@ -21,15 +21,10 @@
 #ifndef RFFGEN_LINEAR_ALGEBRA_DEVIATOR_HH
 #define RFFGEN_LINEAR_ALGEBRA_DEVIATOR_HH
 
-#include <tuple>
-
-#include "../constant.hh"
+#include "../generate.hh"
 #include "../identity.hh"
 #include "trace.hh"
 #include "unitMatrix.hh"
-
-#include "../MathematicalOperations/product.hh"
-#include "../MathematicalOperations/sum.hh"
 
 namespace RFFGen
 {
@@ -47,30 +42,26 @@ namespace RFFGen
      * \ingroup LinearAlgebraGroup
      * \brief %Deviator of a matrix \f$ A\in\mathbb{R}^{n,n} \f$, i.e. \f$ A - \frac{\mathrm{tr}(A)}{n}I \f$.
      */
-    template <class Matrix, class = Concepts::SymmetricMatrixConceptCheck<Matrix> >
-    struct Deviator : MathematicalOperations::Sum< Identity<Matrix> , MathematicalOperations::Product< Trace<Matrix> , Constant<Matrix> > >
+    template <class Matrix, class = Concepts::SymmetricMatrixConceptCheck<Matrix>>
+    auto deviator(const Matrix& A)
     {
-      Deviator() = default;
-      /**
-       * @brief Constructor.
-       * @param A matrix for which the deviator is computed
-       */
-      explicit Deviator(const Matrix& A)
-        : MathematicalOperations::Sum< Identity<Matrix> , MathematicalOperations::Product< Trace<Matrix> , Constant<Matrix> > >
-          ( A,
-            std::make_tuple( A , - 1./dimension<Matrix>() * unitMatrix<Matrix>() ) )
-      {}
-    };
+      return Identity<Matrix>(A) + (-1./dimension<Matrix>()) * ( trace(A) * Constant<Matrix>( unitMatrix<Matrix>() ) );
+    }
 
     /**
      * \ingroup LinearAlgebraGroup
-     * \brief Create object Deviator<Matrix>(A).
+     * \brief Type of the %deviator of a matrix \f$ A\in\mathbb{R}^{n,n} \f$, i.e. \f$ A - \frac{\mathrm{tr}(A)}{n}I \f$.
      */
     template <class Matrix>
-    auto deviator(const Matrix& A)
+    class Deviator : public decltype( deviator( std::declval<Matrix>() ) )
     {
-      return Deviator<Matrix>(A);
-    }
+    private:
+      using Base = decltype( deviator( std::declval<Matrix>() ) );
+    public:
+      Deviator() = default;
+      Deviator(const Matrix& A) : Base( deviator(A) )
+      {}
+    };
   }
 }
 

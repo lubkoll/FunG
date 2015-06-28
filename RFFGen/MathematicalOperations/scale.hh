@@ -142,7 +142,7 @@ namespace RFFGen
 
       double a = 1.;
       F f;
-      std::remove_const_t<std::remove_reference_t<decltype(std::declval<F>().d0())> > resultOfD0 = 0.;
+      std::remove_const_t<std::remove_reference_t<decltype(std::declval<F>().d0())> > resultOfD0;
     };
   }
 }
