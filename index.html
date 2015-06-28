@@ -483,7 +483,7 @@ In the computations above compiler options as described in <a href=#optimization
 </p>
 <div id="chart5_div" align=center></div>
 <p>
-Due to the extensive caching the call to <code>update</code> is not cheap. As a consequence the call to <code>d0</code> is almost for free, since it only consists in copying the cached value. Since large parts of the cached results can be reused also the computation of the first and second derivative are not much more costly than the call to <code>update</code>. Only for the third derivatives we observe significantly larger computations times (5-6x). 
+Due to the extensive caching the call to <code>update</code> is more costly than the evaluation of <code>d0</code> or <code>d1</code>. As a consequence the call to <code>d0</code> is almost for free, since it only consists in copying the cached value. Large parts of the cached results can be reused and thus the computation of the first and second derivative are not much more costly than the call to <code>update</code>. In the computation of the third derivative the computations involving the perturbations start to dominate the overall computational costs.
 </p>
 
 
