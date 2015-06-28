@@ -12,6 +12,7 @@
 
       // Set a callback to run when the Google Visualization API is loaded.
       google.setOnLoadCallback(drawChart);
+      google.setOnLoadCallback(drawChart2);
 
       // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
@@ -41,6 +42,28 @@
           ['RFFGen', 0.499, 'orange'],
           ['Manual', 0.475, 'gray']
         ]);
+        
+        
+        // Set chart options
+        var options = {title:'Comparison with different AD implementations',
+                       width:500,
+                       height:300,
+                       legend : { position:"none"},
+                       vAxis: {
+                         title: 'time/s'
+                       }
+                      };
+                      
+        // Instantiate and draw our chart, passing in some options.
+        var chart1 = new google.visualization.ColumnChart(document.getElementById('chart1_div'));
+        chart1.draw(data1, options);
+        var chart2 = new google.visualization.ColumnChart(document.getElementById('chart2_div'));
+        chart2.draw(data2, options);
+        var chart3 = new google.visualization.ColumnChart(document.getElementById('chart3_div'));
+        chart3.draw(data3, options);
+        }
+        
+        function drawChart2() {
 
         var data4 = google.visualization.arrayToDataTable([
           ['Function','Armadillo','DUNE','Eigen'],
@@ -59,10 +82,8 @@
           ['d2'    , 7.080   , 6.044    , 5.880],
           ['d3'    , 40.810  , 35.792   , 33.987]
         ]);
-        
-        
-        // Set chart options
-        var options = {title:'Comparison with different AD implementations',
+
+        var options_muscle = {title:'Performance for a model of muscle tissue',
                        width:500,
                        height:300,
                        legend : { position:"none"},
@@ -71,23 +92,6 @@
                        }
                       };
 
-         var options_muscle = {title:'Performance for a model of muscle tissue',
-                       width:500,
-                       height:300,
-                       legend : { position:"none"},
-                       vAxis: {
-                         title: 'time/s'
-                       }
-                      };
-
-                      
-        // Instantiate and draw our chart, passing in some options.
-        var chart1 = new google.visualization.ColumnChart(document.getElementById('chart1_div'));
-        chart1.draw(data1, options);
-        var chart2 = new google.visualization.ColumnChart(document.getElementById('chart2_div'));
-        chart2.draw(data2, options);
-        var chart3 = new google.visualization.ColumnChart(document.getElementById('chart3_div'));
-        chart3.draw(data3, options);
         var chart4 = new google.visualization.Bar(document.getElementById('chart4_div'));
         chart4.draw(data4, options_muscle);
         var chart5 = new google.visualization.Bar(document.getElementById('chart5_div'));
