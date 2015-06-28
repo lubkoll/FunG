@@ -40,6 +40,25 @@
           ['RFFGen', 0.499, 'orange'],
           ['Manual', 0.475, 'gray']
         ]);
+
+        var data4 = google.visualization.arrayToDataTable([
+          ['Function','Armadillo','DUNE','Eigen'],
+          ['update', 2.587   , 2.512    , 2.159],
+          ['d0'    , 0.000071, 0.000040 , 0.000064],
+          ['d1'    , 0.593   , 0.601    , 0.275],
+          ['d2'    , 3.332   , 3.404    , 2.234],
+          ['d3'    , 19.227  , 15.852   , 12.026]
+        ]);
+
+        var data5 = google.visualization.arrayToDataTable([
+          ['Function','Armadillo','DUNE','Eigen'],
+          ['update', 2.982   , 2.780    , 2.836],
+          ['d0'    , 0.000042, 0.000043 , 0.000049],
+          ['d1'    , 1.247   , 0.988    , 1.035],
+          ['d2'    , 7.080   , 6.044    , 5.880],
+          ['d3'    , 40.810  , 35.792   , 33.987]
+        ]);
+        
         
         // Set chart options
         var options = {title:'Comparison with different AD implementations',
@@ -51,6 +70,14 @@
                        }
                       };
 
+         var options_muscle = {title:'Performance for a model of muscle tissue',
+                       width:500,
+                       height:300,
+                       legend : { position:"none"},
+                       vAxis: {
+                         title: 'time/s'
+                       }
+                      };
 
                       
         // Instantiate and draw our chart, passing in some options.
@@ -60,6 +87,10 @@
         chart2.draw(data2, options);
         var chart3 = new google.visualization.ColumnChart(document.getElementById('chart3_div'));
         chart3.draw(data3, options);
+        var chart4 = new google.visualization.ColumnChart(document.getElementById('chart4_div'));
+        chart4.draw(data4, options_muscle);
+        var chart5 = new google.visualization.ColumnChart(document.getElementById('chart5_div'));
+        chart5.draw(data5, options_muscle);
         }
         
     </script>
