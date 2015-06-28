@@ -7,7 +7,7 @@
     <script type="text/javascript">
 
       // Load the Visualization API and the piechart package.
-      google.load('visualization', '1.0', {'packages':['corechart','bar']});
+      google.load('visualization', '1.0', {'packages':['corechart','columnchart']});
 
       // Set a callback to run when the Google Visualization API is loaded.
       google.setOnLoadCallback(drawChart);
@@ -73,6 +73,7 @@
          var options_muscle = {title:'Performance for a model of muscle tissue',
                        width:500,
                        height:300,
+                       colors: ['blue','orange','gray'],
                        vAxis: {
                          title: 'time/s'
                        }
@@ -86,10 +87,10 @@
         chart2.draw(data2, options);
         var chart3 = new google.visualization.ColumnChart(document.getElementById('chart3_div'));
         chart3.draw(data3, options);
-        var chart4 = new google.charts.Bar(document.getElementById('chart4_div'));
-        chart4.draw(data4, google.charts.Column.convertOptions(options_muscle));
-        var chart5 = new google.charts.Bar(document.getElementById('chart5_div'));
-        chart5.draw(data5, google.charts.Column.convertOptions(options_muscle));
+        var chart4 = new google.visualization.ColumnChart(document.getElementById('chart4_div'));
+        chart4.draw(data4, options_muscle);
+        var chart5 = new google.visualization.ColumnChart(document.getElementById('chart5_div'));
+        chart5.draw(data5, options_muscle);
         }
         
     </script>
@@ -148,8 +149,8 @@
   <li><a href=#examples>Examples</a></li>
   <li><a href=#input_requirements>Requirements on arithmetic types</a></li>
   <li><a href=#ad_comparison>Comparison with automatic differentation libraries</a></li>
-  <li><a href=#performance>Performance for a model of muscle tissue</a></li>
   <li><a href=#optimization_strategies>Optimization strategies</a></li>
+  <li><a href=#performance>Performance for a model of muscle tissue</a></li>
   <li><a href=#documentation>Documentation</a></li>
 </ul>
 
@@ -424,22 +425,6 @@ All examples were compiled with <code>-O2</code> compiler option with gcc-4.9.2.
 <div id="chart3_div" align=center></div>
 
 
-
-<br><h1>
-<a id="performance" class="anchor" href=#performance aria-hidden="true"><span class="octicon octicon-link"></span></a>Performance for a model of muscle tissue</h1>
-<p>
-For functions that take matrices as arguments automatic differentation libraries can typically not be used directly. To get an idea of the performance, consider the function <br>
-<span lang="latex">W(F)=c(\exp(b(\bar\iota_1-3))-1) + A(\exp(a(\bar\iota_6-1)^2)-1)</span><br>
-<span lang="latex">+d_0\Gamma_\mathrm{Inf}(\det(F))+d_1\Gamma_\mathrm{Com}(\det(F))</span><br>
-where <span lang="latex">\Gamma_\mathrm{Inf}(t)=t^2</span> and <span lang="latex">\Gamma_\mathrm{Com}(t)=\mathrm{ln}(t)</span>, <span lang="latex">C=F^T F</span>, structural tensor <span lang="latex">M</span> and modified invariants <span lang="latex">\bar\iota_1(C)=\mathrm{tr}(C)\det(C)^{-1/3}</span>, <span lang="latex">\bar\iota_6(C,M)=\mathrm{tr}(CM^2)\det(C)^{-1/3}</span>.
-</p>
-<div id="chart4_div" align=center></div>
-<p>
-In the computations above compiler options as described in <a href=#optimization_strategies_inlining>Inlining</a> were used. Computation times only with <code>-02</code> are given below.
-</p>
-<div id="chart5_div" align=center></div>
-
-
 <br><h1>
 <a id="optimization_strategies" class="anchor" href=#optimization_strategies aria-hidden="true"><span class="octicon octicon-link"></span></a>Optimization strategies</h1>
 In order to get performance comparable to optimized manual implementations some optimization strategies are applied.
@@ -454,7 +439,7 @@ can be improved by adjusting specific parameters. For the examples in "Examples/
 <li>early-inlining-insns=5000</li>
 <li>inline-unit-growth=100</li>
 </ul>
-for gcc-4.9.2 yields performance increases in the range of 2-4x.</p>
+for gcc-4.9.2 yields performance increases in the range of 2-4x. (see <a href=#performance>below</a>)</p>
 
 <p>Note that adequate choices of the above parameters may be different when using this library in a larger project. For optimal performance you may think about compiling the function definition in a separate object file with 
 compiler parameters as proposed above.</p>
@@ -482,6 +467,24 @@ The following graph illustrates the mathematical operations that are performed w
 <figcaption>Mathematical operations required for the evaluation of the second derivative of the product rule.</figcaption>
 </figure>
 <p>Since all derivatives of <span lang="latex">M</span> vanish only the part marked in orange will be computed. The remaining computations are discarded during compilation.</p>
+
+
+
+<br><h1>
+<a id="performance" class="anchor" href=#performance aria-hidden="true"><span class="octicon octicon-link"></span></a>Performance for a model of muscle tissue</h1>
+<p>
+For functions that take matrices as arguments automatic differentation libraries can typically not be used directly. To get an idea of the performance, consider the function <br>
+<span lang="latex">\begin{align*}W(F)&amp;=c(\exp(b(\bar\iota_1-3))-1) + A(\exp(a(\bar\iota_6-1)^2)-1) \\ &amp;+d_0\Gamma_\mathrm{Inf}(\det(F))+d_1\Gamma_\mathrm{Com}(\det(F)) \end{align*}</span><br>
+where <span lang="latex">\Gamma_\mathrm{Inf}(t)=t^2</span> and <span lang="latex">\Gamma_\mathrm{Com}(t)=\mathrm{ln}(t)</span>, <span lang="latex">C=F^T F</span>, structural tensor <span lang="latex">M</span> and modified invariants <span lang="latex">\bar\iota_1(C)=\mathrm{tr}(C)\det(C)^{-1/3}</span>, <span lang="latex">\bar\iota_6(C,M)=\mathrm{tr}(CM^2)\det(C)^{-1/3}</span>. Again each function is called 10.000.000 times with varying arguments.
+</p>
+<div id="chart4_div" align=center></div>
+<p>
+In the computations above compiler options as described in <a href=#optimization_strategies_inlining>Inlining</a> were used. Computation times only with <code>-02</code> are given below.
+</p>
+<div id="chart5_div" align=center></div>
+<p>
+Due to the extensive caching the call to <code>update</code> is not cheap. As a consequence the call to <code>d0</code> is almost for free, since it only consists in copying the cached value. Since large parts of the cached results can be reused also the computation of the first and second derivative are not much more costly than the call to <code>update</code>. Only for the third derivatives we observe significantly larger computations times (5-6x). 
+</p>
 
 
 
