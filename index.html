@@ -7,8 +7,8 @@
     <script type="text/javascript">
 
       // Load the Visualization API and the piechart package.
-      google.load('visualization', '1.0', {packages:['corechart']});
-      google.load('visualization', '1.1', {packages:['bar']});
+      google.load('visualization', '1.1', {'packages':['bar']});
+      google.load('visualization', '1.0', {'packages':['corechart']});
 
       // Set a callback to run when the Google Visualization API is loaded.
       google.setOnLoadCallback(drawChart);
@@ -82,7 +82,7 @@
 
                       
         // Instantiate and draw our chart, passing in some options.
-        var chart1 = new google.visualization.B(document.getElementById('chart1_div'));
+        var chart1 = new google.visualization.ColumnChart(document.getElementById('chart1_div'));
         chart1.draw(data1, options);
         var chart2 = new google.visualization.ColumnChart(document.getElementById('chart2_div'));
         chart2.draw(data2, options);
