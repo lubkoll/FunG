@@ -71,6 +71,16 @@ namespace RFFGen
   {
     return Constant<const Arg&>(x);
   }
+
+  /**
+   * \brief Wrap a constant.
+   * \return Constant<Arg>(x)
+   */
+  template <class Arg>
+  auto constant(const Arg& x)
+  {
+    return Constant<Arg>(x);
+  }
 }
 
 #endif // RFFGEN_CONSTANT_HH

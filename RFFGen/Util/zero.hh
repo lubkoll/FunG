@@ -23,7 +23,7 @@
 
 #include <utility>
 
-#include "Util/staticChecks.hh"
+#include "staticChecks.hh"
 
 namespace RFFGen
 {

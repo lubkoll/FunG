@@ -38,25 +38,44 @@ namespace RFFGen
    */
   namespace GenerateDetail
   {
-    template <class F, class G>
-    auto sum(const F& f, const G& g, std::false_type, std::false_type)
-    {
-      return MathematicalOperations::Sum<F,G>(f,g);
-    }
+    template <class F, class G,
+              bool = std::is_base_of<Base,F>::value,
+              bool = std::is_base_of<Base,G>::value>
+    struct SumGenerator;
 
     template <class F, class G>
-    auto sum(const F& f, const G& g, std::false_type, std::true_type)
+    struct SumGenerator<F,G,true,true>
     {
-      return MathematicalOperations::Sum<F,Constant<G> >(f,Constant<G>(g));
-    }
+      static auto apply(const F& f, const G& g)
+      {
+        return MathematicalOperations::Sum<F,G>(f,g);
+      }
+    };
 
     template <class F, class G>
-    auto sum(const F& f, const G& g, std::true_type, std::false_type)
+    struct SumGenerator<F,G,true,false>
     {
-      return MathematicalOperations::Sum< Constant<F> , G >(Constant<F>(f),g);
-    }
+      static auto apply(const F& f, const G& g)
+      {
+        return MathematicalOperations::Sum< F , Constant<G> >( f , constant(g) );
+      }
+    };
 
-    template <class F, class G, bool FisFunction, bool GisFunction, bool FisMatrix, bool GisMatrix> struct ProductGenerator;
+    template <class F, class G>
+    struct SumGenerator<F,G,false,true>
+    {
+      static auto apply(const F& f, const G& g)
+      {
+        return MathematicalOperations::Sum< Constant<F> , G >( constant(f) , g );
+      }
+    };
+
+    template <class F, class G,
+              bool = std::is_base_of<Base,F>::value,
+              bool = std::is_base_of<Base,G>::value,
+              bool = std::is_arithmetic<F>::value,
+              bool = std::is_arithmetic<G>::value>
+    struct ProductGenerator;
 
     template <class F, class G>
     struct ProductGenerator<F,G,true,true,false,false>
@@ -118,8 +137,7 @@ namespace RFFGen
                                       std::is_base_of<Base,G>::value > >
   auto operator+ (const F& f, const G& g)
   {
-    return GenerateDetail::sum( f, g, std::integral_constant< bool , !std::is_base_of<Base,F>::value && std::is_arithmetic<F>::value>(),
-                                      std::integral_constant< bool , !std::is_base_of<Base,G>::value && std::is_arithmetic<G>::value>() );
+    return GenerateDetail::SumGenerator<F,G>::apply(f,g);
   }
 
   /**
@@ -132,7 +150,7 @@ namespace RFFGen
             class = std::enable_if_t< std::is_base_of<Base,F>::value || std::is_base_of<Base,G>::value > >
   auto operator*(const F& f, const G& g)
   {
-    return GenerateDetail::ProductGenerator<F,G,std::is_base_of<Base,F>::value,std::is_base_of<Base,G>::value,std::is_arithmetic<F>::value,std::is_arithmetic<G>::value>::apply(f,g);
+    return GenerateDetail::ProductGenerator<F,G>::apply(f,g);
   }
 
 
