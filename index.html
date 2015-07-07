@@ -242,7 +242,7 @@ auto generateAdiposeTissue(double cCells, double k1, double k2,
   auto i4 = FirstMixedInvariant&lt;Matrix&gt;(F,M);
 
   auto aniso = kappa*i1 + (1-3*kappa) * i4 - 1;
-  auto materialLaw = cCells*si1 + (k1/k2) * ( exp(aniso^2) - 1 );
+  auto materialLaw = cCells*si1 + (k1/k2) * ( exp(k2*(aniso^2)) - 1 );
 
  return finalize( materialLaw( LeftCauchyGreenStrainTensor&lt;Matrix&gt;(F) ) );
 }
