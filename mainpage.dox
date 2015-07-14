@@ -10,5 +10,7 @@
  *
  * - Implementations of product, sum and chain rules are provided in the namespace \ref MathematicalOperationsGroup. In most cases you do not need to directly use these classes, but rather generate them via operator overloading 
  * (see generate.hh). 
+ *
+ * - Several models are already implemented in \ref Examples. In particular this includes variations of classical models from \ref Rubber elasticity, i.e. the neo-Hookean and the Mooney-Rivlin model. In \ref Biomechanics more complex models for the description of skin tissue and anisotropic descriptions of adipose and muscle tissue are provided.
  */
  

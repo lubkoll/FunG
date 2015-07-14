@@ -42,6 +42,11 @@
  * \brief Functionality from linear algebra such as (modified) principal and mixed matrix invariants.
  */
 
+    /**
+     * \defgroup InvariantGroup Invariants
+     * \ingroup LinearAlgebraGroup
+     * \brief Matrix Invariants (principal and mixed, modified (isochoric) invariants and deviatoric invariants).
+     */
 
 
 /**
