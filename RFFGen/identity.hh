@@ -22,6 +22,7 @@
 #define RFFGEN_IDENTITY_HH
 
 #include "Util/base.hh"
+#include "Util/chainer.hh"
 
 namespace RFFGen
 {
@@ -35,7 +36,7 @@ namespace RFFGen
 
   /// %Identity mapping \f$ f(x)=x \f$.
   template <class Arg, class = ArithmeticConceptCheck<Arg> >
-  struct Identity : Base
+  struct Identity : Base , Chainer< Identity<Arg,ArithmeticConceptCheck<Arg> > >
   {
     /// Default constructor.
     Identity() = default;
@@ -51,9 +52,6 @@ namespace RFFGen
     {
       x_ = x;
     }
-
-    /// Function value. Convenient access to d0().
-    const Arg& operator()() const noexcept { return d0(); }
 
     /// Function value.
     const Arg& d0() const noexcept { return x_; }

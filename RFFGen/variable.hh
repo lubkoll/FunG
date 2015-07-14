@@ -25,6 +25,7 @@
 #include <type_traits>
 
 #include "Util/base.hh"
+#include "Util/chainer.hh"
 
 namespace RFFGen
 {
@@ -162,7 +163,7 @@ namespace RFFGen
    * \brief Independent variable. Can be uniquely identified by its id.
    */
   template <class T, int id>
-  struct Variable : Base
+  struct Variable : Base , Chainer< Variable<T,id> >
   {
     Variable() = default;
 
@@ -174,12 +175,6 @@ namespace RFFGen
     void updateVariable(const Arg& t_)
     {
       VariableDetail::Update<index==id>()(t,t_);
-    }
-
-    /// Value of the variable. Convenient access to d0().
-    const T& operator()() const noexcept
-    {
-      return d0();
     }
 
     /// Value of the variable.

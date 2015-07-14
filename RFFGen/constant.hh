@@ -22,6 +22,7 @@
 #define RFFGEN_CONSTANT_HH
 
 #include "Util/base.hh"
+#include "Util/chainer.hh"
 
 namespace RFFGen
 {
@@ -37,19 +38,13 @@ namespace RFFGen
    * \brief Wrap a constant.
    */
   template <class Type, class = ArithmeticConceptCheck<Type> >
-  struct Constant : Base
+  struct Constant : Base , Chainer< Constant<Type , ArithmeticConceptCheck<Type> > >
   {
     Constant() = default;
 
    /// Construct constant from copy.
    Constant(Type const& t_) : t(t_)
    {}
-
-   /// Function value. Convenient access to d0().
-   const Type& operator()() const noexcept
-   {
-     return d0();
-   }
 
    /// Function value.
    const Type& d0() const noexcept

@@ -24,6 +24,7 @@
 #include "transpose.hh"
 #include "../MathematicalOperations/sum.hh"
 #include "../Util/base.hh"
+#include "../Util/chainer.hh"
 #include "../Util/addTransposedMatrix.hh"
 
 namespace RFFGen
@@ -46,7 +47,9 @@ namespace RFFGen
      * Caches both \f$ F^T \f$ and \f$ F^T F \f$.
      */
     template <class Matrix, class = Concepts::SymmetricMatrixConceptCheck<Matrix> >
-    class LeftCauchyGreenStrainTensor : Base
+    class LeftCauchyGreenStrainTensor :
+        public Base ,
+        public Chainer< LeftCauchyGreenStrainTensor<Matrix , Concepts::SymmetricMatrixConceptCheck<Matrix> > >
     {
     public:
       LeftCauchyGreenStrainTensor() = default;
@@ -61,12 +64,6 @@ namespace RFFGen
       {
         FT = transpose(F);
         FTF = FT * F;
-      }
-
-      /// Function value. Convenient access to d0().
-      Matrix const& operator()() const noexcept
-      {
-        return d0();
       }
 
       /// Function value \f$ F^T * F \f$.
@@ -103,7 +100,9 @@ namespace RFFGen
      * Caches the function value \f$ \frac{1}{2}\left(F^T+F\right) \f$.
      */
     template <class Matrix, class = Concepts::SymmetricMatrixConceptCheck<Matrix> >
-    class LinearizedStrainTensor : Base
+    class LinearizedStrainTensor :
+        public Base ,
+        public Chainer< LinearizedStrainTensor< Matrix , Concepts::SymmetricMatrixConceptCheck<Matrix> > >
     {
     public:
       /**
@@ -151,7 +150,9 @@ namespace RFFGen
      * Implemented as Sum<LinearizedStrainTensor,GeometricNonlinearity>.
      */
     template <class Matrix>
-    class StrainTensor : MathematicalOperations::Sum< LinearizedStrainTensor<Matrix> , GeometricNonlinearity<Matrix> >
+    class StrainTensor :
+        public MathematicalOperations::Sum< LinearizedStrainTensor<Matrix> , GeometricNonlinearity<Matrix> > ,
+        public Chainer< StrainTensor<Matrix> >
     {
       using Base = MathematicalOperations::Sum< LinearizedStrainTensor<Matrix> , GeometricNonlinearity<Matrix> >;
     public:
