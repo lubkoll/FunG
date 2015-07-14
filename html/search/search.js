@@ -14,8 +14,7 @@ var indexSectionsWithContent =
   4: "acdefilmnoprstuvyz",
   5: "cdefgmstv",
   6: "i",
-  7: "bceilmrs",
-  8: "r"
+  7: "bceilmrs"
 };
 
 var indexSectionNames =
@@ -27,8 +26,7 @@ var indexSectionNames =
   4: "functions",
   5: "typedefs",
   6: "enums",
-  7: "groups",
-  8: "pages"
+  7: "groups"
 };
 
 function convertToId(search)
