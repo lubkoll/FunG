@@ -30,7 +30,7 @@ namespace RFFGen
   namespace LinearAlgebra
   {
     /**
-     * \ingroup LinearAlgebraGroup
+     * \ingroup InvariantGroup
      * \brief Second deviator invariant \f$ J_2(\sigma)=\sqrt{\bar\sigma\negthinspace:\negthinspace\bar\sigma} \f$ with \f$\bar\sigma = \sigma - \frac{\mathrm{tr}(\sigma)}{n}I\f$ and \f$\sigma\in\mathbb{R}^{n,n}\f$.
      */
     template <class Matrix>

@@ -100,14 +100,14 @@ namespace RFFGen
 
 
     /**
-     * \ingroup LinearAlgebraGroup
+     * \ingroup InvariantGroup
      * \brief First principal invariant \f$ \iota_1(A)=\mathrm{tr}(A) \f$ for \f$A\in\mathbb{R}^{n,n}\f$.
      */
     template <class Matrix>
     using FirstPrincipalInvariant = Trace<Matrix>;
 
     /**
-     * \ingroup LinearAlgebraGroup
+     * \ingroup InvariantGroup
      * \brief Second principal invariant \f$ \iota_2(A)=\mathrm{tr}(\mathrm{cof}(A)) \f$ for \f$A\in\mathbb{R}^{n,n}\f$.
      */
     template <class Matrix, class = Concepts::SymmetricMatrixConceptCheck<Matrix> >
@@ -165,7 +165,7 @@ namespace RFFGen
     };
 
     /**
-     * \ingroup LinearAlgebraGroup
+     * \ingroup InvariantGroup
      * \brief Third principal invariant \f$ \iota_3(A)=\det(A) \f$ for \f$A\in\mathbb{R}^{n,n}\f$.
      */
     template <class Matrix>
@@ -173,21 +173,21 @@ namespace RFFGen
 
 
     /**
-     * \ingroup LinearAlgebraGroup
+     * \ingroup InvariantGroup
      * \brief Shifted first principal invariant \f$ \iota_1(A) - n \f$ for \f$ A\in\mathbb{R}^{n,n} \f$.
      */
     template < class Matrix , int offset = dimension<Matrix>() >
     using ShiftedFirstPrincipalInvariant  = ShiftedInvariant< FirstPrincipalInvariant<Matrix> , offset >;
 
     /**
-     * \ingroup LinearAlgebraGroup
+     * \ingroup InvariantGroup
      * \brief Shifted second principal invariant \f$ \iota_2(A) - n \f$ for \f$ A\in\mathbb{R}^{n,n} \f$.
      */
     template < class Matrix , int offset = dimension<Matrix>() >
     using ShiftedSecondPrincipalInvariant = ShiftedInvariant< SecondPrincipalInvariant<Matrix> , offset >;
 
     /**
-     * \ingroup LinearAlgebraGroup
+     * \ingroup InvariantGroup
      * \brief Shifted third principal invariant \f$ \iota_3(A) - 1 \f$ for \f$ A\in\mathbb{R}^{n,n} \f$.
      */
     template < class Matrix >

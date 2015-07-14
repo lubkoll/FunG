@@ -41,7 +41,7 @@ namespace RFFGen
   namespace LinearAlgebra
   {
     /**
-     * \ingroup LinearAlgebraGroup
+     * \ingroup InvariantGroup
      * \brief First modified mixed invariant \f$\bar\iota_4=\iota_4\iota_3^{-1/3}\f$
      */
     template <class Matrix, class = Concepts::SymmetricMatrixConceptCheck<Matrix> >
@@ -62,7 +62,7 @@ namespace RFFGen
     };
 
     /**
-     * \ingroup LinearAlgebraGroup
+     * \ingroup InvariantGroup
      * \brief Second modified mixed invariant \f$\bar\iota_5=\iota_5\iota_3^{-2/3}\f$
      */
     template <class Matrix, class = Concepts::SymmetricMatrixConceptCheck<Matrix>>
@@ -83,7 +83,7 @@ namespace RFFGen
     };
 
     /**
-     * \ingroup LinearAlgebraGroup
+     * \ingroup InvariantGroup
      * \brief Third modified mixed invariant \f$\bar\iota_6=\iota_6\iota_3^{-1/3}\f$
      */
     template <class Matrix, class = Concepts::SymmetricMatrixConceptCheck<Matrix> >
@@ -104,21 +104,21 @@ namespace RFFGen
     };
 
     /**
-     * \ingroup LinearAlgebraGroup
+     * \ingroup InvariantGroup
      * \brief Shifted first modified mixed invariant \f$ \bar\iota_4 - 1 \f$.
      */
     template <class Matrix>
     using ShiftedFirstModifiedMixedInvariant  = ShiftedInvariant< FirstModifiedMixedInvariant<Matrix>  , 1 >;
 
     /**
-     * \ingroup LinearAlgebraGroup
+     * \ingroup InvariantGroup
      * \brief Shifted second modified mixed invariant \f$ \bar\iota_5 - 1 \f$.
      */
     template <class Matrix>
     using ShiftedSecondModifiedMixedInvariant = ShiftedInvariant< SecondModifiedMixedInvariant<Matrix> , 1 >;
 
     /**
-     * \ingroup LinearAlgebraGroup
+     * \ingroup InvariantGroup
      * \brief Shifted third modified mixed invariant \f$ \bar\iota_6 - 1 \f$.
      */
     template <class Matrix>

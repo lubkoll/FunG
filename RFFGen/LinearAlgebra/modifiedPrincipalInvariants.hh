@@ -38,7 +38,7 @@ namespace RFFGen
   namespace LinearAlgebra
   {
     /**
-     * \ingroup LinearAlgebraGroup
+     * \ingroup InvariantGroup
      * \brief Isochoric (volume-preserving), first modified principal invariant \f$ \bar\iota_1(A)=\iota_1\iota_3^{-1/3} \f$, where \f$\iota_1\f$ is the first
      * and \f$\iota_3\f$ is the third principal invariant.
      */
@@ -59,7 +59,7 @@ namespace RFFGen
     };
 
     /**
-     * \ingroup LinearAlgebraGroup
+     * \ingroup InvariantGroup
      * \brief Isochoric (volume-preserving), second modified principal invariant \f$ \bar\iota_2(A)=\iota_2\iota_3^{-1/3} \f$, where \f$\iota_2\f$ is the second
      * and \f$\iota_3\f$ is the third principal invariant.
      */
@@ -80,7 +80,7 @@ namespace RFFGen
     };
 
     /**
-     * \ingroup LinearAlgebraGroup
+     * \ingroup InvariantGroup
      * \brief Third modified principal invariant is the same as the third principal invariant. This invariant describes volumetric changes.
      */
     template <class Matrix>
@@ -88,21 +88,21 @@ namespace RFFGen
 
 
     /**
-     * \ingroup LinearAlgebraGroup
+     * \ingroup InvariantGroup
      * \brief Shifted first modified principal invariant \f$ \bar\iota_1(A) - n \f$ for \f$ A\in\mathbb{R}^{n,n} \f$.
      */
     template < class Matrix , int offset = LinearAlgebra::dimension<Matrix>() >
     using ShiftedFirstModifiedPrincipalInvariant  = ShiftedInvariant< FirstModifiedPrincipalInvariant<Matrix>  , offset >;
 
     /**
-     * \ingroup LinearAlgebraGroup
+     * \ingroup InvariantGroup
      * \brief Shifted second modified principal invariant \f$ \bar\iota_2(A) - n \f$ for \f$ A\in\mathbb{R}^{n,n} \f$.
      */
     template < class Matrix , int offset = LinearAlgebra::dimension<Matrix>() >
     using ShiftedSecondModifiedPrincipalInvariant = ShiftedInvariant< SecondModifiedPrincipalInvariant<Matrix> , offset >;
 
     /**
-     * \ingroup LinearAlgebraGroup
+     * \ingroup InvariantGroup
      * \brief Shifted third modified principal invariant \f$ \bar\iota_3(A) - 1 \f$ for \f$ A\in\mathbb{R}^{n,n} \f$.
      */
     template <class Matrix>

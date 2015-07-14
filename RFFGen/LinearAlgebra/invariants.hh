@@ -31,7 +31,7 @@ namespace RFFGen
   namespace LinearAlgebra
   {
     /**
-     * \ingroup LinearAlgebraGroup
+     * \ingroup InvariantGroup
      * \brief Enum to statically choose invariant traits.
      */
     enum class Invariant { PRINCIPAL, MIXED, MODIFIED, MODIFIED_MIXED };
@@ -45,7 +45,7 @@ namespace RFFGen
      */
 
     /**
-     * \ingroup LinearAlgebraGroup
+     * \ingroup InvariantGroup
      * \brief Traits class for access of (shifted) principal invariants.
      */
     template <>
@@ -78,7 +78,7 @@ namespace RFFGen
     };
 
     /**
-     * \ingroup LinearAlgebraGroup
+     * \ingroup InvariantGroup
      * \brief  Traits class for access of (shifted) modified principal invariants.
      */
     template <>
@@ -111,7 +111,7 @@ namespace RFFGen
     };
 
     /**
-     * \ingroup LinearAlgebraGroup
+     * \ingroup InvariantGroup
      * \brief Traits class for access of (shifted) mixed invariants.
      */
     template <>
@@ -143,7 +143,7 @@ namespace RFFGen
     };
 
     /**
-     * \ingroup LinearAlgebraGroup
+     * \ingroup InvariantGroup
      * \brief Traits class for access of (shifted) modified mixed invariants.
      */
     template <>
