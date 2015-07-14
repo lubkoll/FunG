@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['linear_20algebra',['Linear Algebra',['../group__LinearAlgebraGroup.html',1,'']]]
+  ['invariants',['Invariants',['../group__InvariantGroup.html',1,'']]]
 ];

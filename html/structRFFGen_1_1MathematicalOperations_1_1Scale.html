@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Scaling <img class="formulaInl" alt="$ af $" src="form_114.png"/> of some function <img class="formulaInl" alt="$ f $" src="form_115.png"/> with a double <img class="formulaInl" alt="$ a $" src="form_116.png"/> (F must satisfy the requirements of <a class="el" href="structRFFGen_1_1Concepts_1_1FunctionConcept.html" title="Minimal requirements for functions. ">Concepts::FunctionConcept</a>).  
+<p>Scaling <img class="formulaInl" alt="$ af $" src="form_118.png"/> of some function <img class="formulaInl" alt="$ f $" src="form_119.png"/> with a double <img class="formulaInl" alt="$ a $" src="form_120.png"/> (F must satisfy the requirements of <a class="el" href="structRFFGen_1_1Concepts_1_1FunctionConcept.html" title="Minimal requirements for functions. ">Concepts::FunctionConcept</a>).  
  <a href="structRFFGen_1_1MathematicalOperations_1_1Scale.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="scale_8hh_source.html">scale.hh</a>&gt;</code></p>
@@ -161,13 +161,13 @@ template&lt;int id, class Arg &gt; </td></tr>
 <div class="textblock"><h3>template&lt;class F, class = FunctionConceptCheck&lt;F&gt;&gt;<br/>
 struct RFFGen::MathematicalOperations::Scale&lt; F, class &gt;</h3>
 
-<p>Scaling <img class="formulaInl" alt="$ af $" src="form_114.png"/> of some function <img class="formulaInl" alt="$ f $" src="form_115.png"/> with a double <img class="formulaInl" alt="$ a $" src="form_116.png"/> (F must satisfy the requirements of <a class="el" href="structRFFGen_1_1Concepts_1_1FunctionConcept.html" title="Minimal requirements for functions. ">Concepts::FunctionConcept</a>). </p>
+<p>Scaling <img class="formulaInl" alt="$ af $" src="form_118.png"/> of some function <img class="formulaInl" alt="$ f $" src="form_119.png"/> with a double <img class="formulaInl" alt="$ a $" src="form_120.png"/> (F must satisfy the requirements of <a class="el" href="structRFFGen_1_1Concepts_1_1FunctionConcept.html" title="Minimal requirements for functions. ">Concepts::FunctionConcept</a>). </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a93e5aa65f4fa7f496691e259dbc06c98"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class F, class  = FunctionConceptCheck&lt;F&gt;&gt; </div>
+template&lt;class F , class  = FunctionConceptCheck&lt;F&gt;&gt; </div>
 <div class="memtemplate">
 template&lt;class InitF &gt; </div>
 <table class="mlabels">
@@ -215,7 +215,7 @@ template&lt;class InitF &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class F, class  = FunctionConceptCheck&lt;F&gt;&gt; </div>
+template&lt;class F , class  = FunctionConceptCheck&lt;F&gt;&gt; </div>
 <div class="memtemplate">
 template&lt;int idx, class Arg , class IndexedArg  = IndexedType&lt;Arg,idx&gt;, class  = std::enable_if_t&lt; D1&lt;F,IndexedArg&gt;::present&gt;&gt; </div>
 <table class="mlabels">
@@ -251,7 +251,7 @@ template&lt;int idx, class Arg , class IndexedArg  = IndexedType&lt;Arg,idx&gt;,
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class F, class  = FunctionConceptCheck&lt;F&gt;&gt; </div>
+template&lt;class F , class  = FunctionConceptCheck&lt;F&gt;&gt; </div>
 <div class="memtemplate">
 template&lt;int idx, int idy, class ArgX , class ArgY , class IndexedArgX  = IndexedType&lt;ArgX,idx&gt;, class IndexedArgY  = IndexedType&lt;ArgY,idy&gt;, class  = std::enable_if_t&lt; D2&lt;F,IndexedArgX,IndexedArgY&gt;::present&gt;&gt; </div>
 <table class="mlabels">
@@ -298,7 +298,7 @@ template&lt;int idx, int idy, class ArgX , class ArgY , class IndexedArgX  = Ind
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class F, class  = FunctionConceptCheck&lt;F&gt;&gt; </div>
+template&lt;class F , class  = FunctionConceptCheck&lt;F&gt;&gt; </div>
 <div class="memtemplate">
 template&lt;int idx, int idy, int idz, class ArgX , class ArgY , class ArgZ , class IndexedArgX  = IndexedType&lt;ArgX,idx&gt;, class IndexedArgY  = IndexedType&lt;ArgY,idy&gt;, class IndexedArgZ  = IndexedType&lt;ArgZ,idz&gt;, class  = std::enable_if_t&lt; D3&lt;F,IndexedArgX,IndexedArgY,IndexedArgZ&gt;::present &gt;&gt; </div>
 <table class="mlabels">
@@ -354,7 +354,7 @@ template&lt;int idx, int idy, int idz, class ArgX , class ArgY , class ArgZ , cl
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 26 2015 13:22:00 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 14 2015 17:35:54 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -17,16 +17,16 @@ var searchData=
   ['conceptcheck',['ConceptCheck',['../group__ConceptCheck.html',1,'']]],
   ['concepts',['Concepts',['../group__Concepts.html',1,'']]],
   ['concepts_2ehh',['concepts.hh',['../concepts_8hh.html',1,'']]],
-  ['constant',['Constant',['../structRFFGen_1_1Constant.html#ae2d0e64d773d967430d13e47817d6d84',1,'RFFGen::Constant']]],
   ['constant',['Constant',['../structRFFGen_1_1Constant.html',1,'RFFGen']]],
-  ['constant_3c_20matrix_20_3e',['Constant&lt; Matrix &gt;',['../structRFFGen_1_1Constant.html',1,'RFFGen']]],
+  ['constant',['Constant',['../structRFFGen_1_1Constant.html#ae2d0e64d773d967430d13e47817d6d84',1,'RFFGen::Constant::Constant()'],['../namespaceRFFGen.html#a181c95df45572198e3e6bcac7616cd68',1,'RFFGen::constant()']]],
+  ['constantsizedeterminant',['ConstantSizeDeterminant',['../group__LinearAlgebraGroup.html#ga3db2e748fee631cc5180eaf9d703e124',1,'RFFGen::LinearAlgebra']]],
   ['constref',['constRef',['../namespaceRFFGen.html#a1e5703444079774f6e6a9161a9bacc6b',1,'RFFGen']]],
-  ['copyconcept',['CopyConcept',['../structRFFGen_1_1Concepts_1_1CopyConcept.html',1,'RFFGen::Concepts']]],
   ['copyconcept',['CopyConcept',['../structRFFGen_1_1Concepts_1_1CopyConcept.html#a8c65652314ce23b53ff82ff5c1e6d7a2',1,'RFFGen::Concepts::CopyConcept::CopyConcept()'],['../group__CopyConcept.html',1,'(Global Namespace)']]],
+  ['copyconcept',['CopyConcept',['../structRFFGen_1_1Concepts_1_1CopyConcept.html',1,'RFFGen::Concepts']]],
   ['copyconceptcheck',['CopyConceptCheck',['../structRFFGen_1_1Concepts_1_1CopyConceptCheck.html',1,'RFFGen::Concepts']]],
   ['copyconceptcheck_3c_20f_20_3e',['CopyConceptCheck&lt; F &gt;',['../structRFFGen_1_1Concepts_1_1CopyConceptCheck.html',1,'RFFGen::Concepts']]],
   ['copyconceptcheck_3c_20matrix_20_3e',['CopyConceptCheck&lt; Matrix &gt;',['../structRFFGen_1_1Concepts_1_1CopyConceptCheck.html',1,'RFFGen::Concepts']]],
   ['copyconceptcheck_3c_20vector_20_3e',['CopyConceptCheck&lt; Vector &gt;',['../structRFFGen_1_1Concepts_1_1CopyConceptCheck.html',1,'RFFGen::Concepts']]],
-  ['cos',['Cos',['../structRFFGen_1_1CMath_1_1Cos.html#a950dc0fac1e6a0df91e9beb863af9bee',1,'RFFGen::CMath::Cos']]],
-  ['cos',['Cos',['../structRFFGen_1_1CMath_1_1Cos.html',1,'RFFGen::CMath']]]
+  ['cos',['Cos',['../structRFFGen_1_1CMath_1_1Cos.html',1,'RFFGen::CMath']]],
+  ['cos',['Cos',['../structRFFGen_1_1CMath_1_1Cos.html#a950dc0fac1e6a0df91e9beb863af9bee',1,'RFFGen::CMath::Cos']]]
 ];

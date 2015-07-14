@@ -11,7 +11,6 @@ var searchData=
   ['squaredmatrixnorm',['SquaredMatrixNorm',['../structRFFGen_1_1LinearAlgebra_1_1SquaredMatrixNorm.html',1,'RFFGen::LinearAlgebra']]],
   ['straintensor',['StrainTensor',['../classRFFGen_1_1LinearAlgebra_1_1StrainTensor.html',1,'RFFGen::LinearAlgebra']]],
   ['sum',['Sum',['../structRFFGen_1_1MathematicalOperations_1_1Sum.html',1,'RFFGen::MathematicalOperations']]],
-  ['sum_3c_20identity_3c_20matrix_20_3e_2c_20mathematicaloperations_3a_3aproduct_3c_20trace_3c_20matrix_20_3e_2c_20constant_3c_20matrix_20_3e_20_3e_20_3e',['Sum&lt; Identity&lt; Matrix &gt;, MathematicalOperations::Product&lt; Trace&lt; Matrix &gt;, Constant&lt; Matrix &gt; &gt; &gt;',['../structRFFGen_1_1MathematicalOperations_1_1Sum.html',1,'RFFGen::MathematicalOperations']]],
   ['sum_3c_20linearizedstraintensor_3c_20matrix_20_3e_2c_20geometricnonlinearity_3c_20matrix_20_3e_20_3e',['Sum&lt; LinearizedStrainTensor&lt; Matrix &gt;, GeometricNonlinearity&lt; Matrix &gt; &gt;',['../structRFFGen_1_1MathematicalOperations_1_1Sum.html',1,'RFFGen::MathematicalOperations']]],
   ['summationconcept',['SummationConcept',['../structRFFGen_1_1Concepts_1_1SummationConcept.html',1,'RFFGen::Concepts']]],
   ['summationconceptcheck',['SummationConceptCheck',['../structRFFGen_1_1Concepts_1_1SummationConceptCheck.html',1,'RFFGen::Concepts']]],

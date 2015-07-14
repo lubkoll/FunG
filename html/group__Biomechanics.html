@@ -65,7 +65,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -403,7 +403,7 @@ template&lt;class Inflation , class Compression , class Matrix , int offset = Li
 </div><div class="memdoc">
 
 <p>Compressible version of the model for muscle tissue of Martins et al.: A numerical model of passive and active bahevaior of skeletal muscles. Comp. Meth. Appl. Mech. Eng. 151:419-433, 1998. </p>
-<p>Implementation of the stored energy function <img class="formulaInl" alt="$ W(F)=c(\exp(b(\bar\iota_1-3))-1) + A(\exp(a(\bar\iota_6-1)^2)-1) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression}$" src="form_42.png"/>, where <img class="formulaInl" alt="$\bar\iota_1,\bar\iota_6=\bar\iota_4$" src="form_35.png"/> are the first modified principal and the third modified mixed invariant of the strain tensor <img class="formulaInl" alt="$F^T F$" src="form_25.png"/>.</p>
+<p>Implementation of the stored energy function <img class="formulaInl" alt="$ W(F)=c(\exp(b(\bar\iota_1-3))-1) + A(\exp(a(\bar\iota_6-1)^2)-1) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression}(\det(F))$" src="form_42.png"/>, where <img class="formulaInl" alt="$\bar\iota_1,\bar\iota_6=\bar\iota_4$" src="form_35.png"/> are the first modified principal and the third modified mixed invariant of the strain tensor <img class="formulaInl" alt="$F^T F$" src="form_25.png"/>.</p>
 <p>Material parameters taken from the above mentioned publication, i.e. <img class="formulaInl" alt="$a=0.387 (\,\mathrm{kPa})$" src="form_37.png"/>, <img class="formulaInl" alt="$ b = 23.46 $" src="form_38.png"/>, <img class="formulaInl" alt="$ A = 0.584 (\,\mathrm{kPa}) $" src="form_39.png"/> and <img class="formulaInl" alt="$ a = 12.43$" src="form_40.png"/>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -808,7 +808,7 @@ template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 26 2015 13:21:51 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 14 2015 17:35:44 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

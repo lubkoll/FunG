@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -112,51 +112,53 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RFFGEN_CONSTANT_HH</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;Util/base.hh&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span>RFFGen</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span>&gt; <span class="keyword">struct </span>ArithmeticConceptCheck;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Type, <span class="keyword">class</span> = ArithmeticConceptCheck&lt;Type&gt; &gt;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="structRFFGen_1_1Constant.html">   40</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structRFFGen_1_1Constant.html">Constant</a> : <a class="code" href="structRFFGen_1_1Base.html">Base</a></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="structRFFGen_1_1Constant.html">Constant</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="structRFFGen_1_1Constant.html#ae2d0e64d773d967430d13e47817d6d84">   45</a></span>&#160;   <a class="code" href="structRFFGen_1_1Constant.html#ae2d0e64d773d967430d13e47817d6d84">Constant</a>(Type <span class="keyword">const</span>&amp; t_) : t(t_)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;   {}</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="structRFFGen_1_1Constant.html#a5934bfef73772d9f0870b1f53d95a6f8">   49</a></span>&#160;   <span class="keyword">const</span> Type&amp; <a class="code" href="structRFFGen_1_1Constant.html#a5934bfef73772d9f0870b1f53d95a6f8">operator()</a>() const noexcept</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;   {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;     <span class="keywordflow">return</span> <a class="code" href="structRFFGen_1_1Constant.html#a185f8aa750fe120dbe255de11107b7e1">d0</a>();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;   }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="structRFFGen_1_1Constant.html#a185f8aa750fe120dbe255de11107b7e1">   55</a></span>&#160;   <span class="keyword">const</span> Type&amp; <a class="code" href="structRFFGen_1_1Constant.html#a185f8aa750fe120dbe255de11107b7e1">d0</a>() const noexcept</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;   {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;     <span class="keywordflow">return</span> t;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;   }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    Type t;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  };</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Arg&gt;</div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="namespaceRFFGen.html#a1e5703444079774f6e6a9161a9bacc6b">   70</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="namespaceRFFGen.html#a1e5703444079774f6e6a9161a9bacc6b">constRef</a>(<span class="keyword">const</span> Arg&amp; x)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structRFFGen_1_1Constant.html">Constant&lt;const Arg&amp;&gt;</a>(x);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif // RFFGEN_CONSTANT_HH</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor"></span></div>
-<div class="ttc" id="structRFFGen_1_1Constant_html_a185f8aa750fe120dbe255de11107b7e1"><div class="ttname"><a href="structRFFGen_1_1Constant.html#a185f8aa750fe120dbe255de11107b7e1">RFFGen::Constant::d0</a></div><div class="ttdeci">const Type &amp; d0() const noexcept</div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> constant.hh:55</div></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;Util/chainer.hh&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span>RFFGen</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span>&gt; <span class="keyword">struct </span>ArithmeticConceptCheck;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Type, <span class="keyword">class</span> = ArithmeticConceptCheck&lt;Type&gt; &gt;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structRFFGen_1_1Constant.html">   41</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structRFFGen_1_1Constant.html">Constant</a> : <a class="code" href="structRFFGen_1_1Base.html">Base</a> , Chainer&lt; Constant&lt;Type , ArithmeticConceptCheck&lt;Type&gt; &gt; &gt;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="structRFFGen_1_1Constant.html">Constant</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="structRFFGen_1_1Constant.html#ae2d0e64d773d967430d13e47817d6d84">   46</a></span>&#160;   <a class="code" href="structRFFGen_1_1Constant.html#ae2d0e64d773d967430d13e47817d6d84">Constant</a>(Type <span class="keyword">const</span>&amp; t_) : t(t_)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;   {}</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="structRFFGen_1_1Constant.html#a185f8aa750fe120dbe255de11107b7e1">   50</a></span>&#160;   <span class="keyword">const</span> Type&amp; <a class="code" href="structRFFGen_1_1Constant.html#a185f8aa750fe120dbe255de11107b7e1">d0</a>() const noexcept</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;   {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;     <span class="keywordflow">return</span> t;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;   }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    Type t;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  };</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Arg&gt;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="namespaceRFFGen.html#a1e5703444079774f6e6a9161a9bacc6b">   65</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="namespaceRFFGen.html#a1e5703444079774f6e6a9161a9bacc6b">constRef</a>(<span class="keyword">const</span> Arg&amp; x)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structRFFGen_1_1Constant.html">Constant&lt;const Arg&amp;&gt;</a>(x);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Arg&gt;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="namespaceRFFGen.html#a181c95df45572198e3e6bcac7616cd68">   75</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="namespaceRFFGen.html#a181c95df45572198e3e6bcac7616cd68">constant</a>(<span class="keyword">const</span> Arg&amp; x)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structRFFGen_1_1Constant.html">Constant&lt;Arg&gt;</a>(x);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif // RFFGEN_CONSTANT_HH</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor"></span></div>
+<div class="ttc" id="structRFFGen_1_1Constant_html_a185f8aa750fe120dbe255de11107b7e1"><div class="ttname"><a href="structRFFGen_1_1Constant.html#a185f8aa750fe120dbe255de11107b7e1">RFFGen::Constant::d0</a></div><div class="ttdeci">const Type &amp; d0() const noexcept</div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> constant.hh:50</div></div>
+<div class="ttc" id="namespaceRFFGen_html_a181c95df45572198e3e6bcac7616cd68"><div class="ttname"><a href="namespaceRFFGen.html#a181c95df45572198e3e6bcac7616cd68">RFFGen::constant</a></div><div class="ttdeci">auto constant(const Arg &amp;x)</div><div class="ttdoc">Wrap a constant. </div><div class="ttdef"><b>Definition:</b> constant.hh:75</div></div>
 <div class="ttc" id="structRFFGen_1_1Base_html"><div class="ttname"><a href="structRFFGen_1_1Base.html">RFFGen::Base</a></div><div class="ttdoc">Base class for functions satisfying FunctionConcept. Required for enabling the operators in generate...</div><div class="ttdef"><b>Definition:</b> base.hh:27</div></div>
-<div class="ttc" id="namespaceRFFGen_html_a1e5703444079774f6e6a9161a9bacc6b"><div class="ttname"><a href="namespaceRFFGen.html#a1e5703444079774f6e6a9161a9bacc6b">RFFGen::constRef</a></div><div class="ttdeci">auto constRef(const Arg &amp;x)</div><div class="ttdoc">Generate a constant function that stores its argument as constant reference. </div><div class="ttdef"><b>Definition:</b> constant.hh:70</div></div>
-<div class="ttc" id="structRFFGen_1_1Constant_html"><div class="ttname"><a href="structRFFGen_1_1Constant.html">RFFGen::Constant</a></div><div class="ttdoc">Wrap a constant. </div><div class="ttdef"><b>Definition:</b> constant.hh:40</div></div>
-<div class="ttc" id="structRFFGen_1_1Constant_html_ae2d0e64d773d967430d13e47817d6d84"><div class="ttname"><a href="structRFFGen_1_1Constant.html#ae2d0e64d773d967430d13e47817d6d84">RFFGen::Constant::Constant</a></div><div class="ttdeci">Constant(Type const &amp;t_)</div><div class="ttdoc">Construct constant from copy. </div><div class="ttdef"><b>Definition:</b> constant.hh:45</div></div>
-<div class="ttc" id="structRFFGen_1_1Constant_html_a5934bfef73772d9f0870b1f53d95a6f8"><div class="ttname"><a href="structRFFGen_1_1Constant.html#a5934bfef73772d9f0870b1f53d95a6f8">RFFGen::Constant::operator()</a></div><div class="ttdeci">const Type &amp; operator()() const noexcept</div><div class="ttdoc">Function value. Convenient access to d0(). </div><div class="ttdef"><b>Definition:</b> constant.hh:49</div></div>
+<div class="ttc" id="namespaceRFFGen_html_a1e5703444079774f6e6a9161a9bacc6b"><div class="ttname"><a href="namespaceRFFGen.html#a1e5703444079774f6e6a9161a9bacc6b">RFFGen::constRef</a></div><div class="ttdeci">auto constRef(const Arg &amp;x)</div><div class="ttdoc">Generate a constant function that stores its argument as constant reference. </div><div class="ttdef"><b>Definition:</b> constant.hh:65</div></div>
+<div class="ttc" id="structRFFGen_1_1Constant_html"><div class="ttname"><a href="structRFFGen_1_1Constant.html">RFFGen::Constant</a></div><div class="ttdoc">Wrap a constant. </div><div class="ttdef"><b>Definition:</b> constant.hh:41</div></div>
+<div class="ttc" id="structRFFGen_1_1Constant_html_ae2d0e64d773d967430d13e47817d6d84"><div class="ttname"><a href="structRFFGen_1_1Constant.html#ae2d0e64d773d967430d13e47817d6d84">RFFGen::Constant::Constant</a></div><div class="ttdeci">Constant(Type const &amp;t_)</div><div class="ttdoc">Construct constant from copy. </div><div class="ttdef"><b>Definition:</b> constant.hh:46</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 26 2015 13:21:51 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 14 2015 17:35:44 for Function Generation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

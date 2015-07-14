@@ -15,8 +15,6 @@ struct \hyperlink{structRFFGen_1_1Identity}{Identity}
 \begin{DoxyCompactList}\small\item\em Identity mapping $ f(x)=x $. \end{DoxyCompactList}\item 
 struct \hyperlink{structRFFGen_1_1Variable}{Variable}
 \begin{DoxyCompactList}\small\item\em Independent variable. Can be uniquely identified by its id. \end{DoxyCompactList}\item 
-struct \hyperlink{structRFFGen_1_1YieldSurface}{Yield\-Surface}
-\begin{DoxyCompactList}\small\item\em Yield surface $ \frac{\beta}{3}\iota_1(\sigma) + J_2(\sigma)-offset $, where $\iota_1$ is the first principal and $J_2$ is the second deviatoric invariant. \end{DoxyCompactList}\item 
 struct \hyperlink{structRFFGen_1_1Base}{Base}
 \begin{DoxyCompactList}\small\item\em Base class for functions satisfying Function\-Concept. Required for enabling the operators in \hyperlink{generate_8hh_source}{generate.\-hh}. \end{DoxyCompactList}\item 
 class \hyperlink{classRFFGen_1_1OutOfDomainException}{Out\-Of\-Domain\-Exception}
@@ -25,8 +23,8 @@ class \hyperlink{classRFFGen_1_1NonSymmetricMatrixException}{Non\-Symmetric\-Mat
 \begin{DoxyCompactList}\small\item\em Exception for non-\/symmetric matrices if symmetric matrices are required. \end{DoxyCompactList}\item 
 struct \hyperlink{structRFFGen_1_1Zero}{Zero}
 \begin{DoxyCompactList}\small\item\em Specialize this struct for your matrix type if a zero matrix cannot be generated via Matrix(0.). \end{DoxyCompactList}\item 
-struct \hyperlink{structRFFGen_1_1Zero_3_01Matrix_00_01void__t_3_01Checks_1_1TryCallToZeroes_3_01Matrix_01_4_01_4_01_4}{Zero$<$ Matrix, void\-\_\-t$<$ Checks\-::\-Try\-Call\-To\-Zeroes$<$ Matrix $>$ $>$ $>$}
-\begin{DoxyCompactList}\small\item\em Specialization for the case that a matrix can be set to zero by calling the member function zeroes(). \end{DoxyCompactList}\end{DoxyCompactItemize}
+struct \hyperlink{structRFFGen_1_1Zero_3_01Matrix_00_01void__t_3_01Checks_1_1TryCallToFill_3_01Matrix_01_4_01_4_01_4}{Zero$<$ Matrix, void\-\_\-t$<$ Checks\-::\-Try\-Call\-To\-Fill$<$ Matrix $>$ $>$ $>$}
+\begin{DoxyCompactList}\small\item\em Specialization for the case that a matrix can be set to zero by calling the member function fill(0). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
@@ -43,20 +41,18 @@ struct \hyperlink{structRFFGen_1_1Zero_3_01Matrix_00_01void__t_3_01Checks_1_1Try
 \item 
 {\footnotesize template$<$class Arg $>$ }\\auto \hyperlink{namespaceRFFGen_a1e5703444079774f6e6a9161a9bacc6b}{const\-Ref} (const Arg \&x)
 \begin{DoxyCompactList}\small\item\em Generate a constant function that stores its argument as constant reference. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Arg $>$ }\\auto \hyperlink{namespaceRFFGen_a181c95df45572198e3e6bcac7616cd68}{constant} (const Arg \&x)
+\begin{DoxyCompactList}\small\item\em Wrap a constant. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class F $>$ }\\auto \hyperlink{namespaceRFFGen_ad0d4bfae5fedad4740c0ab09cb4ff0a1}{finalize} (const F \&f)
 \begin{DoxyCompactList}\small\item\em Finish function definition. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class F $>$ }\\auto \hyperlink{namespaceRFFGen_a8a6f6d638cd22c164c671c239486bb88}{finalize\-\_\-scalar} (const F \&f)
 \begin{DoxyCompactList}\small\item\em Finish function definition. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class F , class G , class  = std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$\-::value $\vert$$\vert$                                      std\-::is\-\_\-base\-\_\-of$<$\-Base,\-G$>$\-::value $>$$>$ }\\auto \hyperlink{namespaceRFFGen_a45fcf65f6c783e3da0a0007291f706ca}{operator+} (const F \&f, const G \&g)
 \begin{DoxyCompactList}\small\item\em overload of \char`\"{}+\char`\"{}-\/operator for the generation of functions. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , class G , class  = std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$\-::value $>$, class  = std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-base\-\_\-of$<$\-Base,\-G$>$\-::value $>$$>$ }\\auto \hyperlink{namespaceRFFGen_a62822aff0618fe8e869c7f73c82454df}{operator$\ast$} (const F \&f, const G \&g)
-\begin{DoxyCompactList}\small\item\em overload of \char`\"{}$\ast$\char`\"{}-\/operator for the generation of functions. This overload is restricted to multiplication of functions. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , class  = std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$\-::value $>$$>$ }\\constexpr auto \hyperlink{namespaceRFFGen_ab2e1b87874474c32b20338fc3c60be5a}{operator$^\wedge$} (const F \&f, int k)
+{\footnotesize template$<$class F , class G , class  = std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$\-::value $\vert$$\vert$ std\-::is\-\_\-base\-\_\-of$<$\-Base,\-G$>$\-::value $>$$>$ }\\auto \hyperlink{namespaceRFFGen_ab537e59af6c5a4f0f2a7469e8ae6461b}{operator$\ast$} (const F \&f, const G \&g)
+\begin{DoxyCompactList}\small\item\em overload of \char`\"{}$\ast$\char`\"{}-\/operator for the generation of functions. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class F , class  = std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$\-::value $>$$>$ }\\auto \hyperlink{namespaceRFFGen_a59a4ba5900f079a4023c34cd620fc21d}{operator$^\wedge$} (const F \&f, int k)
 \begin{DoxyCompactList}\small\item\em overload of \char`\"{}$^\wedge$\char`\"{}-\/operator for the generation of functions. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Scalar , class F , class  = std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$() \&\& std\-::is\-\_\-arithmetic$<$\-Scalar$>$() $>$$>$ }\\auto \hyperlink{namespaceRFFGen_a7be854ac2257ddf852ddb3ac6cfc413d}{operator$\ast$} (const Scalar \&a, const F \&f)
-\begin{DoxyCompactList}\small\item\em overload of \char`\"{}$\ast$\char`\"{}-\/operator for the generation of functions. This overload is restricted to the multiplication of functions with doubles from the left. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , class Scalar , class  = std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$() \&\& std\-::is\-\_\-arithmetic$<$\-Scalar$>$() $>$$>$ }\\auto \hyperlink{namespaceRFFGen_a6e94e177aaa2786b8d504273a402b41e}{operator$\ast$} (const F \&f, Scalar a)
-\begin{DoxyCompactList}\small\item\em overload of \char`\"{}$\ast$\char`\"{}-\/operator for the generation of functions. This overload is restricted to the multiplication of functions with doubles from the left. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class F , class G , class  = std\-::enable\-\_\-if\-\_\-t$<$std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$\-::value \&\&                                     std\-::is\-\_\-base\-\_\-of$<$\-Base,\-G$>$\-::value$>$$>$ }\\auto \hyperlink{namespaceRFFGen_a2c40e5d41ad211f6d861f2862a02e670}{operator$<$$<$} (const F \&f, const G \&g)
 \begin{DoxyCompactList}\small\item\em overload of \char`\"{}$<$$<$\char`\"{}-\/operator for chaining functions $f$ and $g$ to $ f \circ g $. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class F , class T , class  = std\-::enable\-\_\-if\-\_\-t$<$std\-::is\-\_\-convertible$<$\-T,decltype(std\-::declval$<$\-F$>$().\-d0())$>$\-::value \&\&                                     std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$\-::value$>$$>$ }\\auto \hyperlink{namespaceRFFGen_a933ac482bf44b977bbe2ce057362b55a}{operator-\/} (const F \&f, const T \&t)
@@ -78,6 +74,9 @@ struct \hyperlink{structRFFGen_1_1Zero_3_01Matrix_00_01void__t_3_01Checks_1_1Try
 \hypertarget{namespaceRFFGen_a18b1b3749e9292f521920a9cded87ca7}{{\footnotesize template$<$class Matrix $>$ }\\auto \hyperlink{namespaceRFFGen_a18b1b3749e9292f521920a9cded87ca7}{volumetric\-Hartmann\-Neff} (double d0, double d1, const Matrix \&A)}\label{namespaceRFFGen_a18b1b3749e9292f521920a9cded87ca7}
 
 \begin{DoxyCompactList}\small\item\em Create the volumetric penalty function $ d_0 j^5 + d_1 j^{-5},\ j=\det(A) $. \end{DoxyCompactList}\item 
+\hypertarget{namespaceRFFGen_aa17be470f8d1f282f788fa1b844ad3bb}{{\footnotesize template$<$class Matrix $>$ }\\auto \hyperlink{namespaceRFFGen_aa17be470f8d1f282f788fa1b844ad3bb}{yield\-Surface} (double beta, double offset, Matrix sigma=Linear\-Algebra\-::unit\-Matrix$<$ Matrix $>$())}\label{namespaceRFFGen_aa17be470f8d1f282f788fa1b844ad3bb}
+
+\begin{DoxyCompactList}\small\item\em Yield surface $ \frac{\beta}{3}\iota_1(\sigma) + J_2(\sigma)-offset $, where $\iota_1$ is the first principal and $J_2$ is the second deviatoric invariant. \end{DoxyCompactList}\item 
 \hypertarget{group__Rubber_ga8626dcc0c5d11d3d2d796d09457e5e5d}{{\footnotesize template$<$class Matrix , int offset = Linear\-Algebra\-::dimension$<$\-Matrix$>$()$>$ }\\auto \hyperlink{group__Rubber_ga8626dcc0c5d11d3d2d796d09457e5e5d}{incompressible\-Mooney\-Rivlin} (double c0, double c1, const Matrix \&F)}\label{group__Rubber_ga8626dcc0c5d11d3d2d796d09457e5e5d}
 
 \begin{DoxyCompactList}\small\item\em Generate an \char`\"{}incompressible\char`\"{} Mooney-\/\-Rivlin material law $ W(F)=c_0\iota_1(F^T F) + c_1\iota_2(F^T F) $, where $\iota_1$ is the first and $\iota_2$ the second principal matrix invariant. \end{DoxyCompactList}\item 
@@ -139,7 +138,9 @@ struct \hyperlink{structRFFGen_1_1Zero_3_01Matrix_00_01void__t_3_01Checks_1_1Try
 \begin{DoxyCompactList}\small\item\em Overwrites $A$ with $A+A^T$. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Matrix , class  = std\-::enable\-\_\-if\-\_\-t$<$!\-Checks\-::is\-Constant\-Size\-Matrix$<$\-Matrix$>$()$>$, class  = std\-::enable\-\_\-if\-\_\-t$<$\-Checks\-::is\-Dynamic\-Matrix$<$\-Matrix$>$()$>$$>$ }\\Matrix \hyperlink{namespaceRFFGen_adef418735161dcbe64af19269329865e}{add\-Transposed} (Matrix \&A)
 \begin{DoxyCompactList}\small\item\em Overwrites $A$ with $A+A^T$. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Matrix $>$ }\\Matrix \hyperlink{namespaceRFFGen_a1248d7bf9320b86381dae791086c1f38}{zero} ()
+{\footnotesize template$<$class Matrix , class  = std\-::enable\-\_\-if\-\_\-t$<$\-Checks\-::is\-Constant\-Size\-Matrix$<$\-Matrix$>$()$>$$>$ }\\Matrix \hyperlink{namespaceRFFGen_a63d0192aaeb22d4afe3c2f523524f3ac}{zero} ()
+\item 
+{\footnotesize template$<$class Matrix , class  = std\-::enable\-\_\-if\-\_\-t$<$!\-Checks\-::is\-Constant\-Size\-Matrix$<$\-Matrix$>$()$>$$>$ }\\constexpr Matrix \hyperlink{namespaceRFFGen_a0ad3b71c6132f265349b58702649eb32}{zero} (int rows, int cols)
 \end{DoxyCompactItemize}
 
 
@@ -190,6 +191,20 @@ Overwrites $A$ with $A+A^T$.
 \begin{DoxyReturn}{Returns}
 $A+A^T$ 
 \end{DoxyReturn}
+\hypertarget{namespaceRFFGen_a181c95df45572198e3e6bcac7616cd68}{\index{R\-F\-F\-Gen@{R\-F\-F\-Gen}!constant@{constant}}
+\index{constant@{constant}!RFFGen@{R\-F\-F\-Gen}}
+\subsubsection[{constant}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg $>$ auto R\-F\-F\-Gen\-::constant (
+\begin{DoxyParamCaption}
+\item[{const Arg \&}]{x}
+\end{DoxyParamCaption}
+)}}\label{namespaceRFFGen_a181c95df45572198e3e6bcac7616cd68}
+
+
+Wrap a constant. 
+
+\begin{DoxyReturn}{Returns}
+Constant$<$\-Arg$>$(x) 
+\end{DoxyReturn}
 \hypertarget{namespaceRFFGen_a1e5703444079774f6e6a9161a9bacc6b}{\index{R\-F\-F\-Gen@{R\-F\-F\-Gen}!const\-Ref@{const\-Ref}}
 \index{const\-Ref@{const\-Ref}!RFFGen@{R\-F\-F\-Gen}}
 \subsubsection[{const\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg $>$ auto R\-F\-F\-Gen\-::const\-Ref (
@@ -223,41 +238,17 @@ Adds the definition of possibly undefined vanishing higher order derivatives. \h
 
 Finish function definition. 
 
-Adds the definition of possibly undefined vanishing higher order derivatives. \hypertarget{namespaceRFFGen_a62822aff0618fe8e869c7f73c82454df}{\index{R\-F\-F\-Gen@{R\-F\-F\-Gen}!operator$\ast$@{operator$\ast$}}
+Adds the definition of possibly undefined vanishing higher order derivatives. \hypertarget{namespaceRFFGen_ab537e59af6c5a4f0f2a7469e8ae6461b}{\index{R\-F\-F\-Gen@{R\-F\-F\-Gen}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!RFFGen@{R\-F\-F\-Gen}}
-\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class G , class  = std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$\-::value $>$, class  = std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-base\-\_\-of$<$\-Base,\-G$>$\-::value $>$$>$ auto R\-F\-F\-Gen\-::operator$\ast$ (
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class G , class  = std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$\-::value $\vert$$\vert$ std\-::is\-\_\-base\-\_\-of$<$\-Base,\-G$>$\-::value $>$$>$ auto R\-F\-F\-Gen\-::operator$\ast$ (
 \begin{DoxyParamCaption}
 \item[{const F \&}]{f, }
 \item[{const G \&}]{g}
 \end{DoxyParamCaption}
-)}}\label{namespaceRFFGen_a62822aff0618fe8e869c7f73c82454df}
+)}}\label{namespaceRFFGen_ab537e59af6c5a4f0f2a7469e8ae6461b}
 
 
-overload of \char`\"{}$\ast$\char`\"{}-\/operator for the generation of functions. This overload is restricted to multiplication of functions. 
-
-This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions. If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. \hypertarget{namespaceRFFGen_a7be854ac2257ddf852ddb3ac6cfc413d}{\index{R\-F\-F\-Gen@{R\-F\-F\-Gen}!operator$\ast$@{operator$\ast$}}
-\index{operator$\ast$@{operator$\ast$}!RFFGen@{R\-F\-F\-Gen}}
-\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Scalar , class F , class  = std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$() \&\& std\-::is\-\_\-arithmetic$<$\-Scalar$>$() $>$$>$ auto R\-F\-F\-Gen\-::operator$\ast$ (
-\begin{DoxyParamCaption}
-\item[{const Scalar \&}]{a, }
-\item[{const F \&}]{f}
-\end{DoxyParamCaption}
-)}}\label{namespaceRFFGen_a7be854ac2257ddf852ddb3ac6cfc413d}
-
-
-overload of \char`\"{}$\ast$\char`\"{}-\/operator for the generation of functions. This overload is restricted to the multiplication of functions with doubles from the left. 
-
-This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions. If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. \hypertarget{namespaceRFFGen_a6e94e177aaa2786b8d504273a402b41e}{\index{R\-F\-F\-Gen@{R\-F\-F\-Gen}!operator$\ast$@{operator$\ast$}}
-\index{operator$\ast$@{operator$\ast$}!RFFGen@{R\-F\-F\-Gen}}
-\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class Scalar , class  = std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$() \&\& std\-::is\-\_\-arithmetic$<$\-Scalar$>$() $>$$>$ auto R\-F\-F\-Gen\-::operator$\ast$ (
-\begin{DoxyParamCaption}
-\item[{const F \&}]{f, }
-\item[{Scalar}]{a}
-\end{DoxyParamCaption}
-)}}\label{namespaceRFFGen_a6e94e177aaa2786b8d504273a402b41e}
-
-
-overload of \char`\"{}$\ast$\char`\"{}-\/operator for the generation of functions. This overload is restricted to the multiplication of functions with doubles from the left. 
+overload of \char`\"{}$\ast$\char`\"{}-\/operator for the generation of functions. 
 
 This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions. If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. \hypertarget{namespaceRFFGen_a45fcf65f6c783e3da0a0007291f706ca}{\index{R\-F\-F\-Gen@{R\-F\-F\-Gen}!operator+@{operator+}}
 \index{operator+@{operator+}!RFFGen@{R\-F\-F\-Gen}}
@@ -307,25 +298,36 @@ This is not to be confused with delayed computations with expression templates. 
 
 overload of \char`\"{}$<$$<$\char`\"{}-\/operator for chaining functions $f$ and $g$ to $ f \circ g $. 
 
-This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions. If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. \hypertarget{namespaceRFFGen_ab2e1b87874474c32b20338fc3c60be5a}{\index{R\-F\-F\-Gen@{R\-F\-F\-Gen}!operator$^\wedge$@{operator$^\wedge$}}
+This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions. If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. \hypertarget{namespaceRFFGen_a59a4ba5900f079a4023c34cd620fc21d}{\index{R\-F\-F\-Gen@{R\-F\-F\-Gen}!operator$^\wedge$@{operator$^\wedge$}}
 \index{operator$^\wedge$@{operator$^\wedge$}!RFFGen@{R\-F\-F\-Gen}}
-\subsubsection[{operator$^\wedge$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class  = std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$\-::value $>$$>$ constexpr auto R\-F\-F\-Gen\-::operator$^\wedge$ (
+\subsubsection[{operator$^\wedge$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class  = std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$\-::value $>$$>$ auto R\-F\-F\-Gen\-::operator$^\wedge$ (
 \begin{DoxyParamCaption}
 \item[{const F \&}]{f, }
 \item[{int}]{k}
 \end{DoxyParamCaption}
-)}}\label{namespaceRFFGen_ab2e1b87874474c32b20338fc3c60be5a}
+)}}\label{namespaceRFFGen_a59a4ba5900f079a4023c34cd620fc21d}
 
 
 overload of \char`\"{}$^\wedge$\char`\"{}-\/operator for the generation of functions. 
 
-This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions. If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. \hypertarget{namespaceRFFGen_a1248d7bf9320b86381dae791086c1f38}{\index{R\-F\-F\-Gen@{R\-F\-F\-Gen}!zero@{zero}}
+This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions. If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. \hypertarget{namespaceRFFGen_a63d0192aaeb22d4afe3c2f523524f3ac}{\index{R\-F\-F\-Gen@{R\-F\-F\-Gen}!zero@{zero}}
 \index{zero@{zero}!RFFGen@{R\-F\-F\-Gen}}
-\subsubsection[{zero}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix $>$ Matrix R\-F\-F\-Gen\-::zero (
+\subsubsection[{zero}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , class  = std\-::enable\-\_\-if\-\_\-t$<$\-Checks\-::is\-Constant\-Size\-Matrix$<$\-Matrix$>$()$>$$>$ Matrix R\-F\-F\-Gen\-::zero (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{namespaceRFFGen_a1248d7bf9320b86381dae791086c1f38}
+)}}\label{namespaceRFFGen_a63d0192aaeb22d4afe3c2f523524f3ac}
 Requires that a specialization of struct \hyperlink{structRFFGen_1_1Zero}{Zero} exists for Matrix. \begin{DoxyReturn}{Returns}
-zero matrix 
+constant size zero matrix 
+\end{DoxyReturn}
+\hypertarget{namespaceRFFGen_a0ad3b71c6132f265349b58702649eb32}{\index{R\-F\-F\-Gen@{R\-F\-F\-Gen}!zero@{zero}}
+\index{zero@{zero}!RFFGen@{R\-F\-F\-Gen}}
+\subsubsection[{zero}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , class  = std\-::enable\-\_\-if\-\_\-t$<$!\-Checks\-::is\-Constant\-Size\-Matrix$<$\-Matrix$>$()$>$$>$ constexpr Matrix R\-F\-F\-Gen\-::zero (
+\begin{DoxyParamCaption}
+\item[{int}]{rows, }
+\item[{int}]{cols}
+\end{DoxyParamCaption}
+)}}\label{namespaceRFFGen_a0ad3b71c6132f265349b58702649eb32}
+Requires that a specialization of struct \hyperlink{structRFFGen_1_1Zero}{Zero} exists for Matrix. \begin{DoxyReturn}{Returns}
+dynamic size zero matrix 
 \end{DoxyReturn}
