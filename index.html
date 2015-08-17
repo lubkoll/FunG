@@ -22,14 +22,14 @@
           ['Library', 'time/s', { role: 'style' }],
           ['FADBAD++', 0.575, 'blue'],
           ['SACADO', 0.542, 'blue'],
-          ['RFFGen', 0.517, 'orange'],
+          ['FunG', 0.517, 'orange'],
           ['Manual', 0.507, 'gray']
         ]);
         
         var data2 = google.visualization.arrayToDataTable([
           ['Library', 'time/s', { role: 'style' }],
           ['FADBAD++', 1.412, 'blue'],
-          ['RFFGen', 1.364, 'orange'],
+          ['FunG', 1.364, 'orange'],
           ['Manual', 1.325, 'gray']
         ]);
 
@@ -37,7 +37,7 @@
           ['Library', 'time/s', { role: 'style' }],
           ['FADBAD++', 0.581, 'blue'],
           ['SACADO', 0.586, 'blue'],
-          ['RFFGen', 0.499, 'orange'],
+          ['FunG', 0.499, 'orange'],
           ['Manual', 0.475, 'gray']
         ]);
 
@@ -99,11 +99,11 @@
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="RFFGen : A C++-library for the generation of complex functions, including first three derivatives and different variable types.">
+    <meta name="description" content="FunG : A C++-library for the generation of complex functions, including first three derivatives and different variable types.">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>RFFGen - Fast Function Generation</title>
+    <title>FunG - Fast Function Generation</title>
   </head>
 
   <body>
@@ -111,14 +111,14 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-          <a id="forkme_banner" href="https://github.com/lubkoll/RFFGen">View on GitHub</a>
+          <a id="forkme_banner" href="https://github.com/lubkoll/FunG">View on GitHub</a>
 
           <h1 id="project_title">(Really) Fast Function Generation</h1>
           <h2 id="project_tagline">A C++-library for the generation of complex functions, including first three derivatives and different variable types.</h2>
 
             <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/lubkoll/RFFGen/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/lubkoll/RFFGen/tarball/master">Download this project as a tar.gz file</a>
+              <a class="zip_download_link" href="https://github.com/lubkoll/FunG/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/lubkoll/FunG/tarball/master">Download this project as a tar.gz file</a>
             </section>
         </header>
     </div>
@@ -126,13 +126,13 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <p><a href="https://travis-ci.org/lubkoll/RFFGen/builds"><img src="https://travis-ci.org/lubkoll/RFFGen.svg?branch=master" alt="Build Status"></a>
-           <a href="https://coveralls.io/r/lubkoll/RFFGen?branch=master"><img src="https://coveralls.io/repos/lubkoll/RFFGen/badge.svg?branch=master" alt="Coverage Status"></a>
+        <p><a href="https://travis-ci.org/lubkoll/FunG/builds"><img src="https://travis-ci.org/lubkoll/FunG.svg?branch=master" alt="Build Status"></a>
+           <a href="https://coveralls.io/r/lubkoll/FunG?branch=master"><img src="https://coveralls.io/repos/lubkoll/FunG/badge.svg?branch=master" alt="Coverage Status"></a>
 
 <h1>
-<a id="rffgen" class="anchor" href="#rffgen" aria-hidden="true"><span class="octicon octicon-link"></span></a>RFFGen</h1>
+<a id="rffgen" class="anchor" href="#rffgen" aria-hidden="true"><span class="octicon octicon-link"></span></a>FunG</h1>
 
-<p>RFFGen is a C++-library for the generation of complex functions. These can depend on an arbitrary number of variables of different types. Besides the function value the first three, possibly mixed, directional derivatives are provided. The evaluation of function values and derivatives is (almost) as efficient as optimized manual implementations.<br>Possibly modified, principal and mixed invariants, the basic blocks of complex physical models, are provided, as well as some isotropic and anisotropic models from biomechanics.</p>
+<p>FunG is a C++-library for the generation of complex functions. These can depend on an arbitrary number of variables of different types. Besides the function value the first three, possibly mixed, directional derivatives are provided. The evaluation of function values and derivatives is (almost) as efficient as optimized manual implementations.<br>Possibly modified, principal and mixed invariants, the basic blocks of complex physical models, are provided, as well as some isotropic and anisotropic models from biomechanics.</p>
 
 <p>The implementation is similar to forward automatic differentiation (AD) with expression templates. However, here a different perspective is taken. 
 <ul>
@@ -174,7 +174,7 @@
 <br><h1>
 <a id="examples" class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h1>
 
-<p>Usage is illustrated using three different examples. Further examples can be found in RFFGen/Tests and RFFGen/Examples.</p>
+<p>Usage is illustrated using three different examples. Further examples can be found in FunG/Tests and FunG/Examples.</p>
 
 <h3>
 <a id="a-simple-example" class="anchor" href="#a-simple-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>A simple example</h3>
@@ -191,16 +191,16 @@
 
 <p><img src="http://latex.codecogs.com/gif.latex?g%28x%29%3D%5Csqrt%7Bx%7D" alt="equation"></p>
 
-<pre><code>#include "RFFGen.hh"
+<pre><code>#include "FunG.hh"
 
 auto generateFunction()
 {
-  using namespace RFFGen::CMath;
+  using namespace FunG::CMath;
 
   auto h = Pow&lt;3&gt;() + Sin();
   auto g = Sqrt();
 
-  return RFFGen::finalize_scalar( h(g) );
+  return FunG::finalize_scalar( h(g) );
 }
 </code></pre>
 
@@ -228,15 +228,15 @@ auto thirdDerivative  = f.d3();
 <p>which constitutes a model for adipose tissue. In this context the invariants depend on the left Cauchy-Green strain tensor. The part 
 <span lang="latex">(\iota_1-3)</span> is represented by the <code>ShiftedFirstPrincipalInvariant</code>. The implementation of this model is</p>
 
-<pre><code>#include "RFFGen.hh"
+<pre><code>#include "FunG.hh"
 
 template &lt;class Mat&gt;
 auto generateAdiposeTissue(double cCells, double k1, double k2,
              double kappa, const Matrix&amp; M, const Matrix&amp; F)
 {
-  using namespace RFFGen::LinearAlgebra;
-  using RFFGen::CMath::exp;
-  using RFFGen::finalize;
+  using namespace FunG::LinearAlgebra;
+  using FunG::CMath::exp;
+  using FunG::finalize;
 
   auto i1 = FirstPrincipalInvariant&lt;Matrix&gt;();
   auto si1 = ShiftedFirstPrincipalInvariant&lt;Matrix&gt;();
@@ -276,19 +276,19 @@ suitable default values for the directions. Here this is not admissible. </p>
 
 <p><img src="http://latex.codecogs.com/gif.latex?f%28x%2CF%29%3D%5Csqrt%7Bx%7D%5Cmathrm%7Btr%7D%28F%29" alt="equation"></p>
 
-<pre><code>#include "RFFGen.hh"
+<pre><code>#include "FunG.hh"
 
 template &lt;class Mat&gt;
 auto generateFunction()
 {
-  using RFFGen::CMath::sqrt;
-  using RFFGen::LinearAlgebra::trace;
-  using RFFGen::Variable;
+  using FunG::CMath::sqrt;
+  using FunG::LinearAlgebra::trace;
+  using FunG::Variable;
 
   auto x = Variable&lt;double,0&gt;();
   auto F = Variable&lt;Mat,1&gt;();
 
-  return RFFGen::finalize( sqrt(x)*trace(F) );
+  return FunG::finalize( sqrt(x)*trace(F) );
 }
 </code></pre>
 
@@ -408,7 +408,7 @@ must be provided. Suitable implementations exist for the cases that a zero matri
 <br><h1>
 <a id="ad_comparison" class="anchor" href=#ad_comparison aria-hidden="true"><span class="octicon octicon-link"></span></a>Comparison with automatic differentation libraries</h1>
 
-<p>The performance of RFFGen is demonstrated by several examples comparing it with forward mode automatic differentation of <a href="http://www.fadbad.com">FADBAD++</a> and <a href="https://trilinos.org/packages/sacado">SACADO</a>. Some other implementations were tested too. However, these were far slower and/or buggy. In particular backward mode automatic differentation is significantly slower for 
+<p>The performance of FunG is demonstrated by several examples comparing it with forward mode automatic differentation of <a href="http://www.fadbad.com">FADBAD++</a> and <a href="https://trilinos.org/packages/sacado">SACADO</a>. Some other implementations were tested too. However, these were far slower and/or buggy. In particular backward mode automatic differentation is significantly slower for 
 the considered functions.<br>
 All examples were compiled with <code>-O2</code> compiler option with gcc-4.9.2. They were run on an ASUS UX32V. All examples were evaluated 10.000.000 times (function value + derivative(s)) with varying arguments.</p>
 
@@ -497,7 +497,7 @@ Due to the extensive caching the call to <code>update</code> is more costly than
 <br><h1>
 <a id="publications" class="anchor" href=#publications aria-hidden="true"><span class="octicon octicon-link"></span></a>Publications</h1>
 
-<p>Preliminary versions of RFFGen have been used in:</p>
+<p>Preliminary versions of FunG have been used in:</p>
 <ul>
 <li>L. Lubkoll, A. Schiela, M. Weiser: <i>An affine covariant composite step method for optimization with PDEs as equality constraints.</i> Submitted at Opt. Meth. Soft., Preprint: ZIB-Report 15-09, 2015</li>
 <li>L. Lubkoll: <i>An Optimal Control Approach to Implant Shape Design: Modeling, Analysis and Numerics.</i> Dissertation, submitted at Universität Bayreuth, 2015</li>
@@ -511,7 +511,7 @@ Due to the extensive caching the call to <code>update</code> is more costly than
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        <p class="copyright">RFFGen maintained by <a href="https://github.com/lubkoll">lubkoll</a></p>
+        <p class="copyright">FunG maintained by <a href="https://github.com/lubkoll">lubkoll</a></p>
         <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
