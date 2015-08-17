@@ -1,10 +1,6 @@
 language: cpp
 compiler: gcc
 before_install:
-- openssl aes-256-cbc -K $encrypted_25dce5acf934_key -iv $encrypted_25dce5acf934_iv
-  -in config/travisci_rsa.enc -out config/travisci_rsa -d
-- chmod 0600 config/travisci_rsa
-- cp config/travisci_rsa ~/.ssh/id_rsa
 - "$CXX --version"
 - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
 - sudo apt-get update -qq
@@ -24,5 +20,3 @@ script:
 after_success:
 - coveralls --root .. --exclude eigen --exclude build/CMakeFiles/CompilerIdC --exclude build/CMakeFiles/CompilerIdCXX --exclude FunG/Tests --exclude test --exclude external --gcov 'gcov-4.9' --gcov-options '\-lp'
 - sudo apt-get install --yes doxygen graphviz
-- cd ..
-- "./config/publish-doc"
