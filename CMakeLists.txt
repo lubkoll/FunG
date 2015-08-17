@@ -1,7 +1,7 @@
 
 cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 
-project(rffgen)
+project(fung)
 
 enable_language(C CXX)
 
@@ -22,7 +22,7 @@ if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
 endif()
 
 include_directories(
-    ${PROJECT_SOURCE_DIR}/RFFGen
+    ${PROJECT_SOURCE_DIR}/FunG
     ${PROJECT_SOURCE_DIR}/external/googletest
     ${PROJECT_SOURCE_DIR}/external/googletest/include
     )

@@ -1,28 +1,28 @@
-#define RFFGEN_ENABLE_EXCEPTIONS
-#include "../../RFFGen/RFFGen/CMath/log.hh"
+#define FUNG_ENABLE_EXCEPTIONS
+#include "../../FunG/FunG/CMath/log.hh"
 
 #include <gtest/gtest.h>
 
 auto generateTestLN()
 {
-  return RFFGen::CMath::LN(1.);
+  return FunG::CMath::LN(1.);
 }
 
 auto generateTestLog2()
 {
-  return RFFGen::CMath::Log2(1.);
+  return FunG::CMath::Log2(1.);
 }
 
 auto generateTestLog10()
 {
-  return RFFGen::CMath::Log10(1.);
+  return FunG::CMath::Log10(1.);
 }
 
 
 TEST(LNTest,Update)
 {
   auto fun = generateTestLN();
-  EXPECT_THROW(fun.update(0), RFFGen::OutOfDomainException);
+  EXPECT_THROW(fun.update(0), FunG::OutOfDomainException);
 }
 
 TEST(LNTest,D0)
@@ -60,7 +60,7 @@ TEST(LNTest,D3)
 TEST(Log2Test,Update)
 {
   auto fun = generateTestLog2();
-  EXPECT_THROW(fun.update(0), RFFGen::OutOfDomainException);
+  EXPECT_THROW(fun.update(0), FunG::OutOfDomainException);
 }
 
 TEST(Log2Test,D0)
@@ -101,7 +101,7 @@ TEST(Log2Test,D3)
 TEST(Log10Test,Update)
 {
   auto fun = generateTestLog10();
-  EXPECT_THROW(fun.update(0), RFFGen::OutOfDomainException);
+  EXPECT_THROW(fun.update(0), FunG::OutOfDomainException);
 }
 
 TEST(Log10Test,D0)

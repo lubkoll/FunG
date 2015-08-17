@@ -1,10 +1,10 @@
-#include "../../RFFGen/RFFGen/CMath/sine.hh"
+#include "../../FunG/FunG/CMath/sine.hh"
 
 #include <gtest/gtest.h>
 
 auto generateTestSin()
 {
-  return RFFGen::CMath::Sin(1.);
+  return FunG::CMath::Sin(1.);
 }
 
 TEST(SineTest,D0)

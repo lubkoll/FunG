@@ -1,20 +1,20 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 /*                                                                             */
-/*   This file is part of the C++-library RFFGen.                              */
+/*   This file is part of the C++-library FunG.                              */
 /*   Copyright 2015 Lars Lubkoll                                               */
 /*                                                                             */
-/*   RFFGen is free software: you can redistribute it and/or modify            */
+/*   FunG is free software: you can redistribute it and/or modify            */
 /*   it under the terms of the GNU General Public License as published by      */
 /*   the Free Software Foundation, either version 3 of the License, or         */
 /*   (at your option) any later version.                                       */
 /*                                                                             */
-/*   RFFGen is distributed in the hope that it will be useful,                 */
+/*   FunG is distributed in the hope that it will be useful,                 */
 /*   but WITHOUT ANY WARRANTY; without even the implied warranty of            */
 /*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the             */
 /*   GNU General Public License for more details.                              */
 /*                                                                             */
 /*   You should have received a copy of the GNU General Public License         */
-/*   along with RFFGen.  If not, see <http://www.gnu.org/licenses/>.           */
+/*   along with FunG.  If not, see <http://www.gnu.org/licenses/>.           */
 /*                                                                             */
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -31,16 +31,16 @@
 
 namespace
 {
-  using RFFGen::CMath::LN;
-  using RFFGen::CMath::Pow;
-  using RFFGen::LinearAlgebra::Invariant;
+  using FunG::CMath::LN;
+  using FunG::CMath::Pow;
+  using FunG::LinearAlgebra::Invariant;
   constexpr int dim = 3;
   using M = Eigen::MatrixXd;
 
   template <class Function>
   auto runTest(Function& f)
   {
-    M a = RFFGen::LinearAlgebra::unitMatrix<M>(dim);
+    M a = FunG::LinearAlgebra::unitMatrix<M>(dim);
     M da0 = 2*a, da1 = 3*a, da2 = 4*a;
 
     f.update(a);
@@ -58,12 +58,12 @@ namespace
     return m;
   }
 
-  M fiberTensor = initFiberTensor(), I = RFFGen::LinearAlgebra::unitMatrix<M>(dim);
+  M fiberTensor = initFiberTensor(), I = FunG::LinearAlgebra::unitMatrix<M>(dim);
 }
 
 TEST(NeoHooke,Incompressible_Dynamic_Eigen)
 {
-  auto incompressibleNeoHooke = RFFGen::incompressibleNeoHooke<M,dim>(c0,I);
+  auto incompressibleNeoHooke = FunG::incompressibleNeoHooke<M,dim>(c0,I);
   auto f = runTest(incompressibleNeoHooke);
   EXPECT_DOUBLE_EQ( std::get<0>(f) , 0 );
   EXPECT_DOUBLE_EQ( std::get<1>(f) , 12 );
@@ -73,7 +73,7 @@ TEST(NeoHooke,Incompressible_Dynamic_Eigen)
 
 TEST(NeoHooke,Compressible_Dynamic_Eigen)
 {
-  auto compressibleNeoHooke = RFFGen::compressibleNeoHooke<Pow<2>,LN,M,dim>(c0,d0,d1,I);
+  auto compressibleNeoHooke = FunG::compressibleNeoHooke<Pow<2>,LN,M,dim>(c0,d0,d1,I);
   auto f = runTest(compressibleNeoHooke);
   EXPECT_DOUBLE_EQ( std::get<0>(f) , 0 );
   EXPECT_DOUBLE_EQ( std::get<1>(f) , 30 );
@@ -83,7 +83,7 @@ TEST(NeoHooke,Compressible_Dynamic_Eigen)
 
 TEST(NeoHooke,ModifiedIncompressible_Dynamic_Eigen)
 {
-  auto modifiedIncompressibleNeoHooke = RFFGen::modifiedIncompressibleNeoHooke<M,dim>(c0,I);
+  auto modifiedIncompressibleNeoHooke = FunG::modifiedIncompressibleNeoHooke<M,dim>(c0,I);
   auto f = runTest(modifiedIncompressibleNeoHooke);
   EXPECT_DOUBLE_EQ( std::get<0>(f) , 0 );
   EXPECT_DOUBLE_EQ( std::get<1>(f) , 0 );
@@ -93,7 +93,7 @@ TEST(NeoHooke,ModifiedIncompressible_Dynamic_Eigen)
 
 TEST(NeoHooke,ModifiedCompressible_Dynamic_Eigen)
 {
-  auto modifiedCompressibleNeoHooke = RFFGen::modifiedCompressibleNeoHooke<Pow<2>,LN,M,dim>(c0,d0,d1,I);
+  auto modifiedCompressibleNeoHooke = FunG::modifiedCompressibleNeoHooke<Pow<2>,LN,M,dim>(c0,d0,d1,I);
   auto f = runTest(modifiedCompressibleNeoHooke);
   EXPECT_DOUBLE_EQ( std::get<0>(f) , 0 );
   EXPECT_DOUBLE_EQ( std::get<1>(f) , 18 );
@@ -103,7 +103,7 @@ TEST(NeoHooke,ModifiedCompressible_Dynamic_Eigen)
 
 TEST(MooneyRivlin,Incompressible_Dynamic_Eigen)
 {
-  auto mooneyRivlin = RFFGen::incompressibleMooneyRivlin<M,dim>(c0,c1,I);
+  auto mooneyRivlin = FunG::incompressibleMooneyRivlin<M,dim>(c0,c1,I);
   auto f = runTest(mooneyRivlin);
   EXPECT_DOUBLE_EQ( std::get<0>(f) , 0 );
   EXPECT_DOUBLE_EQ( std::get<1>(f) , 12 );
@@ -113,7 +113,7 @@ TEST(MooneyRivlin,Incompressible_Dynamic_Eigen)
 
 TEST(MooneyRivlin,Compressible_Dynamic_Eigen)
 {
-  auto mooneyRivlin = RFFGen::compressibleMooneyRivlin<Pow<2>,LN,M,dim>(c0,c1,d0,d1,I);
+  auto mooneyRivlin = FunG::compressibleMooneyRivlin<Pow<2>,LN,M,dim>(c0,c1,d0,d1,I);
   auto f = runTest(mooneyRivlin);
   EXPECT_DOUBLE_EQ( std::get<0>(f) , 0 );
   EXPECT_DOUBLE_EQ( std::get<1>(f) , 30 );
@@ -123,7 +123,7 @@ TEST(MooneyRivlin,Compressible_Dynamic_Eigen)
 
 TEST(Skin_Hendriks,Incompressible_Dynamic_Eigen)
 {
-  auto skin = RFFGen::incompressibleSkin_Hendriks<M,dim>(c0,c1,I);
+  auto skin = FunG::incompressibleSkin_Hendriks<M,dim>(c0,c1,I);
   auto f = runTest(skin);
   EXPECT_DOUBLE_EQ( std::get<0>(f) , 0 );
   EXPECT_DOUBLE_EQ( std::get<1>(f) , 12 );
@@ -133,7 +133,7 @@ TEST(Skin_Hendriks,Incompressible_Dynamic_Eigen)
 
 TEST(Skin_Hendriks,Compressible_Dynamic_Eigen)
 {
-  auto skin = RFFGen::compressibleSkin_Hendriks<Pow<2>,LN,M,dim>(c0,c1,d0,d1,I);
+  auto skin = FunG::compressibleSkin_Hendriks<Pow<2>,LN,M,dim>(c0,c1,d0,d1,I);
   auto f = runTest(skin);
   EXPECT_DOUBLE_EQ( std::get<0>(f) , 0 );
   EXPECT_DOUBLE_EQ( std::get<1>(f) , 30 );
@@ -143,7 +143,7 @@ TEST(Skin_Hendriks,Compressible_Dynamic_Eigen)
 
 TEST(Adipose_SommerHolzapfel,Incompressible_Dynamic_Eigen)
 {
-  auto adipose = RFFGen::incompressibleAdiposeTissue_SommerHolzapfel<M,dim>(fiberTensor,I);
+  auto adipose = FunG::incompressibleAdiposeTissue_SommerHolzapfel<M,dim>(fiberTensor,I);
   auto f = runTest(adipose);
   EXPECT_DOUBLE_EQ( std::get<0>(f) , 0 );
   EXPECT_NEAR( std::get<1>(f) , 1.8 , 1e-11 );
@@ -153,7 +153,7 @@ TEST(Adipose_SommerHolzapfel,Incompressible_Dynamic_Eigen)
 
 TEST(Adipose_SommerHolzapfel,Compressible_Dynamic_Eigen)
 {
-  auto adipose = RFFGen::compressibleAdiposeTissue_SommerHolzapfel<Pow<2>,LN,M,dim>(d0,d1,fiberTensor,I);
+  auto adipose = FunG::compressibleAdiposeTissue_SommerHolzapfel<Pow<2>,LN,M,dim>(d0,d1,fiberTensor,I);
   auto f = runTest(adipose);
   EXPECT_DOUBLE_EQ( std::get<0>(f) , 0 );
   EXPECT_NEAR( std::get<1>(f) , 19.8 , 1e-11 );
@@ -163,7 +163,7 @@ TEST(Adipose_SommerHolzapfel,Compressible_Dynamic_Eigen)
 
 TEST(Muscle_Martins,Incompressible_Dynamic_Eigen)
 {
-  auto muscle = RFFGen::incompressibleMuscleTissue_Martins<M,dim>(fiberTensor,I);
+  auto muscle = FunG::incompressibleMuscleTissue_Martins<M,dim>(fiberTensor,I);
   auto f = runTest(muscle);
   EXPECT_DOUBLE_EQ( std::get<0>(f) , 0 );
   EXPECT_NEAR( std::get<1>(f) , 0 , 1e-11 );
@@ -173,7 +173,7 @@ TEST(Muscle_Martins,Incompressible_Dynamic_Eigen)
 
 TEST(Muscle_Martins,Compressible_Dynamic_Eigen)
 {
-  auto muscle = RFFGen::compressibleMuscleTissue_Martins<Pow<2>,LN,M,dim>(d0,d1,fiberTensor,I);
+  auto muscle = FunG::compressibleMuscleTissue_Martins<Pow<2>,LN,M,dim>(d0,d1,fiberTensor,I);
   auto f = runTest(muscle);
   EXPECT_DOUBLE_EQ( std::get<0>(f) , 0 );
   EXPECT_NEAR( std::get<1>(f) , 18 , 1e-11 );

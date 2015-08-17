@@ -1,18 +1,18 @@
-#define RFFGEN_ENABLE_EXCEPTIONS
-#include "../../RFFGen/RFFGen/CMath/arcsine.hh"
+#define FUNG_ENABLE_EXCEPTIONS
+#include "../../FunG/FunG/CMath/arcsine.hh"
 
 #include <gtest/gtest.h>
 
 auto generateTestASin()
 {
-  return RFFGen::CMath::ASin(.5);
+  return FunG::CMath::ASin(.5);
 }
 
 TEST(ArcsineTest,Update)
 {
   auto fun = generateTestASin();
-  ASSERT_THROW( fun.update(-1.1) , RFFGen::OutOfDomainException );
-  ASSERT_THROW( fun.update(1.1) , RFFGen::OutOfDomainException );
+  ASSERT_THROW( fun.update(-1.1) , FunG::OutOfDomainException );
+  ASSERT_THROW( fun.update(1.1) , FunG::OutOfDomainException );
 }
 
 TEST(ArcsineTest,D0)

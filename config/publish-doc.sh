@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-REPO_PATH=https://github.com/lubkoll/RFFGen
+REPO_PATH=https://github.com/lubkoll/FunG
 DOC_PATH=build/doc
 HTML_PATH=build/doc/html
 COMMIT_USER="Documentation Generator"

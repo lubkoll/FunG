@@ -1,10 +1,10 @@
-#include "../../RFFGen/RFFGen/CMath/cosine.hh"
+#include "../../FunG/FunG/CMath/cosine.hh"
 
 #include <gtest/gtest.h>
 
 auto generateTestCos()
 {
-  return RFFGen::CMath::Cos(1.);
+  return FunG::CMath::Cos(1.);
 }
 
 TEST(CosineTest,D0)

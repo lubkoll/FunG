@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/lubkoll/RFFGen.svg?branch=master)](https://travis-ci.org/lubkoll/RFFGen/builds) [![Coverage Status](https://coveralls.io/repos/lubkoll/RFFGen/badge.svg)](https://coveralls.io/r/lubkoll/RFFGen)
+[![Build Status](https://travis-ci.org/lubkoll/FunG.svg?branch=master)](https://travis-ci.org/lubkoll/FunG/builds) [![Coverage Status](https://coveralls.io/repos/lubkoll/FunG/badge.svg)](https://coveralls.io/r/lubkoll/FunG)
 
-# RFFGen - Fast Function Generation
-See <a href="http://lubkoll.github.io/RFFGen">http://lubkoll.github.io/RFFGen</a>.
+# FunG - Fast Function Generation
+See <a href="http://lubkoll.github.io/FunG">http://lubkoll.github.io/FunG</a>.

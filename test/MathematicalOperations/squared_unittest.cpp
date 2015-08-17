@@ -1,21 +1,21 @@
-#include "../../RFFGen/RFFGen/CMath/pow.hh"
-#include "../../RFFGen/RFFGen/generate.hh"
-#include "../../RFFGen/RFFGen/finalize.hh"
-#include "../../RFFGen/RFFGen/variable.hh"
+#include "../../FunG/FunG/CMath/pow.hh"
+#include "../../FunG/FunG/generate.hh"
+#include "../../FunG/FunG/finalize.hh"
+#include "../../FunG/FunG/variable.hh"
 
 #include <gtest/gtest.h>
 
 TEST(SquaredTest,Update)
 {
-  auto fun = RFFGen::CMath::Pow<2>(2.)^2;
+  auto fun = FunG::CMath::Pow<2>(2.)^2;
   EXPECT_NO_THROW( fun.update(-2) );
   EXPECT_DOUBLE_EQ( fun.d0() , 16. );
 }
 
 TEST(SquaredTest,UpdateVariable)
 {
-  auto x = RFFGen::variable<0>(2.);
-  auto fun = RFFGen::CMath::Pow<2,1>()(x)^2;
+  auto x = FunG::variable<0>(2.);
+  auto fun = FunG::CMath::Pow<2,1>()(x)^2;
   EXPECT_DOUBLE_EQ( fun.d0() , 16. );
   EXPECT_NO_THROW( fun.updateVariable<0>(-1.) );
   EXPECT_NO_THROW( fun.update(0); );
@@ -24,29 +24,29 @@ TEST(SquaredTest,UpdateVariable)
 
 TEST(SquaredTest,D0)
 {
-  using RFFGen::CMath::Pow;
+  using FunG::CMath::Pow;
   auto fun = Pow<2>(2.)^2;
   EXPECT_DOUBLE_EQ( fun.d0() , 16. );
 }
 
 TEST(SquaredTest,D1)
 {
-  using RFFGen::CMath::Pow;
-  auto fun = RFFGen::finalize_scalar ( Pow<2>(2.)^2 );
+  using FunG::CMath::Pow;
+  auto fun = FunG::finalize_scalar ( Pow<2>(2.)^2 );
   EXPECT_DOUBLE_EQ( fun.d1() , 32. );
 }
 
 TEST(SquaredTest,D2)
 {
-  using RFFGen::CMath::Pow;
-  auto fun = RFFGen::finalize_scalar( Pow<2>(2.)^2 );
+  using FunG::CMath::Pow;
+  auto fun = FunG::finalize_scalar( Pow<2>(2.)^2 );
   EXPECT_DOUBLE_EQ( fun.d2() , 48. );
 }
 
 TEST(SquaredTest,D3)
 {
-  using RFFGen::CMath::Pow;
-  auto fun = RFFGen::finalize_scalar( Pow<2>(2.)^2 );
+  using FunG::CMath::Pow;
+  auto fun = FunG::finalize_scalar( Pow<2>(2.)^2 );
   EXPECT_DOUBLE_EQ( fun.d3() , 48. );
 }
 

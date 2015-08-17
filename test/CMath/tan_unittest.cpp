@@ -1,10 +1,10 @@
-#include "../../RFFGen/RFFGen/CMath/tan.hh"
+#include "../../FunG/FunG/CMath/tan.hh"
 
 #include <gtest/gtest.h>
 
 auto generateTestTan()
 {
-  return RFFGen::CMath::Tan(1.);
+  return FunG::CMath::Tan(1.);
 }
 
 TEST(TanTest,D0)

@@ -92,8 +92,8 @@
   // Namespaces
 
   /**
-   * \namespace RFFGen
-   * \brief Main namespace of the %RFFGen library.
+   * \namespace FunG
+   * \brief Main namespace of the %FunG library.
    * \see MathematicalOperations
    * \see CMath
    */
