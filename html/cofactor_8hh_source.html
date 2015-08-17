@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>RFFGen: RFFGen/LinearAlgebra/cofactor.hh Source File</title>
+<title>FunG: FunG/LinearAlgebra/cofactor.hh Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">RFFGen
+   <div id="projectname">FunG
    </div>
   </td>
  </tr>
@@ -80,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_ae8dfb7974677b3a2f52781538c05dde.html">RFFGen</a></li><li class="navelem"><a class="el" href="dir_7d652f9b798540384b42ec6304cc29a0.html">LinearAlgebra</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_30259949583b44f1f8be33d6adf504a6.html">FunG</a></li><li class="navelem"><a class="el" href="dir_6da89c99c8b68c22b8eeb7beed976981.html">LinearAlgebra</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -90,26 +90,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*   This file is part of the C++-library RFFGen.                              */</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*   This file is part of the C++-library FunG.                              */</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/*   Copyright 2015 Lars Lubkoll                                               */</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   RFFGen is free software: you can redistribute it and/or modify            */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   FunG is free software: you can redistribute it and/or modify            */</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*   it under the terms of the GNU General Public License as published by      */</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*   the Free Software Foundation, either version 3 of the License, or         */</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   (at your option) any later version.                                       */</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*   RFFGen is distributed in the hope that it will be useful,                 */</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*   FunG is distributed in the hope that it will be useful,                 */</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/*   but WITHOUT ANY WARRANTY; without even the implied warranty of            */</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the             */</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/*   GNU General Public License for more details.                              */</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/*                                                                             */</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/*   You should have received a copy of the GNU General Public License         */</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/*   along with RFFGen.  If not, see &lt;http://www.gnu.org/licenses/&gt;.           */</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/*   along with FunG.  If not, see &lt;http://www.gnu.org/licenses/&gt;.           */</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/*                                                                             */</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef RFFGEN_LINEAR_ALGEBRA_COFACTOR_HH</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RFFGEN_LINEAR_ALGEBRA_COFACTOR_HH</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef FUNG_LINEAR_ALGEBRA_COFACTOR_HH</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FUNG_LINEAR_ALGEBRA_COFACTOR_HH</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;cassert&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;dimension.hh&quot;</span></div>
@@ -117,7 +117,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;../conceptCheck.hh&quot;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;../Util/staticChecks.hh&quot;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span>RFFGen</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span>FunG</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">namespace </span>LinearAlgebra</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  {</div>
@@ -164,7 +164,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">template</span> &lt; <span class="keywordtype">int</span> row , <span class="keywordtype">int</span> col , <span class="keyword">class </span>Matrix ,</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;               <span class="keyword">class </span>= std::enable_if_t&lt;Checks::isConstantSizeMatrix&lt;Matrix&gt;()&gt; ,</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;               <span class="keyword">class</span> = Concepts::MatrixConceptCheck&lt;Matrix&gt; &gt;</div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#ga6001dbc498c56902aeda2d2e6f93758e">   92</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__LinearAlgebraGroup.html#gaf18f1bcaac9b24ebae5c7020363ef827">computeCofactor</a>(Matrix <span class="keyword">const</span>&amp; A)</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#gace32a0876d4a8333f3bfc564316085ed">   92</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__LinearAlgebraGroup.html#ga136d54e30266690f0d07039fc70a1cb9">computeCofactor</a>(Matrix <span class="keyword">const</span>&amp; A)</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    {</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      static_assert( dimension&lt;Matrix&gt;() == 2 || dimension&lt;Matrix&gt;() == 3 ,</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                     <span class="stringliteral">&quot;Cofactors are currently only implemented for 2x2 and 3x3 matrices. Efficient general implementations are non-trivial and may or may not be implemented in the future.&quot;</span> );</div>
@@ -174,8 +174,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keyword">template</span> &lt; <span class="keywordtype">int</span> row , <span class="keywordtype">int</span> col , <span class="keyword">class </span>Matrix ,</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;               <span class="keyword">class </span>= std::enable_if_t&lt;!Checks::isConstantSizeMatrix&lt;Matrix&gt;()&gt; ,</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;               <span class="keyword">class</span> = std::enable_if_t&lt;Checks::isDynamicMatrix&lt;Matrix&gt;()&gt; ,</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;               <span class="keyword">class </span>= <a class="code" href="structRFFGen_1_1Concepts_1_1MatrixConceptCheck.html">Concepts::MatrixConceptCheck</a>&lt;Matrix&gt; &gt;</div>
-<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#gaf18f1bcaac9b24ebae5c7020363ef827">  110</a></span>&#160;    auto <a class="code" href="group__LinearAlgebraGroup.html#gaf18f1bcaac9b24ebae5c7020363ef827">computeCofactor</a>(Matrix const&amp; A)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;               <span class="keyword">class </span>= <a class="code" href="structFunG_1_1Concepts_1_1MatrixConceptCheck.html">Concepts::MatrixConceptCheck</a>&lt;Matrix&gt; &gt;</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#ga136d54e30266690f0d07039fc70a1cb9">  110</a></span>&#160;    auto <a class="code" href="group__LinearAlgebraGroup.html#ga136d54e30266690f0d07039fc70a1cb9">computeCofactor</a>(Matrix const&amp; A)</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    {</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      assert( ( rows(A)==2 &amp;&amp; cols(A)==2 ) || ( rows(A)==3 &amp;&amp; cols(A)==3) );</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      <span class="keywordflow">if</span>( rows(A) == 2 ) <span class="keywordflow">return</span> Detail::computeCofactorImpl&lt;row,col&gt;(A, A, std::integral_constant&lt;int,2&gt;());</div>
@@ -184,8 +184,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keyword">template</span> &lt; <span class="keywordtype">int</span> row , <span class="keywordtype">int</span> col , <span class="keyword">class </span>Matrix ,</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;               <span class="keyword">class </span>= std::enable_if_t&lt;Checks::isConstantSizeMatrix&lt;Matrix&gt;()&gt; ,</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;               <span class="keyword">class</span> = <a class="code" href="structRFFGen_1_1Concepts_1_1MatrixConceptCheck.html">Concepts::MatrixConceptCheck&lt;Matrix&gt;</a> &gt;</div>
-<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#ga5194f473d8619836b838de8029bc3172">  129</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__LinearAlgebraGroup.html#gae69e50e6a283915070eda9758e96aaaf">computeCofactorDirectionalDerivative</a>(Matrix <span class="keyword">const</span>&amp; A, Matrix <span class="keyword">const</span>&amp; B)</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;               <span class="keyword">class</span> = <a class="code" href="structFunG_1_1Concepts_1_1MatrixConceptCheck.html">Concepts::MatrixConceptCheck&lt;Matrix&gt;</a> &gt;</div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#ga3970ee7fa4d47612427a59cecf56746c">  129</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__LinearAlgebraGroup.html#ga5ecd9444a4fae625924476d5a0b4cd5a">computeCofactorDirectionalDerivative</a>(Matrix <span class="keyword">const</span>&amp; A, Matrix <span class="keyword">const</span>&amp; B)</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    {</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;      static_assert( dimension&lt;Matrix&gt;() == 2 || dimension&lt;Matrix&gt;() == 3 ,</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                     <span class="stringliteral">&quot;Cofactors are currently only implemented for 2x2 and 3x3 matrices. Efficient general implementations are non-trivial and may or may not be implemented in the future.&quot;</span> );</div>
@@ -195,8 +195,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keyword">template</span> &lt; <span class="keywordtype">int</span> row , <span class="keywordtype">int</span> col , <span class="keyword">class </span>Matrix ,</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;               <span class="keyword">class </span>= std::enable_if_t&lt;!Checks::isConstantSizeMatrix&lt;Matrix&gt;()&gt; ,</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;               <span class="keyword">class</span> = std::enable_if_t&lt;Checks::isDynamicMatrix&lt;Matrix&gt;()&gt; ,</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;               <span class="keyword">class </span>= <a class="code" href="structRFFGen_1_1Concepts_1_1MatrixConceptCheck.html">Concepts::MatrixConceptCheck</a>&lt;Matrix&gt; &gt;</div>
-<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#gae69e50e6a283915070eda9758e96aaaf">  149</a></span>&#160;    auto <a class="code" href="group__LinearAlgebraGroup.html#gae69e50e6a283915070eda9758e96aaaf">computeCofactorDirectionalDerivative</a>(Matrix const&amp; A, Matrix <span class="keyword">const</span>&amp; B)</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;               <span class="keyword">class </span>= <a class="code" href="structFunG_1_1Concepts_1_1MatrixConceptCheck.html">Concepts::MatrixConceptCheck</a>&lt;Matrix&gt; &gt;</div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#ga5ecd9444a4fae625924476d5a0b4cd5a">  149</a></span>&#160;    auto <a class="code" href="group__LinearAlgebraGroup.html#ga5ecd9444a4fae625924476d5a0b4cd5a">computeCofactorDirectionalDerivative</a>(Matrix const&amp; A, Matrix <span class="keyword">const</span>&amp; B)</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    {</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;      assert( ( rows(A)==2 &amp;&amp; cols(A)==2 ) || ( rows(A)==3 &amp;&amp; cols(A)==3) );</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      <span class="keywordflow">if</span> ( rows(A)==2 ) <span class="keywordflow">return</span> Detail::computeCofactorImpl&lt;row,col&gt;(A, B, std::integral_constant&lt;int,2&gt;());</div>
@@ -205,14 +205,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  }</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;}</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="preprocessor">#endif // RFFGEN_LINEAR_ALGEBRA_COFACTOR_HH</span></div>
-<div class="ttc" id="group__LinearAlgebraGroup_html_gaf18f1bcaac9b24ebae5c7020363ef827"><div class="ttname"><a href="group__LinearAlgebraGroup.html#gaf18f1bcaac9b24ebae5c7020363ef827">RFFGen::LinearAlgebra::computeCofactor</a></div><div class="ttdeci">auto computeCofactor(Matrix const &amp;A)</div><div class="ttdoc">Compute the -cofactor of . Implemented for  with . </div><div class="ttdef"><b>Definition:</b> cofactor.hh:110</div></div>
-<div class="ttc" id="structRFFGen_1_1Concepts_1_1MatrixConceptCheck_html"><div class="ttname"><a href="structRFFGen_1_1Concepts_1_1MatrixConceptCheck.html">RFFGen::Concepts::MatrixConceptCheck</a></div><div class="ttdoc">Static check if the requirements of MatrixConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> conceptCheck.hh:107</div></div>
-<div class="ttc" id="group__LinearAlgebraGroup_html_gae69e50e6a283915070eda9758e96aaaf"><div class="ttname"><a href="group__LinearAlgebraGroup.html#gae69e50e6a283915070eda9758e96aaaf">RFFGen::LinearAlgebra::computeCofactorDirectionalDerivative</a></div><div class="ttdeci">auto computeCofactorDirectionalDerivative(Matrix const &amp;A, Matrix const &amp;B)</div><div class="ttdoc">Compute the first directional derivative in direction  of the -cofactor of . Implemented for  with ...</div><div class="ttdef"><b>Definition:</b> cofactor.hh:149</div></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="preprocessor">#endif // FUNG_LINEAR_ALGEBRA_COFACTOR_HH</span></div>
+<div class="ttc" id="group__LinearAlgebraGroup_html_ga5ecd9444a4fae625924476d5a0b4cd5a"><div class="ttname"><a href="group__LinearAlgebraGroup.html#ga5ecd9444a4fae625924476d5a0b4cd5a">FunG::LinearAlgebra::computeCofactorDirectionalDerivative</a></div><div class="ttdeci">auto computeCofactorDirectionalDerivative(Matrix const &amp;A, Matrix const &amp;B)</div><div class="ttdoc">Compute the first directional derivative in direction  of the -cofactor of . Implemented for  with ...</div><div class="ttdef"><b>Definition:</b> cofactor.hh:149</div></div>
+<div class="ttc" id="group__LinearAlgebraGroup_html_ga136d54e30266690f0d07039fc70a1cb9"><div class="ttname"><a href="group__LinearAlgebraGroup.html#ga136d54e30266690f0d07039fc70a1cb9">FunG::LinearAlgebra::computeCofactor</a></div><div class="ttdeci">auto computeCofactor(Matrix const &amp;A)</div><div class="ttdoc">Compute the -cofactor of . Implemented for  with . </div><div class="ttdef"><b>Definition:</b> cofactor.hh:110</div></div>
+<div class="ttc" id="structFunG_1_1Concepts_1_1MatrixConceptCheck_html"><div class="ttname"><a href="structFunG_1_1Concepts_1_1MatrixConceptCheck.html">FunG::Concepts::MatrixConceptCheck</a></div><div class="ttdoc">Static check if the requirements of MatrixConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> conceptCheck.hh:107</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 14 2015 18:34:21 for RFFGen by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 18:52:01 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

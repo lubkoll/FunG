@@ -1,0 +1,130 @@
+\hypertarget{structFunG_1_1MathematicalOperations_1_1Squared}{\section{Fun\-G\-:\-:Mathematical\-Operations\-:\-:Squared$<$ F, class $>$ Struct Template Reference}
+\label{structFunG_1_1MathematicalOperations_1_1Squared}\index{Fun\-G\-::\-Mathematical\-Operations\-::\-Squared$<$ F, class $>$@{Fun\-G\-::\-Mathematical\-Operations\-::\-Squared$<$ F, class $>$}}
+}
+
+
+Squared function (F must satisfy the requirements of \hyperlink{structFunG_1_1Concepts_1_1FunctionConcept}{Concepts\-::\-Function\-Concept}).  
+
+
+
+
+{\ttfamily \#include $<$squared.\-hh$>$}
+
+Inheritance diagram for Fun\-G\-:\-:Mathematical\-Operations\-:\-:Squared$<$ F, class $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.642229cm]{structFunG_1_1MathematicalOperations_1_1Squared}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structFunG_1_1MathematicalOperations_1_1Squared_a9cd7a202bf104def76c3dc4ddbe82a47}{\hyperlink{structFunG_1_1MathematicalOperations_1_1Squared_a9cd7a202bf104def76c3dc4ddbe82a47}{Squared} ()=default}\label{structFunG_1_1MathematicalOperations_1_1Squared_a9cd7a202bf104def76c3dc4ddbe82a47}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. May leave member variables uninitialized! Call update before using evaluation. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Init\-F $>$ }\\\hyperlink{structFunG_1_1MathematicalOperations_1_1Squared_a60dab55accc3957f54b0eafece720b5d}{Squared} (const Init\-F \&f\-\_\-)
+\begin{DoxyCompactList}\small\item\em Constructor passing arguments to function constructor. \end{DoxyCompactList}\item 
+\hypertarget{structFunG_1_1MathematicalOperations_1_1Squared_abea95d90dc29ac105c43f4eadde84cab}{{\footnotesize template$<$class Arg $>$ }\\void \hyperlink{structFunG_1_1MathematicalOperations_1_1Squared_abea95d90dc29ac105c43f4eadde84cab}{update} (Arg const \&x)}\label{structFunG_1_1MathematicalOperations_1_1Squared_abea95d90dc29ac105c43f4eadde84cab}
+
+\begin{DoxyCompactList}\small\item\em Reset point of evaluation. \end{DoxyCompactList}\item 
+\hypertarget{structFunG_1_1MathematicalOperations_1_1Squared_aed9b2c4a562bf0349044c9f79dcae078}{{\footnotesize template$<$int index, class Arg $>$ }\\void \hyperlink{structFunG_1_1MathematicalOperations_1_1Squared_aed9b2c4a562bf0349044c9f79dcae078}{update\-Variable} (const Arg \&x)}\label{structFunG_1_1MathematicalOperations_1_1Squared_aed9b2c4a562bf0349044c9f79dcae078}
+
+\begin{DoxyCompactList}\small\item\em Propagate call to \hyperlink{structFunG_1_1MathematicalOperations_1_1Squared_aed9b2c4a562bf0349044c9f79dcae078}{update\-Variable()} to f. \end{DoxyCompactList}\item 
+\hypertarget{structFunG_1_1MathematicalOperations_1_1Squared_a1befce58c84eac92ab7afa974ecaf5b0}{const auto \& \hyperlink{structFunG_1_1MathematicalOperations_1_1Squared_a1befce58c84eac92ab7afa974ecaf5b0}{d0} () const noexcept}\label{structFunG_1_1MathematicalOperations_1_1Squared_a1befce58c84eac92ab7afa974ecaf5b0}
+
+\begin{DoxyCompactList}\small\item\em Function value. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int id, class Arg , class Indexed\-Arg  = Indexed\-Type$<$\-Arg,id$>$, class  = std\-::enable\-\_\-if\-\_\-t$<$ Compute\-Product$<$ D0$<$\-F$>$ , D1$<$\-F,\-Indexed\-Arg$>$ $>$\-::present $>$$>$ }\\auto \hyperlink{structFunG_1_1MathematicalOperations_1_1Squared_a02f17b7976e0f72e15bc73d1ae905988}{d1} (Arg const \&dx) const 
+\begin{DoxyCompactList}\small\item\em First directional derivative. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int idx, int idy, class Arg\-X , class Arg\-Y , class Indexed\-Arg\-X  = Indexed\-Type$<$\-Arg\-X,idx$>$, class Indexed\-Arg\-Y  = Indexed\-Type$<$\-Arg\-Y,idy$>$, class  = std\-::enable\-\_\-if\-\_\-t$<$ D2\-Sum$<$\-Indexed\-Arg\-X,\-Indexed\-Arg\-Y$>$\-::present $>$$>$ }\\auto \hyperlink{structFunG_1_1MathematicalOperations_1_1Squared_a6c9ad9c73006afa6bbe7bc5a5144e18d}{d2} (Arg\-X const \&dx, Arg\-Y const \&dy) const 
+\begin{DoxyCompactList}\small\item\em Second directional derivative. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int idx, int idy, int idz, class Arg\-X , class Arg\-Y , class Arg\-Z , class Indexed\-Arg\-X  = Indexed\-Type$<$\-Arg\-X,idx$>$, class Indexed\-Arg\-Y  = Indexed\-Type$<$\-Arg\-Y,idy$>$, class Indexed\-Arg\-Z  = Indexed\-Type$<$\-Arg\-Z,idz$>$, class  = std\-::enable\-\_\-if\-\_\-t$<$ D3\-Sum$<$\-Indexed\-Arg\-X,\-Indexed\-Arg\-Y,\-Indexed\-Arg\-Z$>$\-::present $>$$>$ }\\auto \hyperlink{structFunG_1_1MathematicalOperations_1_1Squared_aa792ae543edf0c6288e4acac81b5e007}{d3} (Arg\-X const \&dx, Arg\-Y const \&dy, Arg\-Z const \&dz) const 
+\begin{DoxyCompactList}\small\item\em Third directional derivative. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class F, class = Function\-Concept\-Check$<$\-F$>$$>$struct Fun\-G\-::\-Mathematical\-Operations\-::\-Squared$<$ F, class $>$}
+
+Squared function (F must satisfy the requirements of \hyperlink{structFunG_1_1Concepts_1_1FunctionConcept}{Concepts\-::\-Function\-Concept}). 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structFunG_1_1MathematicalOperations_1_1Squared_a60dab55accc3957f54b0eafece720b5d}{\index{Fun\-G\-::\-Mathematical\-Operations\-::\-Squared@{Fun\-G\-::\-Mathematical\-Operations\-::\-Squared}!Squared@{Squared}}
+\index{Squared@{Squared}!FunG::MathematicalOperations::Squared@{Fun\-G\-::\-Mathematical\-Operations\-::\-Squared}}
+\subsubsection[{Squared}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class  = Function\-Concept\-Check$<$\-F$>$$>$ template$<$class Init\-F $>$ {\bf Fun\-G\-::\-Mathematical\-Operations\-::\-Squared}$<$ F, class $>$\-::{\bf Squared} (
+\begin{DoxyParamCaption}
+\item[{const Init\-F \&}]{f\-\_\-}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structFunG_1_1MathematicalOperations_1_1Squared_a60dab55accc3957f54b0eafece720b5d}
+
+
+Constructor passing arguments to function constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f\-\_\-} & input for constructor of outer function \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structFunG_1_1MathematicalOperations_1_1Squared_a02f17b7976e0f72e15bc73d1ae905988}{\index{Fun\-G\-::\-Mathematical\-Operations\-::\-Squared@{Fun\-G\-::\-Mathematical\-Operations\-::\-Squared}!d1@{d1}}
+\index{d1@{d1}!FunG::MathematicalOperations::Squared@{Fun\-G\-::\-Mathematical\-Operations\-::\-Squared}}
+\subsubsection[{d1}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class  = Function\-Concept\-Check$<$\-F$>$$>$ template$<$int id, class Arg , class Indexed\-Arg  = Indexed\-Type$<$\-Arg,id$>$, class  = std\-::enable\-\_\-if\-\_\-t$<$ Compute\-Product$<$ D0$<$\-F$>$ , D1$<$\-F,\-Indexed\-Arg$>$ $>$\-::present $>$$>$ auto {\bf Fun\-G\-::\-Mathematical\-Operations\-::\-Squared}$<$ F, class $>$\-::d1 (
+\begin{DoxyParamCaption}
+\item[{Arg const \&}]{dx}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structFunG_1_1MathematicalOperations_1_1Squared_a02f17b7976e0f72e15bc73d1ae905988}
+
+
+First directional derivative. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dx} & direction for which the derivative is computed \\
+\hline
+\end{DoxyParams}
+\hypertarget{structFunG_1_1MathematicalOperations_1_1Squared_a6c9ad9c73006afa6bbe7bc5a5144e18d}{\index{Fun\-G\-::\-Mathematical\-Operations\-::\-Squared@{Fun\-G\-::\-Mathematical\-Operations\-::\-Squared}!d2@{d2}}
+\index{d2@{d2}!FunG::MathematicalOperations::Squared@{Fun\-G\-::\-Mathematical\-Operations\-::\-Squared}}
+\subsubsection[{d2}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class  = Function\-Concept\-Check$<$\-F$>$$>$ template$<$int idx, int idy, class Arg\-X , class Arg\-Y , class Indexed\-Arg\-X  = Indexed\-Type$<$\-Arg\-X,idx$>$, class Indexed\-Arg\-Y  = Indexed\-Type$<$\-Arg\-Y,idy$>$, class  = std\-::enable\-\_\-if\-\_\-t$<$ D2\-Sum$<$\-Indexed\-Arg\-X,\-Indexed\-Arg\-Y$>$\-::present $>$$>$ auto {\bf Fun\-G\-::\-Mathematical\-Operations\-::\-Squared}$<$ F, class $>$\-::d2 (
+\begin{DoxyParamCaption}
+\item[{Arg\-X const \&}]{dx, }
+\item[{Arg\-Y const \&}]{dy}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structFunG_1_1MathematicalOperations_1_1Squared_a6c9ad9c73006afa6bbe7bc5a5144e18d}
+
+
+Second directional derivative. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dx} & direction for which the derivative is computed \\
+\hline
+{\em dy} & direction for which the derivative is computed \\
+\hline
+\end{DoxyParams}
+\hypertarget{structFunG_1_1MathematicalOperations_1_1Squared_aa792ae543edf0c6288e4acac81b5e007}{\index{Fun\-G\-::\-Mathematical\-Operations\-::\-Squared@{Fun\-G\-::\-Mathematical\-Operations\-::\-Squared}!d3@{d3}}
+\index{d3@{d3}!FunG::MathematicalOperations::Squared@{Fun\-G\-::\-Mathematical\-Operations\-::\-Squared}}
+\subsubsection[{d3}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class  = Function\-Concept\-Check$<$\-F$>$$>$ template$<$int idx, int idy, int idz, class Arg\-X , class Arg\-Y , class Arg\-Z , class Indexed\-Arg\-X  = Indexed\-Type$<$\-Arg\-X,idx$>$, class Indexed\-Arg\-Y  = Indexed\-Type$<$\-Arg\-Y,idy$>$, class Indexed\-Arg\-Z  = Indexed\-Type$<$\-Arg\-Z,idz$>$, class  = std\-::enable\-\_\-if\-\_\-t$<$ D3\-Sum$<$\-Indexed\-Arg\-X,\-Indexed\-Arg\-Y,\-Indexed\-Arg\-Z$>$\-::present $>$$>$ auto {\bf Fun\-G\-::\-Mathematical\-Operations\-::\-Squared}$<$ F, class $>$\-::d3 (
+\begin{DoxyParamCaption}
+\item[{Arg\-X const \&}]{dx, }
+\item[{Arg\-Y const \&}]{dy, }
+\item[{Arg\-Z const \&}]{dz}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structFunG_1_1MathematicalOperations_1_1Squared_aa792ae543edf0c6288e4acac81b5e007}
+
+
+Third directional derivative. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dx} & direction for which the derivative is computed \\
+\hline
+{\em dy} & direction for which the derivative is computed \\
+\hline
+{\em dz} & direction for which the derivative is computed \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Fun\-G/\-Mathematical\-Operations/squared.\-hh\end{DoxyCompactItemize}

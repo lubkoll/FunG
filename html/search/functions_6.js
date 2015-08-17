@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['leftcauchygreenstraintensor',['LeftCauchyGreenStrainTensor',['../classRFFGen_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html#a7cc082254e1cd5ef9bcd80e984adac9b',1,'RFFGen::LinearAlgebra::LeftCauchyGreenStrainTensor']]],
-  ['linearizedstraintensor',['LinearizedStrainTensor',['../classRFFGen_1_1LinearAlgebra_1_1LinearizedStrainTensor.html#a70feeb97bdd239df94760da3ee493a44',1,'RFFGen::LinearAlgebra::LinearizedStrainTensor']]],
-  ['ln',['LN',['../structRFFGen_1_1CMath_1_1LN.html#a9075257a79e80959bc6a5f4554e7eb3c',1,'RFFGen::CMath::LN']]],
-  ['log10',['Log10',['../structRFFGen_1_1CMath_1_1Log10.html#a34ec695de7574539a7ab0c9f82773aee',1,'RFFGen::CMath::Log10']]],
-  ['log2',['Log2',['../structRFFGen_1_1CMath_1_1Log2.html#a06c05ea7727a6f2671ca4c044589c155',1,'RFFGen::CMath::Log2']]]
+  ['leftcauchygreenstraintensor',['LeftCauchyGreenStrainTensor',['../classFunG_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html#a6bfc0f686be29024dc740630f364d051',1,'FunG::LinearAlgebra::LeftCauchyGreenStrainTensor']]],
+  ['linearizedstraintensor',['LinearizedStrainTensor',['../classFunG_1_1LinearAlgebra_1_1LinearizedStrainTensor.html#a5b286c1fca2dd48ea62a9f283304395d',1,'FunG::LinearAlgebra::LinearizedStrainTensor']]],
+  ['ln',['LN',['../structFunG_1_1CMath_1_1LN.html#a8febe9929b1347889dde9ea0f83cd06c',1,'FunG::CMath::LN']]],
+  ['log10',['Log10',['../structFunG_1_1CMath_1_1Log10.html#a4ff97c8e633503403322c218fcc11fbc',1,'FunG::CMath::Log10']]],
+  ['log2',['Log2',['../structFunG_1_1CMath_1_1Log2.html#ac3105733a40529d5f573b164bbaccdba',1,'FunG::CMath::Log2']]]
 ];

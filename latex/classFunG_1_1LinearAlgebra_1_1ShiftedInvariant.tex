@@ -1,0 +1,163 @@
+\hypertarget{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant}{\section{Fun\-G\-:\-:Linear\-Algebra\-:\-:Shifted\-Invariant$<$ Invariant, offset $>$ Class Template Reference}
+\label{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant}\index{Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant$<$ Invariant, offset $>$@{Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant$<$ Invariant, offset $>$}}
+}
+
+
+Possibly scaled, shifted invariant $scaling (invariant - offset)$, where $offset = dim$ for the first two (principal,modified) invariants and $offset = 1$ for the third (principal,modified) and mixed invariants.  
+
+
+
+
+{\ttfamily \#include $<$shifted\-Invariant.\-hh$>$}
+
+Inheritance diagram for Fun\-G\-:\-:Linear\-Algebra\-:\-:Shifted\-Invariant$<$ Invariant, offset $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Matrix $>$ }\\\hyperlink{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant_ac70bec154e9bc6f7c66f48e4b4c7dd6f}{Shifted\-Invariant} (Matrix const \&A)
+\item 
+{\footnotesize template$<$class Matrix $>$ }\\\hyperlink{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant_adf0a75f28fee0f7bedda4ab30546cb5f}{Shifted\-Invariant} (const Matrix \&A, const \hyperlink{structFunG_1_1Constant}{Constant}$<$ Matrix $>$ \&M)
+\item 
+{\footnotesize template$<$class Matrix $>$ }\\\hyperlink{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant_a49fcea056c8d69208daec7d2c97d57ab}{Shifted\-Invariant} (const Matrix \&A, const Matrix \&M)
+\item 
+\hypertarget{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant_a88e70c0f3c5741a84828ce6b46a289ba}{{\footnotesize template$<$class Matrix $>$ }\\void \hyperlink{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant_a88e70c0f3c5741a84828ce6b46a289ba}{update} (Matrix const \&A)}\label{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant_a88e70c0f3c5741a84828ce6b46a289ba}
+
+\begin{DoxyCompactList}\small\item\em Reset matrix to compute shifted invariant from. \end{DoxyCompactList}\item 
+\hypertarget{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant_a94093a636ffe05b72ff013525292e99b}{auto \hyperlink{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant_a94093a636ffe05b72ff013525292e99b}{d0} () const noexcept}\label{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant_a94093a636ffe05b72ff013525292e99b}
+
+\begin{DoxyCompactList}\small\item\em Value of the shifted invariant. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int id, class Arg , class Indexed\-Arg  = Indexed\-Type$<$\-Arg,id$>$, class  = std\-::enable\-\_\-if\-\_\-t$<$\-Evaluate\-If\-Present$<$ D1$<$\-Invariant,\-Indexed\-Arg$>$ $>$\-::present$>$$>$ }\\auto \hyperlink{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant_ab7d717e4afed91638643b6dfe1638364}{d1} (const Arg \&d\-A1) const 
+\begin{DoxyCompactList}\small\item\em First directional derivative of the (scaled) shifted invariant. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int idx, int idy, class Arg\-X , class Arg\-Y , class Indexed\-Arg\-X  = Indexed\-Type$<$\-Arg\-X,idx$>$, class Indexed\-Arg\-Y  = Indexed\-Type$<$\-Arg\-Y,idx$>$, class  = std\-::enable\-\_\-if\-\_\-t$<$\-Evaluate\-If\-Present$<$ D2$<$\-Invariant,\-Indexed\-Arg\-X,\-Indexed\-Arg\-Y$>$ $>$\-::present$>$$>$ }\\auto \hyperlink{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant_a0909110ab26f6ff9496fbb81d801bf8d}{d2} (const Arg\-X \&d\-A1, const Arg\-Y \&d\-A2) const 
+\begin{DoxyCompactList}\small\item\em Second directional derivative of the (scaled) shifted invariant. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int idx, int idy, int idz, class Arg\-X , class Arg\-Y , class Arg\-Z , class Indexed\-Arg\-X  = Indexed\-Type$<$\-Arg\-X,idx$>$, class Indexed\-Arg\-Y  = Indexed\-Type$<$\-Arg\-Y,idy$>$, class Indexed\-Arg\-Z  = Indexed\-Type$<$\-Arg\-Z,idz$>$, class  = std\-::enable\-\_\-if\-\_\-t$<$ Evaluate\-If\-Present$<$ D3$<$\-Invariant,\-Indexed\-Arg\-X,\-Indexed\-Arg\-Y,\-Indexed\-Arg\-Z$>$ $>$\-::present $>$$>$ }\\auto \hyperlink{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant_a8b3a1b335855aa34c1179843b65217ab}{d3} (Arg\-X const \&d\-A1, Arg\-Y const \&d\-A2, Arg\-Z const \&d\-A3) const 
+\begin{DoxyCompactList}\small\item\em Third directional derivative of the (scaled) shifted invariant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Invariant, int offset$>$class Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant$<$ Invariant, offset $>$}
+
+Possibly scaled, shifted invariant $scaling (invariant - offset)$, where $offset = dim$ for the first two (principal,modified) invariants and $offset = 1$ for the third (principal,modified) and mixed invariants. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant_ac70bec154e9bc6f7c66f48e4b4c7dd6f}{\index{Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant@{Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}!Shifted\-Invariant@{Shifted\-Invariant}}
+\index{Shifted\-Invariant@{Shifted\-Invariant}!FunG::LinearAlgebra::ShiftedInvariant@{Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}}
+\subsubsection[{Shifted\-Invariant}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Invariant , int offset$>$ template$<$class Matrix $>$ {\bf Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}$<$ {\bf Invariant}, offset $>$\-::{\bf Shifted\-Invariant} (
+\begin{DoxyParamCaption}
+\item[{Matrix const \&}]{A}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant_ac70bec154e9bc6f7c66f48e4b4c7dd6f}
+
+\begin{DoxyParams}{Parameters}
+{\em A} & matrix to compute invariant from. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant_adf0a75f28fee0f7bedda4ab30546cb5f}{\index{Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant@{Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}!Shifted\-Invariant@{Shifted\-Invariant}}
+\index{Shifted\-Invariant@{Shifted\-Invariant}!FunG::LinearAlgebra::ShiftedInvariant@{Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}}
+\subsubsection[{Shifted\-Invariant}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Invariant , int offset$>$ template$<$class Matrix $>$ {\bf Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}$<$ {\bf Invariant}, offset $>$\-::{\bf Shifted\-Invariant} (
+\begin{DoxyParamCaption}
+\item[{const Matrix \&}]{A, }
+\item[{const {\bf Constant}$<$ Matrix $>$ \&}]{M}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant_adf0a75f28fee0f7bedda4ab30546cb5f}
+
+\begin{DoxyParams}{Parameters}
+{\em A} & matrix to compute invariant from. \\
+\hline
+{\em M} & structural tensor for incorporation of anisotropic information. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant_a49fcea056c8d69208daec7d2c97d57ab}{\index{Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant@{Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}!Shifted\-Invariant@{Shifted\-Invariant}}
+\index{Shifted\-Invariant@{Shifted\-Invariant}!FunG::LinearAlgebra::ShiftedInvariant@{Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}}
+\subsubsection[{Shifted\-Invariant}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Invariant , int offset$>$ template$<$class Matrix $>$ {\bf Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}$<$ {\bf Invariant}, offset $>$\-::{\bf Shifted\-Invariant} (
+\begin{DoxyParamCaption}
+\item[{const Matrix \&}]{A, }
+\item[{const Matrix \&}]{M}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant_a49fcea056c8d69208daec7d2c97d57ab}
+
+\begin{DoxyParams}{Parameters}
+{\em A} & matrix to compute invariant from. \\
+\hline
+{\em M} & structural tensor for incorporation of anisotropic information. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant_ab7d717e4afed91638643b6dfe1638364}{\index{Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant@{Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}!d1@{d1}}
+\index{d1@{d1}!FunG::LinearAlgebra::ShiftedInvariant@{Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}}
+\subsubsection[{d1}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Invariant , int offset$>$ template$<$int id, class Arg , class Indexed\-Arg  = Indexed\-Type$<$\-Arg,id$>$, class  = std\-::enable\-\_\-if\-\_\-t$<$\-Evaluate\-If\-Present$<$ D1$<$\-Invariant,\-Indexed\-Arg$>$ $>$\-::present$>$$>$ auto {\bf Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}$<$ {\bf Invariant}, offset $>$\-::d1 (
+\begin{DoxyParamCaption}
+\item[{const Arg \&}]{d\-A1}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant_ab7d717e4afed91638643b6dfe1638364}
+
+
+First directional derivative of the (scaled) shifted invariant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d\-A1} & direction for which the derivative is computed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+derivative in direction d\-A1 
+\end{DoxyReturn}
+\hypertarget{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant_a0909110ab26f6ff9496fbb81d801bf8d}{\index{Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant@{Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}!d2@{d2}}
+\index{d2@{d2}!FunG::LinearAlgebra::ShiftedInvariant@{Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}}
+\subsubsection[{d2}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Invariant , int offset$>$ template$<$int idx, int idy, class Arg\-X , class Arg\-Y , class Indexed\-Arg\-X  = Indexed\-Type$<$\-Arg\-X,idx$>$, class Indexed\-Arg\-Y  = Indexed\-Type$<$\-Arg\-Y,idx$>$, class  = std\-::enable\-\_\-if\-\_\-t$<$\-Evaluate\-If\-Present$<$ D2$<$\-Invariant,\-Indexed\-Arg\-X,\-Indexed\-Arg\-Y$>$ $>$\-::present$>$$>$ auto {\bf Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}$<$ {\bf Invariant}, offset $>$\-::d2 (
+\begin{DoxyParamCaption}
+\item[{const Arg\-X \&}]{d\-A1, }
+\item[{const Arg\-Y \&}]{d\-A2}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant_a0909110ab26f6ff9496fbb81d801bf8d}
+
+
+Second directional derivative of the (scaled) shifted invariant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d\-A1} & direction for which the derivative is computed \\
+\hline
+{\em d\-A2} & direction for which the derivative is computed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+second derivative in the directions d\-A1 and d\-A2 
+\end{DoxyReturn}
+\hypertarget{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant_a8b3a1b335855aa34c1179843b65217ab}{\index{Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant@{Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}!d3@{d3}}
+\index{d3@{d3}!FunG::LinearAlgebra::ShiftedInvariant@{Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}}
+\subsubsection[{d3}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Invariant , int offset$>$ template$<$int idx, int idy, int idz, class Arg\-X , class Arg\-Y , class Arg\-Z , class Indexed\-Arg\-X  = Indexed\-Type$<$\-Arg\-X,idx$>$, class Indexed\-Arg\-Y  = Indexed\-Type$<$\-Arg\-Y,idy$>$, class Indexed\-Arg\-Z  = Indexed\-Type$<$\-Arg\-Z,idz$>$, class  = std\-::enable\-\_\-if\-\_\-t$<$ Evaluate\-If\-Present$<$ D3$<$\-Invariant,\-Indexed\-Arg\-X,\-Indexed\-Arg\-Y,\-Indexed\-Arg\-Z$>$ $>$\-::present $>$$>$ auto {\bf Fun\-G\-::\-Linear\-Algebra\-::\-Shifted\-Invariant}$<$ {\bf Invariant}, offset $>$\-::d3 (
+\begin{DoxyParamCaption}
+\item[{Arg\-X const \&}]{d\-A1, }
+\item[{Arg\-Y const \&}]{d\-A2, }
+\item[{Arg\-Z const \&}]{d\-A3}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classFunG_1_1LinearAlgebra_1_1ShiftedInvariant_a8b3a1b335855aa34c1179843b65217ab}
+
+
+Third directional derivative of the (scaled) shifted invariant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d\-A1} & direction for which the derivative is computed \\
+\hline
+{\em d\-A2} & direction for which the derivative is computed \\
+\hline
+{\em d\-A3} & direction for which the derivative is computed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+second derivative in the directions d\-A1, d\-A2 and d\-A3 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Fun\-G/\-Linear\-Algebra/shifted\-Invariant.\-hh\end{DoxyCompactItemize}

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>RFFGen: RFFGen/Util/staticChecks_nRows_nCols.hh Source File</title>
+<title>FunG: FunG/Util/staticChecks_nRows_nCols.hh Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">RFFGen
+   <div id="projectname">FunG
    </div>
   </td>
  </tr>
@@ -80,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_ae8dfb7974677b3a2f52781538c05dde.html">RFFGen</a></li><li class="navelem"><a class="el" href="dir_39077a42654c848fa07f9c756d4d4764.html">Util</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_30259949583b44f1f8be33d6adf504a6.html">FunG</a></li><li class="navelem"><a class="el" href="dir_d62e321e67fed36ce45ea5ad0710c95a.html">Util</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -90,30 +90,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*   This file is part of the C++-library RFFGen.                              */</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*   This file is part of the C++-library FunG.                              */</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/*   Copyright 2015 Lars Lubkoll                                               */</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   RFFGen is free software: you can redistribute it and/or modify            */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   FunG is free software: you can redistribute it and/or modify            */</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*   it under the terms of the GNU General Public License as published by      */</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*   the Free Software Foundation, either version 3 of the License, or         */</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   (at your option) any later version.                                       */</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*   RFFGen is distributed in the hope that it will be useful,                 */</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*   FunG is distributed in the hope that it will be useful,                 */</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/*   but WITHOUT ANY WARRANTY; without even the implied warranty of            */</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the             */</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/*   GNU General Public License for more details.                              */</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/*                                                                             */</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/*   You should have received a copy of the GNU General Public License         */</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/*   along with RFFGen.  If not, see &lt;http://www.gnu.org/licenses/&gt;.           */</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/*   along with FunG.  If not, see &lt;http://www.gnu.org/licenses/&gt;.           */</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/*                                                                             */</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef RFFGEN_UTIL_STATIC_CHECKS_NROWS_NCOLS_HH</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RFFGEN_UTIL_STATIC_CHECKS_NROWS_NCOLS_HH</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef FUNG_UTIL_STATIC_CHECKS_NROWS_NCOLS_HH</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FUNG_UTIL_STATIC_CHECKS_NROWS_NCOLS_HH</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span>RFFGen</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span>FunG</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">namespace </span>Checks</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  {</div>
@@ -131,16 +131,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">using</span> TryAccessTo_n_colsForMatrix = decltype(std::declval&lt;Matrix&gt;().n_cols);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix , <span class="keyword">class</span> = <span class="keywordtype">void</span> &gt; <span class="keyword">struct </span>CallOfRowsForMatrix                                                                 : std::false_type {};</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix &gt; <span class="keyword">struct </span>CallOfRowsForMatrix&lt; Matrix , <a class="code" href="namespaceRFFGen.html#a20e18569d04cc91cf19632c12cd4a0d8">void_t</a>&lt; TryCallOfRowsForMatrix&lt; Matrix &gt; &gt; &gt;                         : std::true_type {};</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix &gt; <span class="keyword">struct </span>CallOfRowsForMatrix&lt; Matrix , <a class="code" href="namespaceFunG.html#a0cde667596590eb8d32e4a5ee76ddbb9">void_t</a>&lt; TryCallOfRowsForMatrix&lt; Matrix &gt; &gt; &gt;                         : std::true_type {};</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix , <span class="keyword">class</span> = <span class="keywordtype">void</span> &gt; <span class="keyword">struct </span>CallOfColsForMatrix                                                                 : std::false_type {};</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix &gt; <span class="keyword">struct </span>CallOfColsForMatrix&lt; Matrix , <a class="code" href="namespaceRFFGen.html#a20e18569d04cc91cf19632c12cd4a0d8">void_t</a>&lt; TryCallOfColsForMatrix&lt; Matrix &gt; &gt; &gt;                         : std::true_type {};</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix &gt; <span class="keyword">struct </span>CallOfColsForMatrix&lt; Matrix , <a class="code" href="namespaceFunG.html#a0cde667596590eb8d32e4a5ee76ddbb9">void_t</a>&lt; TryCallOfColsForMatrix&lt; Matrix &gt; &gt; &gt;                         : std::true_type {};</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix , <span class="keyword">class</span> = <span class="keywordtype">void</span> &gt; <span class="keyword">struct </span>AccessTo_n_rows                                                                     : std::false_type {};</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix &gt; <span class="keyword">struct </span>AccessTo_n_rows&lt; Matrix , <a class="code" href="namespaceRFFGen.html#a20e18569d04cc91cf19632c12cd4a0d8">void_t</a> &lt; TryAccessTo_n_rowsForMatrix&lt;Matrix&gt; &gt; &gt;                         : std::true_type {};</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix &gt; <span class="keyword">struct </span>AccessTo_n_rows&lt; Matrix , <a class="code" href="namespaceFunG.html#a0cde667596590eb8d32e4a5ee76ddbb9">void_t</a> &lt; TryAccessTo_n_rowsForMatrix&lt;Matrix&gt; &gt; &gt;                         : std::true_type {};</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix , <span class="keyword">class</span> = <span class="keywordtype">void</span> &gt; <span class="keyword">struct </span>AccessTo_n_cols                                                                     : std::false_type {};</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix &gt; <span class="keyword">struct </span>AccessTo_n_cols&lt; Matrix , <a class="code" href="namespaceRFFGen.html#a20e18569d04cc91cf19632c12cd4a0d8">void_t</a> &lt; TryAccessTo_n_colsForMatrix&lt;Matrix&gt; &gt; &gt;                         : std::true_type {};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix &gt; <span class="keyword">struct </span>AccessTo_n_cols&lt; Matrix , <a class="code" href="namespaceFunG.html#a0cde667596590eb8d32e4a5ee76ddbb9">void_t</a> &lt; TryAccessTo_n_colsForMatrix&lt;Matrix&gt; &gt; &gt;                         : std::true_type {};</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix &gt;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    constexpr <span class="keywordtype">bool</span> hasRowsFunction()</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    {</div>
@@ -180,12 +180,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  }</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">#endif // RFFGEN_UTIL_STATIC_CHECKS_NROWS_NCOLS_HH</span></div>
-<div class="ttc" id="namespaceRFFGen_html_a20e18569d04cc91cf19632c12cd4a0d8"><div class="ttname"><a href="namespaceRFFGen.html#a20e18569d04cc91cf19632c12cd4a0d8">RFFGen::void_t</a></div><div class="ttdeci">typename Detail::voider&lt; Types...&gt;::type void_t</div><div class="ttdoc">Most fascinating type ever. Is always void. </div><div class="ttdef"><b>Definition:</b> voider.hh:40</div></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">#endif // FUNG_UTIL_STATIC_CHECKS_NROWS_NCOLS_HH</span></div>
+<div class="ttc" id="namespaceFunG_html_a0cde667596590eb8d32e4a5ee76ddbb9"><div class="ttname"><a href="namespaceFunG.html#a0cde667596590eb8d32e4a5ee76ddbb9">FunG::void_t</a></div><div class="ttdeci">typename Detail::voider&lt; Types...&gt;::type void_t</div><div class="ttdoc">Most fascinating type ever. Is always void. </div><div class="ttdef"><b>Definition:</b> voider.hh:40</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 14 2015 18:34:21 for RFFGen by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 18:52:01 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

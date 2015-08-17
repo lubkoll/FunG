@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['addtransposed',['addTransposed',['../namespaceRFFGen.html#aa35cec985ea0b25a40ada14189fba44d',1,'RFFGen::addTransposed(Matrix &amp;A)'],['../namespaceRFFGen.html#adef418735161dcbe64af19269329865e',1,'RFFGen::addTransposed(Matrix &amp;A)']]],
-  ['asin',['ASin',['../structRFFGen_1_1CMath_1_1ASin.html#a06cfb3815955b4f8b3d2627a51064bd8',1,'RFFGen::CMath::ASin']]]
+  ['addtransposed',['addTransposed',['../namespaceFunG.html#a0211d0d26c669d56b5113fd2292902e5',1,'FunG::addTransposed(Matrix &amp;A)'],['../namespaceFunG.html#af07d74bcaa0a3b7dbb4eee50d2edf2ff',1,'FunG::addTransposed(Matrix &amp;A)']]],
+  ['asin',['ASin',['../structFunG_1_1CMath_1_1ASin.html#ad558a22dd5db209d2e4ecbf51e4065a0',1,'FunG::CMath::ASin']]]
 ];

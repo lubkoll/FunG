@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>RFFGen: RFFGen/LinearAlgebra/deviator.hh Source File</title>
+<title>FunG: FunG/LinearAlgebra/deviator.hh Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">RFFGen
+   <div id="projectname">FunG
    </div>
   </td>
  </tr>
@@ -80,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_ae8dfb7974677b3a2f52781538c05dde.html">RFFGen</a></li><li class="navelem"><a class="el" href="dir_7d652f9b798540384b42ec6304cc29a0.html">LinearAlgebra</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_30259949583b44f1f8be33d6adf504a6.html">FunG</a></li><li class="navelem"><a class="el" href="dir_6da89c99c8b68c22b8eeb7beed976981.html">LinearAlgebra</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -90,66 +90,66 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*   This file is part of the C++-library RFFGen.                              */</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*   This file is part of the C++-library FunG.                              */</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/*   Copyright 2015 Lars Lubkoll                                               */</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   RFFGen is free software: you can redistribute it and/or modify            */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   FunG is free software: you can redistribute it and/or modify            */</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*   it under the terms of the GNU General Public License as published by      */</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*   the Free Software Foundation, either version 3 of the License, or         */</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   (at your option) any later version.                                       */</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*   RFFGen is distributed in the hope that it will be useful,                 */</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*   FunG is distributed in the hope that it will be useful,                 */</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/*   but WITHOUT ANY WARRANTY; without even the implied warranty of            */</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the             */</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/*   GNU General Public License for more details.                              */</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/*                                                                             */</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/*   You should have received a copy of the GNU General Public License         */</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/*   along with RFFGen.  If not, see &lt;http://www.gnu.org/licenses/&gt;.           */</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/*   along with FunG.  If not, see &lt;http://www.gnu.org/licenses/&gt;.           */</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/*                                                                             */</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef RFFGEN_LINEAR_ALGEBRA_DEVIATOR_HH</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RFFGEN_LINEAR_ALGEBRA_DEVIATOR_HH</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef FUNG_LINEAR_ALGEBRA_DEVIATOR_HH</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FUNG_LINEAR_ALGEBRA_DEVIATOR_HH</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;../generate.hh&quot;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;../identity.hh&quot;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;trace.hh&quot;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;unitMatrix.hh&quot;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span>RFFGen</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span>FunG</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">namespace </span>Concepts { <span class="keyword">template</span> &lt;<span class="keyword">class</span>&gt; <span class="keyword">struct </span>SymmetricMatrixConceptChecks; }</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">namespace </span>LinearAlgebra</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  {</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix, <span class="keyword">class</span> = Concepts::SymmetricMatrixConceptCheck&lt;Matrix&gt;&gt;</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#ga656ab26a4db8fd4ae758459dba42dfdb">   46</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__LinearAlgebraGroup.html#ga656ab26a4db8fd4ae758459dba42dfdb">deviator</a>(<span class="keyword">const</span> Matrix&amp; A)</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#ga4cdd9ff379199d332323884f4c7db035">   46</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__LinearAlgebraGroup.html#ga4cdd9ff379199d332323884f4c7db035">deviator</a>(<span class="keyword">const</span> Matrix&amp; A)</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="structRFFGen_1_1Identity.html">Identity&lt;Matrix&gt;</a>(A) + (-1./dimension&lt;Matrix&gt;()) * ( <a class="code" href="group__LinearAlgebraGroup.html#ga8ede749982d71c466cfe12d92541a504">trace</a>(A) * <a class="code" href="structRFFGen_1_1Constant.html">Constant&lt;Matrix&gt;</a>( unitMatrix&lt;Matrix&gt;() ) );</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="structFunG_1_1Identity.html">Identity&lt;Matrix&gt;</a>(A) + (-1./dimension&lt;Matrix&gt;()) * ( <a class="code" href="group__LinearAlgebraGroup.html#gab27aad35cfe5b14f492d2f365595e47a">trace</a>(A) * <a class="code" href="structFunG_1_1Constant.html">Constant&lt;Matrix&gt;</a>( unitMatrix&lt;Matrix&gt;() ) );</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix&gt;</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classRFFGen_1_1LinearAlgebra_1_1Deviator.html">   56</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classRFFGen_1_1LinearAlgebra_1_1Deviator.html">Deviator</a> : <span class="keyword">public</span> decltype( deviator( std::declval&lt;Matrix&gt;() ) )</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classFunG_1_1LinearAlgebra_1_1Deviator.html">   56</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classFunG_1_1LinearAlgebra_1_1Deviator.html">Deviator</a> : <span class="keyword">public</span> decltype( deviator( std::declval&lt;Matrix&gt;() ) )</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    {</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <span class="keyword">using</span> Base = decltype( <a class="code" href="group__LinearAlgebraGroup.html#ga656ab26a4db8fd4ae758459dba42dfdb">deviator</a>( std::declval&lt;Matrix&gt;() ) );</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <span class="keyword">using</span> Base = decltype( <a class="code" href="group__LinearAlgebraGroup.html#ga4cdd9ff379199d332323884f4c7db035">deviator</a>( std::declval&lt;Matrix&gt;() ) );</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <a class="code" href="classRFFGen_1_1LinearAlgebra_1_1Deviator.html">Deviator</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <a class="code" href="classRFFGen_1_1LinearAlgebra_1_1Deviator.html">Deviator</a>(<span class="keyword">const</span> Matrix&amp; A) : Base( <a class="code" href="group__LinearAlgebraGroup.html#ga656ab26a4db8fd4ae758459dba42dfdb">deviator</a>(A) )</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <a class="code" href="classFunG_1_1LinearAlgebra_1_1Deviator.html">Deviator</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <a class="code" href="classFunG_1_1LinearAlgebra_1_1Deviator.html">Deviator</a>(<span class="keyword">const</span> Matrix&amp; A) : Base( <a class="code" href="group__LinearAlgebraGroup.html#ga4cdd9ff379199d332323884f4c7db035">deviator</a>(A) )</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      {}</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    };</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  }</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif // RFFGEN_LINEAR_ALGEBRA_DEVIATOR_HH</span></div>
-<div class="ttc" id="group__LinearAlgebraGroup_html_ga8ede749982d71c466cfe12d92541a504"><div class="ttname"><a href="group__LinearAlgebraGroup.html#ga8ede749982d71c466cfe12d92541a504">RFFGen::LinearAlgebra::trace</a></div><div class="ttdeci">auto trace(const Arg &amp;arg)</div><div class="ttdoc">Convenient generation of Trace&lt;Matrix&gt;. </div><div class="ttdef"><b>Definition:</b> trace.hh:250</div></div>
-<div class="ttc" id="group__LinearAlgebraGroup_html_ga656ab26a4db8fd4ae758459dba42dfdb"><div class="ttname"><a href="group__LinearAlgebraGroup.html#ga656ab26a4db8fd4ae758459dba42dfdb">RFFGen::LinearAlgebra::deviator</a></div><div class="ttdeci">auto deviator(const Matrix &amp;A)</div><div class="ttdoc">Deviator of a matrix , i.e. . </div><div class="ttdef"><b>Definition:</b> deviator.hh:46</div></div>
-<div class="ttc" id="structRFFGen_1_1Identity_html"><div class="ttname"><a href="structRFFGen_1_1Identity.html">RFFGen::Identity</a></div><div class="ttdoc">Identity mapping . </div><div class="ttdef"><b>Definition:</b> identity.hh:39</div></div>
-<div class="ttc" id="classRFFGen_1_1LinearAlgebra_1_1Deviator_html"><div class="ttname"><a href="classRFFGen_1_1LinearAlgebra_1_1Deviator.html">RFFGen::LinearAlgebra::Deviator</a></div><div class="ttdoc">Type of the deviator of a matrix , i.e. . </div><div class="ttdef"><b>Definition:</b> deviator.hh:56</div></div>
-<div class="ttc" id="structRFFGen_1_1Constant_html"><div class="ttname"><a href="structRFFGen_1_1Constant.html">RFFGen::Constant</a></div><div class="ttdoc">Wrap a constant. </div><div class="ttdef"><b>Definition:</b> constant.hh:41</div></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif // FUNG_LINEAR_ALGEBRA_DEVIATOR_HH</span></div>
+<div class="ttc" id="structFunG_1_1Constant_html"><div class="ttname"><a href="structFunG_1_1Constant.html">FunG::Constant</a></div><div class="ttdoc">Wrap a constant. </div><div class="ttdef"><b>Definition:</b> constant.hh:41</div></div>
+<div class="ttc" id="classFunG_1_1LinearAlgebra_1_1Deviator_html"><div class="ttname"><a href="classFunG_1_1LinearAlgebra_1_1Deviator.html">FunG::LinearAlgebra::Deviator</a></div><div class="ttdoc">Type of the deviator of a matrix , i.e. . </div><div class="ttdef"><b>Definition:</b> deviator.hh:56</div></div>
+<div class="ttc" id="group__LinearAlgebraGroup_html_ga4cdd9ff379199d332323884f4c7db035"><div class="ttname"><a href="group__LinearAlgebraGroup.html#ga4cdd9ff379199d332323884f4c7db035">FunG::LinearAlgebra::deviator</a></div><div class="ttdeci">auto deviator(const Matrix &amp;A)</div><div class="ttdoc">Deviator of a matrix , i.e. . </div><div class="ttdef"><b>Definition:</b> deviator.hh:46</div></div>
+<div class="ttc" id="structFunG_1_1Identity_html"><div class="ttname"><a href="structFunG_1_1Identity.html">FunG::Identity</a></div><div class="ttdoc">Identity mapping . </div><div class="ttdef"><b>Definition:</b> identity.hh:39</div></div>
+<div class="ttc" id="group__LinearAlgebraGroup_html_gab27aad35cfe5b14f492d2f365595e47a"><div class="ttname"><a href="group__LinearAlgebraGroup.html#gab27aad35cfe5b14f492d2f365595e47a">FunG::LinearAlgebra::trace</a></div><div class="ttdeci">auto trace(const Arg &amp;arg)</div><div class="ttdoc">Convenient generation of Trace&lt;Matrix&gt;. </div><div class="ttdef"><b>Definition:</b> trace.hh:250</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 14 2015 18:34:21 for RFFGen by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 18:52:01 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

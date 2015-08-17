@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>RFFGen: RFFGen/finalize.hh Source File</title>
+<title>FunG: FunG/finalize.hh Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">RFFGen
+   <div id="projectname">FunG
    </div>
   </td>
  </tr>
@@ -80,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_ae8dfb7974677b3a2f52781538c05dde.html">RFFGen</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_30259949583b44f1f8be33d6adf504a6.html">FunG</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -90,26 +90,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*   This file is part of the C++-library RFFGen.                              */</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*   This file is part of the C++-library FunG.                              */</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/*   Copyright 2015 Lars Lubkoll                                               */</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   RFFGen is free software: you can redistribute it and/or modify            */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   FunG is free software: you can redistribute it and/or modify            */</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*   it under the terms of the GNU General Public License as published by      */</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*   the Free Software Foundation, either version 3 of the License, or         */</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   (at your option) any later version.                                       */</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*   RFFGen is distributed in the hope that it will be useful,                 */</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*   FunG is distributed in the hope that it will be useful,                 */</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/*   but WITHOUT ANY WARRANTY; without even the implied warranty of            */</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the             */</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/*   GNU General Public License for more details.                              */</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/*                                                                             */</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/*   You should have received a copy of the GNU General Public License         */</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/*   along with RFFGen.  If not, see &lt;http://www.gnu.org/licenses/&gt;.           */</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/*   along with FunG.  If not, see &lt;http://www.gnu.org/licenses/&gt;.           */</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/*                                                                             */</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef RFFGEN_FINALIZE_HH</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RFFGEN_FINALIZE_HH</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef FUNG_FINALIZE_HH</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FUNG_FINALIZE_HH</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
@@ -117,7 +117,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;Util/indexedType.hh&quot;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;variable.hh&quot;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span>RFFGen</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span>FunG</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">namespace </span>Detail</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  {</div>
@@ -369,29 +369,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    };</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  }</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> F, <span class="keywordtype">bool</span> arithmeticArgument = false&gt;</div>
-<div class="line"><a name="l00297"></a><span class="lineno"><a class="line" href="namespaceRFFGen.html#a394df0f2ab428f4a972b4d93900a5e04">  297</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="namespaceRFFGen.html#a394df0f2ab428f4a972b4d93900a5e04">Finalize</a> = Detail::FinalizeImpl&lt; F , arithmeticArgument , Checks::hasVariable&lt;F&gt;() &gt;;</div>
+<div class="line"><a name="l00297"></a><span class="lineno"><a class="line" href="namespaceFunG.html#ab2a52dfbc62e262c67f293fda5f81ef7">  297</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="namespaceFunG.html#ab2a52dfbc62e262c67f293fda5f81ef7">Finalize</a> = Detail::FinalizeImpl&lt; F , arithmeticArgument , Checks::hasVariable&lt;F&gt;() &gt;;</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> F&gt;</div>
-<div class="line"><a name="l00305"></a><span class="lineno"><a class="line" href="namespaceRFFGen.html#ad0d4bfae5fedad4740c0ab09cb4ff0a1">  305</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="namespaceRFFGen.html#ad0d4bfae5fedad4740c0ab09cb4ff0a1">finalize</a>(<span class="keyword">const</span> F&amp; f)</div>
+<div class="line"><a name="l00305"></a><span class="lineno"><a class="line" href="namespaceFunG.html#a3a2af76439713dc7635e0c538ac34f15">  305</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="namespaceFunG.html#a3a2af76439713dc7635e0c538ac34f15">finalize</a>(<span class="keyword">const</span> F&amp; f)</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  {</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceRFFGen.html#a394df0f2ab428f4a972b4d93900a5e04">Finalize&lt;F&gt;</a>(f);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceFunG.html#ab2a52dfbc62e262c67f293fda5f81ef7">Finalize&lt;F&gt;</a>(f);</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;  }</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> F&gt;</div>
-<div class="line"><a name="l00316"></a><span class="lineno"><a class="line" href="namespaceRFFGen.html#a8a6f6d638cd22c164c671c239486bb88">  316</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="namespaceRFFGen.html#a8a6f6d638cd22c164c671c239486bb88">finalize_scalar</a>(<span class="keyword">const</span> F&amp; f)</div>
+<div class="line"><a name="l00316"></a><span class="lineno"><a class="line" href="namespaceFunG.html#a0c224cd9b212427657c6798ac8adf6ac">  316</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="namespaceFunG.html#a0c224cd9b212427657c6798ac8adf6ac">finalize_scalar</a>(<span class="keyword">const</span> F&amp; f)</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  {</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceRFFGen.html#a394df0f2ab428f4a972b4d93900a5e04">Finalize&lt;F,true&gt;</a>(f);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceFunG.html#ab2a52dfbc62e262c67f293fda5f81ef7">Finalize&lt;F,true&gt;</a>(f);</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  }</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;}</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="preprocessor">#endif // RFFGEN_FINALIZE_HH</span></div>
-<div class="ttc" id="namespaceRFFGen_html_a394df0f2ab428f4a972b4d93900a5e04"><div class="ttname"><a href="namespaceRFFGen.html#a394df0f2ab428f4a972b4d93900a5e04">RFFGen::Finalize</a></div><div class="ttdeci">Detail::FinalizeImpl&lt; F, arithmeticArgument, Checks::hasVariable&lt; F &gt;() &gt; Finalize</div><div class="ttdoc">Finish function definition. </div><div class="ttdef"><b>Definition:</b> finalize.hh:297</div></div>
-<div class="ttc" id="namespaceRFFGen_html_ad0d4bfae5fedad4740c0ab09cb4ff0a1"><div class="ttname"><a href="namespaceRFFGen.html#ad0d4bfae5fedad4740c0ab09cb4ff0a1">RFFGen::finalize</a></div><div class="ttdeci">auto finalize(const F &amp;f)</div><div class="ttdoc">Finish function definition. </div><div class="ttdef"><b>Definition:</b> finalize.hh:305</div></div>
-<div class="ttc" id="namespaceRFFGen_html_a8a6f6d638cd22c164c671c239486bb88"><div class="ttname"><a href="namespaceRFFGen.html#a8a6f6d638cd22c164c671c239486bb88">RFFGen::finalize_scalar</a></div><div class="ttdeci">auto finalize_scalar(const F &amp;f)</div><div class="ttdoc">Finish function definition. </div><div class="ttdef"><b>Definition:</b> finalize.hh:316</div></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="preprocessor">#endif // FUNG_FINALIZE_HH</span></div>
+<div class="ttc" id="namespaceFunG_html_ab2a52dfbc62e262c67f293fda5f81ef7"><div class="ttname"><a href="namespaceFunG.html#ab2a52dfbc62e262c67f293fda5f81ef7">FunG::Finalize</a></div><div class="ttdeci">Detail::FinalizeImpl&lt; F, arithmeticArgument, Checks::hasVariable&lt; F &gt;() &gt; Finalize</div><div class="ttdoc">Finish function definition. </div><div class="ttdef"><b>Definition:</b> finalize.hh:297</div></div>
+<div class="ttc" id="namespaceFunG_html_a0c224cd9b212427657c6798ac8adf6ac"><div class="ttname"><a href="namespaceFunG.html#a0c224cd9b212427657c6798ac8adf6ac">FunG::finalize_scalar</a></div><div class="ttdeci">auto finalize_scalar(const F &amp;f)</div><div class="ttdoc">Finish function definition. </div><div class="ttdef"><b>Definition:</b> finalize.hh:316</div></div>
+<div class="ttc" id="namespaceFunG_html_a3a2af76439713dc7635e0c538ac34f15"><div class="ttname"><a href="namespaceFunG.html#a3a2af76439713dc7635e0c538ac34f15">FunG::finalize</a></div><div class="ttdeci">auto finalize(const F &amp;f)</div><div class="ttdoc">Finish function definition. </div><div class="ttdef"><b>Definition:</b> finalize.hh:305</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 14 2015 18:34:21 for RFFGen by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 18:52:01 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

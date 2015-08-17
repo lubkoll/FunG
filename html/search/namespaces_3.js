@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rffgen',['RFFGen',['../namespaceRFFGen.html',1,'']]]
+  ['mathematicaloperations',['MathematicalOperations',['../namespaceMathematicalOperations.html',1,'']]]
 ];

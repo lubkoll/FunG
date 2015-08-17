@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>RFFGen: RFFGen/MathematicalOperations/chain.hh Source File</title>
+<title>FunG: FunG/MathematicalOperations/chain.hh Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">RFFGen
+   <div id="projectname">FunG
    </div>
   </td>
  </tr>
@@ -80,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_ae8dfb7974677b3a2f52781538c05dde.html">RFFGen</a></li><li class="navelem"><a class="el" href="dir_4d30b46e29e8f4ab3c2e12c964905dff.html">MathematicalOperations</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_30259949583b44f1f8be33d6adf504a6.html">FunG</a></li><li class="navelem"><a class="el" href="dir_e84a86c926b9f62c7c742a636db4be4e.html">MathematicalOperations</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -90,26 +90,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*   This file is part of the C++-library RFFGen.                              */</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*   This file is part of the C++-library FunG.                              */</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/*   Copyright 2015 Lars Lubkoll                                               */</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   RFFGen is free software: you can redistribute it and/or modify            */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   FunG is free software: you can redistribute it and/or modify            */</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*   it under the terms of the GNU General Public License as published by      */</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*   the Free Software Foundation, either version 3 of the License, or         */</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   (at your option) any later version.                                       */</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*   RFFGen is distributed in the hope that it will be useful,                 */</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*   FunG is distributed in the hope that it will be useful,                 */</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/*   but WITHOUT ANY WARRANTY; without even the implied warranty of            */</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the             */</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/*   GNU General Public License for more details.                              */</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/*                                                                             */</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/*   You should have received a copy of the GNU General Public License         */</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/*   along with RFFGen.  If not, see &lt;http://www.gnu.org/licenses/&gt;.           */</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/*   along with FunG.  If not, see &lt;http://www.gnu.org/licenses/&gt;.           */</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/*                                                                             */</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef RFFGEN_MATHEMATICAL_OPERATION_CHAIN_HH</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RFFGEN_MATHEMATICAL_OPERATION_CHAIN_HH</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef FUNG_MATHEMATICAL_OPERATION_CHAIN_HH</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FUNG_MATHEMATICAL_OPERATION_CHAIN_HH</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
@@ -120,7 +120,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;../Util/derivativeWrappers.hh&quot;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;../Util/indexedType.hh&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span>RFFGen</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span>FunG</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span>&gt; <span class="keyword">struct </span>Chainer;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">namespace </span>MathematicalOperations</div>
@@ -129,11 +129,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class </span>F , <span class="keyword">class </span>G ,</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;               <span class="keyword">class </span>= FunctionConceptCheck&lt;F&gt;,</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;               <span class="keyword">class </span>= FunctionConceptCheck&lt;G&gt; &gt;</div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html">   61</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html">Chain</a> : <a class="code" href="structRFFGen_1_1Base.html">Base</a> , Chainer&lt; Chain&lt;F,G,FunctionConceptCheck&lt;F&gt;,FunctionConceptCheck&lt;G&gt; &gt; &gt;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Chain.html">   61</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structFunG_1_1MathematicalOperations_1_1Chain.html">Chain</a> : <a class="code" href="structFunG_1_1Base.html">Base</a> , Chainer&lt; Chain&lt;F,G,FunctionConceptCheck&lt;F&gt;,FunctionConceptCheck&lt;G&gt; &gt; &gt;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="keyword">using</span> Chainer&lt; Chain&lt;F,G,FunctionConceptCheck&lt;F&gt;,FunctionConceptCheck&lt;G&gt; &gt; &gt;::operator ();</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <span class="keyword">using</span> FArg = decltype(std::declval&lt;G&gt;().<a class="code" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#aac13e9d28dc10dff07fa40c33b43309f">d0</a>());</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <span class="keyword">using</span> FArg = decltype(std::declval&lt;G&gt;().<a class="code" href="structFunG_1_1MathematicalOperations_1_1Chain.html#abaced47a1bdc62dd6625caed1d11134c">d0</a>());</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <span class="keyword">template</span> &lt; <span class="keyword">class</span> IndexedArgX , <span class="keyword">class</span> IndexedArgY , <span class="keyword">class</span> IndexedFArgX , <span class="keyword">class</span> IndexedFArgY &gt;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <span class="keyword">using</span> D2LazyType = ComputeSum&lt; ComputeChainD2&lt; F , D1&lt;G,IndexedArgX&gt; , D1&lt;G,IndexedArgY&gt; , IndexedFArgX , IndexedFArgY &gt;,</div>
@@ -149,21 +149,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      ComputeChainD1&lt;  F , D3&lt;G,IndexedArgX,IndexedArgY,IndexedArgZ&gt; , IndexedFArgX &gt; &gt;;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      <a class="code" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#aebcae20e7b869fcaa9ec1039b3de8fd5">Chain</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      <a class="code" href="structFunG_1_1MathematicalOperations_1_1Chain.html#aec263d619ba22b3f8e67756bf9f4ba8e">Chain</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      <span class="keyword">template</span> &lt;<span class="keyword">class</span>... InitFunction&gt;</div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#a9d891fe5b5e9bfc7af6c87d2b6dd0731">   89</a></span>&#160;      <a class="code" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#a9d891fe5b5e9bfc7af6c87d2b6dd0731">Chain</a>(<span class="keyword">const</span> InitFunction&amp;... init)</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        : g(init...), f(g.<a class="code" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#aac13e9d28dc10dff07fa40c33b43309f">d0</a>())</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Chain.html#a11bbc19be4ace14904de0be6d703fb1f">   89</a></span>&#160;      <a class="code" href="structFunG_1_1MathematicalOperations_1_1Chain.html#a11bbc19be4ace14904de0be6d703fb1f">Chain</a>(<span class="keyword">const</span> InitFunction&amp;... init)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        : g(init...), f(g.<a class="code" href="structFunG_1_1MathematicalOperations_1_1Chain.html#abaced47a1bdc62dd6625caed1d11134c">d0</a>())</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      { updateValue(); }</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#a313e8d55e65802fdcbbd03619dbe3bf2">   98</a></span>&#160;      <a class="code" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#a313e8d55e65802fdcbbd03619dbe3bf2">Chain</a>(<span class="keyword">const</span> F&amp; f_, <span class="keyword">const</span> G&amp; g_) : g(g_), f(f_)</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Chain.html#a3167b6304026eb0bd92e57d0dd0087e0">   98</a></span>&#160;      <a class="code" href="structFunG_1_1MathematicalOperations_1_1Chain.html#a3167b6304026eb0bd92e57d0dd0087e0">Chain</a>(<span class="keyword">const</span> F&amp; f_, <span class="keyword">const</span> G&amp; g_) : g(g_), f(f_)</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      {</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        f.update(g.d0());</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        updateValue();</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      }</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      <span class="keyword">template</span> &lt;<span class="keyword">class</span> Arg&gt;</div>
-<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#aa2e25c8560d0383e0b07a1886fc92077">  106</a></span>&#160;      <span class="keywordtype">void</span> <a class="code" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#aa2e25c8560d0383e0b07a1886fc92077">update</a>(<span class="keyword">const</span> Arg&amp; x)</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Chain.html#adb7f63859ef7dbdd08b0908c3a17794d">  106</a></span>&#160;      <span class="keywordtype">void</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Chain.html#adb7f63859ef7dbdd08b0908c3a17794d">update</a>(<span class="keyword">const</span> Arg&amp; x)</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      {</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        g.update(x);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        f.update(g.d0());</div>
@@ -171,12 +171,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      }</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      <span class="keyword">template</span> &lt;<span class="keywordtype">int</span> index, <span class="keyword">class</span> Arg&gt;</div>
-<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#a6b9577d631eb244c76d7b3d3f3d993d7">  115</a></span>&#160;      <span class="keywordtype">void</span> <a class="code" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#a6b9577d631eb244c76d7b3d3f3d993d7">updateVariable</a>(<span class="keyword">const</span> Arg &amp; x)</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Chain.html#adf372d1f3b00903528740f3da6820b77">  115</a></span>&#160;      <span class="keywordtype">void</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Chain.html#adf372d1f3b00903528740f3da6820b77">updateVariable</a>(<span class="keyword">const</span> Arg &amp; x)</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      {</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        g.template updateVariable&lt;index&gt;(x);</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      }</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#aac13e9d28dc10dff07fa40c33b43309f">  121</a></span>&#160;      <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#aac13e9d28dc10dff07fa40c33b43309f">d0</a>() const noexcept</div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Chain.html#abaced47a1bdc62dd6625caed1d11134c">  121</a></span>&#160;      <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="structFunG_1_1MathematicalOperations_1_1Chain.html#abaced47a1bdc62dd6625caed1d11134c">d0</a>() const noexcept</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;      {</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">return</span> value;</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      }</div>
@@ -185,7 +185,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                 <span class="keyword">class </span>IndexedArg = IndexedType&lt;Arg,id&gt; ,</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                 <span class="keyword">class </span>IndexedFArg = IndexedType&lt;FArg,id&gt; ,</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                 <span class="keyword">class </span>= std::enable_if_t&lt; ComputeChainD1&lt; F , D1&lt;G,IndexedArg&gt; , IndexedFArg &gt;::present&gt; &gt;</div>
-<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#ac762868ce03eb3089f3cd1943062f9a2">  134</a></span>&#160;      <span class="keyword">auto</span> <a class="code" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#ac762868ce03eb3089f3cd1943062f9a2">d1</a>(Arg <span class="keyword">const</span>&amp; dx)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Chain.html#adfe741dee89257258b39df846fd16cf7">  134</a></span>&#160;      <span class="keyword">auto</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Chain.html#adfe741dee89257258b39df846fd16cf7">d1</a>(Arg <span class="keyword">const</span>&amp; dx)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="keyword">      </span>{</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordflow">return</span> ComputeChainD1&lt; F , D1&lt;G,IndexedArg&gt;, IndexedFArg &gt;(f, D1&lt;G,IndexedArg&gt;(g,dx))();</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;      }</div>
@@ -196,7 +196,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                 <span class="keyword">class </span>IndexedFArgX = IndexedType&lt;FArg,idx&gt; ,</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                 <span class="keyword">class </span>IndexedFArgY = IndexedType&lt;FArg,idy&gt; ,</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                 <span class="keyword">class </span>= std::enable_if_t&lt; D2LazyType&lt;IndexedArgX,IndexedArgY,IndexedFArgX,IndexedFArgY&gt;::present &gt; &gt;</div>
-<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#ad1fd27be6286cadf63fff93595b83c46">  150</a></span>&#160;      <span class="keyword">auto</span> <a class="code" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#ad1fd27be6286cadf63fff93595b83c46">d2</a>(ArgX <span class="keyword">const</span>&amp; dx, ArgY <span class="keyword">const</span>&amp; dy)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Chain.html#a0ab88c09299ce967583408f7f7dcd2bb">  150</a></span>&#160;      <span class="keyword">auto</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Chain.html#a0ab88c09299ce967583408f7f7dcd2bb">d2</a>(ArgX <span class="keyword">const</span>&amp; dx, ArgY <span class="keyword">const</span>&amp; dy)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="keyword">      </span>{</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordflow">return</span> D2LazyType&lt;IndexedArgX,IndexedArgY,IndexedFArgX,IndexedFArgY&gt;</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            ( ComputeChainD2&lt; F , D1&lt;G,IndexedArgX&gt; , D1&lt;G,IndexedArgY&gt;, IndexedFArgX , IndexedFArgY &gt; (f,D1&lt;G,IndexedArgX&gt;(g,dx),D1&lt;G,IndexedArgY&gt;(g,dy)),</div>
@@ -212,7 +212,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                 <span class="keyword">class </span>IndexedFArgY = IndexedType&lt;FArg,idy&gt; ,</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                 <span class="keyword">class </span>IndexedFArgZ = IndexedType&lt;FArg,idz&gt; ,</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                 <span class="keyword">class </span>= std::enable_if_t&lt; D3LazyType&lt;IndexedArgX,IndexedArgY,IndexedArgZ,IndexedFArgX,IndexedFArgY,IndexedFArgZ&gt;::present &gt; &gt;</div>
-<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#a9c99a40bc32fe065acd3144f3d6a4ce7">  172</a></span>&#160;      <span class="keyword">auto</span> <a class="code" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#a9c99a40bc32fe065acd3144f3d6a4ce7">d3</a>(ArgX <span class="keyword">const</span>&amp; dx, ArgY <span class="keyword">const</span>&amp; dy, ArgZ <span class="keyword">const</span>&amp; dz)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Chain.html#a17ac1618545b9d9bd2efa873b36cfbc7">  172</a></span>&#160;      <span class="keyword">auto</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Chain.html#a17ac1618545b9d9bd2efa873b36cfbc7">d3</a>(ArgX <span class="keyword">const</span>&amp; dx, ArgY <span class="keyword">const</span>&amp; dy, ArgZ <span class="keyword">const</span>&amp; dz)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keyword">      </span>{</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        D1&lt;G,IndexedArgX&gt; dGdx(g,dx);</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        D1&lt;G,IndexedArgY&gt; dGdy(g,dy);</div>
@@ -234,27 +234,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;      G g;</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;      F f;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;      std::remove_const_t&lt;std::remove_reference_t&lt;decltype(std::declval&lt;F&gt;().<a class="code" href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#aac13e9d28dc10dff07fa40c33b43309f">d0</a>())&gt; &gt; value;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;      std::remove_const_t&lt;std::remove_reference_t&lt;decltype(std::declval&lt;F&gt;().<a class="code" href="structFunG_1_1MathematicalOperations_1_1Chain.html#abaced47a1bdc62dd6625caed1d11134c">d0</a>())&gt; &gt; value;</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    };</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  }</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;}</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="preprocessor">#endif // RFFGEN_MATHEMATICAL_OPERATION_CHAIN_HH</span></div>
-<div class="ttc" id="structRFFGen_1_1MathematicalOperations_1_1Chain_html_ac762868ce03eb3089f3cd1943062f9a2"><div class="ttname"><a href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#ac762868ce03eb3089f3cd1943062f9a2">RFFGen::MathematicalOperations::Chain::d1</a></div><div class="ttdeci">auto d1(Arg const &amp;dx) const </div><div class="ttdoc">First directional derivative. </div><div class="ttdef"><b>Definition:</b> chain.hh:134</div></div>
-<div class="ttc" id="structRFFGen_1_1MathematicalOperations_1_1Chain_html_aa2e25c8560d0383e0b07a1886fc92077"><div class="ttname"><a href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#aa2e25c8560d0383e0b07a1886fc92077">RFFGen::MathematicalOperations::Chain::update</a></div><div class="ttdeci">void update(const Arg &amp;x)</div><div class="ttdoc">Reset point of evaluation. </div><div class="ttdef"><b>Definition:</b> chain.hh:106</div></div>
-<div class="ttc" id="structRFFGen_1_1MathematicalOperations_1_1Chain_html_a9d891fe5b5e9bfc7af6c87d2b6dd0731"><div class="ttname"><a href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#a9d891fe5b5e9bfc7af6c87d2b6dd0731">RFFGen::MathematicalOperations::Chain::Chain</a></div><div class="ttdeci">Chain(const InitFunction &amp;...init)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> chain.hh:89</div></div>
-<div class="ttc" id="structRFFGen_1_1MathematicalOperations_1_1Chain_html_aac13e9d28dc10dff07fa40c33b43309f"><div class="ttname"><a href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#aac13e9d28dc10dff07fa40c33b43309f">RFFGen::MathematicalOperations::Chain::d0</a></div><div class="ttdeci">const auto &amp; d0() const noexcept</div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> chain.hh:121</div></div>
-<div class="ttc" id="structRFFGen_1_1Base_html"><div class="ttname"><a href="structRFFGen_1_1Base.html">RFFGen::Base</a></div><div class="ttdoc">Base class for functions satisfying FunctionConcept. Required for enabling the operators in generate...</div><div class="ttdef"><b>Definition:</b> base.hh:27</div></div>
-<div class="ttc" id="structRFFGen_1_1MathematicalOperations_1_1Chain_html"><div class="ttname"><a href="structRFFGen_1_1MathematicalOperations_1_1Chain.html">RFFGen::MathematicalOperations::Chain</a></div><div class="ttdoc">Chain  of functions  and  of type F resp. G (F and G must satisfy the requirements of Concepts::Funct...</div><div class="ttdef"><b>Definition:</b> chain.hh:61</div></div>
-<div class="ttc" id="structRFFGen_1_1MathematicalOperations_1_1Chain_html_a9c99a40bc32fe065acd3144f3d6a4ce7"><div class="ttname"><a href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#a9c99a40bc32fe065acd3144f3d6a4ce7">RFFGen::MathematicalOperations::Chain::d3</a></div><div class="ttdeci">auto d3(ArgX const &amp;dx, ArgY const &amp;dy, ArgZ const &amp;dz) const </div><div class="ttdoc">Third directional derivative. </div><div class="ttdef"><b>Definition:</b> chain.hh:172</div></div>
-<div class="ttc" id="structRFFGen_1_1MathematicalOperations_1_1Chain_html_a6b9577d631eb244c76d7b3d3f3d993d7"><div class="ttname"><a href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#a6b9577d631eb244c76d7b3d3f3d993d7">RFFGen::MathematicalOperations::Chain::updateVariable</a></div><div class="ttdeci">void updateVariable(const Arg &amp;x)</div><div class="ttdoc">Propagate call to updateVariable() to f and g. </div><div class="ttdef"><b>Definition:</b> chain.hh:115</div></div>
-<div class="ttc" id="structRFFGen_1_1MathematicalOperations_1_1Chain_html_aebcae20e7b869fcaa9ec1039b3de8fd5"><div class="ttname"><a href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#aebcae20e7b869fcaa9ec1039b3de8fd5">RFFGen::MathematicalOperations::Chain::Chain</a></div><div class="ttdeci">Chain()=default</div><div class="ttdoc">Default constructor. May leave member variables uninitialized! Call update before using evaluation...</div></div>
-<div class="ttc" id="structRFFGen_1_1MathematicalOperations_1_1Chain_html_a313e8d55e65802fdcbbd03619dbe3bf2"><div class="ttname"><a href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#a313e8d55e65802fdcbbd03619dbe3bf2">RFFGen::MathematicalOperations::Chain::Chain</a></div><div class="ttdeci">Chain(const F &amp;f_, const G &amp;g_)</div><div class="ttdoc">Constructor taking copies of the functions to be chained. </div><div class="ttdef"><b>Definition:</b> chain.hh:98</div></div>
-<div class="ttc" id="structRFFGen_1_1MathematicalOperations_1_1Chain_html_ad1fd27be6286cadf63fff93595b83c46"><div class="ttname"><a href="structRFFGen_1_1MathematicalOperations_1_1Chain.html#ad1fd27be6286cadf63fff93595b83c46">RFFGen::MathematicalOperations::Chain::d2</a></div><div class="ttdeci">auto d2(ArgX const &amp;dx, ArgY const &amp;dy) const </div><div class="ttdoc">Second directional derivative. </div><div class="ttdef"><b>Definition:</b> chain.hh:150</div></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="preprocessor">#endif // FUNG_MATHEMATICAL_OPERATION_CHAIN_HH</span></div>
+<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Chain_html_a11bbc19be4ace14904de0be6d703fb1f"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Chain.html#a11bbc19be4ace14904de0be6d703fb1f">FunG::MathematicalOperations::Chain::Chain</a></div><div class="ttdeci">Chain(const InitFunction &amp;...init)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> chain.hh:89</div></div>
+<div class="ttc" id="structFunG_1_1Base_html"><div class="ttname"><a href="structFunG_1_1Base.html">FunG::Base</a></div><div class="ttdoc">Base class for functions satisfying FunctionConcept. Required for enabling the operators in generate...</div><div class="ttdef"><b>Definition:</b> base.hh:27</div></div>
+<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Chain_html"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Chain.html">FunG::MathematicalOperations::Chain</a></div><div class="ttdoc">Chain  of functions  and  of type F resp. G (F and G must satisfy the requirements of Concepts::Funct...</div><div class="ttdef"><b>Definition:</b> chain.hh:61</div></div>
+<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Chain_html_a0ab88c09299ce967583408f7f7dcd2bb"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Chain.html#a0ab88c09299ce967583408f7f7dcd2bb">FunG::MathematicalOperations::Chain::d2</a></div><div class="ttdeci">auto d2(ArgX const &amp;dx, ArgY const &amp;dy) const </div><div class="ttdoc">Second directional derivative. </div><div class="ttdef"><b>Definition:</b> chain.hh:150</div></div>
+<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Chain_html_a17ac1618545b9d9bd2efa873b36cfbc7"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Chain.html#a17ac1618545b9d9bd2efa873b36cfbc7">FunG::MathematicalOperations::Chain::d3</a></div><div class="ttdeci">auto d3(ArgX const &amp;dx, ArgY const &amp;dy, ArgZ const &amp;dz) const </div><div class="ttdoc">Third directional derivative. </div><div class="ttdef"><b>Definition:</b> chain.hh:172</div></div>
+<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Chain_html_adf372d1f3b00903528740f3da6820b77"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Chain.html#adf372d1f3b00903528740f3da6820b77">FunG::MathematicalOperations::Chain::updateVariable</a></div><div class="ttdeci">void updateVariable(const Arg &amp;x)</div><div class="ttdoc">Propagate call to updateVariable() to f and g. </div><div class="ttdef"><b>Definition:</b> chain.hh:115</div></div>
+<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Chain_html_adfe741dee89257258b39df846fd16cf7"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Chain.html#adfe741dee89257258b39df846fd16cf7">FunG::MathematicalOperations::Chain::d1</a></div><div class="ttdeci">auto d1(Arg const &amp;dx) const </div><div class="ttdoc">First directional derivative. </div><div class="ttdef"><b>Definition:</b> chain.hh:134</div></div>
+<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Chain_html_adb7f63859ef7dbdd08b0908c3a17794d"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Chain.html#adb7f63859ef7dbdd08b0908c3a17794d">FunG::MathematicalOperations::Chain::update</a></div><div class="ttdeci">void update(const Arg &amp;x)</div><div class="ttdoc">Reset point of evaluation. </div><div class="ttdef"><b>Definition:</b> chain.hh:106</div></div>
+<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Chain_html_a3167b6304026eb0bd92e57d0dd0087e0"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Chain.html#a3167b6304026eb0bd92e57d0dd0087e0">FunG::MathematicalOperations::Chain::Chain</a></div><div class="ttdeci">Chain(const F &amp;f_, const G &amp;g_)</div><div class="ttdoc">Constructor taking copies of the functions to be chained. </div><div class="ttdef"><b>Definition:</b> chain.hh:98</div></div>
+<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Chain_html_aec263d619ba22b3f8e67756bf9f4ba8e"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Chain.html#aec263d619ba22b3f8e67756bf9f4ba8e">FunG::MathematicalOperations::Chain::Chain</a></div><div class="ttdeci">Chain()=default</div><div class="ttdoc">Default constructor. May leave member variables uninitialized! Call update before using evaluation...</div></div>
+<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Chain_html_abaced47a1bdc62dd6625caed1d11134c"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Chain.html#abaced47a1bdc62dd6625caed1d11134c">FunG::MathematicalOperations::Chain::d0</a></div><div class="ttdeci">const auto &amp; d0() const noexcept</div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> chain.hh:121</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 14 2015 18:34:21 for RFFGen by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 18:52:01 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

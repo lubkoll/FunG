@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>RFFGen: RFFGen/Examples/Rubber/neoHooke.hh Source File</title>
+<title>FunG: FunG/Examples/Rubber/neoHooke.hh Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">RFFGen
+   <div id="projectname">FunG
    </div>
   </td>
  </tr>
@@ -80,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_ae8dfb7974677b3a2f52781538c05dde.html">RFFGen</a></li><li class="navelem"><a class="el" href="dir_3c1beaf6c34b8edb428ad5d15b3b3554.html">Examples</a></li><li class="navelem"><a class="el" href="dir_7561e64ff2b4c862200617cbcc18ed74.html">Rubber</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_30259949583b44f1f8be33d6adf504a6.html">FunG</a></li><li class="navelem"><a class="el" href="dir_5c291c9885486702b8c56e8a7a010e32.html">Examples</a></li><li class="navelem"><a class="el" href="dir_6a3f064bc5c8ca04a52886d92eca96d7.html">Rubber</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -90,26 +90,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a href="neoHooke_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*   This file is part of the C++-library RFFGen.                              */</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*   This file is part of the C++-library FunG.                              */</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/*   Copyright 2015 Lars Lubkoll                                               */</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   RFFGen is free software: you can redistribute it and/or modify            */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   FunG is free software: you can redistribute it and/or modify            */</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*   it under the terms of the GNU General Public License as published by      */</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*   the Free Software Foundation, either version 3 of the License, or         */</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   (at your option) any later version.                                       */</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*   RFFGen is distributed in the hope that it will be useful,                 */</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*   FunG is distributed in the hope that it will be useful,                 */</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/*   but WITHOUT ANY WARRANTY; without even the implied warranty of            */</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the             */</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/*   GNU General Public License for more details.                              */</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/*                                                                             */</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/*   You should have received a copy of the GNU General Public License         */</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/*   along with RFFGen.  If not, see &lt;http://www.gnu.org/licenses/&gt;.           */</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/*   along with FunG.  If not, see &lt;http://www.gnu.org/licenses/&gt;.           */</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/*                                                                             */</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef RFFGEN_NEO_HOOKE_HH</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RFFGEN_NEO_HOOKE_HH</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef FUNG_NEO_HOOKE_HH</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FUNG_NEO_HOOKE_HH</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;../../LinearAlgebra/invariants.hh&quot;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;../../LinearAlgebra/strainTensor.hh&quot;</span></div>
@@ -118,20 +118,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;../volumetricPenaltyFunctions.hh&quot;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;../../generate.hh&quot;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">namespace </span>RFFGen</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">namespace </span>FunG</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix , <span class="keywordtype">int</span> offset = LinearAlgebra::dimension&lt;Matrix&gt;() &gt;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="group__Rubber.html#ga554b9bf515aa99d3bdc9e230f2a65bca">   44</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Rubber.html#ga554b9bf515aa99d3bdc9e230f2a65bca">incompressibleNeoHooke</a>(<span class="keywordtype">double</span> c, <span class="keyword">const</span> Matrix&amp; F)</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="group__Rubber.html#ga5bb28aef7006413775791998936d6b81">   44</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Rubber.html#ga5bb28aef7006413775791998936d6b81">incompressibleNeoHooke</a>(<span class="keywordtype">double</span> c, <span class="keyword">const</span> Matrix&amp; F)</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  {</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">using namespace </span>LinearAlgebra;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">using</span> Inv = <span class="keyword">typename</span> InvariantTraits&lt;Invariant::PRINCIPAL&gt;::template ShiftedFirstInvariant&lt;Matrix,offset&gt;;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">auto</span> S = LeftCauchyGreenStrainTensor&lt;Matrix&gt;(F);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">auto</span> f = c*Inv(S()) &lt;&lt; S;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceRFFGen.html#a394df0f2ab428f4a972b4d93900a5e04">Finalize&lt;decltype(f)&gt;</a>(f);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceFunG.html#ab2a52dfbc62e262c67f293fda5f81ef7">Finalize&lt;decltype(f)&gt;</a>(f);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  }</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix , <span class="keywordtype">int</span> offset = LinearAlgebra::dimension&lt;Matrix&gt;() &gt;</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="group__Rubber.html#ga1b6f97c769ead09a5b1dcdf4733e85aa">   58</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Rubber.html#ga1b6f97c769ead09a5b1dcdf4733e85aa">modifiedIncompressibleNeoHooke</a>(<span class="keywordtype">double</span> c, <span class="keyword">const</span> Matrix&amp; F)</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="group__Rubber.html#gaf6f5ab6a379ef03d513acc5042731a01">   58</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Rubber.html#gaf6f5ab6a379ef03d513acc5042731a01">modifiedIncompressibleNeoHooke</a>(<span class="keywordtype">double</span> c, <span class="keyword">const</span> Matrix&amp; F)</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  {</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">using namespace </span>LinearAlgebra;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">using</span> Inv = <span class="keyword">typename</span> InvariantTraits&lt;Invariant::MODIFIED&gt;::template ShiftedFirstInvariant&lt;Matrix,offset&gt;;</div>
@@ -152,28 +152,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  }</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> InflationPenalty, <span class="keyword">class</span> CompressionPenalty, <span class="keyword">class</span> Matrix , <span class="keywordtype">int</span> offset = LinearAlgebra::dimension&lt;Matrix&gt;() &gt;</div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="group__Rubber.html#ga35a60a5ae50481becd543140ba82c171">   91</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Rubber.html#ga35a60a5ae50481becd543140ba82c171">compressibleNeoHooke</a>(<span class="keywordtype">double</span> c, <span class="keywordtype">double</span> d0, <span class="keywordtype">double</span> d1, <span class="keyword">const</span> Matrix&amp; F)</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="group__Rubber.html#gac5c39cd9de55f4f0220a806cf28a7b30">   91</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Rubber.html#gac5c39cd9de55f4f0220a806cf28a7b30">compressibleNeoHooke</a>(<span class="keywordtype">double</span> c, <span class="keywordtype">double</span> d0, <span class="keywordtype">double</span> d1, <span class="keyword">const</span> Matrix&amp; F)</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  {</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">return</span> NeoHookeDetail::compressibleNeoHookeImpl&lt;InflationPenalty,CompressionPenalty,Matrix,LinearAlgebra::Invariant::PRINCIPAL,offset&gt;(c,d0,d1,F);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  }</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> InflationPenalty, <span class="keyword">class</span> CompressionPenalty, <span class="keyword">class</span> Matrix , <span class="keywordtype">int</span> offset = LinearAlgebra::dimension&lt;Matrix&gt;() &gt;</div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="group__Rubber.html#gad4985bcfe7726155b3b53f94094ebb3e">  102</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Rubber.html#gad4985bcfe7726155b3b53f94094ebb3e">modifiedCompressibleNeoHooke</a>(<span class="keywordtype">double</span> c, <span class="keywordtype">double</span> d0, <span class="keywordtype">double</span> d1, <span class="keyword">const</span> Matrix&amp; F)</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="group__Rubber.html#gac10942df03f037afdf0a81d330361a6b">  102</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Rubber.html#gac10942df03f037afdf0a81d330361a6b">modifiedCompressibleNeoHooke</a>(<span class="keywordtype">double</span> c, <span class="keywordtype">double</span> d0, <span class="keywordtype">double</span> d1, <span class="keyword">const</span> Matrix&amp; F)</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  {</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">return</span> NeoHookeDetail::compressibleNeoHookeImpl&lt;InflationPenalty,CompressionPenalty,Matrix,LinearAlgebra::Invariant::MODIFIED,offset&gt;(c,d0,d1,F);</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  }</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif // RFFGEN_NEO_HOOKE_HH</span></div>
-<div class="ttc" id="group__Rubber_html_ga35a60a5ae50481becd543140ba82c171"><div class="ttname"><a href="group__Rubber.html#ga35a60a5ae50481becd543140ba82c171">RFFGen::compressibleNeoHooke</a></div><div class="ttdeci">auto compressibleNeoHooke(double c, double d0, double d1, const Matrix &amp;F)</div><div class="ttdoc">Generate a compressible neo-Hookean material law , where  is the first principal matrix invariant...</div><div class="ttdef"><b>Definition:</b> neoHooke.hh:91</div></div>
-<div class="ttc" id="group__Rubber_html_ga1b6f97c769ead09a5b1dcdf4733e85aa"><div class="ttname"><a href="group__Rubber.html#ga1b6f97c769ead09a5b1dcdf4733e85aa">RFFGen::modifiedIncompressibleNeoHooke</a></div><div class="ttdeci">auto modifiedIncompressibleNeoHooke(double c, const Matrix &amp;F)</div><div class="ttdoc">Generate an &quot;incompressible&quot; neo-Hookean material law , where  is the modified first principal matrix...</div><div class="ttdef"><b>Definition:</b> neoHooke.hh:58</div></div>
-<div class="ttc" id="namespaceRFFGen_html_a394df0f2ab428f4a972b4d93900a5e04"><div class="ttname"><a href="namespaceRFFGen.html#a394df0f2ab428f4a972b4d93900a5e04">RFFGen::Finalize</a></div><div class="ttdeci">Detail::FinalizeImpl&lt; F, arithmeticArgument, Checks::hasVariable&lt; F &gt;() &gt; Finalize</div><div class="ttdoc">Finish function definition. </div><div class="ttdef"><b>Definition:</b> finalize.hh:297</div></div>
-<div class="ttc" id="group__Rubber_html_ga554b9bf515aa99d3bdc9e230f2a65bca"><div class="ttname"><a href="group__Rubber.html#ga554b9bf515aa99d3bdc9e230f2a65bca">RFFGen::incompressibleNeoHooke</a></div><div class="ttdeci">auto incompressibleNeoHooke(double c, const Matrix &amp;F)</div><div class="ttdoc">Generate an &quot;incompressible&quot; neo-Hookean material law , where  is the first principal matrix invarian...</div><div class="ttdef"><b>Definition:</b> neoHooke.hh:44</div></div>
-<div class="ttc" id="group__Rubber_html_gad4985bcfe7726155b3b53f94094ebb3e"><div class="ttname"><a href="group__Rubber.html#gad4985bcfe7726155b3b53f94094ebb3e">RFFGen::modifiedCompressibleNeoHooke</a></div><div class="ttdeci">auto modifiedCompressibleNeoHooke(double c, double d0, double d1, const Matrix &amp;F)</div><div class="ttdoc">Generate a compressible neo-Hookean material law , where  is the modified first principal matrix inva...</div><div class="ttdef"><b>Definition:</b> neoHooke.hh:102</div></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif // FUNG_NEO_HOOKE_HH</span></div>
+<div class="ttc" id="namespaceFunG_html_ab2a52dfbc62e262c67f293fda5f81ef7"><div class="ttname"><a href="namespaceFunG.html#ab2a52dfbc62e262c67f293fda5f81ef7">FunG::Finalize</a></div><div class="ttdeci">Detail::FinalizeImpl&lt; F, arithmeticArgument, Checks::hasVariable&lt; F &gt;() &gt; Finalize</div><div class="ttdoc">Finish function definition. </div><div class="ttdef"><b>Definition:</b> finalize.hh:297</div></div>
+<div class="ttc" id="group__Rubber_html_gac10942df03f037afdf0a81d330361a6b"><div class="ttname"><a href="group__Rubber.html#gac10942df03f037afdf0a81d330361a6b">FunG::modifiedCompressibleNeoHooke</a></div><div class="ttdeci">auto modifiedCompressibleNeoHooke(double c, double d0, double d1, const Matrix &amp;F)</div><div class="ttdoc">Generate a compressible neo-Hookean material law , where  is the modified first principal matrix inva...</div><div class="ttdef"><b>Definition:</b> neoHooke.hh:102</div></div>
+<div class="ttc" id="group__Rubber_html_ga5bb28aef7006413775791998936d6b81"><div class="ttname"><a href="group__Rubber.html#ga5bb28aef7006413775791998936d6b81">FunG::incompressibleNeoHooke</a></div><div class="ttdeci">auto incompressibleNeoHooke(double c, const Matrix &amp;F)</div><div class="ttdoc">Generate an &quot;incompressible&quot; neo-Hookean material law , where  is the first principal matrix invarian...</div><div class="ttdef"><b>Definition:</b> neoHooke.hh:44</div></div>
+<div class="ttc" id="group__Rubber_html_gac5c39cd9de55f4f0220a806cf28a7b30"><div class="ttname"><a href="group__Rubber.html#gac5c39cd9de55f4f0220a806cf28a7b30">FunG::compressibleNeoHooke</a></div><div class="ttdeci">auto compressibleNeoHooke(double c, double d0, double d1, const Matrix &amp;F)</div><div class="ttdoc">Generate a compressible neo-Hookean material law , where  is the first principal matrix invariant...</div><div class="ttdef"><b>Definition:</b> neoHooke.hh:91</div></div>
+<div class="ttc" id="group__Rubber_html_gaf6f5ab6a379ef03d513acc5042731a01"><div class="ttname"><a href="group__Rubber.html#gaf6f5ab6a379ef03d513acc5042731a01">FunG::modifiedIncompressibleNeoHooke</a></div><div class="ttdeci">auto modifiedIncompressibleNeoHooke(double c, const Matrix &amp;F)</div><div class="ttdoc">Generate an &quot;incompressible&quot; neo-Hookean material law , where  is the modified first principal matrix...</div><div class="ttdef"><b>Definition:</b> neoHooke.hh:58</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 14 2015 18:34:21 for RFFGen by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 18:52:01 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

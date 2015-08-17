@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['matrixnorm',['MatrixNorm',['../group__LinearAlgebraGroup.html#gaa59381731a80fe009e56f86f78ebc703',1,'RFFGen::LinearAlgebra']]]
+  ['matrixnorm',['MatrixNorm',['../group__LinearAlgebraGroup.html#ga0107947440eb770f66179b453c313472',1,'FunG::LinearAlgebra']]]
 ];

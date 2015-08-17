@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>RFFGen: RFFGen/Examples/Biomechanics/adiposeTissue_SommerHolzapfel.hh Source File</title>
+<title>FunG: FunG/Examples/Biomechanics/adiposeTissue_SommerHolzapfel.hh Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">RFFGen
+   <div id="projectname">FunG
    </div>
   </td>
  </tr>
@@ -80,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_ae8dfb7974677b3a2f52781538c05dde.html">RFFGen</a></li><li class="navelem"><a class="el" href="dir_3c1beaf6c34b8edb428ad5d15b3b3554.html">Examples</a></li><li class="navelem"><a class="el" href="dir_421b1c58b8528d7fb7d397948a61d77c.html">Biomechanics</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_30259949583b44f1f8be33d6adf504a6.html">FunG</a></li><li class="navelem"><a class="el" href="dir_5c291c9885486702b8c56e8a7a010e32.html">Examples</a></li><li class="navelem"><a class="el" href="dir_73064f7061c487c2844336a44235abb3.html">Biomechanics</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -90,26 +90,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a href="adiposeTissue__SommerHolzapfel_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*   This file is part of the C++-library RFFGen.                              */</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*   This file is part of the C++-library FunG.                              */</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/*   Copyright 2015 Lars Lubkoll                                               */</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   RFFGen is free software: you can redistribute it and/or modify            */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   FunG is free software: you can redistribute it and/or modify            */</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*   it under the terms of the GNU General Public License as published by      */</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*   the Free Software Foundation, either version 3 of the License, or         */</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   (at your option) any later version.                                       */</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*   RFFGen is distributed in the hope that it will be useful,                 */</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*   FunG is distributed in the hope that it will be useful,                 */</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/*   but WITHOUT ANY WARRANTY; without even the implied warranty of            */</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the             */</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/*   GNU General Public License for more details.                              */</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/*                                                                             */</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/*   You should have received a copy of the GNU General Public License         */</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/*   along with RFFGen.  If not, see &lt;http://www.gnu.org/licenses/&gt;.           */</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/*   along with FunG.  If not, see &lt;http://www.gnu.org/licenses/&gt;.           */</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/*                                                                             */</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef RFFGEN_ADIPOSE_TISSUE_SOMMER_HOLZAPFEL_HH</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RFFGEN_ADIPOSE_TISSUE_SOMMER_HOLZAPFEL_HH</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef FUNG_ADIPOSE_TISSUE_SOMMER_HOLZAPFEL_HH</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FUNG_ADIPOSE_TISSUE_SOMMER_HOLZAPFEL_HH</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;../../LinearAlgebra/principalInvariants.hh&quot;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;../../LinearAlgebra/mixedInvariants.hh&quot;</span></div>
@@ -118,7 +118,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;../../CMath/exp.hh&quot;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;../../generate.hh&quot;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">namespace </span>RFFGen</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">namespace </span>FunG</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">namespace </span>Detail</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  {</div>
@@ -138,38 +138,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  }</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix , <span class="keywordtype">int</span> offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt;</div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="group__Biomechanics.html#ga8ae9c0e3e217b82ca8020e716faac738">   81</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Biomechanics.html#ga8ae9c0e3e217b82ca8020e716faac738">incompressibleAdiposeTissue_SommerHolzapfel</a>(<span class="keywordtype">double</span> cCells, <span class="keywordtype">double</span> k1, <span class="keywordtype">double</span> k2, <span class="keywordtype">double</span> kappa, <span class="keyword">const</span> Matrix&amp; M, <span class="keyword">const</span> Matrix&amp; F)</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="group__Biomechanics.html#gac269eefc1abb994044e1634c20a98061">   81</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Biomechanics.html#gac269eefc1abb994044e1634c20a98061">incompressibleAdiposeTissue_SommerHolzapfel</a>(<span class="keywordtype">double</span> cCells, <span class="keywordtype">double</span> k1, <span class="keywordtype">double</span> k2, <span class="keywordtype">double</span> kappa, <span class="keyword">const</span> Matrix&amp; M, <span class="keyword">const</span> Matrix&amp; F)</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  {</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> Detail::generateIncompressibleAdiposeTissue_SommerHolzapfel&lt;Matrix,offset&gt;(cCells,k1,k2,kappa,M,F);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix , <span class="keywordtype">int</span> offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt;</div>
-<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="group__Biomechanics.html#gaf78d6e032c8bd9b5ea67ac4329ef61d2">  101</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Biomechanics.html#ga8ae9c0e3e217b82ca8020e716faac738">incompressibleAdiposeTissue_SommerHolzapfel</a>(<span class="keyword">const</span> Matrix&amp; M, <span class="keyword">const</span> Matrix&amp; F)</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="group__Biomechanics.html#ga01ab128bcf179f4431b0270179af9e20">  101</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Biomechanics.html#gac269eefc1abb994044e1634c20a98061">incompressibleAdiposeTissue_SommerHolzapfel</a>(<span class="keyword">const</span> Matrix&amp; M, <span class="keyword">const</span> Matrix&amp; F)</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  {</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">return</span> incompressibleAdiposeTissue_SommerHolzapfel&lt;Matrix,offset&gt;(0.15,0.8,47.3,0.09,M,F);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  }</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Inflation, <span class="keyword">class</span> Compression, <span class="keyword">class</span> Matrix , <span class="keywordtype">int</span> offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt;</div>
-<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="group__Biomechanics.html#ga4c4a1bc765b6deb392a8151f02deaea8">  126</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Biomechanics.html#ga4c4a1bc765b6deb392a8151f02deaea8">compressibleAdiposeTissue_SommerHolzapfel</a>(<span class="keywordtype">double</span> cCells, <span class="keywordtype">double</span> k1, <span class="keywordtype">double</span> k2, <span class="keywordtype">double</span> kappa, <span class="keywordtype">double</span> d0, <span class="keywordtype">double</span> d1, <span class="keyword">const</span> Matrix&amp; M, <span class="keyword">const</span> Matrix&amp; F)</div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="group__Biomechanics.html#ga5c3388564c0420b62e58f48c739d27f1">  126</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Biomechanics.html#ga5c3388564c0420b62e58f48c739d27f1">compressibleAdiposeTissue_SommerHolzapfel</a>(<span class="keywordtype">double</span> cCells, <span class="keywordtype">double</span> k1, <span class="keywordtype">double</span> k2, <span class="keywordtype">double</span> kappa, <span class="keywordtype">double</span> d0, <span class="keywordtype">double</span> d1, <span class="keyword">const</span> Matrix&amp; M, <span class="keyword">const</span> Matrix&amp; F)</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  {</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">return</span> Detail::generateIncompressibleAdiposeTissue_SommerHolzapfel&lt;Matrix,offset&gt;(cCells,k1,k2,kappa,M,F) + volumetricPenalty&lt;Inflation,Compression&gt;(d0,d1,F);</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  }</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Inflation, <span class="keyword">class</span> Compression, <span class="keyword">class</span> Matrix , <span class="keywordtype">int</span> offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt;</div>
-<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="group__Biomechanics.html#ga3f3e0d2799629dab092114d59233bc03">  147</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Biomechanics.html#ga4c4a1bc765b6deb392a8151f02deaea8">compressibleAdiposeTissue_SommerHolzapfel</a>(<span class="keywordtype">double</span> d0, <span class="keywordtype">double</span> d1, <span class="keyword">const</span> Matrix&amp; M, <span class="keyword">const</span> Matrix&amp; F)</div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="group__Biomechanics.html#ga27bb3f7c579ce8c21a69ea4d4d0169d7">  147</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Biomechanics.html#ga5c3388564c0420b62e58f48c739d27f1">compressibleAdiposeTissue_SommerHolzapfel</a>(<span class="keywordtype">double</span> d0, <span class="keywordtype">double</span> d1, <span class="keyword">const</span> Matrix&amp; M, <span class="keyword">const</span> Matrix&amp; F)</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  {</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">return</span> compressibleAdiposeTissue_SommerHolzapfel&lt;Inflation,Compression,Matrix,offset&gt;(0.15,0.8,47.3,0.09,d0,d1,M,F);</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  }</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">#endif // RFFGEN_ADIPOSE_TISSUE_SOMMER_HOLZAPFEL_HH</span></div>
-<div class="ttc" id="group__Biomechanics_html_ga4c4a1bc765b6deb392a8151f02deaea8"><div class="ttname"><a href="group__Biomechanics.html#ga4c4a1bc765b6deb392a8151f02deaea8">RFFGen::compressibleAdiposeTissue_SommerHolzapfel</a></div><div class="ttdeci">auto compressibleAdiposeTissue_SommerHolzapfel(double cCells, double k1, double k2, double kappa, double d0, double d1, const Matrix &amp;M, const Matrix &amp;F)</div><div class="ttdoc">Compressible version of the model for adipose tissue of Sommer et al.: Multiaxial mechanical properti...</div><div class="ttdef"><b>Definition:</b> adiposeTissue_SommerHolzapfel.hh:126</div></div>
-<div class="ttc" id="group__Biomechanics_html_ga8ae9c0e3e217b82ca8020e716faac738"><div class="ttname"><a href="group__Biomechanics.html#ga8ae9c0e3e217b82ca8020e716faac738">RFFGen::incompressibleAdiposeTissue_SommerHolzapfel</a></div><div class="ttdeci">auto incompressibleAdiposeTissue_SommerHolzapfel(double cCells, double k1, double k2, double kappa, const Matrix &amp;M, const Matrix &amp;F)</div><div class="ttdoc">Model for adipose tissue of Sommer et al.: Multiaxial mechanical properties and constitutive modeling...</div><div class="ttdef"><b>Definition:</b> adiposeTissue_SommerHolzapfel.hh:81</div></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">#endif // FUNG_ADIPOSE_TISSUE_SOMMER_HOLZAPFEL_HH</span></div>
+<div class="ttc" id="group__Biomechanics_html_ga5c3388564c0420b62e58f48c739d27f1"><div class="ttname"><a href="group__Biomechanics.html#ga5c3388564c0420b62e58f48c739d27f1">FunG::compressibleAdiposeTissue_SommerHolzapfel</a></div><div class="ttdeci">auto compressibleAdiposeTissue_SommerHolzapfel(double cCells, double k1, double k2, double kappa, double d0, double d1, const Matrix &amp;M, const Matrix &amp;F)</div><div class="ttdoc">Compressible version of the model for adipose tissue of Sommer et al.: Multiaxial mechanical properti...</div><div class="ttdef"><b>Definition:</b> adiposeTissue_SommerHolzapfel.hh:126</div></div>
+<div class="ttc" id="group__Biomechanics_html_gac269eefc1abb994044e1634c20a98061"><div class="ttname"><a href="group__Biomechanics.html#gac269eefc1abb994044e1634c20a98061">FunG::incompressibleAdiposeTissue_SommerHolzapfel</a></div><div class="ttdeci">auto incompressibleAdiposeTissue_SommerHolzapfel(double cCells, double k1, double k2, double kappa, const Matrix &amp;M, const Matrix &amp;F)</div><div class="ttdoc">Model for adipose tissue of Sommer et al.: Multiaxial mechanical properties and constitutive modeling...</div><div class="ttdef"><b>Definition:</b> adiposeTissue_SommerHolzapfel.hh:81</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 14 2015 18:34:21 for RFFGen by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 18:52:01 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

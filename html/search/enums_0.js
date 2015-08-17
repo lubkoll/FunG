@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['invariant',['Invariant',['../group__InvariantGroup.html#gaddcbe266c25a46f729eb8b89841467d9',1,'RFFGen::LinearAlgebra']]]
+  ['invariant',['Invariant',['../group__InvariantGroup.html#gadfa77af4ecda1d90e7ebc3b5bf56bce8',1,'FunG::LinearAlgebra']]]
 ];

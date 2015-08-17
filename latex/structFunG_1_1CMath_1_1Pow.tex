@@ -1,0 +1,69 @@
+\hypertarget{structFunG_1_1CMath_1_1Pow}{\section{Fun\-G\-:\-:C\-Math\-:\-:Pow$<$ dividend, divisor $>$ Struct Template Reference}
+\label{structFunG_1_1CMath_1_1Pow}\index{Fun\-G\-::\-C\-Math\-::\-Pow$<$ dividend, divisor $>$@{Fun\-G\-::\-C\-Math\-::\-Pow$<$ dividend, divisor $>$}}
+}
+
+
+Power function with rational exponent $ k = \frac{dividend}{divisor} $ including first three derivatives.  
+
+
+
+
+{\ttfamily \#include $<$pow.\-hh$>$}
+
+Inheritance diagram for Fun\-G\-:\-:C\-Math\-:\-:Pow$<$ dividend, divisor $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structFunG_1_1CMath_1_1Pow}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structFunG_1_1CMath_1_1Pow_a169a9a0eb2c8d81ac406f159ddb0a0e8}{Pow} (double x=1)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{structFunG_1_1CMath_1_1Pow_a73131d2a14a434806d533cf26dbfb75a}{void \hyperlink{structFunG_1_1CMath_1_1Pow_a73131d2a14a434806d533cf26dbfb75a}{update} (double x)}\label{structFunG_1_1CMath_1_1Pow_a73131d2a14a434806d533cf26dbfb75a}
+
+\begin{DoxyCompactList}\small\item\em Reset point of evaluation. \end{DoxyCompactList}\item 
+\hypertarget{structFunG_1_1CMath_1_1Pow_afaecd82ca5752f687312775fff2ac884}{double \hyperlink{structFunG_1_1CMath_1_1Pow_afaecd82ca5752f687312775fff2ac884}{d0} () const noexcept}\label{structFunG_1_1CMath_1_1Pow_afaecd82ca5752f687312775fff2ac884}
+
+\begin{DoxyCompactList}\small\item\em Function value. \end{DoxyCompactList}\item 
+\hypertarget{structFunG_1_1CMath_1_1Pow_a0ee0a42eed336499f4f53051c35479e5}{{\footnotesize template$<$int  = -\/1$>$ }\\double \hyperlink{structFunG_1_1CMath_1_1Pow_a0ee0a42eed336499f4f53051c35479e5}{d1} (double dx=1.) const }\label{structFunG_1_1CMath_1_1Pow_a0ee0a42eed336499f4f53051c35479e5}
+
+\begin{DoxyCompactList}\small\item\em First (directional) derivative. \end{DoxyCompactList}\item 
+\hypertarget{structFunG_1_1CMath_1_1Pow_a7c975b925b4eb314c1d12a06b7841c5b}{{\footnotesize template$<$int  = -\/1, int  = -\/1$>$ }\\double \hyperlink{structFunG_1_1CMath_1_1Pow_a7c975b925b4eb314c1d12a06b7841c5b}{d2} (double dx=1., double dy=1.) const }\label{structFunG_1_1CMath_1_1Pow_a7c975b925b4eb314c1d12a06b7841c5b}
+
+\begin{DoxyCompactList}\small\item\em Second (directinal) derivative. \end{DoxyCompactList}\item 
+\hypertarget{structFunG_1_1CMath_1_1Pow_a37dc348a3a883c66659bdf0be71af405}{{\footnotesize template$<$int  = -\/1, int  = -\/1, int  = -\/1$>$ }\\double \hyperlink{structFunG_1_1CMath_1_1Pow_a37dc348a3a883c66659bdf0be71af405}{d3} (double dx=1., double dy=1., double dz=1.) const }\label{structFunG_1_1CMath_1_1Pow_a37dc348a3a883c66659bdf0be71af405}
+
+\begin{DoxyCompactList}\small\item\em Third (directional) derivative. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$int dividend, int divisor = 1$>$struct Fun\-G\-::\-C\-Math\-::\-Pow$<$ dividend, divisor $>$}
+
+Power function with rational exponent $ k = \frac{dividend}{divisor} $ including first three derivatives. 
+
+For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur during applications of the chain rule. For the cases $k=-1$ and $k=2$ specializations are used that avoid the use of std\-::pow. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structFunG_1_1CMath_1_1Pow_a169a9a0eb2c8d81ac406f159ddb0a0e8}{\index{Fun\-G\-::\-C\-Math\-::\-Pow@{Fun\-G\-::\-C\-Math\-::\-Pow}!Pow@{Pow}}
+\index{Pow@{Pow}!FunG::CMath::Pow@{Fun\-G\-::\-C\-Math\-::\-Pow}}
+\subsubsection[{Pow}]{\setlength{\rightskip}{0pt plus 5cm}template$<$int dividend, int divisor = 1$>$ {\bf Fun\-G\-::\-C\-Math\-::\-Pow}$<$ dividend, divisor $>$\-::{\bf Pow} (
+\begin{DoxyParamCaption}
+\item[{double}]{x = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{structFunG_1_1CMath_1_1Pow_a169a9a0eb2c8d81ac406f159ddb0a0e8}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & point of evaluation \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Fun\-G/\-C\-Math/pow.\-hh\end{DoxyCompactItemize}

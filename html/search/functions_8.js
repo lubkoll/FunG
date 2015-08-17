@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nonsymmetricmatrixexception',['NonSymmetricMatrixException',['../classRFFGen_1_1NonSymmetricMatrixException.html#ae920b81f42489271406f48b6dc8aeaa1',1,'RFFGen::NonSymmetricMatrixException']]]
+  ['nonsymmetricmatrixexception',['NonSymmetricMatrixException',['../classFunG_1_1NonSymmetricMatrixException.html#a1c11fd643c37e5fa2145aba2cc7ab09d',1,'FunG::NonSymmetricMatrixException']]]
 ];

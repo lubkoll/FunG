@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>RFFGen: Biomechanics</title>
+<title>FunG: Biomechanics</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">RFFGen
+   <div id="projectname">FunG
    </div>
   </td>
  </tr>
@@ -100,66 +100,66 @@ Files</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga8ae9c0e3e217b82ca8020e716faac738"><td class="memTemplParams" colspan="2">template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
-<tr class="memitem:ga8ae9c0e3e217b82ca8020e716faac738"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#ga8ae9c0e3e217b82ca8020e716faac738">RFFGen::incompressibleAdiposeTissue_SommerHolzapfel</a> (double cCells, double k1, double k2, double kappa, const Matrix &amp;M, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:ga8ae9c0e3e217b82ca8020e716faac738"><td class="mdescLeft">&#160;</td><td class="mdescRight">Model for adipose tissue of Sommer et al.: Multiaxial mechanical properties and constitutive modeling of human adipose tissue: A basis for preoperative simulations in plastic and reconstructive surgery. Acta Biomater., 9:9036-9048, 2013.  <a href="#ga8ae9c0e3e217b82ca8020e716faac738">More...</a><br/></td></tr>
-<tr class="separator:ga8ae9c0e3e217b82ca8020e716faac738"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf78d6e032c8bd9b5ea67ac4329ef61d2"><td class="memTemplParams" colspan="2">template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
-<tr class="memitem:gaf78d6e032c8bd9b5ea67ac4329ef61d2"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#gaf78d6e032c8bd9b5ea67ac4329ef61d2">RFFGen::incompressibleAdiposeTissue_SommerHolzapfel</a> (const Matrix &amp;M, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:gaf78d6e032c8bd9b5ea67ac4329ef61d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Model for adipose tissue of Sommer et al.: Multiaxial mechanical properties and constitutive modeling of human adipose tissue: A basis for preoperative simulations in plastic and reconstructive surgery. Acta Biomater., 9:9036-9048, 2013.  <a href="#gaf78d6e032c8bd9b5ea67ac4329ef61d2">More...</a><br/></td></tr>
-<tr class="separator:gaf78d6e032c8bd9b5ea67ac4329ef61d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4c4a1bc765b6deb392a8151f02deaea8"><td class="memTemplParams" colspan="2">template&lt;class Inflation , class Compression , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
-<tr class="memitem:ga4c4a1bc765b6deb392a8151f02deaea8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#ga4c4a1bc765b6deb392a8151f02deaea8">RFFGen::compressibleAdiposeTissue_SommerHolzapfel</a> (double cCells, double k1, double k2, double kappa, double d0, double d1, const Matrix &amp;M, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:ga4c4a1bc765b6deb392a8151f02deaea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compressible version of the model for adipose tissue of Sommer et al.: Multiaxial mechanical properties and constitutive modeling of human adipose tissue: A basis for preoperative simulations in plastic and reconstructive surgery. Acta Biomater., 9:9036-9048, 2013.  <a href="#ga4c4a1bc765b6deb392a8151f02deaea8">More...</a><br/></td></tr>
-<tr class="separator:ga4c4a1bc765b6deb392a8151f02deaea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3f3e0d2799629dab092114d59233bc03"><td class="memTemplParams" colspan="2">template&lt;class Inflation , class Compression , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
-<tr class="memitem:ga3f3e0d2799629dab092114d59233bc03"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#ga3f3e0d2799629dab092114d59233bc03">RFFGen::compressibleAdiposeTissue_SommerHolzapfel</a> (double d0, double d1, const Matrix &amp;M, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:ga3f3e0d2799629dab092114d59233bc03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compressible version of the model for adipose tissue of Sommer et al.: Multiaxial mechanical properties and constitutive modeling of human adipose tissue: A basis for preoperative simulations in plastic and reconstructive surgery. Acta Biomater., 9:9036-9048, 2013. Material parameters are taken from the same publication, Table 2, i.e. <img class="formulaInl" alt="$c_\mathrm{Cells}=0.15 (\,\mathrm{kPa})$" src="form_29.png"/>, <img class="formulaInl" alt="$k_1=0.8 (\,\mathrm{kPa})$" src="form_30.png"/>, <img class="formulaInl" alt="$k_2=47.3$" src="form_31.png"/> and <img class="formulaInl" alt="$\kappa=0.09$" src="form_32.png"/>.  <a href="#ga3f3e0d2799629dab092114d59233bc03">More...</a><br/></td></tr>
-<tr class="separator:ga3f3e0d2799629dab092114d59233bc03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6c85de42ee96ce8b8505dd22d2327e12"><td class="memTemplParams" colspan="2">template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
-<tr class="memitem:ga6c85de42ee96ce8b8505dd22d2327e12"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#ga6c85de42ee96ce8b8505dd22d2327e12">RFFGen::incompressibleMuscleTissue_Martins</a> (double c, double b, double A, double a, const Matrix &amp;M, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:ga6c85de42ee96ce8b8505dd22d2327e12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Incompressible version of the model for muscle tissue of Martins et al.: A numerical model of passive and active bahevaior of skeletal muscles. Comp. Meth. Appl. Mech. Eng. 151:419-433, 1998.  <a href="#ga6c85de42ee96ce8b8505dd22d2327e12">More...</a><br/></td></tr>
-<tr class="separator:ga6c85de42ee96ce8b8505dd22d2327e12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga79c7b90af1f57945e9c1c8e547d6e9ee"><td class="memTemplParams" colspan="2">template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
-<tr class="memitem:ga79c7b90af1f57945e9c1c8e547d6e9ee"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#ga79c7b90af1f57945e9c1c8e547d6e9ee">RFFGen::incompressibleMuscleTissue_Martins</a> (const Matrix &amp;M, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:ga79c7b90af1f57945e9c1c8e547d6e9ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Incompressible version of the model for muscle tissue of Martins et al.: A numerical model of passive and active bahevaior of skeletal muscles. Comp. Meth. Appl. Mech. Eng. 151:419-433, 1998.  <a href="#ga79c7b90af1f57945e9c1c8e547d6e9ee">More...</a><br/></td></tr>
-<tr class="separator:ga79c7b90af1f57945e9c1c8e547d6e9ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaa21bcb424d6ea5a591e454bcfa9cec1"><td class="memTemplParams" colspan="2">template&lt;class Inflation , class Compression , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
-<tr class="memitem:gaaa21bcb424d6ea5a591e454bcfa9cec1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#gaaa21bcb424d6ea5a591e454bcfa9cec1">RFFGen::compressibleMuscleTissue_Martins</a> (double c, double b, double A, double a, double d0, double d1, const Matrix &amp;M, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:gaaa21bcb424d6ea5a591e454bcfa9cec1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compressible version of the model for muscle tissue of Martins et al.: A numerical model of passive and active bahevaior of skeletal muscles. Comp. Meth. Appl. Mech. Eng. 151:419-433, 1998.  <a href="#gaaa21bcb424d6ea5a591e454bcfa9cec1">More...</a><br/></td></tr>
-<tr class="separator:gaaa21bcb424d6ea5a591e454bcfa9cec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3bd109a716f5eab7c263fa42cb66a937"><td class="memTemplParams" colspan="2">template&lt;class Inflation , class Compression , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
-<tr class="memitem:ga3bd109a716f5eab7c263fa42cb66a937"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#ga3bd109a716f5eab7c263fa42cb66a937">RFFGen::compressibleMuscleTissue_Martins</a> (double d0, double d1, const Matrix &amp;M, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:ga3bd109a716f5eab7c263fa42cb66a937"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compressible version of the model for muscle tissue of Martins et al.: A numerical model of passive and active bahevaior of skeletal muscles. Comp. Meth. Appl. Mech. Eng. 151:419-433, 1998.  <a href="#ga3bd109a716f5eab7c263fa42cb66a937">More...</a><br/></td></tr>
-<tr class="separator:ga3bd109a716f5eab7c263fa42cb66a937"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2c1299d3275e15fee450d33b69f3c537"><td class="memTemplParams" colspan="2">template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
-<tr class="memitem:ga2c1299d3275e15fee450d33b69f3c537"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#ga2c1299d3275e15fee450d33b69f3c537">RFFGen::incompressibleSkin_Hendriks</a> (double c0, double c1, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:ga2c1299d3275e15fee450d33b69f3c537"><td class="mdescLeft">&#160;</td><td class="mdescRight">Model for skin tissue of Hendriks: Mechanical behavior of human epidermal and dermal layers in vivo. PhD thesis, Technische Universiteit Eindhoven, 2005.  <a href="#ga2c1299d3275e15fee450d33b69f3c537">More...</a><br/></td></tr>
-<tr class="separator:ga2c1299d3275e15fee450d33b69f3c537"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae120c2a20a841a63c19cee23f7eba317"><td class="memTemplParams" colspan="2">template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
-<tr class="memitem:gae120c2a20a841a63c19cee23f7eba317"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#gae120c2a20a841a63c19cee23f7eba317">RFFGen::incompressibleSkin_Hendriks</a> (const Matrix &amp;F)</td></tr>
-<tr class="memdesc:gae120c2a20a841a63c19cee23f7eba317"><td class="mdescLeft">&#160;</td><td class="mdescRight">Model for skin tissue of Hendriks: Mechanical behavior of human epidermal and dermal layers in vivo. PhD thesis, Technische Universiteit Eindhoven, 2005.  <a href="#gae120c2a20a841a63c19cee23f7eba317">More...</a><br/></td></tr>
-<tr class="separator:gae120c2a20a841a63c19cee23f7eba317"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga749204473b9790e8479bbbbe0b703694"><td class="memTemplParams" colspan="2">template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
-<tr class="memitem:ga749204473b9790e8479bbbbe0b703694"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#ga749204473b9790e8479bbbbe0b703694">RFFGen::compressibleSkin_Hendriks</a> (double c0, double c1, double d0, double d1, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:ga749204473b9790e8479bbbbe0b703694"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compressible version of the model for skin tissue of Hendriks: Mechanical behavior of human epidermal and dermal layers in vivo. PhD thesis, Technische Universiteit Eindhoven, 2005.  <a href="#ga749204473b9790e8479bbbbe0b703694">More...</a><br/></td></tr>
-<tr class="separator:ga749204473b9790e8479bbbbe0b703694"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3118f1e205132778f07607cf852d40d9"><td class="memTemplParams" colspan="2">template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
-<tr class="memitem:ga3118f1e205132778f07607cf852d40d9"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#ga3118f1e205132778f07607cf852d40d9">RFFGen::compressibleSkin_Hendriks</a> (double d0, double d1, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:ga3118f1e205132778f07607cf852d40d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compressible version of the model for skin tissue of Hendriks: Mechanical behavior of human epidermal and dermal layers in vivo. PhD thesis, Technische Universiteit Eindhoven, 2005.  <a href="#ga3118f1e205132778f07607cf852d40d9">More...</a><br/></td></tr>
-<tr class="separator:ga3118f1e205132778f07607cf852d40d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac269eefc1abb994044e1634c20a98061"><td class="memTemplParams" colspan="2">template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
+<tr class="memitem:gac269eefc1abb994044e1634c20a98061"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#gac269eefc1abb994044e1634c20a98061">FunG::incompressibleAdiposeTissue_SommerHolzapfel</a> (double cCells, double k1, double k2, double kappa, const Matrix &amp;M, const Matrix &amp;F)</td></tr>
+<tr class="memdesc:gac269eefc1abb994044e1634c20a98061"><td class="mdescLeft">&#160;</td><td class="mdescRight">Model for adipose tissue of Sommer et al.: Multiaxial mechanical properties and constitutive modeling of human adipose tissue: A basis for preoperative simulations in plastic and reconstructive surgery. Acta Biomater., 9:9036-9048, 2013.  <a href="#gac269eefc1abb994044e1634c20a98061">More...</a><br/></td></tr>
+<tr class="separator:gac269eefc1abb994044e1634c20a98061"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga01ab128bcf179f4431b0270179af9e20"><td class="memTemplParams" colspan="2">template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
+<tr class="memitem:ga01ab128bcf179f4431b0270179af9e20"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#ga01ab128bcf179f4431b0270179af9e20">FunG::incompressibleAdiposeTissue_SommerHolzapfel</a> (const Matrix &amp;M, const Matrix &amp;F)</td></tr>
+<tr class="memdesc:ga01ab128bcf179f4431b0270179af9e20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Model for adipose tissue of Sommer et al.: Multiaxial mechanical properties and constitutive modeling of human adipose tissue: A basis for preoperative simulations in plastic and reconstructive surgery. Acta Biomater., 9:9036-9048, 2013.  <a href="#ga01ab128bcf179f4431b0270179af9e20">More...</a><br/></td></tr>
+<tr class="separator:ga01ab128bcf179f4431b0270179af9e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5c3388564c0420b62e58f48c739d27f1"><td class="memTemplParams" colspan="2">template&lt;class Inflation , class Compression , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
+<tr class="memitem:ga5c3388564c0420b62e58f48c739d27f1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#ga5c3388564c0420b62e58f48c739d27f1">FunG::compressibleAdiposeTissue_SommerHolzapfel</a> (double cCells, double k1, double k2, double kappa, double d0, double d1, const Matrix &amp;M, const Matrix &amp;F)</td></tr>
+<tr class="memdesc:ga5c3388564c0420b62e58f48c739d27f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compressible version of the model for adipose tissue of Sommer et al.: Multiaxial mechanical properties and constitutive modeling of human adipose tissue: A basis for preoperative simulations in plastic and reconstructive surgery. Acta Biomater., 9:9036-9048, 2013.  <a href="#ga5c3388564c0420b62e58f48c739d27f1">More...</a><br/></td></tr>
+<tr class="separator:ga5c3388564c0420b62e58f48c739d27f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga27bb3f7c579ce8c21a69ea4d4d0169d7"><td class="memTemplParams" colspan="2">template&lt;class Inflation , class Compression , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
+<tr class="memitem:ga27bb3f7c579ce8c21a69ea4d4d0169d7"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#ga27bb3f7c579ce8c21a69ea4d4d0169d7">FunG::compressibleAdiposeTissue_SommerHolzapfel</a> (double d0, double d1, const Matrix &amp;M, const Matrix &amp;F)</td></tr>
+<tr class="memdesc:ga27bb3f7c579ce8c21a69ea4d4d0169d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compressible version of the model for adipose tissue of Sommer et al.: Multiaxial mechanical properties and constitutive modeling of human adipose tissue: A basis for preoperative simulations in plastic and reconstructive surgery. Acta Biomater., 9:9036-9048, 2013. Material parameters are taken from the same publication, Table 2, i.e. <img class="formulaInl" alt="$c_\mathrm{Cells}=0.15 (\,\mathrm{kPa})$" src="form_29.png"/>, <img class="formulaInl" alt="$k_1=0.8 (\,\mathrm{kPa})$" src="form_30.png"/>, <img class="formulaInl" alt="$k_2=47.3$" src="form_31.png"/> and <img class="formulaInl" alt="$\kappa=0.09$" src="form_32.png"/>.  <a href="#ga27bb3f7c579ce8c21a69ea4d4d0169d7">More...</a><br/></td></tr>
+<tr class="separator:ga27bb3f7c579ce8c21a69ea4d4d0169d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafcc36a1958899ca9246c4c1b3c9bfd85"><td class="memTemplParams" colspan="2">template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
+<tr class="memitem:gafcc36a1958899ca9246c4c1b3c9bfd85"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#gafcc36a1958899ca9246c4c1b3c9bfd85">FunG::incompressibleMuscleTissue_Martins</a> (double c, double b, double A, double a, const Matrix &amp;M, const Matrix &amp;F)</td></tr>
+<tr class="memdesc:gafcc36a1958899ca9246c4c1b3c9bfd85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Incompressible version of the model for muscle tissue of Martins et al.: A numerical model of passive and active bahevaior of skeletal muscles. Comp. Meth. Appl. Mech. Eng. 151:419-433, 1998.  <a href="#gafcc36a1958899ca9246c4c1b3c9bfd85">More...</a><br/></td></tr>
+<tr class="separator:gafcc36a1958899ca9246c4c1b3c9bfd85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9e414585a90b1988e9fa88d17d875055"><td class="memTemplParams" colspan="2">template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
+<tr class="memitem:ga9e414585a90b1988e9fa88d17d875055"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#ga9e414585a90b1988e9fa88d17d875055">FunG::incompressibleMuscleTissue_Martins</a> (const Matrix &amp;M, const Matrix &amp;F)</td></tr>
+<tr class="memdesc:ga9e414585a90b1988e9fa88d17d875055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Incompressible version of the model for muscle tissue of Martins et al.: A numerical model of passive and active bahevaior of skeletal muscles. Comp. Meth. Appl. Mech. Eng. 151:419-433, 1998.  <a href="#ga9e414585a90b1988e9fa88d17d875055">More...</a><br/></td></tr>
+<tr class="separator:ga9e414585a90b1988e9fa88d17d875055"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad831914c493a3da04ed40c3c0ce87a62"><td class="memTemplParams" colspan="2">template&lt;class Inflation , class Compression , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
+<tr class="memitem:gad831914c493a3da04ed40c3c0ce87a62"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#gad831914c493a3da04ed40c3c0ce87a62">FunG::compressibleMuscleTissue_Martins</a> (double c, double b, double A, double a, double d0, double d1, const Matrix &amp;M, const Matrix &amp;F)</td></tr>
+<tr class="memdesc:gad831914c493a3da04ed40c3c0ce87a62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compressible version of the model for muscle tissue of Martins et al.: A numerical model of passive and active bahevaior of skeletal muscles. Comp. Meth. Appl. Mech. Eng. 151:419-433, 1998.  <a href="#gad831914c493a3da04ed40c3c0ce87a62">More...</a><br/></td></tr>
+<tr class="separator:gad831914c493a3da04ed40c3c0ce87a62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga46a70ccb2285e12addad87b6a8aaaae8"><td class="memTemplParams" colspan="2">template&lt;class Inflation , class Compression , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
+<tr class="memitem:ga46a70ccb2285e12addad87b6a8aaaae8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#ga46a70ccb2285e12addad87b6a8aaaae8">FunG::compressibleMuscleTissue_Martins</a> (double d0, double d1, const Matrix &amp;M, const Matrix &amp;F)</td></tr>
+<tr class="memdesc:ga46a70ccb2285e12addad87b6a8aaaae8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compressible version of the model for muscle tissue of Martins et al.: A numerical model of passive and active bahevaior of skeletal muscles. Comp. Meth. Appl. Mech. Eng. 151:419-433, 1998.  <a href="#ga46a70ccb2285e12addad87b6a8aaaae8">More...</a><br/></td></tr>
+<tr class="separator:ga46a70ccb2285e12addad87b6a8aaaae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa20bf15ef6976d64d89490429035b2c4"><td class="memTemplParams" colspan="2">template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
+<tr class="memitem:gaa20bf15ef6976d64d89490429035b2c4"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#gaa20bf15ef6976d64d89490429035b2c4">FunG::incompressibleSkin_Hendriks</a> (double c0, double c1, const Matrix &amp;F)</td></tr>
+<tr class="memdesc:gaa20bf15ef6976d64d89490429035b2c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Model for skin tissue of Hendriks: Mechanical behavior of human epidermal and dermal layers in vivo. PhD thesis, Technische Universiteit Eindhoven, 2005.  <a href="#gaa20bf15ef6976d64d89490429035b2c4">More...</a><br/></td></tr>
+<tr class="separator:gaa20bf15ef6976d64d89490429035b2c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad8653218bd2afb4e3cfd601a5142956c"><td class="memTemplParams" colspan="2">template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
+<tr class="memitem:gad8653218bd2afb4e3cfd601a5142956c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#gad8653218bd2afb4e3cfd601a5142956c">FunG::incompressibleSkin_Hendriks</a> (const Matrix &amp;F)</td></tr>
+<tr class="memdesc:gad8653218bd2afb4e3cfd601a5142956c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Model for skin tissue of Hendriks: Mechanical behavior of human epidermal and dermal layers in vivo. PhD thesis, Technische Universiteit Eindhoven, 2005.  <a href="#gad8653218bd2afb4e3cfd601a5142956c">More...</a><br/></td></tr>
+<tr class="separator:gad8653218bd2afb4e3cfd601a5142956c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga07b4c52c6ecf7e72f73ab5832fb262cd"><td class="memTemplParams" colspan="2">template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
+<tr class="memitem:ga07b4c52c6ecf7e72f73ab5832fb262cd"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#ga07b4c52c6ecf7e72f73ab5832fb262cd">FunG::compressibleSkin_Hendriks</a> (double c0, double c1, double d0, double d1, const Matrix &amp;F)</td></tr>
+<tr class="memdesc:ga07b4c52c6ecf7e72f73ab5832fb262cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compressible version of the model for skin tissue of Hendriks: Mechanical behavior of human epidermal and dermal layers in vivo. PhD thesis, Technische Universiteit Eindhoven, 2005.  <a href="#ga07b4c52c6ecf7e72f73ab5832fb262cd">More...</a><br/></td></tr>
+<tr class="separator:ga07b4c52c6ecf7e72f73ab5832fb262cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga42721e772b7eada1b0bca98247ad440f"><td class="memTemplParams" colspan="2">template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
+<tr class="memitem:ga42721e772b7eada1b0bca98247ad440f"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#ga42721e772b7eada1b0bca98247ad440f">FunG::compressibleSkin_Hendriks</a> (double d0, double d1, const Matrix &amp;F)</td></tr>
+<tr class="memdesc:ga42721e772b7eada1b0bca98247ad440f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compressible version of the model for skin tissue of Hendriks: Mechanical behavior of human epidermal and dermal layers in vivo. PhD thesis, Technische Universiteit Eindhoven, 2005.  <a href="#ga42721e772b7eada1b0bca98247ad440f">More...</a><br/></td></tr>
+<tr class="separator:ga42721e772b7eada1b0bca98247ad440f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Models for the description of different biologial soft tissues. </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ga4c4a1bc765b6deb392a8151f02deaea8"></a>
+<a class="anchor" id="ga5c3388564c0420b62e58f48c739d27f1"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class Inflation , class Compression , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">auto RFFGen::compressibleAdiposeTissue_SommerHolzapfel </td>
+          <td class="memname">auto FunG::compressibleAdiposeTissue_SommerHolzapfel </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>cCells</em>, </td>
@@ -232,14 +232,14 @@ template&lt;class Inflation , class Compression , class Matrix , int offset = Li
 
 </div>
 </div>
-<a class="anchor" id="ga3f3e0d2799629dab092114d59233bc03"></a>
+<a class="anchor" id="ga27bb3f7c579ce8c21a69ea4d4d0169d7"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class Inflation , class Compression , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">auto RFFGen::compressibleAdiposeTissue_SommerHolzapfel </td>
+          <td class="memname">auto FunG::compressibleAdiposeTissue_SommerHolzapfel </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>d0</em>, </td>
@@ -284,14 +284,14 @@ template&lt;class Inflation , class Compression , class Matrix , int offset = Li
 
 </div>
 </div>
-<a class="anchor" id="gaaa21bcb424d6ea5a591e454bcfa9cec1"></a>
+<a class="anchor" id="gad831914c493a3da04ed40c3c0ce87a62"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class Inflation , class Compression , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">auto RFFGen::compressibleMuscleTissue_Martins </td>
+          <td class="memname">auto FunG::compressibleMuscleTissue_Martins </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>c</em>, </td>
@@ -364,14 +364,14 @@ template&lt;class Inflation , class Compression , class Matrix , int offset = Li
 
 </div>
 </div>
-<a class="anchor" id="ga3bd109a716f5eab7c263fa42cb66a937"></a>
+<a class="anchor" id="ga46a70ccb2285e12addad87b6a8aaaae8"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class Inflation , class Compression , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">auto RFFGen::compressibleMuscleTissue_Martins </td>
+          <td class="memname">auto FunG::compressibleMuscleTissue_Martins </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>d0</em>, </td>
@@ -417,14 +417,14 @@ template&lt;class Inflation , class Compression , class Matrix , int offset = Li
 
 </div>
 </div>
-<a class="anchor" id="ga749204473b9790e8479bbbbe0b703694"></a>
+<a class="anchor" id="ga07b4c52c6ecf7e72f73ab5832fb262cd"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">auto RFFGen::compressibleSkin_Hendriks </td>
+          <td class="memname">auto FunG::compressibleSkin_Hendriks </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>c0</em>, </td>
@@ -476,14 +476,14 @@ template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , i
 
 </div>
 </div>
-<a class="anchor" id="ga3118f1e205132778f07607cf852d40d9"></a>
+<a class="anchor" id="ga42721e772b7eada1b0bca98247ad440f"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">auto RFFGen::compressibleSkin_Hendriks </td>
+          <td class="memname">auto FunG::compressibleSkin_Hendriks </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>d0</em>, </td>
@@ -522,14 +522,14 @@ template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , i
 
 </div>
 </div>
-<a class="anchor" id="ga8ae9c0e3e217b82ca8020e716faac738"></a>
+<a class="anchor" id="gac269eefc1abb994044e1634c20a98061"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">auto RFFGen::incompressibleAdiposeTissue_SommerHolzapfel </td>
+          <td class="memname">auto FunG::incompressibleAdiposeTissue_SommerHolzapfel </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>cCells</em>, </td>
@@ -588,14 +588,14 @@ template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()
 
 </div>
 </div>
-<a class="anchor" id="gaf78d6e032c8bd9b5ea67ac4329ef61d2"></a>
+<a class="anchor" id="ga01ab128bcf179f4431b0270179af9e20"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">auto RFFGen::incompressibleAdiposeTissue_SommerHolzapfel </td>
+          <td class="memname">auto FunG::incompressibleAdiposeTissue_SommerHolzapfel </td>
           <td>(</td>
           <td class="paramtype">const Matrix &amp;&#160;</td>
           <td class="paramname"><em>M</em>, </td>
@@ -627,14 +627,14 @@ template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()
 
 </div>
 </div>
-<a class="anchor" id="ga6c85de42ee96ce8b8505dd22d2327e12"></a>
+<a class="anchor" id="gafcc36a1958899ca9246c4c1b3c9bfd85"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">auto RFFGen::incompressibleMuscleTissue_Martins </td>
+          <td class="memname">auto FunG::incompressibleMuscleTissue_Martins </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>c</em>, </td>
@@ -693,14 +693,14 @@ template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()
 
 </div>
 </div>
-<a class="anchor" id="ga79c7b90af1f57945e9c1c8e547d6e9ee"></a>
+<a class="anchor" id="ga9e414585a90b1988e9fa88d17d875055"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">auto RFFGen::incompressibleMuscleTissue_Martins </td>
+          <td class="memname">auto FunG::incompressibleMuscleTissue_Martins </td>
           <td>(</td>
           <td class="paramtype">const Matrix &amp;&#160;</td>
           <td class="paramname"><em>M</em>, </td>
@@ -732,14 +732,14 @@ template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()
 
 </div>
 </div>
-<a class="anchor" id="ga2c1299d3275e15fee450d33b69f3c537"></a>
+<a class="anchor" id="gaa20bf15ef6976d64d89490429035b2c4"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">auto RFFGen::incompressibleSkin_Hendriks </td>
+          <td class="memname">auto FunG::incompressibleSkin_Hendriks </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>c0</em>, </td>
@@ -777,14 +777,14 @@ template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()
 
 </div>
 </div>
-<a class="anchor" id="gae120c2a20a841a63c19cee23f7eba317"></a>
+<a class="anchor" id="gad8653218bd2afb4e3cfd601a5142956c"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">auto RFFGen::incompressibleSkin_Hendriks </td>
+          <td class="memname">auto FunG::incompressibleSkin_Hendriks </td>
           <td>(</td>
           <td class="paramtype">const Matrix &amp;&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
@@ -808,7 +808,7 @@ template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 14 2015 18:34:21 for RFFGen by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 18:52:01 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

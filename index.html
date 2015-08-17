@@ -4,11 +4,11 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Rffgen : A fast and easy to use function generation library that gives provides access to the first three derivatives of a (possibly matrix-valued) function.">
+    <meta name="description" content="FunG : A fast and easy to use function generation library that gives provides access to the first three derivatives of a (possibly matrix-valued) function.">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Rffgen</title>
+    <title>FunG</title>
   </head>
 
   <body>
@@ -18,7 +18,7 @@
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/lubkoll/FunG">View on GitHub</a>
 
-          <h1 id="project_title">Rffgen</h1>
+          <h1 id="project_title">FunG</h1>
           <h2 id="project_tagline">A fast and easy to use function generation library that gives provides access to the first three derivatives of a (possibly matrix-valued) function.</h2>
 
             <section id="downloads">
@@ -31,10 +31,10 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <p><a href="https://travis-ci.org/lubkoll/RFFGen/builds"><img src="https://travis-ci.org/lubkoll/RFFGen.svg?branch=master" alt="Build Status"></a> <a href="https://coveralls.io/r/lubkoll/RFFGen"><img src="https://coveralls.io/repos/lubkoll/RFFGen/badge.svg" alt="Coverage Status"></a></p>
+        <p><a href="https://travis-ci.org/lubkoll/FunG/builds"><img src="https://travis-ci.org/lubkoll/FunG.svg?branch=master" alt="Build Status"></a> <a href="https://coveralls.io/r/lubkoll/FunG"><img src="https://coveralls.io/repos/lubkoll/FunG/badge.svg" alt="Coverage Status"></a></p>
 
 <h1>
-<a id="rffgen" class="anchor" href="#rffgen" aria-hidden="true"><span class="octicon octicon-link"></span></a>RFFGen</h1>
+<a id="rffgen" class="anchor" href="#rffgen" aria-hidden="true"><span class="octicon octicon-link"></span></a>FunG</h1>
 
 <p>A fast and easy to use function generation library that gives provides access to the first three derivatives of a function.</p>
 
@@ -57,7 +57,7 @@
 <h1>
 <a id="examples" class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h1>
 
-<p>Usage is illustrated using three different examples. Further examples can be found in RFFGen/Tests and RFFGen/Examples.</p>
+<p>Usage is illustrated using three different examples. Further examples can be found in FunG/Tests and FunG/Examples.</p>
 
 <h3>
 <a id="a-simple-example" class="anchor" href="#a-simple-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>A simple example</h3>
@@ -74,16 +74,16 @@
 
 <p><img src="http://latex.codecogs.com/gif.latex?g%28x%29%3D%5Csqrt%7Bx%7D" alt="equation"></p>
 
-<pre><code>#include "RFFGen.hh"
+<pre><code>#include "FunG.hh"
 
 auto generateFunction()
 {
-  using namespace RFFGen::CMath;
+  using namespace FunG::CMath;
 
   auto h = Pow&lt;3&gt;() + Sin();
   auto g = Sqrt();
 
-  return RFFGen::finalize_scalar( h(g) );
+  return FunG::finalize_scalar( h(g) );
 }
 </code></pre>
 
@@ -110,15 +110,15 @@ auto thirdDerivative  = f.d3();
 
 <p>which constitutes a model for adipose tissue. In this context the invariants depend on the left Cauchy-Green strain tensor. Its implementation is</p>
 
-<pre><code>#include "RFFGen.hh"
+<pre><code>#include "FunG.hh"
 
 template &lt;class Mat&gt;
 auto generateAdiposeTissue(double cCells, double k1, double k2,
              double kappa, const Matrix&amp; M, const Matrix&amp; F)
 {
-  using namespace RFFGen::LinearAlgebra;
-  using RFFGen::CMath::exp;
-  using RFFGen::finalize;
+  using namespace FunG::LinearAlgebra;
+  using FunG::CMath::exp;
+  using FunG::finalize;
 
   auto i1 = FirstPrincipalInvariant&lt;Matrix&gt;();
   auto si1 = ShiftedFirstPrincipalInvariant&lt;Matrix&gt;();
@@ -155,19 +155,19 @@ suitable default values for the directions. Here this is not admissible. </p>
 
 <p><img src="http://latex.codecogs.com/gif.latex?f%28x%2CF%29%3D%5Csqrt%7Bx%7D%5Cmathrm%7Btr%7D%28F%29" alt="equation"></p>
 
-<pre><code>#include "RFFGen.hh"
+<pre><code>#include "FunG.hh"
 
 template &lt;class Mat&gt;
 auto generateFunction()
 {
-  using RFFGen::CMath::sqrt;
-  using RFFGen::LinearAlgebra::trace;
-  using RFFGen::Variable;
+  using FunG::CMath::sqrt;
+  using FunG::LinearAlgebra::trace;
+  using FunG::Variable;
 
   auto x = Variable&lt;double,0&gt;();
   auto F = Variable&lt;Mat,1&gt;();
 
-  return RFFGen::finalize( sqrt(x)*trace(F) );
+  return FunG::finalize( sqrt(x)*trace(F) );
 }
 </code></pre>
 
@@ -197,7 +197,7 @@ double dddf_dxdxdF = f.template d3&lt;0,0,1&gt;(dx1,dx2,dF);
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        <p class="copyright">Rffgen maintained by <a href="https://github.com/lubkoll">lubkoll</a></p>
+        <p class="copyright">FunG maintained by <a href="https://github.com/lubkoll">lubkoll</a></p>
         <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
