@@ -2,13 +2,108 @@
 <html>
 
   <head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart','columnchart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data1 = google.visualization.arrayToDataTable([
+          ['Library', 'time/s', { role: 'style' }],
+          ['FADBAD++', 0.575, 'blue'],
+          ['SACADO', 0.542, 'blue'],
+          ['FunG', 0.517, 'orange'],
+          ['Manual', 0.507, 'gray']
+        ]);
+        
+        var data2 = google.visualization.arrayToDataTable([
+          ['Library', 'time/s', { role: 'style' }],
+          ['FADBAD++', 1.412, 'blue'],
+          ['FunG', 1.364, 'orange'],
+          ['Manual', 1.325, 'gray']
+        ]);
+
+        var data3 = google.visualization.arrayToDataTable([
+          ['Library', 'time/s', { role: 'style' }],
+          ['FADBAD++', 0.581, 'blue'],
+          ['SACADO', 0.586, 'blue'],
+          ['FunG', 0.499, 'orange'],
+          ['Manual', 0.475, 'gray']
+        ]);
+
+        var data4 = google.visualization.arrayToDataTable([
+          ['Function','Armadillo','DUNE','Eigen'],
+          ['update', 2.587   , 2.512    , 2.159],
+          ['d0'    , 0.000071, 0.000040 , 0.000064],
+          ['d1'    , 0.593   , 0.601    , 0.275],
+          ['d2'    , 3.332   , 3.404    , 2.234],
+          ['d3'    , 19.227  , 15.852   , 12.026]
+        ]);
+
+        var data5 = google.visualization.arrayToDataTable([
+          ['Function','Armadillo','DUNE','Eigen'],
+          ['update', 2.982   , 2.780    , 2.836],
+          ['d0'    , 0.000042, 0.000043 , 0.000049],
+          ['d1'    , 1.247   , 0.988    , 1.035],
+          ['d2'    , 7.080   , 6.044    , 5.880],
+          ['d3'    , 40.810  , 35.792   , 33.987]
+        ]);
+        
+        
+        // Set chart options
+        var options = {title:'Comparison with different AD implementations',
+                       width:500,
+                       height:300,
+                       legend : { position:"none"},
+                       vAxis: {
+                         title: 'time/s'
+                       }
+                      };
+
+         var options_muscle = {title:'Performance for a model of muscle tissue',
+                       width:500,
+                       height:300,
+                       colors: ['blue','orange','gray'],
+                       vAxis: {
+                         title: 'time/s'
+                       }
+                      };
+
+                      
+        // Instantiate and draw our chart, passing in some options.
+        var chart1 = new google.visualization.ColumnChart(document.getElementById('chart1_div'));
+        chart1.draw(data1, options);
+        var chart2 = new google.visualization.ColumnChart(document.getElementById('chart2_div'));
+        chart2.draw(data2, options);
+        var chart3 = new google.visualization.ColumnChart(document.getElementById('chart3_div'));
+        chart3.draw(data3, options);
+        var chart4 = new google.visualization.ColumnChart(document.getElementById('chart4_div'));
+        chart4.draw(data4, options_muscle);
+        var chart5 = new google.visualization.ColumnChart(document.getElementById('chart5_div'));
+        chart5.draw(data5, options_muscle);
+        }
+        
+    </script>
+
+  
+    <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="FunG : A fast and easy to use function generation library that gives provides access to the first three derivatives of a (possibly matrix-valued) function.">
+    <meta name="description" content="FunG : A C++-library for the generation of complex functions, including first three derivatives and different variable types.">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>FunG</title>
+    <title>FunG - Fast Function Generation</title>
   </head>
 
   <body>
@@ -18,8 +113,8 @@
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/lubkoll/FunG">View on GitHub</a>
 
-          <h1 id="project_title">FunG</h1>
-          <h2 id="project_tagline">A fast and easy to use function generation library that gives provides access to the first three derivatives of a (possibly matrix-valued) function.</h2>
+          <h1 id="project_title">Fast Function Generation</h1>
+          <h2 id="project_tagline">A C++-library for the generation of complex functions, including first three derivatives and different variable types.</h2>
 
             <section id="downloads">
               <a class="zip_download_link" href="https://github.com/lubkoll/FunG/zipball/master">Download this project as a .zip file</a>
@@ -31,30 +126,53 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <p><a href="https://travis-ci.org/lubkoll/FunG/builds"><img src="https://travis-ci.org/lubkoll/FunG.svg?branch=master" alt="Build Status"></a> <a href="https://coveralls.io/r/lubkoll/FunG"><img src="https://coveralls.io/repos/lubkoll/FunG/badge.svg" alt="Coverage Status"></a></p>
+        <p><a href="https://travis-ci.org/lubkoll/FunG/builds"><img src="https://travis-ci.org/lubkoll/FunG.svg?branch=master" alt="Build Status"></a>
+           <a href="https://coveralls.io/r/lubkoll/FunG?branch=master"><img src="https://coveralls.io/repos/lubkoll/FunG/badge.svg?branch=master" alt="Coverage Status"></a>
 
 <h1>
-<a id="rffgen" class="anchor" href="#rffgen" aria-hidden="true"><span class="octicon octicon-link"></span></a>FunG</h1>
+<a id="FunG" class="anchor" href="#FunG" aria-hidden="true"><span class="octicon octicon-link"></span></a>FunG</h1>
 
-<p>A fast and easy to use function generation library that gives provides access to the first three derivatives of a function.</p>
+<p>FunG is a C++-library for the generation of complex functions. These can depend on an arbitrary number of variables of different types. Besides the function value the first three, possibly mixed, directional derivatives are provided. The evaluation of function values and derivatives is (almost) as efficient as optimized manual implementations.<br>Possibly modified, principal and mixed invariants, the basic blocks of complex physical models, are provided, as well as some isotropic and anisotropic models from biomechanics.</p>
+<p>The name FunG was chosen as a tribute to <a href="https://en.wikipedia.org/wiki/Yuan-Cheng_Fung">Yuan-Cheng Fung</a> and his numerous contributions to the field of biomechanics. Models based on his exponential constitutive relation where the motivation to write this library.</p>
 
-<p>Function arguments can be matrices and/or scalars. Vectors are also possible but most functionality targets on matrices.</p>
-
-<h1>
-<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h1>
-
-<p>This library is header-only and no installation is required.</p>
-
-<p>If you want to run the available tests, you can use cmake:</p>
-
+<p>The implementation is similar to forward automatic differentiation (AD) with expression templates. However, here a different perspective is taken. 
 <ul>
-<li>mkdir build</li>
-<li>cd build</li>
-<li>cmake ..</li>
-<li>make</li>
+<li> First, instead of defining a function and computing its derivative a function is defined directly with its derivatives.</li>
+<li> Second, the first three (possibly mixed) derivatives are directly available, which is more convenient than repeated application of an automatic differentiation scheme.</li>
+<li> Third, C++11-features such as <code>auto</code>, <code>decltype</code> and the incredible <code>void_t</code> (if you don't know about it, <a href="https://www.youtube.com/watch?v=a0FliKwcwXE#t=1750">watch this</a>), easily admit far more general settings, working with rather arbitrary in- and output types. The few requirements are explained in section <a href=#input_requirements>Requirements on arithmetic types</a>.</li></p>
 </ul>
 
-<h1>
+<br><h1>
+<a id="overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h1>
+
+<ul>
+  <li><a href=#installation>Installation</a></li>
+  <li><a href=#examples>Examples</a></li>
+  <li><a href=#input_requirements>Requirements on arithmetic types</a></li>
+  <li><a href=#ad_comparison>Comparison with automatic differentation libraries</a></li>
+  <li><a href=#optimization_strategies>Optimization strategies</a></li>
+  <li><a href=#performance>Performance for a model of muscle tissue</a></li>
+  <li><a href=#documentation>Documentation</a></li>
+  <li><a href=#publications>Publications</a></li>
+</ul>
+
+<br><h1>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h1>
+
+<p>This library is header-only and no installation is required. However, make sure you use a recent compiler such as gcc-x, with x>=4.9.0, with <code>-std=c++1y</code>.</p>
+
+<p>To run the available tests, you can use cmake:
+<ul>
+ <li>mkdir build</li>
+ <li>cd build</li>
+ <li>cmake ..</li>
+ <li>make</li>
+ <li>./unit_tests</li>
+ </ul>
+</p>
+
+
+<br><h1>
 <a id="examples" class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h1>
 
 <p>Usage is illustrated using three different examples. Further examples can be found in FunG/Tests and FunG/Examples.</p>
@@ -108,7 +226,8 @@ auto thirdDerivative  = f.d3();
 
 <p><img src="http://latex.codecogs.com/gif.latex?W%28F%29%3D%20c_%7BCells%7D%28%5Ciota_1-3%29+%20%5Cfrac%7Bk_1%7D%7Bk_2%7D%5Cexp%28k_2%5B%5Ckappa%5Ciota_1+%281-3%5Ckappa%29%5Ciota_4-1%5D%5E2-1%29" alt="equation"></p>
 
-<p>which constitutes a model for adipose tissue. In this context the invariants depend on the left Cauchy-Green strain tensor. Its implementation is</p>
+<p>which constitutes a model for adipose tissue. In this context the invariants depend on the left Cauchy-Green strain tensor. The part 
+<span lang="latex">(\iota_1-3)</span> is represented by the <code>ShiftedFirstPrincipalInvariant</code>. The implementation of this model is</p>
 
 <pre><code>#include "FunG.hh"
 
@@ -125,7 +244,7 @@ auto generateAdiposeTissue(double cCells, double k1, double k2,
   auto i4 = FirstMixedInvariant&lt;Matrix&gt;(F,M);
 
   auto aniso = kappa*i1 + (1-3*kappa) * i4 - 1;
-  auto materialLaw = cCells*si1 + (k1/k2) * ( exp(aniso^2) - 1 );
+  auto materialLaw = cCells*si1 + (k1/k2) * ( exp(k2*(aniso^2)) - 1 );
 
  return finalize( materialLaw( LeftCauchyGreenStrainTensor&lt;Matrix&gt;(F) ) );
 }
@@ -147,6 +266,9 @@ double thirdDerivative  = f.d3(dF0,dF1,dF2);
 suitable default values for the directions. Here this is not admissible. </p>
 
 <p>Take care to not use functions such as 'exp' with built-in arithmetic types, since in this case the corresponding functions from  are called and the resulting value is treated as constant.</p>
+
+<p>Also note that the <code>operator^(int k)</code> is only defined for k=2. For scalar valued functions you may use <code>Pow&lt;dividend,divisor&gt;</code> to represent rational powers.</p>
+
 
 <h3>
 <a id="an-example-with-two-variables" class="anchor" href="#an-example-with-two-variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>An example with two variables</h3>
@@ -185,10 +307,203 @@ double ddf_dFdx    = f.template d2&lt;1,0&gt;(dF,dx1);
 double dddf_dxdxdF = f.template d3&lt;0,0,1&gt;(dx1,dx2,dF);
 </code></pre>
 
-<h3>
-<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h3>
 
-<p>Doxygen documentation can be found <a href="html/index.html">here.</a></p>
+
+<br><h1>
+<a id="input_requirements" class="anchor" href=#input_requirements aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements on arithmetic types</h1>
+
+One idea that was followed in the development of this library was to make it compatible with common matrix implementations. Currently you can directly use it with  <a href="http://arma.sourceforge.net/">Armadillo</a>, <a href="http://www.dune-project.org">DUNE</a> and <a href="http://eigen.tuxfamily.org">Eigen</a> matrices. 
+If you use another matrix library, your own matrix or vector implementation or want to compute with something else, these must satisfy the requirements listed below (see also <a href="html/concepts_8hh.html">concepts.hh</a>). These are statically checked with <code>static_assert</code>. Thus you will get meaningful feedback if your implementation lacks some required feature. However, for most reasonable matrix implementations nothing or almost nothing must be adjusted.</p>
+
+
+<h3>
+<a id="requirements" class="anchor" href=#requirements aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h3>
+
+<ol>
+<li><strong>Copyable:</strong><br> T must be <a href="http://en.cppreference.com/w/cpp/concept/CopyConstructible">CopyConstructible</a> and <a href="http://en.cppreference.com/w/cpp/concept/CopyAssignable">CopyAssignable</a>. </li>
+
+<li><strong>Multiplication with arithmetic types:</strong><br> 
+Given: 
+<ul>
+<li>An object t of type T.</li>
+<li>An object a of an arithmetic type, such as double or int.</li>
+</ul>
+At least one of the following expressions must be valid:
+<ul>
+<li><code>T s = a*t;</code></li>
+<li><code> t *= a;</code></li>
+</ul></li>
+
+<li><strong>Summation:</strong><br>
+Objects t and s of type T must be summable, i.e. at least one of the following expressions must be valid:
+<ul>
+<li><code>T r = s + t;</code></li>
+<li><code>t += s;</code></li>
+</ul></li>
+
+<li><strong>Multiplication (for matrix types only):</strong><br>
+Compatible matrices t and s must be multipliable, i.e. at least one of the following expressions must be valid:
+<ul>
+<li><code> auto r = t*s;</code></li>
+<li><code> t*=s;</code> (for square matrices)</li>
+<li><code> auto r = t.rightmultiplany(s);</code> (for <a href="http://www.dune-project.org">DUNE</a> matrices)</li>
+</ul></li>
+
+<li><strong>Access to data:</strong><br>
+Access to the entries of a matrix or vector t via at least one of the following expressions:
+<ul>
+<li><code>auto a = t[1][2];</code> (for matrices) or <code>auto a = t[1];</code> (for vectors).</li>
+<li><code>auto a = t(1,2);</code> (for matrices) or <code>auto a = t(1);</code> (for vectors).</li>
+</ul></li>
+
+<li><strong>Access to number of rows and columns (matrices and vectors):</strong><br>
+<ul>
+<li><strong>Fixed size:</strong><br>
+A specialization of the template classes <br>
+<code>template &lt;class Matrix, class&gt; struct NumberOfRows;</code><br>
+and<br>
+<code>template &lt;class Matrix, class&gt; struct NumberOfColumns;</code> <br>
+must be provided. For the cases that, for some scalar type S and n,m of type unsigned or int, the employed matrix class is of the form
+<ul>
+<li><code>Matrix&lt;n,m&gt;</code></li>
+<li><code>Matrix&lt;S,n,m&gt;</code></li>
+</ul>
+suitable specializations are available and access to the number of rows and columns is supported without need to do anything. Similar specializations exist for vectors.
+</li>
+
+<li><strong>Dynamic size:</strong><br>
+Access to the number of rows and columns of an object t must be supported via at least one of the following expressions:
+<ul>
+<li><code>t.rows()</code> resp. <code>t.cols()</code></li>
+<li><code>t.n_rows</code> resp. <code>t.n_cols</code></li>
+</ul></li>
+</ul>
+</li>
+
+</ol>
+
+
+<h3>
+<a id="requirements_optional" class="anchor" href=#requirements aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements (optional)</h3>
+
+<ol>
+<li><strong>Default-constructible:</strong><br>
+If T is <a href="http://en.cppreference.com/w/cpp/concept/DefaultConstructible">DefaultConstructible</a> then functions that take arguments of type T also a default constructor, else the default constructor is deleted.
+</li>
+
+<li><strong>Construction of the zero matrix:</strong><br>
+If you want to use the functions <code>zero&lt;Matrix&gt;()</code> and <code>unitMatrix&lt;Matrix&gt;()</code>, a specialization of<br>
+<code>template &lt;class Matrix,class&gt; struct Zero;</code><br>
+must be provided. Suitable implementations exist for the cases that a zero matrix can be created by one of the following expressions:
+<ul>
+<li><code>auto zeroMatrix = Matrix(0.);</code></li>
+<li><code>auto zeroMatrix;</code><br>
+    <code>zeroMatrix.zeroes();</code></li>
+</ul>
+</li>
+
+</ol>
+
+
+
+<br><h1>
+<a id="ad_comparison" class="anchor" href=#ad_comparison aria-hidden="true"><span class="octicon octicon-link"></span></a>Comparison with automatic differentation libraries</h1>
+
+<p>The performance of FunG is demonstrated by several examples comparing it with forward mode automatic differentation of <a href="http://www.fadbad.com">FADBAD++</a> and <a href="https://trilinos.org/packages/sacado">SACADO</a>. Some other implementations were tested too. However, these were far slower and/or buggy. In particular backward mode automatic differentation is significantly slower for 
+the considered functions.<br>
+All examples were compiled with <code>-O2</code> compiler option with gcc-4.9.2. They were run on an ASUS UX32V. All examples were evaluated 10.000.000 times (function value + derivative(s)) with varying arguments.</p>
+
+<h4>A simple example</h4>
+<p>Consider <span lang="latex">f(x)=x^{3/2}+\sin(\sqrt{x})</span>.</p>
+<div id="chart1_div" align=center></div>
+
+<h4>A more complex example</h4>
+<p>Consider <span lang="latex">f(x)= x ( \exp(\sqrt{x}) + 1 ) + \sin(2\exp(\sqrt{x})+1)</span>.</p>
+<div id="chart2_div" align=center></div>
+<p>(here, SACADO fails)</p>
+
+<h4>An example with three variables</h4>
+<p>Consider <span lang="latex">f(x,y,z)= (y+z) \sqrt{x}+\sin(\sqrt{x})</span>.</p>
+<div id="chart3_div" align=center></div>
+
+
+<br><h1>
+<a id="optimization_strategies" class="anchor" href=#optimization_strategies aria-hidden="true"><span class="octicon octicon-link"></span></a>Optimization strategies</h1>
+In order to get performance comparable to optimized manual implementations some optimization strategies are applied.
+
+<h3>
+<a id="optimization_strategies_inlining" class="anchor" href=#optimization_strategies_inlining aria-hidden="true"><span class="octicon octicon-link"></span></a>Inlining</h3>
+
+<p>Since this library is based on code generation with template meta-programming and inlining, compiler rules for inlining have a strong influence on performance. The default rules, which work quite well in general, 
+can be improved by adjusting specific parameters. For the examples in "Examples/Biomechanics" the choices
+<ul>
+<li>max-inline-insns-auto=3000</li>
+<li>early-inlining-insns=5000</li>
+<li>inline-unit-growth=100</li>
+</ul>
+for gcc-4.9.2 yields performance increases in the range of 2-4x. (see <a href=#performance>below</a>)</p>
+
+<p>Note that adequate choices of the above parameters may be different when using this library in a larger project. For optimal performance you may think about compiling the function definition in a separate object file with 
+compiler parameters as proposed above.</p>
+
+<h3>
+<a id="optimization_strategies_caching" class="anchor" href=#optimization_strategies_caching aria-hidden="true"><span class="octicon octicon-link"></span></a>Caching</h3>
+
+<p>Significant performance increases are due to caching. In contrast to lazy evaluation, here the strategy is to compute intermediate results as soon as possible. This has various impacts. First the 
+evaluation of cached results is one of the simplest function calls and is likely to be inlined. Moreover, in many expressions, the computed intermediate results can be reused in the computation of higher derivatives. Eventually, and most important, in many cases we can significantly reduce the size of temporaries as well as the number 
+of generated temporaries by directly performing simple computations.</p>
+
+<h3>
+<a id="optimization_strategies_elimination_of_zeros" class="anchor" href=#optimization_strategies_elimination_of_zeros aria-hidden="true"><span class="octicon octicon-link"></span></a>Elimination of compile-time zeros</h3>
+
+<p>Since we do not only want efficient evaluation of function values, but also of its first three derivatives, we often encounter larger number of compile-time zeros that can not be eliminated by the compiler. Thus this task must be implemented seperately. In order to completely eliminate compile-time zeros and correctly reduce involved mathematical expressions we do not define the corresponding derivatives. In particular when working with 
+matrices, where only few operations are of higher order, this significantly reduces the computation times of the second and third derivative. </p>
+
+<p>
+A good example for the effects of this optimization strategy is the product <span lang="latex">f=M(F^TF)</span>, which occurs in the computation of the first mixed strain invariant. In this context <span lang="latex">M</span> 
+is treated as a constant and <span lang="latex">F</span> denotes the unknown and both are matrices in <span lang="latex">\mathbb{R}^{3,3}</span>. For simplicity  we assume that we have a function <span lang="latex">C=F^T F</span>.
+The following graph illustrates the mathematical operations that are performed when evaluating the second derivative of this product.
+</p>
+<figure>
+<img width=95% style="border-style: none" src="images/product_rule_d2_2.gif">
+<figcaption>Mathematical operations required for the evaluation of the second derivative of the product rule.</figcaption>
+</figure>
+<p>Since all derivatives of <span lang="latex">M</span> vanish only the part marked in orange will be computed. The remaining computations are discarded during compilation.</p>
+
+
+
+<br><h1>
+<a id="performance" class="anchor" href=#performance aria-hidden="true"><span class="octicon octicon-link"></span></a>Performance for a model of muscle tissue</h1>
+<p>
+For functions that take matrices as arguments automatic differentation libraries can typically not be used directly. To get an idea of the performance, consider the function <br>
+<span lang="latex">\begin{align*}W(F)&amp;=c(\exp(b(\bar\iota_1-3))-1) + A(\exp(a(\bar\iota_6-1)^2)-1) \\ &amp;+d_0\Gamma_\mathrm{Inf}(\det(F))+d_1\Gamma_\mathrm{Com}(\det(F)) \end{align*}</span><br>
+where <span lang="latex">\Gamma_\mathrm{Inf}(t)=t^2</span> and <span lang="latex">\Gamma_\mathrm{Com}(t)=\mathrm{ln}(t)</span>, <span lang="latex">C=F^T F</span>, structural tensor <span lang="latex">M</span> and modified invariants <span lang="latex">\bar\iota_1(C)=\mathrm{tr}(C)\det(C)^{-1/3}</span>, <span lang="latex">\bar\iota_6(C,M)=\mathrm{tr}(CM^2)\det(C)^{-1/3}</span>. Again each function is called 10.000.000 times with varying arguments.
+</p>
+<div id="chart4_div" align=center></div>
+<p>
+In the computations above compiler options as described in <a href=#optimization_strategies_inlining>Inlining</a> were used. Computation times only with <code>-02</code> are given below.
+</p>
+<div id="chart5_div" align=center></div>
+<p>
+Due to the extensive caching the call to <code>update</code> is more costly than the evaluation of <code>d0</code> or <code>d1</code>. As a consequence the call to <code>d0</code> is almost for free, since it only consists in copying the cached value. Large parts of the cached results can be reused, which is reflected in the small costs for the evaluation of <code>d1</code> and <code>d2</code>. In the computation of the third derivative the computations involving the perturbations start to dominate the overall computational costs.
+</p>
+
+
+
+<br><h1>
+<a id="documentation" class="anchor" href=#documentation aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h1>
+
+<p>Doxygen documentation can be found <a href="html/index.html">here</a>.</p>
+
+<br><h1>
+<a id="publications" class="anchor" href=#publications aria-hidden="true"><span class="octicon octicon-link"></span></a>Publications</h1>
+
+<p>Preliminary versions of FunG have been used in:</p>
+<ul>
+<li>L. Lubkoll, A. Schiela, M. Weiser: <i>An affine covariant composite step method for optimization with PDEs as equality constraints.</i> Submitted at Opt. Meth. Soft., Preprint: ZIB-Report 15-09, 2015</li>
+<li>L. Lubkoll: <i>An Optimal Control Approach to Implant Shape Design: Modeling, Analysis and Numerics.</i> Dissertation, submitted at Universität Bayreuth, 2015</li>
+</ul>
+
 
 <p>Contact: <a href="mailto:lars.lubkoll@posteo.de">lars.lubkoll@posteo.de</a></p>
       </section>
