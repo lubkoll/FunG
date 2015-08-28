@@ -32,7 +32,7 @@
 /**
  * \ingroup Biomechanics
  * \file muscleTissue_Martins.hh
- * \brief Versions of the muscle model of Martins et al.: A numerical model of passive and active bahevaior of skeletal muscles. Comp. Meth. Appl. Mech. Eng. 151:419-433, 1998.
+ * \brief Versions of the muscle model of Martins1998.
  */
 
 namespace FunG
@@ -61,7 +61,7 @@ namespace FunG
 
   /**
    * \ingroup Biomechanics
-   * \brief Incompressible version of the model for muscle tissue of Martins et al.: A numerical model of passive and active bahevaior of skeletal muscles. Comp. Meth. Appl. Mech. Eng. 151:419-433, 1998.
+   * \brief Incompressible version of the model for muscle tissue of Martins1998.
    *
    * Implementation of the stored energy function
    * \f$ W(F)=c(\exp(b(\bar\iota_1-3))-1) + A(\exp(a(\bar\iota_6-1)^2)-1) \f$, where \f$\bar\iota_1,\bar\iota_6=\bar\iota_4\f$ are the first modified principal and the third modified mixed
@@ -82,7 +82,7 @@ namespace FunG
 
   /**
    * \ingroup Biomechanics
-   * \brief Incompressible version of the model for muscle tissue of Martins et al.: A numerical model of passive and active bahevaior of skeletal muscles. Comp. Meth. Appl. Mech. Eng. 151:419-433, 1998.
+   * \brief Incompressible version of the model for muscle tissue of Martins1998.
    *
    * Implementation of the stored energy function
    * \f$ W(F)=c(\exp(b(\bar\iota_1-3))-1) + A(\exp(a(\bar\iota_6-1)^2)-1) \f$, where \f$\bar\iota_1,\bar\iota_6=\bar\iota_4\f$ are the first modified principal and the third modified mixed
@@ -102,7 +102,7 @@ namespace FunG
 
   /**
    * \ingroup Biomechanics
-   * \brief Compressible version of the model for muscle tissue of Martins et al.: A numerical model of passive and active bahevaior of skeletal muscles. Comp. Meth. Appl. Mech. Eng. 151:419-433, 1998.
+   * \brief Compressible version of the model for muscle tissue of Martins1998.
    *
    * Implementation of the stored energy function
    * \f$ W(F)=c(\exp(b(\bar\iota_1-3))-1) + A(\exp(a(\bar\iota_6-1)^2)-1) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression} \f$, where \f$\bar\iota_1,\bar\iota_6=\bar\iota_4\f$ are the first modified principal and the third modified mixed
@@ -125,7 +125,7 @@ namespace FunG
 
   /**
    * \ingroup Biomechanics
-   * \brief Compressible version of the model for muscle tissue of Martins et al.: A numerical model of passive and active bahevaior of skeletal muscles. Comp. Meth. Appl. Mech. Eng. 151:419-433, 1998.
+   * \brief Compressible version of the model for muscle tissue of Martins1998.
    *
    * Implementation of the stored energy function
    * \f$ W(F)=c(\exp(b(\bar\iota_1-3))-1) + A(\exp(a(\bar\iota_6-1)^2)-1) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression}(\det(F))\f$, where \f$\bar\iota_1,\bar\iota_6=\bar\iota_4\f$ are the first modified principal and the third modified mixed

@@ -31,8 +31,7 @@
 /**
  * \ingroup Biomechanics
  * \file adiposeTissue_SommerHolzapfel.hh
- * \brief Model for adipose tissue of Sommer et al.: Multiaxial mechanical properties and constitutive modeling of human adipose tissue: A basis for preoperative simulations in plastic and
- * reconstructive surgery. Acta Biomater., 9:9036-9048, 2013.
+ * \brief Model for adipose tissue of \cite Sommer2013.
  */
 
 namespace FunG
@@ -63,8 +62,7 @@ namespace FunG
 
   /**
    * \ingroup Biomechanics
-   * \brief Model for adipose tissue of Sommer et al.: Multiaxial mechanical properties and constitutive modeling of human adipose tissue: A basis for preoperative simulations in plastic and
-   * reconstructive surgery. Acta Biomater., 9:9036-9048, 2013.
+   * \brief Model for adipose tissue of \cite Sommer2013.
    *
    * Implementation of the stored energy function
    * \f$ W(F)= c_\mathrm{Cells}(\iota_1-3) + \frac{k_1}{k_2}\exp(k_2(\kappa\iota_1+(1-3\kappa)*\iota_4)^2-1) \f$, where \f$ \iota_1,\iota_4 \f$ are the first and first mixed invariant of the
@@ -85,8 +83,7 @@ namespace FunG
 
   /**
    * \ingroup Biomechanics
-   * \brief Model for adipose tissue of Sommer et al.: Multiaxial mechanical properties and constitutive modeling of human adipose tissue: A basis for preoperative simulations in plastic and
-   * reconstructive surgery. Acta Biomater., 9:9036-9048, 2013.
+   * \brief Model for adipose tissue of \cite Sommer2013.
    *
    * Implementation of the stored energy function
    * \f$ W(F)= c_\mathrm{Cells}(\iota_1-3) + \frac{k_1}{k_2}\exp(k_2(\kappa\iota_1+(1-3\kappa)*\iota_4)^2-1) \f$, where \f$ \iota_1,\iota_4 \f$ are the first and first mixed invariant of the
@@ -106,8 +103,7 @@ namespace FunG
 
   /**
    * \ingroup Biomechanics
-   * \brief Compressible version of the model for adipose tissue of Sommer et al.: Multiaxial mechanical properties and constitutive modeling of human adipose tissue: A basis for preoperative simulations in plastic and
-   * reconstructive surgery. Acta Biomater., 9:9036-9048, 2013.
+   * \brief Compressible version of the model for adipose tissue of \cite Sommer2013.
    *
    * Implementation of the stored energy function
    * \f$ W(F)= c_\mathrm{Cells}(\iota_1-3) + \frac{k_1}{k_2}\exp(k_2(\kappa\iota_1+(1-3\kappa)*\iota_4)^2-1) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression}  \f$, where \f$ \iota_1,\iota_4 \f$ are the first and first mixed invariant of the
@@ -130,8 +126,7 @@ namespace FunG
 
   /**
    * \ingroup Biomechanics
-   * \brief Compressible version of the model for adipose tissue of Sommer et al.: Multiaxial mechanical properties and constitutive modeling of human adipose tissue: A basis for preoperative simulations in plastic and
-   * reconstructive surgery. Acta Biomater., 9:9036-9048, 2013.
+   * \brief Compressible version of the model for adipose tissue of \cite Sommer2013.
    * Material parameters are taken from the same publication, Table 2, i.e. \f$c_\mathrm{Cells}=0.15 (\,\mathrm{kPa})\f$, \f$k_1=0.8 (\,\mathrm{kPa})\f$, \f$k_2=47.3\f$ and \f$\kappa=0.09\f$.
    *
    * Implementation of the stored energy function
