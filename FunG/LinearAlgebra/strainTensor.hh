@@ -22,10 +22,10 @@
 #define FUNG_LINEAR_ALGEBRA_STRAIN_TENSOR_HH
 
 #include "transpose.hh"
-#include "../MathematicalOperations/sum.hh"
-#include "../Util/base.hh"
-#include "../Util/chainer.hh"
-#include "../Util/addTransposedMatrix.hh"
+#include "FunG/MathematicalOperations/sum.hh"
+#include "FunG/Util/base.hh"
+#include "FunG/Util/chainer.hh"
+#include "FunG/Util/addTransposedMatrix.hh"
 
 namespace FunG
 {

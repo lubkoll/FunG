@@ -28,7 +28,7 @@
 #include "cofactor.hh"
 #include "determinant.hh"
 #include "shiftedInvariant.hh"
-#include "../Util/base.hh"
+#include "FunG/Util/base.hh"
 
 namespace FunG
 {

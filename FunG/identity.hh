@@ -21,8 +21,8 @@
 #ifndef FUNG_IDENTITY_HH
 #define FUNG_IDENTITY_HH
 
-#include "Util/base.hh"
-#include "Util/chainer.hh"
+#include "FunG/Util/base.hh"
+#include "FunG/Util/chainer.hh"
 
 namespace FunG
 {

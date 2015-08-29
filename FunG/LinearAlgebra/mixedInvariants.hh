@@ -21,11 +21,11 @@
 #ifndef FUNG_LINEAR_ALGEBRA_MIXED_INVARIANTS_HH
 #define FUNG_LINEAR_ALGEBRA_MIXED_INVARIANTS_HH
 
-#include "../MathematicalOperations/chain.hh"
-#include "../MathematicalOperations/product.hh"
-#include "../MathematicalOperations/squared.hh"
-#include "../constant.hh"
-#include "../identity.hh"
+#include "FunG/MathematicalOperations/chain.hh"
+#include "FunG/MathematicalOperations/product.hh"
+#include "FunG/MathematicalOperations/squared.hh"
+#include "FunG/constant.hh"
+#include "FunG/identity.hh"
 #include "principalInvariants.hh"
 #include "shiftedInvariant.hh"
 

@@ -21,10 +21,10 @@
 #ifndef FUNG_EXAMPLES_SKIN_HENDRIKS_HH
 #define FUNG_EXAMPLES_SKIN_HENDRIKS_HH
 
-#include "../../LinearAlgebra/strainTensor.hh"
-#include "../../LinearAlgebra/unitMatrix.hh"
-#include "../../LinearAlgebra/principalInvariants.hh"
-#include "../../generate.hh"
+#include "FunG/LinearAlgebra/strainTensor.hh"
+#include "FunG/LinearAlgebra/unitMatrix.hh"
+#include "FunG/LinearAlgebra/principalInvariants.hh"
+#include "FunG/generate.hh"
 
 /**
  * \ingroup Biomechanics

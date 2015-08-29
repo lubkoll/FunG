@@ -21,7 +21,7 @@
 #ifndef FUNG_CONCEPTS_HH
 #define FUNG_CONCEPTS_HH
 
-#include "Util/base.hh"
+#include "FunG/Util/base.hh"
 
 /**
  * \file concepts.hh

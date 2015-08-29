@@ -23,8 +23,8 @@
 
 #include <cassert>
 #include <type_traits>
-#include "../LinearAlgebra/dimension.hh"
-#include "../Util/staticChecks.hh"
+#include "FunG/LinearAlgebra/dimension.hh"
+#include "staticChecks.hh"
 
 namespace FunG
 {

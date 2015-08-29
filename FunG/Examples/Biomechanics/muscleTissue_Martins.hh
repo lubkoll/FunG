@@ -21,13 +21,13 @@
 #ifndef FUNG_MUSCLE_TISSUE_MARTINS_HH
 #define FUNG_MUSCLE_TISSUE_MARTINS_HH
 
-#include "../../LinearAlgebra/modifiedPrincipalInvariants.hh"
-#include "../../LinearAlgebra/modifiedMixedInvariants.hh"
-#include "../../LinearAlgebra/strainTensor.hh"
-#include "../../LinearAlgebra/tensorProduct.hh"
-#include "../../CMath/exp.hh"
-#include "../volumetricPenaltyFunctions.hh"
-#include "../../generate.hh"
+#include "FunG/LinearAlgebra/modifiedPrincipalInvariants.hh"
+#include "FunG/LinearAlgebra/modifiedMixedInvariants.hh"
+#include "FunG/LinearAlgebra/strainTensor.hh"
+#include "FunG/LinearAlgebra/tensorProduct.hh"
+#include "FunG/CMath/exp.hh"
+#include "FunG/Examples/volumetricPenaltyFunctions.hh"
+#include "FunG/generate.hh"
 
 /**
  * \ingroup Biomechanics

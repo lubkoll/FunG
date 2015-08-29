@@ -23,7 +23,7 @@
 
 #include "deviator.hh"
 #include "matrixNorm.hh"
-#include "../MathematicalOperations/chain.hh"
+#include "FunG/MathematicalOperations/chain.hh"
 
 namespace FunG
 {

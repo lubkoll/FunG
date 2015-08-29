@@ -23,11 +23,11 @@
 
 #include <iostream>
 
-#include "../../identity.hh"
-#include "../../LinearAlgebra/strainTensor.hh"
-#include "../../LinearAlgebra/unitMatrix.hh"
-#include "../../LinearAlgebra/principalInvariants.hh"
-#include "../../generate.hh"
+#include "FunG/identity.hh"
+#include "FunG/LinearAlgebra/strainTensor.hh"
+#include "FunG/LinearAlgebra/unitMatrix.hh"
+#include "FunG/LinearAlgebra/principalInvariants.hh"
+#include "FunG/generate.hh"
 
 /**
   \ingroup Rubber

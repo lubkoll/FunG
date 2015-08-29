@@ -24,10 +24,10 @@
 #include <type_traits>
 
 #include "extractRowsAndCols.hh"
-#include "../Util/zero.hh"
-#include "../Util/at.hh"
-#include "../Util/staticChecks.hh"
-#include "../Util/staticChecks_nRows_nCols.hh"
+#include "FunG/Util/zero.hh"
+#include "FunG/Util/at.hh"
+#include "FunG/Util/staticChecks.hh"
+#include "FunG/Util/staticChecks_nRows_nCols.hh"
 
 namespace FunG
 {

@@ -24,7 +24,7 @@
 #include <type_traits>
 #include <utility>
 
-#include "../LinearAlgebra/extractRowsAndCols.hh"
+#include "FunG/LinearAlgebra/extractRowsAndCols.hh"
 #include "base.hh"
 #include "voider.hh"
 

@@ -1,5 +1,5 @@
 #define FUNG_ENABLE_EXCEPTIONS
-#include "../../FunG/FunG/CMath/arcsine.hh"
+#include "FunG/CMath/arcsine.hh"
 
 #include <gtest/gtest.h>
 

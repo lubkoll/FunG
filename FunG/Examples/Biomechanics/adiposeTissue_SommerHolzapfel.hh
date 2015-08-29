@@ -21,12 +21,12 @@
 #ifndef FUNG_ADIPOSE_TISSUE_SOMMER_HOLZAPFEL_HH
 #define FUNG_ADIPOSE_TISSUE_SOMMER_HOLZAPFEL_HH
 
-#include "../../LinearAlgebra/principalInvariants.hh"
-#include "../../LinearAlgebra/mixedInvariants.hh"
-#include "../../LinearAlgebra/strainTensor.hh"
-#include "../../LinearAlgebra/tensorProduct.hh"
-#include "../../CMath/exp.hh"
-#include "../../generate.hh"
+#include "FunG/LinearAlgebra/principalInvariants.hh"
+#include "FunG/LinearAlgebra/mixedInvariants.hh"
+#include "FunG/LinearAlgebra/strainTensor.hh"
+#include "FunG/LinearAlgebra/tensorProduct.hh"
+#include "FunG/CMath/exp.hh"
+#include "FunG/generate.hh"
 
 /**
  * \ingroup Biomechanics

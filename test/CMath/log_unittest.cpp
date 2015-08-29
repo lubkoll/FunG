@@ -1,5 +1,5 @@
 #define FUNG_ENABLE_EXCEPTIONS
-#include "../../FunG/FunG/CMath/log.hh"
+#include "FunG/CMath/log.hh"
 
 #include <gtest/gtest.h>
 

@@ -21,16 +21,16 @@
 #ifndef FUNG_LINEAR_ALGEBRA_HH
 #define FUNG_LINEAR_ALGEBRA_HH
 
-#include "LinearAlgebra/determinant.hh"
-#include "LinearAlgebra/deviator.hh"
-#include "LinearAlgebra/deviatoricInvariants.hh"
-#include "LinearAlgebra/dimension.hh"
-#include "LinearAlgebra/invariants.hh"
-#include "LinearAlgebra/euclideanNorm.hh"
-#include "LinearAlgebra/strainTensor.hh"
-#include "LinearAlgebra/tensorProduct.hh"
-#include "LinearAlgebra/trace.hh"
-#include "LinearAlgebra/transpose.hh"
-#include "LinearAlgebra/unitMatrix.hh"
+#include "FunG/LinearAlgebra/determinant.hh"
+#include "FunG/LinearAlgebra/deviator.hh"
+#include "FunG/LinearAlgebra/deviatoricInvariants.hh"
+#include "FunG/LinearAlgebra/dimension.hh"
+#include "FunG/LinearAlgebra/invariants.hh"
+#include "FunG/LinearAlgebra/euclideanNorm.hh"
+#include "FunG/LinearAlgebra/strainTensor.hh"
+#include "FunG/LinearAlgebra/tensorProduct.hh"
+#include "FunG/LinearAlgebra/trace.hh"
+#include "FunG/LinearAlgebra/transpose.hh"
+#include "FunG/LinearAlgebra/unitMatrix.hh"
 
 #endif // FUNG_LINEAR_ALGEBRA_HH

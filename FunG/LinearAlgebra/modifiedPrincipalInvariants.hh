@@ -23,7 +23,7 @@
 
 #include "principalInvariants.hh"
 #include "shiftedInvariant.hh"
-#include "../Util/modifyInvariants.hh"
+#include "FunG/Util/modifyInvariants.hh"
 
 namespace FunG
 {

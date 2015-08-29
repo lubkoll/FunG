@@ -23,9 +23,9 @@
 
 #include <type_traits>
 
-#include "Util/consistencyCheck.hh"
-#include "Util/indexedType.hh"
-#include "variable.hh"
+#include "FunG/Util/consistencyCheck.hh"
+#include "FunG/Util/indexedType.hh"
+#include "FunG/variable.hh"
 
 namespace FunG
 {

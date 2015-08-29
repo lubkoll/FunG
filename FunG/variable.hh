@@ -24,8 +24,8 @@
 #include <limits>
 #include <type_traits>
 
-#include "Util/base.hh"
-#include "Util/chainer.hh"
+#include "FunG/Util/base.hh"
+#include "FunG/Util/chainer.hh"
 
 namespace FunG
 {

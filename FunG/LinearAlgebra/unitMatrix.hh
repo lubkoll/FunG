@@ -21,9 +21,9 @@
 #ifndef FUNG_LINEAR_ALGEBRA_UNIT_MATRIX_HH
 #define FUNG_LINEAR_ALGEBRA_UNIT_MATRIX_HH
 
-#include "../Util/at.hh"
-#include "../Util/voider.hh"
-#include "../Util/zero.hh"
+#include "FunG/Util/at.hh"
+#include "FunG/Util/voider.hh"
+#include "FunG/Util/zero.hh"
 #include "dimension.hh"
 #include "extractRowsAndCols.hh"
 

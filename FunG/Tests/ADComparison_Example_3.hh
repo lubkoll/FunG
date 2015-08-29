@@ -36,7 +36,7 @@
 
 #include <adept.h>
 
-#include "FunG.hh"
+#include "FunG/FunG.hh"
 
 using namespace casadi;
 

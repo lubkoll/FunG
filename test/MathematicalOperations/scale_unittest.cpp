@@ -1,7 +1,7 @@
-#include "../../FunG/FunG/CMath/pow.hh"
-#include "../../FunG/FunG/generate.hh"
-#include "../../FunG/FunG/finalize.hh"
-#include "../../FunG/FunG/variable.hh"
+#include "FunG/CMath/pow.hh"
+#include "FunG/generate.hh"
+#include "FunG/finalize.hh"
+#include "FunG/variable.hh"
 
 #include <gtest/gtest.h>
 

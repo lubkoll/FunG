@@ -1,5 +1,5 @@
 #define FUNG_ENABLE_EXCEPTIONS
-#include "../../FunG/FunG/CMath/pow.hh"
+#include "FunG/CMath/pow.hh"
 
 #include <gtest/gtest.h>
 

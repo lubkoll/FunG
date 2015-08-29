@@ -24,9 +24,9 @@
 #include <type_traits>
 #include <utility>
 
-#include "../Util/base.hh"
-#include "../Util/derivativeWrappers.hh"
-#include "../Util/indexedType.hh"
+#include "FunG/Util/base.hh"
+#include "FunG/Util/derivativeWrappers.hh"
+#include "FunG/Util/indexedType.hh"
 
 namespace FunG
 {

@@ -21,12 +21,12 @@
 #ifndef FUNG_NEO_HOOKE_HH
 #define FUNG_NEO_HOOKE_HH
 
-#include "../../LinearAlgebra/invariants.hh"
-#include "../../LinearAlgebra/strainTensor.hh"
-#include "../../LinearAlgebra/unitMatrix.hh"
-#include "../../finalize.hh"
-#include "../volumetricPenaltyFunctions.hh"
-#include "../../generate.hh"
+#include "FunG/LinearAlgebra/invariants.hh"
+#include "FunG/LinearAlgebra/strainTensor.hh"
+#include "FunG/LinearAlgebra/unitMatrix.hh"
+#include "FunG/finalize.hh"
+#include "FunG/Examples/volumetricPenaltyFunctions.hh"
+#include "FunG/generate.hh"
 
 /**
  * \ingroup Rubber

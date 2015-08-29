@@ -25,11 +25,11 @@
 #include <iostream>
 #include <type_traits>
 
-#include "constant.hh"
-#include "operations.hh"
-#include "Util/addMissingOperators.hh"
-#include "Util/base.hh"
-#include "variable.hh"
+#include "FunG/constant.hh"
+#include "FunG/operations.hh"
+#include "FunG/Util/addMissingOperators.hh"
+#include "FunG/Util/base.hh"
+#include "FunG/variable.hh"
 
 namespace FunG
 {

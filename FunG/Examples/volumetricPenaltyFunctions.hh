@@ -21,10 +21,10 @@
 #ifndef FUNG_EXAMPLES_VOLUMETRIC_PENALTY_FUNCTIONS_HH
 #define FUNG_EXAMPLES_VOLUMETRIC_PENALTY_FUNCTIONS_HH
 
-#include "../LinearAlgebra/determinant.hh"
-#include "../CMath/log.hh"
-#include "../CMath/pow.hh"
-#include "../generate.hh"
+#include "FunG/LinearAlgebra/determinant.hh"
+#include "FunG/CMath/log.hh"
+#include "FunG/CMath/pow.hh"
+#include "FunG/generate.hh"
 
 namespace FunG
 {

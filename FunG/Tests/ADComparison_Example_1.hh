@@ -37,7 +37,7 @@
 
 #include <adept.h>
 
-#include "../FunG.hh"
+#include "FunG/FunG.hh"
 
 using CustomEvaluateCPtr = void (*)(casadi::CustomFunction& f, void* user_data);
 

@@ -1,4 +1,4 @@
-#include "../../FunG/FunG/CMath/exp.hh"
+#include "FunG/CMath/exp.hh"
 
 #include <gtest/gtest.h>
 

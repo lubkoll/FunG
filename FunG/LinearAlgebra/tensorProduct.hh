@@ -22,8 +22,8 @@
 #define FUNG_LINEAR_ALGEBRA_TENSOR_PRODUCT_HH
 
 #include "extractRowsAndCols.hh"
-#include "../Util/at.hh"
-#include "../Util/zero.hh"
+#include "FunG/Util/at.hh"
+#include "FunG/Util/zero.hh"
 
 namespace FunG
 {

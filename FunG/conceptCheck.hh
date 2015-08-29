@@ -21,9 +21,9 @@
 #ifndef FUNG_CONCEPT_CHECK_HH
 #define FUNG_CONCEPT_CHECK_HH
 
-#include "LinearAlgebra/extractRowsAndCols.hh"
-#include "Util/consistencyCheck.hh"
-#include "Util/staticChecks.hh"
+#include "FunG/LinearAlgebra/extractRowsAndCols.hh"
+#include "FunG/Util/consistencyCheck.hh"
+#include "FunG/Util/staticChecks.hh"
 
 namespace FunG
 {

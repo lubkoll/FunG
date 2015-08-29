@@ -23,7 +23,7 @@
 
 #include <type_traits>
 #include "base.hh"
-#include "../MathematicalOperations/chain.hh"
+#include "FunG/MathematicalOperations/chain.hh"
 
 namespace FunG
 {

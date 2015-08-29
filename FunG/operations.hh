@@ -21,11 +21,11 @@
 #ifndef FUNCTION_GENERATION_OPERATIONS_HH
 #define FUNCTION_GENERATION_OPERATIONS_HH
 
-#include "MathematicalOperations/chain.hh"
-#include "MathematicalOperations/product.hh"
-#include "MathematicalOperations/scale.hh"
-#include "MathematicalOperations/squared.hh"
-#include "MathematicalOperations/sum.hh"
-#include "Util/chainer.hh"
+#include "FunG/MathematicalOperations/chain.hh"
+#include "FunG/MathematicalOperations/product.hh"
+#include "FunG/MathematicalOperations/scale.hh"
+#include "FunG/MathematicalOperations/squared.hh"
+#include "FunG/MathematicalOperations/sum.hh"
+#include "FunG/Util/chainer.hh"
 
 #endif // FUNCTION_GENERATION_OPERATIONS_HH

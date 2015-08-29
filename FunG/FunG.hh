@@ -21,15 +21,15 @@
 #ifndef FUNG_HH
 #define FUNG_HH
 
-#include "conceptCheck.hh"
-#include "constant.hh"
-#include "finalize.hh"
-#include "generate.hh"
-#include "identity.hh"
-#include "linearAlgebra.hh"
-#include "math.hh"
-#include "operations.hh"
-#include "variable.hh"
-#include "Util/addMissingOperators.hh"
+#include "FunG/conceptCheck.hh"
+#include "FunG/constant.hh"
+#include "FunG/finalize.hh"
+#include "FunG/generate.hh"
+#include "FunG/identity.hh"
+#include "FunG/linearAlgebra.hh"
+#include "FunG/math.hh"
+#include "FunG/operations.hh"
+#include "FunG/variable.hh"
+#include "FunG/Util/addMissingOperators.hh"
 
 #endif // FUNG_HH

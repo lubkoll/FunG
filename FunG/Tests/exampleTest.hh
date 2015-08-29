@@ -25,13 +25,12 @@
 
 #include <boost/timer/timer.hpp>
 
-#include "Examples/Rubber/neoHooke.hh"
-#include "Examples/Rubber/mooneyRivlin.hh"
-#include "Examples/Biomechanics/skinTissue_Hendriks.hh"
-#include "Examples/Biomechanics/adiposeTissue_SommerHolzapfel.hh"
-#include "Examples/Biomechanics/muscleTissue_Martins.hh"
-#include "math.hh"
-#include "../Util/armadillo.hh"
+#include "FunG/Examples/Rubber/neoHooke.hh"
+#include "FunG/Examples/Rubber/mooneyRivlin.hh"
+#include "FunG/Examples/Biomechanics/skinTissue_Hendriks.hh"
+#include "FunG/Examples/Biomechanics/adiposeTissue_SommerHolzapfel.hh"
+#include "FunG/Examples/Biomechanics/muscleTissue_Martins.hh"
+#include "FunG/math.hh"
 
 
 template <class M, class Function>

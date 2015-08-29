@@ -23,10 +23,10 @@
 
 #include <type_traits>
 
-#include "../LinearAlgebra/extractRowsAndCols.hh"
-#include "../MathematicalOperations/chain.hh"
-#include "../CMath/pow.hh"
-#include "../Util/staticChecks.hh"
+#include "FunG/LinearAlgebra/extractRowsAndCols.hh"
+#include "FunG/MathematicalOperations/chain.hh"
+#include "FunG/CMath/pow.hh"
+#include "FunG/Util/staticChecks.hh"
 
 namespace FunG
 {

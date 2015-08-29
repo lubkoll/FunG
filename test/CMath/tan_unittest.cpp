@@ -1,4 +1,4 @@
-#include "../../FunG/FunG/CMath/tan.hh"
+#include "FunG/CMath/tan.hh"
 
 #include <gtest/gtest.h>
 

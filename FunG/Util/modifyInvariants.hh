@@ -21,8 +21,8 @@
 #ifndef FUNG_UTIL_MODIFY_INVARIANTS_HH
 #define FUNG_UTIL_MODIFY_INVARIANTS_HH
 
-#include "../operations.hh"
-#include "../CMath/pow.hh"
+#include "FunG/operations.hh"
+#include "FunG/CMath/pow.hh"
 
 namespace FunG
 {

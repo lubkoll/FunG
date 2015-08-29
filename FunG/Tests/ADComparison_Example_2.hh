@@ -36,7 +36,7 @@
 #include <casadi/core/function/custom_function.hpp>
 #include <casadi/core/functor.hpp>
 
-#include "FunG.hh"
+#include "FunG/FunG.hh"
 
 using namespace fadbad;
 using namespace casadi;

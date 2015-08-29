@@ -23,11 +23,11 @@
 #include <Eigen/Dense>
 #include <gtest/gtest.h>
 
-#include "Examples/Rubber/neoHooke.hh"
-#include "Examples/Rubber/mooneyRivlin.hh"
-#include "Examples/Biomechanics/skinTissue_Hendriks.hh"
-#include "Examples/Biomechanics/adiposeTissue_SommerHolzapfel.hh"
-#include "Examples/Biomechanics/muscleTissue_Martins.hh"
+#include "FunG/Examples/Rubber/neoHooke.hh"
+#include "FunG/Examples/Rubber/mooneyRivlin.hh"
+#include "FunG/Examples/Biomechanics/skinTissue_Hendriks.hh"
+#include "FunG/Examples/Biomechanics/adiposeTissue_SommerHolzapfel.hh"
+#include "FunG/Examples/Biomechanics/muscleTissue_Martins.hh"
 
 namespace
 {

@@ -21,8 +21,8 @@
 #ifndef FUNG_LINEAR_ALGEBRA_DEVIATOR_HH
 #define FUNG_LINEAR_ALGEBRA_DEVIATOR_HH
 
-#include "../generate.hh"
-#include "../identity.hh"
+#include "FunG/generate.hh"
+#include "FunG/identity.hh"
 #include "trace.hh"
 #include "unitMatrix.hh"
 

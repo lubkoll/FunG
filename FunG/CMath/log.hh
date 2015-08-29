@@ -22,9 +22,9 @@
 #define FUNG_CMATH_LOG_HH
 
 #include <cmath>
-#include "../Util/base.hh"
-#include "../Util/chainer.hh"
-#include "../Util/exceptions.hh"
+#include "FunG/Util/base.hh"
+#include "FunG/Util/chainer.hh"
+#include "FunG/Util/exceptions.hh"
 
 namespace FunG
 {

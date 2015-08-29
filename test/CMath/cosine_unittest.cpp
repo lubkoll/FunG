@@ -1,4 +1,4 @@
-#include "../../FunG/FunG/CMath/cosine.hh"
+#include "FunG/CMath/cosine.hh"
 
 #include <gtest/gtest.h>
 

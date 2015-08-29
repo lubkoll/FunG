@@ -23,11 +23,11 @@
 
 #include <type_traits>
 
-#include "../constant.hh"
-#include "../Util/base.hh"
-#include "../Util/derivativeWrappers.hh"
-#include "../Util/evaluateIfPresent.hh"
-#include "../Util/indexedType.hh"
+#include "FunG/constant.hh"
+#include "FunG/Util/base.hh"
+#include "FunG/Util/derivativeWrappers.hh"
+#include "FunG/Util/evaluateIfPresent.hh"
+#include "FunG/Util/indexedType.hh"
 
 namespace FunG
 {

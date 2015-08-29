@@ -23,8 +23,8 @@
 
 #include <utility>
 #include "extractRowsAndCols.hh"
-#include "../Util/staticChecks_nRows_nCols.hh"
-#include "../Util/staticChecks.hh"
+#include "FunG/Util/staticChecks_nRows_nCols.hh"
+#include "FunG/Util/staticChecks.hh"
 
 namespace FunG
 {

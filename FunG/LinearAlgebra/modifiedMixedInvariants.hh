@@ -23,10 +23,10 @@
 
 #include <tuple>
 
-#include "../constant.hh"
+#include "FunG/constant.hh"
+#include "FunG/Util/modifyInvariants.hh"
 #include "mixedInvariants.hh"
 #include "shiftedInvariant.hh"
-#include "../Util/modifyInvariants.hh"
 
 namespace FunG
 {

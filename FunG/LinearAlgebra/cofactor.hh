@@ -23,9 +23,9 @@
 
 #include <cassert>
 #include "dimension.hh"
-#include "../Util/at.hh"
-#include "../conceptCheck.hh"
-#include "../Util/staticChecks.hh"
+#include "FunG/Util/at.hh"
+#include "FunG/conceptCheck.hh"
+#include "FunG/Util/staticChecks.hh"
 
 namespace FunG
 {

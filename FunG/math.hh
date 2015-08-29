@@ -21,12 +21,12 @@
 #ifndef FUNG_MATH_HH
 #define FUNG_MATH_HH
 
-#include "CMath/arcsine.hh"
-#include "CMath/cosine.hh"
-#include "CMath/exp.hh"
-#include "CMath/log.hh"
-#include "CMath/sine.hh"
-#include "CMath/pow.hh"
-#include "CMath/tan.hh"
+#include "FunG/CMath/arcsine.hh"
+#include "FunG/CMath/cosine.hh"
+#include "FunG/CMath/exp.hh"
+#include "FunG/CMath/log.hh"
+#include "FunG/CMath/sine.hh"
+#include "FunG/CMath/pow.hh"
+#include "FunG/CMath/tan.hh"
 
 #endif // FUNG_MATH_HH

@@ -21,9 +21,9 @@
 #ifndef FUNG_EXAMPLES_YIELD_SURFACE_HH
 #define FUNG_EXAMPLES_YIELD_SURFACE_HH
 
-#include "../linearAlgebra.hh"
-#include "../generate.hh"
-#include "../finalize.hh"
+#include "FunG/linearAlgebra.hh"
+#include "FunG/generate.hh"
+#include "FunG/finalize.hh"
 
 namespace FunG
 {
