@@ -144,7 +144,7 @@ namespace FunG
 
     /**
      * \ingroup LinearAlgebraGroup
-     * \brief Strain tensor \f$ \frac{1}{2}\left(F^T+F\right + F^T F) \f$.
+     * \brief Strain tensor \f$ \frac{1}{2}\left(F^T+F + F^T F\right) \f$.
      *
      * This class is used for nonlinear material models based on the displacement gradient \f$\nabla u\f$, which takes the role of \f$F\f$.
      * Implemented as Sum<LinearizedStrainTensor,GeometricNonlinearity>.
