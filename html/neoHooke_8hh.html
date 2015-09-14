@@ -13,6 +13,12 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,6 +43,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
@@ -69,7 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -114,22 +121,22 @@ Functions</h2></td></tr>
 <tr class="memitem:ga5bb28aef7006413775791998936d6b81"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga5bb28aef7006413775791998936d6b81"></a>
 template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
 <tr class="memitem:ga5bb28aef7006413775791998936d6b81"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#ga5bb28aef7006413775791998936d6b81">FunG::incompressibleNeoHooke</a> (double c, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:ga5bb28aef7006413775791998936d6b81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an "incompressible" neo-Hookean material law <img class="formulaInl" alt="$ W(F)=c\iota_1(F^T F) $" src="form_18.png"/>, where <img class="formulaInl" alt="$\iota_1$" src="form_7.png"/> is the first principal matrix invariant . <br/></td></tr>
+<tr class="memdesc:ga5bb28aef7006413775791998936d6b81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an "incompressible" neo-Hookean material law \( W(F)=c\iota_1(F^T F) \), where \(\iota_1\) is the first principal matrix invariant . <br/></td></tr>
 <tr class="separator:ga5bb28aef7006413775791998936d6b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf6f5ab6a379ef03d513acc5042731a01"><td class="memTemplParams" colspan="2"><a class="anchor" id="gaf6f5ab6a379ef03d513acc5042731a01"></a>
 template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
 <tr class="memitem:gaf6f5ab6a379ef03d513acc5042731a01"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#gaf6f5ab6a379ef03d513acc5042731a01">FunG::modifiedIncompressibleNeoHooke</a> (double c, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:gaf6f5ab6a379ef03d513acc5042731a01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an "incompressible" neo-Hookean material law <img class="formulaInl" alt="$ W(F)=c\bar\iota_1(F^T F) $" src="form_19.png"/>, where <img class="formulaInl" alt="$\bar\iota_1$" src="form_20.png"/> is the modified first principal matrix invariant. <br/></td></tr>
+<tr class="memdesc:gaf6f5ab6a379ef03d513acc5042731a01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an "incompressible" neo-Hookean material law \( W(F)=c\bar\iota_1(F^T F) \), where \(\bar\iota_1\) is the modified first principal matrix invariant. <br/></td></tr>
 <tr class="separator:gaf6f5ab6a379ef03d513acc5042731a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac5c39cd9de55f4f0220a806cf28a7b30"><td class="memTemplParams" colspan="2"><a class="anchor" id="gac5c39cd9de55f4f0220a806cf28a7b30"></a>
 template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
 <tr class="memitem:gac5c39cd9de55f4f0220a806cf28a7b30"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#gac5c39cd9de55f4f0220a806cf28a7b30">FunG::compressibleNeoHooke</a> (double c, double d0, double d1, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:gac5c39cd9de55f4f0220a806cf28a7b30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a compressible neo-Hookean material law <img class="formulaInl" alt="$ W(F)=c\iota_1(F^T F)+d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) $" src="form_21.png"/>, where <img class="formulaInl" alt="$\iota_1$" src="form_7.png"/> is the first principal matrix invariant. <br/></td></tr>
+<tr class="memdesc:gac5c39cd9de55f4f0220a806cf28a7b30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a compressible neo-Hookean material law \( W(F)=c\iota_1(F^T F)+d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) \), where \(\iota_1\) is the first principal matrix invariant. <br/></td></tr>
 <tr class="separator:gac5c39cd9de55f4f0220a806cf28a7b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac10942df03f037afdf0a81d330361a6b"><td class="memTemplParams" colspan="2"><a class="anchor" id="gac10942df03f037afdf0a81d330361a6b"></a>
 template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
 <tr class="memitem:gac10942df03f037afdf0a81d330361a6b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#gac10942df03f037afdf0a81d330361a6b">FunG::modifiedCompressibleNeoHooke</a> (double c, double d0, double d1, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:gac10942df03f037afdf0a81d330361a6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a compressible neo-Hookean material law <img class="formulaInl" alt="$ W(F)=c\bar\iota_1(F^T F)+d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) $" src="form_22.png"/>, where <img class="formulaInl" alt="$\bar\iota_1$" src="form_20.png"/> is the modified first principal matrix invariant. <br/></td></tr>
+<tr class="memdesc:gac10942df03f037afdf0a81d330361a6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a compressible neo-Hookean material law \( W(F)=c\bar\iota_1(F^T F)+d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) \), where \(\bar\iota_1\) is the modified first principal matrix invariant. <br/></td></tr>
 <tr class="separator:gac10942df03f037afdf0a81d330361a6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -137,7 +144,7 @@ template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , i
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 18:52:01 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Sep 15 2015 00:49:24 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

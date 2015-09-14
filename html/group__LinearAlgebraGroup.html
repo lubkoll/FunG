@@ -13,6 +13,12 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,6 +43,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
@@ -65,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -107,25 +114,25 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determinant of dynamic size matrix with first three derivatives.  <a href="classFunG_1_1LinearAlgebra_1_1DynamicSizeDeterminant.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunG_1_1LinearAlgebra_1_1Deviator.html">FunG::LinearAlgebra::Deviator&lt; Matrix &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of the deviator of a matrix <img class="formulaInl" alt="$ A\in\mathbb{R}^{n,n} $" src="form_61.png"/>, i.e. <img class="formulaInl" alt="$ A - \frac{\mathrm{tr}(A)}{n}I $" src="form_62.png"/>.  <a href="classFunG_1_1LinearAlgebra_1_1Deviator.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of the deviator of a matrix \( A\in\mathbb{R}^{n,n} \), i.e. \( A - \frac{\mathrm{tr}(A)}{n}I \).  <a href="classFunG_1_1LinearAlgebra_1_1Deviator.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1LinearAlgebra_1_1SquaredEuclideanNorm.html">FunG::LinearAlgebra::SquaredEuclideanNorm&lt; Matrix, class &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute squared matrix norm <img class="formulaInl" alt="$ \|A\|^2 = A\negthinspace : \negthinspace A = \mathrm{tr}(A^TA) = \sum_{i,j} A_{ij}^2. $" src="form_68.png"/>.  <a href="structFunG_1_1LinearAlgebra_1_1SquaredEuclideanNorm.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute squared matrix norm \( \|A\|^2 = A\negthinspace : \negthinspace A = \mathrm{tr}(A^TA) = \sum_{i,j} A_{ij}^2. \).  <a href="structFunG_1_1LinearAlgebra_1_1SquaredEuclideanNorm.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1LinearAlgebra_1_1SquaredMatrixNorm.html">FunG::LinearAlgebra::SquaredMatrixNorm&lt; Matrix, class &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute squared matrix norm <img class="formulaInl" alt="$ \|A\|^2 = A\negthinspace : \negthinspace A = \mathrm{tr}(A^TA) = \sum_{i,j} A_{ij}^2. $" src="form_68.png"/>.  <a href="structFunG_1_1LinearAlgebra_1_1SquaredMatrixNorm.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute squared matrix norm \( \|A\|^2 = A\negthinspace : \negthinspace A = \mathrm{tr}(A^TA) = \sum_{i,j} A_{ij}^2. \).  <a href="structFunG_1_1LinearAlgebra_1_1SquaredMatrixNorm.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunG_1_1LinearAlgebra_1_1ShiftedInvariant.html">FunG::LinearAlgebra::ShiftedInvariant&lt; Invariant, offset &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Possibly scaled, shifted invariant <img class="formulaInl" alt="$scaling (invariant - offset)$" src="form_99.png"/>, where <img class="formulaInl" alt="$offset = dim$" src="form_100.png"/> for the first two (principal,modified) invariants and <img class="formulaInl" alt="$offset = 1$" src="form_101.png"/> for the third (principal,modified) and mixed invariants.  <a href="classFunG_1_1LinearAlgebra_1_1ShiftedInvariant.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Possibly scaled, shifted invariant \(scaling (invariant - offset)\), where \(offset = dim\) for the first two (principal,modified) invariants and \(offset = 1\) for the third (principal,modified) and mixed invariants.  <a href="classFunG_1_1LinearAlgebra_1_1ShiftedInvariant.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunG_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html">FunG::LinearAlgebra::LeftCauchyGreenStrainTensor&lt; Matrix, class &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Left Cauchy-Green strain tensor <img class="formulaInl" alt="$ F^T F $" src="form_102.png"/> for a symmetric matrix <img class="formulaInl" alt="$ F $" src="form_103.png"/>.  <a href="classFunG_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Left Cauchy-Green strain tensor \( F^T F \) for a symmetric matrix \( F \).  <a href="classFunG_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunG_1_1LinearAlgebra_1_1LinearizedStrainTensor.html">FunG::LinearAlgebra::LinearizedStrainTensor&lt; Matrix, class &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linearized strain tensor <img class="formulaInl" alt="$ \frac{1}{2}\left(F^T+F\right) $" src="form_107.png"/>.  <a href="classFunG_1_1LinearAlgebra_1_1LinearizedStrainTensor.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linearized strain tensor \( \frac{1}{2}\left(F^T+F\right) \).  <a href="classFunG_1_1LinearAlgebra_1_1LinearizedStrainTensor.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunG_1_1LinearAlgebra_1_1StrainTensor.html">FunG::LinearAlgebra::StrainTensor&lt; Matrix &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strain tensor <img class="formulaInl" alt="$ \frac{1}{2}\left(F^T+F\right + F^T F) $" src="form_109.png"/>.  <a href="classFunG_1_1LinearAlgebra_1_1StrainTensor.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strain tensor \( \frac{1}{2}\left(F^T+F\right + F^T F) \).  <a href="classFunG_1_1LinearAlgebra_1_1StrainTensor.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -143,12 +150,12 @@ template&lt;class Matrix &gt; </td></tr>
 <tr class="memitem:gad531065eea58cbd1f2e5e77c7fd5028d"><td class="memTemplParams" colspan="2"><a class="anchor" id="gad531065eea58cbd1f2e5e77c7fd5028d"></a>
 template&lt;class Matrix &gt; </td></tr>
 <tr class="memitem:gad531065eea58cbd1f2e5e77c7fd5028d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#gad531065eea58cbd1f2e5e77c7fd5028d">FunG::LinearAlgebra::EuclideanNorm</a> = MathematicalOperations::Chain&lt; CMath::Sqrt, SquaredEuclideanNorm&lt; Matrix &gt; &gt;</td></tr>
-<tr class="memdesc:gad531065eea58cbd1f2e5e77c7fd5028d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute matrix norm <img class="formulaInl" alt="$ \|A\| = \sqrt{A\negthinspace : \negthinspace A }= \sqrt{\mathrm{tr}(A^TA)} = \sqrt{\sum_{i,j} A_{ij}^2}. $" src="form_69.png"/>. <br/></td></tr>
+<tr class="memdesc:gad531065eea58cbd1f2e5e77c7fd5028d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute matrix norm \( \|A\| = \sqrt{A\negthinspace : \negthinspace A }= \sqrt{\mathrm{tr}(A^TA)} = \sqrt{\sum_{i,j} A_{ij}^2}. \). <br/></td></tr>
 <tr class="separator:gad531065eea58cbd1f2e5e77c7fd5028d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0107947440eb770f66179b453c313472"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga0107947440eb770f66179b453c313472"></a>
 template&lt;class Matrix &gt; </td></tr>
 <tr class="memitem:ga0107947440eb770f66179b453c313472"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#ga0107947440eb770f66179b453c313472">FunG::LinearAlgebra::MatrixNorm</a> = MathematicalOperations::Chain&lt; CMath::Sqrt, SquaredMatrixNorm&lt; Matrix &gt; &gt;</td></tr>
-<tr class="memdesc:ga0107947440eb770f66179b453c313472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute matrix norm <img class="formulaInl" alt="$ \|A\| = \sqrt{A\negthinspace : \negthinspace A }= \sqrt{\mathrm{tr}(A^TA)} = \sqrt{\sum_{i,j} A_{ij}^2}. $" src="form_69.png"/>. <br/></td></tr>
+<tr class="memdesc:ga0107947440eb770f66179b453c313472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute matrix norm \( \|A\| = \sqrt{A\negthinspace : \negthinspace A }= \sqrt{\mathrm{tr}(A^TA)} = \sqrt{\sum_{i,j} A_{ij}^2}. \). <br/></td></tr>
 <tr class="separator:ga0107947440eb770f66179b453c313472"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7af9b6f793f11a287277a30ea1e32caf"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga7af9b6f793f11a287277a30ea1e32caf"></a>
 template&lt;class Matrix &gt; </td></tr>
@@ -165,19 +172,19 @@ template&lt;class Matrix &gt; </td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:gace32a0876d4a8333f3bfc564316085ed"><td class="memTemplParams" colspan="2">template&lt;int row, int col, class Matrix , class  = std::enable_if_t&lt;Checks::isConstantSizeMatrix&lt;Matrix&gt;()&gt;, class  = Concepts::MatrixConceptCheck&lt;Matrix&gt;&gt; </td></tr>
 <tr class="memitem:gace32a0876d4a8333f3bfc564316085ed"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#gace32a0876d4a8333f3bfc564316085ed">FunG::LinearAlgebra::computeCofactor</a> (Matrix const &amp;A)</td></tr>
-<tr class="memdesc:gace32a0876d4a8333f3bfc564316085ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the <img class="formulaInl" alt="$(row,col)$" src="form_48.png"/>-cofactor of <img class="formulaInl" alt="$ A $" src="form_49.png"/>. Implemented for <img class="formulaInl" alt="$ A\in \mathbb{R}^{n,n} $" src="form_50.png"/> with <img class="formulaInl" alt="$ n=2,3 $" src="form_51.png"/>.  <a href="#gace32a0876d4a8333f3bfc564316085ed">More...</a><br/></td></tr>
+<tr class="memdesc:gace32a0876d4a8333f3bfc564316085ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the \((row,col)\)-cofactor of \( A \). Implemented for \( A\in \mathbb{R}^{n,n} \) with \( n=2,3 \).  <a href="#gace32a0876d4a8333f3bfc564316085ed">More...</a><br/></td></tr>
 <tr class="separator:gace32a0876d4a8333f3bfc564316085ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga136d54e30266690f0d07039fc70a1cb9"><td class="memTemplParams" colspan="2">template&lt;int row, int col, class Matrix , class  = std::enable_if_t&lt;!Checks::isConstantSizeMatrix&lt;Matrix&gt;()&gt;, class  = std::enable_if_t&lt;Checks::isDynamicMatrix&lt;Matrix&gt;()&gt;, class  = Concepts::MatrixConceptCheck&lt;Matrix&gt;&gt; </td></tr>
 <tr class="memitem:ga136d54e30266690f0d07039fc70a1cb9"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#ga136d54e30266690f0d07039fc70a1cb9">FunG::LinearAlgebra::computeCofactor</a> (Matrix const &amp;A)</td></tr>
-<tr class="memdesc:ga136d54e30266690f0d07039fc70a1cb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the <img class="formulaInl" alt="$(row,col)$" src="form_48.png"/>-cofactor of <img class="formulaInl" alt="$ A $" src="form_49.png"/>. Implemented for <img class="formulaInl" alt="$ A\in \mathbb{R}^{n,n} $" src="form_50.png"/> with <img class="formulaInl" alt="$ n=2,3 $" src="form_51.png"/>.  <a href="#ga136d54e30266690f0d07039fc70a1cb9">More...</a><br/></td></tr>
+<tr class="memdesc:ga136d54e30266690f0d07039fc70a1cb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the \((row,col)\)-cofactor of \( A \). Implemented for \( A\in \mathbb{R}^{n,n} \) with \( n=2,3 \).  <a href="#ga136d54e30266690f0d07039fc70a1cb9">More...</a><br/></td></tr>
 <tr class="separator:ga136d54e30266690f0d07039fc70a1cb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3970ee7fa4d47612427a59cecf56746c"><td class="memTemplParams" colspan="2">template&lt;int row, int col, class Matrix , class  = std::enable_if_t&lt;Checks::isConstantSizeMatrix&lt;Matrix&gt;()&gt;, class  = Concepts::MatrixConceptCheck&lt;Matrix&gt;&gt; </td></tr>
 <tr class="memitem:ga3970ee7fa4d47612427a59cecf56746c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#ga3970ee7fa4d47612427a59cecf56746c">FunG::LinearAlgebra::computeCofactorDirectionalDerivative</a> (Matrix const &amp;A, Matrix const &amp;B)</td></tr>
-<tr class="memdesc:ga3970ee7fa4d47612427a59cecf56746c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the first directional derivative in direction <img class="formulaInl" alt="$ B $" src="form_57.png"/> of the <img class="formulaInl" alt="$(row,col)$" src="form_48.png"/>-cofactor of <img class="formulaInl" alt="$ A $" src="form_49.png"/>. Implemented for <img class="formulaInl" alt="$ A\in \mathbb{R}^{n,n} $" src="form_50.png"/> with <img class="formulaInl" alt="$ n=2,3 $" src="form_51.png"/>.  <a href="#ga3970ee7fa4d47612427a59cecf56746c">More...</a><br/></td></tr>
+<tr class="memdesc:ga3970ee7fa4d47612427a59cecf56746c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the first directional derivative in direction \( B \) of the \((row,col)\)-cofactor of \( A \). Implemented for \( A\in \mathbb{R}^{n,n} \) with \( n=2,3 \).  <a href="#ga3970ee7fa4d47612427a59cecf56746c">More...</a><br/></td></tr>
 <tr class="separator:ga3970ee7fa4d47612427a59cecf56746c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5ecd9444a4fae625924476d5a0b4cd5a"><td class="memTemplParams" colspan="2">template&lt;int row, int col, class Matrix , class  = std::enable_if_t&lt;!Checks::isConstantSizeMatrix&lt;Matrix&gt;()&gt;, class  = std::enable_if_t&lt;Checks::isDynamicMatrix&lt;Matrix&gt;()&gt;, class  = Concepts::MatrixConceptCheck&lt;Matrix&gt;&gt; </td></tr>
 <tr class="memitem:ga5ecd9444a4fae625924476d5a0b4cd5a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#ga5ecd9444a4fae625924476d5a0b4cd5a">FunG::LinearAlgebra::computeCofactorDirectionalDerivative</a> (Matrix const &amp;A, Matrix const &amp;B)</td></tr>
-<tr class="memdesc:ga5ecd9444a4fae625924476d5a0b4cd5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the first directional derivative in direction <img class="formulaInl" alt="$ B $" src="form_57.png"/> of the <img class="formulaInl" alt="$(row,col)$" src="form_48.png"/>-cofactor of <img class="formulaInl" alt="$ A $" src="form_49.png"/>. Implemented for <img class="formulaInl" alt="$ A\in \mathbb{R}^{n,n} $" src="form_50.png"/> with <img class="formulaInl" alt="$ n=2,3 $" src="form_51.png"/>.  <a href="#ga5ecd9444a4fae625924476d5a0b4cd5a">More...</a><br/></td></tr>
+<tr class="memdesc:ga5ecd9444a4fae625924476d5a0b4cd5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the first directional derivative in direction \( B \) of the \((row,col)\)-cofactor of \( A \). Implemented for \( A\in \mathbb{R}^{n,n} \) with \( n=2,3 \).  <a href="#ga5ecd9444a4fae625924476d5a0b4cd5a">More...</a><br/></td></tr>
 <tr class="separator:ga5ecd9444a4fae625924476d5a0b4cd5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga60c35602004bd0efea873eef25fe3329"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga60c35602004bd0efea873eef25fe3329"></a>
 template&lt;class Matrix &gt; </td></tr>
@@ -187,22 +194,22 @@ template&lt;class Matrix &gt; </td></tr>
 <tr class="memitem:ga30718cf55a6e699fc1da34ff9fdfcf88"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga30718cf55a6e699fc1da34ff9fdfcf88"></a>
 template&lt;class Matrix &gt; </td></tr>
 <tr class="memitem:ga30718cf55a6e699fc1da34ff9fdfcf88"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#ga30718cf55a6e699fc1da34ff9fdfcf88">FunG::LinearAlgebra::determinant</a> (Matrix const &amp;A)</td></tr>
-<tr class="memdesc:ga30718cf55a6e699fc1da34ff9fdfcf88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient computation of <img class="formulaInl" alt="$\det(A)$" src="form_60.png"/>. <br/></td></tr>
+<tr class="memdesc:ga30718cf55a6e699fc1da34ff9fdfcf88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient computation of \(\det(A)\). <br/></td></tr>
 <tr class="separator:ga30718cf55a6e699fc1da34ff9fdfcf88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4cdd9ff379199d332323884f4c7db035"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga4cdd9ff379199d332323884f4c7db035"></a>
 template&lt;class Matrix , class  = Concepts::SymmetricMatrixConceptCheck&lt;Matrix&gt;&gt; </td></tr>
 <tr class="memitem:ga4cdd9ff379199d332323884f4c7db035"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#ga4cdd9ff379199d332323884f4c7db035">FunG::LinearAlgebra::deviator</a> (const Matrix &amp;A)</td></tr>
-<tr class="memdesc:ga4cdd9ff379199d332323884f4c7db035"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deviator of a matrix <img class="formulaInl" alt="$ A\in\mathbb{R}^{n,n} $" src="form_61.png"/>, i.e. <img class="formulaInl" alt="$ A - \frac{\mathrm{tr}(A)}{n}I $" src="form_62.png"/>. <br/></td></tr>
+<tr class="memdesc:ga4cdd9ff379199d332323884f4c7db035"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deviator of a matrix \( A\in\mathbb{R}^{n,n} \), i.e. \( A - \frac{\mathrm{tr}(A)}{n}I \). <br/></td></tr>
 <tr class="separator:ga4cdd9ff379199d332323884f4c7db035"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga988c1ade64b8074baf2909752763ffab"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga988c1ade64b8074baf2909752763ffab"></a>
 template&lt;class Matrix , class Vector1 , class Vector2 &gt; </td></tr>
 <tr class="memitem:ga988c1ade64b8074baf2909752763ffab"><td class="memTemplItemLeft" align="right" valign="top">Matrix&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#ga988c1ade64b8074baf2909752763ffab">FunG::LinearAlgebra::tensorProduct</a> (const Vector1 &amp;v, const Vector2 &amp;w)</td></tr>
-<tr class="memdesc:ga988c1ade64b8074baf2909752763ffab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute tensor product <img class="formulaInl" alt="$ M = v \otimes w $" src="form_114.png"/>. <br/></td></tr>
+<tr class="memdesc:ga988c1ade64b8074baf2909752763ffab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute tensor product \( M = v \otimes w \). <br/></td></tr>
 <tr class="separator:ga988c1ade64b8074baf2909752763ffab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae5e82b9e66319511dae5ff0d9304a6b7"><td class="memTemplParams" colspan="2"><a class="anchor" id="gae5e82b9e66319511dae5ff0d9304a6b7"></a>
 template&lt;class Matrix , class Vector &gt; </td></tr>
 <tr class="memitem:gae5e82b9e66319511dae5ff0d9304a6b7"><td class="memTemplItemLeft" align="right" valign="top">Matrix&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#gae5e82b9e66319511dae5ff0d9304a6b7">FunG::LinearAlgebra::tensorProduct</a> (const Vector &amp;v)</td></tr>
-<tr class="memdesc:gae5e82b9e66319511dae5ff0d9304a6b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute tensor product <img class="formulaInl" alt="$ M = v \otimes v $" src="form_115.png"/>. <br/></td></tr>
+<tr class="memdesc:gae5e82b9e66319511dae5ff0d9304a6b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute tensor product \( M = v \otimes v \). <br/></td></tr>
 <tr class="separator:gae5e82b9e66319511dae5ff0d9304a6b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab27aad35cfe5b14f492d2f365595e47a"><td class="memTemplParams" colspan="2">template&lt;class Arg &gt; </td></tr>
 <tr class="memitem:gab27aad35cfe5b14f492d2f365595e47a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#gab27aad35cfe5b14f492d2f365595e47a">FunG::LinearAlgebra::trace</a> (const Arg &amp;arg)</td></tr>
@@ -253,8 +260,8 @@ template&lt;int row, int col, class Matrix , class  = std::enable_if_t&lt;Checks
       </table>
 </div><div class="memdoc">
 
-<p>Compute the <img class="formulaInl" alt="$(row,col)$" src="form_48.png"/>-cofactor of <img class="formulaInl" alt="$ A $" src="form_49.png"/>. Implemented for <img class="formulaInl" alt="$ A\in \mathbb{R}^{n,n} $" src="form_50.png"/> with <img class="formulaInl" alt="$ n=2,3 $" src="form_51.png"/>. </p>
-<p>The <img class="formulaInl" alt="$(i,j)$" src="form_52.png"/>-cofactor of a matrix <img class="formulaInl" alt="$ A $" src="form_49.png"/> is <img class="formulaInl" alt="$ (-1)^{i+j} \det(A^\#_{ij}) $" src="form_53.png"/>, where <img class="formulaInl" alt="$ A^\#_ij $" src="form_54.png"/> is obtained from <img class="formulaInl" alt="$ A $" src="form_49.png"/> by deleting the <img class="formulaInl" alt="$i$" src="form_55.png"/>-th row and <img class="formulaInl" alt="$ j $" src="form_56.png"/>-th column. </p>
+<p>Compute the \((row,col)\)-cofactor of \( A \). Implemented for \( A\in \mathbb{R}^{n,n} \) with \( n=2,3 \). </p>
+<p>The \((i,j)\)-cofactor of a matrix \( A \) is \( (-1)^{i+j} \det(A^\#_{ij}) \), where \( A^\#_ij \) is obtained from \( A \) by deleting the \(i\)-th row and \( j \)-th column. </p>
 
 </div>
 </div>
@@ -274,8 +281,8 @@ template&lt;int row, int col, class Matrix , class  = std::enable_if_t&lt;!Check
       </table>
 </div><div class="memdoc">
 
-<p>Compute the <img class="formulaInl" alt="$(row,col)$" src="form_48.png"/>-cofactor of <img class="formulaInl" alt="$ A $" src="form_49.png"/>. Implemented for <img class="formulaInl" alt="$ A\in \mathbb{R}^{n,n} $" src="form_50.png"/> with <img class="formulaInl" alt="$ n=2,3 $" src="form_51.png"/>. </p>
-<p>The <img class="formulaInl" alt="$(i,j)$" src="form_52.png"/>-cofactor of a matrix <img class="formulaInl" alt="$ A $" src="form_49.png"/> is <img class="formulaInl" alt="$ (-1)^{i+j} \det(A^\#_{ij}) $" src="form_53.png"/>, where <img class="formulaInl" alt="$ A^\#_ij $" src="form_54.png"/> is obtained from <img class="formulaInl" alt="$ A $" src="form_49.png"/> by deleting the <img class="formulaInl" alt="$i$" src="form_55.png"/>-th row and <img class="formulaInl" alt="$ j $" src="form_56.png"/>-th column. </p>
+<p>Compute the \((row,col)\)-cofactor of \( A \). Implemented for \( A\in \mathbb{R}^{n,n} \) with \( n=2,3 \). </p>
+<p>The \((i,j)\)-cofactor of a matrix \( A \) is \( (-1)^{i+j} \det(A^\#_{ij}) \), where \( A^\#_ij \) is obtained from \( A \) by deleting the \(i\)-th row and \( j \)-th column. </p>
 
 </div>
 </div>
@@ -305,8 +312,8 @@ template&lt;int row, int col, class Matrix , class  = std::enable_if_t&lt;Checks
       </table>
 </div><div class="memdoc">
 
-<p>Compute the first directional derivative in direction <img class="formulaInl" alt="$ B $" src="form_57.png"/> of the <img class="formulaInl" alt="$(row,col)$" src="form_48.png"/>-cofactor of <img class="formulaInl" alt="$ A $" src="form_49.png"/>. Implemented for <img class="formulaInl" alt="$ A\in \mathbb{R}^{n,n} $" src="form_50.png"/> with <img class="formulaInl" alt="$ n=2,3 $" src="form_51.png"/>. </p>
-<p>The <img class="formulaInl" alt="$(i,j)$" src="form_52.png"/>-cofactor of a matrix <img class="formulaInl" alt="$ A $" src="form_49.png"/> is <img class="formulaInl" alt="$ (-1)^{i+j} \det(A^\#_{ij}) $" src="form_53.png"/>, where <img class="formulaInl" alt="$ A^\#_{ij} $" src="form_58.png"/> is obtained from <img class="formulaInl" alt="$ A $" src="form_49.png"/> by deleting the <img class="formulaInl" alt="$i$" src="form_55.png"/>-th row and <img class="formulaInl" alt="$ j $" src="form_56.png"/>-th column. If <img class="formulaInl" alt="$ A\in \mathbb{R}^{3,3} $" src="form_59.png"/>, then the cofactors are quadratic polynomials of the entries of <img class="formulaInl" alt="$ A^\#_{ij} $" src="form_58.png"/>. In this case this function can also used to compute the second directional derivative in directions <img class="formulaInl" alt="$ A $" src="form_49.png"/> and <img class="formulaInl" alt="$ B $" src="form_57.png"/>. </p>
+<p>Compute the first directional derivative in direction \( B \) of the \((row,col)\)-cofactor of \( A \). Implemented for \( A\in \mathbb{R}^{n,n} \) with \( n=2,3 \). </p>
+<p>The \((i,j)\)-cofactor of a matrix \( A \) is \( (-1)^{i+j} \det(A^\#_{ij}) \), where \( A^\#_{ij} \) is obtained from \( A \) by deleting the \(i\)-th row and \( j \)-th column. If \( A\in \mathbb{R}^{3,3} \), then the cofactors are quadratic polynomials of the entries of \( A^\#_{ij} \). In this case this function can also used to compute the second directional derivative in directions \( A \) and \( B \). </p>
 
 </div>
 </div>
@@ -336,8 +343,8 @@ template&lt;int row, int col, class Matrix , class  = std::enable_if_t&lt;!Check
       </table>
 </div><div class="memdoc">
 
-<p>Compute the first directional derivative in direction <img class="formulaInl" alt="$ B $" src="form_57.png"/> of the <img class="formulaInl" alt="$(row,col)$" src="form_48.png"/>-cofactor of <img class="formulaInl" alt="$ A $" src="form_49.png"/>. Implemented for <img class="formulaInl" alt="$ A\in \mathbb{R}^{n,n} $" src="form_50.png"/> with <img class="formulaInl" alt="$ n=2,3 $" src="form_51.png"/>. </p>
-<p>The <img class="formulaInl" alt="$(i,j)$" src="form_52.png"/>-cofactor of a matrix <img class="formulaInl" alt="$ A $" src="form_49.png"/> is <img class="formulaInl" alt="$ (-1)^{i+j} \det(A^\#_{ij}) $" src="form_53.png"/>, where <img class="formulaInl" alt="$ A^\#_{ij} $" src="form_58.png"/> is obtained from <img class="formulaInl" alt="$ A $" src="form_49.png"/> by deleting the <img class="formulaInl" alt="$i$" src="form_55.png"/>-th row and <img class="formulaInl" alt="$ j $" src="form_56.png"/>-th column. If <img class="formulaInl" alt="$ A\in \mathbb{R}^{3,3} $" src="form_59.png"/>, then the cofactors are quadratic polynomials of the entries of <img class="formulaInl" alt="$ A^\#_{ij} $" src="form_58.png"/>. In this case this function can also used to compute the second directional derivative in directions <img class="formulaInl" alt="$ A $" src="form_49.png"/> and <img class="formulaInl" alt="$ B $" src="form_57.png"/>. </p>
+<p>Compute the first directional derivative in direction \( B \) of the \((row,col)\)-cofactor of \( A \). Implemented for \( A\in \mathbb{R}^{n,n} \) with \( n=2,3 \). </p>
+<p>The \((i,j)\)-cofactor of a matrix \( A \) is \( (-1)^{i+j} \det(A^\#_{ij}) \), where \( A^\#_{ij} \) is obtained from \( A \) by deleting the \(i\)-th row and \( j \)-th column. If \( A\in \mathbb{R}^{3,3} \), then the cofactors are quadratic polynomials of the entries of \( A^\#_{ij} \). In this case this function can also used to compute the second directional derivative in directions \( A \) and \( B \). </p>
 
 </div>
 </div>
@@ -365,7 +372,7 @@ template&lt;class Arg &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 18:52:01 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Sep 15 2015 00:49:24 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
