@@ -13,8 +13,6 @@ struct \hyperlink{structFunG_1_1Constant}{Constant}
 \begin{DoxyCompactList}\small\item\em Wrap a constant. \end{DoxyCompactList}\item 
 struct \hyperlink{structFunG_1_1Identity}{Identity}
 \begin{DoxyCompactList}\small\item\em Identity mapping $ f(x)=x $. \end{DoxyCompactList}\item 
-struct \hyperlink{structFunG_1_1Variable}{Variable}
-\begin{DoxyCompactList}\small\item\em Independent variable. Can be uniquely identified by its id. \end{DoxyCompactList}\item 
 struct \hyperlink{structFunG_1_1Base}{Base}
 \begin{DoxyCompactList}\small\item\em Base class for functions satisfying Function\-Concept. Required for enabling the operators in \hyperlink{generate_8hh_source}{generate.\-hh}. \end{DoxyCompactList}\item 
 class \hyperlink{classFunG_1_1OutOfDomainException}{Out\-Of\-Domain\-Exception}
@@ -24,18 +22,20 @@ class \hyperlink{classFunG_1_1NonSymmetricMatrixException}{Non\-Symmetric\-Matri
 struct \hyperlink{structFunG_1_1Zero}{Zero}
 \begin{DoxyCompactList}\small\item\em Specialize this struct for your matrix type if a zero matrix cannot be generated via Matrix(0.). \end{DoxyCompactList}\item 
 struct \hyperlink{structFunG_1_1Zero_3_01Matrix_00_01void__t_3_01Checks_1_1TryCallToFill_3_01Matrix_01_4_01_4_01_4}{Zero$<$ Matrix, void\-\_\-t$<$ Checks\-::\-Try\-Call\-To\-Fill$<$ Matrix $>$ $>$ $>$}
-\begin{DoxyCompactList}\small\item\em Specialization for the case that a matrix can be set to zero by calling the member function fill(0). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Specialization for the case that a matrix can be set to zero by calling the member function fill(0). \end{DoxyCompactList}\item 
+struct \hyperlink{structFunG_1_1Variable}{Variable}
+\begin{DoxyCompactList}\small\item\em Independent variable. Can be uniquely identified by its id. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$class F , bool arithmetic\-Argument = false$>$ }\\using \hyperlink{namespaceFunG_ab2a52dfbc62e262c67f293fda5f81ef7}{Finalize} = Detail\-::\-Finalize\-Impl$<$ F, arithmetic\-Argument, Checks\-::has\-Variable$<$ F $>$() $>$
 \begin{DoxyCompactList}\small\item\em Finish function definition. \end{DoxyCompactList}\item 
-\hypertarget{namespaceFunG_a3d589ef7d011a46a72847eabcbbb4532}{{\footnotesize template$<$class F , int id$>$ }\\using \hyperlink{namespaceFunG_a3d589ef7d011a46a72847eabcbbb4532}{Variable\-\_\-t} = typename Variable\-Detail\-::\-Variable\-Type$<$ F, id $>$\-::type}\label{namespaceFunG_a3d589ef7d011a46a72847eabcbbb4532}
-
-\begin{DoxyCompactList}\small\item\em Get underlying type of variable with index id. \end{DoxyCompactList}\item 
 \hypertarget{namespaceFunG_a0cde667596590eb8d32e4a5ee76ddbb9}{{\footnotesize template$<$class... Types$>$ }\\using \hyperlink{namespaceFunG_a0cde667596590eb8d32e4a5ee76ddbb9}{void\-\_\-t} = typename Detail\-::voider$<$ Types...$>$\-::type}\label{namespaceFunG_a0cde667596590eb8d32e4a5ee76ddbb9}
 
-\begin{DoxyCompactList}\small\item\em Most fascinating type ever. Is always void. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Most fascinating type ever. Is always void. \end{DoxyCompactList}\item 
+\hypertarget{namespaceFunG_a3d589ef7d011a46a72847eabcbbb4532}{{\footnotesize template$<$class F , int id$>$ }\\using \hyperlink{namespaceFunG_a3d589ef7d011a46a72847eabcbbb4532}{Variable\-\_\-t} = typename Variable\-Detail\-::\-Variable\-Type$<$ F, id $>$\-::type}\label{namespaceFunG_a3d589ef7d011a46a72847eabcbbb4532}
+
+\begin{DoxyCompactList}\small\item\em Get underlying type of variable with index id. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -43,58 +43,6 @@ struct \hyperlink{structFunG_1_1Zero_3_01Matrix_00_01void__t_3_01Checks_1_1TryCa
 \begin{DoxyCompactList}\small\item\em Generate a constant function that stores its argument as constant reference. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Arg $>$ }\\auto \hyperlink{namespaceFunG_a65c509062b62b3303268cabc97b75a65}{constant} (const Arg \&x)
 \begin{DoxyCompactList}\small\item\em Wrap a constant. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F $>$ }\\auto \hyperlink{namespaceFunG_a3a2af76439713dc7635e0c538ac34f15}{finalize} (const F \&f)
-\begin{DoxyCompactList}\small\item\em Finish function definition. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F $>$ }\\auto \hyperlink{namespaceFunG_a0c224cd9b212427657c6798ac8adf6ac}{finalize\-\_\-scalar} (const F \&f)
-\begin{DoxyCompactList}\small\item\em Finish function definition. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , class G , class  = std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$\-::value $\vert$$\vert$                                      std\-::is\-\_\-base\-\_\-of$<$\-Base,\-G$>$\-::value $>$$>$ }\\auto \hyperlink{namespaceFunG_ac7f61d48ff610ec4be8ee6994d165077}{operator+} (const F \&f, const G \&g)
-\begin{DoxyCompactList}\small\item\em overload of \char`\"{}+\char`\"{}-\/operator for the generation of functions. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , class G , class  = std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$\-::value $\vert$$\vert$ std\-::is\-\_\-base\-\_\-of$<$\-Base,\-G$>$\-::value $>$$>$ }\\auto \hyperlink{namespaceFunG_a014be932d3b4eb377d8e60271e864438}{operator$\ast$} (const F \&f, const G \&g)
-\begin{DoxyCompactList}\small\item\em overload of \char`\"{}$\ast$\char`\"{}-\/operator for the generation of functions. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , class  = std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$\-::value $>$$>$ }\\auto \hyperlink{namespaceFunG_aeb22ff63cd78cb63d81b601c656da2c1}{operator$^\wedge$} (const F \&f, int k)
-\begin{DoxyCompactList}\small\item\em overload of \char`\"{}$^\wedge$\char`\"{}-\/operator for the generation of functions. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , class G , class  = std\-::enable\-\_\-if\-\_\-t$<$std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$\-::value \&\&                                     std\-::is\-\_\-base\-\_\-of$<$\-Base,\-G$>$\-::value$>$$>$ }\\auto \hyperlink{namespaceFunG_a56701b5e83b96d2d6cc5c482e36caa39}{operator$<$$<$} (const F \&f, const G \&g)
-\begin{DoxyCompactList}\small\item\em overload of \char`\"{}$<$$<$\char`\"{}-\/operator for chaining functions $f$ and $g$ to $ f \circ g $. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , class T , class  = std\-::enable\-\_\-if\-\_\-t$<$std\-::is\-\_\-convertible$<$\-T,decltype(std\-::declval$<$\-F$>$().\-d0())$>$\-::value \&\&                                     std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$\-::value$>$$>$ }\\auto \hyperlink{namespaceFunG_aa0c4552dee9179fb50b57ece863d835a}{operator-\/} (const F \&f, const T \&t)
-\begin{DoxyCompactList}\small\item\em overload of \char`\"{}-\/\char`\"{}-\/operator for the generation of functions. Here the second argument is a constant that is wrapped in to an object of type \hyperlink{structFunG_1_1Constant}{Constant}. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , class T , class  = std\-::enable\-\_\-if\-\_\-t$<$std\-::is\-\_\-convertible$<$\-T,decltype(std\-::declval$<$\-F$>$().\-d0())$>$\-::value \&\&                                     std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$\-::value$>$$>$ }\\auto \hyperlink{namespaceFunG_a7f522d98a8d5bc8c3b11599d3136ded4}{operator-\/} (const T \&t, const F \&f)
-\begin{DoxyCompactList}\small\item\em overload of \char`\"{}-\/\char`\"{}-\/operator for the generation of functions. Here the first argument is a constant that is wrapped in to an object of type \hyperlink{structFunG_1_1Constant}{Constant}. \end{DoxyCompactList}\item 
-\hypertarget{namespaceFunG_a165e879e76d3a2a8906938f3658445ce}{{\footnotesize template$<$class Arg $>$ }\\auto \hyperlink{namespaceFunG_a165e879e76d3a2a8906938f3658445ce}{identity} (const Arg \&x)}\label{namespaceFunG_a165e879e76d3a2a8906938f3658445ce}
-
-\begin{DoxyCompactList}\small\item\em Construct Identity$<$\-Arg$>$(x). \end{DoxyCompactList}\item 
-\hypertarget{namespaceFunG_a1c474456411f028e14eab67ff6eebe0c}{{\footnotesize template$<$int id, class T $>$ }\\\hyperlink{structFunG_1_1Variable}{Variable}$<$ T, id $>$ \hyperlink{namespaceFunG_a1c474456411f028e14eab67ff6eebe0c}{variable} (const T \&t)}\label{namespaceFunG_a1c474456411f028e14eab67ff6eebe0c}
-
-\begin{DoxyCompactList}\small\item\em Generate variable from input type. \end{DoxyCompactList}\item 
-\hypertarget{namespaceFunG_ad26faeb264bb4b1cd7e70f3811c366c8}{{\footnotesize template$<$class Inflation , class Compression , class Matrix $>$ }\\auto \hyperlink{namespaceFunG_ad26faeb264bb4b1cd7e70f3811c366c8}{volumetric\-Penalty} (double d0, double d1, const Matrix \&A)}\label{namespaceFunG_ad26faeb264bb4b1cd7e70f3811c366c8}
-
-\begin{DoxyCompactList}\small\item\em Create volumetric penalty function composed of a penalty for inflation and one for compression. \end{DoxyCompactList}\item 
-\hypertarget{namespaceFunG_aaf30b9c36ed86e01b94f6b7c1d95cae8}{{\footnotesize template$<$class Matrix $>$ }\\auto \hyperlink{namespaceFunG_aaf30b9c36ed86e01b94f6b7c1d95cae8}{volumetric\-Quad\-And\-Log} (double d0, double d1, const Matrix \&A)}\label{namespaceFunG_aaf30b9c36ed86e01b94f6b7c1d95cae8}
-
-\begin{DoxyCompactList}\small\item\em Create the volumetric penalty function $ d_0 j^2 + d_1 \log(j),\ j=\det(A) $. \end{DoxyCompactList}\item 
-\hypertarget{namespaceFunG_adf4be5df85ea9df10cc9e11c11aaeb7b}{{\footnotesize template$<$class Matrix $>$ }\\auto \hyperlink{namespaceFunG_adf4be5df85ea9df10cc9e11c11aaeb7b}{volumetric\-Hartmann\-Neff} (double d0, double d1, const Matrix \&A)}\label{namespaceFunG_adf4be5df85ea9df10cc9e11c11aaeb7b}
-
-\begin{DoxyCompactList}\small\item\em Create the volumetric penalty function $ d_0 j^5 + d_1 j^{-5},\ j=\det(A) $. \end{DoxyCompactList}\item 
-\hypertarget{namespaceFunG_a4784211358c877f05ad9426850303273}{{\footnotesize template$<$class Matrix $>$ }\\auto \hyperlink{namespaceFunG_a4784211358c877f05ad9426850303273}{yield\-Surface} (double beta, double offset, Matrix sigma=Linear\-Algebra\-::unit\-Matrix$<$ Matrix $>$())}\label{namespaceFunG_a4784211358c877f05ad9426850303273}
-
-\begin{DoxyCompactList}\small\item\em Yield surface $ \frac{\beta}{3}\iota_1(\sigma) + J_2(\sigma)-offset $, where $\iota_1$ is the first principal and $J_2$ is the second deviatoric invariant. \end{DoxyCompactList}\item 
-\hypertarget{group__Rubber_gace19173e33490aadd36ae3a03fd1d85c}{{\footnotesize template$<$class Matrix , int offset = Linear\-Algebra\-::dimension$<$\-Matrix$>$()$>$ }\\auto \hyperlink{group__Rubber_gace19173e33490aadd36ae3a03fd1d85c}{incompressible\-Mooney\-Rivlin} (double c0, double c1, const Matrix \&F)}\label{group__Rubber_gace19173e33490aadd36ae3a03fd1d85c}
-
-\begin{DoxyCompactList}\small\item\em Generate an \char`\"{}incompressible\char`\"{} Mooney-\/\-Rivlin material law $ W(F)=c_0\iota_1(F^T F) + c_1\iota_2(F^T F) $, where $\iota_1$ is the first and $\iota_2$ the second principal matrix invariant. \end{DoxyCompactList}\item 
-\hypertarget{group__Rubber_ga9a1894daa10a0bdcc620c6c41ecb6f19}{{\footnotesize template$<$class Inflation\-Penalty , class Compression\-Penalty , class Matrix , int offset = Linear\-Algebra\-::dimension$<$\-Matrix$>$()$>$ }\\auto \hyperlink{group__Rubber_ga9a1894daa10a0bdcc620c6c41ecb6f19}{compressible\-Mooney\-Rivlin} (double c0, double c1, double d0, double d1, const Matrix \&F)}\label{group__Rubber_ga9a1894daa10a0bdcc620c6c41ecb6f19}
-
-\begin{DoxyCompactList}\small\item\em Generate a compressible Mooney-\/\-Rivlin material law $ W(F)=c_0\iota_1(F^T F) + c_1\iota_2(F^T F) + d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) $, where $\iota_1$ is the first and $\iota_2$ the second principal matrix invariant. \end{DoxyCompactList}\item 
-\hypertarget{group__Rubber_ga5bb28aef7006413775791998936d6b81}{{\footnotesize template$<$class Matrix , int offset = Linear\-Algebra\-::dimension$<$\-Matrix$>$()$>$ }\\auto \hyperlink{group__Rubber_ga5bb28aef7006413775791998936d6b81}{incompressible\-Neo\-Hooke} (double c, const Matrix \&F)}\label{group__Rubber_ga5bb28aef7006413775791998936d6b81}
-
-\begin{DoxyCompactList}\small\item\em Generate an \char`\"{}incompressible\char`\"{} neo-\/\-Hookean material law $ W(F)=c\iota_1(F^T F) $, where $\iota_1$ is the first principal matrix invariant . \end{DoxyCompactList}\item 
-\hypertarget{group__Rubber_gaf6f5ab6a379ef03d513acc5042731a01}{{\footnotesize template$<$class Matrix , int offset = Linear\-Algebra\-::dimension$<$\-Matrix$>$()$>$ }\\auto \hyperlink{group__Rubber_gaf6f5ab6a379ef03d513acc5042731a01}{modified\-Incompressible\-Neo\-Hooke} (double c, const Matrix \&F)}\label{group__Rubber_gaf6f5ab6a379ef03d513acc5042731a01}
-
-\begin{DoxyCompactList}\small\item\em Generate an \char`\"{}incompressible\char`\"{} neo-\/\-Hookean material law $ W(F)=c\bar\iota_1(F^T F) $, where $\bar\iota_1$ is the modified first principal matrix invariant. \end{DoxyCompactList}\item 
-\hypertarget{group__Rubber_gac5c39cd9de55f4f0220a806cf28a7b30}{{\footnotesize template$<$class Inflation\-Penalty , class Compression\-Penalty , class Matrix , int offset = Linear\-Algebra\-::dimension$<$\-Matrix$>$()$>$ }\\auto \hyperlink{group__Rubber_gac5c39cd9de55f4f0220a806cf28a7b30}{compressible\-Neo\-Hooke} (double c, double d0, double d1, const Matrix \&F)}\label{group__Rubber_gac5c39cd9de55f4f0220a806cf28a7b30}
-
-\begin{DoxyCompactList}\small\item\em Generate a compressible neo-\/\-Hookean material law $ W(F)=c\iota_1(F^T F)+d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) $, where $\iota_1$ is the first principal matrix invariant. \end{DoxyCompactList}\item 
-\hypertarget{group__Rubber_gac10942df03f037afdf0a81d330361a6b}{{\footnotesize template$<$class Inflation\-Penalty , class Compression\-Penalty , class Matrix , int offset = Linear\-Algebra\-::dimension$<$\-Matrix$>$()$>$ }\\auto \hyperlink{group__Rubber_gac10942df03f037afdf0a81d330361a6b}{modified\-Compressible\-Neo\-Hooke} (double c, double d0, double d1, const Matrix \&F)}\label{group__Rubber_gac10942df03f037afdf0a81d330361a6b}
-
-\begin{DoxyCompactList}\small\item\em Generate a compressible neo-\/\-Hookean material law $ W(F)=c\bar\iota_1(F^T F)+d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) $, where $\bar\iota_1$ is the modified first principal matrix invariant. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Matrix , int offset = Linear\-Algebra\-::dimension$<$\-Matrix$>$()$>$ }\\auto \hyperlink{group__Biomechanics_gac269eefc1abb994044e1634c20a98061}{incompressible\-Adipose\-Tissue\-\_\-\-Sommer\-Holzapfel} (double c\-Cells, double k1, double k2, double kappa, const Matrix \&M, const Matrix \&F)
 \begin{DoxyCompactList}\small\item\em Model for adipose tissue of \cite{Sommer2013}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Matrix , int offset = Linear\-Algebra\-::dimension$<$\-Matrix$>$()$>$ }\\auto \hyperlink{group__Biomechanics_ga01ab128bcf179f4431b0270179af9e20}{incompressible\-Adipose\-Tissue\-\_\-\-Sommer\-Holzapfel} (const Matrix \&M, const Matrix \&F)
@@ -119,6 +67,55 @@ struct \hyperlink{structFunG_1_1Zero_3_01Matrix_00_01void__t_3_01Checks_1_1TryCa
 \begin{DoxyCompactList}\small\item\em Compressible version of the model for skin tissue of \cite{Hendriks2005}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Inflation\-Penalty , class Compression\-Penalty , class Matrix , int offset = Linear\-Algebra\-::dimension$<$\-Matrix$>$()$>$ }\\auto \hyperlink{group__Biomechanics_ga42721e772b7eada1b0bca98247ad440f}{compressible\-Skin\-\_\-\-Hendriks} (double d0, double d1, const Matrix \&F)
 \begin{DoxyCompactList}\small\item\em Compressible version of the model for skin tissue of \cite{Hendriks2005}. \end{DoxyCompactList}\item 
+\hypertarget{group__Rubber_gace19173e33490aadd36ae3a03fd1d85c}{{\footnotesize template$<$class Matrix , int offset = Linear\-Algebra\-::dimension$<$\-Matrix$>$()$>$ }\\auto \hyperlink{group__Rubber_gace19173e33490aadd36ae3a03fd1d85c}{incompressible\-Mooney\-Rivlin} (double c0, double c1, const Matrix \&F)}\label{group__Rubber_gace19173e33490aadd36ae3a03fd1d85c}
+
+\begin{DoxyCompactList}\small\item\em Generate an \char`\"{}incompressible\char`\"{} Mooney-\/\-Rivlin material law $ W(F)=c_0\iota_1(F^T F) + c_1\iota_2(F^T F) $, where $\iota_1$ is the first and $\iota_2$ the second principal matrix invariant. \end{DoxyCompactList}\item 
+\hypertarget{group__Rubber_ga9a1894daa10a0bdcc620c6c41ecb6f19}{{\footnotesize template$<$class Inflation\-Penalty , class Compression\-Penalty , class Matrix , int offset = Linear\-Algebra\-::dimension$<$\-Matrix$>$()$>$ }\\auto \hyperlink{group__Rubber_ga9a1894daa10a0bdcc620c6c41ecb6f19}{compressible\-Mooney\-Rivlin} (double c0, double c1, double d0, double d1, const Matrix \&F)}\label{group__Rubber_ga9a1894daa10a0bdcc620c6c41ecb6f19}
+
+\begin{DoxyCompactList}\small\item\em Generate a compressible Mooney-\/\-Rivlin material law $ W(F)=c_0\iota_1(F^T F) + c_1\iota_2(F^T F) + d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) $, where $\iota_1$ is the first and $\iota_2$ the second principal matrix invariant. \end{DoxyCompactList}\item 
+\hypertarget{group__Rubber_ga5bb28aef7006413775791998936d6b81}{{\footnotesize template$<$class Matrix , int offset = Linear\-Algebra\-::dimension$<$\-Matrix$>$()$>$ }\\auto \hyperlink{group__Rubber_ga5bb28aef7006413775791998936d6b81}{incompressible\-Neo\-Hooke} (double c, const Matrix \&F)}\label{group__Rubber_ga5bb28aef7006413775791998936d6b81}
+
+\begin{DoxyCompactList}\small\item\em Generate an \char`\"{}incompressible\char`\"{} neo-\/\-Hookean material law $ W(F)=c\iota_1(F^T F) $, where $\iota_1$ is the first principal matrix invariant . \end{DoxyCompactList}\item 
+\hypertarget{group__Rubber_gaf6f5ab6a379ef03d513acc5042731a01}{{\footnotesize template$<$class Matrix , int offset = Linear\-Algebra\-::dimension$<$\-Matrix$>$()$>$ }\\auto \hyperlink{group__Rubber_gaf6f5ab6a379ef03d513acc5042731a01}{modified\-Incompressible\-Neo\-Hooke} (double c, const Matrix \&F)}\label{group__Rubber_gaf6f5ab6a379ef03d513acc5042731a01}
+
+\begin{DoxyCompactList}\small\item\em Generate an \char`\"{}incompressible\char`\"{} neo-\/\-Hookean material law $ W(F)=c\bar\iota_1(F^T F) $, where $\bar\iota_1$ is the modified first principal matrix invariant. \end{DoxyCompactList}\item 
+\hypertarget{group__Rubber_gac5c39cd9de55f4f0220a806cf28a7b30}{{\footnotesize template$<$class Inflation\-Penalty , class Compression\-Penalty , class Matrix , int offset = Linear\-Algebra\-::dimension$<$\-Matrix$>$()$>$ }\\auto \hyperlink{group__Rubber_gac5c39cd9de55f4f0220a806cf28a7b30}{compressible\-Neo\-Hooke} (double c, double d0, double d1, const Matrix \&F)}\label{group__Rubber_gac5c39cd9de55f4f0220a806cf28a7b30}
+
+\begin{DoxyCompactList}\small\item\em Generate a compressible neo-\/\-Hookean material law $ W(F)=c\iota_1(F^T F)+d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) $, where $\iota_1$ is the first principal matrix invariant. \end{DoxyCompactList}\item 
+\hypertarget{group__Rubber_gac10942df03f037afdf0a81d330361a6b}{{\footnotesize template$<$class Inflation\-Penalty , class Compression\-Penalty , class Matrix , int offset = Linear\-Algebra\-::dimension$<$\-Matrix$>$()$>$ }\\auto \hyperlink{group__Rubber_gac10942df03f037afdf0a81d330361a6b}{modified\-Compressible\-Neo\-Hooke} (double c, double d0, double d1, const Matrix \&F)}\label{group__Rubber_gac10942df03f037afdf0a81d330361a6b}
+
+\begin{DoxyCompactList}\small\item\em Generate a compressible neo-\/\-Hookean material law $ W(F)=c\bar\iota_1(F^T F)+d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) $, where $\bar\iota_1$ is the modified first principal matrix invariant. \end{DoxyCompactList}\item 
+\hypertarget{namespaceFunG_ad26faeb264bb4b1cd7e70f3811c366c8}{{\footnotesize template$<$class Inflation , class Compression , class Matrix $>$ }\\auto \hyperlink{namespaceFunG_ad26faeb264bb4b1cd7e70f3811c366c8}{volumetric\-Penalty} (double d0, double d1, const Matrix \&A)}\label{namespaceFunG_ad26faeb264bb4b1cd7e70f3811c366c8}
+
+\begin{DoxyCompactList}\small\item\em Create volumetric penalty function composed of a penalty for inflation and one for compression. \end{DoxyCompactList}\item 
+\hypertarget{namespaceFunG_aaf30b9c36ed86e01b94f6b7c1d95cae8}{{\footnotesize template$<$class Matrix $>$ }\\auto \hyperlink{namespaceFunG_aaf30b9c36ed86e01b94f6b7c1d95cae8}{volumetric\-Quad\-And\-Log} (double d0, double d1, const Matrix \&A)}\label{namespaceFunG_aaf30b9c36ed86e01b94f6b7c1d95cae8}
+
+\begin{DoxyCompactList}\small\item\em Create the volumetric penalty function $ d_0 j^2 + d_1 \log(j),\ j=\det(A) $. \end{DoxyCompactList}\item 
+\hypertarget{namespaceFunG_adf4be5df85ea9df10cc9e11c11aaeb7b}{{\footnotesize template$<$class Matrix $>$ }\\auto \hyperlink{namespaceFunG_adf4be5df85ea9df10cc9e11c11aaeb7b}{volumetric\-Hartmann\-Neff} (double d0, double d1, const Matrix \&A)}\label{namespaceFunG_adf4be5df85ea9df10cc9e11c11aaeb7b}
+
+\begin{DoxyCompactList}\small\item\em Create the volumetric penalty function $ d_0 j^5 + d_1 j^{-5},\ j=\det(A) $. \end{DoxyCompactList}\item 
+\hypertarget{namespaceFunG_a4784211358c877f05ad9426850303273}{{\footnotesize template$<$class Matrix $>$ }\\auto \hyperlink{namespaceFunG_a4784211358c877f05ad9426850303273}{yield\-Surface} (double beta, double offset, Matrix sigma=Linear\-Algebra\-::unit\-Matrix$<$ Matrix $>$())}\label{namespaceFunG_a4784211358c877f05ad9426850303273}
+
+\begin{DoxyCompactList}\small\item\em Yield surface $ \frac{\beta}{3}\iota_1(\sigma) + J_2(\sigma)-offset $, where $\iota_1$ is the first principal and $J_2$ is the second deviatoric invariant. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class F $>$ }\\auto \hyperlink{namespaceFunG_a3a2af76439713dc7635e0c538ac34f15}{finalize} (const F \&f)
+\begin{DoxyCompactList}\small\item\em Finish function definition. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class F $>$ }\\auto \hyperlink{namespaceFunG_a0c224cd9b212427657c6798ac8adf6ac}{finalize\-\_\-scalar} (const F \&f)
+\begin{DoxyCompactList}\small\item\em Finish function definition. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class F , class G , class  = std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$\-::value $\vert$$\vert$                                      std\-::is\-\_\-base\-\_\-of$<$\-Base,\-G$>$\-::value $>$$>$ }\\auto \hyperlink{namespaceFunG_ac7f61d48ff610ec4be8ee6994d165077}{operator+} (const F \&f, const G \&g)
+\begin{DoxyCompactList}\small\item\em overload of \char`\"{}+\char`\"{}-\/operator for the generation of functions. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class F , class G , class  = std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$\-::value $\vert$$\vert$ std\-::is\-\_\-base\-\_\-of$<$\-Base,\-G$>$\-::value $>$$>$ }\\auto \hyperlink{namespaceFunG_a014be932d3b4eb377d8e60271e864438}{operator$\ast$} (const F \&f, const G \&g)
+\begin{DoxyCompactList}\small\item\em overload of \char`\"{}$\ast$\char`\"{}-\/operator for the generation of functions. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class F , class  = std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$\-::value $>$$>$ }\\auto \hyperlink{namespaceFunG_aeb22ff63cd78cb63d81b601c656da2c1}{operator$^\wedge$} (const F \&f, int k)
+\begin{DoxyCompactList}\small\item\em overload of \char`\"{}$^\wedge$\char`\"{}-\/operator for the generation of functions. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class F , class G , class  = std\-::enable\-\_\-if\-\_\-t$<$std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$\-::value \&\&                                     std\-::is\-\_\-base\-\_\-of$<$\-Base,\-G$>$\-::value$>$$>$ }\\auto \hyperlink{namespaceFunG_a56701b5e83b96d2d6cc5c482e36caa39}{operator$<$$<$} (const F \&f, const G \&g)
+\begin{DoxyCompactList}\small\item\em overload of \char`\"{}$<$$<$\char`\"{}-\/operator for chaining functions $f$ and $g$ to $ f \circ g $. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class F , class T , class  = std\-::enable\-\_\-if\-\_\-t$<$std\-::is\-\_\-convertible$<$\-T,decltype(std\-::declval$<$\-F$>$().\-d0())$>$\-::value \&\&                                     std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$\-::value$>$$>$ }\\auto \hyperlink{namespaceFunG_aa0c4552dee9179fb50b57ece863d835a}{operator-\/} (const F \&f, const T \&t)
+\begin{DoxyCompactList}\small\item\em overload of \char`\"{}-\/\char`\"{}-\/operator for the generation of functions. Here the second argument is a constant that is wrapped in to an object of type \hyperlink{structFunG_1_1Constant}{Constant}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class F , class T , class  = std\-::enable\-\_\-if\-\_\-t$<$std\-::is\-\_\-convertible$<$\-T,decltype(std\-::declval$<$\-F$>$().\-d0())$>$\-::value \&\&                                     std\-::is\-\_\-base\-\_\-of$<$\-Base,\-F$>$\-::value$>$$>$ }\\auto \hyperlink{namespaceFunG_a7f522d98a8d5bc8c3b11599d3136ded4}{operator-\/} (const T \&t, const F \&f)
+\begin{DoxyCompactList}\small\item\em overload of \char`\"{}-\/\char`\"{}-\/operator for the generation of functions. Here the first argument is a constant that is wrapped in to an object of type \hyperlink{structFunG_1_1Constant}{Constant}. \end{DoxyCompactList}\item 
+\hypertarget{namespaceFunG_a165e879e76d3a2a8906938f3658445ce}{{\footnotesize template$<$class Arg $>$ }\\auto \hyperlink{namespaceFunG_a165e879e76d3a2a8906938f3658445ce}{identity} (const Arg \&x)}\label{namespaceFunG_a165e879e76d3a2a8906938f3658445ce}
+
+\begin{DoxyCompactList}\small\item\em Construct Identity$<$\-Arg$>$(x). \end{DoxyCompactList}\item 
 \hypertarget{namespaceFunG_a063d3e8c19dbea3ee1396736fecb64e1}{{\footnotesize template$<$class Arg , class  = std\-::enable\-\_\-if\-\_\-t$<$ !std\-::is\-\_\-base\-\_\-of$<$\-Base,\-Arg$>$() \&\& !std\-::is\-\_\-arithmetic$<$\-Arg$>$() $>$, class  = std\-::enable\-\_\-if\-\_\-t$<$ !\-Checks\-::summation$<$\-Arg$>$() \&\&                                       Checks\-::in\-Place\-Summation$<$\-Arg$>$() $>$$>$ }\\auto \hyperlink{namespaceFunG_a063d3e8c19dbea3ee1396736fecb64e1}{operator+} (Arg x, const Arg \&y)}\label{namespaceFunG_a063d3e8c19dbea3ee1396736fecb64e1}
 
 \begin{DoxyCompactList}\small\item\em Defines operator+ if not yet defined and in-\/place summation (operator+=()) is supported. \end{DoxyCompactList}\item 
@@ -141,7 +138,10 @@ struct \hyperlink{structFunG_1_1Zero_3_01Matrix_00_01void__t_3_01Checks_1_1TryCa
 {\footnotesize template$<$class Matrix , class  = std\-::enable\-\_\-if\-\_\-t$<$\-Checks\-::is\-Constant\-Size\-Matrix$<$\-Matrix$>$()$>$$>$ }\\Matrix \hyperlink{namespaceFunG_a649b4470d6def401959bfea3a368c48c}{zero} ()
 \item 
 {\footnotesize template$<$class Matrix , class  = std\-::enable\-\_\-if\-\_\-t$<$!\-Checks\-::is\-Constant\-Size\-Matrix$<$\-Matrix$>$()$>$$>$ }\\constexpr Matrix \hyperlink{namespaceFunG_ae633433339ba30207aa526e54e3924b4}{zero} (int rows, int cols)
-\end{DoxyCompactItemize}
+\item 
+\hypertarget{namespaceFunG_a1c474456411f028e14eab67ff6eebe0c}{{\footnotesize template$<$int id, class T $>$ }\\\hyperlink{structFunG_1_1Variable}{Variable}$<$ T, id $>$ \hyperlink{namespaceFunG_a1c474456411f028e14eab67ff6eebe0c}{variable} (const T \&t)}\label{namespaceFunG_a1c474456411f028e14eab67ff6eebe0c}
+
+\begin{DoxyCompactList}\small\item\em Generate variable from input type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}

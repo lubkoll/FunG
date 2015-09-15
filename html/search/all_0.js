@@ -1,7 +1,6 @@
 var searchData=
 [
   ['addtransposed',['addTransposed',['../namespaceFunG.html#a0211d0d26c669d56b5113fd2292902e5',1,'FunG::addTransposed(Matrix &amp;A)'],['../namespaceFunG.html#af07d74bcaa0a3b7dbb4eee50d2edf2ff',1,'FunG::addTransposed(Matrix &amp;A)']]],
-  ['adiposetissue_5fsommerholzapfel_2ehh',['adiposeTissue_SommerHolzapfel.hh',['../adiposeTissue__SommerHolzapfel_8hh.html',1,'']]],
   ['arithmeticconcept',['ArithmeticConcept',['../structFunG_1_1Concepts_1_1ArithmeticConcept.html',1,'FunG::Concepts']]],
   ['arithmeticconceptcheck',['ArithmeticConceptCheck',['../structFunG_1_1Concepts_1_1ArithmeticConceptCheck.html',1,'FunG::Concepts']]],
   ['arithmeticconceptcheck_3c_20matrix_20_3e',['ArithmeticConceptCheck&lt; Matrix &gt;',['../structFunG_1_1Concepts_1_1ArithmeticConceptCheck.html',1,'FunG::Concepts']]],

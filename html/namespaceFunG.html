@@ -108,9 +108,6 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1Identity.html">Identity</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identity mapping \( f(x)=x \).  <a href="structFunG_1_1Identity.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1Variable.html">Variable</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Independent variable. Can be uniquely identified by its id.  <a href="structFunG_1_1Variable.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1Base.html">Base</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for functions satisfying FunctionConcept. Required for enabling the operators in <a class="el" href="generate_8hh_source.html">generate.hh</a>.  <a href="structFunG_1_1Base.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -126,6 +123,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1Zero_3_01Matrix_00_01void__t_3_01Checks_1_1TryCallToFill_3_01Matrix_01_4_01_4_01_4.html">Zero&lt; Matrix, void_t&lt; Checks::TryCallToFill&lt; Matrix &gt; &gt; &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization for the case that a matrix can be set to zero by calling the member function fill(0).  <a href="structFunG_1_1Zero_3_01Matrix_00_01void__t_3_01Checks_1_1TryCallToFill_3_01Matrix_01_4_01_4_01_4.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1Variable.html">Variable</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Independent variable. Can be uniquely identified by its id.  <a href="structFunG_1_1Variable.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -133,16 +133,16 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ab2a52dfbc62e262c67f293fda5f81ef7"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#ab2a52dfbc62e262c67f293fda5f81ef7">Finalize</a> = Detail::FinalizeImpl&lt; F, arithmeticArgument, Checks::hasVariable&lt; F &gt;() &gt;</td></tr>
 <tr class="memdesc:ab2a52dfbc62e262c67f293fda5f81ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish function definition.  <a href="#ab2a52dfbc62e262c67f293fda5f81ef7">More...</a><br/></td></tr>
 <tr class="separator:ab2a52dfbc62e262c67f293fda5f81ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d589ef7d011a46a72847eabcbbb4532"><td class="memTemplParams" colspan="2"><a class="anchor" id="a3d589ef7d011a46a72847eabcbbb4532"></a>
-template&lt;class F , int id&gt; </td></tr>
-<tr class="memitem:a3d589ef7d011a46a72847eabcbbb4532"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a3d589ef7d011a46a72847eabcbbb4532">Variable_t</a> = typename VariableDetail::VariableType&lt; F, id &gt;::type</td></tr>
-<tr class="memdesc:a3d589ef7d011a46a72847eabcbbb4532"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get underlying type of variable with index id. <br/></td></tr>
-<tr class="separator:a3d589ef7d011a46a72847eabcbbb4532"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cde667596590eb8d32e4a5ee76ddbb9"><td class="memTemplParams" colspan="2"><a class="anchor" id="a0cde667596590eb8d32e4a5ee76ddbb9"></a>
 template&lt;class... Types&gt; </td></tr>
 <tr class="memitem:a0cde667596590eb8d32e4a5ee76ddbb9"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a0cde667596590eb8d32e4a5ee76ddbb9">void_t</a> = typename Detail::voider&lt; Types...&gt;::type</td></tr>
 <tr class="memdesc:a0cde667596590eb8d32e4a5ee76ddbb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Most fascinating type ever. Is always void. <br/></td></tr>
 <tr class="separator:a0cde667596590eb8d32e4a5ee76ddbb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d589ef7d011a46a72847eabcbbb4532"><td class="memTemplParams" colspan="2"><a class="anchor" id="a3d589ef7d011a46a72847eabcbbb4532"></a>
+template&lt;class F , int id&gt; </td></tr>
+<tr class="memitem:a3d589ef7d011a46a72847eabcbbb4532"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a3d589ef7d011a46a72847eabcbbb4532">Variable_t</a> = typename VariableDetail::VariableType&lt; F, id &gt;::type</td></tr>
+<tr class="memdesc:a3d589ef7d011a46a72847eabcbbb4532"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get underlying type of variable with index id. <br/></td></tr>
+<tr class="separator:a3d589ef7d011a46a72847eabcbbb4532"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -154,98 +154,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a65c509062b62b3303268cabc97b75a65"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a65c509062b62b3303268cabc97b75a65">constant</a> (const Arg &amp;x)</td></tr>
 <tr class="memdesc:a65c509062b62b3303268cabc97b75a65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrap a constant.  <a href="#a65c509062b62b3303268cabc97b75a65">More...</a><br/></td></tr>
 <tr class="separator:a65c509062b62b3303268cabc97b75a65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a2af76439713dc7635e0c538ac34f15"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
-<tr class="memitem:a3a2af76439713dc7635e0c538ac34f15"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a3a2af76439713dc7635e0c538ac34f15">finalize</a> (const F &amp;f)</td></tr>
-<tr class="memdesc:a3a2af76439713dc7635e0c538ac34f15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish function definition.  <a href="#a3a2af76439713dc7635e0c538ac34f15">More...</a><br/></td></tr>
-<tr class="separator:a3a2af76439713dc7635e0c538ac34f15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c224cd9b212427657c6798ac8adf6ac"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
-<tr class="memitem:a0c224cd9b212427657c6798ac8adf6ac"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a0c224cd9b212427657c6798ac8adf6ac">finalize_scalar</a> (const F &amp;f)</td></tr>
-<tr class="memdesc:a0c224cd9b212427657c6798ac8adf6ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish function definition.  <a href="#a0c224cd9b212427657c6798ac8adf6ac">More...</a><br/></td></tr>
-<tr class="separator:a0c224cd9b212427657c6798ac8adf6ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7f61d48ff610ec4be8ee6994d165077"><td class="memTemplParams" colspan="2">template&lt;class F , class G , class  = std::enable_if_t&lt; std::is_base_of&lt;Base,F&gt;::value ||                                      std::is_base_of&lt;Base,G&gt;::value &gt;&gt; </td></tr>
-<tr class="memitem:ac7f61d48ff610ec4be8ee6994d165077"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#ac7f61d48ff610ec4be8ee6994d165077">operator+</a> (const F &amp;f, const G &amp;g)</td></tr>
-<tr class="memdesc:ac7f61d48ff610ec4be8ee6994d165077"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "+"-operator for the generation of functions.  <a href="#ac7f61d48ff610ec4be8ee6994d165077">More...</a><br/></td></tr>
-<tr class="separator:ac7f61d48ff610ec4be8ee6994d165077"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a014be932d3b4eb377d8e60271e864438"><td class="memTemplParams" colspan="2">template&lt;class F , class G , class  = std::enable_if_t&lt; std::is_base_of&lt;Base,F&gt;::value || std::is_base_of&lt;Base,G&gt;::value &gt;&gt; </td></tr>
-<tr class="memitem:a014be932d3b4eb377d8e60271e864438"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a014be932d3b4eb377d8e60271e864438">operator*</a> (const F &amp;f, const G &amp;g)</td></tr>
-<tr class="memdesc:a014be932d3b4eb377d8e60271e864438"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "*"-operator for the generation of functions.  <a href="#a014be932d3b4eb377d8e60271e864438">More...</a><br/></td></tr>
-<tr class="separator:a014be932d3b4eb377d8e60271e864438"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb22ff63cd78cb63d81b601c656da2c1"><td class="memTemplParams" colspan="2">template&lt;class F , class  = std::enable_if_t&lt; std::is_base_of&lt;Base,F&gt;::value &gt;&gt; </td></tr>
-<tr class="memitem:aeb22ff63cd78cb63d81b601c656da2c1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#aeb22ff63cd78cb63d81b601c656da2c1">operator^</a> (const F &amp;f, int k)</td></tr>
-<tr class="memdesc:aeb22ff63cd78cb63d81b601c656da2c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "^"-operator for the generation of functions.  <a href="#aeb22ff63cd78cb63d81b601c656da2c1">More...</a><br/></td></tr>
-<tr class="separator:aeb22ff63cd78cb63d81b601c656da2c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56701b5e83b96d2d6cc5c482e36caa39"><td class="memTemplParams" colspan="2">template&lt;class F , class G , class  = std::enable_if_t&lt;std::is_base_of&lt;Base,F&gt;::value &amp;&amp;                                     std::is_base_of&lt;Base,G&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:a56701b5e83b96d2d6cc5c482e36caa39"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a56701b5e83b96d2d6cc5c482e36caa39">operator&lt;&lt;</a> (const F &amp;f, const G &amp;g)</td></tr>
-<tr class="memdesc:a56701b5e83b96d2d6cc5c482e36caa39"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "&lt;&lt;"-operator for chaining functions \(f\) and \(g\) to \( f \circ g \).  <a href="#a56701b5e83b96d2d6cc5c482e36caa39">More...</a><br/></td></tr>
-<tr class="separator:a56701b5e83b96d2d6cc5c482e36caa39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0c4552dee9179fb50b57ece863d835a"><td class="memTemplParams" colspan="2">template&lt;class F , class T , class  = std::enable_if_t&lt;std::is_convertible&lt;T,decltype(std::declval&lt;F&gt;().d0())&gt;::value &amp;&amp;                                     std::is_base_of&lt;Base,F&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:aa0c4552dee9179fb50b57ece863d835a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#aa0c4552dee9179fb50b57ece863d835a">operator-</a> (const F &amp;f, const T &amp;t)</td></tr>
-<tr class="memdesc:aa0c4552dee9179fb50b57ece863d835a"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "-"-operator for the generation of functions. Here the second argument is a constant that is wrapped in to an object of type <a class="el" href="structFunG_1_1Constant.html" title="Wrap a constant. ">Constant</a>.  <a href="#aa0c4552dee9179fb50b57ece863d835a">More...</a><br/></td></tr>
-<tr class="separator:aa0c4552dee9179fb50b57ece863d835a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f522d98a8d5bc8c3b11599d3136ded4"><td class="memTemplParams" colspan="2">template&lt;class F , class T , class  = std::enable_if_t&lt;std::is_convertible&lt;T,decltype(std::declval&lt;F&gt;().d0())&gt;::value &amp;&amp;                                     std::is_base_of&lt;Base,F&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:a7f522d98a8d5bc8c3b11599d3136ded4"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a7f522d98a8d5bc8c3b11599d3136ded4">operator-</a> (const T &amp;t, const F &amp;f)</td></tr>
-<tr class="memdesc:a7f522d98a8d5bc8c3b11599d3136ded4"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "-"-operator for the generation of functions. Here the first argument is a constant that is wrapped in to an object of type <a class="el" href="structFunG_1_1Constant.html" title="Wrap a constant. ">Constant</a>.  <a href="#a7f522d98a8d5bc8c3b11599d3136ded4">More...</a><br/></td></tr>
-<tr class="separator:a7f522d98a8d5bc8c3b11599d3136ded4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a165e879e76d3a2a8906938f3658445ce"><td class="memTemplParams" colspan="2"><a class="anchor" id="a165e879e76d3a2a8906938f3658445ce"></a>
-template&lt;class Arg &gt; </td></tr>
-<tr class="memitem:a165e879e76d3a2a8906938f3658445ce"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a165e879e76d3a2a8906938f3658445ce">identity</a> (const Arg &amp;x)</td></tr>
-<tr class="memdesc:a165e879e76d3a2a8906938f3658445ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct Identity&lt;Arg&gt;(x). <br/></td></tr>
-<tr class="separator:a165e879e76d3a2a8906938f3658445ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c474456411f028e14eab67ff6eebe0c"><td class="memTemplParams" colspan="2"><a class="anchor" id="a1c474456411f028e14eab67ff6eebe0c"></a>
-template&lt;int id, class T &gt; </td></tr>
-<tr class="memitem:a1c474456411f028e14eab67ff6eebe0c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structFunG_1_1Variable.html">Variable</a>&lt; T, id &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a1c474456411f028e14eab67ff6eebe0c">variable</a> (const T &amp;t)</td></tr>
-<tr class="memdesc:a1c474456411f028e14eab67ff6eebe0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate variable from input type. <br/></td></tr>
-<tr class="separator:a1c474456411f028e14eab67ff6eebe0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad26faeb264bb4b1cd7e70f3811c366c8"><td class="memTemplParams" colspan="2"><a class="anchor" id="ad26faeb264bb4b1cd7e70f3811c366c8"></a>
-template&lt;class Inflation , class Compression , class Matrix &gt; </td></tr>
-<tr class="memitem:ad26faeb264bb4b1cd7e70f3811c366c8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#ad26faeb264bb4b1cd7e70f3811c366c8">volumetricPenalty</a> (double d0, double d1, const Matrix &amp;A)</td></tr>
-<tr class="memdesc:ad26faeb264bb4b1cd7e70f3811c366c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create volumetric penalty function composed of a penalty for inflation and one for compression. <br/></td></tr>
-<tr class="separator:ad26faeb264bb4b1cd7e70f3811c366c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf30b9c36ed86e01b94f6b7c1d95cae8"><td class="memTemplParams" colspan="2"><a class="anchor" id="aaf30b9c36ed86e01b94f6b7c1d95cae8"></a>
-template&lt;class Matrix &gt; </td></tr>
-<tr class="memitem:aaf30b9c36ed86e01b94f6b7c1d95cae8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#aaf30b9c36ed86e01b94f6b7c1d95cae8">volumetricQuadAndLog</a> (double d0, double d1, const Matrix &amp;A)</td></tr>
-<tr class="memdesc:aaf30b9c36ed86e01b94f6b7c1d95cae8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the volumetric penalty function \( d_0 j^2 + d_1 \log(j),\ j=\det(A) \). <br/></td></tr>
-<tr class="separator:aaf30b9c36ed86e01b94f6b7c1d95cae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf4be5df85ea9df10cc9e11c11aaeb7b"><td class="memTemplParams" colspan="2"><a class="anchor" id="adf4be5df85ea9df10cc9e11c11aaeb7b"></a>
-template&lt;class Matrix &gt; </td></tr>
-<tr class="memitem:adf4be5df85ea9df10cc9e11c11aaeb7b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#adf4be5df85ea9df10cc9e11c11aaeb7b">volumetricHartmannNeff</a> (double d0, double d1, const Matrix &amp;A)</td></tr>
-<tr class="memdesc:adf4be5df85ea9df10cc9e11c11aaeb7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the volumetric penalty function \( d_0 j^5 + d_1 j^{-5},\ j=\det(A) \). <br/></td></tr>
-<tr class="separator:adf4be5df85ea9df10cc9e11c11aaeb7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4784211358c877f05ad9426850303273"><td class="memTemplParams" colspan="2"><a class="anchor" id="a4784211358c877f05ad9426850303273"></a>
-template&lt;class Matrix &gt; </td></tr>
-<tr class="memitem:a4784211358c877f05ad9426850303273"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a4784211358c877f05ad9426850303273">yieldSurface</a> (double beta, double offset, Matrix sigma=LinearAlgebra::unitMatrix&lt; Matrix &gt;())</td></tr>
-<tr class="memdesc:a4784211358c877f05ad9426850303273"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yield surface \( \frac{\beta}{3}\iota_1(\sigma) + J_2(\sigma)-offset \), where \(\iota_1\) is the first principal and \(J_2\) is the second deviatoric invariant. <br/></td></tr>
-<tr class="separator:a4784211358c877f05ad9426850303273"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gace19173e33490aadd36ae3a03fd1d85c"><td class="memTemplParams" colspan="2"><a class="anchor" id="gace19173e33490aadd36ae3a03fd1d85c"></a>
-template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
-<tr class="memitem:gace19173e33490aadd36ae3a03fd1d85c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#gace19173e33490aadd36ae3a03fd1d85c">incompressibleMooneyRivlin</a> (double c0, double c1, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:gace19173e33490aadd36ae3a03fd1d85c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an "incompressible" Mooney-Rivlin material law \( W(F)=c_0\iota_1(F^T F) + c_1\iota_2(F^T F) \), where \(\iota_1\) is the first and \(\iota_2\) the second principal matrix invariant. <br/></td></tr>
-<tr class="separator:gace19173e33490aadd36ae3a03fd1d85c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9a1894daa10a0bdcc620c6c41ecb6f19"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga9a1894daa10a0bdcc620c6c41ecb6f19"></a>
-template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
-<tr class="memitem:ga9a1894daa10a0bdcc620c6c41ecb6f19"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#ga9a1894daa10a0bdcc620c6c41ecb6f19">compressibleMooneyRivlin</a> (double c0, double c1, double d0, double d1, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:ga9a1894daa10a0bdcc620c6c41ecb6f19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a compressible Mooney-Rivlin material law \( W(F)=c_0\iota_1(F^T F) + c_1\iota_2(F^T F) + d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) \), where \(\iota_1\) is the first and \(\iota_2\) the second principal matrix invariant. <br/></td></tr>
-<tr class="separator:ga9a1894daa10a0bdcc620c6c41ecb6f19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5bb28aef7006413775791998936d6b81"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga5bb28aef7006413775791998936d6b81"></a>
-template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
-<tr class="memitem:ga5bb28aef7006413775791998936d6b81"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#ga5bb28aef7006413775791998936d6b81">incompressibleNeoHooke</a> (double c, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:ga5bb28aef7006413775791998936d6b81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an "incompressible" neo-Hookean material law \( W(F)=c\iota_1(F^T F) \), where \(\iota_1\) is the first principal matrix invariant . <br/></td></tr>
-<tr class="separator:ga5bb28aef7006413775791998936d6b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf6f5ab6a379ef03d513acc5042731a01"><td class="memTemplParams" colspan="2"><a class="anchor" id="gaf6f5ab6a379ef03d513acc5042731a01"></a>
-template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
-<tr class="memitem:gaf6f5ab6a379ef03d513acc5042731a01"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#gaf6f5ab6a379ef03d513acc5042731a01">modifiedIncompressibleNeoHooke</a> (double c, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:gaf6f5ab6a379ef03d513acc5042731a01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an "incompressible" neo-Hookean material law \( W(F)=c\bar\iota_1(F^T F) \), where \(\bar\iota_1\) is the modified first principal matrix invariant. <br/></td></tr>
-<tr class="separator:gaf6f5ab6a379ef03d513acc5042731a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac5c39cd9de55f4f0220a806cf28a7b30"><td class="memTemplParams" colspan="2"><a class="anchor" id="gac5c39cd9de55f4f0220a806cf28a7b30"></a>
-template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
-<tr class="memitem:gac5c39cd9de55f4f0220a806cf28a7b30"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#gac5c39cd9de55f4f0220a806cf28a7b30">compressibleNeoHooke</a> (double c, double d0, double d1, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:gac5c39cd9de55f4f0220a806cf28a7b30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a compressible neo-Hookean material law \( W(F)=c\iota_1(F^T F)+d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) \), where \(\iota_1\) is the first principal matrix invariant. <br/></td></tr>
-<tr class="separator:gac5c39cd9de55f4f0220a806cf28a7b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac10942df03f037afdf0a81d330361a6b"><td class="memTemplParams" colspan="2"><a class="anchor" id="gac10942df03f037afdf0a81d330361a6b"></a>
-template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
-<tr class="memitem:gac10942df03f037afdf0a81d330361a6b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#gac10942df03f037afdf0a81d330361a6b">modifiedCompressibleNeoHooke</a> (double c, double d0, double d1, const Matrix &amp;F)</td></tr>
-<tr class="memdesc:gac10942df03f037afdf0a81d330361a6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a compressible neo-Hookean material law \( W(F)=c\bar\iota_1(F^T F)+d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) \), where \(\bar\iota_1\) is the modified first principal matrix invariant. <br/></td></tr>
-<tr class="separator:gac10942df03f037afdf0a81d330361a6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac269eefc1abb994044e1634c20a98061"><td class="memTemplParams" colspan="2">template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
 <tr class="memitem:gac269eefc1abb994044e1634c20a98061"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#gac269eefc1abb994044e1634c20a98061">incompressibleAdiposeTissue_SommerHolzapfel</a> (double cCells, double k1, double k2, double kappa, const Matrix &amp;M, const Matrix &amp;F)</td></tr>
 <tr class="memdesc:gac269eefc1abb994044e1634c20a98061"><td class="mdescLeft">&#160;</td><td class="mdescRight">Model for adipose tissue of <a class="el" href="citelist.html#CITEREF_Sommer2013">[3]</a>.  <a href="group__Biomechanics.html#gac269eefc1abb994044e1634c20a98061">More...</a><br/></td></tr>
@@ -294,6 +202,93 @@ template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , i
 <tr class="memitem:ga42721e772b7eada1b0bca98247ad440f"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#ga42721e772b7eada1b0bca98247ad440f">compressibleSkin_Hendriks</a> (double d0, double d1, const Matrix &amp;F)</td></tr>
 <tr class="memdesc:ga42721e772b7eada1b0bca98247ad440f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compressible version of the model for skin tissue of <a class="el" href="citelist.html#CITEREF_Hendriks2005">[1]</a>.  <a href="group__Biomechanics.html#ga42721e772b7eada1b0bca98247ad440f">More...</a><br/></td></tr>
 <tr class="separator:ga42721e772b7eada1b0bca98247ad440f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gace19173e33490aadd36ae3a03fd1d85c"><td class="memTemplParams" colspan="2"><a class="anchor" id="gace19173e33490aadd36ae3a03fd1d85c"></a>
+template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
+<tr class="memitem:gace19173e33490aadd36ae3a03fd1d85c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#gace19173e33490aadd36ae3a03fd1d85c">incompressibleMooneyRivlin</a> (double c0, double c1, const Matrix &amp;F)</td></tr>
+<tr class="memdesc:gace19173e33490aadd36ae3a03fd1d85c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an "incompressible" Mooney-Rivlin material law \( W(F)=c_0\iota_1(F^T F) + c_1\iota_2(F^T F) \), where \(\iota_1\) is the first and \(\iota_2\) the second principal matrix invariant. <br/></td></tr>
+<tr class="separator:gace19173e33490aadd36ae3a03fd1d85c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9a1894daa10a0bdcc620c6c41ecb6f19"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga9a1894daa10a0bdcc620c6c41ecb6f19"></a>
+template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
+<tr class="memitem:ga9a1894daa10a0bdcc620c6c41ecb6f19"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#ga9a1894daa10a0bdcc620c6c41ecb6f19">compressibleMooneyRivlin</a> (double c0, double c1, double d0, double d1, const Matrix &amp;F)</td></tr>
+<tr class="memdesc:ga9a1894daa10a0bdcc620c6c41ecb6f19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a compressible Mooney-Rivlin material law \( W(F)=c_0\iota_1(F^T F) + c_1\iota_2(F^T F) + d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) \), where \(\iota_1\) is the first and \(\iota_2\) the second principal matrix invariant. <br/></td></tr>
+<tr class="separator:ga9a1894daa10a0bdcc620c6c41ecb6f19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5bb28aef7006413775791998936d6b81"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga5bb28aef7006413775791998936d6b81"></a>
+template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
+<tr class="memitem:ga5bb28aef7006413775791998936d6b81"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#ga5bb28aef7006413775791998936d6b81">incompressibleNeoHooke</a> (double c, const Matrix &amp;F)</td></tr>
+<tr class="memdesc:ga5bb28aef7006413775791998936d6b81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an "incompressible" neo-Hookean material law \( W(F)=c\iota_1(F^T F) \), where \(\iota_1\) is the first principal matrix invariant . <br/></td></tr>
+<tr class="separator:ga5bb28aef7006413775791998936d6b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf6f5ab6a379ef03d513acc5042731a01"><td class="memTemplParams" colspan="2"><a class="anchor" id="gaf6f5ab6a379ef03d513acc5042731a01"></a>
+template&lt;class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
+<tr class="memitem:gaf6f5ab6a379ef03d513acc5042731a01"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#gaf6f5ab6a379ef03d513acc5042731a01">modifiedIncompressibleNeoHooke</a> (double c, const Matrix &amp;F)</td></tr>
+<tr class="memdesc:gaf6f5ab6a379ef03d513acc5042731a01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an "incompressible" neo-Hookean material law \( W(F)=c\bar\iota_1(F^T F) \), where \(\bar\iota_1\) is the modified first principal matrix invariant. <br/></td></tr>
+<tr class="separator:gaf6f5ab6a379ef03d513acc5042731a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac5c39cd9de55f4f0220a806cf28a7b30"><td class="memTemplParams" colspan="2"><a class="anchor" id="gac5c39cd9de55f4f0220a806cf28a7b30"></a>
+template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
+<tr class="memitem:gac5c39cd9de55f4f0220a806cf28a7b30"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#gac5c39cd9de55f4f0220a806cf28a7b30">compressibleNeoHooke</a> (double c, double d0, double d1, const Matrix &amp;F)</td></tr>
+<tr class="memdesc:gac5c39cd9de55f4f0220a806cf28a7b30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a compressible neo-Hookean material law \( W(F)=c\iota_1(F^T F)+d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) \), where \(\iota_1\) is the first principal matrix invariant. <br/></td></tr>
+<tr class="separator:gac5c39cd9de55f4f0220a806cf28a7b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac10942df03f037afdf0a81d330361a6b"><td class="memTemplParams" colspan="2"><a class="anchor" id="gac10942df03f037afdf0a81d330361a6b"></a>
+template&lt;class InflationPenalty , class CompressionPenalty , class Matrix , int offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt; </td></tr>
+<tr class="memitem:gac10942df03f037afdf0a81d330361a6b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#gac10942df03f037afdf0a81d330361a6b">modifiedCompressibleNeoHooke</a> (double c, double d0, double d1, const Matrix &amp;F)</td></tr>
+<tr class="memdesc:gac10942df03f037afdf0a81d330361a6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a compressible neo-Hookean material law \( W(F)=c\bar\iota_1(F^T F)+d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) \), where \(\bar\iota_1\) is the modified first principal matrix invariant. <br/></td></tr>
+<tr class="separator:gac10942df03f037afdf0a81d330361a6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad26faeb264bb4b1cd7e70f3811c366c8"><td class="memTemplParams" colspan="2"><a class="anchor" id="ad26faeb264bb4b1cd7e70f3811c366c8"></a>
+template&lt;class Inflation , class Compression , class Matrix &gt; </td></tr>
+<tr class="memitem:ad26faeb264bb4b1cd7e70f3811c366c8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#ad26faeb264bb4b1cd7e70f3811c366c8">volumetricPenalty</a> (double d0, double d1, const Matrix &amp;A)</td></tr>
+<tr class="memdesc:ad26faeb264bb4b1cd7e70f3811c366c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create volumetric penalty function composed of a penalty for inflation and one for compression. <br/></td></tr>
+<tr class="separator:ad26faeb264bb4b1cd7e70f3811c366c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf30b9c36ed86e01b94f6b7c1d95cae8"><td class="memTemplParams" colspan="2"><a class="anchor" id="aaf30b9c36ed86e01b94f6b7c1d95cae8"></a>
+template&lt;class Matrix &gt; </td></tr>
+<tr class="memitem:aaf30b9c36ed86e01b94f6b7c1d95cae8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#aaf30b9c36ed86e01b94f6b7c1d95cae8">volumetricQuadAndLog</a> (double d0, double d1, const Matrix &amp;A)</td></tr>
+<tr class="memdesc:aaf30b9c36ed86e01b94f6b7c1d95cae8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the volumetric penalty function \( d_0 j^2 + d_1 \log(j),\ j=\det(A) \). <br/></td></tr>
+<tr class="separator:aaf30b9c36ed86e01b94f6b7c1d95cae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf4be5df85ea9df10cc9e11c11aaeb7b"><td class="memTemplParams" colspan="2"><a class="anchor" id="adf4be5df85ea9df10cc9e11c11aaeb7b"></a>
+template&lt;class Matrix &gt; </td></tr>
+<tr class="memitem:adf4be5df85ea9df10cc9e11c11aaeb7b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#adf4be5df85ea9df10cc9e11c11aaeb7b">volumetricHartmannNeff</a> (double d0, double d1, const Matrix &amp;A)</td></tr>
+<tr class="memdesc:adf4be5df85ea9df10cc9e11c11aaeb7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the volumetric penalty function \( d_0 j^5 + d_1 j^{-5},\ j=\det(A) \). <br/></td></tr>
+<tr class="separator:adf4be5df85ea9df10cc9e11c11aaeb7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4784211358c877f05ad9426850303273"><td class="memTemplParams" colspan="2"><a class="anchor" id="a4784211358c877f05ad9426850303273"></a>
+template&lt;class Matrix &gt; </td></tr>
+<tr class="memitem:a4784211358c877f05ad9426850303273"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a4784211358c877f05ad9426850303273">yieldSurface</a> (double beta, double offset, Matrix sigma=LinearAlgebra::unitMatrix&lt; Matrix &gt;())</td></tr>
+<tr class="memdesc:a4784211358c877f05ad9426850303273"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yield surface \( \frac{\beta}{3}\iota_1(\sigma) + J_2(\sigma)-offset \), where \(\iota_1\) is the first principal and \(J_2\) is the second deviatoric invariant. <br/></td></tr>
+<tr class="separator:a4784211358c877f05ad9426850303273"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a2af76439713dc7635e0c538ac34f15"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
+<tr class="memitem:a3a2af76439713dc7635e0c538ac34f15"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a3a2af76439713dc7635e0c538ac34f15">finalize</a> (const F &amp;f)</td></tr>
+<tr class="memdesc:a3a2af76439713dc7635e0c538ac34f15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish function definition.  <a href="#a3a2af76439713dc7635e0c538ac34f15">More...</a><br/></td></tr>
+<tr class="separator:a3a2af76439713dc7635e0c538ac34f15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c224cd9b212427657c6798ac8adf6ac"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
+<tr class="memitem:a0c224cd9b212427657c6798ac8adf6ac"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a0c224cd9b212427657c6798ac8adf6ac">finalize_scalar</a> (const F &amp;f)</td></tr>
+<tr class="memdesc:a0c224cd9b212427657c6798ac8adf6ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish function definition.  <a href="#a0c224cd9b212427657c6798ac8adf6ac">More...</a><br/></td></tr>
+<tr class="separator:a0c224cd9b212427657c6798ac8adf6ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7f61d48ff610ec4be8ee6994d165077"><td class="memTemplParams" colspan="2">template&lt;class F , class G , class  = std::enable_if_t&lt; std::is_base_of&lt;Base,F&gt;::value ||                                      std::is_base_of&lt;Base,G&gt;::value &gt;&gt; </td></tr>
+<tr class="memitem:ac7f61d48ff610ec4be8ee6994d165077"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#ac7f61d48ff610ec4be8ee6994d165077">operator+</a> (const F &amp;f, const G &amp;g)</td></tr>
+<tr class="memdesc:ac7f61d48ff610ec4be8ee6994d165077"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "+"-operator for the generation of functions.  <a href="#ac7f61d48ff610ec4be8ee6994d165077">More...</a><br/></td></tr>
+<tr class="separator:ac7f61d48ff610ec4be8ee6994d165077"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a014be932d3b4eb377d8e60271e864438"><td class="memTemplParams" colspan="2">template&lt;class F , class G , class  = std::enable_if_t&lt; std::is_base_of&lt;Base,F&gt;::value || std::is_base_of&lt;Base,G&gt;::value &gt;&gt; </td></tr>
+<tr class="memitem:a014be932d3b4eb377d8e60271e864438"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a014be932d3b4eb377d8e60271e864438">operator*</a> (const F &amp;f, const G &amp;g)</td></tr>
+<tr class="memdesc:a014be932d3b4eb377d8e60271e864438"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "*"-operator for the generation of functions.  <a href="#a014be932d3b4eb377d8e60271e864438">More...</a><br/></td></tr>
+<tr class="separator:a014be932d3b4eb377d8e60271e864438"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb22ff63cd78cb63d81b601c656da2c1"><td class="memTemplParams" colspan="2">template&lt;class F , class  = std::enable_if_t&lt; std::is_base_of&lt;Base,F&gt;::value &gt;&gt; </td></tr>
+<tr class="memitem:aeb22ff63cd78cb63d81b601c656da2c1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#aeb22ff63cd78cb63d81b601c656da2c1">operator^</a> (const F &amp;f, int k)</td></tr>
+<tr class="memdesc:aeb22ff63cd78cb63d81b601c656da2c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "^"-operator for the generation of functions.  <a href="#aeb22ff63cd78cb63d81b601c656da2c1">More...</a><br/></td></tr>
+<tr class="separator:aeb22ff63cd78cb63d81b601c656da2c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56701b5e83b96d2d6cc5c482e36caa39"><td class="memTemplParams" colspan="2">template&lt;class F , class G , class  = std::enable_if_t&lt;std::is_base_of&lt;Base,F&gt;::value &amp;&amp;                                     std::is_base_of&lt;Base,G&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a56701b5e83b96d2d6cc5c482e36caa39"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a56701b5e83b96d2d6cc5c482e36caa39">operator&lt;&lt;</a> (const F &amp;f, const G &amp;g)</td></tr>
+<tr class="memdesc:a56701b5e83b96d2d6cc5c482e36caa39"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "&lt;&lt;"-operator for chaining functions \(f\) and \(g\) to \( f \circ g \).  <a href="#a56701b5e83b96d2d6cc5c482e36caa39">More...</a><br/></td></tr>
+<tr class="separator:a56701b5e83b96d2d6cc5c482e36caa39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0c4552dee9179fb50b57ece863d835a"><td class="memTemplParams" colspan="2">template&lt;class F , class T , class  = std::enable_if_t&lt;std::is_convertible&lt;T,decltype(std::declval&lt;F&gt;().d0())&gt;::value &amp;&amp;                                     std::is_base_of&lt;Base,F&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:aa0c4552dee9179fb50b57ece863d835a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#aa0c4552dee9179fb50b57ece863d835a">operator-</a> (const F &amp;f, const T &amp;t)</td></tr>
+<tr class="memdesc:aa0c4552dee9179fb50b57ece863d835a"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "-"-operator for the generation of functions. Here the second argument is a constant that is wrapped in to an object of type <a class="el" href="structFunG_1_1Constant.html" title="Wrap a constant. ">Constant</a>.  <a href="#aa0c4552dee9179fb50b57ece863d835a">More...</a><br/></td></tr>
+<tr class="separator:aa0c4552dee9179fb50b57ece863d835a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f522d98a8d5bc8c3b11599d3136ded4"><td class="memTemplParams" colspan="2">template&lt;class F , class T , class  = std::enable_if_t&lt;std::is_convertible&lt;T,decltype(std::declval&lt;F&gt;().d0())&gt;::value &amp;&amp;                                     std::is_base_of&lt;Base,F&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a7f522d98a8d5bc8c3b11599d3136ded4"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a7f522d98a8d5bc8c3b11599d3136ded4">operator-</a> (const T &amp;t, const F &amp;f)</td></tr>
+<tr class="memdesc:a7f522d98a8d5bc8c3b11599d3136ded4"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "-"-operator for the generation of functions. Here the first argument is a constant that is wrapped in to an object of type <a class="el" href="structFunG_1_1Constant.html" title="Wrap a constant. ">Constant</a>.  <a href="#a7f522d98a8d5bc8c3b11599d3136ded4">More...</a><br/></td></tr>
+<tr class="separator:a7f522d98a8d5bc8c3b11599d3136ded4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a165e879e76d3a2a8906938f3658445ce"><td class="memTemplParams" colspan="2"><a class="anchor" id="a165e879e76d3a2a8906938f3658445ce"></a>
+template&lt;class Arg &gt; </td></tr>
+<tr class="memitem:a165e879e76d3a2a8906938f3658445ce"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a165e879e76d3a2a8906938f3658445ce">identity</a> (const Arg &amp;x)</td></tr>
+<tr class="memdesc:a165e879e76d3a2a8906938f3658445ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct Identity&lt;Arg&gt;(x). <br/></td></tr>
+<tr class="separator:a165e879e76d3a2a8906938f3658445ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a063d3e8c19dbea3ee1396736fecb64e1"><td class="memTemplParams" colspan="2"><a class="anchor" id="a063d3e8c19dbea3ee1396736fecb64e1"></a>
 template&lt;class Arg , class  = std::enable_if_t&lt; !std::is_base_of&lt;Base,Arg&gt;() &amp;&amp; !std::is_arithmetic&lt;Arg&gt;() &gt;, class  = std::enable_if_t&lt; !Checks::summation&lt;Arg&gt;() &amp;&amp;                                       Checks::inPlaceSummation&lt;Arg&gt;() &gt;&gt; </td></tr>
 <tr class="memitem:a063d3e8c19dbea3ee1396736fecb64e1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a063d3e8c19dbea3ee1396736fecb64e1">operator+</a> (Arg x, const Arg &amp;y)</td></tr>
@@ -333,6 +328,11 @@ template&lt;class Arg1 , class Arg2 , class  = std::enable_if_t&lt; !std::is_bas
 <tr class="memitem:ae633433339ba30207aa526e54e3924b4"><td class="memTemplParams" colspan="2">template&lt;class Matrix , class  = std::enable_if_t&lt;!Checks::isConstantSizeMatrix&lt;Matrix&gt;()&gt;&gt; </td></tr>
 <tr class="memitem:ae633433339ba30207aa526e54e3924b4"><td class="memTemplItemLeft" align="right" valign="top">constexpr Matrix&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#ae633433339ba30207aa526e54e3924b4">zero</a> (int rows, int cols)</td></tr>
 <tr class="separator:ae633433339ba30207aa526e54e3924b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c474456411f028e14eab67ff6eebe0c"><td class="memTemplParams" colspan="2"><a class="anchor" id="a1c474456411f028e14eab67ff6eebe0c"></a>
+template&lt;int id, class T &gt; </td></tr>
+<tr class="memitem:a1c474456411f028e14eab67ff6eebe0c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structFunG_1_1Variable.html">Variable</a>&lt; T, id &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a1c474456411f028e14eab67ff6eebe0c">variable</a> (const T &amp;t)</td></tr>
+<tr class="memdesc:a1c474456411f028e14eab67ff6eebe0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate variable from input type. <br/></td></tr>
+<tr class="separator:a1c474456411f028e14eab67ff6eebe0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Main namespace of the FunG library. </p>
@@ -722,7 +722,7 @@ template&lt;class Matrix , class  = std::enable_if_t&lt;!Checks::isConstantSizeM
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 15 2015 00:49:24 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Sep 15 2015 16:35:44 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
