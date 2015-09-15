@@ -45,11 +45,14 @@ add_dependencies(gtest git_update)
 set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest-all.cc  PROPERTIES GENERATED 1)
 set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest_main.cc PROPERTIES GENERATED 1)
 
-include_directories(${PROJECT_SOURCE_DIR}/eigen)
+find_package(Eigen3)
+if(EIGEN3_FOUND)
+  include_directories(${EIGEN3_INCLUDE_DIR})
+  aux_source_directory(test/examples SRC_LIST)
+endif()
 
-aux_source_directory(test/CMath SRC_LIST)
-aux_source_directory(test/Examples SRC_LIST)
-aux_source_directory(test/MathematicalOperations SRC_LIST)
+aux_source_directory(test/cmath SRC_LIST)
+aux_source_directory(test/mathematical_operations SRC_LIST)
 
 add_executable(
     unit_tests
