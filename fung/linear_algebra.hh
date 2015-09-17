@@ -25,8 +25,10 @@
 #include "fung/linear_algebra/deviator.hh"
 #include "fung/linear_algebra/deviatoric_invariants.hh"
 #include "fung/linear_algebra/dimension.hh"
-#include "fung/linear_algebra/invariants.hh"
-#include "fung/linear_algebra/euclidean_norm.hh"
+#include "fung/linear_algebra/principal_invariants.hh"
+#include "fung/linear_algebra/mixed_invariants.hh"
+
+#include "fung/linear_algebra/frobenius_norm.hh"
 #include "fung/linear_algebra/strain_tensor.hh"
 #include "fung/linear_algebra/tensor_product.hh"
 #include "fung/linear_algebra/trace.hh"

@@ -107,7 +107,7 @@ namespace FunG
       /// Reset point of evaluation.
       void update(const Matrix& A)
       {
-        trace = Detail::ComputeTrace<dimension<Matrix>()>::apply(A);
+        trace = Detail::ComputeTrace<dim<Matrix>()>::apply(A);
       }
 
       /// Function value. Convenient access to d0.
@@ -133,11 +133,11 @@ namespace FunG
       template <int>
       auto d1(const Matrix& dA) const
       {
-        return Detail::ComputeTrace<dimension<Matrix>()>::apply(dA);
+        return Detail::ComputeTrace<dim<Matrix>()>::apply(dA);
       }
 
     private:
-      std::decay_t< at_t<Matrix> > trace = 0.;
+      std::decay_t< decltype( Detail::ComputeTrace<dim<Matrix>()>::apply(std::declval<Matrix>()) ) > trace = 0.;
     };
 
     /**
@@ -199,7 +199,7 @@ namespace FunG
       }
 
     private:
-      std::decay_t< at_t<Matrix> > trace = 0.;
+      std::decay_t< decltype(at(std::declval<Matrix>(),0,0)) > trace = 0.;
     };
     /**
      * \endcond
@@ -210,7 +210,7 @@ namespace FunG
      * \brief Trace of a matrix (sum of diagonal elements).
      */
     template< class Matrix >
-    using Trace = std::conditional_t< Checks::isConstantSizeMatrix<Matrix>() , ConstantSizeTrace<Matrix> , DynamicSizeTrace<Matrix> >;
+    using Trace = std::conditional_t< Checks::isConstantSize<Matrix>() , ConstantSizeTrace<Matrix> , DynamicSizeTrace<Matrix> >;
 
     /**
      * \cond DOCUMENT_IMPLEMENATION_DETAILS
@@ -243,13 +243,27 @@ namespace FunG
 
     /**
      * \ingroup LinearAlgebraGroup
-     * \brief Convenient generation of Trace<Matrix>.
-     * \return Trace< std::decay_t<decltype(f.d0())> >(arg.d0())( arg ) if arg is a function, and else Trace<Arg>(arg)
+     * \brief Generate \f$\mathrm{tr}(A)\f$.
+     * \return Trace<Matrix>(A)
      */
-    template <class Arg>
-    auto trace(const Arg& arg)
+    template <class Matrix,
+              std::enable_if_t<!std::is_base_of<Base,Matrix>::value>* = nullptr>
+    auto trace(const Matrix& A)
     {
-      return Detail::TraceImpl<std::is_base_of<Base,Arg>::value>::apply(arg);
+      return Trace<Matrix>(A);
+    }
+
+
+    /**
+     * \ingroup LinearAlgebraGroup
+     * \brief Generate \f$\mathrm{tr}\circ f\f$, where \f$f:\cdot\mapsto\mathbb{R}^{n,n} \f$.
+     * \return Trace< std::decay_t<decltype(f.d0())> >(arg.d0())( arg )
+     */
+    template <class F,
+              std::enable_if_t<std::is_base_of<Base,F>::value>* = nullptr>
+    auto trace(const F& f)
+    {
+      return Trace< std::decay_t<decltype(f.d0())> >( f.d0() )( f );
     }
   }
 }

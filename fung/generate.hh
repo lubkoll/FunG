@@ -196,8 +196,7 @@ namespace FunG
    * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
    */
   template <class F, class T,
-            class = std::enable_if_t<std::is_convertible<T,decltype(std::declval<F>().d0())>::value &&
-                                     std::is_base_of<Base,F>::value> >
+            std::enable_if_t<std::is_convertible<T,decltype(std::declval<F>().d0())>::value && std::is_base_of<Base,F>::value>* = nullptr >
   auto operator-(const F& f, const T& t)
   {
     return f + ( -1 * t );
@@ -210,8 +209,7 @@ namespace FunG
    * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
    */
   template <class F, class T,
-            class = std::enable_if_t<std::is_convertible<T,decltype(std::declval<F>().d0())>::value &&
-                                     std::is_base_of<Base,F>::value> >
+            std::enable_if_t<std::is_convertible<T,decltype(std::declval<F>().d0())>::value && std::is_base_of<Base,F>::value>* = nullptr >
   auto operator-(const T& t, const F& f)
   {
     return t + ( -1 * f );

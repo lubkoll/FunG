@@ -48,7 +48,7 @@ namespace FunG
 
     /// Dimension \f$n\f$ of a fixed size matrix in \f$\mathbb{R}^{n,n}\f$.
     template <class Matrix>
-    constexpr int dimension()
+    constexpr int dim()
     {
       return ExtractDimension<Matrix>::value;
     }

@@ -2,7 +2,7 @@
  * 
  * %FunG is structured as follows.
  *
- * - In the namespace \ref CMathGroup you find functions that are contained in <code>&lt;cmath&gt;</code> together with their derivatives. All header files contained in \ref CMathGroup can be included either with 
+ * - In the module \ref CMathGroup you find functions that are contained in <code>&lt;cmath&gt;</code> together with their derivatives. All header files contained in \ref CMathGroup can be included either with 
  * <pre><code>#include "math.hh"</code> or <code>#include "fung.hh"</code> (the latter including all(!) header files of the library).</pre>
  *
  * - In the namespace \ref LinearAlgebraGroup you find operations on matrices. In particular efficient implementations of the elementary building blocks of physical models, the matrix invariants, are provided. This includes (isotropic) principal as well as (anisotropic) mixed invariants, (isochoric) modified principal and mixed invariants and deviatoric invariants (\ref InvariantGroup). All header files contained in \ref LinearAlgebraGroup can be included either with 

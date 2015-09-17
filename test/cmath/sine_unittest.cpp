@@ -3,7 +3,7 @@
 
 auto generateTestSin()
 {
-  return FunG::CMath::Sin(1.);
+  return FunG::Sin(1.);
 }
 
 TEST(SineTest,D0)

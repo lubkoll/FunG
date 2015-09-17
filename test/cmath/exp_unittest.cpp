@@ -3,7 +3,7 @@
 
 auto generateTestExp()
 {
-  return FunG::CMath::Exp(1.);
+  return FunG::Exp(1.);
 }
 
 TEST(ExpTest,D0)
@@ -39,13 +39,13 @@ TEST(ExpTest,D3)
 
 TEST(Exp2Test,D0)
 {
-  const FunG::CMath::Exp2 fun(1.);
+  const FunG::Exp2 fun(1.);
   EXPECT_DOUBLE_EQ( fun.d0() ,  exp2(1.) );
 }
 
 TEST(Exp2Test,D1)
 {
-  const FunG::CMath::Exp2 fun(1.);
+  const FunG::Exp2 fun(1.);
   const double dx = 2.;
   const double ln2 = log(2);
   EXPECT_DOUBLE_EQ( fun.d1()   , exp2(1.)*ln2    );
@@ -54,7 +54,7 @@ TEST(Exp2Test,D1)
 
 TEST(Exp2Test,D2)
 {
-  const FunG::CMath::Exp2 fun(1.);
+  const FunG::Exp2 fun(1.);
   const double dx = 2., dy = 3.;
   const double ln2 = log(2);
   EXPECT_DOUBLE_EQ( fun.d2()      , exp2(1.)*ln2*ln2       );
@@ -63,7 +63,7 @@ TEST(Exp2Test,D2)
 
 TEST(Exp2Test,D3)
 {
-  const FunG::CMath::Exp2 fun(1.);
+  const FunG::Exp2 fun(1.);
   const double dx = 2., dy = 3., dz = 4.;
   const double ln2 = log(2);
   EXPECT_DOUBLE_EQ( fun.d3()         ,  exp2(1.)*ln2*ln2*ln2          );

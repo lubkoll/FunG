@@ -97,7 +97,6 @@ namespace Example_3
 
   auto generateTestFunction()
   {
-    using namespace FunG::CMath;
     using namespace FunG;
 
     auto g = Sqrt() << variable<0>(1.);

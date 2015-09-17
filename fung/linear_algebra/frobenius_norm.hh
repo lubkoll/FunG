@@ -18,15 +18,15 @@
 /*                                                                             */
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-#ifndef FUNG_LINEAR_ALGEBRA_EUCLIDEAN_NORM_HH
-#define FUNG_LINEAR_ALGEBRA_EUCLIDEAN_NORM_HH
+#ifndef FUNG_LINEAR_ALGEBRA_FROBENIUS_NORM_HH
+#define FUNG_LINEAR_ALGEBRA_FROBENIUS_NORM_HH
 
 #include <type_traits>
 
-#include "fung/mathematical_operations/chain.hh"
 #include "fung/cmath/pow.hh"
-#include "fung/util/extract_rows_and_cols.hh"
-#include "fung/util/static_checks.hh"
+#include "rows_and_cols.hh"
+#include "fung/util/at.hh"
+#include "fung/util/chainer.hh"
 
 namespace FunG
 {
@@ -41,49 +41,31 @@ namespace FunG
   namespace LinearAlgebra
   {
     /**
-     * \cond DOCUMENT_IMPLEMENTATION_DETAILS
+     * \internal DOCUMENT_IMPLEMENTATION_DETAILS
      */
     namespace Detail
     {
-      template < class Matrix , std::enable_if_t<Checks::isConstantSizeMatrix<Matrix>()> >
-      inline auto computeSquareEuclideanNorm(const Matrix& A)
+      template <class Matrix,
+                std::enable_if_t<Checks::isConstantSize<Matrix>()>* = nullptr >
+      auto computeScalarProduct(const Matrix& A, const Matrix& B) const
       {
-        using Index = decltype(numberOfRows<Matrix>());
+        using Index = decltype(rows<Matrix>());
         auto result = decltype(at(A,0,0)){0.};
-        for( Index i = 0; i < numberOfRows<Matrix>() ; ++i )
-          for( Index j = 0 ; j < numberOfColumns<Matrix>() ; ++j )
-            result += at(A,i,j) * at(A,i,j);
-        return result;
-      }
-
-      template < class Vector , std::enable_if_t<Checks::isStaticVector<Vector>() && !Checks::isConstantSizeMatrix<Vector>()> >
-      inline auto computeSquareEuclideanNorm(const Vector& A)
-      {
-        using Index = decltype(numberOfRows<Vector>());
-        auto result = decltype(at(A,0)){0.};
-        for( Index i = 0; i < numberOfRows<Vector>() ; ++i )
-            result += at(A,i) * at(A,i);
-        return result;
-      }
-
-      template < class Matrix , std::enable_if_t<Checks::isConstantSizeMatrix<Matrix>()> >
-      inline auto computeEuclideanScalarProduct(const Matrix& A, const Matrix& B)
-      {
-        using Index = decltype(numberOfRows<Matrix>());
-        auto result = decltype(at(A,0,0)){0.};
-        for( Index i = 0; i < numberOfRows<Matrix>() ; ++i )
-          for( Index j = 0 ; j < numberOfColumns<Matrix>() ; ++j )
+        for( Index i = 0; i < rows<Matrix>() ; ++i )
+          for( Index j = 0 ; j < cols<Matrix>() ; ++j )
             result += at(A,i,j) * at(B,i,j);
         return result;
       }
 
-      template < class Vector , std::enable_if_t<Checks::isStaticVector<Vector>() && !Checks::isConstantSizeMatrix<Vector>()> >
-      inline auto computeEuclideanScalarProduct(const Vector& v, const Vector& w)
+      template <class Matrix,
+                std::enable_if_t<!Checks::isConstantSize<Matrix>()>* = nullptr >
+      auto computeScalarProduct(const Matrix& A, const Matrix& B) const
       {
-        using Index = decltype(numberOfRows<Vector>());
-        auto result = at(v,0) * at(w,1);
-        for( Index i = 1; i < numberOfRows<Vector>() ; ++i )
-            result += at(v,i) * at(w,i);
+        using Index = decltype(rows(A));
+        auto result = decltype(at(A,0,0)){0.};
+        for( Index i = 0; i < rows(A) ; ++i )
+          for( Index j = 0 ; j < cols(A) ; ++j )
+            result += at(A,i,j) * at(B,i,j);
         return result;
       }
     }
@@ -91,28 +73,28 @@ namespace FunG
      * \endcond
      */
 
-
     /**
      * \ingroup LinearAlgebraGroup
-     * \brief Compute squared matrix norm \f$ \|A\|^2 = A\negthinspace : \negthinspace A = \mathrm{tr}(A^TA) = \sum_{i,j} A_{ij}^2. \f$
+     * \brief Compute squared Frobenius norm \f$ \|A\|^2 = A\negthinspace : \negthinspace A = \mathrm{tr}(A^TA) = \sum_{i,j} A_{ij}^2. \f$
      */
-    template <class Matrix, class = Concepts::MatrixConceptCheck<Matrix> >
-    struct SquaredEuclideanNorm : Base
+    template <class Matrix,
+              class = Concepts::MatrixConceptCheck<Matrix> >
+    struct SquaredFrobeniusNorm : Base , Chainer< SquaredFrobeniusNorm<Matrix> >
     {
       /// Default constructor.
-      SquaredEuclideanNorm() = default;
+      SquaredFrobeniusNorm() = default;
 
       /**
        * @brief Constructor.
        * @param A matrix to compute squared norm from.
        */
-      explicit SquaredEuclideanNorm(const Matrix& A) { update(A); }
+      explicit SquaredFrobeniusNorm(const Matrix& A) { update(A); }
 
       /// Reset matrix to compute squared norm from.
       void update(const Matrix& A)
       {
         A_ = A;
-        resultOfD0 = computeSquareNorm(A_);
+        resultOfD0 = Detail::computeSquareNorm(A_,A_);
       }
 
       /// Squared matrix norm. Convenient access to d0().
@@ -131,29 +113,50 @@ namespace FunG
       template <int>
       auto d1(const Matrix& dA) const
       {
-        return 2 * computeScalarProduct(A_,dA);
+        return 2 * Detail::computeScalarProduct(A_,dA);
       }
 
       /// Second directional derivative.
       template <int,int>
       auto d2(const Matrix& dA1, const Matrix& dA2) const
       {
-        return 2 * computeScalarProduct(dA1,dA2);
+        return 2 * Detail::computeScalarProduct(dA1,dA2);
       }
-
 
     private:
       Matrix A_;
-      std::remove_const_t< std::remove_reference_t< at_t<Matrix> > > resultOfD0;
+      std::decay_t<decltype(at(std::declval<Matrix>(),0,0))> resultOfD0;
     };
 
     /**
      * \ingroup LinearAlgebraGroup
-     * \brief Compute matrix norm \f$ \|A\| = \sqrt{A\negthinspace : \negthinspace A }= \sqrt{\mathrm{tr}(A^TA)} = \sqrt{\sum_{i,j} A_{ij}^2}. \f$
+     * \brief Frobenius norm \f$ \|A\| = \sqrt{A\negthinspace : \negthinspace A }= \sqrt{\mathrm{tr}(A^TA)} = \sqrt{\sum_{i,j} A_{ij}^2}. \f$
      */
     template <class Matrix>
-    using EuclideanNorm = MathematicalOperations::Chain< CMath::Sqrt , SquaredEuclideanNorm<Matrix> >;
+    using FrobeniusNorm = MathematicalOperations::Chain< Sqrt , SquaredFrobeniusNorm<Matrix> >;
+
+    /**
+     * \ingroup LinearAlgebraGroup
+     * \brief Generate Frobenius norm \f$ \|A\| = \sqrt{A\negthinspace : \negthinspace A }= \sqrt{\mathrm{tr}(A^TA)} = \sqrt{\sum_{i,j} A_{ij}^2}. \f$
+     */
+    template <class Matrix,
+              std::enable_if_t<!std::is_base_of<Base,Matrix>::value>* = nullptr>
+    auto frobeniusNorm(const Matrix& A)
+    {
+      return FrobeniusNorm<Matrix>(A);
+    }
+
+    /**
+     * \ingroup LinearAlgebraGroup
+     * \brief Generate Frobenius norm \f$ \|A\| = \sqrt{A\negthinspace : \negthinspace A }= \sqrt{\mathrm{tr}(A^TA)} = \sqrt{\sum_{i,j} A_{ij}^2}. \f$
+     */
+    template <class F,
+              std::enable_if_t<std::is_base_of<Base,F>::value>* = nullptr>
+    auto frobeniusNorm(const F& f)
+    {
+      return FrobeniusNorm< std::decay_t<decltype(f.d0())> >(f.d0())(f);
+    }
   }
 }
 
-#endif // FUNG_LINEAR_ALGEBRA_EUCLIDEAN_NORM_HH
+#endif // FUNG_LINEAR_ALGEBRA_FROBENIUS_NORM_HH

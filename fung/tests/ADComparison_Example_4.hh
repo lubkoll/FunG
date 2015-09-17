@@ -98,7 +98,7 @@ namespace Example_4
   template <class Mat>
   auto generateTestFunction()
   {
-    using namespace FunG::CMath;
+    using namespace FunG;
     using namespace FunG::LinearAlgebra;
 
     auto x = FunG::Variable<double,0>();

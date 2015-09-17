@@ -23,14 +23,14 @@
 
 #include "fung/finalize.hh"
 #include "fung/generate.hh"
-#include "fung/linear_algebra/invariants.hh"
+#include "fung/linear_algebra/principal_invariants.hh"
 #include "fung/linear_algebra/strain_tensor.hh"
 #include "fung/linear_algebra/unit_matrix.hh"
 #include "fung/examples/volumetric_penalty_functions.hh"
 
 /**
  * \ingroup Rubber
- * \file neoHooke.hh
+ * \file neo_hooke.hh
  * \brief Models based on the neo-Hookean material law. Input argument is the deformation gradient.
  */
 
@@ -40,57 +40,37 @@ namespace FunG
    * \ingroup Rubber
    * \brief Generate an "incompressible" neo-Hookean material law \f$ W(F)=c\iota_1(F^T F) \f$, where \f$\iota_1\f$ is the first principal matrix invariant .
    */
-  template < class Matrix , int offset = LinearAlgebra::dimension<Matrix>() >
+  template < class Matrix , int n = LinearAlgebra::dim<Matrix>() >
   auto incompressibleNeoHooke(double c, const Matrix& F)
   {
     using namespace LinearAlgebra;
-    using Inv = typename InvariantTraits<Invariant::PRINCIPAL>::template ShiftedFirstInvariant<Matrix,offset>;
     auto S = LeftCauchyGreenStrainTensor<Matrix>(F);
-    auto f = c*Inv(S()) << S;
-    return Finalize<decltype(f)>(f);
+    return finalize( c*(i1(S) - n) );
   }
 
   /**
    * \ingroup Rubber
    * \brief Generate an "incompressible" neo-Hookean material law \f$ W(F)=c\bar\iota_1(F^T F) \f$, where \f$\bar\iota_1\f$ is the modified first principal matrix invariant.
    */
-  template < class Matrix , int offset = LinearAlgebra::dimension<Matrix>() >
+  template < class Matrix , int n = LinearAlgebra::dim<Matrix>() >
   auto modifiedIncompressibleNeoHooke(double c, const Matrix& F)
   {
     using namespace LinearAlgebra;
-    using Inv = typename InvariantTraits<Invariant::MODIFIED>::template ShiftedFirstInvariant<Matrix,offset>;
     auto S = LeftCauchyGreenStrainTensor<Matrix>(F);
-    return c * Inv(S()) << S;
+    return c*(mi1<decltype(S),n>(S) - n);
   }
-
-  /**
-   * \cond DOCUMENT_IMPLEMENTATION_DETAILS
-   */
-  namespace NeoHookeDetail
-  {
-    template <class InflationPenalty, class CompressionPenalty, class Matrix, LinearAlgebra::Invariant I = LinearAlgebra::Invariant::PRINCIPAL , int offset = LinearAlgebra::dimension<Matrix>() >
-    auto compressibleNeoHookeImpl(double c, double d0, double d1, const Matrix& F)
-    {
-      using namespace LinearAlgebra;
-      using Inv = typename InvariantTraits<I>::template ShiftedFirstInvariant<Matrix,offset>;
-      auto S = LeftCauchyGreenStrainTensor<Matrix>(F);
-      return ( c*Inv(F) << S ) + volumetricPenalty<InflationPenalty,CompressionPenalty>(d0,d1,F);
-      //return Finalize<decltype(f)>(f);
-    }
-  }
-  /**
-   * \endcond
-   */
 
   /**
    * \ingroup Rubber
    * \brief Generate a compressible neo-Hookean material law \f$ W(F)=c\iota_1(F^T F)+d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) \f$,
    * where \f$\iota_1\f$ is the first principal matrix invariant.
    */
-  template <class InflationPenalty, class CompressionPenalty, class Matrix , int offset = LinearAlgebra::dimension<Matrix>() >
+  template <class InflationPenalty, class CompressionPenalty, class Matrix , int n = LinearAlgebra::dim<Matrix>() >
   auto compressibleNeoHooke(double c, double d0, double d1, const Matrix& F)
   {
-    return NeoHookeDetail::compressibleNeoHookeImpl<InflationPenalty,CompressionPenalty,Matrix,LinearAlgebra::Invariant::PRINCIPAL,offset>(c,d0,d1,F);
+    using namespace LinearAlgebra;
+    auto S = LeftCauchyGreenStrainTensor<Matrix>(F);
+    return c*(i1(S) - n) + volumetricPenalty<InflationPenalty,CompressionPenalty>(d0,d1,F);
   }
 
   /**
@@ -98,10 +78,12 @@ namespace FunG
    * \brief Generate a compressible neo-Hookean material law \f$ W(F)=c\bar\iota_1(F^T F)+d_0\Gamma_\mathrm{In}(\det(F))+d_1\Gamma_\mathrm{Co}(\det(F)) \f$,
    * where \f$\bar\iota_1\f$ is the modified first principal matrix invariant.
    */
-  template <class InflationPenalty, class CompressionPenalty, class Matrix , int offset = LinearAlgebra::dimension<Matrix>() >
+  template <class InflationPenalty, class CompressionPenalty, class Matrix , int n = LinearAlgebra::dim<Matrix>() >
   auto modifiedCompressibleNeoHooke(double c, double d0, double d1, const Matrix& F)
   {
-    return NeoHookeDetail::compressibleNeoHookeImpl<InflationPenalty,CompressionPenalty,Matrix,LinearAlgebra::Invariant::MODIFIED,offset>(c,d0,d1,F);
+    using namespace LinearAlgebra;
+    auto S = LeftCauchyGreenStrainTensor<Matrix>(F);
+    return c*(mi1<decltype(S),n>(S) - n) + volumetricPenalty<InflationPenalty,CompressionPenalty>(d0,d1,F);
   }
 }
 

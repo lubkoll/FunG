@@ -78,9 +78,8 @@ void testExamples_DUNE()
 {
   using std::cout;
   using std::endl;
-  using FunG::CMath::LN;
-  using FunG::CMath::Pow;
-  using FunG::LinearAlgebra::Invariant;
+  using FunG::LN;
+  using FunG::Pow;
   constexpr int dim = 3;
   using M = Dune::FieldMatrix<double,dim,dim>;
 

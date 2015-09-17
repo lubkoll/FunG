@@ -4,17 +4,17 @@
 
 auto generateTestLN()
 {
-  return FunG::CMath::LN(1.);
+  return FunG::LN(1.);
 }
 
 auto generateTestLog2()
 {
-  return FunG::CMath::Log2(1.);
+  return FunG::Log2(1.);
 }
 
 auto generateTestLog10()
 {
-  return FunG::CMath::Log10(1.);
+  return FunG::Log10(1.);
 }
 
 

@@ -33,14 +33,15 @@ namespace FunG
    * \return \f$A+A^T\f$
    */
   template <class Matrix ,
-            class = std::enable_if_t<Checks::isConstantSizeMatrix<Matrix>()> >
+            std::enable_if_t<Checks::isConstantSize<Matrix>()>* = nullptr >
   Matrix addTransposed(Matrix& A)
   {
-    using Index = decltype(LinearAlgebra::dimension<Matrix>());
-    for(Index i=0; i<LinearAlgebra::dimension<Matrix>(); ++i)
-      for(Index j=i+1; j<LinearAlgebra::dimension<Matrix>(); ++j)
+    using LinearAlgebra::dim;
+    using Index = decltype(dim<Matrix>());
+    for(Index i=0; i<dim<Matrix>(); ++i)
+      for(Index j=i+1; j<dim<Matrix>(); ++j)
         at(A,j,i) = at(A,i,j) = at(A,i,j) + at(A,j,i);
-    for(Index i=0; i<LinearAlgebra::dimension<Matrix>(); ++i) at(A,i,i) *= 2;
+    for(Index i=0; i<dim<Matrix>(); ++i) at(A,i,i) *= 2;
     return A;
   }
 
@@ -49,16 +50,17 @@ namespace FunG
    * \return \f$A+A^T\f$
    */
   template <class Matrix ,
-            class = std::enable_if_t<!Checks::isConstantSizeMatrix<Matrix>()> ,
-            class = std::enable_if_t<Checks::isDynamicMatrix<Matrix>()> >
+            std::enable_if_t<!Checks::isConstantSize<Matrix>()>* = nullptr >
   Matrix addTransposed(Matrix& A)
   {
-    assert( LinearAlgebra::rows(A) == LinearAlgebra::cols(A) );
-    using Index = decltype(LinearAlgebra::rows(std::declval<Matrix>()));
-    for(Index i=0; i<LinearAlgebra::rows(A); ++i)
-      for(Index j=i+1; j<LinearAlgebra::cols(A); ++j)
+    using LinearAlgebra::rows;
+    using LinearAlgebra::cols;
+    assert( rows(A) == cols(A) );
+    using Index = decltype(rows(std::declval<Matrix>()));
+    for(Index i=0; i<rows(A); ++i)
+      for(Index j=i+1; j<cols(A); ++j)
         at(A,j,i) = at(A,i,j) = at(A,i,j) + at(A,j,i);
-    for(Index i=0; i<LinearAlgebra::rows(A); ++i) at(A,i,i) *= 2;
+    for(Index i=0; i<rows(A); ++i) at(A,i,i) *= 2;
     return A;
   }
 }

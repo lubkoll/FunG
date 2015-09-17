@@ -98,26 +98,26 @@ namespace FunG
       return AccessTo_n_cols<Matrix>::value;
     }
 
-    /**
-     * \ingroup Checks
-     * \brief Check if object is a dynamic matrix for some type satisfying Concepts::MatrixConcept.
-     */
-    template < class Arg >
-    constexpr bool isDynamicMatrix()
-    {
-      return ( hasRowsFunction<Arg>() && hasColsFunction<Arg>() ) ||
-           ( hasMember_n_rows<Arg>() && hasMember_n_cols<Arg>() );
-    }
+//    /**
+//     * \ingroup Checks
+//     * \brief Check if object is a dynamic matrix for some type satisfying Concepts::MatrixConcept.
+//     */
+//    template < class Arg >
+//    constexpr bool isDynamicMatrix()
+//    {
+//      return ( hasRowsFunction<Arg>() && hasColsFunction<Arg>() ) ||
+//           ( hasMember_n_rows<Arg>() && hasMember_n_cols<Arg>() );
+//    }
 
-    /**
-     * \ingroup Checks
-     * \brief Check if object is a dynamic vector for some type satisfying Concepts::VectorConcept.
-     */
-    template < class Arg >
-    constexpr bool isDynamicVector()
-    {
-      return hasRowsFunction<Arg>() || hasMember_n_rows<Arg>();
-    }
+//    /**
+//     * \ingroup Checks
+//     * \brief Check if object is a dynamic vector for some type satisfying Concepts::VectorConcept.
+//     */
+//    template < class Arg >
+//    constexpr bool isDynamicVector()
+//    {
+//      return hasRowsFunction<Arg>() || hasMember_n_rows<Arg>();
+//    }
   }
 }
 

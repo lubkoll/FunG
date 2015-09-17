@@ -87,13 +87,13 @@ namespace FunG
      * \f$ A^\#_ij \f$ is obtained from \f$ A \f$ by deleting the \f$i\f$-th row and \f$ j \f$-th column.
      */
     template < int row , int col , class Matrix ,
-               class = std::enable_if_t<Checks::isConstantSizeMatrix<Matrix>()> ,
+               std::enable_if_t<Checks::isConstantSize<Matrix>()>* = nullptr ,
                class = Concepts::MatrixConceptCheck<Matrix> >
     auto computeCofactor(Matrix const& A)
     {
-      static_assert( dimension<Matrix>() == 2 || dimension<Matrix>() == 3 ,
+      static_assert( dim<Matrix>() == 2 || dim<Matrix>() == 3 ,
                      "Cofactors are currently only implemented for 2x2 and 3x3 matrices. Efficient general implementations are non-trivial and may or may not be implemented in the future." );
-      return Detail::computeCofactorImpl<row,col>(A, A, std::integral_constant<int,dimension<Matrix>()>());
+      return Detail::computeCofactorImpl<row,col>(A, A, std::integral_constant<int,dim<Matrix>()>());
     }
 
     /**
@@ -104,8 +104,7 @@ namespace FunG
      * \f$ A^\#_ij \f$ is obtained from \f$ A \f$ by deleting the \f$i\f$-th row and \f$ j \f$-th column.
      */
     template < int row , int col , class Matrix ,
-               class = std::enable_if_t<!Checks::isConstantSizeMatrix<Matrix>()> ,
-               class = std::enable_if_t<Checks::isDynamicMatrix<Matrix>()> ,
+               std::enable_if_t<!Checks::isConstantSize<Matrix>()>* = nullptr ,
                class = Concepts::MatrixConceptCheck<Matrix> >
     auto computeCofactor(Matrix const& A)
     {
@@ -124,13 +123,13 @@ namespace FunG
      * In this case this function can also used to compute the second directional derivative in directions \f$ A \f$ and \f$ B \f$.
      */
     template < int row , int col , class Matrix ,
-               class = std::enable_if_t<Checks::isConstantSizeMatrix<Matrix>()> ,
+               std::enable_if_t<Checks::isConstantSize<Matrix>()>* = nullptr ,
                class = Concepts::MatrixConceptCheck<Matrix> >
     auto computeCofactorDirectionalDerivative(Matrix const& A, Matrix const& B)
     {
-      static_assert( dimension<Matrix>() == 2 || dimension<Matrix>() == 3 ,
+      static_assert( dim<Matrix>() == 2 || dim<Matrix>() == 3 ,
                      "Cofactors are currently only implemented for 2x2 and 3x3 matrices. Efficient general implementations are non-trivial and may or may not be implemented in the future." );
-      return Detail::computeCofactorImpl<row,col>(A, B, std::integral_constant<int,dimension<Matrix>()>());
+      return Detail::computeCofactorImpl<row,col>(A, B, std::integral_constant<int,dim<Matrix>()>());
     }
 
     /**
@@ -143,8 +142,7 @@ namespace FunG
      * In this case this function can also used to compute the second directional derivative in directions \f$ A \f$ and \f$ B \f$.
      */
     template < int row , int col , class Matrix ,
-               class = std::enable_if_t<!Checks::isConstantSizeMatrix<Matrix>()> ,
-               class = std::enable_if_t<Checks::isDynamicMatrix<Matrix>()> ,
+               std::enable_if_t<!Checks::isConstantSize<Matrix>()>* = nullptr ,
                class = Concepts::MatrixConceptCheck<Matrix> >
     auto computeCofactorDirectionalDerivative(Matrix const& A, Matrix const& B)
     {

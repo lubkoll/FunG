@@ -107,7 +107,7 @@ namespace FunG
 
       private:
         Matrix A;
-        std::decay_t< at_t<Matrix> > resultOfD0 = 0.;
+        std::decay_t< decltype(at(std::declval<Matrix>(),0,0)) > resultOfD0 = 0.;
       };
 
       template <class Matrix>
@@ -147,19 +147,16 @@ namespace FunG
 
       private:
         Matrix A;
-        std::decay_t< at_t<Matrix> > resultOfD0 = 0.;
+        std::decay_t< decltype(at(std::declval<Matrix>(),0,0)) > resultOfD0 = 0.;
       };
     }
-    /**
-     * \endcond
-     */
 
     /**
      * \ingroup LinearAlgebraGroup
      * \brief Determinant of constant size matrix with first three derivatives.
      */
     template <class Matrix>
-    using ConstantSizeDeterminant = Detail::DeterminantImpl<Matrix,dimension<Matrix>()>;
+    using ConstantSizeDeterminant = Detail::DeterminantImpl<Matrix,dim<Matrix>()>;
 
     /**
      * \ingroup LinearAlgebraGroup
@@ -218,22 +215,25 @@ namespace FunG
       Detail::DeterminantImpl<Matrix,2> det2D;
       Detail::DeterminantImpl<Matrix,3> det3D;
     };
-    /**
-     * \endcond
-     */
 
     /**
      * \ingroup LinearAlgebraGroup
      * \brief Determinant with first three derivatives.
      */
     template < class Matrix >
-    using Determinant = std::conditional_t< Checks::isConstantSizeMatrix<Matrix>() , ConstantSizeDeterminant<Matrix> , DynamicSizeDeterminant<Matrix> >;
+    using Determinant = std::conditional_t< Checks::isConstantSize<Matrix>() , ConstantSizeDeterminant<Matrix> , DynamicSizeDeterminant<Matrix> >;
+    /**
+     * \endcond
+     */
 
     /**
      * \ingroup LinearAlgebraGroup
-     * \brief Convenient generation of Determinant<Matrix>(A).
+     * \brief Generate \f$\det(A)\f$.
+     * \param A square matrix
+     * \return Determinant<Matrix>(A)
      */
-    template<class Matrix>
+    template<class Matrix,
+             std::enable_if_t<!std::is_base_of<Base,Matrix>::value>* = nullptr>
     auto det(Matrix const& A)
     {
       return Determinant<Matrix>(A);
@@ -241,12 +241,15 @@ namespace FunG
 
     /**
      * \ingroup LinearAlgebraGroup
-     * \brief Convenient computation of \f$\det(A)\f$.
+     * \brief Generate \f$\det\circ f\f$.
+     * \param f function mapping into a space of square matrices
+     * \return Determinant< std::decay_t<decltype(f.d0())> >(f.d0())(f)
      */
-    template<class Matrix>
-    auto determinant(Matrix const& A)
+    template<class F,
+             std::enable_if_t<std::is_base_of<Base,F>::value>* = nullptr>
+    auto det(F const& f)
     {
-      return Determinant<Matrix>(A)();
+      return Determinant< std::decay_t<decltype(f.d0())> >(f.d0())(f);
     }
   }
 }

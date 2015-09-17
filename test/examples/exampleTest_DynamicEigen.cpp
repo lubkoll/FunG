@@ -32,9 +32,8 @@
 
 namespace
 {
-  using FunG::CMath::LN;
-  using FunG::CMath::Pow;
-  using FunG::LinearAlgebra::Invariant;
+  using FunG::LN;
+  using FunG::Pow;
   constexpr int dim = 3;
   using M = Eigen::MatrixXd;
 

@@ -3,7 +3,7 @@
 
 auto generateTestTan()
 {
-  return FunG::CMath::Tan(1.);
+  return FunG::Tan(1.);
 }
 
 TEST(TanTest,D0)

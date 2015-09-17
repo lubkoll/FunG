@@ -29,7 +29,7 @@
 #include "voider.hh"
 
 /*!
- * \file staticChecks.hh
+ * \file static_checks.hh
  * \brief Static checks for detection of presence of different operators and functions.
  */
 
@@ -218,17 +218,17 @@ namespace FunG
       return InPlaceSummation<Arg,!std::is_base_of<Base,Arg>() && !std::is_arithmetic<Arg>()>::value;
     }
 
-    /**
-     * \ingroup Checks
-     * \brief Check if object is a static matrix for some type satisfying Concepts::MatrixConcept.
-     *
-     * Checks if number of rows and number of columns are positive.
-     */
-    template < class Arg >
-    constexpr bool isConstantSizeMatrix()
-    {
-      return ( LinearAlgebra::numberOfRows<Arg>() > 0 ) && ( LinearAlgebra::numberOfColumns<Arg>() > 0 );
-    }
+//    /**
+//     * \ingroup Checks
+//     * \brief Check if object is a static matrix for some type satisfying Concepts::MatrixConcept.
+//     *
+//     * Checks if number of rows and number of columns are positive.
+//     */
+//    template < class Arg >
+//    constexpr bool isConstantSizeMatrix()
+//    {
+//      return ( LinearAlgebra::numberOfRows<Arg>() > 0 ) && ( LinearAlgebra::numberOfColumns<Arg>() > 0 );
+//    }
 
     /**
      * \ingroup Checks
@@ -237,34 +237,11 @@ namespace FunG
      * Checks if number of rows is positive.
      */
     template < class Arg >
-    constexpr bool isStaticVector()
+    constexpr bool isConstantSize()
     {
-      return ( LinearAlgebra::numberOfRows<Arg>() > 0 ) && ( LinearAlgebra::numberOfColumns<Arg>() == -1 );
+      return ( LinearAlgebra::numberOfRows<Arg>() > 0 );
     }
 
-    /**
-     * \ingroup Checks
-     * \brief Check if objects of type Arg support access to its entries via square brackets, i.e. via A[i][j] for matrices or v[i] for vectors.
-     */
-    template < class Arg >
-    constexpr bool accessViaSquareBrackets()
-    {
-      return std::conditional_t< !isConstantSizeMatrix<Arg>() && isStaticVector<Arg>() ,
-                                 AccessViaSquareBracketsForVector<Arg> ,
-                                 AccessViaSquareBracketsForMatrix<Arg> >::value;
-    }
-
-    /**
-     * \ingroup Checks
-     * \brief Check if objects of type Matrix support access to its entries via round brackets, i.e. via A(i,j).
-     */
-    template < class Arg >
-    constexpr bool accessViaRoundBrackets()
-    {
-      return std::conditional_t< !isConstantSizeMatrix<Arg>() && isStaticVector<Arg>() ,
-                                 AccessViaRoundBracketsForVector<Arg> ,
-                                 AccessViaRoundBracketsForMatrix<Arg> >::value;
-    }
 
     /**
      * \ingroup Checks

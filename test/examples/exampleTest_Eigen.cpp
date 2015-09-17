@@ -43,9 +43,8 @@ namespace
     return std::make_tuple( f() , f.template d1<0>(da0) , f.template d2<0,0>(da0,da1) , f.template d3<0,0,0>(da0,da1,da2) );
   }
 
-  using FunG::CMath::LN;
-  using FunG::CMath::Pow;
-  using FunG::LinearAlgebra::Invariant;
+  using FunG::LN;
+  using FunG::Pow;
   constexpr int dim = 3;
   using M = Eigen::Matrix<double,dim,dim>;
   auto c0 = 1., c1 = 1., d0 = 1., d1 = 1.;

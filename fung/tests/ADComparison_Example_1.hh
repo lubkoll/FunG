@@ -93,7 +93,7 @@ namespace Example_1
 
   auto generateTestFunction()
   {
-    using namespace FunG::CMath;
+    using namespace FunG;
     auto h = Pow<3>() + Sin();
     auto g = Sqrt();
     return FunG::finalize_scalar( h(g) );

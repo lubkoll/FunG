@@ -27,72 +27,69 @@
 
 namespace FunG
 {
-  namespace CMath
+  /**
+   * \ingroup CMathGroup
+   *
+   * \brief Tangent function including first three derivatives.
+   *
+   * For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur
+   * during applications of the chain rule.
+   */
+  struct Tan : Base , Chainer<Tan>
   {
     /**
-     * \ingroup CMathGroup
-     *
-     * \brief Tangent function including first three derivatives.
-     *
-     * For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur
-     * during applications of the chain rule.
+     * @brief Constructor.
+     * @param x point of evaluation
      */
-    struct Tan : Base , Chainer<Tan>
+    explicit Tan(double x=0.) { update(x); }
+
+    /// Reset point of evaluation.
+    void update(double x)
     {
-      using Chainer<Tan>::operator ();
-      /**
-       * @brief Constructor.
-       * @param x point of evaluation
-       */
-      explicit Tan(double x=0.) { update(x); }
-
-      /// Reset point of evaluation.
-      void update(double x)
-      {
-        value = ::tan(x);
-        firstDerivative = 1 + ( value * value );
-      }
-
-      /// Function value.
-      double d0() const noexcept
-      {
-        return value;
-      }
-
-      /// First (directional) derivative.
-      template < int = -1 >
-      double d1(double dx = 1.) const
-      {
-        return firstDerivative * dx;
-      }
-
-      /// Second (directinal) derivative
-      template < int = -1 , int = -1 >
-      double d2(double dx = 1., double dy = 1.) const
-      {
-        return ( 2 * value * firstDerivative ) * dx * dy;
-      }
-
-      /// Third (directional) derivative.
-      template < int = -1 , int = -1 , int = -1 >
-      double d3(double dx = 1., double dy = 1., double dz = 1.) const
-      {
-        return 2 * firstDerivative * ( 1 + ( 3 * value * value ) ) * dx * dy * dz;
-      }
-
-    private:
-      double value = 0., firstDerivative = 1.;
-    };
-
-    /**
-     * \brief Plug f into tangent function.
-     * \return object of type Chain<Tan,Function>.
-     */
-    template <class Function, class = std::enable_if_t<std::is_base_of<Base,Function>::value> >
-    auto tan(const Function& f)
-    {
-      return Tan()(f);
+      value = ::tan(x);
+      firstDerivative = 1 + ( value * value );
     }
+
+    /// Function value.
+    double d0() const noexcept
+    {
+      return value;
+    }
+
+    /// First (directional) derivative.
+    template < int = -1 >
+    double d1(double dx = 1.) const
+    {
+      return firstDerivative * dx;
+    }
+
+    /// Second (directinal) derivative
+    template < int = -1 , int = -1 >
+    double d2(double dx = 1., double dy = 1.) const
+    {
+      return ( 2 * value * firstDerivative ) * dx * dy;
+    }
+
+    /// Third (directional) derivative.
+    template < int = -1 , int = -1 , int = -1 >
+    double d3(double dx = 1., double dy = 1., double dz = 1.) const
+    {
+      return 2 * firstDerivative * ( 1 + ( 3 * value * value ) ) * dx * dy * dz;
+    }
+
+  private:
+    double value = 0., firstDerivative = 1.;
+  };
+
+  /**
+   * \brief Generate \f$ \tan\circ f \f$.
+   * \param f function mapping into a scalar space
+   */
+  template <class F,
+            class = std::enable_if_t<std::is_base_of<Base,F>::value> >
+  auto tan(const F& f)
+  {
+    return Tan()(f);
   }
 }
 

@@ -3,7 +3,7 @@
 
 auto generateTestCos()
 {
-  return FunG::CMath::Cos(1.);
+  return FunG::Cos(1.);
 }
 
 TEST(CosineTest,D0)

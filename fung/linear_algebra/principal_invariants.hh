@@ -23,11 +23,11 @@
 
 #include <type_traits>
 
+#include "fung/cmath/pow.hh"
 #include "dimension.hh"
 #include "trace.hh"
 #include "cofactor.hh"
 #include "determinant.hh"
-#include "shifted_invariant.hh"
 #include "fung/util/base.hh"
 
 namespace FunG
@@ -108,6 +108,64 @@ namespace FunG
 
         }
       };
+
+
+      /**
+       * \ingroup InvariantGroup
+       * \brief Second principal invariant \f$ \iota_2(A)=\mathrm{tr}(\mathrm{cof}(A)) \f$ for \f$A\in\mathbb{R}^{n,n}\f$.
+       * \see I2
+       */
+      template <class Matrix, class = Concepts::SymmetricMatrixConceptCheck<Matrix> >
+      class SecondPrincipalInvariant : Base
+      {
+      public:
+        /// Default constructor.
+        SecondPrincipalInvariant() = default;
+
+        /**
+         * @brief Constructor.
+         * @param A matrix to compute second principal invariant from
+         */
+        SecondPrincipalInvariant(const Matrix& A) { update(A); }
+
+        /// Reset matrix to compute second principal invariant from.
+        void update(const Matrix& A)
+        {
+          A_ = A;
+          resultOfD0 = Detail::Compute<dim<Matrix>()>::sumOfDiagonalCofactors(A);
+        }
+
+        /// Value of the second principal invariant
+        auto d0() const
+        {
+          return resultOfD0;
+        }
+
+        /**
+         * @brief First directional derivative
+         * @param dA1 direction for which the derivative is computed
+         */
+        template <int,int>
+        auto d1(const Matrix& dA1) const
+        {
+          return Detail::Compute<dim<Matrix>()>::sumOfSymmetricCofactorDerivatives(A_,dA1);
+        }
+
+        /**
+         * @brief Second directional derivative
+         * @param dA1 direction for which the derivative is computed
+         * @param dA2 direction for which the derivative is computed
+         */
+        template <int,int>
+        auto d2(const Matrix& dA1, const Matrix& dA2) const
+        {
+          return Detail::Compute<dim<Matrix>()>::sumOfSymmetricCofactorDerivatives(dA1,dA2);
+        }
+
+      private:
+        Matrix A_;
+        std::decay_t< decltype(at(std::declval<Matrix>(),0,0)) > resultOfD0 = 0.;
+      };
     }
     /**
      * \endcond
@@ -116,95 +174,95 @@ namespace FunG
 
     /**
      * \ingroup InvariantGroup
-     * \brief First principal invariant \f$ \iota_1(A)=\mathrm{tr}(A) \f$ for \f$A\in\mathbb{R}^{n,n}\f$.
+     * \brief Generate first principal invariant.
+     *
+     * Depending on the argument either generates \f$\mathrm{tr}(A)\f$ or \f$\mathrm{tr}\circ f\f$.
+     *
+     * \return if x is a matrix then the this functions returns Trace<Arg>(x), if x is a function, then it returns
+     * Trace< std::decay_t<decltype(x.d0())> >( x.d0() )( x );
      */
-    template <class Matrix>
-    using FirstPrincipalInvariant = Trace<Matrix>;
-
-    /**
-     * \ingroup InvariantGroup
-     * \brief Second principal invariant \f$ \iota_2(A)=\mathrm{tr}(\mathrm{cof}(A)) \f$ for \f$A\in\mathbb{R}^{n,n}\f$.
-     */
-    template <class Matrix, class = Concepts::SymmetricMatrixConceptCheck<Matrix> >
-    class SecondPrincipalInvariant : Base
+    template <class Arg>
+    auto i1(const Arg& x)
     {
-    public:
-      /// Default constructor.
-      SecondPrincipalInvariant() = default;
-
-      /**
-       * @brief Constructor.
-       * @param A matrix to compute second principal invariant from
-       */
-      SecondPrincipalInvariant(const Matrix& A) { update(A); }
-
-      /// Reset matrix to compute second principal invariant from.
-      void update(const Matrix& A)
-      {
-        A_ = A;
-        resultOfD0 = Detail::Compute<dimension<Matrix>()>::sumOfDiagonalCofactors(A);
-      }
-
-      /// Value of the second principal invariant
-      auto d0() const
-      {
-        return resultOfD0;
-      }
-
-      /**
-       * @brief First directional derivative
-       * @param dA1 direction for which the derivative is computed
-       */
-      template <int,int>
-      auto d1(const Matrix& dA1) const
-      {
-        return Detail::Compute<dimension<Matrix>()>::sumOfSymmetricCofactorDerivatives(A_,dA1);
-      }
-
-      /**
-       * @brief Second directional derivative
-       * @param dA1 direction for which the derivative is computed
-       * @param dA2 direction for which the derivative is computed
-       */
-      template <int,int>
-      auto d2(const Matrix& dA1, const Matrix& dA2) const
-      {
-        return Detail::Compute<dimension<Matrix>()>::sumOfSymmetricCofactorDerivatives(dA1,dA2);
-      }
-
-    private:
-      Matrix A_;
-      std::decay_t< at_t<Matrix> > resultOfD0 = 0.;
-    };
+      return trace(x);
+    }
 
     /**
      * \ingroup InvariantGroup
-     * \brief Third principal invariant \f$ \iota_3(A)=\det(A) \f$ for \f$A\in\mathbb{R}^{n,n}\f$.
+     * \brief Convenient generation of second principal invariant \f$ \iota_2(A)=\mathrm{tr}(\mathrm{cof}(A)) \f$ for \f$A\in\mathbb{R}^{n,n}\f$.
+     * \return SecondPrincipalInvariant<Matrix>(A)
      */
-    template <class Matrix>
-    using ThirdPrincipalInvariant = Determinant<Matrix>;
-
-
-    /**
-     * \ingroup InvariantGroup
-     * \brief Shifted first principal invariant \f$ \iota_1(A) - n \f$ for \f$ A\in\mathbb{R}^{n,n} \f$.
-     */
-    template < class Matrix , int offset = dimension<Matrix>() >
-    using ShiftedFirstPrincipalInvariant  = ShiftedInvariant< FirstPrincipalInvariant<Matrix> , offset >;
+    template <class Matrix,
+              std::enable_if_t< !std::is_base_of<Base,Matrix>::value >* = nullptr >
+    auto i2(const Matrix& A)
+    {
+      return Detail::SecondPrincipalInvariant<Matrix>(A);
+    }
 
     /**
      * \ingroup InvariantGroup
-     * \brief Shifted second principal invariant \f$ \iota_2(A) - n \f$ for \f$ A\in\mathbb{R}^{n,n} \f$.
+     * \brief Convenient generation of second principal invariant \f$ \iota_2\circ f \f$ for \f$f:\cdot\mapsto\mathbb{R}^{n,n}\f$.
+     * \return SecondPrincipalInvariant<Matrix>(A)
      */
-    template < class Matrix , int offset = dimension<Matrix>() >
-    using ShiftedSecondPrincipalInvariant = ShiftedInvariant< SecondPrincipalInvariant<Matrix> , offset >;
+    template <class F,
+              std::enable_if_t< std::is_base_of<Base,F>::value >* = nullptr >
+    auto i2(const F& f)
+    {
+      using Matrix = std::decay_t<decltype(f.d0())>;
+      return Detail::SecondPrincipalInvariant<Matrix>( f.d0() )( f );
+    }
 
     /**
      * \ingroup InvariantGroup
-     * \brief Shifted third principal invariant \f$ \iota_3(A) - 1 \f$ for \f$ A\in\mathbb{R}^{n,n} \f$.
+     * \brief Generate third principal invariant.
+     *
+     * Depending on the argument either generates \f$\det(A)\f$ or \f$\det\circ f\f$.
+     *
+     * \return if x is a matrix then the this functions returns Determinant<Arg>(x), if x is a function, then it returns
+     * Determinant< std::decay_t<decltype(x.d0())> >( x.d0() )( x );
      */
-    template < class Matrix >
-    using ShiftedThirdPrincipalInvariant  = ShiftedInvariant< ThirdPrincipalInvariant<Matrix>   , 1 >;
+    template <class Arg>
+    auto i3(const Arg& x)
+    {
+      return det(x);
+    }
+
+    /**
+     * \ingroup InvariantGroup
+     * \brief Isochoric (volume-preserving), first modified principal invariant \f$ \bar\iota_1(A)=\iota_1\iota_3^{-1/3} \f$, where \f$\iota_1\f$ is the first
+     * and \f$\iota_3\f$ is the third principal invariant.
+     * \param x either a square matrix or a function returning a square matrix.
+     */
+    template <class Arg, int n = dim<Arg>()>
+    auto mi1(const Arg& x)
+    {
+      return i1(x) * ( Pow<-1,n>()( det(x) ) );
+    }
+
+    /**
+     * \ingroup InvariantGroup
+     * \brief Isochoric (volume-preserving), second modified principal invariant \f$ \bar\iota_2(A)=\iota_2\iota_3^{-1/3} \f$, where \f$\iota_2\f$ is the second
+     * and \f$\iota_3\f$ is the third principal invariant.
+     * \param x either a square matrix or a function returning a square matrix.
+     */
+    template <class Arg, int n = dim<Arg>()>
+    auto mi2(const Arg& x)
+    {
+      return i2(x) * ( Pow<-2,n>()( det(x) ) );
+    }
+
+    /**
+     * \ingroup InvariantGroup
+     * \brief Third modified principal invariant is the same as the third principal invariant.
+
+     * \param x either a square matrix or a function returning a square matrix.
+     * \see i3
+     */
+    template <class Arg>
+    auto mi3(const Arg& x)
+    {
+      return i3(x);
+    }
   }
 }
 

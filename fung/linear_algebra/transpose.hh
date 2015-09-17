@@ -38,8 +38,7 @@ namespace FunG
      * \brief Compute transpose of square matrix.
      */
     template <class Matrix, class TransposedMatrix = Matrix ,
-              class = std::enable_if_t<std::is_same<Matrix,TransposedMatrix>::value> ,
-              class = std::enable_if_t<Checks::isConstantSizeMatrix<Matrix>()> >
+              std::enable_if_t<std::is_same<Matrix,TransposedMatrix>::value && Checks::isConstantSize<Matrix>()>* = nullptr>
     TransposedMatrix transpose(Matrix A)
     {
       auto a = at(A,0,0);
@@ -59,8 +58,7 @@ namespace FunG
      * \brief Compute transpose of non-square matrix.
      */
     template <class TransposedMatrix, class Matrix ,
-              class = std::enable_if_t<!std::is_same<Matrix,TransposedMatrix>::value> ,
-              class = std::enable_if_t<Checks::isConstantSizeMatrix<Matrix>() && Checks::isConstantSizeMatrix<TransposedMatrix>()> >
+              std::enable_if_t<!std::is_same<Matrix,TransposedMatrix>::value && Checks::isConstantSize<Matrix>() && Checks::isConstantSize<TransposedMatrix>()>* = nullptr >
     TransposedMatrix transpose(const Matrix& A)
     {
       TransposedMatrix B = zero<TransposedMatrix>();
@@ -76,8 +74,7 @@ namespace FunG
      * \brief Compute transpose of square matrix.
      */
     template <class Matrix ,
-              class = std::enable_if_t<!Checks::isConstantSizeMatrix<Matrix>()> ,
-              class = std::enable_if_t<Checks::isDynamicMatrix<Matrix>()> >
+              std::enable_if_t<!Checks::isConstantSize<Matrix>()>* = nullptr >
     Matrix transpose(Matrix A)
     {
       assert(rows(A) == cols(A));

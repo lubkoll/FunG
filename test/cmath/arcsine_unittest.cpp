@@ -4,7 +4,7 @@
 
 auto generateTestASin()
 {
-  return FunG::CMath::ASin(.5);
+  return FunG::ASin(.5);
 }
 
 TEST(ArcsineTest,Update)

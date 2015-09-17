@@ -28,80 +28,78 @@
 
 namespace FunG
 {
-  namespace CMath
+  /**
+   * \ingroup CMathGroup
+   *
+   * \brief Arcsine function including first three derivatives (based on asin(double) in \<cmath\>).
+   *
+   * For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur
+   * during applications of the chain rule.
+   */
+  struct ASin : Base , Chainer<ASin>
   {
+    using Chainer<ASin>::operator ();
     /**
-     * \ingroup CMathGroup
-     *
-     * \brief Sine function including first three derivatives (based on sin(double) in \<cmath\>).
-     *
-     * For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur
-     * during applications of the chain rule.
+     * @brief Constructor.
+     * @param x point of evaluation
      */
-    struct ASin : Base , Chainer<ASin>
+    explicit ASin(double x=0.)
     {
-      using Chainer<ASin>::operator ();
-      /**
-       * @brief Constructor.
-       * @param x point of evaluation
-       */
-      explicit ASin(double x=0.)
-      {
-        update(x);
-      }
-
-      /// Reset point of evaluation.
-      void update(double x)
-      {
-#ifdef FUNG_ENABLE_EXCEPTIONS
-        if( x < -1 || x > 1 ) throw OutOfDomainException("ASin","[-1,1]",x,__FILE__,__LINE__);
-#endif
-        value = ::asin(x);
-        firstDerivative = 1/::sqrt(1-(x*x));
-        firstDerivative3 = firstDerivative * firstDerivative * firstDerivative;
-        x_ = x;
-      }
-
-      /// Function value.
-      double d0() const noexcept
-      {
-        return value;
-      }
-
-      /// First (directional) derivative.
-      template < int = -1 >
-      double d1(double dx=1) const
-      {
-        return firstDerivative * dx;
-      }
-
-      /// Second (directional) derivative.
-      template < int = -1 , int = -1 >
-      double d2(double dx=1, double dy=1) const
-      {
-        return x_ * firstDerivative3 * dx * dy;
-      }
-
-      /// Third (directional) derivative.
-      template < int = -1 , int = -1 , int = -1>
-      double d3(double dx=1, double dy=1, double dz=1) const
-      {
-        return firstDerivative3 * ( 1 + ( 3 * x_ * x_ /(firstDerivative*firstDerivative) ) ) * dx * dy * dz;
-      }
-
-    private:
-      double value = 0., firstDerivative = 1., firstDerivative3 = 1., x_ = 0.;
-    };
-
-    /**
-     * \brief Plug f into arcsine.
-     * \return object of type Chain<ASin,Function>.
-     */
-    template <class Function, class = std::enable_if_t<std::is_base_of<Base,Function>::value> >
-    auto asin(const Function& f)
-    {
-      return ASin()(f);
+      update(x);
     }
+
+    /// Reset point of evaluation.
+    void update(double x)
+    {
+#ifdef FUNG_ENABLE_EXCEPTIONS
+      if( x < -1 || x > 1 ) throw OutOfDomainException("ASin","[-1,1]",x,__FILE__,__LINE__);
+#endif
+      value = ::asin(x);
+      firstDerivative = 1/::sqrt(1-(x*x));
+      firstDerivative3 = firstDerivative * firstDerivative * firstDerivative;
+      x_ = x;
+    }
+
+    /// Function value.
+    double d0() const noexcept
+    {
+      return value;
+    }
+
+    /// First (directional) derivative.
+    template < int = -1 >
+    double d1(double dx=1) const
+    {
+      return firstDerivative * dx;
+    }
+
+    /// Second (directional) derivative.
+    template < int = -1 , int = -1 >
+    double d2(double dx=1, double dy=1) const
+    {
+      return x_ * firstDerivative3 * dx * dy;
+    }
+
+    /// Third (directional) derivative.
+    template < int = -1 , int = -1 , int = -1>
+    double d3(double dx=1, double dy=1, double dz=1) const
+    {
+      return firstDerivative3 * ( 1 + ( 3 * x_ * x_ /(firstDerivative*firstDerivative) ) ) * dx * dy * dz;
+    }
+
+  private:
+    double value = 0., firstDerivative = 1., firstDerivative3 = 1., x_ = 0.;
+  };
+
+  /**
+   * \brief Generate \f$ \asin\circ f \f$.
+   * \param f function mapping into a scalar space
+   */
+  template <class F,
+            class = std::enable_if_t<std::is_base_of<Base,F>::value> >
+  auto asin(const F& f)
+  {
+    return ASin()(f);
   }
 }
 

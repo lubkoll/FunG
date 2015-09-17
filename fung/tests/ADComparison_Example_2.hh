@@ -100,7 +100,6 @@ namespace Example_2
   auto generateTestFunction()
   {
     using namespace FunG;
-    using namespace FunG::CMath;
     auto g = exp(Sqrt()) + 1;//( Exp() << Sqrt() ) + 1;
     auto f = identity(1.) * g + sin(g);
     return Finalize<decltype(f),true>(f);

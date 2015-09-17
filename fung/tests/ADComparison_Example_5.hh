@@ -103,7 +103,7 @@ namespace Example_5
   auto generateTestFunction()
   {
     using FunG::LinearAlgebra::trace;
-    using FunG::CMath::sqrt;
+    using FunG::sqrt;
     using FunG::Variable;
 
     auto x = Variable<double,0>();

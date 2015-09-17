@@ -22,8 +22,9 @@
 #define FUNG_LINEAR_ALGEBRA_DEVIATORIC_INVARIANTS_HH
 
 #include "deviator.hh"
-#include "matrix_norm.hh"
+#include "frobenius_norm.hh"
 #include "fung/mathematical_operations/chain.hh"
+#include "fung/util/base.hh"
 
 namespace FunG
 {
@@ -31,10 +32,15 @@ namespace FunG
   {
     /**
      * \ingroup InvariantGroup
-     * \brief Second deviator invariant \f$ J_2(\sigma)=\sqrt{\bar\sigma\negthinspace:\negthinspace\bar\sigma} \f$ with \f$\bar\sigma = \sigma - \frac{\mathrm{tr}(\sigma)}{n}I\f$ and \f$\sigma\in\mathbb{R}^{n,n}\f$.
+     * \brief Second deviatoric invariant \f$ j_2(\sigma)=\sqrt{\bar\sigma\negthinspace:\negthinspace\bar\sigma} \f$ with
+     * \f$\bar\sigma = \sigma - \frac{\mathrm{tr}(\sigma)}{n}I\f$ and \f$\sigma\in\mathbb{R}^{n,n}\f$.
      */
-    template <class Matrix>
-    using SecondDeviatoricInvariant = MathematicalOperations::Chain< MatrixNorm<Matrix> , Deviator<Matrix> >;
+    template <class Matrix,
+              std::enable_if_t<!std::is_base_of<Base,Matrix>::value>* = nullptr>
+    auto j2(const Matrix& A)
+    {
+      return frobeniusNorm(A)( deviator(A) );
+    }
   }
 }
 #endif // FUNG_LINEAR_ALGEBRA_DEVIATORIC_INVARIANTS_HH

@@ -25,12 +25,6 @@
 #include <utility>
 #include "static_checks.hh"
 
-// suppress warnings coming from the __attribute__((always_inline))
-#if defined(__GNUC__) || defined(__GNUG__)
-  #pragma GCC diagnostic push
-  #pragma GCC diagnostic ignored "-Wattributes"
-#endif
-
 
 namespace FunG
 {
@@ -39,43 +33,15 @@ namespace FunG
    */
   namespace AtDetail
   {
-
-
-    template <class Matrix, bool accessViaSquareBrackets, bool accessViaRoundBrackets, bool isMatrix>
-    struct ValueTypeImpl;
-
-    template <class Matrix, bool accessViaRoundBrackets>
-    struct ValueTypeImpl<Matrix,true,accessViaRoundBrackets,true>
-    {
-      using type = decltype(std::declval<Matrix>()[0][0]);
-    };
-
-    template <class Matrix>
-    struct ValueTypeImpl<Matrix,false,true,true>
-    {
-      using type = decltype(std::declval<Matrix>()(0,0));
-    };
-
-    template <class Vector, bool accessViaRoundBrackets>
-    struct ValueTypeImpl<Vector,true,accessViaRoundBrackets,false>
-    {
-      using type = decltype(std::declval<Vector>()[0]);
-    };
-
-    template <class Vector>
-    struct ValueTypeImpl<Vector,false,true,false>
-    {
-      using type = decltype(std::declval<Vector>()(0));
-    };
-
-    template <class Matrix>
-    using ValueType = ValueTypeImpl<Matrix,Checks::accessViaSquareBrackets<Matrix>(),Checks::accessViaRoundBrackets<Matrix>(),Checks::isConstantSizeMatrix<Matrix>()>;
-
-
     template <class Matrix, class = void>
     struct At
     {
       static auto& apply(Matrix& A, int i, int j)
+      {
+        return A(i,j);
+      }
+
+      static const auto& apply(const Matrix& A, int i, int j)
       {
         return A(i,j);
       }
@@ -88,6 +54,11 @@ namespace FunG
       {
         return A[i][j];
       }
+
+      static const auto& apply(const Matrix& A, int i, int j)
+      {
+        return A[i][j];
+      }
     };
 
     template <class Vector, class = void>
@@ -97,22 +68,33 @@ namespace FunG
       {
         return v(i);
       }
+
+      static const auto& apply(const Vector& v, int i)
+      {
+        return v(i);
+      }
     };
 
     template <class Vector>
-    struct At_v< Vector , void_t< Checks::AccessViaSquareBracketsForVector<Vector> > >
+    struct At_v< Vector , void_t< Checks::TryAccessViaSquareBracketsForVector<Vector> > >
     {
       static auto& apply(Vector& v, int i)
+      {
+        return v[i];
+      }
+
+      static const auto& apply(const Vector& v, int i)
       {
         return v[i];
       }
     };
   }
 
-  /// Access underlying value type of Matrix.
-  template <class Arg>
-  using at_t = typename AtDetail::ValueType<Arg>::type;
-
+  // suppress warnings coming from the __attribute__((always_inline))
+  #if defined(__GNUC__) || defined(__GNUG__)
+    #pragma GCC diagnostic push
+    #pragma GCC diagnostic ignored "-Wattributes"
+  #endif
 
   template <class Matrix>
   __attribute__((always_inline)) auto& at(Matrix& A, int i, int j)
@@ -120,8 +102,20 @@ namespace FunG
     return AtDetail::At<Matrix>::apply(A,i,j);
   }
 
+  template <class Matrix>
+  __attribute__((always_inline)) const auto& at(const Matrix& A, int i, int j)
+  {
+    return AtDetail::At<Matrix>::apply(A,i,j);
+  }
+
   template <class Vector>
   __attribute__((always_inline)) auto& at(Vector& v, int i)
+  {
+    return AtDetail::At_v<Vector>::apply(v,i);
+  }
+
+  template <class Vector>
+  __attribute__((always_inline)) const auto& at(const Vector& v, int i)
   {
     return AtDetail::At_v<Vector>::apply(v,i);
   }

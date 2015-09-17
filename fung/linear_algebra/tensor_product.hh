@@ -22,7 +22,8 @@
 #define FUNG_LINEAR_ALGEBRA_TENSOR_PRODUCT_HH
 
 #include "fung/util/at.hh"
-#include "fung/util/extract_rows_and_cols.hh"
+#include "rows_and_cols.hh"
+#include "fung/util/static_checks.hh"
 #include "fung/util/zero.hh"
 
 namespace FunG
@@ -33,13 +34,14 @@ namespace FunG
      * \ingroup LinearAlgebraGroup
      * \brief Compute tensor product \f$ M = v \otimes w \f$.
      */
-    template <class Matrix, class Vector1, class Vector2>
+    template <class Matrix, class Vector1, class Vector2,
+              std::enable_if_t<Checks::isConstantSize<Matrix>()>* = nullptr>
     Matrix tensorProduct(const Vector1& v, const Vector2& w)
     {
       auto result = zero<Matrix>();
 
-      for( int i=0; i<numberOfRows<Matrix>(); ++i )
-        for( int j=0; j<numberOfColumns<Matrix>(); ++j )
+      for( int i=0; i<rows<Matrix>(); ++i )
+        for( int j=0; j<cols<Matrix>(); ++j )
           at(result,i,j) = v[i] * w[j];
 
       return result;

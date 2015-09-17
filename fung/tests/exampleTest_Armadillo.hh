@@ -79,8 +79,8 @@ void testExamples_Armadillo()
 {
   using std::cout;
   using std::endl;
-  using FunG::CMath::LN;
-  using FunG::CMath::Pow;
+  using FunG::LN;
+  using FunG::Pow;
   using namespace ArmadilloDetail;
   constexpr int dim = 3;
   using M = arma::mat::fixed<dim,dim>;

@@ -83,9 +83,8 @@ namespace FunG
      * \brief Number of rows of a dynamic size matrix.
      */
     template < class Matrix ,
-               class = std::enable_if_t<!Checks::isConstantSizeMatrix<Matrix>()> ,
-               class = std::enable_if_t<Checks::isDynamicMatrix<Matrix>()> >
-    auto rows(const Matrix& A) //noexcept(std::declval<Detail::Rows<Matrix,Checks::hasRowsFunction<Matrix>(),Checks::hasMember_n_rows<Matrix>()>()(A) -> decltype(Detail::Rows<Matrix,Checks::hasRowsFunction<Matrix>(),Checks::hasMember_n_rows<Matrix>()>()(std::declval<Matrix>()))
+               std::enable_if_t<!Checks::isConstantSize<Matrix>()>* = nullptr >
+    auto rows(const Matrix& A)
     {
       return Detail::Rows<Matrix,Checks::hasRowsFunction<Matrix>(),Checks::hasMember_n_rows<Matrix>()>()(A);
     }
@@ -94,8 +93,8 @@ namespace FunG
      * \brief Number of rows of a constant size matrix.
      */
     template < class Matrix ,
-               class = std::enable_if_t<Checks::isConstantSizeMatrix<Matrix>()> >
-    constexpr auto rows() //noexcept(std::declval<Detail::Rows<Matrix,Checks::hasRowsFunction<Matrix>(),Checks::hasMember_n_rows<Matrix>()>()(A) -> decltype(Detail::Rows<Matrix,Checks::hasRowsFunction<Matrix>(),Checks::hasMember_n_rows<Matrix>()>()(std::declval<Matrix>()))
+               std::enable_if_t<Checks::isConstantSize<Matrix>()>* = nullptr >
+    constexpr auto rows()
     {
       return numberOfRows<Matrix>();
     }
@@ -104,9 +103,8 @@ namespace FunG
      * \brief Number of columns of a dynamic size matrix.
      */
     template < class Matrix ,
-               class = std::enable_if_t<!Checks::isConstantSizeMatrix<Matrix>()> ,
-               class = std::enable_if_t<Checks::isDynamicMatrix<Matrix>()> >
-    auto cols(const Matrix& A) //noexcept( std::declval< Detail::Cols<Matrix,Checks::hasColsFunction<Matrix>(),Checks::hasMember_n_cols<Matrix>()> >()(A)) //-> decltype(Detail::Cols<Matrix,Checks::hasColsFunction<Matrix>(),Checks::hasMember_n_cols<Matrix>()>()(std::declval<Matrix>()))
+               std::enable_if_t<!Checks::isConstantSize<Matrix>()>* = nullptr>
+    auto cols(const Matrix& A)
     {
       return Detail::Cols<Matrix,Checks::hasColsFunction<Matrix>(),Checks::hasMember_n_cols<Matrix>()>()(A);
     }
@@ -115,8 +113,8 @@ namespace FunG
      * \brief Number of columns of a constant size matrix.
      */
     template < class Matrix ,
-               class = std::enable_if_t<Checks::isConstantSizeMatrix<Matrix>()> >
-    constexpr auto cols() //noexcept(std::declval<Detail::Rows<Matrix,Checks::hasRowsFunction<Matrix>(),Checks::hasMember_n_rows<Matrix>()>()(A) -> decltype(Detail::Rows<Matrix,Checks::hasRowsFunction<Matrix>(),Checks::hasMember_n_rows<Matrix>()>()(std::declval<Matrix>()))
+               std::enable_if_t<Checks::isConstantSize<Matrix>()>* = nullptr >
+    constexpr auto cols()
     {
       return numberOfColumns<Matrix>();
     }

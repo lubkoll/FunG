@@ -40,28 +40,40 @@ namespace FunG
   {
     /**
      * \ingroup LinearAlgebraGroup
-     * \brief %Deviator of a matrix \f$ A\in\mathbb{R}^{n,n} \f$, i.e. \f$ A - \frac{\mathrm{tr}(A)}{n}I \f$.
+     * \brief Generate %deviator \f$ \mathrm{dev}(A) = A - \frac{\mathrm{tr}(A)}{n}I \f$ of a matrix \f$ A\in\mathbb{R}^{n,n} \f$.
      */
-    template <class Matrix, class = Concepts::SymmetricMatrixConceptCheck<Matrix>>
+    template <class Matrix,
+              int n = dim<Matrix>(),
+              std::enable_if_t<Checks::isConstantSize<Matrix>() && !Checks::is_base_of<Base,Matrix>::value>* = nullptr,
+              class = Concepts::SymmetricMatrixConceptCheck<Matrix> >
     auto deviator(const Matrix& A)
     {
-      return Identity<Matrix>(A) + (-1./dimension<Matrix>()) * ( trace(A) * Constant<Matrix>( unitMatrix<Matrix>() ) );
+      return identity(A) + (-1./n) * ( trace(A) * constant( unitMatrix<Matrix>() ) );
     }
 
     /**
      * \ingroup LinearAlgebraGroup
-     * \brief Type of the %deviator of a matrix \f$ A\in\mathbb{R}^{n,n} \f$, i.e. \f$ A - \frac{\mathrm{tr}(A)}{n}I \f$.
+     * \brief Generate %deviator \f$ \mathrm{dev}(A) = A - \frac{\mathrm{tr}(A)}{n}I \f$ of a matrix \f$ A\in\mathbb{R}^{n,n} \f$.
      */
-    template <class Matrix>
-    class Deviator : public decltype( deviator( std::declval<Matrix>() ) )
+    template <class Matrix,
+              std::enable_if_t<!Checks::isConstantSize<Matrix>() && !Checks::is_base_of<Base,Matrix>::value>* = nullptr,
+              class = Concepts::SymmetricMatrixConceptCheck<Matrix>>
+    auto deviator(const Matrix& A)
     {
-    private:
-      using Base = decltype( deviator( std::declval<Matrix>() ) );
-    public:
-      Deviator() = default;
-      Deviator(const Matrix& A) : Base( deviator(A) )
-      {}
-    };
+      assert(rows(A)==cols(A));
+      return identity(A) + (-1./rows(A)) * ( trace(A) * constant( unitMatrix<Matrix>() ) );
+    }
+
+    /**
+     * \ingroup LinearAlgebraGroup
+     * \brief Generate %deviator \f$ \mathrm{dev}\circ f\f$.
+     */
+    template <class F,
+              std::enable_if_t<Checks::is_base_of<Base,F>::value>* = nullptr>
+    auto deviator(const F& f)
+    {
+      return deviator(f())( f );
+    }
   }
 }
 

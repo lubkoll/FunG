@@ -106,8 +106,8 @@ namespace FunG
     template < class Matrix >
     struct MatrixConceptCheck : ArithmeticConceptCheck<Matrix>
     {
-      static_assert(Checks::accessViaSquareBrackets<Matrix>() ||
-                    Checks::accessViaRoundBrackets<Matrix>(),
+      static_assert(Checks::AccessViaSquareBracketsForMatrix<Matrix>::value ||
+                    Checks::AccessViaRoundBracketsForMatrix<Matrix>::value,
                     "MatrixConcept: Currently only matrices that allow access to their elements via A[i][j] or A(i,j) are supported.\nYou may contact the developer to ask for further access or provide your own patch.");
     };
 
@@ -119,8 +119,8 @@ namespace FunG
     template < class Vector >
     struct VectorConceptCheck : ArithmeticConceptCheck<Vector>
     {
-      static_assert(Checks::accessViaSquareBrackets<Vector>() ||
-                    Checks::accessViaRoundBrackets<Vector>(),
+      static_assert(Checks::AccessViaSquareBracketsForVector<Vector>::value ||
+                    Checks::AccessViaRoundBracketsForVector<Vector>::value,
                     "VectorConcept: Currently only vectors that allow access to their elements via v[i] or v(i) are supported.\nYou may contact the developer to ask for further access or provide your own patch.");
     };
 

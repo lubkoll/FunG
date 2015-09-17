@@ -83,7 +83,7 @@ namespace FunG
    * Requires that a specialization of struct Zero exists for Matrix.
    * @return constant size zero matrix
    */
-  template <class Matrix, class = std::enable_if_t<Checks::isConstantSizeMatrix<Matrix>()> >
+  template <class Matrix, class = std::enable_if_t<Checks::isConstantSize<Matrix>()> >
   Matrix zero()
   {
     return Zero<Matrix>()();
@@ -93,7 +93,7 @@ namespace FunG
    * Requires that a specialization of struct Zero exists for Matrix.
    * @return dynamic size zero matrix
    */
-  template <class Matrix, class = std::enable_if_t<!Checks::isConstantSizeMatrix<Matrix>()> >
+  template <class Matrix, class = std::enable_if_t<!Checks::isConstantSize<Matrix>()> >
   constexpr Matrix zero(int rows, int cols)
   {
     Matrix m(rows,cols);

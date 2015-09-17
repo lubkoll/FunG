@@ -30,7 +30,7 @@
 
 /**
  * \ingroup Biomechanics
- * \file adiposeTissue_SommerHolzapfel.hh
+ * \file adipose_tissue_sommer_holzapfel.hh
  * \brief Model for adipose tissue of \cite Sommer2013.
  */
 
@@ -41,19 +41,15 @@ namespace FunG
    */
   namespace Detail
   {
-    template < class Matrix , int offset = LinearAlgebra::dimension<Matrix>() >
+    template < class Matrix , int n = LinearAlgebra::dim<Matrix>() >
     auto generateIncompressibleAdiposeTissue_SommerHolzapfel(double cCells, double k1, double k2, double kappa, const Matrix& M, const Matrix& F)
     {
-      using CMath::exp;
       using namespace LinearAlgebra;
-      auto i1 = FirstPrincipalInvariant<Matrix>(F);
-      auto si1 = ShiftedFirstPrincipalInvariant<Matrix,offset>(F);
-      auto i4 = FirstMixedInvariant<Matrix>(F,M);
+      auto S = LeftCauchyGreenStrainTensor<Matrix>(F);
 
-      auto aniso = kappa*i1 + (1-3*kappa)*i4 - 1;
-      return ( cCells*si1 +
-               (k1/k2)*( exp( k2*(aniso^2) ) - 1)
-             ) << LeftCauchyGreenStrainTensor<Matrix>(F);
+      auto aniso = kappa*i1(F) + (1-3*kappa)*i4(F,M) - 1;
+      auto f = cCells*( i1(F) - n ) + (k1/k2)*( exp( k2*(aniso^2) ) - 1);
+      return f(S);
     }
   }
   /**
@@ -75,7 +71,7 @@ namespace FunG
    * @param M structural tensor describing the fiber direction of the interlobular septa, i.e. \f$M=v\otimesv\f$ for a fiber direction \f$v\f$
    * @param F initial deformation gradient
    */
-  template < class Matrix , int offset = LinearAlgebra::dimension<Matrix>()>
+  template < class Matrix , int offset = LinearAlgebra::dim<Matrix>()>
   auto incompressibleAdiposeTissue_SommerHolzapfel(double cCells, double k1, double k2, double kappa, const Matrix& M, const Matrix& F)
   {
     return Detail::generateIncompressibleAdiposeTissue_SommerHolzapfel<Matrix,offset>(cCells,k1,k2,kappa,M,F);
@@ -94,7 +90,7 @@ namespace FunG
    * @param M structural tensor describing the fiber direction of the interlobular septa, i.e. \f$M=v\otimesv\f$ for a fiber direction \f$v\f$
    * @param F initial deformation gradient
    */
-  template < class Matrix , int offset = LinearAlgebra::dimension<Matrix>()>
+  template < class Matrix , int offset = LinearAlgebra::dim<Matrix>()>
   auto incompressibleAdiposeTissue_SommerHolzapfel(const Matrix& M, const Matrix& F)
   {
     return incompressibleAdiposeTissue_SommerHolzapfel<Matrix,offset>(0.15,0.8,47.3,0.09,M,F);
@@ -118,7 +114,7 @@ namespace FunG
    * @param d1 scaling of the penalty function for compression
    * @param F initial deformation gradient
    */
-  template <class Inflation, class Compression, class Matrix , int offset = LinearAlgebra::dimension<Matrix>()>
+  template <class Inflation, class Compression, class Matrix , int offset = LinearAlgebra::dim<Matrix>()>
   auto compressibleAdiposeTissue_SommerHolzapfel(double cCells, double k1, double k2, double kappa, double d0, double d1, const Matrix& M, const Matrix& F)
   {
     return Detail::generateIncompressibleAdiposeTissue_SommerHolzapfel<Matrix,offset>(cCells,k1,k2,kappa,M,F) + volumetricPenalty<Inflation,Compression>(d0,d1,F);
@@ -138,7 +134,7 @@ namespace FunG
    * @param M structural tensor describing the fiber direction of the interlobular septa, i.e. \f$M=v\otimesv\f$ for a fiber direction \f$v\f$
    * @param F initial deformation gradient
    */
-  template <class Inflation, class Compression, class Matrix , int offset = LinearAlgebra::dimension<Matrix>()>
+  template <class Inflation, class Compression, class Matrix , int offset = LinearAlgebra::dim<Matrix>()>
   auto compressibleAdiposeTissue_SommerHolzapfel(double d0, double d1, const Matrix& M, const Matrix& F)
   {
     return compressibleAdiposeTissue_SommerHolzapfel<Inflation,Compression,Matrix,offset>(0.15,0.8,47.3,0.09,d0,d1,M,F);

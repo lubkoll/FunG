@@ -32,24 +32,23 @@ namespace FunG
   template <class Inflation, class Compression, class Matrix>
   auto volumetricPenalty(double d0, double d1, const Matrix& A)
   {
-    auto det = LinearAlgebra::Determinant<Matrix>(A);
-    auto f = ( d0*Inflation(det()) + d1*Compression(det()) ) << det;
-    auto g = f - f.d0();
-    return g;
+    using LinearAlgebra::det;
+    auto f = ( d0*Inflation() + d1*Compression() ) ( det(A) );
+    return f - f.d0();
   }
 
   /// Create the volumetric penalty function \f$ d_0 j^2 + d_1 \log(j),\ j=\det(A) \f$.
   template <class Matrix>
   auto volumetricQuadAndLog(double d0, double d1, const Matrix& A)
   {
-    return volumetricPenalty< CMath::Pow<2> , CMath::LN >(d0,d1,A);
+    return volumetricPenalty< Pow<2> , LN >(d0,d1,A);
   }
 
   /// Create the volumetric penalty function \f$ d_0 j^5 + d_1 j^{-5},\ j=\det(A) \f$.
   template <class Matrix>
   auto volumetricHartmannNeff(double d0, double d1, const Matrix& A)
   {
-    return volumetricPenalty< CMath::Pow<5> , CMath::Pow<-5> >(d0,d1,A);
+    return volumetricPenalty< Pow<5> , Pow<-5> >(d0,d1,A);
   }
 }
 

@@ -23,15 +23,15 @@
 
 #include "fung/generate.hh"
 #include "fung/cmath/exp.hh"
-#include "fung/linear_algebra/modified_principal_invariants.hh"
-#include "fung/linear_algebra/modified_mixed_invariants.hh"
+#include "fung/linear_algebra/principal_invariants.hh"
+#include "fung/linear_algebra/mixed_invariants.hh"
 #include "fung/linear_algebra/strain_tensor.hh"
 #include "fung/linear_algebra/tensor_product.hh"
 #include "fung/examples/volumetric_penalty_functions.hh"
 
 /**
  * \ingroup Biomechanics
- * \file muscleTissue_Martins.hh
+ * \file muscle_tissue_martins.hh
  * \brief Versions of the muscle model of \cite Martins1998.
  */
 
@@ -42,17 +42,16 @@ namespace FunG
    */
   namespace MuscleTissueDetail
   {
-    template < class Matrix , int offset = LinearAlgebra::dimension<Matrix>() >
+    template < class Matrix , int n = LinearAlgebra::dim<Matrix>() >
     auto generateIncompressibleMuscleTissue_Martins(double c, double b, double A, double a, const Matrix& M, const Matrix& F )
     {
-      using CMath::exp;
       using namespace LinearAlgebra;
-      auto i1 = ShiftedFirstModifiedPrincipalInvariant<Matrix,offset>();
-      auto i6 = ShiftedThirdModifiedMixedInvariant<Matrix>(F,M);
+      auto S = LeftCauchyGreenStrainTensor<Matrix>(F);
+      auto si1 = mi1<Matrix,n>(S()) - n;
+      auto si6 = mi6<Matrix,Matrix,n>(S(),M) - 1;
 
-      return ( c * ( exp( b * i1 ) - 1 ) +
-               A * ( exp( a * ( i6^2 ) ) - 1 )
-             ) << LeftCauchyGreenStrainTensor<Matrix>(F);
+      auto f = c * ( exp( b * si1 ) - 1 ) + A * ( exp( a * ( si6^2 ) ) - 1 );
+      return f(S);
     }
   }
   /**
@@ -74,7 +73,7 @@ namespace FunG
    * \param M structural (rank-one) tensor describing the initial orientation of muscle fibers for \f$F=I\f$, where \f$I\f$ is the unit matrix.
    * \param F deformation gradient
    */
-  template < class Matrix , int offset = LinearAlgebra::dimension<Matrix>()>
+  template < class Matrix , int offset = LinearAlgebra::dim<Matrix>()>
   auto incompressibleMuscleTissue_Martins(double c, double b, double A, double a, const Matrix& M, const Matrix& F)
   {
     return MuscleTissueDetail::generateIncompressibleMuscleTissue_Martins<Matrix,offset>(c,b,A,a,M,F);
@@ -94,7 +93,7 @@ namespace FunG
    * \param M structural (rank-one) tensor describing the initial orientation of muscle fibers for \f$F=I\f$, where \f$I\f$ is the unit matrix.
    * \param F deformation gradient
    */
-  template < class Matrix , int offset = LinearAlgebra::dimension<Matrix>()>
+  template < class Matrix , int offset = LinearAlgebra::dim<Matrix>()>
   auto incompressibleMuscleTissue_Martins(const Matrix& M, const Matrix& F)
   {
     return incompressibleMuscleTissue_Martins<Matrix,offset>(0.387, 23.46, 0.584, 12.43, M, F);
@@ -117,7 +116,7 @@ namespace FunG
    * \param M structural (rank-one) tensor describing the initial orientation of muscle fibers for \f$F=I\f$, where \f$I\f$ is the unit matrix.
    * \param F deformation gradient
    */
-  template < class Inflation , class Compression , class Matrix , int offset = LinearAlgebra::dimension<Matrix>()>
+  template < class Inflation , class Compression , class Matrix , int offset = LinearAlgebra::dim<Matrix>()>
   auto compressibleMuscleTissue_Martins(double c, double b, double A, double a, double d0, double d1, const Matrix& M, const Matrix& F)
   {
     return MuscleTissueDetail::generateIncompressibleMuscleTissue_Martins<Matrix,offset>(c,b,A,a,M,F) + volumetricPenalty<Inflation,Compression>(d0,d1,F);
@@ -139,7 +138,7 @@ namespace FunG
    * \param M structural (rank-one) tensor describing the initial orientation of muscle fibers for \f$F=I\f$, where \f$I\f$ is the unit matrix.
    * \param F deformation gradient
    */
-  template < class Inflation , class Compression , class Matrix , int offset = LinearAlgebra::dimension<Matrix>()>
+  template < class Inflation , class Compression , class Matrix , int offset = LinearAlgebra::dim<Matrix>()>
   auto compressibleMuscleTissue_Martins(double d0, double d1, const Matrix& M, const Matrix& F)
   {
     return compressibleMuscleTissue_Martins<Inflation,Compression,Matrix,offset>(0.387, 23.46, 0.584, 12.43, d0, d1, M, F);
