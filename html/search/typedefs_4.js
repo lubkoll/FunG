@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['geometricnonlinearity',['GeometricNonlinearity',['../group__LinearAlgebraGroup.html#ga7af9b6f793f11a287277a30ea1e32caf',1,'FunG::LinearAlgebra']]]
+  ['trace',['Trace',['../group__LinearAlgebraGroup.html#ga43e327309edc349c75ceecd29b7abde2',1,'FunG::LinearAlgebra']]]
 ];

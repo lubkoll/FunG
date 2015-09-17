@@ -76,7 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">skin_tissue_hendriks.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
+<a href="skin__tissue__hendriks_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*                                                                             */</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*   This file is part of the C++-library FunG.                              */</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/*   Copyright 2015 Lars Lubkoll                                               */</span></div>
@@ -125,45 +125,46 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">namespace </span>FunG</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix , <span class="keywordtype">int</span> offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix , <span class="keywordtype">int</span> n = LinearAlgebra::dim&lt;Matrix&gt;()&gt;</div>
 <div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="group__Biomechanics.html#gaa20bf15ef6976d64d89490429035b2c4">   49</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Biomechanics.html#gaa20bf15ef6976d64d89490429035b2c4">incompressibleSkin_Hendriks</a>(<span class="keywordtype">double</span> c0, <span class="keywordtype">double</span> c1, <span class="keyword">const</span> Matrix&amp; F)</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">using namespace </span>LinearAlgebra;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">auto</span> i1 = ShiftedFirstPrincipalInvariant&lt;Matrix,offset&gt;();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">auto</span> i2 = ShiftedSecondPrincipalInvariant&lt;Matrix,offset&gt;();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">auto</span> S = LeftCauchyGreenStrainTensor&lt;Matrix&gt;(F);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> ( c0*i1 + c1*i1*i2 ) &lt;&lt; S;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix , <span class="keywordtype">int</span> offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt;</div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="group__Biomechanics.html#gad8653218bd2afb4e3cfd601a5142956c">   73</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Biomechanics.html#gaa20bf15ef6976d64d89490429035b2c4">incompressibleSkin_Hendriks</a>(<span class="keyword">const</span> Matrix&amp; F)</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">return</span> incompressibleSkin_Hendriks&lt;Matrix,offset&gt;(9.4,82.,F);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">auto</span> S = LeftCauchyGreenStrainTensor&lt;Matrix&gt;(F);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">auto</span> si1 = <a class="code" href="group__InvariantGroup.html#gafaead59b618d87239270f8eca2bf75c8">i1</a>(S()) - n;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">auto</span> si2 = <a class="code" href="group__InvariantGroup.html#ga9e442bab8f203bcd5634a3d0e65bf802">i2</a>(S()) - n;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">auto</span> f = c0*si1 + c1*si1*si2;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> f(S);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix , <span class="keywordtype">int</span> n = LinearAlgebra::dim&lt;Matrix&gt;()&gt;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="group__Biomechanics.html#gad8653218bd2afb4e3cfd601a5142956c">   72</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Biomechanics.html#gaa20bf15ef6976d64d89490429035b2c4">incompressibleSkin_Hendriks</a>(<span class="keyword">const</span> Matrix&amp; F)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> incompressibleSkin_Hendriks&lt;Matrix,n&gt;(9.4,82.,F);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> InflationPenalty, <span class="keyword">class</span> CompressionPenalty, <span class="keyword">class</span> Matrix, <span class="keywordtype">int</span> offset = LinearAlgebra::dimension&lt;Matrix&gt;()&gt;</div>
-<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="group__Biomechanics.html#ga07b4c52c6ecf7e72f73ab5832fb262cd">   93</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Biomechanics.html#ga07b4c52c6ecf7e72f73ab5832fb262cd">compressibleSkin_Hendriks</a>(<span class="keywordtype">double</span> c0, <span class="keywordtype">double</span> c1, <span class="keywordtype">double</span> d0, <span class="keywordtype">double</span> d1, <span class="keyword">const</span> Matrix&amp; F)</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">return</span> incompressibleSkin_Hendriks&lt;Matrix,offset&gt;(c0,c1,F) + volumetricPenalty&lt;InflationPenalty,CompressionPenalty&gt;(d0,d1,F);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keyword">template</span> &lt; <span class="keyword">class</span> InflationPenalty , <span class="keyword">class</span> CompressionPenalty , <span class="keyword">class</span> Matrix , <span class="keywordtype">int</span> offset = LinearAlgebra::dimension&lt;Matrix&gt;() &gt;</div>
-<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="group__Biomechanics.html#ga42721e772b7eada1b0bca98247ad440f">  113</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Biomechanics.html#ga07b4c52c6ecf7e72f73ab5832fb262cd">compressibleSkin_Hendriks</a>(<span class="keywordtype">double</span> d0, <span class="keywordtype">double</span> d1, <span class="keyword">const</span> Matrix&amp; F)</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">return</span> compressibleSkin_Hendriks&lt;InflationPenalty,CompressionPenalty,Matrix,offset&gt;(9.4,82.,d0,d1,F);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">#endif // FUNG_EXAMPLES_SKIN_HENDRIKS_HH</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> InflationPenalty, <span class="keyword">class</span> CompressionPenalty, <span class="keyword">class</span> Matrix, <span class="keywordtype">int</span> n = LinearAlgebra::dim&lt;Matrix&gt;()&gt;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="group__Biomechanics.html#ga07b4c52c6ecf7e72f73ab5832fb262cd">   92</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Biomechanics.html#ga07b4c52c6ecf7e72f73ab5832fb262cd">compressibleSkin_Hendriks</a>(<span class="keywordtype">double</span> c0, <span class="keywordtype">double</span> c1, <span class="keywordtype">double</span> d0, <span class="keywordtype">double</span> d1, <span class="keyword">const</span> Matrix&amp; F)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">return</span> incompressibleSkin_Hendriks&lt;Matrix,n&gt;(c0,c1,F) + volumetricPenalty&lt;InflationPenalty,CompressionPenalty&gt;(d0,d1,F);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keyword">template</span> &lt; <span class="keyword">class</span> InflationPenalty , <span class="keyword">class</span> CompressionPenalty , <span class="keyword">class</span> Matrix , <span class="keywordtype">int</span> n = LinearAlgebra::dim&lt;Matrix&gt;() &gt;</div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="group__Biomechanics.html#ga42721e772b7eada1b0bca98247ad440f">  112</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__Biomechanics.html#ga07b4c52c6ecf7e72f73ab5832fb262cd">compressibleSkin_Hendriks</a>(<span class="keywordtype">double</span> d0, <span class="keywordtype">double</span> d1, <span class="keyword">const</span> Matrix&amp; F)</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">return</span> compressibleSkin_Hendriks&lt;InflationPenalty,CompressionPenalty,Matrix,n&gt;(9.4,82.,d0,d1,F);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">#endif // FUNG_EXAMPLES_SKIN_HENDRIKS_HH</span></div>
 <div class="ttc" id="group__Biomechanics_html_gaa20bf15ef6976d64d89490429035b2c4"><div class="ttname"><a href="group__Biomechanics.html#gaa20bf15ef6976d64d89490429035b2c4">FunG::incompressibleSkin_Hendriks</a></div><div class="ttdeci">auto incompressibleSkin_Hendriks(double c0, double c1, const Matrix &amp;F)</div><div class="ttdoc">Model for skin tissue of . </div><div class="ttdef"><b>Definition:</b> skin_tissue_hendriks.hh:49</div></div>
-<div class="ttc" id="group__Biomechanics_html_ga07b4c52c6ecf7e72f73ab5832fb262cd"><div class="ttname"><a href="group__Biomechanics.html#ga07b4c52c6ecf7e72f73ab5832fb262cd">FunG::compressibleSkin_Hendriks</a></div><div class="ttdeci">auto compressibleSkin_Hendriks(double c0, double c1, double d0, double d1, const Matrix &amp;F)</div><div class="ttdoc">Compressible version of the model for skin tissue of . </div><div class="ttdef"><b>Definition:</b> skin_tissue_hendriks.hh:93</div></div>
+<div class="ttc" id="group__Biomechanics_html_ga07b4c52c6ecf7e72f73ab5832fb262cd"><div class="ttname"><a href="group__Biomechanics.html#ga07b4c52c6ecf7e72f73ab5832fb262cd">FunG::compressibleSkin_Hendriks</a></div><div class="ttdeci">auto compressibleSkin_Hendriks(double c0, double c1, double d0, double d1, const Matrix &amp;F)</div><div class="ttdoc">Compressible version of the model for skin tissue of . </div><div class="ttdef"><b>Definition:</b> skin_tissue_hendriks.hh:92</div></div>
+<div class="ttc" id="group__InvariantGroup_html_gafaead59b618d87239270f8eca2bf75c8"><div class="ttname"><a href="group__InvariantGroup.html#gafaead59b618d87239270f8eca2bf75c8">FunG::LinearAlgebra::i1</a></div><div class="ttdeci">auto i1(const Arg &amp;x)</div><div class="ttdoc">Generate first principal invariant. </div><div class="ttdef"><b>Definition:</b> principal_invariants.hh:185</div></div>
+<div class="ttc" id="group__InvariantGroup_html_ga9e442bab8f203bcd5634a3d0e65bf802"><div class="ttname"><a href="group__InvariantGroup.html#ga9e442bab8f203bcd5634a3d0e65bf802">FunG::LinearAlgebra::i2</a></div><div class="ttdeci">auto i2(const Matrix &amp;A)</div><div class="ttdoc">Convenient generation of second principal invariant  for . </div><div class="ttdef"><b>Definition:</b> principal_invariants.hh:197</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 15 2015 17:34:58 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Sep 17 2015 21:53:53 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -1,0 +1,69 @@
+\hypertarget{structFunG_1_1Pow}{\section{Fun\-G\-:\-:Pow$<$ dividend, divisor $>$ Struct Template Reference}
+\label{structFunG_1_1Pow}\index{Fun\-G\-::\-Pow$<$ dividend, divisor $>$@{Fun\-G\-::\-Pow$<$ dividend, divisor $>$}}
+}
+
+
+Power function with rational exponent $ k = \frac{dividend}{divisor} $ including first three derivatives.  
+
+
+
+
+{\ttfamily \#include $<$pow.\-hh$>$}
+
+Inheritance diagram for Fun\-G\-:\-:Pow$<$ dividend, divisor $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structFunG_1_1Pow}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structFunG_1_1Pow_a80be1d3a5c208e7ac74efa7ff3a7a18f}{Pow} (double x=1)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{structFunG_1_1Pow_a2cb004b3cb89c4887b67eb8e666f4852}{void \hyperlink{structFunG_1_1Pow_a2cb004b3cb89c4887b67eb8e666f4852}{update} (double x)}\label{structFunG_1_1Pow_a2cb004b3cb89c4887b67eb8e666f4852}
+
+\begin{DoxyCompactList}\small\item\em Reset point of evaluation. \end{DoxyCompactList}\item 
+\hypertarget{structFunG_1_1Pow_a840ccc0dbcfabc71863d2932074b955a}{double \hyperlink{structFunG_1_1Pow_a840ccc0dbcfabc71863d2932074b955a}{d0} () const noexcept}\label{structFunG_1_1Pow_a840ccc0dbcfabc71863d2932074b955a}
+
+\begin{DoxyCompactList}\small\item\em Function value. \end{DoxyCompactList}\item 
+\hypertarget{structFunG_1_1Pow_a0bfb1983f247906c05d7c2fbe3309654}{{\footnotesize template$<$int  = -\/1$>$ }\\double \hyperlink{structFunG_1_1Pow_a0bfb1983f247906c05d7c2fbe3309654}{d1} (double dx=1.) const }\label{structFunG_1_1Pow_a0bfb1983f247906c05d7c2fbe3309654}
+
+\begin{DoxyCompactList}\small\item\em First (directional) derivative. \end{DoxyCompactList}\item 
+\hypertarget{structFunG_1_1Pow_a2d533d9490901569af107bce5e326ef8}{{\footnotesize template$<$int  = -\/1, int  = -\/1$>$ }\\double \hyperlink{structFunG_1_1Pow_a2d533d9490901569af107bce5e326ef8}{d2} (double dx=1., double dy=1.) const }\label{structFunG_1_1Pow_a2d533d9490901569af107bce5e326ef8}
+
+\begin{DoxyCompactList}\small\item\em Second (directinal) derivative. \end{DoxyCompactList}\item 
+\hypertarget{structFunG_1_1Pow_a67ee939aec45c65c1b73491dc1edd5f1}{{\footnotesize template$<$int  = -\/1, int  = -\/1, int  = -\/1$>$ }\\double \hyperlink{structFunG_1_1Pow_a67ee939aec45c65c1b73491dc1edd5f1}{d3} (double dx=1., double dy=1., double dz=1.) const }\label{structFunG_1_1Pow_a67ee939aec45c65c1b73491dc1edd5f1}
+
+\begin{DoxyCompactList}\small\item\em Third (directional) derivative. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$int dividend, int divisor = 1$>$struct Fun\-G\-::\-Pow$<$ dividend, divisor $>$}
+
+Power function with rational exponent $ k = \frac{dividend}{divisor} $ including first three derivatives. 
+
+For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur during applications of the chain rule. For the cases $k=-1$ and $k=2$ specializations are used that avoid the use of std\-::pow. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structFunG_1_1Pow_a80be1d3a5c208e7ac74efa7ff3a7a18f}{\index{Fun\-G\-::\-Pow@{Fun\-G\-::\-Pow}!Pow@{Pow}}
+\index{Pow@{Pow}!FunG::Pow@{Fun\-G\-::\-Pow}}
+\subsubsection[{Pow}]{\setlength{\rightskip}{0pt plus 5cm}template$<$int dividend, int divisor = 1$>$ {\bf Fun\-G\-::\-Pow}$<$ dividend, divisor $>$\-::{\bf Pow} (
+\begin{DoxyParamCaption}
+\item[{double}]{x = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{structFunG_1_1Pow_a80be1d3a5c208e7ac74efa7ff3a7a18f}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & point of evaluation \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+fung/cmath/pow.\-hh\end{DoxyCompactItemize}

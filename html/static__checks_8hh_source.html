@@ -76,7 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">static_checks.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
+<a href="static__checks_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*                                                                             */</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*   This file is part of the C++-library FunG.                              */</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/*   Copyright 2015 Lars Lubkoll                                               */</span></div>
@@ -270,54 +270,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;      <span class="keywordflow">return</span> InPlaceSummation&lt;Arg,!std::is_base_of&lt;Base,Arg&gt;() &amp;&amp; !std::is_arithmetic&lt;Arg&gt;()&gt;::value;</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    }</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Arg &gt;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    constexpr <span class="keywordtype">bool</span> isConstantSizeMatrix()</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    {</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;      <span class="keywordflow">return</span> ( LinearAlgebra::numberOfRows&lt;Arg&gt;() &gt; 0 ) &amp;&amp; ( LinearAlgebra::numberOfColumns&lt;Arg&gt;() &gt; 0 );</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    }</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment">//    /**</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="comment">//     * \ingroup Checks</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="comment">//     * \brief Check if object is a static matrix for some type satisfying Concepts::MatrixConcept.</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment">//     *</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment">//     * Checks if number of rows and number of columns are positive.</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment">//     */</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="comment">//    template &lt; class Arg &gt;</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment">//    constexpr bool isConstantSizeMatrix()</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment">//    {</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment">//      return ( LinearAlgebra::numberOfRows&lt;Arg&gt;() &gt; 0 ) &amp;&amp; ( LinearAlgebra::numberOfColumns&lt;Arg&gt;() &gt; 0 );</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment">//    }</span></div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Arg &gt;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    constexpr <span class="keywordtype">bool</span> isStaticVector()</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    constexpr <span class="keywordtype">bool</span> isConstantSize()</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;      <span class="keywordflow">return</span> ( LinearAlgebra::numberOfRows&lt;Arg&gt;() &gt; 0 ) &amp;&amp; ( LinearAlgebra::numberOfColumns&lt;Arg&gt;() == -1 );</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;      <span class="keywordflow">return</span> ( LinearAlgebra::numberOfRows&lt;Arg&gt;() &gt; 0 );</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    }</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Arg &gt;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    constexpr <span class="keywordtype">bool</span> accessViaSquareBrackets()</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    {</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;      <span class="keywordflow">return</span> std::conditional_t&lt; !isConstantSizeMatrix&lt;Arg&gt;() &amp;&amp; isStaticVector&lt;Arg&gt;() ,</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                                 AccessViaSquareBracketsForVector&lt;Arg&gt; ,</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                                 AccessViaSquareBracketsForMatrix&lt;Arg&gt; &gt;::value;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    }</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Arg &gt;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    constexpr <span class="keywordtype">bool</span> accessViaRoundBrackets()</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    {</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;      <span class="keywordflow">return</span> std::conditional_t&lt; !isConstantSizeMatrix&lt;Arg&gt;() &amp;&amp; isStaticVector&lt;Arg&gt;() ,</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                                 AccessViaRoundBracketsForVector&lt;Arg&gt; ,</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                                 AccessViaRoundBracketsForMatrix&lt;Arg&gt; &gt;::value;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    }</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> F &gt;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    constexpr <span class="keywordtype">bool</span> hasUpdateFunction()</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    {</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;      <span class="keywordflow">return</span> CallOfUpdate&lt;F&gt;::value;</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    }</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> F &gt;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    constexpr <span class="keywordtype">bool</span> hasUpdateVariableFunction()</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    {</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;      <span class="keywordflow">return</span> CallOfUpdateVariable&lt;F&gt;::value;</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    }</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  }</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;}</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="preprocessor">#endif // FUNG_STATIC_CHECKS_HH</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> F &gt;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    constexpr <span class="keywordtype">bool</span> hasUpdateFunction()</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;      <span class="keywordflow">return</span> CallOfUpdate&lt;F&gt;::value;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    }</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> F &gt;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    constexpr <span class="keywordtype">bool</span> hasUpdateVariableFunction()</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    {</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;      <span class="keywordflow">return</span> CallOfUpdateVariable&lt;F&gt;::value;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    }</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  }</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;}</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="preprocessor">#endif // FUNG_STATIC_CHECKS_HH</span></div>
 <div class="ttc" id="namespaceFunG_html_a0cde667596590eb8d32e4a5ee76ddbb9"><div class="ttname"><a href="namespaceFunG.html#a0cde667596590eb8d32e4a5ee76ddbb9">FunG::void_t</a></div><div class="ttdeci">typename Detail::voider&lt; Types...&gt;::type void_t</div><div class="ttdoc">Most fascinating type ever. Is always void. </div><div class="ttdef"><b>Definition:</b> voider.hh:40</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 15 2015 17:34:59 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Sep 17 2015 21:53:53 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

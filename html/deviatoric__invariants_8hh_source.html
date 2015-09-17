@@ -76,7 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -119,24 +119,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FUNG_LINEAR_ALGEBRA_DEVIATORIC_INVARIANTS_HH</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;deviator.hh&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;matrix_norm.hh&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;frobenius_norm.hh&quot;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;fung/mathematical_operations/chain.hh&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span>FunG</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">namespace </span>LinearAlgebra</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix&gt;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="group__InvariantGroup.html#gaf8a18782f27b6d5e505eae594eaebaee">   37</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Chain.html">SecondDeviatoricInvariant</a> = <a class="code" href="structFunG_1_1MathematicalOperations_1_1Chain.html">MathematicalOperations::Chain&lt; MatrixNorm&lt;Matrix&gt;</a> , <a class="code" href="classFunG_1_1LinearAlgebra_1_1Deviator.html">Deviator&lt;Matrix&gt;</a> &gt;;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif // FUNG_LINEAR_ALGEBRA_DEVIATORIC_INVARIANTS_HH</span></div>
-<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Chain_html"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Chain.html">FunG::MathematicalOperations::Chain</a></div><div class="ttdoc">Chain  of functions  and  of type F resp. G (F and G must satisfy the requirements of Concepts::Funct...</div><div class="ttdef"><b>Definition:</b> chain.hh:61</div></div>
-<div class="ttc" id="classFunG_1_1LinearAlgebra_1_1Deviator_html"><div class="ttname"><a href="classFunG_1_1LinearAlgebra_1_1Deviator.html">FunG::LinearAlgebra::Deviator</a></div><div class="ttdoc">Type of the deviator of a matrix , i.e. . </div><div class="ttdef"><b>Definition:</b> deviator.hh:56</div></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;fung/util/base.hh&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span>FunG</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">namespace </span>LinearAlgebra</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class </span>Matrix,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;              std::enable_if_t&lt;!std::is_base_of&lt;Base,Matrix&gt;::value&gt;* = <span class="keyword">nullptr</span>&gt;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="group__InvariantGroup.html#ga9a2bc859fe1ae34b1a3ada91a39d69df">   40</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__InvariantGroup.html#ga9a2bc859fe1ae34b1a3ada91a39d69df">j2</a>(<span class="keyword">const</span> Matrix&amp; A)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="group__LinearAlgebraGroup.html#gaa893e7d667dde98d2b119ca004745186">frobeniusNorm</a>(A)( <a class="code" href="group__LinearAlgebraGroup.html#ga7c0b1db93cfc5779a3b1e7eb1646c213">deviator</a>(A) );</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif // FUNG_LINEAR_ALGEBRA_DEVIATORIC_INVARIANTS_HH</span></div>
+<div class="ttc" id="group__InvariantGroup_html_ga9a2bc859fe1ae34b1a3ada91a39d69df"><div class="ttname"><a href="group__InvariantGroup.html#ga9a2bc859fe1ae34b1a3ada91a39d69df">FunG::LinearAlgebra::j2</a></div><div class="ttdeci">auto j2(const Matrix &amp;A)</div><div class="ttdoc">Second deviatoric invariant  with  and . </div><div class="ttdef"><b>Definition:</b> deviatoric_invariants.hh:40</div></div>
+<div class="ttc" id="group__LinearAlgebraGroup_html_ga7c0b1db93cfc5779a3b1e7eb1646c213"><div class="ttname"><a href="group__LinearAlgebraGroup.html#ga7c0b1db93cfc5779a3b1e7eb1646c213">FunG::LinearAlgebra::deviator</a></div><div class="ttdeci">auto deviator(const Matrix &amp;A)</div><div class="ttdoc">Generate deviator  of a matrix . </div><div class="ttdef"><b>Definition:</b> deviator.hh:49</div></div>
+<div class="ttc" id="group__LinearAlgebraGroup_html_gaa893e7d667dde98d2b119ca004745186"><div class="ttname"><a href="group__LinearAlgebraGroup.html#gaa893e7d667dde98d2b119ca004745186">FunG::LinearAlgebra::frobeniusNorm</a></div><div class="ttdeci">auto frobeniusNorm(const Matrix &amp;A)</div><div class="ttdoc">Generate Frobenius norm . </div><div class="ttdef"><b>Definition:</b> frobenius_norm.hh:144</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 15 2015 17:34:59 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Sep 17 2015 21:53:53 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

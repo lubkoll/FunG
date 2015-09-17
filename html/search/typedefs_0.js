@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['cbrt',['Cbrt',['../group__CMathGroup.html#ga3c7a5774c97b2f2204b1a51f56f15c34',1,'FunG::CMath']]],
-  ['cbrt2',['Cbrt2',['../group__CMathGroup.html#ga50ace0152b7738d9f2e3bcebb6b0d6eb',1,'FunG::CMath']]],
-  ['constantsizedeterminant',['ConstantSizeDeterminant',['../group__LinearAlgebraGroup.html#gaae7e69f9b2f52856287fa722b6f54c04',1,'FunG::LinearAlgebra']]]
+  ['cbrt',['Cbrt',['../group__CMathGroup.html#ga2e4363ad8400e1c8431c10de2152ec2b',1,'FunG']]],
+  ['cbrt2',['Cbrt2',['../group__CMathGroup.html#ga9bcbef859d7ffd0d6570d69e1bd8503a',1,'FunG']]]
 ];

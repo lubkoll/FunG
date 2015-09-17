@@ -1,0 +1,70 @@
+\hypertarget{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm}{\section{Fun\-G\-:\-:Linear\-Algebra\-:\-:Squared\-Frobenius\-Norm$<$ Matrix, class $>$ Struct Template Reference}
+\label{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm}\index{Fun\-G\-::\-Linear\-Algebra\-::\-Squared\-Frobenius\-Norm$<$ Matrix, class $>$@{Fun\-G\-::\-Linear\-Algebra\-::\-Squared\-Frobenius\-Norm$<$ Matrix, class $>$}}
+}
+
+
+Compute squared Frobenius norm $ \|A\|^2 = A\negthinspace : \negthinspace A = \mathrm{tr}(A^TA) = \sum_{i,j} A_{ij}^2. $.  
+
+
+
+
+{\ttfamily \#include $<$frobenius\-\_\-norm.\-hh$>$}
+
+Inheritance diagram for Fun\-G\-:\-:Linear\-Algebra\-:\-:Squared\-Frobenius\-Norm$<$ Matrix, class $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.493333cm]{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm_ae9dfaea546dd55106ab886a10a255792}{\hyperlink{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm_ae9dfaea546dd55106ab886a10a255792}{Squared\-Frobenius\-Norm} ()=default}\label{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm_ae9dfaea546dd55106ab886a10a255792}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm_af33cdb4a7282ceb03b707ff7fa85ebe4}{Squared\-Frobenius\-Norm} (const Matrix \&A)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm_ac4c6dbd6c3beb28d1f77b3e1367d70b6}{void \hyperlink{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm_ac4c6dbd6c3beb28d1f77b3e1367d70b6}{update} (const Matrix \&A)}\label{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm_ac4c6dbd6c3beb28d1f77b3e1367d70b6}
+
+\begin{DoxyCompactList}\small\item\em Reset matrix to compute squared norm from. \end{DoxyCompactList}\item 
+\hypertarget{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm_a20afdee80972fc320d8ab07947950d10}{auto \hyperlink{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm_a20afdee80972fc320d8ab07947950d10}{operator()} () const noexcept}\label{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm_a20afdee80972fc320d8ab07947950d10}
+
+\begin{DoxyCompactList}\small\item\em Squared matrix norm. Convenient access to \hyperlink{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm_af0315a30be696111d572313dc16ef0f5}{d0()}. \end{DoxyCompactList}\item 
+\hypertarget{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm_af0315a30be696111d572313dc16ef0f5}{auto \hyperlink{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm_af0315a30be696111d572313dc16ef0f5}{d0} () const noexcept}\label{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm_af0315a30be696111d572313dc16ef0f5}
+
+\begin{DoxyCompactList}\small\item\em Squared matrix norm. \end{DoxyCompactList}\item 
+\hypertarget{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm_acdc2559a789f9efbeef00b32a1d5b0c2}{{\footnotesize template$<$int $>$ }\\auto \hyperlink{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm_acdc2559a789f9efbeef00b32a1d5b0c2}{d1} (const Matrix \&d\-A) const }\label{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm_acdc2559a789f9efbeef00b32a1d5b0c2}
+
+\begin{DoxyCompactList}\small\item\em First directional derivative. \end{DoxyCompactList}\item 
+\hypertarget{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm_a188f4cb4b23939479af2f6eb4cb4045f}{{\footnotesize template$<$int , int $>$ }\\auto \hyperlink{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm_a188f4cb4b23939479af2f6eb4cb4045f}{d2} (const Matrix \&d\-A1, const Matrix \&d\-A2) const }\label{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm_a188f4cb4b23939479af2f6eb4cb4045f}
+
+\begin{DoxyCompactList}\small\item\em Second directional derivative. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Matrix, class = Concepts\-::\-Matrix\-Concept\-Check$<$\-Matrix$>$$>$struct Fun\-G\-::\-Linear\-Algebra\-::\-Squared\-Frobenius\-Norm$<$ Matrix, class $>$}
+
+Compute squared Frobenius norm $ \|A\|^2 = A\negthinspace : \negthinspace A = \mathrm{tr}(A^TA) = \sum_{i,j} A_{ij}^2. $. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm_af33cdb4a7282ceb03b707ff7fa85ebe4}{\index{Fun\-G\-::\-Linear\-Algebra\-::\-Squared\-Frobenius\-Norm@{Fun\-G\-::\-Linear\-Algebra\-::\-Squared\-Frobenius\-Norm}!Squared\-Frobenius\-Norm@{Squared\-Frobenius\-Norm}}
+\index{Squared\-Frobenius\-Norm@{Squared\-Frobenius\-Norm}!FunG::LinearAlgebra::SquaredFrobeniusNorm@{Fun\-G\-::\-Linear\-Algebra\-::\-Squared\-Frobenius\-Norm}}
+\subsubsection[{Squared\-Frobenius\-Norm}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , class  = Concepts\-::\-Matrix\-Concept\-Check$<$\-Matrix$>$$>$ {\bf Fun\-G\-::\-Linear\-Algebra\-::\-Squared\-Frobenius\-Norm}$<$ Matrix, class $>$\-::{\bf Squared\-Frobenius\-Norm} (
+\begin{DoxyParamCaption}
+\item[{const Matrix \&}]{A}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm_af33cdb4a7282ceb03b707ff7fa85ebe4}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & matrix to compute squared norm from. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+fung/linear\-\_\-algebra/frobenius\-\_\-norm.\-hh\end{DoxyCompactItemize}

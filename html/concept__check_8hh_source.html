@@ -76,7 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -120,7 +120,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;fung/util/consistency_check.hh&quot;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;fung/util/extract_rows_and_cols.hh&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;fung/util/static_checks.hh&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="static__checks_8hh.html">fung/util/static_checks.hh</a>&quot;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span>FunG</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
@@ -176,8 +176,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix &gt;</div>
 <div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="structFunG_1_1Concepts_1_1MatrixConceptCheck.html">  107</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structFunG_1_1Concepts_1_1MatrixConceptCheck.html">MatrixConceptCheck</a> : <a class="code" href="structFunG_1_1Concepts_1_1ArithmeticConceptCheck.html">ArithmeticConceptCheck</a>&lt;Matrix&gt;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      static_assert(Checks::accessViaSquareBrackets&lt;Matrix&gt;() ||</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                    Checks::accessViaRoundBrackets&lt;Matrix&gt;(),</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      static_assert(Checks::AccessViaSquareBracketsForMatrix&lt;Matrix&gt;::value ||</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                    Checks::AccessViaRoundBracketsForMatrix&lt;Matrix&gt;::value,</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    <span class="stringliteral">&quot;MatrixConcept: Currently only matrices that allow access to their elements via A[i][j] or A(i,j) are supported.\nYou may contact the developer to ask for further access or provide your own patch.&quot;</span>);</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    };</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
@@ -185,8 +185,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Vector &gt;</div>
 <div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="structFunG_1_1Concepts_1_1VectorConceptCheck.html">  120</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structFunG_1_1Concepts_1_1VectorConceptCheck.html">VectorConceptCheck</a> : <a class="code" href="structFunG_1_1Concepts_1_1ArithmeticConceptCheck.html">ArithmeticConceptCheck</a>&lt;Vector&gt;</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;      static_assert(Checks::accessViaSquareBrackets&lt;Vector&gt;() ||</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                    Checks::accessViaRoundBrackets&lt;Vector&gt;(),</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;      static_assert(Checks::AccessViaSquareBracketsForVector&lt;Vector&gt;::value ||</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                    Checks::AccessViaRoundBracketsForVector&lt;Vector&gt;::value,</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                    <span class="stringliteral">&quot;VectorConcept: Currently only vectors that allow access to their elements via v[i] or v(i) are supported.\nYou may contact the developer to ask for further access or provide your own patch.&quot;</span>);</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    };</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
@@ -212,6 +212,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="structFunG_1_1Concepts_1_1MultiplicationConceptCheck_html"><div class="ttname"><a href="structFunG_1_1Concepts_1_1MultiplicationConceptCheck.html">FunG::Concepts::MultiplicationConceptCheck</a></div><div class="ttdoc">Static check if the requirements of MultiplicationConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> concept_check.hh:81</div></div>
 <div class="ttc" id="structFunG_1_1Concepts_1_1SummationConceptCheck_html"><div class="ttname"><a href="structFunG_1_1Concepts_1_1SummationConceptCheck.html">FunG::Concepts::SummationConceptCheck</a></div><div class="ttdoc">Static check if the requirements of SummationConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> concept_check.hh:68</div></div>
 <div class="ttc" id="structFunG_1_1Concepts_1_1ArithmeticConceptCheck_html"><div class="ttname"><a href="structFunG_1_1Concepts_1_1ArithmeticConceptCheck.html">FunG::Concepts::ArithmeticConceptCheck</a></div><div class="ttdoc">Static check if the requirements of ArithmeticConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> concept_check.hh:95</div></div>
+<div class="ttc" id="static__checks_8hh_html"><div class="ttname"><a href="static__checks_8hh.html">static_checks.hh</a></div><div class="ttdoc">Static checks for detection of presence of different operators and functions. </div></div>
 <div class="ttc" id="structFunG_1_1Concepts_1_1VectorConceptCheck_html"><div class="ttname"><a href="structFunG_1_1Concepts_1_1VectorConceptCheck.html">FunG::Concepts::VectorConceptCheck</a></div><div class="ttdoc">Static check if the requirements of VectorConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> concept_check.hh:120</div></div>
 <div class="ttc" id="structFunG_1_1Concepts_1_1SymmetricMatrixConceptCheck_html"><div class="ttname"><a href="structFunG_1_1Concepts_1_1SymmetricMatrixConceptCheck.html">FunG::Concepts::SymmetricMatrixConceptCheck</a></div><div class="ttdoc">Static check if the requirements of SymmetricMatrixConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> concept_check.hh:132</div></div>
 <div class="ttc" id="structFunG_1_1Concepts_1_1MatrixConceptCheck_html"><div class="ttname"><a href="structFunG_1_1Concepts_1_1MatrixConceptCheck.html">FunG::Concepts::MatrixConceptCheck</a></div><div class="ttdoc">Static check if the requirements of MatrixConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> concept_check.hh:107</div></div>
@@ -220,7 +221,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 15 2015 17:34:58 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Sep 17 2015 21:53:53 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

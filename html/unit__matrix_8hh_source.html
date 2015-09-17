@@ -76,7 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -128,15 +128,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">namespace </span>LinearAlgebra</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix, <span class="keyword">class</span> = std::enable_if_t&lt;Checks::isConstantSizeMatrix&lt;Matrix&gt;()&gt; &gt;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix, <span class="keyword">class</span> = std::enable_if_t&lt;Checks::isConstantSize&lt;Matrix&gt;()&gt; &gt;</div>
 <div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#ga88a596b8526c0ed98ce241244fb85948">   39</a></span>&#160;    Matrix <a class="code" href="group__LinearAlgebraGroup.html#gae50c49f62ed072019079a7563688e5de">unitMatrix</a>()</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      Matrix A = zero&lt;Matrix&gt;();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;dimension&lt;Matrix&gt;(); ++i) at(A,i,i) = 1;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;dim&lt;Matrix&gt;(); ++i) at(A,i,i) = 1;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      <span class="keywordflow">return</span> A;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix, <span class="keyword">class</span> = std::enable_if_t&lt;!Checks::isConstantSizeMatrix&lt;Matrix&gt;()&gt; &gt;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix, <span class="keyword">class</span> = std::enable_if_t&lt;!Checks::isConstantSize&lt;Matrix&gt;()&gt; &gt;</div>
 <div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#gae50c49f62ed072019079a7563688e5de">   51</a></span>&#160;    Matrix <a class="code" href="group__LinearAlgebraGroup.html#gae50c49f62ed072019079a7563688e5de">unitMatrix</a>(<span class="keywordtype">int</span> rows)</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      Matrix A = zero&lt;Matrix&gt;(rows,rows);</div>
@@ -151,7 +151,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 15 2015 17:34:59 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Sep 17 2015 21:53:53 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

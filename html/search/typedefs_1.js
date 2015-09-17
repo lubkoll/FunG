@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['determinant',['Determinant',['../group__LinearAlgebraGroup.html#ga2ab0f9ef0c535fd8155856675edcc06a',1,'FunG::LinearAlgebra']]]
+  ['finalize',['Finalize',['../namespaceFunG.html#ab2a52dfbc62e262c67f293fda5f81ef7',1,'FunG']]],
+  ['frobeniusnorm',['FrobeniusNorm',['../group__LinearAlgebraGroup.html#gad209833e37a25e863fe72868d37795b8',1,'FunG::LinearAlgebra']]]
 ];

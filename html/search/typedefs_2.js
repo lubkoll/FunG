@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['euclideannorm',['EuclideanNorm',['../group__LinearAlgebraGroup.html#gad531065eea58cbd1f2e5e77c7fd5028d',1,'FunG::LinearAlgebra']]]
+  ['geometricnonlinearity',['GeometricNonlinearity',['../group__LinearAlgebraGroup.html#ga7af9b6f793f11a287277a30ea1e32caf',1,'FunG::LinearAlgebra']]]
 ];

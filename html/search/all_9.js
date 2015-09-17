@@ -1,19 +1,16 @@
 var searchData=
 [
-  ['mathematicaloperations',['MathematicalOperations',['../namespaceMathematicalOperations.html',1,'']]],
-  ['mathematical_20operations',['Mathematical Operations',['../group__MathematicalOperationsGroup.html',1,'']]],
-  ['matrixconcept',['MatrixConcept',['../structFunG_1_1Concepts_1_1MatrixConcept.html',1,'FunG::Concepts']]],
-  ['matrixconceptcheck',['MatrixConceptCheck',['../structFunG_1_1Concepts_1_1MatrixConceptCheck.html',1,'FunG::Concepts']]],
-  ['matrixnorm',['MatrixNorm',['../group__LinearAlgebraGroup.html#ga0107947440eb770f66179b453c313472',1,'FunG::LinearAlgebra']]],
-  ['modifiedcompressibleneohooke',['modifiedCompressibleNeoHooke',['../group__Rubber.html#gac10942df03f037afdf0a81d330361a6b',1,'FunG']]],
-  ['modifiedincompressibleneohooke',['modifiedIncompressibleNeoHooke',['../group__Rubber.html#gaf6f5ab6a379ef03d513acc5042731a01',1,'FunG']]],
-  ['multiplicationconcept',['MultiplicationConcept',['../structFunG_1_1Concepts_1_1MultiplicationConcept.html',1,'FunG::Concepts']]],
-  ['multiplicationconcept',['MultiplicationConcept',['../group__MultiplicationConcept.html',1,'']]],
-  ['multiplicationconceptcheck',['MultiplicationConceptCheck',['../structFunG_1_1Concepts_1_1MultiplicationConceptCheck.html',1,'FunG::Concepts']]],
-  ['multiplicationconceptcheck_3c_20matrix_2c_20matrix_20_3e',['MultiplicationConceptCheck&lt; Matrix, Matrix &gt;',['../structFunG_1_1Concepts_1_1MultiplicationConceptCheck.html',1,'FunG::Concepts']]],
-  ['multiplywitharithmeticfromleftconcept',['MultiplyWithArithmeticFromLeftConcept',['../group__MultiplyWithArithmeticFromLeftConcept.html',1,'']]],
-  ['multiplywitharithmeticfromleftconcept',['MultiplyWithArithmeticFromLeftConcept',['../structFunG_1_1Concepts_1_1MultiplyWithArithmeticFromLeftConcept.html',1,'FunG::Concepts']]],
-  ['multiplywitharithmeticfromleftconceptcheck',['MultiplyWithArithmeticFromLeftConceptCheck',['../structFunG_1_1Concepts_1_1MultiplyWithArithmeticFromLeftConceptCheck.html',1,'FunG::Concepts']]],
-  ['multiplywitharithmeticfromleftconceptcheck_3c_20matrix_20_3e',['MultiplyWithArithmeticFromLeftConceptCheck&lt; Matrix &gt;',['../structFunG_1_1Concepts_1_1MultiplyWithArithmeticFromLeftConceptCheck.html',1,'FunG::Concepts']]],
-  ['multiplywitharithmeticfromleftconceptcheck_3c_20vector_20_3e',['MultiplyWithArithmeticFromLeftConceptCheck&lt; Vector &gt;',['../structFunG_1_1Concepts_1_1MultiplyWithArithmeticFromLeftConceptCheck.html',1,'FunG::Concepts']]]
+  ['leftcauchygreenstraintensor',['LeftCauchyGreenStrainTensor',['../classFunG_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html',1,'FunG::LinearAlgebra']]],
+  ['leftcauchygreenstraintensor',['LeftCauchyGreenStrainTensor',['../classFunG_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html#a6bfc0f686be29024dc740630f364d051',1,'FunG::LinearAlgebra::LeftCauchyGreenStrainTensor']]],
+  ['linearalgebra',['LinearAlgebra',['../namespaceLinearAlgebra.html',1,'']]],
+  ['linear_20algebra',['Linear Algebra',['../group__LinearAlgebraGroup.html',1,'']]],
+  ['linearizedstraintensor',['LinearizedStrainTensor',['../classFunG_1_1LinearAlgebra_1_1LinearizedStrainTensor.html',1,'FunG::LinearAlgebra']]],
+  ['linearizedstraintensor',['LinearizedStrainTensor',['../classFunG_1_1LinearAlgebra_1_1LinearizedStrainTensor.html#a5b286c1fca2dd48ea62a9f283304395d',1,'FunG::LinearAlgebra::LinearizedStrainTensor']]],
+  ['linearizedstraintensor_3c_20matrix_20_3e',['LinearizedStrainTensor&lt; Matrix &gt;',['../classFunG_1_1LinearAlgebra_1_1LinearizedStrainTensor.html',1,'FunG::LinearAlgebra']]],
+  ['ln',['LN',['../structFunG_1_1LN.html',1,'FunG']]],
+  ['ln',['LN',['../structFunG_1_1LN.html#a4ce3d29669f550f6033da3e52fdac392',1,'FunG::LN::LN()'],['../namespaceFunG.html#a2c299af519bdf3a07ce89be165ad7102',1,'FunG::ln()']]],
+  ['log10',['Log10',['../structFunG_1_1Log10.html',1,'FunG']]],
+  ['log10',['Log10',['../structFunG_1_1Log10.html#acfc491f166bfb75b593864849f33fbb0',1,'FunG::Log10::Log10()'],['../namespaceFunG.html#a9cbc33c0f72e85ab95dea43a5f433a57',1,'FunG::log10()']]],
+  ['log2',['Log2',['../structFunG_1_1Log2.html#ab3fe35bf3d976e51797bff7128d2f16b',1,'FunG::Log2::Log2()'],['../namespaceFunG.html#a6cd9186e81287dbb4840524ca23ddab1',1,'FunG::log2()']]],
+  ['log2',['Log2',['../structFunG_1_1Log2.html',1,'FunG']]]
 ];

@@ -76,7 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -119,39 +119,42 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FUNG_LINEAR_ALGEBRA_TENSOR_PRODUCT_HH</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;fung/util/at.hh&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;fung/util/extract_rows_and_cols.hh&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;fung/util/zero.hh&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span>FunG</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">namespace </span>LinearAlgebra</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix, <span class="keyword">class</span> Vector1, <span class="keyword">class</span> Vector2&gt;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#ga988c1ade64b8074baf2909752763ffab">   37</a></span>&#160;    Matrix <a class="code" href="group__LinearAlgebraGroup.html#gae5e82b9e66319511dae5ff0d9304a6b7">tensorProduct</a>(<span class="keyword">const</span> Vector1&amp; v, <span class="keyword">const</span> Vector2&amp; w)</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      <span class="keyword">auto</span> result = zero&lt;Matrix&gt;();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="keywordflow">for</span>( <span class="keywordtype">int</span> i=0; i&lt;numberOfRows&lt;Matrix&gt;(); ++i )</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">int</span> j=0; j&lt;numberOfColumns&lt;Matrix&gt;(); ++j )</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;          at(result,i,j) = v[i] * w[j];</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix, <span class="keyword">class</span> Vector&gt;</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#gae5e82b9e66319511dae5ff0d9304a6b7">   53</a></span>&#160;    Matrix <a class="code" href="group__LinearAlgebraGroup.html#gae5e82b9e66319511dae5ff0d9304a6b7">tensorProduct</a>(<span class="keyword">const</span> Vector&amp; v)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      <span class="keywordflow">return</span> tensorProduct&lt;Matrix&gt;(v,v);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif // FUNG_LINEAR_ALGEBRA_TENSOR_PRODUCT_HH</span></div>
-<div class="ttc" id="group__LinearAlgebraGroup_html_gae5e82b9e66319511dae5ff0d9304a6b7"><div class="ttname"><a href="group__LinearAlgebraGroup.html#gae5e82b9e66319511dae5ff0d9304a6b7">FunG::LinearAlgebra::tensorProduct</a></div><div class="ttdeci">Matrix tensorProduct(const Vector &amp;v)</div><div class="ttdoc">Compute tensor product . </div><div class="ttdef"><b>Definition:</b> tensor_product.hh:53</div></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;rows_and_cols.hh&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="static__checks_8hh.html">fung/util/static_checks.hh</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;fung/util/zero.hh&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span>FunG</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">namespace </span>LinearAlgebra</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class </span>Matrix, <span class="keyword">class </span>Vector1, <span class="keyword">class </span>Vector2,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;              std::enable_if_t&lt;Checks::isConstantSize&lt;Matrix&gt;()&gt;* = <span class="keyword">nullptr</span>&gt;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#ga5d0e066e6184fb3324d96d20087b5578">   39</a></span>&#160;    Matrix <a class="code" href="group__LinearAlgebraGroup.html#gae5e82b9e66319511dae5ff0d9304a6b7">tensorProduct</a>(<span class="keyword">const</span> Vector1&amp; v, <span class="keyword">const</span> Vector2&amp; w)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="keyword">auto</span> result = zero&lt;Matrix&gt;();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      <span class="keywordflow">for</span>( <span class="keywordtype">int</span> i=0; i&lt;rows&lt;Matrix&gt;(); ++i )</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">int</span> j=0; j&lt;cols&lt;Matrix&gt;(); ++j )</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;          at(result,i,j) = v[i] * w[j];</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix, <span class="keyword">class</span> Vector&gt;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#gae5e82b9e66319511dae5ff0d9304a6b7">   55</a></span>&#160;    Matrix <a class="code" href="group__LinearAlgebraGroup.html#gae5e82b9e66319511dae5ff0d9304a6b7">tensorProduct</a>(<span class="keyword">const</span> Vector&amp; v)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="keywordflow">return</span> tensorProduct&lt;Matrix&gt;(v,v);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif // FUNG_LINEAR_ALGEBRA_TENSOR_PRODUCT_HH</span></div>
+<div class="ttc" id="static__checks_8hh_html"><div class="ttname"><a href="static__checks_8hh.html">static_checks.hh</a></div><div class="ttdoc">Static checks for detection of presence of different operators and functions. </div></div>
+<div class="ttc" id="group__LinearAlgebraGroup_html_gae5e82b9e66319511dae5ff0d9304a6b7"><div class="ttname"><a href="group__LinearAlgebraGroup.html#gae5e82b9e66319511dae5ff0d9304a6b7">FunG::LinearAlgebra::tensorProduct</a></div><div class="ttdeci">Matrix tensorProduct(const Vector &amp;v)</div><div class="ttdoc">Compute tensor product . </div><div class="ttdef"><b>Definition:</b> tensor_product.hh:55</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 15 2015 17:34:59 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Sep 17 2015 21:53:53 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
