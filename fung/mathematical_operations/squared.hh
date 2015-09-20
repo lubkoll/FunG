@@ -58,39 +58,37 @@ namespace FunG
     template <class F, class = FunctionConceptCheck<F> >
     struct Squared : Base , Chainer< Squared< F , FunctionConceptCheck<F> > >
     {
-      using Chainer< Squared< F , FunctionConceptCheck<F> > >::operator();
     private:
       template < class IndexedArgX , class IndexedArgY >
-      using D2Sum = ComputeSum< ComputeProduct< D0<F> , D2<F,IndexedArgX,IndexedArgY> >,
+      using D2Sum =
+      ComputeSum<
+      ComputeProduct< D0<F> , D2<F,IndexedArgX,IndexedArgY> >,
       ComputeProduct< D1<F,IndexedArgY> , D1<F,IndexedArgX> > >;
 
       template < class IndexedArgX , class IndexedArgY , class IndexedArgZ >
-      using D3Sum = ComputeSum< ComputeProduct< D0<F> , D3<F,IndexedArgX,IndexedArgY,IndexedArgZ> > ,
+      using D3Sum =
+      ComputeSum<
+      ComputeProduct< D0<F> , D3<F,IndexedArgX,IndexedArgY,IndexedArgZ> > ,
       ComputeProduct< D1<F,IndexedArgZ> , D2<F,IndexedArgX,IndexedArgY> > ,
       ComputeProduct< D1<F,IndexedArgY> , D2<F,IndexedArgX,IndexedArgZ> > ,
       ComputeProduct< D2<F,IndexedArgY,IndexedArgZ> , D1<F,IndexedArgX> > >;
 
     public:
-      /// Default constructor. May leave member variables uninitialized! Call update before using evaluation.
-      Squared() = default;
-
       /**
        * @brief Constructor passing arguments to function constructor.
        * @param f_ input for constructor of outer function
        */
       template <class InitF>
       Squared(const InitF& f_)
-        : f(f_)
-      {
-        updateResultOfD0();
-      }
+        : f(f_), value(f.d0()*f.d0())
+      {}
 
       /// Reset point of evaluation.
       template <class Arg>
       void update(Arg const& x)
       {
         f.update(x);
-        updateResultOfD0();
+        value = f.d0() * f.d0();
       }
 
       /// Propagate call to updateVariable() to f.
@@ -103,7 +101,7 @@ namespace FunG
       /// Function value.
       const auto& d0() const noexcept
       {
-        return resultOfD0;
+        return value;
       }
 
       /**
@@ -127,9 +125,8 @@ namespace FunG
                  class = std::enable_if_t< D2Sum<IndexedArgX,IndexedArgY>::present > >
       auto d2(ArgX const& dx, ArgY const& dy) const
       {
-        return 2 * D2Sum<IndexedArgX,IndexedArgY>(  ComputeProduct< D0<F>             , D2<F,IndexedArgX,IndexedArgY> >( D0<F>(f)        , D2<F,IndexedArgX,IndexedArgY>(f,dx,dy) ),
-                                                  ComputeProduct< D1<F,IndexedArgY> , D1<F,IndexedArgX> >( D1<F,IndexedArgY>(f,dy)     , D1<F,IndexedArgX>(f,dx) )
-                                             )();
+        return 2 * sum( product( D0<F>(f) , D2<F,IndexedArgX,IndexedArgY>(f,dx,dy) ),
+                        product( D1<F,IndexedArgY>(f,dy) , D1<F,IndexedArgX>(f,dx) ) )();
       }
 
       /**
@@ -145,22 +142,15 @@ namespace FunG
                  class = std::enable_if_t< D3Sum<IndexedArgX,IndexedArgY,IndexedArgZ>::present > >
       auto d3(ArgX const& dx, ArgY const& dy, ArgZ const& dz) const
       {
-        return 2 * D3Sum<IndexedArgX,IndexedArgY,IndexedArgZ>
-              ( ComputeProduct< D0<F> , D3<F,IndexedArgX,IndexedArgY,IndexedArgZ> > ( D0<F>(f) , D3<F,IndexedArgX,IndexedArgY,IndexedArgZ>(f,dx,dy,dz) ),
-                ComputeProduct< D1<F,IndexedArgZ> , D2<F,IndexedArgX,IndexedArgY> > ( D1<F,IndexedArgZ>(f,dz) , D2<F,IndexedArgX,IndexedArgY>(f,dx,dy) ),
-                ComputeProduct< D1<F,IndexedArgY> , D2<F,IndexedArgX,IndexedArgZ> > ( D1<F,IndexedArgY>(f,dy) , D2<F,IndexedArgX,IndexedArgZ>(f,dx,dz) ),
-                ComputeProduct< D2<F,IndexedArgY,IndexedArgZ> , D1<F,IndexedArgX> > ( D2<F,IndexedArgY,IndexedArgZ>(f,dy,dz) , D1<F,IndexedArgX>(f,dx) )
-              )();
+        return 2 * sum( product( D0<F>(f) , D3<F,IndexedArgX,IndexedArgY,IndexedArgZ>(f,dx,dy,dz) ),
+                        product( D1<F,IndexedArgZ>(f,dz) , D2<F,IndexedArgX,IndexedArgY>(f,dx,dy) ),
+                        product( D1<F,IndexedArgY>(f,dy) , D2<F,IndexedArgX,IndexedArgZ>(f,dx,dz) ),
+                        product( D2<F,IndexedArgY,IndexedArgZ>(f,dy,dz) , D1<F,IndexedArgX>(f,dx) ) )();
       }
 
     private:
-      void updateResultOfD0()
-      {
-        resultOfD0 = f.d0() * f.d0();
-      }
-
       F f;
-      std::remove_const_t<std::remove_reference_t<decltype(std::declval<F>().d0())> > resultOfD0;
+      std::decay_t<decltype(std::declval<F>().d0())> value;
     };
   }
 }

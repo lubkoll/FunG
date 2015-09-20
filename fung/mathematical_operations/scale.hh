@@ -34,49 +34,39 @@ namespace FunG
    * \cond DOCUMENT_FORWARD_DECLARATIONS
    */
   template <class> struct Chainer;
+  namespace Concepts{ template <class> struct FunctionConceptCheck; }
   /**
    * \endcond
    */
 
+
+
   namespace MathematicalOperations
   {
-    /**
-     * \cond DOCUMENT_FORWARD_DECLARATIONS
-     */
-    template <class> struct FunctionConceptCheck;
-    /**
-     * \endcond
-     */
-
     /**
      * \ingroup MathematicalOperationsGroup
      *
      * \brief Scaling \f$ af \f$ of some function \f$ f \f$ with a double \f$ a \f$ (F must satisfy the requirements of Concepts::FunctionConcept).
      */
-    template <class F, class = FunctionConceptCheck<F> >
-    struct Scale : Base , Chainer< Scale< F , FunctionConceptCheck<F> > >
+    template <class F, class = Concepts::FunctionConceptCheck<F> >
+    struct Scale : Base , Chainer< Scale< F , Concepts::FunctionConceptCheck<F> > >
     {
-      using Chainer< Scale< F , FunctionConceptCheck<F> > >::operator();
-      /// Default constructor. May leave member variables uninitialized! Call update before using evaluation.
-      Scale() = default;
-
       /**
        * \brief Constructor passing arguments to function constructor.
        * \param a_ scaling
        * \param f_ input for constructor of outer function
        */
       template <class InitF>
-      Scale(double a_, const InitF& f_) : a(a_), f(f_)
-      {
-        updateResultOfD0();
-      }
+      Scale(double a_, const InitF& f_)
+        : a(a_), f(f_), value(a * f.d0())
+      {}
 
       /// Reset point of evaluation.
       template <class Arg>
       void update(Arg const& arg)
       {
         f.update(arg);
-        updateResultOfD0();
+        value = a * f.d0();
       }
 
       /// Propagate call to updateVariable() to f.
@@ -89,7 +79,7 @@ namespace FunG
       /// Function value.
       const auto& d0() const noexcept
       {
-        return resultOfD0;
+        return value;
       }
 
       /**
@@ -135,14 +125,9 @@ namespace FunG
       }
 
     private:
-      void updateResultOfD0()
-      {
-        resultOfD0 = a * f.d0();
-      }
-
       double a = 1.;
       F f;
-      std::remove_const_t<std::remove_reference_t<decltype(std::declval<F>().d0())> > resultOfD0;
+      std::decay_t<decltype(std::declval<F>().d0())> value;
     };
   }
 }

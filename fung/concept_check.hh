@@ -126,14 +126,14 @@ namespace FunG
 
     /**
      * \ingroup ConceptCheck
-     * \brief Static check if the requirements of SymmetricMatrixConcept are satisfied.
+     * \brief Static check if the requirements of SquareMatrixConcept are satisfied.
      */
     template < class Matrix >
-    struct SymmetricMatrixConceptCheck : MatrixConceptCheck<Matrix>, MultiplicationConceptCheck<Matrix,Matrix>
+    struct SquareMatrixConceptCheck : MatrixConceptCheck<Matrix>, MultiplicationConceptCheck<Matrix,Matrix>
     {
       /// Require symmetric matrix
       static_assert( LinearAlgebra::numberOfRows<Matrix>() == LinearAlgebra::numberOfColumns<Matrix>(),
-                     "SymmetricMatrixConcept: Input matrix must be symmetric.");
+                     "SquareMatrixConcept: Input matrix must be symmetric.");
     };
 
 

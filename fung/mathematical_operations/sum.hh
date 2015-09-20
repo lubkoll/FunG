@@ -59,9 +59,6 @@ namespace FunG
               class CheckG = FunctionConceptCheck<G> >
     struct Sum : Base , Chainer< Sum<F,G,CheckF,CheckG> >
     {
-      using Chainer< Sum<F,G,CheckF,CheckG> >::operator ();
-      Sum() = default;
-
       /**
        * @brief Constructor passing arguments to function constructors.
        * @param f_ input for constructor of first summand
@@ -69,10 +66,9 @@ namespace FunG
        */
       template <class InitF, class InitG>
       Sum(const InitF& f_, const InitG& g_)
-        : f(f_), g(g_)
-      {
-        updateResultOfD0();
-      }
+        : f(f_), g(g_),
+          value(f.d0() + g.d0())
+      {}
 
       /// Reset point of evaluation.
       template <class Arg>
@@ -80,7 +76,7 @@ namespace FunG
       {
         f.update(x);
         g.update(x);
-        updateResultOfD0();
+        value = sum( D0<F>(f), D0<G>(g) )();
       }
 
       /// Propagate call to updateVariable() to f and g.
@@ -94,7 +90,7 @@ namespace FunG
       /// Function value.
       const auto& d0() const noexcept
       {
-        return resultOfD0;
+        return value;
       }
 
       /**
@@ -140,18 +136,13 @@ namespace FunG
       }
 
     private:
-      void updateResultOfD0()
-      {
-        resultOfD0 = f.d0() + g.d0();
-      }
-
       F f;
       G g;
 
-      using type = std::conditional_t<std::is_same<decltype(std::declval<F>().d0()),decltype(std::declval<G>().d0())>::value,
+      using type = std::conditional_t<std::is_same<std::decay_t<decltype(std::declval<F>().d0())>,std::decay_t<decltype(std::declval<G>().d0())> >::value,
                                       decltype(std::declval<F>().d0()),
                                       decltype(std::declval<F>().d0() + std::declval<G>().d0())>;
-      std::decay_t<type> resultOfD0;
+      std::decay_t<type> value;
     };
   }
 }

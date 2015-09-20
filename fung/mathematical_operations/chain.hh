@@ -60,45 +60,49 @@ namespace FunG
                class = FunctionConceptCheck<G> >
     struct Chain : Base , Chainer< Chain<F,G,FunctionConceptCheck<F>,FunctionConceptCheck<G> > >
     {
-      using Chainer< Chain<F,G,FunctionConceptCheck<F>,FunctionConceptCheck<G> > >::operator ();
     private:
       using FArg = decltype(std::declval<G>().d0());
 
       template < class IndexedArgX , class IndexedArgY , class IndexedFArgX , class IndexedFArgY >
-      using D2LazyType = ComputeSum< ComputeChainD2< F , D1<G,IndexedArgX> , D1<G,IndexedArgY> , IndexedFArgX , IndexedFArgY >,
+      using D2LazyType =
+      ComputeSum<
+      ComputeChainD2< F , D1<G,IndexedArgX> , D1<G,IndexedArgY> , IndexedFArgX , IndexedFArgY >,
       ComputeChainD1< F , D2<G,IndexedArgX,IndexedArgY> , IndexedFArgX > >;
 
 
       template < class IndexedArgX , class IndexedArgY , class IndexedArgZ ,
                  class IndexedFArgX , class IndexedFArgY , class IndexedFArgZ >
-      using D3LazyType = ComputeSum< ComputeChainD3<  F , D1<G,IndexedArgX> , D1<G,IndexedArgY> , D1<G,IndexedArgZ> , IndexedFArgX , IndexedFArgY , IndexedFArgZ >,
+      using D3LazyType =
+      ComputeSum<
+      ComputeChainD3<  F , D1<G,IndexedArgX> , D1<G,IndexedArgY> , D1<G,IndexedArgZ> , IndexedFArgX , IndexedFArgY , IndexedFArgZ >,
       ComputeChainD2<  F , D2<G,IndexedArgX,IndexedArgZ> , D1<G,IndexedArgY> , IndexedFArgX , IndexedFArgY >,
       ComputeChainD2<  F , D1<G,IndexedArgX> , D2<G,IndexedArgY,IndexedArgZ> , IndexedFArgX , IndexedFArgY >,
       ComputeChainD2<  F , D2<G,IndexedArgX,IndexedArgY> , D1<G,IndexedArgZ> , IndexedFArgX , IndexedFArgZ >,
       ComputeChainD1<  F , D3<G,IndexedArgX,IndexedArgY,IndexedArgZ> , IndexedFArgX > >;
 
     public:
-      /// Default constructor. May leave member variables uninitialized! Call update before using evaluation.
-      Chain() = default;
-
       /**
        * \brief Constructor.
        * \param init input for a constructor of G
        */
       template <class... InitFunction>
       Chain(const InitFunction&... init)
-        : g(init...), f(g.d0())
-      { updateValue(); }
+        : g(init...),
+          f(g.d0()),
+          value(f.d0())
+      {}
 
       /**
        * @brief Constructor taking copies of the functions to be chained.
        * @param f_ outer function
        * @param g_ inner function
        */
-      Chain(const F& f_, const G& g_) : g(g_), f(f_)
+      Chain(const F& f_, const G& g_)
+        : g(g_), f(f_),
+          value(f.d0())
       {
         f.update(g.d0());
-        updateValue();
+        value = f.d0();
       }
 
       /// Reset point of evaluation.
@@ -107,7 +111,7 @@ namespace FunG
       {
         g.update(x);
         f.update(g.d0());
-        updateValue();
+        value = f.d0();
       }
 
       /// Propagate call to updateVariable() to f and g.
@@ -133,7 +137,7 @@ namespace FunG
                  class = std::enable_if_t< ComputeChainD1< F , D1<G,IndexedArg> , IndexedFArg >::present> >
       auto d1(Arg const& dx) const
       {
-        return ComputeChainD1< F , D1<G,IndexedArg>, IndexedFArg >(f, D1<G,IndexedArg>(g,dx))();
+        return chain<IndexedFArg>( f, D1<G,IndexedArg>(g,dx))();
       }
 
       /**
@@ -149,10 +153,8 @@ namespace FunG
                  class = std::enable_if_t< D2LazyType<IndexedArgX,IndexedArgY,IndexedFArgX,IndexedFArgY>::present > >
       auto d2(ArgX const& dx, ArgY const& dy) const
       {
-        return D2LazyType<IndexedArgX,IndexedArgY,IndexedFArgX,IndexedFArgY>
-            ( ComputeChainD2< F , D1<G,IndexedArgX> , D1<G,IndexedArgY>, IndexedFArgX , IndexedFArgY > (f,D1<G,IndexedArgX>(g,dx),D1<G,IndexedArgY>(g,dy)),
-              ComputeChainD1< F , D2<G,IndexedArgX,IndexedArgY> , IndexedFArgX >                       (f,D2<G,IndexedArgX,IndexedArgY>(g,dx,dy))
-              )();
+        return sum( chain< IndexedFArgX , IndexedFArgY > (f,D1<G,IndexedArgX>(g,dx),D1<G,IndexedArgY>(g,dy)),
+                    chain< IndexedFArgX > (f,D2<G,IndexedArgX,IndexedArgY>(g,dx,dy)) )();
       }
 
       /**
@@ -174,24 +176,17 @@ namespace FunG
         D1<G,IndexedArgX> dGdx(g,dx);
         D1<G,IndexedArgY> dGdy(g,dy);
         D1<G,IndexedArgZ> dGdz(g,dz);
-        return D3LazyType<IndexedArgX,IndexedArgY,IndexedArgZ,IndexedFArgX,IndexedFArgY,IndexedFArgZ>
-            ( ComputeChainD3< F , D1<G,IndexedArgX> , D1<G,IndexedArgY> , D1<G,IndexedArgZ> , IndexedFArgX , IndexedFArgY , IndexedFArgZ > ( f , dGdx , dGdy , dGdz ),
-              ComputeChainD2< F , D2<G,IndexedArgX,IndexedArgZ> , D1<G,IndexedArgY> , IndexedFArgX , IndexedFArgY > ( f , D2<G,IndexedArgX,IndexedArgZ>(g,dx,dz) , dGdy ),
-              ComputeChainD2< F , D1<G,IndexedArgX> , D2<G,IndexedArgY,IndexedArgZ> , IndexedFArgX , IndexedFArgY > ( f , dGdx , D2<G,IndexedArgY,IndexedArgZ>(g,dy,dz) ),
-              ComputeChainD2< F , D2<G,IndexedArgX,IndexedArgY> , D1<G,IndexedArgZ> , IndexedFArgX , IndexedFArgZ > ( f , D2<G,IndexedArgX,IndexedArgY>(g,dx,dy) , dGdz ),
-              ComputeChainD1< F , D3<G,IndexedArgX,IndexedArgY,IndexedArgZ> , IndexedFArgX > ( f , D3<G,IndexedArgX,IndexedArgY,IndexedArgZ> (g,dx,dy,dz) )
-              )();
+        return sum( chain< IndexedFArgX , IndexedFArgY , IndexedFArgZ > ( f , dGdx , dGdy , dGdz ),
+                    chain< IndexedFArgX , IndexedFArgY > ( f , D2<G,IndexedArgX,IndexedArgZ>(g,dx,dz) , dGdy ),
+                    chain< IndexedFArgX , IndexedFArgY > ( f , dGdx , D2<G,IndexedArgY,IndexedArgZ>(g,dy,dz) ),
+                    chain< IndexedFArgX , IndexedFArgZ > ( f , D2<G,IndexedArgX,IndexedArgY>(g,dx,dy) , dGdz ),
+                    chain< IndexedFArgX > ( f , D3<G,IndexedArgX,IndexedArgY,IndexedArgZ> (g,dx,dy,dz) ) )();
       }
 
     private:
-      void updateValue()
-      {
-        value = f.d0();
-      }
-
       G g;
       F f;
-      std::remove_const_t<std::remove_reference_t<decltype(std::declval<F>().d0())> > value;
+      std::decay_t<decltype(std::declval<F>().d0())> value;
     };
   }
 }

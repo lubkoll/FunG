@@ -49,7 +49,7 @@ namespace FunG
 
     /**
      * \ingroup InvariantGroup
-     * \brief Generate first mixed invariant \f$ \iota_4\circ f \f$ with \f$f:\cdot\mapsto\mathbb{R}^{n,n}\f$ with respect to the structural tensor \f$M\in\mathbb{R}^{n,n}\f$.
+     * \brief Generate first mixed invariant \f$ \iota_4\circ f \f$ with \f$f\mapsto\mathbb{R}^{n,n}\f$ and structural tensor \f$M\in\mathbb{R}^{n,n}\f$.
      * \param f function returning a square matrix
      * \param M structural tensor describing principal (fiber) direction
      */
@@ -76,7 +76,7 @@ namespace FunG
 
     /**
      * \ingroup InvariantGroup
-     * \brief Generate second mixed invariant \f$ \iota_5=\iota_1(A^2M) \f$ of a matrix \f$A\in\mathbb{R}^{n,n}\f$ with respect to the structural tensor \f$M\in\mathbb{R}^{n,n}\f$.
+     * \brief Generate second mixed invariant \f$ \iota_5\circ f \f$ with \f$f\mapsto\mathbb{R}^{n,n}\f$ and structural tensor \f$M\in\mathbb{R}^{n,n}\f$.
      * \param f function returning a square matrix
      * \param M structural tensor describing principal (fiber) direction
      */
@@ -102,7 +102,7 @@ namespace FunG
 
     /**
      * \ingroup InvariantGroup
-     * \brief Generate third mixed invariant \f$ \iota_6=\iota_1(AM^2) \f$ of a matrix \f$A\in\mathbb{R}^{n,n}\f$ with respect to the structural tensor \f$M\in\mathbb{R}^{n,n}\f$.
+     * \brief Generate third mixed invariant \f$ \iota_6\circ f \f$ with \f$f\mapsto\mathbb{R}^{n,n}\f$ and structural tensor \f$M\in\mathbb{R}^{n,n}\f$.
      * \param f function returning a square matrix
      * \param M structural tensor describing principal (fiber) direction
      */
@@ -119,6 +119,7 @@ namespace FunG
      * and \f$\iota_3\f$ is the third principal invariant.
      * \param x either a square matrix or a function returning a square matrix
      * \param M structural tensor describing principal (fiber) direction
+     * \return \f$\bar\iota_4(x)\f$ if x is a matrix, else \f$\bar\iota_4 \circ x\f$
      */
     template <class Arg, class Matrix, int n = dim<Matrix>()>
     auto mi4(const Arg& x, const Matrix& M)
@@ -130,8 +131,10 @@ namespace FunG
      * \ingroup InvariantGroup
      * \brief Isochoric (volume-preserving), second modified principal invariant \f$ \bar\iota_5(A)=\iota_5\iota_3^{-2/3} \f$, where \f$\iota_5\f$ is the
      * second mixed and \f$\iota_3\f$ is the third principal invariant.
+     *
      * \param x either a square matrix or a function returning a square matrix.
      * \param M structural tensor describing principal (fiber) direction
+     * \return \f$\bar\iota_5(x)\f$ if x is a matrix, else \f$\bar\iota_5 \circ x\f$
      */
     template <class Arg, class Matrix, int n = dim<Matrix>()>
     auto mi5(const Arg& x, const Matrix& M)
@@ -145,6 +148,7 @@ namespace FunG
      * third mixed and \f$\iota_3\f$ is the third principal invariant.
      * \param x either a square matrix or a function returning a square matrix.
      * \param M structural tensor describing principal (fiber) direction
+     * \return \f$\bar\iota_6(x)\f$ if x is a matrix, else \f$\bar\iota_6 \circ x\f$
      */
     template <class Arg, class Matrix, int n = dim<Matrix>()>
     auto mi6(const Arg& x, const Matrix& M)

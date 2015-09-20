@@ -124,6 +124,12 @@ namespace FunG
     {}
   };
 
+  template <class IndexedArg, class F, class X>
+  auto chain(const F& f, const X& x)
+  {
+    return ComputeChainD1<F,X,IndexedArg>(f,x);
+  }
+
   template < class F , class X , class Y , class IndexedArgX , class IndexedArgY ,
              class IndexedX = IndexedType<X,IndexedArgX::index> ,
              class IndexedY = IndexedType<Y,IndexedArgY::index> >
@@ -136,6 +142,13 @@ namespace FunG
     {}
   };
 
+  template <class IndexedArgX, class IndexedArgY,
+            class F, class X, class Y>
+  auto chain(const F &f, const X &x, const Y& y)
+  {
+    return ComputeChainD2<F,X,Y,IndexedArgX,IndexedArgY>(f,x,y);
+  }
+
   template < class F , class X , class Y , class Z , class IndexedArgX , class IndexedArgY , class IndexedArgZ ,
              class IndexedX = IndexedType<X,IndexedArgX::index> ,
              class IndexedY = IndexedType<Y,IndexedArgY::index> ,
@@ -147,6 +160,13 @@ namespace FunG
       : Detail::ComputeChainD3Impl<F,IndexedX,IndexedY,IndexedZ,HasD3MemberFunction<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value && X::present && Y::present && Z::present> (f,x,y,z)
     {}
   };
+
+  template <class IndexedArgX, class IndexedArgY, class IndexedArgZ,
+            class F, class X, class Y, class Z>
+  auto chain(const F &f, const X &x, const Y& y, const Z& z)
+  {
+    return ComputeChainD3<F,X,Y,Z,IndexedArgX,IndexedArgY,IndexedArgZ>(f,x,y,z);
+  }
   /**
    * \endcond
    */

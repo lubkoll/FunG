@@ -30,13 +30,14 @@
 #include "fung/util/base.hh"
 #include "fung/util/chainer.hh"
 #include "fung/util/exceptions.hh"
+#include "fung/util/zero.hh"
 
 namespace FunG
 {
   /**
    * \cond DOCUMENT_FORWARD_DECLARATIONS
    */
-  namespace Concepts {  template <class> struct SymmetricMatrixConceptCheck; }
+  namespace Concepts {  template <class> struct SquareMatrixConceptCheck; }
   /**
    * \endcond
    */
@@ -70,12 +71,12 @@ namespace FunG
             at(dB,1,0) * ( at(dA,0,2) * at(dC,2,1) + at(dA,2,1) * at(dC,0,2) - at(dA,2,2) * at(dC,0,1) - at(dA,0,1) * at(dC,2,2) );
       }
 
-      template <class Matrix, int dim, class = Concepts::SymmetricMatrixConceptCheck<Matrix> >
+      template <class Matrix, int dim, class = Concepts::SquareMatrixConceptCheck<Matrix> >
       class DeterminantImpl;
 
       template<class Matrix>
-      class DeterminantImpl< Matrix , 2 , Concepts::SymmetricMatrixConceptCheck<Matrix> >
-          : public Base , public Chainer< DeterminantImpl<Matrix,2,Concepts::SymmetricMatrixConceptCheck<Matrix> > >
+      class DeterminantImpl< Matrix , 2 , Concepts::SquareMatrixConceptCheck<Matrix> >
+          : public Base , public Chainer< DeterminantImpl<Matrix,2,Concepts::SquareMatrixConceptCheck<Matrix> > >
       {
       public:
         DeterminantImpl() = default;
@@ -84,13 +85,18 @@ namespace FunG
 
         void update(Matrix const& A_)
         {
-          A = A_;
-          resultOfD0 = at(A,0,0) * at(A,1,1) - at(A,0,1) * at(A,1,0);//A[0][0] * A[1][1] - A[0][1] * A[1][0];
+          if( !initialized )
+          {
+            new(&A) Matrix(A_);
+            initialized = true;
+          }
+          else A = A_;
+          value = at(A,0,0) * at(A,1,1) - at(A,0,1) * at(A,1,0);
         }
 
         auto d0() const
         {
-          return resultOfD0;
+          return value;
         }
 
         template <int>
@@ -107,12 +113,13 @@ namespace FunG
 
       private:
         Matrix A;
-        std::decay_t< decltype(at(std::declval<Matrix>(),0,0)) > resultOfD0 = 0.;
+        std::decay_t< decltype(at(std::declval<Matrix>(),0,0)) > value = 0.;
+        bool initialized = false;
       };
 
       template <class Matrix>
-      class DeterminantImpl<Matrix,3,Concepts::SymmetricMatrixConceptCheck<Matrix> >
-          : public Base , public Chainer< DeterminantImpl<Matrix,3,Concepts::SymmetricMatrixConceptCheck<Matrix> > >
+      class DeterminantImpl<Matrix,3,Concepts::SquareMatrixConceptCheck<Matrix> >
+          : public Base , public Chainer< DeterminantImpl<Matrix,3,Concepts::SquareMatrixConceptCheck<Matrix> > >
       {
       public:
         DeterminantImpl() = default;
@@ -121,11 +128,16 @@ namespace FunG
 
         void update(Matrix const& A_)
         {
-          A = A_;
-          resultOfD0 = composeResult(A,A,A);
+          if( !initialized )
+          {
+            new(&A) Matrix(A_);
+            initialized = true;
+          }
+          else A = A_;
+          value = composeResult(A,A,A);
         }
 
-        auto d0() const { return resultOfD0; }
+        auto d0() const { return value; }
 
         template <int>
         auto d1(Matrix const& dA1) const
@@ -147,7 +159,8 @@ namespace FunG
 
       private:
         Matrix A;
-        std::decay_t< decltype(at(std::declval<Matrix>(),0,0)) > resultOfD0 = 0.;
+        std::decay_t< decltype(at(std::declval<Matrix>(),0,0)) > value = 0.;
+        bool initialized = false;
       };
     }
 

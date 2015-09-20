@@ -59,11 +59,14 @@ namespace FunG
     ComputeProduct(X const& x, Y const& y)
       : Detail::ComputeProductImpl<X,Y,X::present && Y::present> (x,y)
     {}
-
-//    template <class F, class G, class... Args>
-//    ComputeProduct(F const& f, G const& g, const Args&... args) : ComputeProduct( X(f,args...), Y(g,args...) )
-//    {}
   };
+
+  template <class F, class G>
+  auto product(const F& f, const G& g)
+  {
+    return ComputeProduct<F,G>(f,g);
+  }
+
   /**
    * \endcond
    */

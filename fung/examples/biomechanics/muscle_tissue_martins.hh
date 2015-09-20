@@ -46,11 +46,11 @@ namespace FunG
     auto generateIncompressibleMuscleTissue_Martins(double c, double b, double A, double a, const Matrix& M, const Matrix& F )
     {
       using namespace LinearAlgebra;
-      auto S = LeftCauchyGreenStrainTensor<Matrix>(F);
+      auto S = strainTensor(F);
       auto si1 = mi1<Matrix,n>(S()) - n;
       auto si6 = mi6<Matrix,Matrix,n>(S(),M) - 1;
 
-      auto f = c * ( exp( b * si1 ) - 1 ) + A * ( exp( a * ( si6^2 ) ) - 1 );
+      auto f = c * ( exp( b * si1 ) - 1 ) + A * ( exp( a * si6^2 ) - 1 );
       return f(S);
     }
   }

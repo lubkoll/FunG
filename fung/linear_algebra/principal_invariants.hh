@@ -35,7 +35,7 @@ namespace FunG
   /**
    * \cond DOCUMENT_FORWARD_DECLARATIONS
    */
-  namespace Concepts { template <class> struct SymmetricMatrixConceptCheck; }
+  namespace Concepts { template <class> struct SquareMatrixConceptCheck; }
   /**
    * \endcond
    */
@@ -115,7 +115,7 @@ namespace FunG
        * \brief Second principal invariant \f$ \iota_2(A)=\mathrm{tr}(\mathrm{cof}(A)) \f$ for \f$A\in\mathbb{R}^{n,n}\f$.
        * \see I2
        */
-      template <class Matrix, class = Concepts::SymmetricMatrixConceptCheck<Matrix> >
+      template <class Matrix, class = Concepts::SquareMatrixConceptCheck<Matrix> >
       class SecondPrincipalInvariant : Base
       {
       public:
@@ -131,14 +131,19 @@ namespace FunG
         /// Reset matrix to compute second principal invariant from.
         void update(const Matrix& A)
         {
-          A_ = A;
-          resultOfD0 = Detail::Compute<dim<Matrix>()>::sumOfDiagonalCofactors(A);
+          if( !initialized )
+          {
+            new(&A_) Matrix{A};
+            initialized = true;
+          }
+          else A_ = A;
+          value = Detail::Compute<dim<Matrix>()>::sumOfDiagonalCofactors(A);
         }
 
         /// Value of the second principal invariant
         auto d0() const
         {
-          return resultOfD0;
+          return value;
         }
 
         /**
@@ -164,7 +169,8 @@ namespace FunG
 
       private:
         Matrix A_;
-        std::decay_t< decltype(at(std::declval<Matrix>(),0,0)) > resultOfD0 = 0.;
+        std::decay_t< decltype(at(std::declval<Matrix>(),0,0)) > value = 0;
+        bool initialized = false;
       };
     }
     /**
@@ -231,7 +237,7 @@ namespace FunG
      * \ingroup InvariantGroup
      * \brief Isochoric (volume-preserving), first modified principal invariant \f$ \bar\iota_1(A)=\iota_1\iota_3^{-1/3} \f$, where \f$\iota_1\f$ is the first
      * and \f$\iota_3\f$ is the third principal invariant.
-     * \param x either a square matrix or a function returning a square matrix.
+     * \param x either a square matrix or a function returning a square matrix
      */
     template <class Arg, int n = dim<Arg>()>
     auto mi1(const Arg& x)
@@ -243,7 +249,7 @@ namespace FunG
      * \ingroup InvariantGroup
      * \brief Isochoric (volume-preserving), second modified principal invariant \f$ \bar\iota_2(A)=\iota_2\iota_3^{-1/3} \f$, where \f$\iota_2\f$ is the second
      * and \f$\iota_3\f$ is the third principal invariant.
-     * \param x either a square matrix or a function returning a square matrix.
+     * \param x either a square matrix or a function returning a square matrix
      */
     template <class Arg, int n = dim<Arg>()>
     auto mi2(const Arg& x)
@@ -255,7 +261,7 @@ namespace FunG
      * \ingroup InvariantGroup
      * \brief Third modified principal invariant is the same as the third principal invariant.
 
-     * \param x either a square matrix or a function returning a square matrix.
+     * \param x either a square matrix or a function returning a square matrix
      * \see i3
      */
     template <class Arg>

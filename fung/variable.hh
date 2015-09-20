@@ -33,6 +33,7 @@ namespace FunG
    * \cond DOCUMENT_IMPLEMENTATIONS_DETAILS
    */
   template <class,int> struct Variable;
+  namespace Concepts { template <class> class FunctionConceptCheck; }
 
   namespace VariableDetail
   {
@@ -65,11 +66,11 @@ namespace FunG
     /// Check if Type contains has variable.
     template <class Type> struct HasVariable : IsVariable<Type> {};
 
-    template <template <class,class> class G, class F, class CheckF>
-    struct HasVariable< G<F,CheckF> > : std::integral_constant< bool, HasVariable<F>::value > {};
+    template <template <class,class> class G, class F>
+    struct HasVariable< G<F,Concepts::FunctionConceptCheck<F> > > : std::integral_constant< bool, HasVariable<F>::value > {};
 
-    template <template <class,class,class,class> class H, class F, class G, class CheckF, class CheckG>
-    struct HasVariable< H<G,F,CheckF,CheckG> > : std::integral_constant< bool , HasVariable<F>::value || HasVariable<G>::value > {};
+    template <template <class,class,class,class> class H, class F, class G>
+    struct HasVariable< H<G,F,Concepts::FunctionConceptCheck<F>,Concepts::FunctionConceptCheck<G> > > : std::integral_constant< bool , HasVariable<F>::value || HasVariable<G>::value > {};
 
 
     template <class, int id> struct HasVariableId : std::false_type {};
@@ -77,11 +78,11 @@ namespace FunG
     template <class Type, int id0, int id>
     struct HasVariableId< Variable<Type,id0> , id > : std::integral_constant<bool,id==id0> {};
 
-    template <template <class,class> class G, class F, int id, class CheckF>
-    struct HasVariableId< G<F,CheckF> , id > : std::integral_constant< bool, HasVariableId<F,id>::value > {};
+    template <template <class,class> class G, class F, int id>
+    struct HasVariableId< G<F,Concepts::FunctionConceptCheck<F> > , id > : std::integral_constant< bool, HasVariableId<F,id>::value > {};
 
-    template <template <class,class,class,class> class H, class F, class G, int id, class CheckF, class CheckG>
-    struct HasVariableId< H<F,G,CheckF,CheckG> , id > : std::integral_constant< bool , HasVariableId<F,id>::value || HasVariableId<G,id>::value > {};
+    template <template <class,class,class,class> class H, class F, class G, int id>
+    struct HasVariableId< H<F,G,Concepts::FunctionConceptCheck<F>,Concepts::FunctionConceptCheck<G> > , id > : std::integral_constant< bool , HasVariableId<F,id>::value || HasVariableId<G,id>::value > {};
 
 
     template <class F, class G>
@@ -101,13 +102,13 @@ namespace FunG
         : std::integral_constant< int , std::numeric_limits<int>::lowest()>
     {};
 
-    template <template <class,class> class G, class F, class CheckF>
-    struct MaxVariableId< G<F,CheckF> >
+    template <template <class,class> class G, class F>
+    struct MaxVariableId< G<F,Concepts::FunctionConceptCheck<F> > >
         : std::integral_constant< int , MaxVariableId<F>::value >
     {};
 
-    template <template <class,class,class,class> class H, class F, class G, class CheckF, class CheckG>
-    struct MaxVariableId< H<F,G,CheckF,CheckG> >
+    template <template <class,class,class,class> class H, class F, class G>
+    struct MaxVariableId< H<F,G,Concepts::FunctionConceptCheck<F> ,Concepts::FunctionConceptCheck<F> > >
         : std::integral_constant< int , ComputeMax< MaxVariableId<F> , MaxVariableId<G> >::value >
     {};
 
@@ -121,13 +122,13 @@ namespace FunG
         : std::integral_constant< int , std::numeric_limits<int>::max()>
     {};
 
-    template <template <class,class> class G, class F, class CheckF>
-    struct MinVariableId< G<F,CheckF> >
+    template <template <class,class> class G, class F>
+    struct MinVariableId< G<F,Concepts::FunctionConceptCheck<F> > >
         : std::integral_constant< int , MinVariableId<F>::value >
     {};
 
-    template <template <class,class,class,class> class H, class F, class G, class CheckF, class CheckG>
-    struct MinVariableId< H<F,G,CheckF,CheckG> >
+    template <template <class,class,class,class> class H, class F, class G>
+    struct MinVariableId< H<F,G,Concepts::FunctionConceptCheck<F>,Concepts::FunctionConceptCheck<G> > >
         : std::integral_constant< int , ComputeMax< MinVariableId<F> , MinVariableId<G> >::value >
     {};
 
@@ -139,14 +140,14 @@ namespace FunG
 
     template <class F, int id> struct VariableType { using type = void; };
 
-    template <template <class,class> class G, class F, class CheckF, int id>
-    struct VariableType< G<F,CheckF> , id >
+    template <template <class,class> class G, class F, int id>
+    struct VariableType< G<F,Concepts::FunctionConceptCheck<F> > , id >
     {
       using type = typename VariableType<F,id>::type;
     };
 
-    template <template <class,class,class,class> class H, class F, class G, class CheckF, class CheckG, int id>
-    struct VariableType< H<F,G,CheckF,CheckG> , id >
+    template <template <class,class,class,class> class H, class F, class G, int id>
+    struct VariableType< H<F,G,Concepts::FunctionConceptCheck<F>,Concepts::FunctionConceptCheck<G> > , id >
     {
       using type = std::conditional_t< std::is_same<void,typename VariableType<F,id>::type>::value ,
                                        typename VariableType<G,id>::type, typename VariableType<F,id>::type>;

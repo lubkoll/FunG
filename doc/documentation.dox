@@ -32,7 +32,7 @@
 
 
 /**
- * \defgroup CMathGroup cmath
+ * \defgroup CMathGroup Common Mathematical Functions
  * \brief Wrappers for functions from \<cmath\>.
  */
 
@@ -49,7 +49,7 @@
 
 
 /**
- * \defgroup Concepts Concepts
+ * \defgroup Concepts
  * \brief Requirements on the input types.
  *
  * For purpose of documentation free functions are declared as friends in concepts.hh.
@@ -58,32 +58,32 @@
  */
 
     /**
-     * \defgroup CopyConcept Copy
+     * \defgroup CopyConcept
      * \ingroup Concepts
      * \brief Require copy-constructability and copy-assignability.
      */
 
 
     /**
-     * \defgroup MultiplyWithArithmeticFromLeftConcept Multiply with arithmetic from left
+     * \defgroup MultiplyWithArithmeticFromLeftConcept
      * \ingroup Concepts
      * \brief Requires that multiplication with double and int can be performed either by in-place multiplication or by multiplication from the left.
      */
 
     /**
-     * \defgroup SummationConcept Summation
+     * \defgroup SummationConcept
      * \ingroup Concepts
      * \brief Requires that summation can be performed.
      */
 
     /**
-     * \defgroup MultiplicationConcept Multiplication
+     * \defgroup MultiplicationConcept
      * \ingroup Concepts
      * \brief Requires that multiplication can be performed.
      */
 
     /**
-     * \defgroup ConceptCheck Checks
+     * \defgroup ConceptCheck
      * \ingroup Concepts
      * \brief Static checks for requirements specified in Concepts.
      */
@@ -95,6 +95,7 @@
    * \brief Main namespace of the %FunG library.
    * \see MathematicalOperationsGroup
    * \see CMathGroup
+   * \see LinearAlgebraGroup
    */
 
   /**

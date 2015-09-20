@@ -93,8 +93,13 @@ namespace FunG
       /// Reset matrix to compute squared norm from.
       void update(const Matrix& A)
       {
-        A_ = A;
-        resultOfD0 = Detail::computeSquareNorm(A_,A_);
+        if( !initialized )
+        {
+          new(A_) Matrix(A);
+          initialized = true;
+        }
+        else A_ = A;
+        value = Detail::computeSquareNorm(A_,A_);
       }
 
       /// Squared matrix norm. Convenient access to d0().
@@ -106,7 +111,7 @@ namespace FunG
       /// Squared matrix norm.
       auto d0() const noexcept
       {
-        return resultOfD0;
+        return value;
       }
 
       /// First directional derivative.
@@ -125,7 +130,8 @@ namespace FunG
 
     private:
       Matrix A_;
-      std::decay_t<decltype(at(std::declval<Matrix>(),0,0))> resultOfD0;
+      std::decay_t<decltype(at(std::declval<Matrix>(),0,0))> value;
+      bool initialized = false;
     };
 
     /**

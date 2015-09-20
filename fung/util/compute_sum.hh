@@ -106,6 +106,13 @@ namespace FunG
     ComputeSum(const X& x, const Y&... y) : ComputeSum<X,ComputeSum<Y...> >(x,ComputeSum<Y...>(y...))
     {}
   };
+
+  template <class F, class... G>
+  auto sum(const F& f, const G&... g)
+  {
+    return ComputeSum<F,G...>(f,g...);
+  }
+
   /**
    * \endcond
    */

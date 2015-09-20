@@ -36,7 +36,7 @@ namespace FunG
    * \cond DOCUMENT_FORWARD_DECLARATIONS
    */
   template <class> struct Chainer;
-  namespace Concepts { template <class> struct SymmetricMatrixConceptCheck; }
+  namespace Concepts { template <class> struct SquareMatrixConceptCheck; }
   /**
    * \endcond
    */
@@ -91,10 +91,9 @@ namespace FunG
      * \ingroup LinearAlgebraGroup
      * \brief %Trace of a matrix, i.e. sum of diagonal elements.
      */
-    template <class Matrix, class = Concepts::SymmetricMatrixConceptCheck<Matrix> >
-    struct ConstantSizeTrace : Base , Chainer< ConstantSizeTrace< Matrix , Concepts::SymmetricMatrixConceptCheck<Matrix> > >
+    template <class Matrix, class = Concepts::SquareMatrixConceptCheck<Matrix> >
+    struct ConstantSizeTrace : Base , Chainer< ConstantSizeTrace< Matrix , Concepts::SquareMatrixConceptCheck<Matrix> > >
     {
-      using Chainer< ConstantSizeTrace< Matrix , Concepts::SymmetricMatrixConceptCheck<Matrix> > >::operator ();
       /// Default constructor.
       ConstantSizeTrace() = default;
 
@@ -110,21 +109,8 @@ namespace FunG
         trace = Detail::ComputeTrace<dim<Matrix>()>::apply(A);
       }
 
-      /// Function value. Convenient access to d0.
-      const auto& operator()() const noexcept
-      {
-        return d0();
-      }
-
-      /// Function value. Convenient access to d0 with prior call to update(A).
-      const auto& operator()(const Matrix& A) const
-      {
-        update(A);
-        return d0();
-      }
-
       /// Function value.
-      const auto& d0() const noexcept
+      auto d0() const noexcept
       {
         return trace;
       }
@@ -137,17 +123,16 @@ namespace FunG
       }
 
     private:
-      std::decay_t< decltype( Detail::ComputeTrace<dim<Matrix>()>::apply(std::declval<Matrix>()) ) > trace = 0.;
+      std::decay_t< decltype( Detail::ComputeTrace<dim<Matrix>()>::apply(std::declval<Matrix>()) ) > trace = 0;
     };
 
     /**
      * \ingroup LinearAlgebraGroup
      * \brief %Trace of a matrix, i.e. sum of diagonal elements.
      */
-    template <class Matrix/*, class = Concepts::SymmetricMatrixConceptCheck<Matrix> */>
+    template <class Matrix>
     struct DynamicSizeTrace : Base , Chainer< DynamicSizeTrace<Matrix> >
     {
-      using Chainer< DynamicSizeTrace<Matrix> >::operator ();
       /// Default constructor.
       DynamicSizeTrace() = default;
 
@@ -169,21 +154,8 @@ namespace FunG
         for(Index i = 0; i < rows(A); ++i) trace += at(A,i,i);
       }
 
-      /// Function value. Convenient access to d0.
-      const auto& operator()() const noexcept
-      {
-        return d0();
-      }
-
-      /// Function value. Convenient access to d0 with prior call to update(A).
-      const auto& operator()(const Matrix& A) const
-      {
-        update(A);
-        return d0();
-      }
-
       /// Function value.
-      const auto& d0() const noexcept
+      auto d0() const noexcept
       {
         return trace;
       }
@@ -199,7 +171,7 @@ namespace FunG
       }
 
     private:
-      std::decay_t< decltype(at(std::declval<Matrix>(),0,0)) > trace = 0.;
+      std::decay_t< decltype(at(std::declval<Matrix>(),0,0)) > trace = 0;
     };
     /**
      * \endcond

@@ -69,7 +69,7 @@ namespace FunG
     double d3(double dx=1., double dy=1., double dz=1.) const { return -cosx*dx*dy*dz; }
 
   private:
-    double sinx, cosx;
+    double sinx = 0, cosx = 1;
   };
 
   /**

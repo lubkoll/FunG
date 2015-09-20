@@ -84,18 +84,9 @@ namespace FunG
 
   private:
     const double k = static_cast<double>(dividend)/divisor;
-    double xk, xk1, xk2, xk3;
+    double xk = 0, xk1 = 0, xk2 = 0, xk3 = 0;
   };
 
-  /**
-   * \ingroup CMathGroup
-   * \return Default initialized object of type Pow<k>.
-   */
-  template <int dividend, int divisor=1>
-  auto power()
-  {
-    return Pow<dividend,divisor>();
-  }
   /**
    * \cond DOCUMENT_IMPLEMENTATION_DETAILS
    */

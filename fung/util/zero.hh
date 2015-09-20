@@ -49,7 +49,7 @@ namespace FunG
     /**
      * @return zero matrix
      */
-    Matrix operator()() const
+    static Matrix generate()
     {
       return Matrix(0.);
     }
@@ -62,7 +62,7 @@ namespace FunG
     /**
      * @return zero matrix
      */
-    Matrix operator()() const
+    static Matrix generate()
     {
       Matrix m;
       m.fill(0);
@@ -72,7 +72,7 @@ namespace FunG
     /**
      * @brief Set all entries of m to 0.
      */
-    Matrix& operator()(Matrix& m) const
+    static Matrix& generate(Matrix& m)
     {
       m.fill(0);
       return m;
@@ -83,21 +83,23 @@ namespace FunG
    * Requires that a specialization of struct Zero exists for Matrix.
    * @return constant size zero matrix
    */
-  template <class Matrix, class = std::enable_if_t<Checks::isConstantSize<Matrix>()> >
+  template <class Matrix,
+            class = std::enable_if_t<Checks::isConstantSize<Matrix>()> >
   Matrix zero()
   {
-    return Zero<Matrix>()();
+    return Zero<Matrix>::generate();
   }
 
   /**
    * Requires that a specialization of struct Zero exists for Matrix.
    * @return dynamic size zero matrix
    */
-  template <class Matrix, class = std::enable_if_t<!Checks::isConstantSize<Matrix>()> >
+  template <class Matrix,
+            class = std::enable_if_t<!Checks::isConstantSize<Matrix>()> >
   constexpr Matrix zero(int rows, int cols)
   {
     Matrix m(rows,cols);
-    return Zero<Matrix>()(m);
+    return Zero<Matrix>::generate(m);
   }
 
 }

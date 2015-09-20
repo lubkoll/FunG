@@ -32,7 +32,7 @@ namespace FunG
   /**
    * \cond DOCUMENT_FORWARD_DECLARATIONS
    */
-  namespace Concepts { template <class> struct SymmetricMatrixConceptCheck; }
+  namespace Concepts { template <class> struct SquareMatrixConceptCheck; }
   /**
    * \endcond
    */
@@ -46,10 +46,10 @@ namespace FunG
      * This class is used for nonlinear material models based on the deformation gradient \f$\nabla\varphi\f$, which takes the role of \f$F\f$.
      * Caches both \f$ F^T \f$ and \f$ F^T F \f$.
      */
-    template <class Matrix, class = Concepts::SymmetricMatrixConceptCheck<Matrix> >
+    template <class Matrix, class = Concepts::SquareMatrixConceptCheck<Matrix> >
     class LeftCauchyGreenStrainTensor :
         public Base ,
-        public Chainer< LeftCauchyGreenStrainTensor<Matrix , Concepts::SymmetricMatrixConceptCheck<Matrix> > >
+        public Chainer< LeftCauchyGreenStrainTensor<Matrix , Concepts::SquareMatrixConceptCheck<Matrix> > >
     {
     public:
       LeftCauchyGreenStrainTensor() = default;
@@ -62,8 +62,17 @@ namespace FunG
       /// Reset point of evaluation.
       void update(Matrix const& F)
       {
-        FT = transpose(F);
-        FTF = FT * F;
+        if( !initialized )
+        {
+          new(&FT) Matrix{transpose(F)};
+          new(&FTF) Matrix{FT*F};
+          initialized = true;
+        }
+        else
+        {
+          FT = transpose(F);
+          FTF = FT * F;
+        }
       }
 
       /// Function value \f$ F^T * F \f$.
@@ -90,78 +99,85 @@ namespace FunG
 
     private:
       Matrix FT, FTF;
+      bool initialized = false;
     };
 
-    /**
-     * \ingroup LinearAlgebraGroup
-     * \brief Linearized strain tensor \f$ \frac{1}{2}\left(F^T+F\right) \f$.
-     *
-     * This class is used for linear material models based on the displacement gradient \f$\nabla u\f$, which takes the role of \f$F\f$.
-     * Caches the function value \f$ \frac{1}{2}\left(F^T+F\right) \f$.
-     */
-    template <class Matrix, class = Concepts::SymmetricMatrixConceptCheck<Matrix> >
-    class LinearizedStrainTensor :
-        public Base ,
-        public Chainer< LinearizedStrainTensor< Matrix , Concepts::SymmetricMatrixConceptCheck<Matrix> > >
-    {
-    public:
-      /**
-       * @brief Constructor.
-       * @param F point of evaluation
-       */
-      explicit LinearizedStrainTensor(const Matrix& F) { update(F); }
-
-      /// Reset point of evaluation.
-      void update(Matrix const& F)
-      {
-        d0Result = F + transpose(F);
-        d0Result *= 0.5;
-      }
-
-      /// Function value \f$ \frac{1}{2}\left(F^T+F\right) \f$.
-      Matrix const& d0() const
-      {
-        return d0Result;
-      }
-
-      /// First directional derivative \f$ \frac{1}{2}\left(dF^T+dF\right) \f$.
-      template <int>
-      Matrix d1(const Matrix& dF) const
-      {
-        return 0.5*(dF + transpose(dF));
-      }
-
-    private:
-      Matrix d0Result = Matrix{0.};
-    };
-
-    /**
-     * \ingroup LinearAlgebraGroup
-     * \brief Model of the geometric nonlinearity in elasticity theory.
-     * Implemented as template-alias to CauchyGreenStrainTensor.
-     */
-    template <class Matrix> using GeometricNonlinearity = LeftCauchyGreenStrainTensor<Matrix>;
-
-    /**
-     * \ingroup LinearAlgebraGroup
-     * \brief Strain tensor \f$ \frac{1}{2}\left(F^T+F + F^T F\right) \f$.
-     *
-     * This class is used for nonlinear material models based on the displacement gradient \f$\nabla u\f$, which takes the role of \f$F\f$.
-     * Implemented as Sum<LinearizedStrainTensor,GeometricNonlinearity>.
-     */
     template <class Matrix>
-    class StrainTensor :
-        public MathematicalOperations::Sum< LinearizedStrainTensor<Matrix> , GeometricNonlinearity<Matrix> > ,
-        public Chainer< StrainTensor<Matrix> >
+    auto strainTensor(const Matrix& F)
     {
-      using Base = MathematicalOperations::Sum< LinearizedStrainTensor<Matrix> , GeometricNonlinearity<Matrix> >;
-    public:
-      /**
-       * @brief Constructor.
-       * @param F point of evaluation
-       */
-      explicit StrainTensor(const Matrix& F) : Base(F) {}
-    };
+      return LeftCauchyGreenStrainTensor<Matrix>{F};
+    }
+
+//    /**
+//     * \ingroup LinearAlgebraGroup
+//     * \brief Linearized strain tensor \f$ \frac{1}{2}\left(F^T+F\right) \f$.
+//     *
+//     * This class is used for linear material models based on the displacement gradient \f$\nabla u\f$, which takes the role of \f$F\f$.
+//     * Caches the function value \f$ \frac{1}{2}\left(F^T+F\right) \f$.
+//     */
+//    template <class Matrix, class = Concepts::SquareMatrixConceptCheck<Matrix> >
+//    class LinearizedStrainTensor :
+//        public Base ,
+//        public Chainer< LinearizedStrainTensor< Matrix , Concepts::SquareMatrixConceptCheck<Matrix> > >
+//    {
+//    public:
+//      /**
+//       * @brief Constructor.
+//       * @param F point of evaluation
+//       */
+//      explicit LinearizedStrainTensor(const Matrix& F) { update(F); }
+
+//      /// Reset point of evaluation.
+//      void update(Matrix const& F)
+//      {
+//        d0Result = F + transpose(F);
+//        d0Result *= 0.5;
+//      }
+
+//      /// Function value \f$ \frac{1}{2}\left(F^T+F\right) \f$.
+//      Matrix const& d0() const
+//      {
+//        return d0Result;
+//      }
+
+//      /// First directional derivative \f$ \frac{1}{2}\left(dF^T+dF\right) \f$.
+//      template <int>
+//      Matrix d1(const Matrix& dF) const
+//      {
+//        return 0.5*(dF + transpose(dF));
+//      }
+
+//    private:
+//      Matrix d0Result = Matrix{0.};
+//    };
+
+//    /**
+//     * \ingroup LinearAlgebraGroup
+//     * \brief Model of the geometric nonlinearity in elasticity theory.
+//     * Implemented as template-alias to CauchyGreenStrainTensor.
+//     */
+//    template <class Matrix> using GeometricNonlinearity = LeftCauchyGreenStrainTensor<Matrix>;
+
+//    /**
+//     * \ingroup LinearAlgebraGroup
+//     * \brief Strain tensor \f$ \frac{1}{2}\left(F^T+F + F^T F\right) \f$.
+//     *
+//     * This class is used for nonlinear material models based on the displacement gradient \f$\nabla u\f$, which takes the role of \f$F\f$.
+//     * Implemented as Sum<LinearizedStrainTensor,GeometricNonlinearity>.
+//     */
+//    template <class Matrix>
+//    class StrainTensor :
+//        public MathematicalOperations::Sum< LinearizedStrainTensor<Matrix> , GeometricNonlinearity<Matrix> > ,
+//        public Chainer< StrainTensor<Matrix> >
+//    {
+//      using Base = MathematicalOperations::Sum< LinearizedStrainTensor<Matrix> , GeometricNonlinearity<Matrix> >;
+//    public:
+//      /**
+//       * @brief Constructor.
+//       * @param F point of evaluation
+//       */
+//      explicit StrainTensor(const Matrix& F) : Base(F) {}
+//    };
   }
 }
 

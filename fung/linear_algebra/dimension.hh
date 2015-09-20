@@ -29,7 +29,7 @@ namespace FunG
   /**
    * \cond DOCUMENT_FORWARD_DECLARATIONS
    */
-  namespace Concepts { template <class> struct SymmetricMatrixConceptCheck; }
+  namespace Concepts { template <class> struct SquareMatrixConceptCheck; }
   /**
    * \endcond
    */
@@ -40,7 +40,7 @@ namespace FunG
      * \cond DOCUMENT_IMPLEMENTATION_DETAILS
      */
     /// Specialize this for your matrix class. Dimension (number of rows/columns for square matrices) must be provided by a static member variable called value.
-    template <class Matrix, class = Concepts::SymmetricMatrixConceptCheck<Matrix> >
+    template <class Matrix, class = Concepts::SquareMatrixConceptCheck<Matrix> >
     struct ExtractDimension : NumberOfRows<Matrix> {};
     /**
      * \endcond

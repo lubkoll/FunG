@@ -31,7 +31,7 @@ namespace FunG
   /**
    * \cond DOCUMENT_FORWARD_DECLARATIONS
    */
-  namespace Concepts { template <class> struct SymmetricMatrixConceptChecks; }
+  namespace Concepts { template <class> struct SquareMatrixConceptChecks; }
   /**
    * \endcond
    */
@@ -45,7 +45,7 @@ namespace FunG
     template <class Matrix,
               int n = dim<Matrix>(),
               std::enable_if_t<Checks::isConstantSize<Matrix>() && !Checks::is_base_of<Base,Matrix>::value>* = nullptr,
-              class = Concepts::SymmetricMatrixConceptCheck<Matrix> >
+              class = Concepts::SquareMatrixConceptCheck<Matrix> >
     auto deviator(const Matrix& A)
     {
       return identity(A) + (-1./n) * ( trace(A) * constant( unitMatrix<Matrix>() ) );
@@ -57,7 +57,7 @@ namespace FunG
      */
     template <class Matrix,
               std::enable_if_t<!Checks::isConstantSize<Matrix>() && !Checks::is_base_of<Base,Matrix>::value>* = nullptr,
-              class = Concepts::SymmetricMatrixConceptCheck<Matrix>>
+              class = Concepts::SquareMatrixConceptCheck<Matrix>>
     auto deviator(const Matrix& A)
     {
       assert(rows(A)==cols(A));
