@@ -134,11 +134,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">auto</span> generateIncompressibleMuscleTissue_Martins(<span class="keywordtype">double</span> c, <span class="keywordtype">double</span> b, <span class="keywordtype">double</span> A, <span class="keywordtype">double</span> a, <span class="keyword">const</span> Matrix&amp; M, <span class="keyword">const</span> Matrix&amp; F )</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keyword">using namespace </span>LinearAlgebra;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      <span class="keyword">auto</span> S = LeftCauchyGreenStrainTensor&lt;Matrix&gt;(F);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      <span class="keyword">auto</span> S = strainTensor(F);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keyword">auto</span> si1 = mi1&lt;Matrix,n&gt;(S()) - n;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="keyword">auto</span> si6 = mi6&lt;Matrix,Matrix,n&gt;(S(),M) - 1;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <span class="keyword">auto</span> f = c * ( <a class="code" href="namespaceFunG.html#a00135c8521411f13813f9b972ea4e231">exp</a>( b * si1 ) - 1 ) + A * ( <a class="code" href="namespaceFunG.html#a00135c8521411f13813f9b972ea4e231">exp</a>( a * ( si6^2 ) ) - 1 );</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <span class="keyword">auto</span> f = c * ( <a class="code" href="namespaceFunG.html#a00135c8521411f13813f9b972ea4e231">exp</a>( b * si1 ) - 1 ) + A * ( <a class="code" href="namespaceFunG.html#a00135c8521411f13813f9b972ea4e231">exp</a>( a * si6^2 ) - 1 );</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <span class="keywordflow">return</span> f(S);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  }</div>
@@ -174,7 +174,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 17 2015 21:53:53 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 20 2015 14:26:49 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

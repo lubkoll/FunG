@@ -129,7 +129,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span>FunG</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">namespace </span>Concepts { <span class="keyword">template</span> &lt;<span class="keyword">class</span>&gt; <span class="keyword">struct </span>SymmetricMatrixConceptCheck; }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">namespace </span>Concepts { <span class="keyword">template</span> &lt;<span class="keyword">class</span>&gt; <span class="keyword">struct </span>SquareMatrixConceptCheck; }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">namespace </span>LinearAlgebra</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">namespace </span>Detail</div>
@@ -196,7 +196,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      };</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix, <span class="keyword">class</span> = Concepts::SymmetricMatrixConceptCheck&lt;Matrix&gt; &gt;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix, <span class="keyword">class</span> = Concepts::SquareMatrixConceptCheck&lt;Matrix&gt; &gt;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      <span class="keyword">class </span>SecondPrincipalInvariant : Base</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;      {</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;      <span class="keyword">public</span>:</div>
@@ -206,93 +206,99 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordtype">void</span> update(<span class="keyword">const</span> Matrix&amp; A)</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        {</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;          A_ = A;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;          resultOfD0 = Detail::Compute&lt;dim&lt;Matrix&gt;()&gt;::sumOfDiagonalCofactors(A);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        }</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keyword">auto</span> d0()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;          <span class="keywordflow">return</span> resultOfD0;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        }</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keyword">template</span> &lt;<span class="keywordtype">int</span>,<span class="keywordtype">int</span>&gt;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keyword">auto</span> d1(<span class="keyword">const</span> Matrix&amp; dA1)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;          <span class="keywordflow">return</span> Detail::Compute&lt;dim&lt;Matrix&gt;()&gt;::sumOfSymmetricCofactorDerivatives(A_,dA1);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        }</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keyword">template</span> &lt;<span class="keywordtype">int</span>,<span class="keywordtype">int</span>&gt;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keyword">auto</span> d2(<span class="keyword">const</span> Matrix&amp; dA1, <span class="keyword">const</span> Matrix&amp; dA2)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;          <span class="keywordflow">return</span> Detail::Compute&lt;dim&lt;Matrix&gt;()&gt;::sumOfSymmetricCofactorDerivatives(dA1,dA2);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        }</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;      <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        Matrix A_;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        std::decay_t&lt; decltype(at(std::declval&lt;Matrix&gt;(),0,0)) &gt; resultOfD0 = 0.;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;      };</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    }</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Arg&gt;</div>
-<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="group__InvariantGroup.html#gafaead59b618d87239270f8eca2bf75c8">  185</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__InvariantGroup.html#gafaead59b618d87239270f8eca2bf75c8">i1</a>(<span class="keyword">const</span> Arg&amp; x)</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    {</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="group__LinearAlgebraGroup.html#ga4d73eb4d46dd9196a31e2d6d557d509e">trace</a>(x);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    }</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class </span>Matrix,</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;              std::enable_if_t&lt; !std::is_base_of&lt;Base,Matrix&gt;::value &gt;* = <span class="keyword">nullptr</span> &gt;</div>
-<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="group__InvariantGroup.html#ga9e442bab8f203bcd5634a3d0e65bf802">  197</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__InvariantGroup.html#gad3987f97353c8696e602ed1915b3cf47">i2</a>(<span class="keyword">const</span> Matrix&amp; A)</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    {</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;      <span class="keywordflow">return</span> Detail::SecondPrincipalInvariant&lt;Matrix&gt;(A);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    }</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class </span>F,</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;              std::enable_if_t&lt; std::is_base_of&lt;Base,F&gt;::value &gt;* = <span class="keyword">nullptr</span> &gt;</div>
-<div class="line"><a name="l00209"></a><span class="lineno"><a class="line" href="group__InvariantGroup.html#gad3987f97353c8696e602ed1915b3cf47">  209</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__InvariantGroup.html#gad3987f97353c8696e602ed1915b3cf47">i2</a>(<span class="keyword">const</span> F&amp; f)</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    {</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;      <span class="keyword">using</span> Matrix = std::decay_t&lt;decltype(f.d0())&gt;;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;      <span class="keywordflow">return</span> Detail::SecondPrincipalInvariant&lt;Matrix&gt;( f.d0() )( f );</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    }</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Arg&gt;</div>
-<div class="line"><a name="l00225"></a><span class="lineno"><a class="line" href="group__InvariantGroup.html#gae1ad80b4b2f34a10564114fad28bc313">  225</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__InvariantGroup.html#gae1ad80b4b2f34a10564114fad28bc313">i3</a>(<span class="keyword">const</span> Arg&amp; x)</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    {</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="group__LinearAlgebraGroup.html#gadb3017b4b2828e25a0784b10396a836f">det</a>(x);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    }</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Arg, <span class="keywordtype">int</span> n = dim&lt;Arg&gt;()&gt;</div>
-<div class="line"><a name="l00237"></a><span class="lineno"><a class="line" href="group__InvariantGroup.html#ga7eed5e2661171d81e192ac1db791244c">  237</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__InvariantGroup.html#ga7eed5e2661171d81e192ac1db791244c">mi1</a>(<span class="keyword">const</span> Arg&amp; x)</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    {</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="group__InvariantGroup.html#gafaead59b618d87239270f8eca2bf75c8">i1</a>(x) * ( <a class="code" href="structFunG_1_1Pow.html">Pow</a>&lt;-1,n&gt;()( <a class="code" href="group__LinearAlgebraGroup.html#gadb3017b4b2828e25a0784b10396a836f">det</a>(x) ) );</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    }</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Arg, <span class="keywordtype">int</span> n = dim&lt;Arg&gt;()&gt;</div>
-<div class="line"><a name="l00249"></a><span class="lineno"><a class="line" href="group__InvariantGroup.html#ga9d219c5c48cce1d3af60345916963524">  249</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__InvariantGroup.html#ga9d219c5c48cce1d3af60345916963524">mi2</a>(<span class="keyword">const</span> Arg&amp; x)</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    {</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="group__InvariantGroup.html#gad3987f97353c8696e602ed1915b3cf47">i2</a>(x) * ( <a class="code" href="structFunG_1_1Pow.html">Pow</a>&lt;-2,n&gt;()( <a class="code" href="group__LinearAlgebraGroup.html#gadb3017b4b2828e25a0784b10396a836f">det</a>(x) ) );</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    }</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Arg&gt;</div>
-<div class="line"><a name="l00262"></a><span class="lineno"><a class="line" href="group__InvariantGroup.html#gab82dd139779c560055fec0259c451eff">  262</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__InvariantGroup.html#gab82dd139779c560055fec0259c451eff">mi3</a>(<span class="keyword">const</span> Arg&amp; x)</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    {</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="group__InvariantGroup.html#gae1ad80b4b2f34a10564114fad28bc313">i3</a>(x);</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    }</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  }</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;}</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="preprocessor">#endif // FUNG_LINEAR_ALGEBRA_PRINCIPAL_INVARIANTS_HH</span></div>
-<div class="ttc" id="group__InvariantGroup_html_gae1ad80b4b2f34a10564114fad28bc313"><div class="ttname"><a href="group__InvariantGroup.html#gae1ad80b4b2f34a10564114fad28bc313">FunG::LinearAlgebra::i3</a></div><div class="ttdeci">auto i3(const Arg &amp;x)</div><div class="ttdoc">Generate third principal invariant. </div><div class="ttdef"><b>Definition:</b> principal_invariants.hh:225</div></div>
-<div class="ttc" id="group__InvariantGroup_html_gab82dd139779c560055fec0259c451eff"><div class="ttname"><a href="group__InvariantGroup.html#gab82dd139779c560055fec0259c451eff">FunG::LinearAlgebra::mi3</a></div><div class="ttdeci">auto mi3(const Arg &amp;x)</div><div class="ttdoc">Third modified principal invariant is the same as the third principal invariant. </div><div class="ttdef"><b>Definition:</b> principal_invariants.hh:262</div></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;          <span class="keywordflow">if</span>( !initialized )</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;          {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="keyword">new</span>(&amp;A_) Matrix{A};</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            initialized = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;          }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;          <span class="keywordflow">else</span> A_ = A;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;          value = Detail::Compute&lt;dim&lt;Matrix&gt;()&gt;::sumOfDiagonalCofactors(A);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keyword">auto</span> d0()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;          <span class="keywordflow">return</span> value;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keyword">template</span> &lt;<span class="keywordtype">int</span>,<span class="keywordtype">int</span>&gt;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keyword">auto</span> d1(<span class="keyword">const</span> Matrix&amp; dA1)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;          <span class="keywordflow">return</span> Detail::Compute&lt;dim&lt;Matrix&gt;()&gt;::sumOfSymmetricCofactorDerivatives(A_,dA1);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keyword">template</span> &lt;<span class="keywordtype">int</span>,<span class="keywordtype">int</span>&gt;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keyword">auto</span> d2(<span class="keyword">const</span> Matrix&amp; dA1, <span class="keyword">const</span> Matrix&amp; dA2)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;          <span class="keywordflow">return</span> Detail::Compute&lt;dim&lt;Matrix&gt;()&gt;::sumOfSymmetricCofactorDerivatives(dA1,dA2);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        }</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;      <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        Matrix A_;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        std::decay_t&lt; decltype(at(std::declval&lt;Matrix&gt;(),0,0)) &gt; value = 0;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordtype">bool</span> initialized = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;      };</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Arg&gt;</div>
+<div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="group__InvariantGroup.html#gafaead59b618d87239270f8eca2bf75c8">  191</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__InvariantGroup.html#gafaead59b618d87239270f8eca2bf75c8">i1</a>(<span class="keyword">const</span> Arg&amp; x)</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="group__LinearAlgebraGroup.html#ga4d73eb4d46dd9196a31e2d6d557d509e">trace</a>(x);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class </span>Matrix,</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;              std::enable_if_t&lt; !std::is_base_of&lt;Base,Matrix&gt;::value &gt;* = <span class="keyword">nullptr</span> &gt;</div>
+<div class="line"><a name="l00203"></a><span class="lineno"><a class="line" href="group__InvariantGroup.html#ga9e442bab8f203bcd5634a3d0e65bf802">  203</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__InvariantGroup.html#gad3987f97353c8696e602ed1915b3cf47">i2</a>(<span class="keyword">const</span> Matrix&amp; A)</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    {</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;      <span class="keywordflow">return</span> Detail::SecondPrincipalInvariant&lt;Matrix&gt;(A);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class </span>F,</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;              std::enable_if_t&lt; std::is_base_of&lt;Base,F&gt;::value &gt;* = <span class="keyword">nullptr</span> &gt;</div>
+<div class="line"><a name="l00215"></a><span class="lineno"><a class="line" href="group__InvariantGroup.html#gad3987f97353c8696e602ed1915b3cf47">  215</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__InvariantGroup.html#gad3987f97353c8696e602ed1915b3cf47">i2</a>(<span class="keyword">const</span> F&amp; f)</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    {</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;      <span class="keyword">using</span> Matrix = std::decay_t&lt;decltype(f.d0())&gt;;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;      <span class="keywordflow">return</span> Detail::SecondPrincipalInvariant&lt;Matrix&gt;( f.d0() )( f );</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    }</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Arg&gt;</div>
+<div class="line"><a name="l00231"></a><span class="lineno"><a class="line" href="group__InvariantGroup.html#gae1ad80b4b2f34a10564114fad28bc313">  231</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__InvariantGroup.html#gae1ad80b4b2f34a10564114fad28bc313">i3</a>(<span class="keyword">const</span> Arg&amp; x)</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    {</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="group__LinearAlgebraGroup.html#gadb3017b4b2828e25a0784b10396a836f">det</a>(x);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    }</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Arg, <span class="keywordtype">int</span> n = dim&lt;Arg&gt;()&gt;</div>
+<div class="line"><a name="l00243"></a><span class="lineno"><a class="line" href="group__InvariantGroup.html#ga7eed5e2661171d81e192ac1db791244c">  243</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__InvariantGroup.html#ga7eed5e2661171d81e192ac1db791244c">mi1</a>(<span class="keyword">const</span> Arg&amp; x)</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    {</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="group__InvariantGroup.html#gafaead59b618d87239270f8eca2bf75c8">i1</a>(x) * ( <a class="code" href="structFunG_1_1Pow.html">Pow</a>&lt;-1,n&gt;()( <a class="code" href="group__LinearAlgebraGroup.html#gadb3017b4b2828e25a0784b10396a836f">det</a>(x) ) );</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    }</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Arg, <span class="keywordtype">int</span> n = dim&lt;Arg&gt;()&gt;</div>
+<div class="line"><a name="l00255"></a><span class="lineno"><a class="line" href="group__InvariantGroup.html#ga9d219c5c48cce1d3af60345916963524">  255</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__InvariantGroup.html#ga9d219c5c48cce1d3af60345916963524">mi2</a>(<span class="keyword">const</span> Arg&amp; x)</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    {</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="group__InvariantGroup.html#gad3987f97353c8696e602ed1915b3cf47">i2</a>(x) * ( <a class="code" href="structFunG_1_1Pow.html">Pow</a>&lt;-2,n&gt;()( <a class="code" href="group__LinearAlgebraGroup.html#gadb3017b4b2828e25a0784b10396a836f">det</a>(x) ) );</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    }</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Arg&gt;</div>
+<div class="line"><a name="l00268"></a><span class="lineno"><a class="line" href="group__InvariantGroup.html#gab82dd139779c560055fec0259c451eff">  268</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__InvariantGroup.html#gab82dd139779c560055fec0259c451eff">mi3</a>(<span class="keyword">const</span> Arg&amp; x)</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    {</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="group__InvariantGroup.html#gae1ad80b4b2f34a10564114fad28bc313">i3</a>(x);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    }</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  }</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;}</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="preprocessor">#endif // FUNG_LINEAR_ALGEBRA_PRINCIPAL_INVARIANTS_HH</span></div>
+<div class="ttc" id="group__InvariantGroup_html_gae1ad80b4b2f34a10564114fad28bc313"><div class="ttname"><a href="group__InvariantGroup.html#gae1ad80b4b2f34a10564114fad28bc313">FunG::LinearAlgebra::i3</a></div><div class="ttdeci">auto i3(const Arg &amp;x)</div><div class="ttdoc">Generate third principal invariant. </div><div class="ttdef"><b>Definition:</b> principal_invariants.hh:231</div></div>
+<div class="ttc" id="group__InvariantGroup_html_gab82dd139779c560055fec0259c451eff"><div class="ttname"><a href="group__InvariantGroup.html#gab82dd139779c560055fec0259c451eff">FunG::LinearAlgebra::mi3</a></div><div class="ttdeci">auto mi3(const Arg &amp;x)</div><div class="ttdoc">Third modified principal invariant is the same as the third principal invariant. </div><div class="ttdef"><b>Definition:</b> principal_invariants.hh:268</div></div>
 <div class="ttc" id="structFunG_1_1Pow_html"><div class="ttname"><a href="structFunG_1_1Pow.html">FunG::Pow</a></div><div class="ttdoc">Power function with rational exponent  including first three derivatives. </div><div class="ttdef"><b>Definition:</b> pow.hh:41</div></div>
-<div class="ttc" id="group__InvariantGroup_html_gad3987f97353c8696e602ed1915b3cf47"><div class="ttname"><a href="group__InvariantGroup.html#gad3987f97353c8696e602ed1915b3cf47">FunG::LinearAlgebra::i2</a></div><div class="ttdeci">auto i2(const F &amp;f)</div><div class="ttdoc">Convenient generation of second principal invariant  for . </div><div class="ttdef"><b>Definition:</b> principal_invariants.hh:209</div></div>
-<div class="ttc" id="group__InvariantGroup_html_gafaead59b618d87239270f8eca2bf75c8"><div class="ttname"><a href="group__InvariantGroup.html#gafaead59b618d87239270f8eca2bf75c8">FunG::LinearAlgebra::i1</a></div><div class="ttdeci">auto i1(const Arg &amp;x)</div><div class="ttdoc">Generate first principal invariant. </div><div class="ttdef"><b>Definition:</b> principal_invariants.hh:185</div></div>
-<div class="ttc" id="group__LinearAlgebraGroup_html_gadb3017b4b2828e25a0784b10396a836f"><div class="ttname"><a href="group__LinearAlgebraGroup.html#gadb3017b4b2828e25a0784b10396a836f">FunG::LinearAlgebra::det</a></div><div class="ttdeci">auto det(Matrix const &amp;A)</div><div class="ttdoc">Generate . </div><div class="ttdef"><b>Definition:</b> determinant.hh:237</div></div>
-<div class="ttc" id="group__InvariantGroup_html_ga9d219c5c48cce1d3af60345916963524"><div class="ttname"><a href="group__InvariantGroup.html#ga9d219c5c48cce1d3af60345916963524">FunG::LinearAlgebra::mi2</a></div><div class="ttdeci">auto mi2(const Arg &amp;x)</div><div class="ttdoc">Isochoric (volume-preserving), second modified principal invariant , where  is the second and  is the...</div><div class="ttdef"><b>Definition:</b> principal_invariants.hh:249</div></div>
-<div class="ttc" id="group__InvariantGroup_html_ga7eed5e2661171d81e192ac1db791244c"><div class="ttname"><a href="group__InvariantGroup.html#ga7eed5e2661171d81e192ac1db791244c">FunG::LinearAlgebra::mi1</a></div><div class="ttdeci">auto mi1(const Arg &amp;x)</div><div class="ttdoc">Isochoric (volume-preserving), first modified principal invariant , where  is the first and  is the t...</div><div class="ttdef"><b>Definition:</b> principal_invariants.hh:237</div></div>
-<div class="ttc" id="group__LinearAlgebraGroup_html_ga4d73eb4d46dd9196a31e2d6d557d509e"><div class="ttname"><a href="group__LinearAlgebraGroup.html#ga4d73eb4d46dd9196a31e2d6d557d509e">FunG::LinearAlgebra::trace</a></div><div class="ttdeci">auto trace(const Matrix &amp;A)</div><div class="ttdoc">Generate . </div><div class="ttdef"><b>Definition:</b> trace.hh:251</div></div>
+<div class="ttc" id="group__InvariantGroup_html_gad3987f97353c8696e602ed1915b3cf47"><div class="ttname"><a href="group__InvariantGroup.html#gad3987f97353c8696e602ed1915b3cf47">FunG::LinearAlgebra::i2</a></div><div class="ttdeci">auto i2(const F &amp;f)</div><div class="ttdoc">Convenient generation of second principal invariant  for . </div><div class="ttdef"><b>Definition:</b> principal_invariants.hh:215</div></div>
+<div class="ttc" id="group__InvariantGroup_html_gafaead59b618d87239270f8eca2bf75c8"><div class="ttname"><a href="group__InvariantGroup.html#gafaead59b618d87239270f8eca2bf75c8">FunG::LinearAlgebra::i1</a></div><div class="ttdeci">auto i1(const Arg &amp;x)</div><div class="ttdoc">Generate first principal invariant. </div><div class="ttdef"><b>Definition:</b> principal_invariants.hh:191</div></div>
+<div class="ttc" id="group__LinearAlgebraGroup_html_gadb3017b4b2828e25a0784b10396a836f"><div class="ttname"><a href="group__LinearAlgebraGroup.html#gadb3017b4b2828e25a0784b10396a836f">FunG::LinearAlgebra::det</a></div><div class="ttdeci">auto det(Matrix const &amp;A)</div><div class="ttdoc">Generate . </div><div class="ttdef"><b>Definition:</b> determinant.hh:250</div></div>
+<div class="ttc" id="group__InvariantGroup_html_ga9d219c5c48cce1d3af60345916963524"><div class="ttname"><a href="group__InvariantGroup.html#ga9d219c5c48cce1d3af60345916963524">FunG::LinearAlgebra::mi2</a></div><div class="ttdeci">auto mi2(const Arg &amp;x)</div><div class="ttdoc">Isochoric (volume-preserving), second modified principal invariant , where  is the second and  is the...</div><div class="ttdef"><b>Definition:</b> principal_invariants.hh:255</div></div>
+<div class="ttc" id="group__InvariantGroup_html_ga7eed5e2661171d81e192ac1db791244c"><div class="ttname"><a href="group__InvariantGroup.html#ga7eed5e2661171d81e192ac1db791244c">FunG::LinearAlgebra::mi1</a></div><div class="ttdeci">auto mi1(const Arg &amp;x)</div><div class="ttdoc">Isochoric (volume-preserving), first modified principal invariant , where  is the first and  is the t...</div><div class="ttdef"><b>Definition:</b> principal_invariants.hh:243</div></div>
+<div class="ttc" id="group__LinearAlgebraGroup_html_ga4d73eb4d46dd9196a31e2d6d557d509e"><div class="ttname"><a href="group__LinearAlgebraGroup.html#ga4d73eb4d46dd9196a31e2d6d557d509e">FunG::LinearAlgebra::trace</a></div><div class="ttdeci">auto trace(const Matrix &amp;A)</div><div class="ttdoc">Generate . </div><div class="ttdef"><b>Definition:</b> trace.hh:223</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 17 2015 21:53:53 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 20 2015 14:26:49 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -112,16 +112,12 @@ Inheritance diagram for FunG::MathematicalOperations::Scale&lt; F, class &gt;:</
  <div class="center">
   <img src="structFunG_1_1MathematicalOperations_1_1Scale.png" usemap="#FunG::MathematicalOperations::Scale&lt; F, class &gt;_map" alt=""/>
   <map id="FunG::MathematicalOperations::Scale&lt; F, class &gt;_map" name="FunG::MathematicalOperations::Scale&lt; F, class &gt;_map">
-<area href="structFunG_1_1Base.html" title="Base class for functions satisfying FunctionConcept. Required for enabling the operators in generate..." alt="FunG::Base" shape="rect" coords="0,0,318,24"/>
+<area href="structFunG_1_1Base.html" title="Base class for functions satisfying FunctionConcept. Required for enabling the operators in generate..." alt="FunG::Base" shape="rect" coords="0,0,377,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8a1c804cb79b41f4e6df28d1e6fe1b72"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a1c804cb79b41f4e6df28d1e6fe1b72"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html#a8a1c804cb79b41f4e6df28d1e6fe1b72">Scale</a> ()=default</td></tr>
-<tr class="memdesc:a8a1c804cb79b41f4e6df28d1e6fe1b72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. May leave member variables uninitialized! Call update before using evaluation. <br/></td></tr>
-<tr class="separator:a8a1c804cb79b41f4e6df28d1e6fe1b72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab86612b868aaee66786793da2ec7a54a"><td class="memTemplParams" colspan="2">template&lt;class InitF &gt; </td></tr>
 <tr class="memitem:ab86612b868aaee66786793da2ec7a54a"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html#ab86612b868aaee66786793da2ec7a54a">Scale</a> (double a_, const InitF &amp;f_)</td></tr>
 <tr class="memdesc:ab86612b868aaee66786793da2ec7a54a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor passing arguments to function constructor.  <a href="#ab86612b868aaee66786793da2ec7a54a">More...</a><br/></td></tr>
@@ -165,7 +161,7 @@ template&lt;int id, class Arg &gt; </td></tr>
 <tr class="separator:aa87528c3cc5711d8645bd8f86333a07b inherit pub_methods_structFunG_1_1Base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;class F, class = FunctionConceptCheck&lt;F&gt;&gt;<br/>
+<div class="textblock"><h3>template&lt;class F, class = Concepts::FunctionConceptCheck&lt;F&gt;&gt;<br/>
 struct FunG::MathematicalOperations::Scale&lt; F, class &gt;</h3>
 
 <p>Scaling \( af \) of some function \( f \) with a double \( a \) (F must satisfy the requirements of <a class="el" href="structFunG_1_1Concepts_1_1FunctionConcept.html" title="Minimal requirements for functions. ">Concepts::FunctionConcept</a>). </p>
@@ -174,7 +170,7 @@ struct FunG::MathematicalOperations::Scale&lt; F, class &gt;</h3>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class F , class  = FunctionConceptCheck&lt;F&gt;&gt; </div>
+template&lt;class F , class  = Concepts::FunctionConceptCheck&lt;F&gt;&gt; </div>
 <div class="memtemplate">
 template&lt;class InitF &gt; </div>
 <table class="mlabels">
@@ -222,7 +218,7 @@ template&lt;class InitF &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class F , class  = FunctionConceptCheck&lt;F&gt;&gt; </div>
+template&lt;class F , class  = Concepts::FunctionConceptCheck&lt;F&gt;&gt; </div>
 <div class="memtemplate">
 template&lt;int idx, class Arg , class IndexedArg  = IndexedType&lt;Arg,idx&gt;, class  = std::enable_if_t&lt; D1&lt;F,IndexedArg&gt;::present&gt;&gt; </div>
 <table class="mlabels">
@@ -258,7 +254,7 @@ template&lt;int idx, class Arg , class IndexedArg  = IndexedType&lt;Arg,idx&gt;,
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class F , class  = FunctionConceptCheck&lt;F&gt;&gt; </div>
+template&lt;class F , class  = Concepts::FunctionConceptCheck&lt;F&gt;&gt; </div>
 <div class="memtemplate">
 template&lt;int idx, int idy, class ArgX , class ArgY , class IndexedArgX  = IndexedType&lt;ArgX,idx&gt;, class IndexedArgY  = IndexedType&lt;ArgY,idy&gt;, class  = std::enable_if_t&lt; D2&lt;F,IndexedArgX,IndexedArgY&gt;::present&gt;&gt; </div>
 <table class="mlabels">
@@ -305,7 +301,7 @@ template&lt;int idx, int idy, class ArgX , class ArgY , class IndexedArgX  = Ind
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class F , class  = FunctionConceptCheck&lt;F&gt;&gt; </div>
+template&lt;class F , class  = Concepts::FunctionConceptCheck&lt;F&gt;&gt; </div>
 <div class="memtemplate">
 template&lt;int idx, int idy, int idz, class ArgX , class ArgY , class ArgZ , class IndexedArgX  = IndexedType&lt;ArgX,idx&gt;, class IndexedArgY  = IndexedType&lt;ArgY,idy&gt;, class IndexedArgZ  = IndexedType&lt;ArgZ,idz&gt;, class  = std::enable_if_t&lt; D3&lt;F,IndexedArgX,IndexedArgY,IndexedArgZ&gt;::present &gt;&gt; </div>
 <table class="mlabels">
@@ -361,7 +357,7 @@ template&lt;int idx, int idy, int idz, class ArgX , class ArgY , class ArgZ , cl
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 17 2015 21:54:01 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 20 2015 14:26:56 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

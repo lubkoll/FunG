@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['geometricnonlinearity',['GeometricNonlinearity',['../group__LinearAlgebraGroup.html#ga7af9b6f793f11a287277a30ea1e32caf',1,'FunG::LinearAlgebra']]]
+  ['sqrt',['Sqrt',['../group__CMathGroup.html#gaca80e773d5886f47cd49dc19b130263f',1,'FunG']]]
 ];

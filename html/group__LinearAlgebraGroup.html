@@ -116,12 +116,6 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunG_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html">FunG::LinearAlgebra::LeftCauchyGreenStrainTensor&lt; Matrix, class &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Left Cauchy-Green strain tensor \( F^T F \) for a symmetric matrix \( F \).  <a href="classFunG_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunG_1_1LinearAlgebra_1_1LinearizedStrainTensor.html">FunG::LinearAlgebra::LinearizedStrainTensor&lt; Matrix, class &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linearized strain tensor \( \frac{1}{2}\left(F^T+F\right) \).  <a href="classFunG_1_1LinearAlgebra_1_1LinearizedStrainTensor.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunG_1_1LinearAlgebra_1_1StrainTensor.html">FunG::LinearAlgebra::StrainTensor&lt; Matrix &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strain tensor \( \frac{1}{2}\left(F^T+F + F^T F\right) \).  <a href="classFunG_1_1LinearAlgebra_1_1StrainTensor.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -130,11 +124,6 @@ template&lt;class Matrix &gt; </td></tr>
 <tr class="memitem:gad209833e37a25e863fe72868d37795b8"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#gad209833e37a25e863fe72868d37795b8">FunG::LinearAlgebra::FrobeniusNorm</a> = MathematicalOperations::Chain&lt; Sqrt, SquaredFrobeniusNorm&lt; Matrix &gt; &gt;</td></tr>
 <tr class="memdesc:gad209833e37a25e863fe72868d37795b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frobenius norm \( \|A\| = \sqrt{A\negthinspace : \negthinspace A }= \sqrt{\mathrm{tr}(A^TA)} = \sqrt{\sum_{i,j} A_{ij}^2}. \). <br/></td></tr>
 <tr class="separator:gad209833e37a25e863fe72868d37795b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7af9b6f793f11a287277a30ea1e32caf"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga7af9b6f793f11a287277a30ea1e32caf"></a>
-template&lt;class Matrix &gt; </td></tr>
-<tr class="memitem:ga7af9b6f793f11a287277a30ea1e32caf"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#ga7af9b6f793f11a287277a30ea1e32caf">FunG::LinearAlgebra::GeometricNonlinearity</a> = LeftCauchyGreenStrainTensor&lt; Matrix &gt;</td></tr>
-<tr class="memdesc:ga7af9b6f793f11a287277a30ea1e32caf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Model of the geometric nonlinearity in elasticity theory. Implemented as template-alias to CauchyGreenStrainTensor. <br/></td></tr>
-<tr class="separator:ga7af9b6f793f11a287277a30ea1e32caf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga43e327309edc349c75ceecd29b7abde2"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga43e327309edc349c75ceecd29b7abde2"></a>
 template&lt;class Matrix &gt; </td></tr>
 <tr class="memitem:ga43e327309edc349c75ceecd29b7abde2"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#ga43e327309edc349c75ceecd29b7abde2">FunG::LinearAlgebra::Trace</a> = std::conditional_t&lt; Checks::isConstantSize&lt; Matrix &gt;(), ConstantSizeTrace&lt; Matrix &gt;, DynamicSizeTrace&lt; Matrix &gt; &gt;</td></tr>
@@ -160,12 +149,12 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga552048de67f3412ae0a220b3123db6e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate \(\det\circ f\).  <a href="#ga552048de67f3412ae0a220b3123db6e5">More...</a><br/></td></tr>
 <tr class="separator:ga552048de67f3412ae0a220b3123db6e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7c0b1db93cfc5779a3b1e7eb1646c213"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga7c0b1db93cfc5779a3b1e7eb1646c213"></a>
-template&lt;class Matrix , int n = dim&lt;Matrix&gt;(), std::enable_if_t&lt; Checks::isConstantSize&lt; Matrix &gt;()&amp;&amp;!Checks::is_base_of&lt; Base, Matrix &gt;::value &gt; *  = nullptr, class  = Concepts::SymmetricMatrixConceptCheck&lt;Matrix&gt;&gt; </td></tr>
+template&lt;class Matrix , int n = dim&lt;Matrix&gt;(), std::enable_if_t&lt; Checks::isConstantSize&lt; Matrix &gt;()&amp;&amp;!Checks::is_base_of&lt; Base, Matrix &gt;::value &gt; *  = nullptr, class  = Concepts::SquareMatrixConceptCheck&lt;Matrix&gt;&gt; </td></tr>
 <tr class="memitem:ga7c0b1db93cfc5779a3b1e7eb1646c213"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#ga7c0b1db93cfc5779a3b1e7eb1646c213">FunG::LinearAlgebra::deviator</a> (const Matrix &amp;A)</td></tr>
 <tr class="memdesc:ga7c0b1db93cfc5779a3b1e7eb1646c213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate deviator \( \mathrm{dev}(A) = A - \frac{\mathrm{tr}(A)}{n}I \) of a matrix \( A\in\mathbb{R}^{n,n} \). <br/></td></tr>
 <tr class="separator:ga7c0b1db93cfc5779a3b1e7eb1646c213"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabc90de0d1754cd2e2d190ea8ba62245f"><td class="memTemplParams" colspan="2"><a class="anchor" id="gabc90de0d1754cd2e2d190ea8ba62245f"></a>
-template&lt;class Matrix , std::enable_if_t&lt;!Checks::isConstantSize&lt; Matrix &gt;()&amp;&amp;!Checks::is_base_of&lt; Base, Matrix &gt;::value &gt; *  = nullptr, class  = Concepts::SymmetricMatrixConceptCheck&lt;Matrix&gt;&gt; </td></tr>
+template&lt;class Matrix , std::enable_if_t&lt;!Checks::isConstantSize&lt; Matrix &gt;()&amp;&amp;!Checks::is_base_of&lt; Base, Matrix &gt;::value &gt; *  = nullptr, class  = Concepts::SquareMatrixConceptCheck&lt;Matrix&gt;&gt; </td></tr>
 <tr class="memitem:gabc90de0d1754cd2e2d190ea8ba62245f"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#gabc90de0d1754cd2e2d190ea8ba62245f">FunG::LinearAlgebra::deviator</a> (const Matrix &amp;A)</td></tr>
 <tr class="memdesc:gabc90de0d1754cd2e2d190ea8ba62245f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate deviator \( \mathrm{dev}(A) = A - \frac{\mathrm{tr}(A)}{n}I \) of a matrix \( A\in\mathbb{R}^{n,n} \). <br/></td></tr>
 <tr class="separator:gabc90de0d1754cd2e2d190ea8ba62245f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -382,7 +371,7 @@ template&lt;class F , std::enable_if_t&lt; std::is_base_of&lt; Base, F &gt;::val
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 17 2015 21:53:53 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 20 2015 14:26:49 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

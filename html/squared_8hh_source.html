@@ -136,105 +136,95 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> F, <span class="keyword">class</span> = FunctionConceptCheck&lt;F&gt; &gt;</div>
 <div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Squared.html">   59</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structFunG_1_1MathematicalOperations_1_1Squared.html">Squared</a> : <a class="code" href="structFunG_1_1Base.html">Base</a> , Chainer&lt; Squared&lt; F , FunctionConceptCheck&lt;F&gt; &gt; &gt;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <span class="keyword">using</span> Chainer&lt; Squared&lt; F , FunctionConceptCheck&lt;F&gt; &gt; &gt;::operator();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="keyword">template</span> &lt; <span class="keyword">class</span> IndexedArgX , <span class="keyword">class</span> IndexedArgY &gt;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      <span class="keyword">using</span> D2Sum = ComputeSum&lt; ComputeProduct&lt; D0&lt;F&gt; , D2&lt;F,IndexedArgX,IndexedArgY&gt; &gt;,</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      ComputeProduct&lt; D1&lt;F,IndexedArgY&gt; , D1&lt;F,IndexedArgX&gt; &gt; &gt;;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <span class="keyword">template</span> &lt; <span class="keyword">class</span> IndexedArgX , <span class="keyword">class</span> IndexedArgY , <span class="keyword">class</span> IndexedArgZ &gt;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <span class="keyword">using</span> D3Sum = ComputeSum&lt; ComputeProduct&lt; D0&lt;F&gt; , D3&lt;F,IndexedArgX,IndexedArgY,IndexedArgZ&gt; &gt; ,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      ComputeProduct&lt; D1&lt;F,IndexedArgZ&gt; , D2&lt;F,IndexedArgX,IndexedArgY&gt; &gt; ,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      ComputeProduct&lt; D1&lt;F,IndexedArgY&gt; , D2&lt;F,IndexedArgX,IndexedArgZ&gt; &gt; ,</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      ComputeProduct&lt; D2&lt;F,IndexedArgY,IndexedArgZ&gt; , D1&lt;F,IndexedArgX&gt; &gt; &gt;;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <a class="code" href="structFunG_1_1MathematicalOperations_1_1Squared.html#a9cd7a202bf104def76c3dc4ddbe82a47">Squared</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <span class="keyword">template</span> &lt; <span class="keyword">class</span> IndexedArgX , <span class="keyword">class</span> IndexedArgY &gt;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="keyword">using</span> D2Sum =</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      ComputeSum&lt;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      ComputeProduct&lt; D0&lt;F&gt; , D2&lt;F,IndexedArgX,IndexedArgY&gt; &gt;,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      ComputeProduct&lt; D1&lt;F,IndexedArgY&gt; , D1&lt;F,IndexedArgX&gt; &gt; &gt;;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <span class="keyword">template</span> &lt; <span class="keyword">class</span> IndexedArgX , <span class="keyword">class</span> IndexedArgY , <span class="keyword">class</span> IndexedArgZ &gt;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="keyword">using</span> D3Sum =</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      ComputeSum&lt;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      ComputeProduct&lt; D0&lt;F&gt; , D3&lt;F,IndexedArgX,IndexedArgY,IndexedArgZ&gt; &gt; ,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      ComputeProduct&lt; D1&lt;F,IndexedArgZ&gt; , D2&lt;F,IndexedArgX,IndexedArgY&gt; &gt; ,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      ComputeProduct&lt; D1&lt;F,IndexedArgY&gt; , D2&lt;F,IndexedArgX,IndexedArgZ&gt; &gt; ,</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      ComputeProduct&lt; D2&lt;F,IndexedArgY,IndexedArgZ&gt; , D1&lt;F,IndexedArgX&gt; &gt; &gt;;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      <span class="keyword">template</span> &lt;<span class="keyword">class</span> InitF&gt;</div>
 <div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Squared.html#a60dab55accc3957f54b0eafece720b5d">   82</a></span>&#160;      <a class="code" href="structFunG_1_1MathematicalOperations_1_1Squared.html#a60dab55accc3957f54b0eafece720b5d">Squared</a>(<span class="keyword">const</span> InitF&amp; f_)</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        : f(f_)</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        updateResultOfD0();</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      <span class="keyword">template</span> &lt;<span class="keyword">class</span> Arg&gt;</div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Squared.html#abea95d90dc29ac105c43f4eadde84cab">   90</a></span>&#160;      <span class="keywordtype">void</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Squared.html#abea95d90dc29ac105c43f4eadde84cab">update</a>(Arg <span class="keyword">const</span>&amp; x)</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        f.update(x);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        updateResultOfD0();</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      <span class="keyword">template</span> &lt;<span class="keywordtype">int</span> index, <span class="keyword">class</span> Arg&gt;</div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Squared.html#aed9b2c4a562bf0349044c9f79dcae078">   98</a></span>&#160;      <span class="keywordtype">void</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Squared.html#aed9b2c4a562bf0349044c9f79dcae078">updateVariable</a>(<span class="keyword">const</span> Arg&amp; x)</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        f.template updateVariable&lt;index&gt;(x);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Squared.html#a1befce58c84eac92ab7afa974ecaf5b0">  104</a></span>&#160;      <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="structFunG_1_1MathematicalOperations_1_1Squared.html#a1befce58c84eac92ab7afa974ecaf5b0">d0</a>() const noexcept</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">return</span> resultOfD0;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      <span class="keyword">template</span> &lt; <span class="keywordtype">int</span> <span class="keywordtype">id</span> , <span class="keyword">class</span> Arg , <span class="keyword">class</span> IndexedArg = IndexedType&lt;Arg,<span class="keywordtype">id</span>&gt; , <span class="keyword">class</span> = std::enable_if_t&lt; ComputeProduct&lt; D0&lt;F&gt; , D1&lt;F,IndexedArg&gt; &gt;::present &gt; &gt;</div>
-<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Squared.html#a02f17b7976e0f72e15bc73d1ae905988">  114</a></span>&#160;      <span class="keyword">auto</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Squared.html#a02f17b7976e0f72e15bc73d1ae905988">d1</a>(Arg <span class="keyword">const</span>&amp; dx)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword">      </span>{</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">return</span> 2 * f.d0() * f.template d1&lt;id&gt;(dx);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      }</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      <span class="keyword">template</span> &lt; <span class="keywordtype">int</span> idx , <span class="keywordtype">int</span> idy , <span class="keyword">class </span>ArgX , <span class="keyword">class </span>ArgY ,</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                 <span class="keyword">class </span>IndexedArgX = IndexedType&lt;ArgX,idx&gt; ,</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                 <span class="keyword">class </span>IndexedArgY = IndexedType&lt;ArgY,idy&gt; ,</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                 <span class="keyword">class </span>= std::enable_if_t&lt; D2Sum&lt;IndexedArgX,IndexedArgY&gt;::present &gt; &gt;</div>
-<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Squared.html#a6c9ad9c73006afa6bbe7bc5a5144e18d">  128</a></span>&#160;      <span class="keyword">auto</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Squared.html#a6c9ad9c73006afa6bbe7bc5a5144e18d">d2</a>(ArgX <span class="keyword">const</span>&amp; dx, ArgY <span class="keyword">const</span>&amp; dy)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keyword">      </span>{</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">return</span> 2 * D2Sum&lt;IndexedArgX,IndexedArgY&gt;(  ComputeProduct&lt; D0&lt;F&gt;             , D2&lt;F,IndexedArgX,IndexedArgY&gt; &gt;( D0&lt;F&gt;(f)        , D2&lt;F,IndexedArgX,IndexedArgY&gt;(f,dx,dy) ),</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                                                  ComputeProduct&lt; D1&lt;F,IndexedArgY&gt; , D1&lt;F,IndexedArgX&gt; &gt;( D1&lt;F,IndexedArgY&gt;(f,dy)     , D1&lt;F,IndexedArgX&gt;(f,dx) )</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                                             )();</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      }</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keyword">template</span> &lt; <span class="keywordtype">int</span> idx , <span class="keywordtype">int</span> idy , <span class="keywordtype">int</span> idz , <span class="keyword">class </span>ArgX , <span class="keyword">class </span>ArgY , <span class="keyword">class </span>ArgZ ,</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                 <span class="keyword">class </span>IndexedArgX = IndexedType&lt;ArgX,idx&gt; ,</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                 <span class="keyword">class </span>IndexedArgY = IndexedType&lt;ArgY,idy&gt; ,</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                 <span class="keyword">class </span>IndexedArgZ = IndexedType&lt;ArgZ,idz&gt; ,</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                 <span class="keyword">class </span>= std::enable_if_t&lt; D3Sum&lt;IndexedArgX,IndexedArgY,IndexedArgZ&gt;::present &gt; &gt;</div>
-<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Squared.html#aa792ae543edf0c6288e4acac81b5e007">  146</a></span>&#160;      <span class="keyword">auto</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Squared.html#aa792ae543edf0c6288e4acac81b5e007">d3</a>(ArgX <span class="keyword">const</span>&amp; dx, ArgY <span class="keyword">const</span>&amp; dy, ArgZ <span class="keyword">const</span>&amp; dz)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="keyword">      </span>{</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">return</span> 2 * D3Sum&lt;IndexedArgX,IndexedArgY,IndexedArgZ&gt;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;              ( ComputeProduct&lt; D0&lt;F&gt; , D3&lt;F,IndexedArgX,IndexedArgY,IndexedArgZ&gt; &gt; ( D0&lt;F&gt;(f) , D3&lt;F,IndexedArgX,IndexedArgY,IndexedArgZ&gt;(f,dx,dy,dz) ),</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                ComputeProduct&lt; D1&lt;F,IndexedArgZ&gt; , D2&lt;F,IndexedArgX,IndexedArgY&gt; &gt; ( D1&lt;F,IndexedArgZ&gt;(f,dz) , D2&lt;F,IndexedArgX,IndexedArgY&gt;(f,dx,dy) ),</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                ComputeProduct&lt; D1&lt;F,IndexedArgY&gt; , D2&lt;F,IndexedArgX,IndexedArgZ&gt; &gt; ( D1&lt;F,IndexedArgY&gt;(f,dy) , D2&lt;F,IndexedArgX,IndexedArgZ&gt;(f,dx,dz) ),</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                ComputeProduct&lt; D2&lt;F,IndexedArgY,IndexedArgZ&gt; , D1&lt;F,IndexedArgX&gt; &gt; ( D2&lt;F,IndexedArgY,IndexedArgZ&gt;(f,dy,dz) , D1&lt;F,IndexedArgX&gt;(f,dx) )</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;              )();</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;      }</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;      <span class="keywordtype">void</span> updateResultOfD0()</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;      {</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        resultOfD0 = f.d0() * f.d0();</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;      }</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      F f;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;      std::remove_const_t&lt;std::remove_reference_t&lt;decltype(std::declval&lt;F&gt;().<a class="code" href="structFunG_1_1MathematicalOperations_1_1Squared.html#a1befce58c84eac92ab7afa974ecaf5b0">d0</a>())&gt; &gt; resultOfD0;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    };</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  }</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;}</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">#endif // FUNG_MATHEMATICAL_OPERATIONS_SQUARED_HH</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        : f(f_), value(f.<a class="code" href="structFunG_1_1MathematicalOperations_1_1Squared.html#a1befce58c84eac92ab7afa974ecaf5b0">d0</a>()*f.<a class="code" href="structFunG_1_1MathematicalOperations_1_1Squared.html#a1befce58c84eac92ab7afa974ecaf5b0">d0</a>())</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      {}</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      <span class="keyword">template</span> &lt;<span class="keyword">class</span> Arg&gt;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Squared.html#abea95d90dc29ac105c43f4eadde84cab">   88</a></span>&#160;      <span class="keywordtype">void</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Squared.html#abea95d90dc29ac105c43f4eadde84cab">update</a>(Arg <span class="keyword">const</span>&amp; x)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        f.update(x);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        value = f.d0() * f.d0();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <span class="keyword">template</span> &lt;<span class="keywordtype">int</span> index, <span class="keyword">class</span> Arg&gt;</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Squared.html#aed9b2c4a562bf0349044c9f79dcae078">   96</a></span>&#160;      <span class="keywordtype">void</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Squared.html#aed9b2c4a562bf0349044c9f79dcae078">updateVariable</a>(<span class="keyword">const</span> Arg&amp; x)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        f.template updateVariable&lt;index&gt;(x);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Squared.html#a1befce58c84eac92ab7afa974ecaf5b0">  102</a></span>&#160;      <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="structFunG_1_1MathematicalOperations_1_1Squared.html#a1befce58c84eac92ab7afa974ecaf5b0">d0</a>() const noexcept</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">return</span> value;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      <span class="keyword">template</span> &lt; <span class="keywordtype">int</span> <span class="keywordtype">id</span> , <span class="keyword">class</span> Arg , <span class="keyword">class</span> IndexedArg = IndexedType&lt;Arg,<span class="keywordtype">id</span>&gt; , <span class="keyword">class</span> = std::enable_if_t&lt; ComputeProduct&lt; D0&lt;F&gt; , D1&lt;F,IndexedArg&gt; &gt;::present &gt; &gt;</div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Squared.html#a02f17b7976e0f72e15bc73d1ae905988">  112</a></span>&#160;      <span class="keyword">auto</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Squared.html#a02f17b7976e0f72e15bc73d1ae905988">d1</a>(Arg <span class="keyword">const</span>&amp; dx)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keyword">      </span>{</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">return</span> 2 * f.d0() * f.template d1&lt;id&gt;(dx);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;      <span class="keyword">template</span> &lt; <span class="keywordtype">int</span> idx , <span class="keywordtype">int</span> idy , <span class="keyword">class </span>ArgX , <span class="keyword">class </span>ArgY ,</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                 <span class="keyword">class </span>IndexedArgX = IndexedType&lt;ArgX,idx&gt; ,</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                 <span class="keyword">class </span>IndexedArgY = IndexedType&lt;ArgY,idy&gt; ,</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                 <span class="keyword">class </span>= std::enable_if_t&lt; D2Sum&lt;IndexedArgX,IndexedArgY&gt;::present &gt; &gt;</div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Squared.html#a6c9ad9c73006afa6bbe7bc5a5144e18d">  126</a></span>&#160;      <span class="keyword">auto</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Squared.html#a6c9ad9c73006afa6bbe7bc5a5144e18d">d2</a>(ArgX <span class="keyword">const</span>&amp; dx, ArgY <span class="keyword">const</span>&amp; dy)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keyword">      </span>{</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">return</span> 2 * sum( product( D0&lt;F&gt;(f) , D2&lt;F,IndexedArgX,IndexedArgY&gt;(f,dx,dy) ),</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                        product( D1&lt;F,IndexedArgY&gt;(f,dy) , D1&lt;F,IndexedArgX&gt;(f,dx) ) )();</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;      }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keyword">template</span> &lt; <span class="keywordtype">int</span> idx , <span class="keywordtype">int</span> idy , <span class="keywordtype">int</span> idz , <span class="keyword">class </span>ArgX , <span class="keyword">class </span>ArgY , <span class="keyword">class </span>ArgZ ,</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                 <span class="keyword">class </span>IndexedArgX = IndexedType&lt;ArgX,idx&gt; ,</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                 <span class="keyword">class </span>IndexedArgY = IndexedType&lt;ArgY,idy&gt; ,</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                 <span class="keyword">class </span>IndexedArgZ = IndexedType&lt;ArgZ,idz&gt; ,</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                 <span class="keyword">class </span>= std::enable_if_t&lt; D3Sum&lt;IndexedArgX,IndexedArgY,IndexedArgZ&gt;::present &gt; &gt;</div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Squared.html#aa792ae543edf0c6288e4acac81b5e007">  143</a></span>&#160;      <span class="keyword">auto</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Squared.html#aa792ae543edf0c6288e4acac81b5e007">d3</a>(ArgX <span class="keyword">const</span>&amp; dx, ArgY <span class="keyword">const</span>&amp; dy, ArgZ <span class="keyword">const</span>&amp; dz)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="keyword">      </span>{</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">return</span> 2 * sum( product( D0&lt;F&gt;(f) , D3&lt;F,IndexedArgX,IndexedArgY,IndexedArgZ&gt;(f,dx,dy,dz) ),</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                        product( D1&lt;F,IndexedArgZ&gt;(f,dz) , D2&lt;F,IndexedArgX,IndexedArgY&gt;(f,dx,dy) ),</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                        product( D1&lt;F,IndexedArgY&gt;(f,dy) , D2&lt;F,IndexedArgX,IndexedArgZ&gt;(f,dx,dz) ),</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                        product( D2&lt;F,IndexedArgY,IndexedArgZ&gt;(f,dy,dz) , D1&lt;F,IndexedArgX&gt;(f,dx) ) )();</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;      }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      F f;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      std::decay_t&lt;decltype(std::declval&lt;F&gt;().<a class="code" href="structFunG_1_1MathematicalOperations_1_1Squared.html#a1befce58c84eac92ab7afa974ecaf5b0">d0</a>())&gt; value;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    };</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  }</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;}</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="preprocessor">#endif // FUNG_MATHEMATICAL_OPERATIONS_SQUARED_HH</span></div>
 <div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Squared_html"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Squared.html">FunG::MathematicalOperations::Squared</a></div><div class="ttdoc">Squared function (F must satisfy the requirements of Concepts::FunctionConcept). </div><div class="ttdef"><b>Definition:</b> squared.hh:59</div></div>
 <div class="ttc" id="structFunG_1_1Base_html"><div class="ttname"><a href="structFunG_1_1Base.html">FunG::Base</a></div><div class="ttdoc">Base class for functions satisfying FunctionConcept. Required for enabling the operators in generate...</div><div class="ttdef"><b>Definition:</b> base.hh:27</div></div>
-<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Squared_html_aed9b2c4a562bf0349044c9f79dcae078"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Squared.html#aed9b2c4a562bf0349044c9f79dcae078">FunG::MathematicalOperations::Squared::updateVariable</a></div><div class="ttdeci">void updateVariable(const Arg &amp;x)</div><div class="ttdoc">Propagate call to updateVariable() to f. </div><div class="ttdef"><b>Definition:</b> squared.hh:98</div></div>
-<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Squared_html_a9cd7a202bf104def76c3dc4ddbe82a47"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Squared.html#a9cd7a202bf104def76c3dc4ddbe82a47">FunG::MathematicalOperations::Squared::Squared</a></div><div class="ttdeci">Squared()=default</div><div class="ttdoc">Default constructor. May leave member variables uninitialized! Call update before using evaluation...</div></div>
+<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Squared_html_aed9b2c4a562bf0349044c9f79dcae078"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Squared.html#aed9b2c4a562bf0349044c9f79dcae078">FunG::MathematicalOperations::Squared::updateVariable</a></div><div class="ttdeci">void updateVariable(const Arg &amp;x)</div><div class="ttdoc">Propagate call to updateVariable() to f. </div><div class="ttdef"><b>Definition:</b> squared.hh:96</div></div>
 <div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Squared_html_a60dab55accc3957f54b0eafece720b5d"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Squared.html#a60dab55accc3957f54b0eafece720b5d">FunG::MathematicalOperations::Squared::Squared</a></div><div class="ttdeci">Squared(const InitF &amp;f_)</div><div class="ttdoc">Constructor passing arguments to function constructor. </div><div class="ttdef"><b>Definition:</b> squared.hh:82</div></div>
-<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Squared_html_aa792ae543edf0c6288e4acac81b5e007"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Squared.html#aa792ae543edf0c6288e4acac81b5e007">FunG::MathematicalOperations::Squared::d3</a></div><div class="ttdeci">auto d3(ArgX const &amp;dx, ArgY const &amp;dy, ArgZ const &amp;dz) const </div><div class="ttdoc">Third directional derivative. </div><div class="ttdef"><b>Definition:</b> squared.hh:146</div></div>
-<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Squared_html_a1befce58c84eac92ab7afa974ecaf5b0"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Squared.html#a1befce58c84eac92ab7afa974ecaf5b0">FunG::MathematicalOperations::Squared::d0</a></div><div class="ttdeci">const auto &amp; d0() const noexcept</div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> squared.hh:104</div></div>
-<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Squared_html_abea95d90dc29ac105c43f4eadde84cab"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Squared.html#abea95d90dc29ac105c43f4eadde84cab">FunG::MathematicalOperations::Squared::update</a></div><div class="ttdeci">void update(Arg const &amp;x)</div><div class="ttdoc">Reset point of evaluation. </div><div class="ttdef"><b>Definition:</b> squared.hh:90</div></div>
-<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Squared_html_a02f17b7976e0f72e15bc73d1ae905988"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Squared.html#a02f17b7976e0f72e15bc73d1ae905988">FunG::MathematicalOperations::Squared::d1</a></div><div class="ttdeci">auto d1(Arg const &amp;dx) const </div><div class="ttdoc">First directional derivative. </div><div class="ttdef"><b>Definition:</b> squared.hh:114</div></div>
-<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Squared_html_a6c9ad9c73006afa6bbe7bc5a5144e18d"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Squared.html#a6c9ad9c73006afa6bbe7bc5a5144e18d">FunG::MathematicalOperations::Squared::d2</a></div><div class="ttdeci">auto d2(ArgX const &amp;dx, ArgY const &amp;dy) const </div><div class="ttdoc">Second directional derivative. </div><div class="ttdef"><b>Definition:</b> squared.hh:128</div></div>
+<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Squared_html_aa792ae543edf0c6288e4acac81b5e007"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Squared.html#aa792ae543edf0c6288e4acac81b5e007">FunG::MathematicalOperations::Squared::d3</a></div><div class="ttdeci">auto d3(ArgX const &amp;dx, ArgY const &amp;dy, ArgZ const &amp;dz) const </div><div class="ttdoc">Third directional derivative. </div><div class="ttdef"><b>Definition:</b> squared.hh:143</div></div>
+<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Squared_html_a1befce58c84eac92ab7afa974ecaf5b0"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Squared.html#a1befce58c84eac92ab7afa974ecaf5b0">FunG::MathematicalOperations::Squared::d0</a></div><div class="ttdeci">const auto &amp; d0() const noexcept</div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> squared.hh:102</div></div>
+<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Squared_html_abea95d90dc29ac105c43f4eadde84cab"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Squared.html#abea95d90dc29ac105c43f4eadde84cab">FunG::MathematicalOperations::Squared::update</a></div><div class="ttdeci">void update(Arg const &amp;x)</div><div class="ttdoc">Reset point of evaluation. </div><div class="ttdef"><b>Definition:</b> squared.hh:88</div></div>
+<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Squared_html_a02f17b7976e0f72e15bc73d1ae905988"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Squared.html#a02f17b7976e0f72e15bc73d1ae905988">FunG::MathematicalOperations::Squared::d1</a></div><div class="ttdeci">auto d1(Arg const &amp;dx) const </div><div class="ttdoc">First directional derivative. </div><div class="ttdef"><b>Definition:</b> squared.hh:112</div></div>
+<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Squared_html_a6c9ad9c73006afa6bbe7bc5a5144e18d"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Squared.html#a6c9ad9c73006afa6bbe7bc5a5144e18d">FunG::MathematicalOperations::Squared::d2</a></div><div class="ttdeci">auto d2(ArgX const &amp;dx, ArgY const &amp;dy) const </div><div class="ttdoc">Second directional derivative. </div><div class="ttdef"><b>Definition:</b> squared.hh:126</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 17 2015 21:53:53 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 20 2015 14:26:49 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

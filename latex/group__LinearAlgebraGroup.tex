@@ -22,20 +22,13 @@ Functionality from linear algebra such as (modified) principal and mixed matrix 
 struct \hyperlink{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm}{Fun\-G\-::\-Linear\-Algebra\-::\-Squared\-Frobenius\-Norm$<$ Matrix, class $>$}
 \begin{DoxyCompactList}\small\item\em Compute squared Frobenius norm $ \|A\|^2 = A\negthinspace : \negthinspace A = \mathrm{tr}(A^TA) = \sum_{i,j} A_{ij}^2. $. \end{DoxyCompactList}\item 
 class \hyperlink{classFunG_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor}{Fun\-G\-::\-Linear\-Algebra\-::\-Left\-Cauchy\-Green\-Strain\-Tensor$<$ Matrix, class $>$}
-\begin{DoxyCompactList}\small\item\em Left Cauchy-\/\-Green strain tensor $ F^T F $ for a symmetric matrix $ F $. \end{DoxyCompactList}\item 
-class \hyperlink{classFunG_1_1LinearAlgebra_1_1LinearizedStrainTensor}{Fun\-G\-::\-Linear\-Algebra\-::\-Linearized\-Strain\-Tensor$<$ Matrix, class $>$}
-\begin{DoxyCompactList}\small\item\em Linearized strain tensor $ \frac{1}{2}\left(F^T+F\right) $. \end{DoxyCompactList}\item 
-class \hyperlink{classFunG_1_1LinearAlgebra_1_1StrainTensor}{Fun\-G\-::\-Linear\-Algebra\-::\-Strain\-Tensor$<$ Matrix $>$}
-\begin{DoxyCompactList}\small\item\em Strain tensor $ \frac{1}{2}\left(F^T+F + F^T F\right) $. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Left Cauchy-\/\-Green strain tensor $ F^T F $ for a symmetric matrix $ F $. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
 \hypertarget{group__LinearAlgebraGroup_gad209833e37a25e863fe72868d37795b8}{{\footnotesize template$<$class Matrix $>$ }\\using \hyperlink{group__LinearAlgebraGroup_gad209833e37a25e863fe72868d37795b8}{Fun\-G\-::\-Linear\-Algebra\-::\-Frobenius\-Norm} = Mathematical\-Operations\-::\-Chain$<$ Sqrt, Squared\-Frobenius\-Norm$<$ Matrix $>$ $>$}\label{group__LinearAlgebraGroup_gad209833e37a25e863fe72868d37795b8}
 
 \begin{DoxyCompactList}\small\item\em Frobenius norm $ \|A\| = \sqrt{A\negthinspace : \negthinspace A }= \sqrt{\mathrm{tr}(A^TA)} = \sqrt{\sum_{i,j} A_{ij}^2}. $. \end{DoxyCompactList}\item 
-\hypertarget{group__LinearAlgebraGroup_ga7af9b6f793f11a287277a30ea1e32caf}{{\footnotesize template$<$class Matrix $>$ }\\using \hyperlink{group__LinearAlgebraGroup_ga7af9b6f793f11a287277a30ea1e32caf}{Fun\-G\-::\-Linear\-Algebra\-::\-Geometric\-Nonlinearity} = Left\-Cauchy\-Green\-Strain\-Tensor$<$ Matrix $>$}\label{group__LinearAlgebraGroup_ga7af9b6f793f11a287277a30ea1e32caf}
-
-\begin{DoxyCompactList}\small\item\em Model of the geometric nonlinearity in elasticity theory. Implemented as template-\/alias to Cauchy\-Green\-Strain\-Tensor. \end{DoxyCompactList}\item 
 \hypertarget{group__LinearAlgebraGroup_ga43e327309edc349c75ceecd29b7abde2}{{\footnotesize template$<$class Matrix $>$ }\\using \hyperlink{group__LinearAlgebraGroup_ga43e327309edc349c75ceecd29b7abde2}{Fun\-G\-::\-Linear\-Algebra\-::\-Trace} = std\-::conditional\-\_\-t$<$ Checks\-::is\-Constant\-Size$<$ Matrix $>$(), Constant\-Size\-Trace$<$ Matrix $>$, Dynamic\-Size\-Trace$<$ Matrix $>$ $>$}\label{group__LinearAlgebraGroup_ga43e327309edc349c75ceecd29b7abde2}
 
 \begin{DoxyCompactList}\small\item\em Trace of a matrix (sum of diagonal elements). \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -50,10 +43,10 @@ class \hyperlink{classFunG_1_1LinearAlgebra_1_1StrainTensor}{Fun\-G\-::\-Linear\
 \begin{DoxyCompactList}\small\item\em Generate $\det(A)$. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class F , std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-base\-\_\-of$<$ Base, F $>$\-::value $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_ga552048de67f3412ae0a220b3123db6e5}{Fun\-G\-::\-Linear\-Algebra\-::det} (F const \&f)
 \begin{DoxyCompactList}\small\item\em Generate $\det\circ f$. \end{DoxyCompactList}\item 
-\hypertarget{group__LinearAlgebraGroup_ga7c0b1db93cfc5779a3b1e7eb1646c213}{{\footnotesize template$<$class Matrix , int n = dim$<$\-Matrix$>$(), std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Constant\-Size$<$ Matrix $>$()\&\&!\-Checks\-::is\-\_\-base\-\_\-of$<$ Base, Matrix $>$\-::value $>$ $\ast$  = nullptr, class  = Concepts\-::\-Symmetric\-Matrix\-Concept\-Check$<$\-Matrix$>$$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_ga7c0b1db93cfc5779a3b1e7eb1646c213}{Fun\-G\-::\-Linear\-Algebra\-::deviator} (const Matrix \&A)}\label{group__LinearAlgebraGroup_ga7c0b1db93cfc5779a3b1e7eb1646c213}
+\hypertarget{group__LinearAlgebraGroup_ga7c0b1db93cfc5779a3b1e7eb1646c213}{{\footnotesize template$<$class Matrix , int n = dim$<$\-Matrix$>$(), std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Constant\-Size$<$ Matrix $>$()\&\&!\-Checks\-::is\-\_\-base\-\_\-of$<$ Base, Matrix $>$\-::value $>$ $\ast$  = nullptr, class  = Concepts\-::\-Square\-Matrix\-Concept\-Check$<$\-Matrix$>$$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_ga7c0b1db93cfc5779a3b1e7eb1646c213}{Fun\-G\-::\-Linear\-Algebra\-::deviator} (const Matrix \&A)}\label{group__LinearAlgebraGroup_ga7c0b1db93cfc5779a3b1e7eb1646c213}
 
 \begin{DoxyCompactList}\small\item\em Generate deviator $ \mathrm{dev}(A) = A - \frac{\mathrm{tr}(A)}{n}I $ of a matrix $ A\in\mathbb{R}^{n,n} $. \end{DoxyCompactList}\item 
-\hypertarget{group__LinearAlgebraGroup_gabc90de0d1754cd2e2d190ea8ba62245f}{{\footnotesize template$<$class Matrix , std\-::enable\-\_\-if\-\_\-t$<$!\-Checks\-::is\-Constant\-Size$<$ Matrix $>$()\&\&!\-Checks\-::is\-\_\-base\-\_\-of$<$ Base, Matrix $>$\-::value $>$ $\ast$  = nullptr, class  = Concepts\-::\-Symmetric\-Matrix\-Concept\-Check$<$\-Matrix$>$$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_gabc90de0d1754cd2e2d190ea8ba62245f}{Fun\-G\-::\-Linear\-Algebra\-::deviator} (const Matrix \&A)}\label{group__LinearAlgebraGroup_gabc90de0d1754cd2e2d190ea8ba62245f}
+\hypertarget{group__LinearAlgebraGroup_gabc90de0d1754cd2e2d190ea8ba62245f}{{\footnotesize template$<$class Matrix , std\-::enable\-\_\-if\-\_\-t$<$!\-Checks\-::is\-Constant\-Size$<$ Matrix $>$()\&\&!\-Checks\-::is\-\_\-base\-\_\-of$<$ Base, Matrix $>$\-::value $>$ $\ast$  = nullptr, class  = Concepts\-::\-Square\-Matrix\-Concept\-Check$<$\-Matrix$>$$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_gabc90de0d1754cd2e2d190ea8ba62245f}{Fun\-G\-::\-Linear\-Algebra\-::deviator} (const Matrix \&A)}\label{group__LinearAlgebraGroup_gabc90de0d1754cd2e2d190ea8ba62245f}
 
 \begin{DoxyCompactList}\small\item\em Generate deviator $ \mathrm{dev}(A) = A - \frac{\mathrm{tr}(A)}{n}I $ of a matrix $ A\in\mathbb{R}^{n,n} $. \end{DoxyCompactList}\item 
 \hypertarget{group__LinearAlgebraGroup_gad363f3add577abc046fc525ce83e22d3}{{\footnotesize template$<$class F , std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-\_\-base\-\_\-of$<$ Base, F $>$\-::value $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_gad363f3add577abc046fc525ce83e22d3}{Fun\-G\-::\-Linear\-Algebra\-::deviator} (const F \&f)}\label{group__LinearAlgebraGroup_gad363f3add577abc046fc525ce83e22d3}

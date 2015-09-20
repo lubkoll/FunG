@@ -1,11 +1,7 @@
 var searchData=
 [
-  ['mi1',['mi1',['../group__InvariantGroup.html#ga7eed5e2661171d81e192ac1db791244c',1,'FunG::LinearAlgebra']]],
-  ['mi2',['mi2',['../group__InvariantGroup.html#ga9d219c5c48cce1d3af60345916963524',1,'FunG::LinearAlgebra']]],
-  ['mi3',['mi3',['../group__InvariantGroup.html#gab82dd139779c560055fec0259c451eff',1,'FunG::LinearAlgebra']]],
-  ['mi4',['mi4',['../group__InvariantGroup.html#ga7ee54c5d056877bdefefb8e54ad17791',1,'FunG::LinearAlgebra']]],
-  ['mi5',['mi5',['../group__InvariantGroup.html#ga189bc682b34d13902da335c5eb502faa',1,'FunG::LinearAlgebra']]],
-  ['mi6',['mi6',['../group__InvariantGroup.html#ga3e451f9e15fa95080f81d0c0f69f93e6',1,'FunG::LinearAlgebra']]],
-  ['modifiedcompressibleneohooke',['modifiedCompressibleNeoHooke',['../group__Rubber.html#gac10942df03f037afdf0a81d330361a6b',1,'FunG']]],
-  ['modifiedincompressibleneohooke',['modifiedIncompressibleNeoHooke',['../group__Rubber.html#gaf6f5ab6a379ef03d513acc5042731a01',1,'FunG']]]
+  ['leftcauchygreenstraintensor',['LeftCauchyGreenStrainTensor',['../classFunG_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html#a6bfc0f686be29024dc740630f364d051',1,'FunG::LinearAlgebra::LeftCauchyGreenStrainTensor']]],
+  ['ln',['LN',['../structFunG_1_1LN.html#a4ce3d29669f550f6033da3e52fdac392',1,'FunG::LN::LN()'],['../namespaceFunG.html#a2c299af519bdf3a07ce89be165ad7102',1,'FunG::ln()']]],
+  ['log10',['Log10',['../structFunG_1_1Log10.html#acfc491f166bfb75b593864849f33fbb0',1,'FunG::Log10::Log10()'],['../namespaceFunG.html#a9cbc33c0f72e85ab95dea43a5f433a57',1,'FunG::log10()']]],
+  ['log2',['Log2',['../structFunG_1_1Log2.html#ab3fe35bf3d976e51797bff7128d2f16b',1,'FunG::Log2::Log2()'],['../namespaceFunG.html#a6cd9186e81287dbb4840524ca23ddab1',1,'FunG::log2()']]]
 ];

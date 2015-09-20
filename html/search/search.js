@@ -11,8 +11,8 @@ var indexSectionsWithContent =
   1: "abcefilmnopstvz",
   2: "cflm",
   3: "acmns",
-  4: "acdefijlmnoprstuvyz",
-  5: "cfgstv",
+  4: "acdefgijlmnoprstuvyz",
+  5: "cfstv",
   6: "bceilmrs",
   7: "b"
 };

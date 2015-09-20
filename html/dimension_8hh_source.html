@@ -123,10 +123,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span>FunG</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">namespace </span>Concepts { <span class="keyword">template</span> &lt;<span class="keyword">class</span>&gt; <span class="keyword">struct </span>SymmetricMatrixConceptCheck; }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">namespace </span>Concepts { <span class="keyword">template</span> &lt;<span class="keyword">class</span>&gt; <span class="keyword">struct </span>SquareMatrixConceptCheck; }</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">namespace </span>LinearAlgebra</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix, <span class="keyword">class</span> = Concepts::SymmetricMatrixConceptCheck&lt;Matrix&gt; &gt;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix, <span class="keyword">class</span> = Concepts::SquareMatrixConceptCheck&lt;Matrix&gt; &gt;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">struct </span>ExtractDimension : NumberOfRows&lt;Matrix&gt; {};</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix&gt;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    constexpr <span class="keywordtype">int</span> dim()</div>
@@ -140,7 +140,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 17 2015 21:53:53 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 20 2015 14:26:49 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
