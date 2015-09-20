@@ -1,8 +1,23 @@
 var searchData=
 [
-  ['tan',['Tan',['../structFunG_1_1Tan.html',1,'FunG']]],
-  ['tan',['Tan',['../structFunG_1_1Tan.html#a8dba98f71a80778db0384acefa7684c7',1,'FunG::Tan::Tan()'],['../namespaceFunG.html#a943f42a40000538ee5dabcc4632d4d18',1,'FunG::tan()']]],
-  ['tensorproduct',['tensorProduct',['../group__LinearAlgebraGroup.html#ga5d0e066e6184fb3324d96d20087b5578',1,'FunG::LinearAlgebra::tensorProduct(const Vector1 &amp;v, const Vector2 &amp;w)'],['../group__LinearAlgebraGroup.html#gae5e82b9e66319511dae5ff0d9304a6b7',1,'FunG::LinearAlgebra::tensorProduct(const Vector &amp;v)']]],
-  ['trace',['trace',['../group__LinearAlgebraGroup.html#ga4d73eb4d46dd9196a31e2d6d557d509e',1,'FunG::LinearAlgebra::trace(const Matrix &amp;A)'],['../group__LinearAlgebraGroup.html#ga950717870525c43be79245413717673c',1,'FunG::LinearAlgebra::trace(const F &amp;f)'],['../group__LinearAlgebraGroup.html#ga43e327309edc349c75ceecd29b7abde2',1,'FunG::LinearAlgebra::Trace()']]],
-  ['transpose',['transpose',['../group__LinearAlgebraGroup.html#gaf299ac9490ae23da0a3a3d784e379d1f',1,'FunG::LinearAlgebra::transpose(Matrix A)'],['../group__LinearAlgebraGroup.html#gaffe414459cb85a455a3c5a2099cfc6ee',1,'FunG::LinearAlgebra::transpose(const Matrix &amp;A)'],['../group__LinearAlgebraGroup.html#gac3427d39b75727a255e5ea387c50ff10',1,'FunG::LinearAlgebra::transpose(Matrix A)']]]
+  ['scale',['Scale',['../structFunG_1_1MathematicalOperations_1_1Scale.html',1,'FunG::MathematicalOperations']]],
+  ['scale',['Scale',['../structFunG_1_1MathematicalOperations_1_1Scale.html#ab86612b868aaee66786793da2ec7a54a',1,'FunG::MathematicalOperations::Scale']]],
+  ['sin',['Sin',['../structFunG_1_1Sin.html',1,'FunG']]],
+  ['sin',['Sin',['../structFunG_1_1Sin.html#aa956d10238ebb30a8e037e9f82488a8e',1,'FunG::Sin::Sin()'],['../namespaceFunG.html#a16cb0176856a3ca12223e9ae1658a5c5',1,'FunG::sin()']]],
+  ['skin_5ftissue_5fhendriks_2ehh',['skin_tissue_hendriks.hh',['../skin__tissue__hendriks_8hh.html',1,'']]],
+  ['sqrt',['sqrt',['../namespaceFunG.html#a136c890475e48f88469a737d95368d05',1,'FunG::sqrt(const Function &amp;f)'],['../group__CMathGroup.html#gaca80e773d5886f47cd49dc19b130263f',1,'FunG::Sqrt()']]],
+  ['squared',['Squared',['../structFunG_1_1MathematicalOperations_1_1Squared.html#a60dab55accc3957f54b0eafece720b5d',1,'FunG::MathematicalOperations::Squared']]],
+  ['squared',['Squared',['../structFunG_1_1MathematicalOperations_1_1Squared.html',1,'FunG::MathematicalOperations']]],
+  ['squaredfrobeniusnorm',['SquaredFrobeniusNorm',['../structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm.html',1,'FunG::LinearAlgebra']]],
+  ['squaredfrobeniusnorm',['SquaredFrobeniusNorm',['../structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm.html#ae9dfaea546dd55106ab886a10a255792',1,'FunG::LinearAlgebra::SquaredFrobeniusNorm::SquaredFrobeniusNorm()=default'],['../structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm.html#af33cdb4a7282ceb03b707ff7fa85ebe4',1,'FunG::LinearAlgebra::SquaredFrobeniusNorm::SquaredFrobeniusNorm(const Matrix &amp;A)']]],
+  ['squarematrixconcept',['SquareMatrixConcept',['../structFunG_1_1Concepts_1_1SquareMatrixConcept.html',1,'FunG::Concepts']]],
+  ['squarematrixconceptcheck',['SquareMatrixConceptCheck',['../structFunG_1_1Concepts_1_1SquareMatrixConceptCheck.html',1,'FunG::Concepts']]],
+  ['static_5fchecks_2ehh',['static_checks.hh',['../static__checks_8hh.html',1,'']]],
+  ['sum',['Sum',['../structFunG_1_1MathematicalOperations_1_1Sum.html#ac19577debb0ed58ab8dc809e46d5d18c',1,'FunG::MathematicalOperations::Sum']]],
+  ['sum',['Sum',['../structFunG_1_1MathematicalOperations_1_1Sum.html',1,'FunG::MathematicalOperations']]],
+  ['summationconcept',['SummationConcept',['../structFunG_1_1Concepts_1_1SummationConcept.html',1,'FunG::Concepts']]],
+  ['summationconcept',['SummationConcept',['../group__SummationConcept.html',1,'']]],
+  ['summationconceptcheck',['SummationConceptCheck',['../structFunG_1_1Concepts_1_1SummationConceptCheck.html',1,'FunG::Concepts']]],
+  ['summationconceptcheck_3c_20matrix_20_3e',['SummationConceptCheck&lt; Matrix &gt;',['../structFunG_1_1Concepts_1_1SummationConceptCheck.html',1,'FunG::Concepts']]],
+  ['summationconceptcheck_3c_20vector_20_3e',['SummationConceptCheck&lt; Vector &gt;',['../structFunG_1_1Concepts_1_1SummationConceptCheck.html',1,'FunG::Concepts']]]
 ];
