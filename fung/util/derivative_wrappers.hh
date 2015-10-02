@@ -34,7 +34,7 @@ namespace FunG
   namespace Detail
   {
     /// Do not call f.d1(dx).
-    template <class F, class IndexedArg, bool IsPresent,
+    template <class F, class IndexedArg, bool IsPresent, bool hasIndex,
               class Arg = typename IndexedArg::type,
               int id = IndexedArg::index>
     struct D1Impl
@@ -46,9 +46,9 @@ namespace FunG
       D1Impl& operator=(const D1Impl&) = delete;
     };
 
-    /// Call f.d1(dx).
+    /// Call f.d1<id>(dx).
     template <class F, class IndexedArg, class Arg, int id>
-    struct D1Impl<F,IndexedArg,true,Arg,id>
+    struct D1Impl<F,IndexedArg,true,true,Arg,id>
     {
       static constexpr bool present = true;
 
@@ -68,9 +68,31 @@ namespace FunG
        decltype(std::declval<F>().template d1<id>(std::declval<Arg>())) value;
     };
 
+    /// Call f.d1(dx).
+    template <class F, class IndexedArg, class Arg, int id>
+    struct D1Impl<F,IndexedArg,true,false,Arg,id>
+    {
+      static constexpr bool present = true;
+
+      D1Impl() = delete;
+
+      D1Impl(const F& f, const Arg& dx) : value(f.d1(dx)) {}
+
+      auto operator()() const -> decltype(std::declval<F>().d1(std::declval<Arg>()))
+      {
+        return value;
+      }
+
+      D1Impl(const D1Impl&) = delete;
+      D1Impl& operator=(const D1Impl&) = delete;
+
+    private:
+       decltype(std::declval<F>().d1(std::declval<Arg>())) value;
+    };
+
 
     /// Don't call f.d2(dx,dy).
-    template < class F , class IndexedArgX , class IndexedArgY , bool IsPresent ,
+    template < class F , class IndexedArgX , class IndexedArgY , bool IsPresent , bool hasIndex ,
                class ArgX = typename IndexedArgX::type ,
                class ArgY = typename IndexedArgY::type ,
                int idx = IndexedArgX::index ,
@@ -86,7 +108,7 @@ namespace FunG
 
     /// Call f.d2(dx,dy).
     template < class F , class IndexedArgX , class IndexedArgY , class ArgX , class ArgY , int idx  , int idy >
-    struct D2Impl<F,IndexedArgX,IndexedArgY,true,ArgX,ArgY,idx,idy>
+    struct D2Impl<F,IndexedArgX,IndexedArgY,true,true,ArgX,ArgY,idx,idy>
     {
       static constexpr bool present = true;
 
@@ -106,9 +128,31 @@ namespace FunG
        decltype(std::declval<F>().template d2<idx,idy>(std::declval<ArgX>(),std::declval<ArgY>())) value;
     };
 
+    /// Call f.d2(dx,dy).
+    template < class F , class IndexedArgX , class IndexedArgY , class ArgX , class ArgY , int idx  , int idy >
+    struct D2Impl<F,IndexedArgX,IndexedArgY,true,false,ArgX,ArgY,idx,idy>
+    {
+      static constexpr bool present = true;
+
+      D2Impl() = delete;
+
+      D2Impl(const F& f, const ArgX& dx, const ArgY& dy) : value(f.d2(dx,dy)) {}
+
+      auto operator()() const -> decltype(std::declval<F>().d2(std::declval<ArgX>(),std::declval<ArgY>()))
+      {
+        return value;
+      }
+
+      D2Impl(const D2Impl&) = delete;
+      D2Impl& operator=(const D2Impl&) = delete;
+
+    private:
+       decltype(std::declval<F>().d2(std::declval<ArgX>(),std::declval<ArgY>())) value;
+    };
+
 
     /// Don't call f.d3(dx,dy,dz).
-    template < class F , class IndexedArgX , class IndexedArgY , class IndexedArgZ , bool IsPresent ,
+    template < class F , class IndexedArgX , class IndexedArgY , class IndexedArgZ , bool IsPresent , bool hasIndex ,
                class ArgX = typename IndexedArgX::type ,
                class ArgY = typename IndexedArgY::type ,
                class ArgZ = typename IndexedArgZ::type ,
@@ -126,7 +170,7 @@ namespace FunG
 
     /// Call f.d3(dx,dy,dz).
     template <class F, class IndexedArgX, class IndexedArgY, class IndexedArgZ, class ArgX, class ArgY, class ArgZ, int idx, int idy, int idz>
-    struct D3Impl<F,IndexedArgX,IndexedArgY,IndexedArgZ,true,ArgX,ArgY,ArgZ,idx,idy,idz>
+    struct D3Impl<F,IndexedArgX,IndexedArgY,IndexedArgZ,true,true,ArgX,ArgY,ArgZ,idx,idy,idz>
     {
       static constexpr bool present = true;
 
@@ -144,6 +188,29 @@ namespace FunG
 
     private:
       decltype(std::declval<F>().template d3<idx,idy,idz>(std::declval<ArgX>(),std::declval<ArgY>(),std::declval<ArgZ>())) value;
+    };
+
+
+    /// Call f.d3(dx,dy,dz).
+    template <class F, class IndexedArgX, class IndexedArgY, class IndexedArgZ, class ArgX, class ArgY, class ArgZ, int idx, int idy, int idz>
+    struct D3Impl<F,IndexedArgX,IndexedArgY,IndexedArgZ,true,false,ArgX,ArgY,ArgZ,idx,idy,idz>
+    {
+      static constexpr bool present = true;
+
+      D3Impl() = delete;
+
+      D3Impl(const F& f, const ArgX& dx, const ArgY& dy, const ArgZ& dz) : value(f.d3(dx,dy,dz)) {}
+
+      auto operator()() const -> decltype(std::declval<F>().d3(std::declval<ArgX>(),std::declval<ArgY>(),std::declval<ArgZ>()))
+      {
+        return value;
+      }
+
+      D3Impl(const D3Impl&) = delete;
+      D3Impl& operator=(const D3Impl&) = delete;
+
+    private:
+      decltype(std::declval<F>().d3(std::declval<ArgX>(),std::declval<ArgY>(),std::declval<ArgZ>())) value;
     };
   }
 
@@ -171,15 +238,15 @@ namespace FunG
 
   /// Evaluates f.d1(dx) if not vanishing.
   template < class F, class IndexedArg >
-  using D1 = Detail::D1Impl<F,IndexedArg,HasD1MemberFunction<F,IndexedArg>::value>;
+  using D1 = Detail::D1Impl<F,IndexedArg,HasD1MemberFunction<F,IndexedArg>::value,HasD1WithIndex<F,IndexedArg>::value>;
 
   /// Evaluates f.d2(dx,dy) if not vanishing.
   template < class F , class IndexedArgX , class IndexedArgY >
-  using D2 = Detail::D2Impl<F,IndexedArgX,IndexedArgY,HasD2MemberFunction<F,IndexedArgX,IndexedArgY>::value>;
+  using D2 = Detail::D2Impl<F,IndexedArgX,IndexedArgY,HasD2MemberFunction<F,IndexedArgX,IndexedArgY>::value,HasD2WithIndex<F,IndexedArgX,IndexedArgY>::value>;
 
   /// Evaluates f.d3(dx,dy,dz) if not vanishing.
   template < class F , class IndexedArgX , class IndexedArgY , class IndexedArgZ >
-  using D3 = Detail::D3Impl<F,IndexedArgX,IndexedArgY,IndexedArgZ,HasD3MemberFunction<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value>;
+  using D3 = Detail::D3Impl<F,IndexedArgX,IndexedArgY,IndexedArgZ,HasD3MemberFunction<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value,HasD3WithIndex<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value>;
   /**
    * \endcond
    */

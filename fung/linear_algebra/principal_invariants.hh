@@ -29,13 +29,14 @@
 #include "cofactor.hh"
 #include "determinant.hh"
 #include "fung/util/base.hh"
+#include "fung/util/chainer.hh"
 
 namespace FunG
 {
   /**
    * \cond DOCUMENT_FORWARD_DECLARATIONS
    */
-  namespace Concepts { template <class> struct SquareMatrixConceptCheck; }
+  namespace Concepts { template <class> struct MatrixConceptCheck; }
   /**
    * \endcond
    */
@@ -115,8 +116,10 @@ namespace FunG
        * \brief Second principal invariant \f$ \iota_2(A)=\mathrm{tr}(\mathrm{cof}(A)) \f$ for \f$A\in\mathbb{R}^{n,n}\f$.
        * \see I2
        */
-      template <class Matrix, class = Concepts::SquareMatrixConceptCheck<Matrix> >
-      class SecondPrincipalInvariant : Base
+      template <class Matrix, class = Concepts::MatrixConceptCheck<Matrix> >
+      class SecondPrincipalInvariant :
+          public Base ,
+          public Chainer<SecondPrincipalInvariant< Matrix , Concepts::MatrixConceptCheck<Matrix> > >
       {
       public:
         /// Default constructor.
@@ -150,7 +153,6 @@ namespace FunG
          * @brief First directional derivative
          * @param dA1 direction for which the derivative is computed
          */
-        template <int,int>
         auto d1(const Matrix& dA1) const
         {
           return Detail::Compute<dim<Matrix>()>::sumOfSymmetricCofactorDerivatives(A_,dA1);
@@ -161,7 +163,6 @@ namespace FunG
          * @param dA1 direction for which the derivative is computed
          * @param dA2 direction for which the derivative is computed
          */
-        template <int,int>
         auto d2(const Matrix& dA1, const Matrix& dA2) const
         {
           return Detail::Compute<dim<Matrix>()>::sumOfSymmetricCofactorDerivatives(dA1,dA2);
@@ -242,7 +243,7 @@ namespace FunG
     template <class Arg, int n = dim<Arg>()>
     auto mi1(const Arg& x)
     {
-      return i1(x) * ( Pow<-1,n>()( det(x) ) );
+      return i1(x) * pow<-1,n>( det(x) );
     }
 
     /**
@@ -254,7 +255,7 @@ namespace FunG
     template <class Arg, int n = dim<Arg>()>
     auto mi2(const Arg& x)
     {
-      return i2(x) * ( Pow<-2,n>()( det(x) ) );
+      return i2(x) * pow<-2,n>( det(x) );
     }
 
     /**
@@ -262,7 +263,7 @@ namespace FunG
      * \brief Third modified principal invariant is the same as the third principal invariant.
 
      * \param x either a square matrix or a function returning a square matrix
-     * \see i3
+     * \see i3()
      */
     template <class Arg>
     auto mi3(const Arg& x)

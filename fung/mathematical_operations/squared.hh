@@ -111,7 +111,7 @@ namespace FunG
       template < int id , class Arg , class IndexedArg = IndexedType<Arg,id> , class = std::enable_if_t< ComputeProduct< D0<F> , D1<F,IndexedArg> >::present > >
       auto d1(Arg const& dx) const
       {
-        return 2 * f.d0() * f.template d1<id>(dx);
+        return 2 * f.d0() * D1<F,IndexedArg>(f,dx)();//f.template d1<id>(dx);
       }
 
       /**

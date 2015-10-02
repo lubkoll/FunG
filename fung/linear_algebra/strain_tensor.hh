@@ -82,7 +82,6 @@ namespace FunG
       }
 
       /// First directional derivative \f$ F^T dF_1 + dF_1^T F \f$.
-      template <int>
       Matrix d1(Matrix const& dF1) const
       {
         Matrix FTdF1 = FT * dF1;
@@ -90,7 +89,6 @@ namespace FunG
       }
 
       /// Second directional derivative \f$ dF_2^T dF_1 + dF_1^T dF_2 \f$.
-      template <int,int>
       Matrix d2(Matrix const& dF1, Matrix const& dF2) const
       {
         Matrix dF2TdF1 = transpose(dF2) * dF1;

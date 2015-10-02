@@ -39,8 +39,6 @@ namespace FunG
    * \endcond
    */
 
-
-
   namespace MathematicalOperations
   {
     /**
@@ -91,7 +89,7 @@ namespace FunG
                  class = std::enable_if_t< D1<F,IndexedArg>::present> >
       auto d1(Arg const& dx) const
       {
-        return a * f.template d1<idx>(dx);
+        return a * D1<F,IndexedArg>(f,dx)();//f.template d1<idx>(dx);
       }
 
       /**
@@ -105,7 +103,7 @@ namespace FunG
                  class = std::enable_if_t< D2<F,IndexedArgX,IndexedArgY>::present> >
       auto d2(ArgX const& dx, ArgY const& dy) const
       {
-        return a * f.template d2<idx,idy>(dx,dy);
+        return a * D2<F,IndexedArgX,IndexedArgY>(f,dx,dy)();//f.template d2<idx,idy>(dx,dy);
       }
 
       /**
@@ -121,7 +119,7 @@ namespace FunG
                  class = std::enable_if_t< D3<F,IndexedArgX,IndexedArgY,IndexedArgZ>::present > >
       auto d3(ArgX const& dx, ArgY const& dy, ArgZ const& dz) const
       {
-        return a * f.template d3<idx,idy,idz>(dx,dy,dz);
+        return a * D3<F,IndexedArgX,IndexedArgY,IndexedArgZ>(f,dx,dy,dz)();//f.template d3<idx,idy,idz>(dx,dy,dz);
       }
 
     private:

@@ -116,7 +116,6 @@ namespace FunG
       }
 
       /// First directional derivative.
-      template <int>
       auto d1(const Matrix& dA) const
       {
         return Detail::ComputeTrace<dim<Matrix>()>::apply(dA);
@@ -161,7 +160,6 @@ namespace FunG
       }
 
       /// First directional derivative.
-      template <int>
       auto d1(const Matrix& dA) const
       {
         using Index = decltype(rows(std::declval<Matrix>()));

@@ -32,7 +32,7 @@ namespace FunG
    */
   namespace Detail
   {
-    template <class F, class IndexedX, bool allPresent,
+    template <class F, class IndexedX, bool allPresent, bool hasIndex,
               class X = typename IndexedX::type,
               int id = IndexedX::index>
     struct ComputeChainD1Impl
@@ -41,7 +41,7 @@ namespace FunG
       ComputeChainD1Impl(const F&, const X&) {}
     };
 
-    template <class F, class IndexedX, class IndexedY, bool allPresent,
+    template <class F, class IndexedX, class IndexedY, bool allPresent, bool hasIndex,
               class X = typename IndexedX::type,
               class Y = typename IndexedY::type,
               int idx = IndexedX::index,
@@ -52,7 +52,7 @@ namespace FunG
       ComputeChainD2Impl(const F&, const X&, const Y&) {}
     };
 
-    template <class F, class IndexedX, class IndexedY, class IndexedZ, bool allPresent,
+    template <class F, class IndexedX, class IndexedY, class IndexedZ, bool allPresent, bool hasIndex,
               class X = typename IndexedX::type,
               class Y = typename IndexedY::type,
               class Z = typename IndexedZ::type,
@@ -67,7 +67,7 @@ namespace FunG
 
 
     template <class F, class IndexedX, class X, int id>
-    struct ComputeChainD1Impl<F,IndexedX,true,X,id>
+    struct ComputeChainD1Impl<F,IndexedX,true,true,X,id>
     {
       static constexpr bool present = true;
 
@@ -82,8 +82,25 @@ namespace FunG
       decltype(std::declval<F>().template d1<id>(std::declval<X>()())) value;
     };
 
+    template <class F, class IndexedX, class X, int id>
+    struct ComputeChainD1Impl<F,IndexedX,true,false,X,id>
+    {
+      static constexpr bool present = true;
+
+      ComputeChainD1Impl(const F& f, const X& x) : value(f.d1(x()))
+      {}
+
+      auto operator()() const
+      {
+        return value;
+      }
+
+      decltype(std::declval<F>().d1(std::declval<X>()())) value;
+    };
+
+
     template <class F, class IndexedX, class IndexedY, class X, class Y, int idx, int idy>
-    struct ComputeChainD2Impl<F,IndexedX,IndexedY,true,X,Y,idx,idy>
+    struct ComputeChainD2Impl<F,IndexedX,IndexedY,true,true,X,Y,idx,idy>
     {
       static constexpr bool present = true;
 
@@ -98,8 +115,26 @@ namespace FunG
       decltype( std::declval<F>().template d2<idx,idy>( std::declval<X>()() , std::declval<Y>()() ) ) value;
     };
 
+
+    template <class F, class IndexedX, class IndexedY, class X, class Y, int idx, int idy>
+    struct ComputeChainD2Impl<F,IndexedX,IndexedY,true,false,X,Y,idx,idy>
+    {
+      static constexpr bool present = true;
+
+      ComputeChainD2Impl(const F& f, const X& x, const Y& y) : value(f.d2(x(),y()))
+      {}
+
+      auto operator()() const
+      {
+        return value;
+      }
+
+      decltype( std::declval<F>().d2( std::declval<X>()() , std::declval<Y>()() ) ) value;
+    };
+
+
     template <class F, class IndexedX, class IndexedY, class IndexedZ, class X, class Y, class Z, int idx, int idy, int idz>
-    struct ComputeChainD3Impl<F,IndexedX,IndexedY,IndexedZ,true,X,Y,Z,idx,idy,idz>
+    struct ComputeChainD3Impl<F,IndexedX,IndexedY,IndexedZ,true,true,X,Y,Z,idx,idy,idz>
     {
       static constexpr bool present = true;
 
@@ -113,14 +148,30 @@ namespace FunG
 
       decltype( std::declval<F>().template d3<idx,idy,idz>( std::declval<X>()() , std::declval<Y>()() , std::declval<Z>()() ) ) value;
     };
+
+    template <class F, class IndexedX, class IndexedY, class IndexedZ, class X, class Y, class Z, int idx, int idy, int idz>
+    struct ComputeChainD3Impl<F,IndexedX,IndexedY,IndexedZ,true,false,X,Y,Z,idx,idy,idz>
+    {
+      static constexpr bool present = true;
+
+      ComputeChainD3Impl(const F& f, const X& x, const Y& y, const Z& z) : value(f.d3(x(),y(),z()))
+      {}
+
+      auto operator()() const
+      {
+        return value;
+      }
+
+      decltype( std::declval<F>().d3( std::declval<X>()() , std::declval<Y>()() , std::declval<Z>()() ) ) value;
+    };
   }
 
   template < class F , class X , class IndexedArg ,
              class IndexedX = IndexedType<X,IndexedArg::index> >
-  struct ComputeChainD1 : public Detail::ComputeChainD1Impl<F,IndexedX,HasD1MemberFunction<F,IndexedArg>::value && X::present>
+  struct ComputeChainD1 : public Detail::ComputeChainD1Impl<F,IndexedX,HasD1MemberFunction<F,IndexedArg>::value && X::present, HasD1WithIndex<F,IndexedArg>::value>
   {
     ComputeChainD1(F const& f, X const& x)
-      : Detail::ComputeChainD1Impl<F,IndexedX,HasD1MemberFunction<F,IndexedArg>::value && X::present> (f,x)
+      : Detail::ComputeChainD1Impl<F,IndexedX,HasD1MemberFunction<F,IndexedArg>::value && X::present,HasD1WithIndex<F,IndexedArg>::value>(f,x)
     {}
   };
 
@@ -134,10 +185,10 @@ namespace FunG
              class IndexedX = IndexedType<X,IndexedArgX::index> ,
              class IndexedY = IndexedType<Y,IndexedArgY::index> >
   struct ComputeChainD2
-      : public Detail::ComputeChainD2Impl<F,IndexedX,IndexedY,HasD2MemberFunction<F,IndexedArgX,IndexedArgY>::value && X::present && Y::present>
+      : public Detail::ComputeChainD2Impl<F,IndexedX,IndexedY,HasD2MemberFunction<F,IndexedArgX,IndexedArgY>::value && X::present && Y::present,HasD2WithIndex<F,IndexedArgX,IndexedArgY>::value>
   {
     ComputeChainD2(const F& f, const X& x, const Y& y)
-      : Detail::ComputeChainD2Impl<F,IndexedX,IndexedY,HasD2MemberFunction< F , IndexedArgX , IndexedArgY >::value && X::present && Y::present >
+      : Detail::ComputeChainD2Impl<F,IndexedX,IndexedY,HasD2MemberFunction< F , IndexedArgX , IndexedArgY >::value && X::present && Y::present , HasD2WithIndex<F,IndexedArgX,IndexedArgY>::value >
         (f,x,y)
     {}
   };
@@ -154,10 +205,10 @@ namespace FunG
              class IndexedY = IndexedType<Y,IndexedArgY::index> ,
              class IndexedZ = IndexedType<Z,IndexedArgZ::index> >
   struct ComputeChainD3
-      : public Detail::ComputeChainD3Impl<F,IndexedX,IndexedY,IndexedZ,HasD3MemberFunction<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value && X::present && Y::present && Z::present>
+      : public Detail::ComputeChainD3Impl<F,IndexedX,IndexedY,IndexedZ,HasD3MemberFunction<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value && X::present && Y::present && Z::present,HasD3WithIndex<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value>
   {
     ComputeChainD3(const F& f, const X& x, const Y& y, const Z& z)
-      : Detail::ComputeChainD3Impl<F,IndexedX,IndexedY,IndexedZ,HasD3MemberFunction<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value && X::present && Y::present && Z::present> (f,x,y,z)
+      : Detail::ComputeChainD3Impl<F,IndexedX,IndexedY,IndexedZ,HasD3MemberFunction<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value && X::present && Y::present && Z::present,HasD3WithIndex<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value> (f,x,y,z)
     {}
   };
 

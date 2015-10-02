@@ -38,15 +38,10 @@ namespace FunG
    */
   struct LN : Base , Chainer<LN>
   {
-    using Chainer<LN>::operator ();
-
-    /**
-     * \brief Constructor.
-     * \param x point of evaluation.
-     */
+    //! \copydoc Cos::Cos()
     explicit LN(double x=1.) { update(x); }
 
-    /// Reset point of evaluation.
+    //! \copydoc Cos::update()
     void update(double x)
     {
 #ifdef FUNG_ENABLE_EXCEPTIONS
@@ -56,28 +51,25 @@ namespace FunG
       value = ::log(x);
     }
 
-    /// Function value.
+    //! \copydoc Cos::d0()
     double d0() const noexcept
     {
       return value;
     }
 
-    /// First (directional) derivative.
-    template < int = -1 >
+    //! \copydoc Cos::d1()
     double d1(double dx = 1.) const
     {
       return x_inv * dx;
     }
 
-    /// Second (directional) derivative.
-    template < int = -1 , int = -1 >
+    //! \copydoc Cos::d2()
     double d2(double dx = 1., double dy = 1.) const
     {
       return - x_inv * x_inv * dx * dy;
     }
 
-    /// Third (directional) derivative.
-    template < int = -1 , int = -1 , int = -1 >
+    //! \copydoc Cos::d3()
     double d3(double dx = 1., double dy = 1., double dz = 1.) const
     {
       return 2 * x_inv * x_inv * x_inv * dx * dy * dz;
@@ -97,15 +89,10 @@ namespace FunG
    */
   struct Log10 : Base , Chainer<Log10>
   {
-    using Chainer<Log10>::operator ();
-
-    /**
-     * \brief Constructor.
-     * \param x point of evaluation.
-     */
+    //! \copydoc Cos::Cos()
     explicit Log10(double x=1.) { update(x); }
 
-    /// Reset point of evaluation.
+    //! \copydoc Cos::update()
     void update(double x)
     {
 #ifdef FUNG_ENABLE_EXCEPTIONS
@@ -115,28 +102,25 @@ namespace FunG
       value = ::log10(x);
     }
 
-    /// Function value.
+    //! \copydoc Cos::d0()
     double d0() const noexcept
     {
       return value;
     }
 
-    /// First (directional) derivative.
-    template < int = -1 >
+    //! \copydoc Cos::d1()
     double d1(double dx = 1.) const
     {
       return ln10inv * x_inv * dx;
     }
 
-    /// Second (directional) derivative.
-    template < int = -1 , int = -1 >
+    //! \copydoc Cos::d2()
     double d2(double dx = 1., double dy = 1.) const
     {
       return - ln10inv * x_inv * x_inv * dx * dy;
     }
 
-    /// Third (directional) derivative.
-    template < int = -1 , int = -1 , int = -1 >
+    //! \copydoc Cos::d3()
     double d3(double dx = 1., double dy = 1., double dz = 1.) const
     {
       return 2 * ln10inv * x_inv * x_inv * x_inv * dx * dy * dz;
@@ -156,15 +140,10 @@ namespace FunG
    */
   struct Log2 : Base , Chainer<Log2>
   {
-    using Chainer<Log2>::operator ();
-
-    /**
-     * \brief Constructor.
-     * \param x point of evaluation.
-     */
+    //! \copydoc Cos::Cos()
     explicit Log2(double x=1.) { update(x); }
 
-    /// Reset point of evaluation.
+    //! \copydoc Cos::update()
     void update(double x)
     {
 #ifdef FUNG_ENABLE_EXCEPTIONS
@@ -174,28 +153,25 @@ namespace FunG
       value = ::log2(x);
     }
 
-    /// Function value.
+    //! \copydoc Cos::d0()
     double d0() const noexcept
     {
       return value;
     }
 
-    /// First (directional) derivative.
-    template < int = -1 >
+    //! \copydoc Cos::d1()
     double d1(double dx = 1.) const
     {
       return ln2inv * x_inv * dx;
     }
 
-    /// Second (directional) derivative.
-    template < int = -1 , int = -1 >
+    //! \copydoc Cos::d2()
     double d2(double dx = 1., double dy = 1.) const
     {
       return - ln2inv * x_inv * x_inv * dx * dy;
     }
 
-    /// Third (directional) derivative.
-    template < int = -1 , int = -1 , int = -1 >
+    //! \copydoc Cos::d3()
     double d3(double dx = 1., double dy = 1., double dz = 1.) const
     {
       return 2 * ln2inv * x_inv * x_inv * x_inv * dx * dy * dz;
@@ -205,35 +181,41 @@ namespace FunG
     double value = 0., x_inv = 1., ln2inv = 1/log(2.);
   };
 
-  /**
-   * \brief Generate \f$ \mathrm{ln}\circ f \f$.
-   * \param f function mapping into a scalar space
+  /*!
+    \ingroup CMathGroup
+    \brief Generate \f$ \mathrm{ln}\circ f \f$.
+    \param f function mapping into a scalar space
+    \return object of type MathematicalOperations::Chain<Log,Function>
    */
-  template <class F,
-            class = std::enable_if_t<std::is_base_of<Base,F>::value> >
-  auto ln(const F& f)
+  template <class Function,
+            class = std::enable_if_t<std::is_base_of<Base,Function>::value> >
+  auto ln(const Function& f)
   {
     return LN()(f);
   }
 
-  /**
-   * \brief Generate \f$ \mathrm{log}_{10}\circ f \f$.
-   * \param f function mapping into a scalar space
+  /*!
+    \ingroup CMathGroup
+    \brief Generate \f$ \mathrm{log}_{10}\circ f \f$.
+    \param f function mapping into a scalar space
+    \return object of type MathematicalOperations::Chain<Log10,Function>
    */
-  template <class F,
-            class = std::enable_if_t<std::is_base_of<Base,F>::value> >
-  auto log10(const F& f)
+  template <class Function,
+            class = std::enable_if_t<std::is_base_of<Base,Function>::value> >
+  auto log10(const Function& f)
   {
     return Log10()(f);
   }
 
-  /**
-   * \brief Generate \f$ \mathrm{log}_{2}\circ f \f$.
-   * \param f function mapping into a scalar space
+  /*!
+    \ingroup CMathGroup
+    \brief Generate \f$ \mathrm{log}_{2}\circ f \f$.
+    \param f function mapping into a scalar space
+    \return object of type MathematicalOperations::Chain<Log2,Function>
    */
-  template <class F,
-            class = std::enable_if_t<std::is_base_of<Base,F>::value> >
-  auto log2(const F& f)
+  template <class Function,
+            class = std::enable_if_t<std::is_base_of<Base,Function>::value> >
+  auto log2(const Function& f)
   {
     return Log2()(f);
   }

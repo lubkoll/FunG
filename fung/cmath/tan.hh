@@ -27,51 +27,45 @@
 
 namespace FunG
 {
-  /**
-   * \ingroup CMathGroup
-   *
-   * \brief Tangent function including first three derivatives.
-   *
-   * For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur
-   * during applications of the chain rule.
+  /*!
+    \ingroup CMathGroup
+
+    \brief Tangent function including first three derivatives.
+
+    For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur
+    during applications of the chain rule.
    */
   struct Tan : Base , Chainer<Tan>
   {
-    /**
-     * @brief Constructor.
-     * @param x point of evaluation
-     */
+    //! \copydoc Cos::Cos()
     explicit Tan(double x=0.) { update(x); }
 
-    /// Reset point of evaluation.
+    //! \copydoc Cos::update()
     void update(double x)
     {
       value = ::tan(x);
       firstDerivative = 1 + ( value * value );
     }
 
-    /// Function value.
+    //! \copydoc Cos::d0()
     double d0() const noexcept
     {
       return value;
     }
 
-    /// First (directional) derivative.
-    template < int = -1 >
+    //! \copydoc Cos::d1()
     double d1(double dx = 1.) const
     {
       return firstDerivative * dx;
     }
 
-    /// Second (directinal) derivative
-    template < int = -1 , int = -1 >
+    //! \copydoc Cos::d2()
     double d2(double dx = 1., double dy = 1.) const
     {
       return ( 2 * value * firstDerivative ) * dx * dy;
     }
 
-    /// Third (directional) derivative.
-    template < int = -1 , int = -1 , int = -1 >
+    //! \copydoc Cos::d3()
     double d3(double dx = 1., double dy = 1., double dz = 1.) const
     {
       return 2 * firstDerivative * ( 1 + ( 3 * value * value ) ) * dx * dy * dz;
@@ -81,13 +75,15 @@ namespace FunG
     double value = 0., firstDerivative = 1.;
   };
 
-  /**
-   * \brief Generate \f$ \tan\circ f \f$.
-   * \param f function mapping into a scalar space
+  /*!
+    \ingroup CMathGroup
+    \brief Generate \f$ \tan\circ f \f$.
+    \param f function mapping into a scalar space
+    \return object of type MathematicalOperations::Chain<Tan,Function>
    */
-  template <class F,
-            class = std::enable_if_t<std::is_base_of<Base,F>::value> >
-  auto tan(const F& f)
+  template <class Function,
+            class = std::enable_if_t<std::is_base_of<Base,Function>::value> >
+  auto tan(const Function& f)
   {
     return Tan()(f);
   }

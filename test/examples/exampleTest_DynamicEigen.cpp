@@ -106,9 +106,9 @@ TEST(MooneyRivlin,Incompressible_Dynamic_Eigen)
   auto mooneyRivlin = FunG::incompressibleMooneyRivlin<M,dim>(c0,c1,I);
   auto f = runTest(mooneyRivlin);
   EXPECT_DOUBLE_EQ( std::get<0>(f) , 0 );
-  EXPECT_DOUBLE_EQ( std::get<1>(f) , 12 );
-  EXPECT_DOUBLE_EQ( std::get<2>(f) , 180 );
-  EXPECT_NEAR( std::get<3>(f) , 1728 , 1e-11 );
+  EXPECT_DOUBLE_EQ( std::get<1>(f) , 36 );
+  EXPECT_DOUBLE_EQ( std::get<2>(f) , 252 );
+  EXPECT_NEAR( std::get<3>(f) , 1728 , 1e-13 );
 }
 
 TEST(MooneyRivlin,Compressible_Dynamic_Eigen)
@@ -116,9 +116,9 @@ TEST(MooneyRivlin,Compressible_Dynamic_Eigen)
   auto mooneyRivlin = FunG::compressibleMooneyRivlin<Pow<2>,LN,M,dim>(c0,c1,d0,d1,I);
   auto f = runTest(mooneyRivlin);
   EXPECT_DOUBLE_EQ( std::get<0>(f) , 0 );
-  EXPECT_DOUBLE_EQ( std::get<1>(f) , 30 );
-  EXPECT_DOUBLE_EQ( std::get<2>(f) , 342 );
-  EXPECT_NEAR( std::get<3>(f) , 4752 , 1e-11 );
+  EXPECT_DOUBLE_EQ( std::get<1>(f) , 54 );
+  EXPECT_DOUBLE_EQ( std::get<2>(f) , 414 );
+  EXPECT_NEAR( std::get<3>(f) , 4752 , 1e-13 );
 }
 
 TEST(Skin_Hendriks,Incompressible_Dynamic_Eigen)
@@ -127,8 +127,8 @@ TEST(Skin_Hendriks,Incompressible_Dynamic_Eigen)
   auto f = runTest(skin);
   EXPECT_DOUBLE_EQ( std::get<0>(f) , 0 );
   EXPECT_DOUBLE_EQ( std::get<1>(f) , 12 );
-  EXPECT_DOUBLE_EQ( std::get<2>(f) , 36 );
-  EXPECT_NEAR( std::get<3>(f) , 10368 , 1e-11 );
+  EXPECT_DOUBLE_EQ( std::get<2>(f) , 900 );
+  EXPECT_NEAR( std::get<3>(f) , 20736 , 1e-13 );
 }
 
 TEST(Skin_Hendriks,Compressible_Dynamic_Eigen)
@@ -137,8 +137,8 @@ TEST(Skin_Hendriks,Compressible_Dynamic_Eigen)
   auto f = runTest(skin);
   EXPECT_DOUBLE_EQ( std::get<0>(f) , 0 );
   EXPECT_DOUBLE_EQ( std::get<1>(f) , 30 );
-  EXPECT_DOUBLE_EQ( std::get<2>(f) , 198 );
-  EXPECT_NEAR( std::get<3>(f) , 13392 , 1e-11 );
+  EXPECT_DOUBLE_EQ( std::get<2>(f) , 1062 );
+  EXPECT_NEAR( std::get<3>(f) , 23760 , 1e-13 );
 }
 
 TEST(Adipose_SommerHolzapfel,Incompressible_Dynamic_Eigen)

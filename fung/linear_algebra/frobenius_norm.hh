@@ -41,9 +41,9 @@ namespace FunG
   namespace LinearAlgebra
   {
     /**
-     * \internal DOCUMENT_IMPLEMENTATION_DETAILS
+     * \cond DOCUMENT_IMPLEMENTATION_DETAILS
      */
-    namespace Detail
+    namespace FrobeniusDetail
     {
       template <class Matrix,
                 std::enable_if_t<Checks::isConstantSize<Matrix>()>* = nullptr >
@@ -99,13 +99,7 @@ namespace FunG
           initialized = true;
         }
         else A_ = A;
-        value = Detail::computeSquareNorm(A_,A_);
-      }
-
-      /// Squared matrix norm. Convenient access to d0().
-      auto operator()() const noexcept
-      {
-        return d0();
+        value = FrobeniusDetail::computeSquareNorm(A_,A_);
       }
 
       /// Squared matrix norm.
@@ -115,17 +109,15 @@ namespace FunG
       }
 
       /// First directional derivative.
-      template <int>
       auto d1(const Matrix& dA) const
       {
-        return 2 * Detail::computeScalarProduct(A_,dA);
+        return 2 * FrobeniusDetail::computeScalarProduct(A_,dA);
       }
 
       /// Second directional derivative.
-      template <int,int>
       auto d2(const Matrix& dA1, const Matrix& dA2) const
       {
-        return 2 * Detail::computeScalarProduct(dA1,dA2);
+        return 2 * FrobeniusDetail::computeScalarProduct(dA1,dA2);
       }
 
     private:

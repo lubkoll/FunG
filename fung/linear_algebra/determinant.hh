@@ -99,13 +99,11 @@ namespace FunG
           return value;
         }
 
-        template <int>
         auto d1(Matrix const& dA1) const
         {
           return composeResult(A, dA1);
         }
 
-        template <int,int>
         auto d2(Matrix const& dA1, Matrix const& dA2) const
         {
           return composeResult(dA2,dA1);
@@ -139,19 +137,16 @@ namespace FunG
 
         auto d0() const { return value; }
 
-        template <int>
         auto d1(Matrix const& dA1) const
         {
           return composeResult(dA1,A,A) + composeResult(A,dA1,A) + composeResult(A,A,dA1);
         }
 
-        template <int,int>
         auto d2(Matrix const& dA1, Matrix const& dA2) const
         {
           return composeSemiSymmetricResult(A,dA2,dA1) + composeSemiSymmetricResult(dA1,A,dA2) + composeSemiSymmetricResult(A,dA1,dA2);
         }
 
-        template <int,int,int>
         auto d3(Matrix const& dA1, Matrix const& dA2, Matrix const& dA3) const
         {
           return composeSemiSymmetricResult(dA1,dA2,dA3) + composeSemiSymmetricResult(dA1,dA3,dA2) + composeSemiSymmetricResult(dA2,dA1,dA3);
@@ -203,24 +198,21 @@ namespace FunG
       auto d0() const { return ( dim==2 ) ? det2D.d0() : det3D.d0(); }
 
       /// First (directional) derivative.
-      template <int id>
       auto d1(Matrix const& dA1) const
       {
-        return ( dim==2 ) ? det2D.template d1<id>(dA1) : det3D.template d1<id>(dA1) ;
+        return ( dim==2 ) ? det2D.d1(dA1) : det3D.d1(dA1) ;
       }
 
       /// Second (directional) derivative.
-      template < int idx , int idy >
       auto d2(Matrix const& dA1, Matrix const& dA2) const
       {
-        return ( dim==2 ) ? det2D.template d2<idx,idy>(dA1,dA2) : det3D.template d2<idx,idy>(dA1,dA2);
+        return ( dim==2 ) ? det2D.d2(dA1,dA2) : det3D.d2(dA1,dA2);
       }
 
         /// Third (directional) derivative.
-      template < int idx , int idy , int idz >
       auto d3(Matrix const& dA1, Matrix const& dA2, Matrix const& dA3) const
       {
-        return ( dim==2 ) ? 0 : det3D.template d3<idx,idy,idz>(dA1,dA2,dA3);
+        return ( dim==2 ) ? 0 : det3D.d3(dA1,dA2,dA3);
       }
 
     private:
