@@ -1,0 +1,1 @@
+../../cmake-2.8/Modules/FindEigen3.cmake
