@@ -73,6 +73,7 @@ namespace FunG
       void update(const Arg& x)
       {
         update_if_present<index>(f,x);
+        value = a * f.d0();
       }
 
       /// Function value.

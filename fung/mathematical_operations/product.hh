@@ -109,6 +109,7 @@ namespace FunG
       {
         update_if_present<index>(f,x);
         update_if_present<index>(g,x);
+        value = f.d0()*g.d0();
       }
 
       /// Function value.

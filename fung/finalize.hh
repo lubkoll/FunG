@@ -91,18 +91,11 @@ namespace FunG
     template <class F, bool arithmeticReturnType, bool hasVariables>
     struct FinalizeImpl : F
     {
-      using ReturnType = std::remove_const_t<std::remove_reference_t<decltype(std::declval<F>().d0())> >;
+      using ReturnType = std::decay_t<decltype(std::declval<F>().d0())>;
 
       template <class... Args>
       FinalizeImpl(const Args&... args) : F(args...)
       {}
-
-      template <int index, class Arg>
-      void update(const Arg& x)
-      {
-        update_if_present<index>(static_cast<const F&>(*this),x);
-        update_if_present(static_cast<const F&>(*this),x);
-      }
 
       ReturnType operator()() const
       {
@@ -149,18 +142,11 @@ namespace FunG
     template <class F>
     struct FinalizeImpl<F,true,true> : F
     {
-      using ReturnType = std::remove_const_t<std::remove_reference_t<decltype(std::declval<F>().d0())> >;
+      using ReturnType = std::decay_t<decltype(std::declval<F>().d0())>;
 
       template <class... Args>
       FinalizeImpl(const Args&... args) : F(args...)
       {}
-
-      template <int index, class Arg>
-      void update(const Arg& x)
-      {
-        update_if_present<index>(static_cast<const F&>(*this),x);
-        update_if_present(static_cast<const F&>(*this),x);
-      }
 
       ReturnType operator()() const
       {
@@ -206,7 +192,7 @@ namespace FunG
     template <class F>
     struct FinalizeImpl<F,true,false> : F
     {
-      using ReturnType = std::remove_const_t<std::remove_reference_t<decltype(std::declval<F>().d0())> >;
+      using ReturnType = std::decay_t<decltype(std::declval<F>().d0())>;
 
       template <class... Args>
       FinalizeImpl(const Args&... args) : F(args...)
@@ -215,7 +201,7 @@ namespace FunG
       template <class Arg>
       ReturnType operator()(const Arg& x)
       {
-        update_if_present(static_cast<const F&>(*this),x);
+        update_if_present(*this,x);
         return F::d0();
       }
 
@@ -225,33 +211,33 @@ namespace FunG
         return F::d0();
       }
 
-      template < int id = 0 , class Arg = double >
+      template < class Arg = double >
       ReturnType d1(Arg dx=1) const
       {
         static_assert( hasConsistentFirstDerivative< F >(), "Inconsistent functional definition encountered." );
-        return FinalizeD1< id , ReturnType , HasD1MemberFunction< F , IndexedType<Arg,id> >::value >()(static_cast<const F&>(*this),dx);
+        return FinalizeD1< 0 , ReturnType , HasD1MemberFunction< F , IndexedType<Arg,0> >::value >()(static_cast<const F&>(*this),dx);
       }
 
-      template < int idx = 0 , int idy = 0 , class ArgX = double , class ArgY = double >
+      template < class ArgX = double , class ArgY = double >
       ReturnType d2(ArgX dx=1, ArgY dy=1) const
       {
-        static_assert( hasConsistentSecondDerivative< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> >(), "Inconsistent functional definition encountered." );
-        return FinalizeD2< idx , idy , ReturnType , HasD2MemberFunction< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> >::value >()(static_cast<const F&>(*this),dx,dy);
+        static_assert( hasConsistentSecondDerivative< F , IndexedType<ArgX,0> , IndexedType<ArgY,0> >(), "Inconsistent functional definition encountered." );
+        return FinalizeD2< 0 , 0 , ReturnType , HasD2MemberFunction< F , IndexedType<ArgX,0> , IndexedType<ArgY,0> >::value >()(static_cast<const F&>(*this),dx,dy);
       }
 
-      template < int idx = 0 , int idy = 0 , int idz = 0 , class ArgX = double , class ArgY = double , class ArgZ = double>
+      template < class ArgX = double , class ArgY = double , class ArgZ = double>
       ReturnType d3(ArgX dx=1, ArgY dy=1, ArgZ dz=1) const
       {
-        static_assert( hasConsistentThirdDerivative< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> , IndexedType<ArgZ,idz> >(), "Inconsistent functional definition encountered." );
-        return FinalizeD3< idx , idy , idy , ReturnType ,
-                           HasD3MemberFunction< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> , IndexedType<ArgZ,idz> >::value >()(static_cast<const F&>(*this),dx,dy,dz);
+        static_assert( hasConsistentThirdDerivative< F , IndexedType<ArgX,0> , IndexedType<ArgY,0> , IndexedType<ArgZ,0> >(), "Inconsistent functional definition encountered." );
+        return FinalizeD3< 0 , 0 , 0 , ReturnType ,
+                           HasD3MemberFunction< F , IndexedType<ArgX,0> , IndexedType<ArgY,0> , IndexedType<ArgZ,0> >::value >()(static_cast<const F&>(*this),dx,dy,dz);
       }
     };
 
     template <class F>
     struct FinalizeImpl<F,false,false> : F
     {
-      using ReturnType = std::remove_const_t<std::remove_reference_t<decltype(std::declval<F>().d0())> >;
+      using ReturnType = std::decay_t<decltype(std::declval<F>().d0())>;
 
       template <class... Args>
       FinalizeImpl(const Args&... args) : F(args...)

@@ -50,7 +50,7 @@
 
 /**
  * \defgroup Concepts
- * \brief Requirements on the input types.
+ * \brief Requirements on input types.
  *
  * For purpose of documentation free functions are declared as friends in concepts.hh.
  * Thus to determine exactly the requirements on input types you may have inspect the module page of the elementary concepts.
@@ -100,19 +100,28 @@
 
   /**
    * \ingroup MathematicalOperationsGroup
-   * \namespace MathematicalOperations
+   * \namespace FunG::MathematicalOperations
    * \brief Mathematical operations and corresponding differentation rules.
    * \see MathematicalOperationsGroup
    */
 
   /**
    * \ingroup LinearAlgebraGroup
-   * \namespace LinearAlgebra
+   * \namespace FunG::LinearAlgebra
    * \brief Functionality from linear algebra such as (modified) principal and mixed matrix invariants.
    * \see LinearAlgebraGroup
    */
 
   /**
-   * \namespace Checks
+   * \ingroup ConceptCheck
+   * \namespace FunG::Checks
    * \brief Static checks for the presence of different operators and functions.
    */
+   
+  /**
+   * \ingroup Concepts
+   * \namespace FunG::Concepts
+   * \brief Requirements on input types.
+   * \see Concepts
+   */
+   

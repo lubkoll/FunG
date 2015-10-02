@@ -79,6 +79,7 @@ namespace FunG
       {
         update_if_present<index>(f,x);
         update_if_present<index>(g,x);
+        value = sum( D0<F>(f), D0<G>(g) )();
       }
 
       /// Function value.

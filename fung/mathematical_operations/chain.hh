@@ -113,6 +113,8 @@ namespace FunG
       void update(const Arg & x)
       {
         update_if_present<index>(g,x);
+        update_if_present(f,g.d0());
+        value = f.d0();
       }
 
       /// Function value.
