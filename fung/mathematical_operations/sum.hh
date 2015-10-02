@@ -27,6 +27,7 @@
 #include "fung/util/base.hh"
 #include "fung/util/compute_sum.hh"
 #include "fung/util/derivative_wrappers.hh"
+#include "fung/util/evaluate_if_present.hh"
 #include "fung/util/indexed_type.hh"
 
 namespace FunG
@@ -35,6 +36,7 @@ namespace FunG
    * \cond DOCUMENT_FORWARD_DECLARATIONS
    */
   template <class> struct Chainer;
+  namespace Concepts { template <class> struct FunctionConceptCheck; }
   /**
    * \endcond
    */
@@ -42,21 +44,13 @@ namespace FunG
   namespace MathematicalOperations
   {
     /**
-     * \cond DOCUMENT_FORWARD_DECLARATIONS
-     */
-    template <class> struct FunctionConceptCheck;
-    /**
-     * \endcond
-     */
-
-    /**
      * \ingroup MathematicalOperationsGroup
      *
      * \brief %Sum of functions of type F and G (F and G must satisfy the requirements of Concepts::FunctionConcept).
      */
     template <class F, class G,
-              class CheckF = FunctionConceptCheck<F> ,
-              class CheckG = FunctionConceptCheck<G> >
+              class CheckF = Concepts::FunctionConceptCheck<F> ,
+              class CheckG = Concepts::FunctionConceptCheck<G> >
     struct Sum : Base , Chainer< Sum<F,G,CheckF,CheckG> >
     {
       /**
@@ -74,8 +68,8 @@ namespace FunG
       template <class Arg>
       void update(Arg const& x)
       {
-        f.update(x);
-        g.update(x);
+        update_if_present(f,x);
+        update_if_present(g,x);
         value = sum( D0<F>(f), D0<G>(g) )();
       }
 

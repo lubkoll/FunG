@@ -257,19 +257,6 @@ namespace FunG
     {
       return i2(x) * pow<-2,n>( det(x) );
     }
-
-    /**
-     * \ingroup InvariantGroup
-     * \brief Third modified principal invariant is the same as the third principal invariant.
-
-     * \param x either a square matrix or a function returning a square matrix
-     * \see i3()
-     */
-    template <class Arg>
-    auto mi3(const Arg& x)
-    {
-      return i3(x);
-    }
   }
 }
 

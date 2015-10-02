@@ -21,6 +21,7 @@
 #ifndef FUNG_LINEAR_ALGEBRA_DEVIATOR_HH
 #define FUNG_LINEAR_ALGEBRA_DEVIATOR_HH
 
+#include <type_traits>
 #include "fung/generate.hh"
 #include "fung/identity.hh"
 #include "trace.hh"
@@ -44,7 +45,7 @@ namespace FunG
      */
     template <class Matrix,
               int n = dim<Matrix>(),
-              std::enable_if_t<Checks::isConstantSize<Matrix>() && !Checks::is_base_of<Base,Matrix>::value>* = nullptr,
+              std::enable_if_t<Checks::isConstantSize<Matrix>() && !std::is_base_of<Base,Matrix>::value>* = nullptr,
               class = Concepts::SquareMatrixConceptCheck<Matrix> >
     auto deviator(const Matrix& A)
     {
@@ -56,7 +57,7 @@ namespace FunG
      * \brief Generate %deviator \f$ \mathrm{dev}(A) = A - \frac{\mathrm{tr}(A)}{n}I \f$ of a matrix \f$ A\in\mathbb{R}^{n,n} \f$.
      */
     template <class Matrix,
-              std::enable_if_t<!Checks::isConstantSize<Matrix>() && !Checks::is_base_of<Base,Matrix>::value>* = nullptr,
+              std::enable_if_t<!Checks::isConstantSize<Matrix>() && !std::is_base_of<Base,Matrix>::value>* = nullptr,
               class = Concepts::SquareMatrixConceptCheck<Matrix>>
     auto deviator(const Matrix& A)
     {
@@ -69,7 +70,7 @@ namespace FunG
      * \brief Generate %deviator \f$ \mathrm{dev}\circ f\f$.
      */
     template <class F,
-              std::enable_if_t<Checks::is_base_of<Base,F>::value>* = nullptr>
+              std::enable_if_t<std::is_base_of<Base,F>::value>* = nullptr>
     auto deviator(const F& f)
     {
       return deviator(f())( f );

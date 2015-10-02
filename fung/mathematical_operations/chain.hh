@@ -28,6 +28,7 @@
 #include "fung/util/compute_sum.hh"
 #include "fung/util/compute_chain.hh"
 #include "fung/util/derivative_wrappers.hh"
+#include "fung/util/evaluate_if_present.hh"
 #include "fung/util/indexed_type.hh"
 
 namespace FunG
@@ -36,6 +37,7 @@ namespace FunG
    * \cond DOCUMENT_FORWARD_DECLARATIONS
    */
   template <class> struct Chainer;
+  namespace Concepts { template <class> struct FunctionConceptCheck; }
   /**
    * \endcond
    */
@@ -43,22 +45,14 @@ namespace FunG
   namespace MathematicalOperations
   {
     /**
-     * \cond DOCUMENT_FORWARD_DECLARATIONS
-     */
-    template <class> struct FunctionConceptCheck;
-    /**
-     * \endcond
-     */
-
-    /**
      * \ingroup MathematicalOperationsGroup
      *
      * \brief %Chain \f$ f\circ g \f$ of functions \f$f\f$ and \f$g\f$ of type F resp. G (F and G must satisfy the requirements of Concepts::FunctionConcept).
      */
     template < class F , class G ,
-               class = FunctionConceptCheck<F>,
-               class = FunctionConceptCheck<G> >
-    struct Chain : Base , Chainer< Chain<F,G,FunctionConceptCheck<F>,FunctionConceptCheck<G> > >
+               class = Concepts::FunctionConceptCheck<F>,
+               class = Concepts::FunctionConceptCheck<G> >
+    struct Chain : Base , Chainer< Chain<F,G,Concepts::FunctionConceptCheck<F>,Concepts::FunctionConceptCheck<G> > >
     {
     private:
       using FArg = decltype(std::declval<G>().d0());
@@ -101,7 +95,7 @@ namespace FunG
         : g(g_), f(f_),
           value(f.d0())
       {
-        f.update(g.d0());
+        update_if_present(f,g.d0());
         value = f.d0();
       }
 
@@ -109,8 +103,8 @@ namespace FunG
       template <class Arg>
       void update(const Arg& x)
       {
-        g.update(x);
-        f.update(g.d0());
+        update_if_present(g,x);
+        update_if_present(f,g.d0());
         value = f.d0();
       }
 

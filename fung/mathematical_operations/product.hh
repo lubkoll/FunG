@@ -28,6 +28,7 @@
 #include "fung/util/compute_sum.hh"
 #include "fung/util/compute_product.hh"
 #include "fung/util/derivative_wrappers.hh"
+#include "fung/util/evaluate_if_present.hh"
 #include "fung/util/indexed_type.hh"
 
 namespace FunG
@@ -36,6 +37,7 @@ namespace FunG
    * \cond DOCUMENT_FORWARD_DECLARATIONS
    */
   template <class> struct Chainer;
+  namespace Concepts { template <class> struct FunctionConceptCheck; }
   /**
    * \endcond
    */
@@ -43,22 +45,14 @@ namespace FunG
   namespace MathematicalOperations
   {
     /**
-     * \cond DOCUMENT_FORWARD_DECLARATIONS
-     */
-    template <class> struct FunctionConceptCheck;
-    /**
-     * \endcond
-     */
-
-    /**
      * \ingroup MathematicalOperationsGroup
      *
      * \brief %Product \f$fg\f$ of functions of type F and G (F and G must satisfy the requirements of Concepts::FunctionConcept).
      */
       template <class F, class G,
-              class = FunctionConceptCheck<F> ,
-              class = FunctionConceptCheck<G> >
-    struct Product: Base , Chainer<Product<F,G,FunctionConceptCheck<F>,FunctionConceptCheck<G> > >
+              class = Concepts::FunctionConceptCheck<F> ,
+              class = Concepts::FunctionConceptCheck<G> >
+    struct Product: Base , Chainer<Product<F,G,Concepts::FunctionConceptCheck<F>,Concepts::FunctionConceptCheck<G> > >
     {
     private:
       template <class IndexedArg>
@@ -104,8 +98,8 @@ namespace FunG
       template <class Arg>
       void update(Arg const& x)
       {
-        f.update(x);
-        g.update(x);
+        update_if_present(f,x);
+        update_if_present(g,x);
         value = f.d0()*g.d0();
       }
 

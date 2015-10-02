@@ -47,7 +47,7 @@ namespace FunG
     {
       template <class Matrix,
                 std::enable_if_t<Checks::isConstantSize<Matrix>()>* = nullptr >
-      auto computeScalarProduct(const Matrix& A, const Matrix& B) const
+      inline auto computeScalarProduct(const Matrix& A, const Matrix& B)
       {
         using Index = decltype(rows<Matrix>());
         auto result = decltype(at(A,0,0)){0.};
@@ -59,7 +59,7 @@ namespace FunG
 
       template <class Matrix,
                 std::enable_if_t<!Checks::isConstantSize<Matrix>()>* = nullptr >
-      auto computeScalarProduct(const Matrix& A, const Matrix& B) const
+      inline auto computeScalarProduct(const Matrix& A, const Matrix& B)
       {
         using Index = decltype(rows(A));
         auto result = decltype(at(A,0,0)){0.};
@@ -99,7 +99,7 @@ namespace FunG
           initialized = true;
         }
         else A_ = A;
-        value = FrobeniusDetail::computeSquareNorm(A_,A_);
+        value = FrobeniusDetail::computeScalarProduct(A_,A_);
       }
 
       /// Squared matrix norm.

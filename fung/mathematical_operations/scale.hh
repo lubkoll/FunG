@@ -26,6 +26,7 @@
 
 #include "fung/util/base.hh"
 #include "fung/util/derivative_wrappers.hh"
+#include "fung/util/evaluate_if_present.hh"
 #include "fung/util/indexed_type.hh"
 
 namespace FunG
@@ -61,9 +62,9 @@ namespace FunG
 
       /// Reset point of evaluation.
       template <class Arg>
-      void update(Arg const& arg)
+      void update(Arg const& x)
       {
-        f.update(arg);
+        update_if_present(f,x);
         value = a * f.d0();
       }
 

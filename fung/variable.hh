@@ -41,7 +41,7 @@ namespace FunG
     struct Update
     {
       template <class T, class Arg>
-      void operator()(T& t, const Arg& x)
+      static void apply(T& t, const Arg& x)
       {
         static_assert(std::is_same<T,Arg>::value,"Updating variable with incompatible argument. Please check your input for the update-function.");
         t = x;
@@ -52,7 +52,7 @@ namespace FunG
     struct Update<false>
     {
       template <class T, class Arg>
-      void operator()(const T&, const Arg&) {}
+      static void apply(const T&, const Arg&) {}
     };
 
 
@@ -70,7 +70,7 @@ namespace FunG
     struct HasVariable< G<F,Concepts::FunctionConceptCheck<F> > > : std::integral_constant< bool, HasVariable<F>::value > {};
 
     template <template <class,class,class,class> class H, class F, class G>
-    struct HasVariable< H<G,F,Concepts::FunctionConceptCheck<F>,Concepts::FunctionConceptCheck<G> > > : std::integral_constant< bool , HasVariable<F>::value || HasVariable<G>::value > {};
+    struct HasVariable< H<F,G,Concepts::FunctionConceptCheck<F>,Concepts::FunctionConceptCheck<G> > > : std::integral_constant< bool , HasVariable<F>::value || HasVariable<G>::value > {};
 
 
     template <class, int id> struct HasVariableId : std::false_type {};
@@ -175,7 +175,7 @@ namespace FunG
     template <int index, class Arg>
     void updateVariable(const Arg& t_)
     {
-      VariableDetail::Update<index==id>()(t,t_);
+      VariableDetail::Update<index==id>::apply(t,t_);
     }
 
     /// Value of the variable.

@@ -30,6 +30,6 @@
 #include "fung/math.hh"
 #include "fung/operations.hh"
 #include "fung/variable.hh"
-#include "fung/Util/add_missing_operators.hh"
+#include "fung/util/add_missing_operators.hh"
 
 #endif // FUNG_HH

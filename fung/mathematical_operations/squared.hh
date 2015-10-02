@@ -28,6 +28,7 @@
 #include "fung/util/compute_sum.hh"
 #include "fung/util/compute_product.hh"
 #include "fung/util/derivative_wrappers.hh"
+#include "fung/util/evaluate_if_present.hh"
 #include "fung/util/indexed_type.hh"
 
 namespace FunG
@@ -36,6 +37,7 @@ namespace FunG
    * \cond DOCUMENT_FORWARD_DECLARATIONS
    */
   template <class> struct Chainer;
+  namespace Concepts { template <class> struct FunctionConceptCheck; }
   /**
    * \endcond
    */
@@ -43,20 +45,12 @@ namespace FunG
   namespace MathematicalOperations
   {
     /**
-     * \cond DOCUMENT_FORWARD_DECLARATIONS
-     */
-    template <class> struct FunctionConceptCheck;
-    /**
-     * \endcond
-     */
-
-    /**
      * \ingroup MathematicalOperationsGroup
      *
      * \brief %Squared function (F must satisfy the requirements of Concepts::FunctionConcept).
      */
-    template <class F, class = FunctionConceptCheck<F> >
-    struct Squared : Base , Chainer< Squared< F , FunctionConceptCheck<F> > >
+    template <class F, class = Concepts::FunctionConceptCheck<F> >
+    struct Squared : Base , Chainer< Squared< F , Concepts::FunctionConceptCheck<F> > >
     {
     private:
       template < class IndexedArgX , class IndexedArgY >
@@ -87,7 +81,7 @@ namespace FunG
       template <class Arg>
       void update(Arg const& x)
       {
-        f.update(x);
+        update_if_present(f,x);
         value = f.d0() * f.d0();
       }
 

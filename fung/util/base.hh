@@ -23,13 +23,9 @@
 
 namespace FunG
 {
-  /// %Base class for functions satisfying FunctionConcept. Required for enabling the operators in generate.hh.
+  /// %Base class for functions satisfying FunctionConcept. Required a.o. for enabling the operators in generate.hh.
   struct Base
   {
-    /// Update on changed input.
-    template <class Arg>
-    void update(const Arg&) {}
-
     /// Empty variables.
     template <int id, class Arg>
     void updateVariable(const Arg&) {}

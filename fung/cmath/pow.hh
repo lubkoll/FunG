@@ -410,6 +410,20 @@ namespace FunG
   {
     return Pow<dividend,divisor>()(f);
   }
+
+  /*!
+    \ingroup CMathGroup
+    \brief Generate \f$ f^{dividend/divisor} \f$.
+    \param f function mapping into a scalar space
+    \return object of type MathematicalOperations::Chain< Pow<dividend,divisor> , Function >
+   */
+  template <int k,
+            class Function,
+            class = std::enable_if_t<std::is_base_of<Base,Function>::value> >
+  auto pow(const Function& f)
+  {
+    return Pow<k>()(f);
+  }
 }
 
 #endif // FUNG_CMATH_POW_HH
