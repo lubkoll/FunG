@@ -390,8 +390,7 @@ must be provided. Suitable implementations exist for the cases that a zero matri
 <br><h1>
 <a id="ad_comparison" class="anchor" href=#ad_comparison aria-hidden="true"><span class="octicon octicon-link"></span></a>Comparison with automatic differentation libraries</h1>
 
-<p>The performance of FunG is demonstrated by several examples comparing it with forward mode automatic differentation of <a href="http://www.fadbad.com">FADBAD++</a> and <a href="https://trilinos.org/packages/sacado">SACADO</a>. Some other implementations were tested too. However, these were far slower and/or buggy. In particular backward mode automatic differentation is significantly slower for 
-the considered functions.<br>
+<p>The performance of FunG is demonstrated by several examples comparing it with forward mode automatic differentation of <a href="http://www.fadbad.com">FADBAD++</a> and <a href="https://trilinos.org/packages/sacado">SACADO</a>. 
 All examples were compiled with <code>-O2</code> compiler option with gcc-4.9.2. They were run on an ASUS UX32V. All examples were evaluated 10.000.000 times (function value + derivative(s)) with varying arguments.</p>
 
 <h4>A simple example</h4>
