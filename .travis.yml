@@ -7,7 +7,6 @@ before_install:
 - sudo apt-get install -qq g++-4.9
 - export CXX="g++-4.9" CC="gcc-4.9"
 - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 50
-- hg clone https://bitbucket.org/eigen/eigen/
 #- sudo apt-get install libeigen3-dev
 install:
 - sudo pip install cpp-coveralls
