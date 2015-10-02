@@ -22,6 +22,7 @@
 #define FUNG_UTIL_STATIC_CHECKS_NROWS_NCOLS_HH
 
 #include <utility>
+#include "voider.hh"
 
 namespace FunG
 {

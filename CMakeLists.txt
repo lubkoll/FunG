@@ -49,6 +49,7 @@ find_package(Eigen3)
 if(EIGEN3_FOUND)
   include_directories(${EIGEN3_INCLUDE_DIR})
   aux_source_directory(test/examples SRC_LIST)
+  aux_source_directory(test/linear_algebra SRC_LIST)
 endif()
 
 aux_source_directory(test/cmath SRC_LIST)

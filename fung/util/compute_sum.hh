@@ -112,7 +112,6 @@ namespace FunG
   {
     return ComputeSum<F,G...>(f,g...);
   }
-
   /**
    * \endcond
    */
