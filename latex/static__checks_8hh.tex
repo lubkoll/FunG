@@ -1,57 +1,45 @@
-\hypertarget{static__checks_8hh}{\section{fung/util/static\-\_\-checks.hh File Reference}
-\label{static__checks_8hh}\index{fung/util/static\-\_\-checks.\-hh@{fung/util/static\-\_\-checks.\-hh}}
-}
+\hypertarget{static__checks_8hh}{}\section{fung/util/static\+\_\+checks.hh File Reference}
+\label{static__checks_8hh}\index{fung/util/static\+\_\+checks.\+hh@{fung/util/static\+\_\+checks.\+hh}}
 
 
 Static checks for detection of presence of different operators and functions.  
 
 
-{\ttfamily \#include $<$type\-\_\-traits$>$}\\*
+{\ttfamily \#include $<$type\+\_\+traits$>$}\\*
 {\ttfamily \#include $<$utility$>$}\\*
-{\ttfamily \#include \char`\"{}base.\-hh\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}extract\-\_\-rows\-\_\-and\-\_\-cols.\-hh\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}voider.\-hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}base.\+hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}extract\+\_\+rows\+\_\+and\+\_\+cols.\+hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}voider.\+hh\char`\"{}}\\*
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{namespaceFunG}{Fun\-G}
-\begin{DoxyCompactList}\small\item\em Main namespace of the Fun\-G library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+ \hyperlink{namespaceFunG}{Fun\+G}
+\begin{DoxyCompactList}\small\item\em Main namespace of the Fun\+G library. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceFunG_1_1Checks}{Fun\+G\+::\+Checks}
+\begin{DoxyCompactList}\small\item\em Static checks for the presence of different operators and functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{namespaceFunG_1_1Checks_a023e0071a13fe19a14bd71df1a02a290}{{\footnotesize template$<$class Arg , class Scalar\-Arg $>$ }\\constexpr bool {\bfseries Fun\-G\-::\-Checks\-::multiplication\-With\-Arithmetic\-From\-Left} ()}\label{namespaceFunG_1_1Checks_a023e0071a13fe19a14bd71df1a02a290}
-
-\begin{DoxyCompactList}\small\item\em Check if objects of type Arg support multiplication with objects of type Scalar\-Arg from the left. \end{DoxyCompactList}\item 
-\hypertarget{namespaceFunG_1_1Checks_a584f795b6dfaffd9657888893afd32f3}{{\footnotesize template$<$class Arg , class Scalar\-Arg $>$ }\\constexpr bool {\bfseries Fun\-G\-::\-Checks\-::multiplication\-With\-Arithmetic\-From\-Right} ()}\label{namespaceFunG_1_1Checks_a584f795b6dfaffd9657888893afd32f3}
-
-\begin{DoxyCompactList}\small\item\em Check if objects of type Arg support multiplication with objects of type Scalar\-Arg from the right. \end{DoxyCompactList}\item 
-\hypertarget{namespaceFunG_1_1Checks_a3b91969c5e1b84915c384cee63bdb649}{{\footnotesize template$<$class Arg , class Scalar\-Arg $>$ }\\constexpr bool {\bfseries Fun\-G\-::\-Checks\-::in\-Place\-Multiplication\-With\-Arithmetic} ()}\label{namespaceFunG_1_1Checks_a3b91969c5e1b84915c384cee63bdb649}
-
-\begin{DoxyCompactList}\small\item\em Check if objects of type Arg support in-\/place multiplication with objects of type Scalar\-Arg. \end{DoxyCompactList}\item 
-\hypertarget{namespaceFunG_1_1Checks_afc0d2ac0287022a297061359d40073d2}{{\footnotesize template$<$class Arg1 , class Arg2 $>$ }\\constexpr bool {\bfseries Fun\-G\-::\-Checks\-::multiplication} ()}\label{namespaceFunG_1_1Checks_afc0d2ac0287022a297061359d40073d2}
-
+{\footnotesize template$<$class Arg , class Scalar\+Arg $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_a023e0071a13fe19a14bd71df1a02a290}{Fun\+G\+::\+Checks\+::multiplication\+With\+Arithmetic\+From\+Left} ()
+\begin{DoxyCompactList}\small\item\em Check if objects of type Arg support multiplication with objects of type Scalar\+Arg from the left. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Arg , class Scalar\+Arg $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_a584f795b6dfaffd9657888893afd32f3}{Fun\+G\+::\+Checks\+::multiplication\+With\+Arithmetic\+From\+Right} ()
+\begin{DoxyCompactList}\small\item\em Check if objects of type Arg support multiplication with objects of type Scalar\+Arg from the right. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Arg , class Scalar\+Arg $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_a3b91969c5e1b84915c384cee63bdb649}{Fun\+G\+::\+Checks\+::in\+Place\+Multiplication\+With\+Arithmetic} ()
+\begin{DoxyCompactList}\small\item\em Check if objects of type Arg support in-\/place multiplication with objects of type Scalar\+Arg. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Arg1 , class Arg2 $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_afc0d2ac0287022a297061359d40073d2}{Fun\+G\+::\+Checks\+::multiplication} ()
 \begin{DoxyCompactList}\small\item\em Check if objects of typed Arg1 and Arg2 support multiplication (free operator$\ast$). \end{DoxyCompactList}\item 
-\hypertarget{namespaceFunG_1_1Checks_abeeb72e6dc640672187145a0469da9cc}{{\footnotesize template$<$class Arg1 , class Arg2 $>$ }\\constexpr bool {\bfseries Fun\-G\-::\-Checks\-::in\-Place\-Multiplication} ()}\label{namespaceFunG_1_1Checks_abeeb72e6dc640672187145a0469da9cc}
-
+{\footnotesize template$<$class Arg1 , class Arg2 $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_abeeb72e6dc640672187145a0469da9cc}{Fun\+G\+::\+Checks\+::in\+Place\+Multiplication} ()
 \begin{DoxyCompactList}\small\item\em Check if objects of type Arg1 support in-\/place multiplication with objects of type Arg2. \end{DoxyCompactList}\item 
-\hypertarget{namespaceFunG_1_1Checks_a3874c9f52b64baa8ed9a87b9902eb54c}{{\footnotesize template$<$class Arg1 , class Arg2 $>$ }\\constexpr bool {\bfseries Fun\-G\-::\-Checks\-::call\-To\-Right\-Multiply} ()}\label{namespaceFunG_1_1Checks_a3874c9f52b64baa8ed9a87b9902eb54c}
-
-\begin{DoxyCompactList}\small\item\em Check if objects of type Arg1 support multiplication with objects of type Arg2 via call to rightmultiplyany(\-Arg2). \end{DoxyCompactList}\item 
-\hypertarget{namespaceFunG_1_1Checks_a2dd2bf4016317339c1a609ddda1f4915}{{\footnotesize template$<$class Arg $>$ }\\constexpr bool {\bfseries Fun\-G\-::\-Checks\-::summation} ()}\label{namespaceFunG_1_1Checks_a2dd2bf4016317339c1a609ddda1f4915}
-
+{\footnotesize template$<$class Arg1 , class Arg2 $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_a3874c9f52b64baa8ed9a87b9902eb54c}{Fun\+G\+::\+Checks\+::call\+To\+Right\+Multiply} ()
+\begin{DoxyCompactList}\small\item\em Check if objects of type Arg1 support multiplication with objects of type Arg2 via call to rightmultiplyany(\+Arg2). \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Arg $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_a2dd2bf4016317339c1a609ddda1f4915}{Fun\+G\+::\+Checks\+::summation} ()
 \begin{DoxyCompactList}\small\item\em Check if objects of type Arg support summation. \end{DoxyCompactList}\item 
-\hypertarget{namespaceFunG_1_1Checks_a9ff694f025cc9f2ff379b1f3833641bb}{{\footnotesize template$<$class Arg $>$ }\\constexpr bool {\bfseries Fun\-G\-::\-Checks\-::in\-Place\-Summation} ()}\label{namespaceFunG_1_1Checks_a9ff694f025cc9f2ff379b1f3833641bb}
-
+{\footnotesize template$<$class Arg $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_a9ff694f025cc9f2ff379b1f3833641bb}{Fun\+G\+::\+Checks\+::in\+Place\+Summation} ()
 \begin{DoxyCompactList}\small\item\em Check if objects of type Arg support in-\/place summation. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Arg $>$ }\\constexpr bool {\bfseries Fun\-G\-::\-Checks\-::is\-Constant\-Size} ()
-\begin{DoxyCompactList}\small\item\em Check if object is a static matrix for some type satisfying \hyperlink{structFunG_1_1Concepts_1_1MatrixConcept}{Concepts\-::\-Matrix\-Concept}. \end{DoxyCompactList}\item 
-\hypertarget{namespaceFunG_1_1Checks_a600c419e4c393f442199465579dc1306}{{\footnotesize template$<$class F $>$ }\\constexpr bool {\bfseries Fun\-G\-::\-Checks\-::has\-Update\-Function} ()}\label{namespaceFunG_1_1Checks_a600c419e4c393f442199465579dc1306}
-
-\begin{DoxyCompactList}\small\item\em Check if object of type F has a member function update(). \end{DoxyCompactList}\item 
-\hypertarget{namespaceFunG_1_1Checks_abf97e91c1bf458c62f9f3a3ecf5edf1a}{{\footnotesize template$<$class F $>$ }\\constexpr bool {\bfseries Fun\-G\-::\-Checks\-::has\-Update\-Variable\-Function} ()}\label{namespaceFunG_1_1Checks_abf97e91c1bf458c62f9f3a3ecf5edf1a}
-
-\begin{DoxyCompactList}\small\item\em Check if object of type F has a member function update\-Variable(). \end{DoxyCompactList}\end{DoxyCompactItemize}
+{\footnotesize template$<$class Arg $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_adcc3e179af2ed0384a3773ea086045b9}{Fun\+G\+::\+Checks\+::is\+Constant\+Size} ()
+\begin{DoxyCompactList}\small\item\em Check if object is a static matrix for some type satisfying \hyperlink{structFunG_1_1Concepts_1_1MatrixConcept}{Concepts\+::\+Matrix\+Concept}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Static checks for detection of presence of different operators and functions. 
+
