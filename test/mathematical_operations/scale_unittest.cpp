@@ -17,7 +17,7 @@ TEST(ScaleTest,UpdateVariable)
   auto x = FunG::variable<0>(2.);
   auto fun = ( 2*FunG::Pow<3,1>() ) << x;
   EXPECT_DOUBLE_EQ( fun.d0() , 16. );
-  EXPECT_NO_THROW( fun.updateVariable<0>(-1.) );
+  EXPECT_NO_THROW( fun.update<0>(-1.) );
   EXPECT_NO_THROW( fun.update(0); );
   EXPECT_DOUBLE_EQ( fun.d0() , -2. );
 }

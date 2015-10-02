@@ -9,7 +9,7 @@ TEST(ChainTest,UpdateVariable)
   using FunG::Pow;
   auto fun = Pow<1,4>(1.) << Pow<2>(1.);
   EXPECT_DOUBLE_EQ( fun.d0() , 1. );
-  EXPECT_NO_THROW( fun.updateVariable<0>(9.) );
+  EXPECT_NO_THROW( fun.update<0>(9.) );
   EXPECT_NO_THROW( fun.update(4); );
   EXPECT_DOUBLE_EQ( fun.d0() , 2. );
 }

@@ -99,7 +99,7 @@ namespace FunG
         value = f.d0();
       }
 
-      /// Reset point of evaluation.
+      /// Update point of evaluation.
       template <class Arg>
       void update(const Arg& x)
       {
@@ -108,11 +108,11 @@ namespace FunG
         value = f.d0();
       }
 
-      /// Propagate call to updateVariable() to f and g.
+      /// Update variable corresponding to index.
       template <int index, class Arg>
-      void updateVariable(const Arg & x)
+      void update(const Arg & x)
       {
-        g.template updateVariable<index>(x);
+        update_if_present<index>(g,x);
       }
 
       /// Function value.

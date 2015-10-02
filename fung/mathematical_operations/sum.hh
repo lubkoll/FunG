@@ -64,7 +64,7 @@ namespace FunG
           value(f.d0() + g.d0())
       {}
 
-      /// Reset point of evaluation.
+      /// Update point of evaluation.
       template <class Arg>
       void update(Arg const& x)
       {
@@ -73,12 +73,12 @@ namespace FunG
         value = sum( D0<F>(f), D0<G>(g) )();
       }
 
-      /// Propagate call to updateVariable() to f and g.
+      /// Update variable corresponding to index.
       template <int index, class Arg>
-      void updateVariable(const Arg& x)
+      void update(const Arg& x)
       {
-        f.template updateVariable<index>(x);
-        g.template updateVariable<index>(x);
+        update_if_present<index>(f,x);
+        update_if_present<index>(g,x);
       }
 
       /// Function value.

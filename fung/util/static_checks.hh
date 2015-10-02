@@ -119,20 +119,6 @@ namespace FunG
 
     template < class Vector, class = void > struct AccessViaRoundBracketsForVector                                                      : std::false_type {};
     template <class Vector> struct AccessViaRoundBracketsForVector< Vector , void_t<TryAccessViaRoundBracketsForVector<Vector> > >      : std::true_type {};
-
-
-    // Update and updateVariable functions.
-    template < class F >
-    using TryCallOfUpdate = decltype(std::declval<F>().update(std::declval<int>()));
-
-    template < class F >
-    using TryCallOfUpdateVariable = decltype(std::declval<F>().template updateVariable<0>(std::declval<int>()));
-
-    template < class F , class = void > struct CallOfUpdate                                                           : std::false_type {};
-    template < class F , class = void > struct CallOfUpdateVariable                                                   : std::false_type {};
-
-    template < class F > struct CallOfUpdate< F , void_t< TryCallOfUpdate<F> > >                                      : std::true_type {};
-    template < class F > struct CallOfUpdateVariable< F , void_t< TryCallOfUpdateVariable<F> > >                      : std::true_type {};
     /**
      * \endcond
      */
@@ -240,27 +226,6 @@ namespace FunG
     constexpr bool isConstantSize()
     {
       return ( LinearAlgebra::numberOfRows<Arg>() > 0 );
-    }
-
-
-    /**
-     * \ingroup Checks
-     * \brief Check if object of type F has a member function update().
-     */
-    template < class F >
-    constexpr bool hasUpdateFunction()
-    {
-      return CallOfUpdate<F>::value;
-    }
-
-    /**
-     * \ingroup Checks
-     * \brief Check if object of type F has a member function updateVariable().
-     */
-    template < class F >
-    constexpr bool hasUpdateVariableFunction()
-    {
-      return CallOfUpdateVariable<F>::value;
     }
   }
 }

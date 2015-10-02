@@ -173,7 +173,7 @@ namespace FunG
 
     /// Update variable.
     template <int index, class Arg>
-    void updateVariable(const Arg& t_)
+    void update(const Arg& t_)
     {
       VariableDetail::Update<index==id>::apply(t,t_);
     }

@@ -28,17 +28,16 @@
 
 constexpr int dim = 3;
 using M = Eigen::Matrix<double,dim,dim>;
+using FunG::LinearAlgebra::det;
 
-auto generateDeterminant()
+auto generateA()
 {
-  using FunG::LinearAlgebra::det;
-
   M m;
   m.fill(0);
   m(0,0) = 0; m(0,1) = 1; m(0,2) = 2;
   m(1,0) = 3; m(1,1) = 4; m(1,2) = 5;
   m(2,0) = 6; m(2,1) = 7; m(2,2) = 1;
-  return det(m);
+  return m;
 }
 
 auto generateDA()
@@ -53,25 +52,28 @@ auto generateDA()
 
 TEST(DeterminantTest,D0)
 {
-  auto det = generateDeterminant();
-  EXPECT_DOUBLE_EQ( det.d0() , 21. );
+  auto d = det(generateA());
+  EXPECT_DOUBLE_EQ( d.d0() , 21. );
 }
 
 TEST(DeterminantTest,D1)
 {
-  auto det = generateDeterminant();
-  EXPECT_DOUBLE_EQ( det.d1(generateDA()) , -46. );
+  using FunG::LinearAlgebra::computeCofactor;
+  auto d = det(generateA());
+  EXPECT_DOUBLE_EQ( d.d1(generateDA()) , -46. );
+  auto c = computeCofactor<0,0>(generateA()) + computeCofactor<1,1>(generateA()) + computeCofactor<2,2>(generateA());
+  EXPECT_DOUBLE_EQ( d.d1(generateDA()) , c );
 }
 
 TEST(DeterminantTest,D2)
 {
-  auto det = generateDeterminant();
-  EXPECT_DOUBLE_EQ( det.d2(generateDA(),generateDA()) , 10. );
+  auto d = det(generateA());
+  EXPECT_DOUBLE_EQ( d.d2(generateDA(),generateDA()) , 10. );
 }
 
 
 TEST(DeterminantTest,D3)
 {
-  auto det = generateDeterminant();
-  EXPECT_DOUBLE_EQ( det.d3(generateDA(),generateDA(),generateDA()) , 6. );
+  auto d = det(generateA());
+  EXPECT_DOUBLE_EQ( d.d3(generateDA(),generateDA(),generateDA()) , 6. );
 }

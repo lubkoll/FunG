@@ -24,6 +24,7 @@
 #include <type_traits>
 
 #include "fung/util/consistency_check.hh"
+#include "fung/util/evaluate_if_present.hh"
 #include "fung/util/indexed_type.hh"
 #include "fung/variable.hh"
 
@@ -99,8 +100,8 @@ namespace FunG
       template <int index, class Arg>
       void update(const Arg& x)
       {
-        F::template updateVariable<index>(x);
-        F::update(x);
+        update_if_present<index>(static_cast<const F&>(*this),x);
+        update_if_present(static_cast<const F&>(*this),x);
       }
 
       ReturnType operator()() const
@@ -157,8 +158,8 @@ namespace FunG
       template <int index, class Arg>
       void update(const Arg& x)
       {
-        F::template updateVariable<index>(x);
-        F::update(x);
+        update_if_present<index>(static_cast<const F&>(*this),x);
+        update_if_present(static_cast<const F&>(*this),x);
       }
 
       ReturnType operator()() const
@@ -214,7 +215,7 @@ namespace FunG
       template <class Arg>
       ReturnType operator()(const Arg& x)
       {
-        F::update(x);
+        update_if_present(static_cast<const F&>(*this),x);
         return F::d0();
       }
 

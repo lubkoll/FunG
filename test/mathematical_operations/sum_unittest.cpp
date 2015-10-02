@@ -10,7 +10,7 @@ TEST(SumTest,UpdateVariable)
   using FunG::Pow;
   auto fun = ( Pow<3,1>(2.) + Pow<3,2>(1.) ) << x;
   EXPECT_DOUBLE_EQ( fun.d0() , 2. );
-  EXPECT_NO_THROW( fun.updateVariable<0>(4.) );
+  EXPECT_NO_THROW( fun.update<0>(4.) );
   EXPECT_NO_THROW( fun.update(0); );
   EXPECT_DOUBLE_EQ( fun.d0() , 72. );
 }

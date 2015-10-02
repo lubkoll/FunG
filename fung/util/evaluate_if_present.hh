@@ -61,7 +61,7 @@ namespace FunG
     using TryCallOfUpdate = decltype( std::declval<F>().update(std::declval<Arg>()) );
 
     template <class F, class Arg, int id>
-    using TryCallOfUpdateWithIndex = decltype( std::declval<F>().template updateVariable<id>(std::declval<Arg>()) );
+    using TryCallOfUpdateWithIndex = decltype( std::declval<F>().template update<id>(std::declval<Arg>()) );
 
     template <class F, class Arg, class = void>
     struct HasUpdateWithoutIndex : std::false_type {};
@@ -84,6 +84,18 @@ namespace FunG
   inline void update_if_present(F&& f, Arg&& x)
   {
     f.update(x);
+  }
+
+  template <int id, class F, class Arg,
+            std::enable_if_t<!Detail::HasUpdateWithIndex<F,Arg,id>::value>* = nullptr>
+  inline void update_if_present(F&&, Arg&&)
+  {}
+
+  template <int id, class F, class Arg,
+            std::enable_if_t<Detail::HasUpdateWithIndex<F,Arg,id>::value>* = nullptr>
+  inline void update_if_present(F&& f, Arg&& x)
+  {
+    f.template update<id>(x);
   }
 
   /// Evaluate a functor object of type X if X::present=true.

@@ -60,7 +60,7 @@ namespace FunG
         : a(a_), f(f_), value(a * f.d0())
       {}
 
-      /// Reset point of evaluation.
+      /// Update point of evaluation.
       template <class Arg>
       void update(Arg const& x)
       {
@@ -68,11 +68,11 @@ namespace FunG
         value = a * f.d0();
       }
 
-      /// Propagate call to updateVariable() to f.
+      /// Update variable corresponding to index.
       template <int index, class Arg>
-      void updateVariable(const Arg& x)
+      void update(const Arg& x)
       {
-        f.template updateVariable<index>(x);
+        update_if_present<index>(f,x);
       }
 
       /// Function value.
