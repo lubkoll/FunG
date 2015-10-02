@@ -399,22 +399,25 @@ namespace FunG
 
   /*!
     \ingroup CMathGroup
-    \brief Generate \f$ f^{dividend/divisor} \f$.
+    \brief Generate \f$ f^{k/l} \f$.
     \param f function mapping into a scalar space
+    \tparam k dividend
+    \tparam l divisor
     \return object of type MathematicalOperations::Chain< Pow<dividend,divisor> , Function >
    */
-  template <int dividend, int divisor,
+  template <int k, int l,
             class Function,
             class = std::enable_if_t<std::is_base_of<Base,Function>::value> >
   auto pow(const Function& f)
   {
-    return Pow<dividend,divisor>()(f);
+    return Pow<k,l>()(f);
   }
 
   /*!
     \ingroup CMathGroup
-    \brief Generate \f$ f^{dividend/divisor} \f$.
+    \brief Generate \f$ f^k,\ k\in\mathbb{N}\f$.
     \param f function mapping into a scalar space
+    \tparam k exponent
     \return object of type MathematicalOperations::Chain< Pow<dividend,divisor> , Function >
    */
   template <int k,

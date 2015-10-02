@@ -52,6 +52,7 @@ if(EIGEN3_FOUND)
 endif()
 
 aux_source_directory(test/cmath SRC_LIST)
+aux_source_directory(test/fung SRC_LIST)
 aux_source_directory(test/mathematical_operations SRC_LIST)
 
 add_executable(
