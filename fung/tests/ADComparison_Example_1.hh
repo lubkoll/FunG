@@ -29,28 +29,14 @@
 #include <fadiff.h>
 #include <badiff.h>
 
-#include <Sacado.hpp>
-
-#include <casadi/casadi.hpp>
-#include <casadi/core/function/custom_function.hpp>
-#include <casadi/core/functor.hpp>
+//#include <Sacado.hpp>
 
 #include <adept.h>
 
 #include "fung/fung.hh"
 
-using CustomEvaluateCPtr = void (*)(casadi::CustomFunction& f, void* user_data);
-
 namespace Example_1
 {
-  inline void casadiFunction(casadi::CustomFunction& f, void*)
-  {
-    using namespace casadi;
-    DMatrix x = f.input(0);
-    auto z = sqrt(x);
-    f.setOutput(sin(z)+x*z);
-  }
-
   template <class T=double>
   struct Func2
   {
@@ -143,11 +129,11 @@ void ADComparison_Example_1()
   using std::cout;
   using std::endl;
   using namespace std::chrono;
-  auto iter = 1u * 1000u * 1000u;
+  auto iter = 10'000'000u;
 
-  cout << "Comparing different automatic differentation implementations\n" << endl;
+  cout << "\nComparing different automatic differentation implementations\n" << endl;
   cout << "Function: x^1.5 + sin(x^0.5)" << endl;
-  cout << "iter: " << iter << endl << endl;
+  cout << "#Evaluations: " << iter << endl << endl;
 
   double x,f,dfdx;    // Declare variables
   x=5;                       // Initialize variable x
@@ -174,61 +160,42 @@ void ADComparison_Example_1()
   cout << "computation time: " << duration_cast<milliseconds>(high_resolution_clock::now()-startTime).count()/1000. << "s\n";
   cout << "function value: " << f << endl;
   cout << "first derivative: " << dfdx << endl << endl;
-  x=5;
-  cout << "SACADO (FAD)" << endl;
-  int num_deriv = 1;
-  Sacado::Fad::SFad<double,1> rfad;
-  startTime = high_resolution_clock::now();
-  for(auto i=0u; i<iter; ++i){
-    x*=1.00000001;
-    Sacado::Fad::SFad<double,1> xfad(num_deriv,0,x);
-    rfad = Example_1::func(xfad);
-  }
-  cout << "computation time: " << duration_cast<milliseconds>(high_resolution_clock::now()-startTime).count()/1000. << "s\n";
-  cout << "function value: " << rfad.val() << endl;
-  cout << "first derivative: " << rfad.dx(0) << endl << endl;
+//  x=5;
+//  cout << "SACADO (FAD)" << endl;
+//  int num_deriv = 1;
+//  Sacado::Fad::SFad<double,1> rfad;
+//  startTime = high_resolution_clock::now();
+//  for(auto i=0u; i<iter; ++i){
+//    x*=1.00000001;
+//    Sacado::Fad::SFad<double,1> xfad(num_deriv,0,x);
+//    rfad = Example_1::func(xfad);
+//  }
+//  cout << "computation time: " << duration_cast<milliseconds>(high_resolution_clock::now()-startTime).count()/1000. << "s\n";
+//  cout << "function value: " << rfad.val() << endl;
+//  cout << "first derivative: " << rfad.dx(0) << endl << endl;
 
-  cout << "SACADO (ELRFAD)" << endl;
-  Sacado::ELRFad::DFad<double> relrfad, xelrfad;
-  x=5;
-  startTime = high_resolution_clock::now();
-  for(auto i=0u; i<iter; ++i)
-  {
-    x*=1.00000001;
-    xelrfad = Sacado::ELRFad::DFad<double> (num_deriv,0,x);
-    relrfad = Example_1::func(xelrfad);
-  }
-  cout << "computation time: " << duration_cast<milliseconds>(high_resolution_clock::now()-startTime).count()/1000. << "s\n";
-  cout << "function value: " << relrfad.val() << endl;
-  cout << "first derivative: " << relrfad.dx(0) << endl << endl;
-
-  x=5;
-  cout << "CASADI" << endl;
-  std::vector<casadi::Sparsity> ins = { casadi::Sparsity::dense(1,1) },
-      outs = { casadi::Sparsity::dense(1,1) };
-
-  casadi::CustomFunction casadiF(Example_1::casadiFunction,ins,outs);
-  std::decay_t<decltype(casadiF.output())> cf;
-  startTime = high_resolution_clock::now();
-  for(auto i=0u; i<iter; ++i)
-  {
-    x*=1.00000001;
-    casadiF.init();
-    casadiF.setInput(x);
-    casadiF.evaluate();
-    cf = casadiF.output();
-  }
-  cout << "computation time: " << duration_cast<milliseconds>(high_resolution_clock::now()-startTime).count()/1000. << "s\n";
-  cout << "function value: " << cf << endl;
+//  cout << "SACADO (ELRFAD)" << endl;
+//  Sacado::ELRFad::DFad<double> relrfad, xelrfad;
+//  x=5;
+//  startTime = high_resolution_clock::now();
+//  for(auto i=0u; i<iter; ++i)
+//  {
+//    x*=1.00000001;
+//    xelrfad = Sacado::ELRFad::DFad<double> (num_deriv,0,x);
+//    relrfad = Example_1::func(xelrfad);
+//  }
+//  cout << "computation time: " << duration_cast<milliseconds>(high_resolution_clock::now()-startTime).count()/1000. << "s\n";
+//  cout << "function value: " << relrfad.val() << endl;
+//  cout << "first derivative: " << relrfad.dx(0) << endl << endl;
 
   x=5;
 
   cout << "ADEPT" << endl;
-  startTime = high_resolution_clock::now();
   adept::Stack stack;
   using adept::adouble;
   adouble ax = x;
   adouble y;
+  startTime = high_resolution_clock::now();
   for(auto i=0u; i<iter; ++i)
   {
     x*=1.00000001;
@@ -245,12 +212,13 @@ void ADComparison_Example_1()
   cout << "first derivative: " << dfdx << endl << endl;
 
   x=5;
-  cout << "SFGEN" << endl;
+  cout << "FunG" << endl;
   auto testF = Example_1::generateTestFunction();
   startTime = high_resolution_clock::now();
   for(auto i=0u; i<iter; ++i)
   {
     x*=1.00000001;
+//    testF.update(x);
     f = testF(x);
     dfdx = testF.d1();
   }

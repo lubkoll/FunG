@@ -28,30 +28,16 @@
 #include <fadiff.h>
 #include <badiff.h>
 
-#include <Sacado.hpp>
+//#include <Sacado.hpp>
 
 #include <adept.h>
-
-#include <casadi/casadi.hpp>
-#include <casadi/core/function/custom_function.hpp>
-#include <casadi/core/functor.hpp>
 
 #include "fung/fung.hh"
 
 using namespace fadbad;
-using namespace casadi;
-
-using CustomEvaluateCPtr = void (*)(CustomFunction& f, void* user_data);
 
 namespace Example_2
 {
-  void casadiFunction(CustomFunction& f, void*)
-  {
-    DMatrix x = f.input(0);
-    auto z = exp(sqrt(x))+1;
-    f.setOutput(sin(z)+x*z);
-  }
-
   template <class T=double>
   struct Func2
   {
@@ -100,9 +86,9 @@ namespace Example_2
   auto generateTestFunction()
   {
     using namespace FunG;
-    auto g = exp(Sqrt()) + 1;//( Exp() << Sqrt() ) + 1;
+    auto g = exp(Sqrt()) + 1;
     auto f = identity(1.) * g + sin(g);
-    return Finalize<decltype(f),true>(f);
+    return finalize_scalar(f);
   }
 
   template <class Scalar>
@@ -147,11 +133,11 @@ void ADComparison_Example_2()
   using std::cout;
   using std::endl;
   using namespace std::chrono;
-  auto iter = 10u * 1000u * 1000u;
+  auto iter = 10'000'000u;
 
-  cout << "Comparing different automatic differentation implementations\n" << endl;
+  cout << "\nComparing different automatic differentation implementations\n" << endl;
   cout << "Function: x * ( exp( sqrt(x) ) + 1 ) + sin( exp( sqrt(x) ) + 1 )" << endl;
-  cout << "iter: " << iter << endl << endl;
+  cout << "#Evaluations: " << iter << endl << endl;
 
   double x,f,dfdx;    // Declare variables
   x=1;                       // Initialize variable x
@@ -209,23 +195,6 @@ void ADComparison_Example_2()
 //  cout << "computation time: " << boost::timer::format(timer.elapsed());
 //  cout << "function value: " << relrfad.val() << endl;
 //  cout << "first derivative: " << relrfad.dx(0) << endl << endl;
-
-  cout << "CASADI" << endl;
-  std::vector<Sparsity> ins = { Sparsity::dense(1,1) },
-      outs = { Sparsity::dense(1,1) };
-
-  CustomFunction casadiF(Example_2::casadiFunction,ins,outs);
-  startTime = high_resolution_clock::now();
-  std::remove_reference_t<decltype(casadiF.output())> cf;
-  for(auto i=0u; i<iter; ++i)
-  {
-    casadiF.init();
-    casadiF.setInput(x);
-    casadiF.evaluate();
-    cf = casadiF.output();
-  }
-  cout << "computation time: " << duration_cast<milliseconds>(high_resolution_clock::now() - startTime).count()/1000. << "s\n";
-  cout << "function value: " << cf << endl;
   x=1;
 
   cout << "ADEPT" << endl;
@@ -249,7 +218,7 @@ void ADComparison_Example_2()
   cout << "function value: " << f << endl;
   cout << "first derivative: " << dfdx << endl << endl;
   x=1;
-  cout << "SFGEN" << endl;
+  cout << "FunG" << endl;
   auto testF = Example_2::generateTestFunction();
   startTime = high_resolution_clock::now();
   for(auto i=0u; i<iter; ++i)
