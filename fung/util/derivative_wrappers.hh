@@ -251,14 +251,14 @@ namespace FunG
   template <class F, class = void>
   struct D0_
   {
-    constexpr bool present = false;
+    static constexpr bool present = false;
     static decltype(auto) apply(const F&) {}
   };
 
   template <class F>
   struct D0_<F,std::enable_if_t<HasD0MemberFunction<F>::value> >
   {
-    constexpr bool present = true;
+    static constexpr bool present = true;
     static decltype(auto) apply(const F& f)
     {
       return f.d0();
@@ -266,18 +266,20 @@ namespace FunG
   };
 
 
-  template <class F, class IndexedArg, class = void>
+  template <class F, class IndexedArg,
+            bool hasMemberFunction = HasD1MemberFunction<F,IndexedArg>::value,
+            bool withIndex = HasD1WithIndex<F,IndexedArg>::value>
   struct D1_
   {
-    constexpr bool present = false;
+    static constexpr bool present = false;
     template <class Arg>
     static decltype(auto) apply(const F&, Arg&&) {}
   };
 
   template <class F, class IndexedArg>
-  struct D1_<F,IndexedArg,std::enable_if_t<HasD1MemberFunction<F,IndexedArg>::value> >
+  struct D1_<F,IndexedArg,true,true>
   {
-    constexpr bool present = true;
+    static constexpr bool present = true;
     template <class Arg>
     static decltype(auto) apply(const F& f, Arg&& dx)
     {
@@ -285,19 +287,32 @@ namespace FunG
     }
   };
 
+  template <class F, class IndexedArg>
+  struct D1_<F,IndexedArg,true,false>
+  {
+    static constexpr bool present = true;
+    template <class Arg>
+    static decltype(auto) apply(const F& f, Arg&& dx)
+    {
+      return f.d1(std::forward<Arg>(dx));
+    }
+  };
 
-  template <class F, class IndexedArgX, class IndexedArgY, class = void>
+
+  template <class F, class IndexedArgX, class IndexedArgY,
+            bool hasMemberFunction = HasD2MemberFunction<F,IndexedArgX,IndexedArgY>::value,
+            bool withIndex = HasD2WithIndex<F,IndexedArgX,IndexedArgY>::value>
   struct D2_
   {
-    constexpr bool present = false;
+    static constexpr bool present = false;
     template <class... Args>
     static decltype(auto) apply(const F&, Args&&...) {}
   };
 
   template <class F, class IndexedArgX, class IndexedArgY>
-  struct D2_<F,IndexedArgX,IndexedArgY,std::enable_if_t<HasD2MemberFunction<F,IndexedArgX,IndexedArgY>::value> >
+  struct D2_<F,IndexedArgX,IndexedArgY,true,true>
   {
-    constexpr bool present = true;
+    static constexpr bool present = true;
     template <class... Args>
     static decltype(auto) apply(const F& f, Args&&... dx)
     {
@@ -305,19 +320,32 @@ namespace FunG
     }
   };
 
+  template <class F, class IndexedArgX, class IndexedArgY>
+  struct D2_<F,IndexedArgX,IndexedArgY,true,false>
+  {
+    static constexpr bool present = true;
+    template <class... Args>
+    static decltype(auto) apply(const F& f, Args&&... dx)
+    {
+      return f.d2(std::forward<Args>(dx)...);
+    }
+  };
 
-  template <class F, class IndexedArgX, class IndexedArgY, class IndexedArgZ, class = void>
+
+  template <class F, class IndexedArgX, class IndexedArgY, class IndexedArgZ,
+            bool hasMemberFunction = HasD3MemberFunction<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value,
+            bool withIndex = HasD3WithIndex<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value>
   struct D3_
   {
-    constexpr bool present = false;
+    static constexpr bool present = false;
     template <class... Args>
     static decltype(auto) apply(const F&, Args&&...) {}
   };
 
   template <class F, class IndexedArgX, class IndexedArgY, class IndexedArgZ>
-  struct D3_<F,IndexedArgX,IndexedArgY,IndexedArgZ,std::enable_if_t<HasD3MemberFunction<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value> >
+  struct D3_<F,IndexedArgX,IndexedArgY,IndexedArgZ,true,true>
   {
-    constexpr bool present = true;
+    static constexpr bool present = true;
     template <class... Args>
     static decltype(auto) apply(const F& f, Args&&... dx)
     {
@@ -325,6 +353,16 @@ namespace FunG
     }
   };
 
+  template <class F, class IndexedArgX, class IndexedArgY, class IndexedArgZ>
+  struct D3_<F,IndexedArgX,IndexedArgY,IndexedArgZ,true,false>
+  {
+    static constexpr bool present = true;
+    template <class... Args>
+    static decltype(auto) apply(const F& f, Args&&... dx)
+    {
+      return f.d3(std::forward<Args>(dx)...);
+    }
+  };
   /**
    * \endcond
    */
