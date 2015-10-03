@@ -81,9 +81,7 @@ namespace FunG
        */
       template <class... InitFunction>
       Chain(const InitFunction&... init)
-        : g(init...),
-          f(g.d0()),
-          value(f.d0())
+        : g(init...), f(g.d0())
       {}
 
       /**
@@ -92,11 +90,9 @@ namespace FunG
        * @param g_ inner function
        */
       Chain(const F& f_, const G& g_)
-        : g(g_), f(f_),
-          value(f.d0())
+        : g(g_), f(f_)
       {
         update_if_present(f,g.d0());
-        value = f.d0();
       }
 
       /// Update point of evaluation.
@@ -105,7 +101,6 @@ namespace FunG
       {
         update_if_present(g,x);
         update_if_present(f,g.d0());
-        value = f.d0();
       }
 
       /// Update variable corresponding to index.
@@ -114,13 +109,12 @@ namespace FunG
       {
         update_if_present<index>(g,x);
         update_if_present(f,g.d0());
-        value = f.d0();
       }
 
       /// Function value.
-      const auto& d0() const noexcept
+      decltype(auto) d0() const noexcept
       {
-        return value;
+        return f.d0();
       }
 
       /**
@@ -182,7 +176,6 @@ namespace FunG
     private:
       G g;
       F f;
-      std::decay_t<decltype(std::declval<F>().d0())> value;
     };
   }
 }

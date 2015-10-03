@@ -230,11 +230,20 @@ namespace FunG
      * \return Trace< std::decay_t<decltype(f.d0())> >(arg.d0())( arg )
      */
     template <class F,
-              std::enable_if_t<std::is_base_of<Base,F>::value>* = nullptr>
+              std::enable_if_t<std::is_base_of<Base,F>::value && !Checks::HasTypePlainObject<decltype(std::declval<F>().d0())>::value >* = nullptr>
     auto trace(const F& f)
     {
       return Trace< std::decay_t<decltype(f.d0())> >( f.d0() )( f );
     }
+
+    template <class F,
+              std::enable_if_t<std::is_base_of<Base,F>::value && Checks::HasTypePlainObject<decltype(std::declval<F>().d0())>::value >* = nullptr>
+    auto trace(const F& f)
+    {
+      using t0 = decltype(f.d0());
+      return Trace< std::decay_t<typename t0::PlainObject> >( f.d0() )( f );
+    }
+
   }
 }
 

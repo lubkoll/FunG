@@ -119,6 +119,15 @@ namespace FunG
 
     template < class Vector, class = void > struct AccessViaRoundBracketsForVector                                                      : std::false_type {};
     template <class Vector> struct AccessViaRoundBracketsForVector< Vector , void_t<TryAccessViaRoundBracketsForVector<Vector> > >      : std::true_type {};
+
+    template <class EigenArg>
+    using TryAccessToPlainObject = typename EigenArg::PlainObject;
+
+    template <class EigenArg, class = void>
+    struct HasTypePlainObject : std::false_type {};
+
+    template <class EigenArg>
+    struct HasTypePlainObject<EigenArg,void_t<TryAccessToPlainObject<EigenArg> > > : std::true_type{};
     /**
      * \endcond
      */

@@ -60,8 +60,7 @@ namespace FunG
        */
       template <class InitF, class InitG>
       Sum(const InitF& f_, const InitG& g_)
-        : f(f_), g(g_),
-          value(f.d0() + g.d0())
+        : f(f_), g(g_)
       {}
 
       /// Update point of evaluation.
@@ -70,7 +69,6 @@ namespace FunG
       {
         update_if_present(f,x);
         update_if_present(g,x);
-        value = sum( D0<F>(f), D0<G>(g) )();
       }
 
       /// Update variable corresponding to index.
@@ -79,13 +77,12 @@ namespace FunG
       {
         update_if_present<index>(f,x);
         update_if_present<index>(g,x);
-        value = sum( D0<F>(f), D0<G>(g) )();
       }
 
       /// Function value.
-      const auto& d0() const noexcept
+      auto d0() const noexcept
       {
-        return value;
+        return sum( D0<F>(f) , D0<G>(g) )();//f.d0() + g.d0();
       }
 
       /**
@@ -133,11 +130,6 @@ namespace FunG
     private:
       F f;
       G g;
-
-      using type = std::conditional_t<std::is_same<std::decay_t<decltype(std::declval<F>().d0())>,std::decay_t<decltype(std::declval<G>().d0())> >::value,
-                                      decltype(std::declval<F>().d0()),
-                                      decltype(std::declval<F>().d0() + std::declval<G>().d0())>;
-      std::decay_t<type> value;
     };
   }
 }

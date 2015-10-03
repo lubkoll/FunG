@@ -50,7 +50,7 @@ namespace FunG
         return value;
       }
 
-      decltype(std::declval<X>()() + std::declval<Y>()()) value;
+      std::decay_t<decltype(std::declval<X>()())> value;
     };
 
     template <class X, class Y>

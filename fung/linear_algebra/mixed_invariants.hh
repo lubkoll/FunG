@@ -124,7 +124,7 @@ namespace FunG
     template <class Arg, class Matrix, int n = dim<Matrix>()>
     auto mi4(const Arg& x, const Matrix& M)
     {
-      return i4(x,M) * pow<-1,n>( det(x) );
+      return i4(x,M) * Pow<-1,n>()( det(x) );
     }
 
     /**
@@ -139,7 +139,7 @@ namespace FunG
     template <class Arg, class Matrix, int n = dim<Matrix>()>
     auto mi5(const Arg& x, const Matrix& M)
     {
-      return i5(x,M) * pow<-2,n>( det(x) );
+      return i5(x,M) * Pow<-2,n>()( det(x) );
     }
 
     /**

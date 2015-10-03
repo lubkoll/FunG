@@ -22,6 +22,7 @@
 #define FUNG_VARIABLE_HH
 
 #include <limits>
+#include <tuple>
 #include <type_traits>
 
 #include "fung/util/base.hh"
@@ -35,16 +36,88 @@ namespace FunG
   template <class,int> struct Variable;
   namespace Concepts { template <class> class FunctionConceptCheck; }
 
+  template <class T, class Other>
+  struct ContainsType : std::false_type {};
+
+  template <class T> struct ContainsType<T,T> : std::true_type {};
+
+  template <class T, class Gradient>
+  struct ContainsType<T, std::tuple<T,Gradient> > : std::true_type {};
+
+  template <class T, class Value>
+  struct ContainsType<T, std::tuple<Value,T> > : std::true_type {};
+
   namespace VariableDetail
   {
+    template <class Arg, class Extended>
+    struct Assign;
+
+    template <class Arg, class Gradient>
+    struct Assign< Arg , std::tuple<Arg,Gradient> >
+    {
+      static auto apply(Arg& t, const std::tuple<Arg,Gradient>& x)
+      {
+        t = std::get<0>(x);
+      }
+    };
+
+    template <class Arg, class Value>
+    struct Assign< Arg , std::tuple<Value,Arg> >
+    {
+      static auto apply(Arg& t, const std::tuple<Value,Arg>& x)
+      {
+        t = std::get<1>(x);
+      }
+    };
+
+    template <class Arg>
+    struct Assign<Arg,Arg>
+    {
+      static void apply(Arg& t, const Arg& x)
+      {
+        t = x;
+      }
+    };
+
+    template <class T, class Other>
+    struct ExtractReturnValue;
+
+    template <class T>
+    struct ExtractReturnValue<T,T>
+    {
+      static const T& apply(const T& x)
+      {
+        return x;
+      }
+    };
+
+    template <class T, class Gradient>
+    struct ExtractReturnValue<T,std::tuple<T,Gradient> >
+    {
+      static const T& apply(const std::tuple<T,Gradient>& x)
+      {
+        return std::get<0>(x);
+      }
+    };
+
+    template <class T, class Value>
+    struct ExtractReturnValue<T,std::tuple<Value,T> >
+    {
+      static const T& apply(const std::tuple<Value,T>& x)
+      {
+        return std::get<1>(x);
+      }
+    };
+
     template <bool>
     struct Update
     {
       template <class T, class Arg>
       static void apply(T& t, const Arg& x)
       {
-        static_assert(std::is_same<T,Arg>::value,"Updating variable with incompatible argument. Please check your input for the update-function.");
-        t = x;
+//        static_assert(std::is_same<T,Arg>::value,"Updating variable with incompatible argument. Please check your input for the update-function.");
+        Assign<T,Arg>::apply(t,x);
+        //        t = x;
       }
     };
 
@@ -189,10 +262,12 @@ namespace FunG
      *
      * Only available if id==index.
      */
-    template < int index , class = std::enable_if_t< id == index > >
-    const T& d1(const T& dt) const noexcept
+    template < int index , class Arg ,
+               class = std::enable_if_t< id == index > >
+    const T& d1(const Arg& dt) const noexcept
     {
-      return dt;
+      return VariableDetail::ExtractReturnValue<T,Arg>::apply(dt);
+//      return dt;
     }
 
   private:
@@ -252,7 +327,8 @@ namespace FunG
     template <class F, class Type, int id>
     constexpr bool checkArgument()
     {
-      return std::is_same<typename VariableDetail::VariableType<F,id>::type, Type>::value;
+      return ContainsType<typename VariableDetail::VariableType<F,id>::type, Type>::value;
+//      return std::is_same<typename VariableDetail::VariableType<F,id>::type, Type>::value;
     }
   }
 }

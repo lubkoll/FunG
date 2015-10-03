@@ -50,6 +50,7 @@ namespace FunG
     template <class F, class = Concepts::FunctionConceptCheck<F> >
     struct Scale : Base , Chainer< Scale< F , Concepts::FunctionConceptCheck<F> > >
     {
+      using ReturnType = std::decay_t<decltype(std::declval<F>().d0())>;
       /**
        * \brief Constructor passing arguments to function constructor.
        * \param a_ scaling
@@ -57,7 +58,7 @@ namespace FunG
        */
       template <class InitF>
       Scale(double a_, const InitF& f_)
-        : a(a_), f(f_), value(a * f.d0())
+        : a(a_), f(f_)
       {}
 
       /// Update point of evaluation.
@@ -65,7 +66,6 @@ namespace FunG
       void update(Arg const& x)
       {
         update_if_present(f,x);
-        value = a * f.d0();
       }
 
       /// Update variable corresponding to index.
@@ -73,13 +73,12 @@ namespace FunG
       void update(const Arg& x)
       {
         update_if_present<index>(f,x);
-        value = a * f.d0();
       }
 
       /// Function value.
-      const auto& d0() const noexcept
+      ReturnType d0() const noexcept
       {
-        return value;
+        return a*f.d0();
       }
 
       /**
@@ -89,9 +88,9 @@ namespace FunG
         template < int idx , class Arg ,
                  class IndexedArg = IndexedType<Arg,idx> ,
                  class = std::enable_if_t< D1<F,IndexedArg>::present> >
-      auto d1(Arg const& dx) const
+      ReturnType d1(Arg const& dx) const
       {
-        return a * D1<F,IndexedArg>(f,dx)();//f.template d1<idx>(dx);
+        return a * D1<F,IndexedArg>(f,dx)();
       }
 
       /**
@@ -103,9 +102,9 @@ namespace FunG
                  class IndexedArgX = IndexedType<ArgX,idx> ,
                  class IndexedArgY = IndexedType<ArgY,idy> ,
                  class = std::enable_if_t< D2<F,IndexedArgX,IndexedArgY>::present> >
-      auto d2(ArgX const& dx, ArgY const& dy) const
+      ReturnType d2(ArgX const& dx, ArgY const& dy) const
       {
-        return a * D2<F,IndexedArgX,IndexedArgY>(f,dx,dy)();//f.template d2<idx,idy>(dx,dy);
+        return a * D2<F,IndexedArgX,IndexedArgY>(f,dx,dy)();
       }
 
       /**
@@ -119,15 +118,14 @@ namespace FunG
                  class IndexedArgY = IndexedType<ArgY,idy> ,
                  class IndexedArgZ = IndexedType<ArgZ,idz> ,
                  class = std::enable_if_t< D3<F,IndexedArgX,IndexedArgY,IndexedArgZ>::present > >
-      auto d3(ArgX const& dx, ArgY const& dy, ArgZ const& dz) const
+      ReturnType d3(ArgX const& dx, ArgY const& dy, ArgZ const& dz) const
       {
-        return a * D3<F,IndexedArgX,IndexedArgY,IndexedArgZ>(f,dx,dy,dz)();//f.template d3<idx,idy,idz>(dx,dy,dz);
+        return a * D3<F,IndexedArgX,IndexedArgY,IndexedArgZ>(f,dx,dy,dz)();
       }
 
     private:
       double a = 1.;
       F f;
-      std::decay_t<decltype(std::declval<F>().d0())> value;
     };
   }
 }

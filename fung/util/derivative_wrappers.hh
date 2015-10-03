@@ -65,7 +65,7 @@ namespace FunG
       D1Impl& operator=(const D1Impl&) = delete;
 
     private:
-       decltype(std::declval<F>().template d1<id>(std::declval<Arg>())) value;
+      decltype(std::declval<F>().template d1<id>(std::declval<Arg>())) value;
     };
 
     /// Call f.d1(dx).
@@ -87,7 +87,7 @@ namespace FunG
       D1Impl& operator=(const D1Impl&) = delete;
 
     private:
-       decltype(std::declval<F>().d1(std::declval<Arg>())) value;
+      decltype(std::declval<F>().d1(std::declval<Arg>())) value;
     };
 
 
@@ -125,7 +125,7 @@ namespace FunG
       D2Impl& operator=(const D2Impl&) = delete;
 
     private:
-       decltype(std::declval<F>().template d2<idx,idy>(std::declval<ArgX>(),std::declval<ArgY>())) value;
+      decltype(std::declval<F>().template d2<idx,idy>(std::declval<ArgX>(),std::declval<ArgY>())) value;
     };
 
     /// Call f.d2(dx,dy).
@@ -147,7 +147,7 @@ namespace FunG
       D2Impl& operator=(const D2Impl&) = delete;
 
     private:
-       decltype(std::declval<F>().d2(std::declval<ArgX>(),std::declval<ArgY>())) value;
+      decltype(std::declval<F>().d2(std::declval<ArgX>(),std::declval<ArgY>())) value;
     };
 
 
@@ -233,7 +233,7 @@ namespace FunG
     D0& operator=(const D0&) = delete;
 
   private:
-     decltype(std::declval<F>().d0()) value;
+    decltype(std::declval<F>().d0()) value;
   };
 
   /// Evaluates f.d1(dx) if not vanishing.
@@ -247,6 +247,84 @@ namespace FunG
   /// Evaluates f.d3(dx,dy,dz) if not vanishing.
   template < class F , class IndexedArgX , class IndexedArgY , class IndexedArgZ >
   using D3 = Detail::D3Impl<F,IndexedArgX,IndexedArgY,IndexedArgZ,HasD3MemberFunction<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value,HasD3WithIndex<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value>;
+
+  template <class F, class = void>
+  struct D0_
+  {
+    constexpr bool present = false;
+    static decltype(auto) apply(const F&) {}
+  };
+
+  template <class F>
+  struct D0_<F,std::enable_if_t<HasD0MemberFunction<F>::value> >
+  {
+    constexpr bool present = true;
+    static decltype(auto) apply(const F& f)
+    {
+      return f.d0();
+    }
+  };
+
+
+  template <class F, class IndexedArg, class = void>
+  struct D1_
+  {
+    constexpr bool present = false;
+    template <class Arg>
+    static decltype(auto) apply(const F&, Arg&&) {}
+  };
+
+  template <class F, class IndexedArg>
+  struct D1_<F,IndexedArg,std::enable_if_t<HasD1MemberFunction<F,IndexedArg>::value> >
+  {
+    constexpr bool present = true;
+    template <class Arg>
+    static decltype(auto) apply(const F& f, Arg&& dx)
+    {
+      return f.template d1<IndexedArg::index>(std::forward<Arg>(dx));
+    }
+  };
+
+
+  template <class F, class IndexedArgX, class IndexedArgY, class = void>
+  struct D2_
+  {
+    constexpr bool present = false;
+    template <class... Args>
+    static decltype(auto) apply(const F&, Args&&...) {}
+  };
+
+  template <class F, class IndexedArgX, class IndexedArgY>
+  struct D2_<F,IndexedArgX,IndexedArgY,std::enable_if_t<HasD2MemberFunction<F,IndexedArgX,IndexedArgY>::value> >
+  {
+    constexpr bool present = true;
+    template <class... Args>
+    static decltype(auto) apply(const F& f, Args&&... dx)
+    {
+      return f.template d2<IndexedArgX::index,IndexedArgY::index>(std::forward<Args>(dx)...);
+    }
+  };
+
+
+  template <class F, class IndexedArgX, class IndexedArgY, class IndexedArgZ, class = void>
+  struct D3_
+  {
+    constexpr bool present = false;
+    template <class... Args>
+    static decltype(auto) apply(const F&, Args&&...) {}
+  };
+
+  template <class F, class IndexedArgX, class IndexedArgY, class IndexedArgZ>
+  struct D3_<F,IndexedArgX,IndexedArgY,IndexedArgZ,std::enable_if_t<HasD3MemberFunction<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value> >
+  {
+    constexpr bool present = true;
+    template <class... Args>
+    static decltype(auto) apply(const F& f, Args&&... dx)
+    {
+      return f.template d3<IndexedArgX::index,IndexedArgY::index,IndexedArgZ::index>(std::forward<Args>(dx)...);
+    }
+  };
+
   /**
    * \endcond
    */
