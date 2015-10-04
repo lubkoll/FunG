@@ -58,7 +58,7 @@ namespace FunG
        */
       template <class InitF>
       Scale(double a_, const InitF& f_)
-        : a(a_), f(f_)
+        : a(a_), f(f_), value(a*f.d0())
       {}
 
       /// Update point of evaluation.
@@ -66,6 +66,7 @@ namespace FunG
       void update(Arg const& x)
       {
         update_if_present(f,x);
+        value = a*f.d0();
       }
 
       /// Update variable corresponding to index.
@@ -73,12 +74,13 @@ namespace FunG
       void update(const Arg& x)
       {
         update_if_present<index>(f,x);
+        value = a*f.d0();
       }
 
       /// Function value.
-      ReturnType d0() const noexcept
+      decltype(auto) d0() const noexcept
       {
-        return a*f.d0();
+        return value;
       }
 
       /**
@@ -90,7 +92,7 @@ namespace FunG
                  class = std::enable_if_t< D1<F,IndexedArg>::present> >
       ReturnType d1(Arg const& dx) const
       {
-        return a * D1<F,IndexedArg>(f,dx)();
+        return a * D1_<F,IndexedArg>::apply(f,dx);
       }
 
       /**
@@ -104,7 +106,7 @@ namespace FunG
                  class = std::enable_if_t< D2<F,IndexedArgX,IndexedArgY>::present> >
       ReturnType d2(ArgX const& dx, ArgY const& dy) const
       {
-        return a * D2<F,IndexedArgX,IndexedArgY>(f,dx,dy)();
+        return a * D2_<F,IndexedArgX,IndexedArgY>::apply(f,dx,dy);
       }
 
       /**
@@ -120,12 +122,13 @@ namespace FunG
                  class = std::enable_if_t< D3<F,IndexedArgX,IndexedArgY,IndexedArgZ>::present > >
       ReturnType d3(ArgX const& dx, ArgY const& dy, ArgZ const& dz) const
       {
-        return a * D3<F,IndexedArgX,IndexedArgY,IndexedArgZ>(f,dx,dy,dz)();
+        return a * D3_<F,IndexedArgX,IndexedArgY,IndexedArgZ>::apply(f,dx,dy,dz);
       }
 
     private:
       double a = 1.;
       F f;
+      std::decay_t<decltype(std::declval<F>().d0())> value;
     };
   }
 }

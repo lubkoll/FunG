@@ -22,6 +22,7 @@
 #define FUNG_UTIL_COMPUTE_PRODUCT_HH
 
 #include <utility>
+#include "type_traits.hh"
 
 namespace FunG
 {
@@ -42,28 +43,15 @@ namespace FunG
     {
       static constexpr bool present = true;
 
-      using product_t = decltype(std::declval<X>()() * std::declval<Y>()() );
-      using X_t = std::decay_t<decltype(std::declval<X>()())>;
-      using Y_t = std::decay_t<decltype(std::declval<Y>()())>;
-      using toXAssignable = std::is_assignable<X_t,product_t>;
-      using toYAssignable = std::is_assignable<Y_t,product_t>;
-
-
-      using ReturnType_0 = std::conditional_t< toXAssignable::value , X_t , product_t >;
-      using ReturnType = std::conditional_t< toYAssignable::value , Y_t , ReturnType_0 >;
-
-//      using ReturnType = std::conditional_t<std::is_same<std::decay_t<decltype(std::declval<X>()())>,std::decay_t<decltype(std::declval<Y>()())> >::value,
-//      std::decay_t<decltype(std::declval<X>()())>, decltype(std::declval<X>()()*std::declval<Y>()())>;
-
       ComputeProductImpl(X const& x, Y const& y) : value( x() * y() )
       {}
 
-      auto operator()() const
+      decltype(auto) operator()() const
       {
         return value;
       }
 
-      ReturnType value;
+      decay_t<decltype(std::declval<X>()() * std::declval<Y>()() )> value;
     };
   }
   template <class X, class Y>

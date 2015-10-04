@@ -56,7 +56,7 @@ namespace FunG
 
       D1Impl(const F& f, const Arg& dx) : value(f.template d1<id>(dx)) {}
 
-      auto operator()() const -> decltype(std::declval<F>().template d1<id>(std::declval<Arg>()))
+      decltype(auto) operator()() const
       {
         return value;
       }
@@ -78,7 +78,7 @@ namespace FunG
 
       D1Impl(const F& f, const Arg& dx) : value(f.d1(dx)) {}
 
-      auto operator()() const -> decltype(std::declval<F>().d1(std::declval<Arg>()))
+      decltype(auto) operator()() const
       {
         return value;
       }
@@ -116,7 +116,7 @@ namespace FunG
 
       D2Impl(const F& f, const ArgX& dx, const ArgY& dy) : value(f.template d2<idx,idy>(dx,dy)) {}
 
-      auto operator()() const -> decltype(std::declval<F>().template d2<idx,idy>(std::declval<ArgX>(),std::declval<ArgY>()))
+      decltype(auto) operator()() const
       {
         return value;
       }
@@ -138,7 +138,7 @@ namespace FunG
 
       D2Impl(const F& f, const ArgX& dx, const ArgY& dy) : value(f.d2(dx,dy)) {}
 
-      auto operator()() const -> decltype(std::declval<F>().d2(std::declval<ArgX>(),std::declval<ArgY>()))
+      decltype(auto) operator()() const
       {
         return value;
       }
@@ -178,7 +178,7 @@ namespace FunG
 
       D3Impl(const F& f, const ArgX& dx, const ArgY& dy, const ArgZ& dz) : value(f.template d3<idx,idy,idz>(dx,dy,dz)) {}
 
-      auto operator()() const -> decltype(std::declval<F>().template d3<idx,idy,idz>(std::declval<ArgX>(),std::declval<ArgY>(),std::declval<ArgZ>()))
+      decltype(auto) operator()() const
       {
         return value;
       }
@@ -201,7 +201,7 @@ namespace FunG
 
       D3Impl(const F& f, const ArgX& dx, const ArgY& dy, const ArgZ& dz) : value(f.d3(dx,dy,dz)) {}
 
-      auto operator()() const -> decltype(std::declval<F>().d3(std::declval<ArgX>(),std::declval<ArgY>(),std::declval<ArgZ>()))
+      decltype(auto) operator()() const
       {
         return value;
       }
@@ -224,7 +224,7 @@ namespace FunG
 
     D0(const F& f) : value(f.d0()) {}
 
-    auto operator()() const ->decltype(std::declval<F>().d0())
+    decltype(auto) operator()() const
     {
       return value;
     }

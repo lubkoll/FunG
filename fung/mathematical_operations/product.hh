@@ -91,7 +91,7 @@ namespace FunG
        */
       template <class InitF, class InitG>
       Product(const InitF& f_, const InitG& g_)
-        : f(f_), g(g_)//, value(f.d0() * g.d0())
+        : f(f_), g(g_), value(f.d0() * g.d0())
       {}
 
       /// Update point of evaluation.
@@ -100,7 +100,7 @@ namespace FunG
       {
         update_if_present(f,x);
         update_if_present(g,x);
-//        value = f.d0()*g.d0();
+        value = f.d0()*g.d0();
       }
 
       /// Update variable corresponding to index.
@@ -109,13 +109,13 @@ namespace FunG
       {
         update_if_present<index>(f,x);
         update_if_present<index>(g,x);
-//        value = f.d0()*g.d0();
+        value = f.d0()*g.d0();
       }
 
       /// Function value.
       decltype(auto) d0() const noexcept
       {
-        return product(D0<F>(f),D0<G>(g))();//f.d0()*g.d0();
+        return value;
       }
 
       /**
@@ -176,12 +176,7 @@ namespace FunG
       F f;
       G g;
 
-//      using same_type = std::is_same<std::decay_t<decltype(std::declval<F>().d0())>,std::decay_t<decltype(std::declval<G>().d0())> >;
-
-//      using type = std::conditional_t<std::is_same<std::decay_t<decltype(std::declval<F>().d0())>,std::decay_t<decltype(std::declval<G>().d0())> >::value,
-//                                      decltype(std::declval<F>().d0()),
-//                                      decltype(std::declval<F>().d0() * std::declval<G>().d0())>;
-//      std::decay_t<type> value;
+      decay_t<decltype( std::declval<F>().d0() * std::declval<G>().d0() )> value;
     };
   }
 }

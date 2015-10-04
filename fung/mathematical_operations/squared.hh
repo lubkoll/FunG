@@ -76,7 +76,7 @@ namespace FunG
        */
       template <class InitF>
       Squared(const InitF& f_)
-        : f(f_)
+        : f(f_), value(f.d0()*f.d0())
       {}
 
       /// Update point of evaluation.
@@ -84,6 +84,7 @@ namespace FunG
       void update(Arg const& x)
       {
         update_if_present(f,x);
+        value = f.d0()*f.d0();
       }
 
       /// Update variable corresponding to index.
@@ -91,12 +92,13 @@ namespace FunG
       void update(const Arg& x)
       {
         update_if_present<index>(f,x);
+        value = f.d0()*f.d0();
       }
 
       /// Function value.
-      ReturnType d0() const noexcept
+      decltype(auto) d0() const noexcept
       {
-        return f.d0() * f.d0();
+        return value;
       }
 
       /**
@@ -106,7 +108,7 @@ namespace FunG
       template < int id , class Arg , class IndexedArg = IndexedType<Arg,id> , class = std::enable_if_t< ComputeProduct< D0<F> , D1<F,IndexedArg> >::present > >
       ReturnType d1(Arg const& dx) const
       {
-        return 2 * f.d0() * D1<F,IndexedArg>(f,dx)();
+        return 2 * f.d0() * D1_<F,IndexedArg>::apply(f,dx);
       }
 
       /**
@@ -145,6 +147,7 @@ namespace FunG
 
     private:
       F f;
+      std::decay_t<decltype(std::declval<F>().d0())> value;
     };
   }
 }

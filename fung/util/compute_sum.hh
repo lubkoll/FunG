@@ -22,6 +22,7 @@
 #define FUNG_UTIL_COMPUTE_SUM_HH
 
 #include <utility>
+#include "type_traits.hh"
 
 namespace FunG
 {
@@ -45,12 +46,12 @@ namespace FunG
       ComputeSumImpl(const X& x, const Y& y) : value(x() + y())
       {}
 
-      auto operator()() const
+      decltype(auto) operator()() const
       {
         return value;
       }
 
-      std::decay_t<decltype(std::declval<X>()())> value;
+      decay_t<decltype(std::declval<X>()()+std::declval<Y>()())> value;
     };
 
     template <class X, class Y>
@@ -61,7 +62,7 @@ namespace FunG
       ComputeSumImpl(const X& x, const Y&) : value(x())
       {}
 
-      auto operator()() const
+      decltype(auto) operator()() const
       {
         return value;
       }
@@ -77,7 +78,7 @@ namespace FunG
       ComputeSumImpl(const X&, const Y& y) : value(y())
       {}
 
-      auto operator()() const
+      decltype(auto) operator()() const
       {
         return value;
       }
@@ -108,9 +109,9 @@ namespace FunG
   };
 
   template <class F, class... G>
-  auto sum(const F& f, const G&... g)
+  auto sum(F&& f, G&&... g)
   {
-    return ComputeSum<F,G...>(f,g...);
+    return ComputeSum<std::decay_t<F>,std::decay_t<G>...>(std::forward<F>(f),std::forward<G>(g)...);
   }
   /**
    * \endcond
