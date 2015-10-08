@@ -184,34 +184,31 @@
 <h3>
 <a id="a-simple-example" class="anchor" href="#a-simple-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>A simple example</h3>
 
-<p>We begin with the function \[f(x)=x^{3/2}+\sin(x^{1/2})=(g\circ h)(x)\] with \[g(x)=x^3+\sin(x)\] and \[h(x)=x^{1/2}\].</p>
+<p>We begin with the function \[f(x)=x^{3/2}+\sin(x^{1/2}).\]</p>
 
 <pre><code>#include "fung.hh"
 
-auto generateFunction()
+template &lt;class Variable&gt;
+auto generateFunction(const Variable&amp; x)
 {
-  using namespace FunG;
-
-  auto h = Pow&lt;3&gt;() + Sin();
-  auto g = Sqrt();
-
-  return FunG::finalize_scalar( h(g) );
+  return FunG::finalize_scalar( pow<3>(sqrt(x)) + sin(sqrt(x)) ); 
 }
 </code></pre>
 
 <p>Usage is as follows:</p>
 
-<pre><code>auto f = generateFunction();
+<pre><code>auto f = generateFunction(variable&lt;0&gt;(1.));
 
-f.update(1.) //  change function argument
+f.template update<0>(1.) //  change function argument
 
 auto value = f(); // or f.d0()
-auto firstDerivative  = f.d1();
-auto secondDerivative = f.d2();
-auto thirdDerivative  = f.d3();
+auto firstDerivative  = f.template d1&lt;0&gt;();
+auto secondDerivative = f.template d2&lt;0,0&gt;();
+auto thirdDerivative  = f.template d3&lt;0,0,0&gt;();
 </code></pre>
 
-<p>The call to <code>finalize_scalar</code> is necessary to simplify usage of the generated function. Without usage is slightly less convenient as illustrated in the other examples below. </p>
+<p>The call to <code>finalize_scalar</code> is necessary to simplify usage of the generated function. For functions depending only on scalar variables it adds default arguments for the directional derivatives. Without usage is slightly less convenient. This 
+is illustrated in the other examples below. </p>
 
 <h3>
 <a id="an-example-from-biomechanics" class="anchor" href="#an-example-from-biomechanics" aria-hidden="true"><span class="octicon octicon-link"></span></a>An example from biomechanics</h3>
@@ -257,7 +254,7 @@ suitable default values for the directions. Here this is not admissible. </p>
 <h3>
 <a id="an-example-with-two-variables" class="anchor" href="#an-example-with-two-variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>An example with two variables</h3>
 
-<p>Eventually we consider a function with two variables, a scalar variable x and a matrix valued variable F (which is assumed to be default constructible in this example): \[f(x,F)=\sqrt{x}\mathrm{tr}(F).\]</p>
+<p>Consider a function with two variables, a scalar variable x and a matrix valued variable F (which is assumed to be default constructible in this example): \[f(x,F)=\sqrt{x}\mathrm{tr}(F).\]</p>
 
 <pre><code>#include "fung.hh"
 
@@ -288,6 +285,37 @@ double ddf_dFdx    = f.template d2&lt;1,0&gt;(dF,dx1);
 double dddf_dxdxdF = f.template d3&lt;0,0,1&gt;(dx1,dx2,dF);
 </code></pre>
 
+
+
+<h3>
+<a id="nonlinear-heat-example" class="anchor" href="#nonlinear-heat-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>A model for nonlinear heat transfer</h3>
+
+<p>Eventually we consider the weak form of a model of nonlinear heat transfer, given through \[A(u,\nabla u)=(c+du^2)\nabla u.\] In this case $u$ and $ \nabla u$ are represented by 
+different types but are associated to the same variable.</p>
+
+<pre><code>#include "fung.hh"
+
+template &lt;class Vec,class Mat&gt;
+auto heatModel(double c, double d, const Vec&amp; u0, const Mat&amp; du0)
+{
+  using namespace Fung;
+  auto u = variable&lt;0&gt;(u0);
+  auto du = variable&lt;0&gt;(du0);
+  auto f = ( c + d*(u^2) ) * du;
+  return finalize( f );
+}
+</code></pre>
+
+<p> To work with such a model it is allowed to pack arguments into tuples. Then usage is as follows (for unknown u, with gradient du, and perturbation v, with gradient dv):</p>
+
+<pre><code>auto f = heatModel(1,1,u,du);
+
+f.template update&lt;0&gt;(std::make_tuple(u,du));
+
+double value       = f(); // or f.d0()
+double df_dx       = f.template d1&lt;0&gt;(std::make_tuple(v,dv));
+...
+</code></pre>
 
 
 <br><h1>
