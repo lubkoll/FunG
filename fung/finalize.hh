@@ -1,22 +1,5 @@
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-/*                                                                             */
-/*   This file is part of the C++-library FunG.                              */
-/*   Copyright 2015 Lars Lubkoll                                               */
-/*                                                                             */
-/*   FunG is free software: you can redistribute it and/or modify            */
-/*   it under the terms of the GNU General Public License as published by      */
-/*   the Free Software Foundation, either version 3 of the License, or         */
-/*   (at your option) any later version.                                       */
-/*                                                                             */
-/*   FunG is distributed in the hope that it will be useful,                 */
-/*   but WITHOUT ANY WARRANTY; without even the implied warranty of            */
-/*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the             */
-/*   GNU General Public License for more details.                              */
-/*                                                                             */
-/*   You should have received a copy of the GNU General Public License         */
-/*   along with FunG.  If not, see <http://www.gnu.org/licenses/>.           */
-/*                                                                             */
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
+// Released under the terms of the GNU General Public License version 3 or later./
 
 #ifndef FUNG_FINALIZE_HH
 #define FUNG_FINALIZE_HH
@@ -26,6 +9,7 @@
 #include "fung/util/consistency_check.hh"
 #include "fung/util/evaluate_if_present.hh"
 #include "fung/util/indexed_type.hh"
+#include "fung/util/zero.hh"
 #include "fung/variable.hh"
 
 namespace FunG
@@ -41,7 +25,7 @@ namespace FunG
       template <class... Args>
       __attribute__((always_inline)) ReturnType operator()(const Args&...) const
       {
-        return 0.;
+        return zero<ReturnType>();
       }
     };
 
