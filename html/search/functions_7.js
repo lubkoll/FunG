@@ -12,9 +12,6 @@ var searchData=
   ['incompressiblemuscletissue_5fmartins',['incompressibleMuscleTissue_Martins',['../group__Biomechanics.html#gafcc36a1958899ca9246c4c1b3c9bfd85',1,'FunG::incompressibleMuscleTissue_Martins(double c, double b, double A, double a, const Matrix &amp;M, const Matrix &amp;F)'],['../group__Biomechanics.html#ga9e414585a90b1988e9fa88d17d875055',1,'FunG::incompressibleMuscleTissue_Martins(const Matrix &amp;M, const Matrix &amp;F)']]],
   ['incompressibleneohooke',['incompressibleNeoHooke',['../group__Rubber.html#ga5bb28aef7006413775791998936d6b81',1,'FunG']]],
   ['incompressibleskin_5fhendriks',['incompressibleSkin_Hendriks',['../group__Biomechanics.html#gaa20bf15ef6976d64d89490429035b2c4',1,'FunG::incompressibleSkin_Hendriks(double c0, double c1, const Matrix &amp;F)'],['../group__Biomechanics.html#gad8653218bd2afb4e3cfd601a5142956c',1,'FunG::incompressibleSkin_Hendriks(const Matrix &amp;F)']]],
-  ['inplacemultiplication',['inPlaceMultiplication',['../namespaceFunG_1_1Checks.html#abeeb72e6dc640672187145a0469da9cc',1,'FunG::Checks']]],
-  ['inplacemultiplicationwitharithmetic',['inPlaceMultiplicationWithArithmetic',['../namespaceFunG_1_1Checks.html#a3b91969c5e1b84915c384cee63bdb649',1,'FunG::Checks']]],
-  ['inplacesummation',['inPlaceSummation',['../namespaceFunG_1_1Checks.html#a9ff694f025cc9f2ff379b1f3833641bb',1,'FunG::Checks']]],
   ['isconstantsize',['isConstantSize',['../namespaceFunG_1_1Checks.html#adcc3e179af2ed0384a3773ea086045b9',1,'FunG::Checks']]],
   ['isvariable',['isVariable',['../namespaceFunG_1_1Checks.html#ac2a1a8aedf54c42cb6d47b3b64bbc761',1,'FunG::Checks']]]
 ];

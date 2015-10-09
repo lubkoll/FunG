@@ -1,14 +1,12 @@
 var searchData=
 [
-  ['nonsymmetricmatrixexception',['NonSymmetricMatrixException',['../classFunG_1_1NonSymmetricMatrixException.html',1,'FunG']]],
-  ['numberofcolumns',['NumberOfColumns',['../structFunG_1_1LinearAlgebra_1_1NumberOfColumns.html',1,'FunG::LinearAlgebra']]],
-  ['numberofcolumns_3c_20matrix_3c_20n_2c_20m_20_3e_2c_20matrixconceptcheck_20_3e',['NumberOfColumns&lt; Matrix&lt; n, m &gt;, MatrixConceptCheck &gt;',['../structFunG_1_1LinearAlgebra_1_1NumberOfColumns_3_01Matrix_3_01n_00_01m_01_4_00_01MatrixConceptCheck_01_4.html',1,'FunG::LinearAlgebra']]],
-  ['numberofcolumns_3c_20matrix_3c_20t_2c_20n_2c_20m_20_3e_2c_20matrixconceptcheck_20_3e',['NumberOfColumns&lt; Matrix&lt; T, n, m &gt;, MatrixConceptCheck &gt;',['../structFunG_1_1LinearAlgebra_1_1NumberOfColumns_3_01Matrix_3_01T_00_01n_00_01m_01_4_00_01MatrixConceptCheck_01_4.html',1,'FunG::LinearAlgebra']]],
-  ['numberofcolumns_3c_20matrix_3c_20t_2c_20n_2c_20m_2c_20other_2e_2e_2e_3e_2c_20matrixconceptcheck_20_3e',['NumberOfColumns&lt; Matrix&lt; T, n, m, other...&gt;, MatrixConceptCheck &gt;',['../structFunG_1_1LinearAlgebra_1_1NumberOfColumns_3_01Matrix_3_01T_00_01n_00_01m_00_01other_8_8_8_4_00_01MatrixConceptCheck_01_4.html',1,'FunG::LinearAlgebra']]],
-  ['numberofrows',['NumberOfRows',['../structFunG_1_1LinearAlgebra_1_1NumberOfRows.html',1,'FunG::LinearAlgebra']]],
-  ['numberofrows_3c_20matrix_3c_20n_2c_20m_20_3e_2c_20matrixconceptcheck_20_3e',['NumberOfRows&lt; Matrix&lt; n, m &gt;, MatrixConceptCheck &gt;',['../structFunG_1_1LinearAlgebra_1_1NumberOfRows_3_01Matrix_3_01n_00_01m_01_4_00_01MatrixConceptCheck_01_4.html',1,'FunG::LinearAlgebra']]],
-  ['numberofrows_3c_20matrix_3c_20t_2c_20n_2c_20m_20_3e_2c_20matrixconceptcheck_20_3e',['NumberOfRows&lt; Matrix&lt; T, n, m &gt;, MatrixConceptCheck &gt;',['../structFunG_1_1LinearAlgebra_1_1NumberOfRows_3_01Matrix_3_01T_00_01n_00_01m_01_4_00_01MatrixConceptCheck_01_4.html',1,'FunG::LinearAlgebra']]],
-  ['numberofrows_3c_20matrix_3c_20t_2c_20n_2c_20m_2e_2e_2e_3e_2c_20matrixconceptcheck_20_3e',['NumberOfRows&lt; Matrix&lt; T, n, m...&gt;, MatrixConceptCheck &gt;',['../structFunG_1_1LinearAlgebra_1_1NumberOfRows_3_01Matrix_3_01T_00_01n_00_01m_8_8_8_4_00_01MatrixConceptCheck_01_4.html',1,'FunG::LinearAlgebra']]],
-  ['numberofrows_3c_20vector_3c_20n_20_3e_2c_20matrixconceptcheck_20_3e',['NumberOfRows&lt; Vector&lt; n &gt;, MatrixConceptCheck &gt;',['../structFunG_1_1LinearAlgebra_1_1NumberOfRows_3_01Vector_3_01n_01_4_00_01MatrixConceptCheck_01_4.html',1,'FunG::LinearAlgebra']]],
-  ['numberofrows_3c_20vector_3c_20t_2c_20n_20_3e_2c_20matrixconceptcheck_20_3e',['NumberOfRows&lt; Vector&lt; T, n &gt;, MatrixConceptCheck &gt;',['../structFunG_1_1LinearAlgebra_1_1NumberOfRows_3_01Vector_3_01T_00_01n_01_4_00_01MatrixConceptCheck_01_4.html',1,'FunG::LinearAlgebra']]]
+  ['matrixconcept',['MatrixConcept',['../structFunG_1_1Concepts_1_1MatrixConcept.html',1,'FunG::Concepts']]],
+  ['matrixconceptcheck',['MatrixConceptCheck',['../structFunG_1_1Concepts_1_1MatrixConceptCheck.html',1,'FunG::Concepts']]],
+  ['multiplicationconcept',['MultiplicationConcept',['../structFunG_1_1Concepts_1_1MultiplicationConcept.html',1,'FunG::Concepts']]],
+  ['multiplicationconceptcheck',['MultiplicationConceptCheck',['../structFunG_1_1Concepts_1_1MultiplicationConceptCheck.html',1,'FunG::Concepts']]],
+  ['multiplicationconceptcheck_3c_20matrix_2c_20matrix_20_3e',['MultiplicationConceptCheck&lt; Matrix, Matrix &gt;',['../structFunG_1_1Concepts_1_1MultiplicationConceptCheck.html',1,'FunG::Concepts']]],
+  ['multiplywitharithmeticfromleftconcept',['MultiplyWithArithmeticFromLeftConcept',['../structFunG_1_1Concepts_1_1MultiplyWithArithmeticFromLeftConcept.html',1,'FunG::Concepts']]],
+  ['multiplywitharithmeticfromleftconceptcheck',['MultiplyWithArithmeticFromLeftConceptCheck',['../structFunG_1_1Concepts_1_1MultiplyWithArithmeticFromLeftConceptCheck.html',1,'FunG::Concepts']]],
+  ['multiplywitharithmeticfromleftconceptcheck_3c_20matrix_20_3e',['MultiplyWithArithmeticFromLeftConceptCheck&lt; Matrix &gt;',['../structFunG_1_1Concepts_1_1MultiplyWithArithmeticFromLeftConceptCheck.html',1,'FunG::Concepts']]],
+  ['multiplywitharithmeticfromleftconceptcheck_3c_20vector_20_3e',['MultiplyWithArithmeticFromLeftConceptCheck&lt; Vector &gt;',['../structFunG_1_1Concepts_1_1MultiplyWithArithmeticFromLeftConceptCheck.html',1,'FunG::Concepts']]]
 ];

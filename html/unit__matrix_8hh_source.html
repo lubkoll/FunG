@@ -97,70 +97,53 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">unit_matrix.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="unit__matrix_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*   This file is part of the C++-library FunG.                              */</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/*   Copyright 2015 Lars Lubkoll                                               */</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   FunG is free software: you can redistribute it and/or modify            */</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*   it under the terms of the GNU General Public License as published by      */</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*   the Free Software Foundation, either version 3 of the License, or         */</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   (at your option) any later version.                                       */</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*   FunG is distributed in the hope that it will be useful,                 */</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/*   but WITHOUT ANY WARRANTY; without even the implied warranty of            */</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the             */</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/*   GNU General Public License for more details.                              */</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/*   You should have received a copy of the GNU General Public License         */</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/*   along with FunG.  If not, see &lt;http://www.gnu.org/licenses/&gt;.           */</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef FUNG_LINEAR_ALGEBRA_UNIT_MATRIX_HH</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define FUNG_LINEAR_ALGEBRA_UNIT_MATRIX_HH</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="at_8hh.html">fung/util/at.hh</a>&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="extract__rows__and__cols_8hh.html">fung/util/extract_rows_and_cols.hh</a>&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="voider_8hh.html">fung/util/voider.hh</a>&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="zero_8hh.html">fung/util/zero.hh</a>&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dimension_8hh.html">dimension.hh</a>&quot;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceFunG.html">FunG</a></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">namespace </span>LinearAlgebra</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix, <span class="keyword">class</span> = std::enable_if_t&lt;Checks::isConstantSize&lt;Matrix&gt;()&gt; &gt;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#ga88a596b8526c0ed98ce241244fb85948">   39</a></span>&#160;    Matrix <a class="code" href="group__LinearAlgebraGroup.html#ga88a596b8526c0ed98ce241244fb85948">unitMatrix</a>()</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      Matrix A = zero&lt;Matrix&gt;();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;dim&lt;Matrix&gt;(); ++i) at(A,i,i) = 1;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      <span class="keywordflow">return</span> A;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix, <span class="keyword">class</span> = std::enable_if_t&lt;!Checks::isConstantSize&lt;Matrix&gt;()&gt; &gt;</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#gae50c49f62ed072019079a7563688e5de">   51</a></span>&#160;    Matrix <a class="code" href="group__LinearAlgebraGroup.html#ga88a596b8526c0ed98ce241244fb85948">unitMatrix</a>(<span class="keywordtype">int</span> <a class="code" href="namespaceFunG_1_1LinearAlgebra.html#abd3afa2fcd2194787342b2662cfa9f5a">rows</a>)</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      Matrix A = zero&lt;Matrix&gt;(<a class="code" href="namespaceFunG_1_1LinearAlgebra.html#abd3afa2fcd2194787342b2662cfa9f5a">rows</a>,<a class="code" href="namespaceFunG_1_1LinearAlgebra.html#abd3afa2fcd2194787342b2662cfa9f5a">rows</a>);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="namespaceFunG_1_1LinearAlgebra.html#abd3afa2fcd2194787342b2662cfa9f5a">rows</a>; ++i) at(A,i,i) = 1;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      <span class="keywordflow">return</span> A;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif // FUNG_LINEAR_ALGEBRA_UNIT_MATRIX_HH</span></div>
-<div class="ttc" id="namespaceFunG_1_1LinearAlgebra_html_abd3afa2fcd2194787342b2662cfa9f5a"><div class="ttname"><a href="namespaceFunG_1_1LinearAlgebra.html#abd3afa2fcd2194787342b2662cfa9f5a">FunG::LinearAlgebra::rows</a></div><div class="ttdeci">auto rows(const Matrix &amp;A)</div><div class="ttdoc">Number of rows of a dynamic size matrix. </div><div class="ttdef"><b>Definition:</b> rows_and_cols.hh:87</div></div>
+<a href="unit__matrix_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Released under the terms of the GNU General Public License version 3 or later.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef FUNG_LINEAR_ALGEBRA_UNIT_MATRIX_HH</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define FUNG_LINEAR_ALGEBRA_UNIT_MATRIX_HH</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="at_8hh.html">fung/util/at.hh</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="extract__rows__and__cols_8hh.html">fung/util/extract_rows_and_cols.hh</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="voider_8hh.html">fung/util/voider.hh</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="zero_8hh.html">fung/util/zero.hh</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dimension_8hh.html">dimension.hh</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceFunG.html">FunG</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">namespace </span>LinearAlgebra</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix, <span class="keyword">class</span> = std::enable_if_t&lt;Checks::isConstantSize&lt;Matrix&gt;()&gt; &gt;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#ga88a596b8526c0ed98ce241244fb85948">   22</a></span>&#160;    Matrix <a class="code" href="group__LinearAlgebraGroup.html#ga88a596b8526c0ed98ce241244fb85948">unitMatrix</a>()</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      Matrix A = zero&lt;Matrix&gt;();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;dim&lt;Matrix&gt;(); ++i) at(A,i,i) = 1;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      <span class="keywordflow">return</span> A;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix, <span class="keyword">class</span> = std::enable_if_t&lt;!Checks::isConstantSize&lt;Matrix&gt;()&gt; &gt;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#gae50c49f62ed072019079a7563688e5de">   34</a></span>&#160;    Matrix <a class="code" href="group__LinearAlgebraGroup.html#ga88a596b8526c0ed98ce241244fb85948">unitMatrix</a>(<span class="keywordtype">int</span> <a class="code" href="namespaceFunG_1_1LinearAlgebra.html#abd3afa2fcd2194787342b2662cfa9f5a">rows</a>)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      Matrix A = zero&lt;Matrix&gt;(<a class="code" href="namespaceFunG_1_1LinearAlgebra.html#abd3afa2fcd2194787342b2662cfa9f5a">rows</a>,<a class="code" href="namespaceFunG_1_1LinearAlgebra.html#abd3afa2fcd2194787342b2662cfa9f5a">rows</a>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="namespaceFunG_1_1LinearAlgebra.html#abd3afa2fcd2194787342b2662cfa9f5a">rows</a>; ++i) at(A,i,i) = 1;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      <span class="keywordflow">return</span> A;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif // FUNG_LINEAR_ALGEBRA_UNIT_MATRIX_HH</span></div>
+<div class="ttc" id="namespaceFunG_1_1LinearAlgebra_html_abd3afa2fcd2194787342b2662cfa9f5a"><div class="ttname"><a href="namespaceFunG_1_1LinearAlgebra.html#abd3afa2fcd2194787342b2662cfa9f5a">FunG::LinearAlgebra::rows</a></div><div class="ttdeci">auto rows(const Matrix &amp;A)</div><div class="ttdoc">Number of rows of a dynamic size matrix. </div><div class="ttdef"><b>Definition:</b> rows_and_cols.hh:70</div></div>
 <div class="ttc" id="dimension_8hh_html"><div class="ttname"><a href="dimension_8hh.html">dimension.hh</a></div></div>
 <div class="ttc" id="zero_8hh_html"><div class="ttname"><a href="zero_8hh.html">zero.hh</a></div></div>
 <div class="ttc" id="extract__rows__and__cols_8hh_html"><div class="ttname"><a href="extract__rows__and__cols_8hh.html">extract_rows_and_cols.hh</a></div></div>
 <div class="ttc" id="at_8hh_html"><div class="ttname"><a href="at_8hh.html">at.hh</a></div></div>
-<div class="ttc" id="group__LinearAlgebraGroup_html_ga88a596b8526c0ed98ce241244fb85948"><div class="ttname"><a href="group__LinearAlgebraGroup.html#ga88a596b8526c0ed98ce241244fb85948">FunG::LinearAlgebra::unitMatrix</a></div><div class="ttdeci">Matrix unitMatrix()</div><div class="ttdoc">Compute unit matrix for the specified constant size matrix type. This requires that a corresponding s...</div><div class="ttdef"><b>Definition:</b> unit_matrix.hh:39</div></div>
+<div class="ttc" id="group__LinearAlgebraGroup_html_ga88a596b8526c0ed98ce241244fb85948"><div class="ttname"><a href="group__LinearAlgebraGroup.html#ga88a596b8526c0ed98ce241244fb85948">FunG::LinearAlgebra::unitMatrix</a></div><div class="ttdeci">Matrix unitMatrix()</div><div class="ttdoc">Compute unit matrix for the specified constant size matrix type. This requires that a corresponding s...</div><div class="ttdef"><b>Definition:</b> unit_matrix.hh:22</div></div>
 <div class="ttc" id="voider_8hh_html"><div class="ttname"><a href="voider_8hh.html">voider.hh</a></div></div>
 <div class="ttc" id="namespaceFunG_html"><div class="ttname"><a href="namespaceFunG.html">FunG</a></div><div class="ttdoc">Main namespace of the FunG library. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Oct 3 2015 01:36:37 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 9 2015 20:39:26 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

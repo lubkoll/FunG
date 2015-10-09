@@ -6,6 +6,5 @@ var searchData=
   ['squared',['Squared',['../structFunG_1_1MathematicalOperations_1_1Squared.html#a60dab55accc3957f54b0eafece720b5d',1,'FunG::MathematicalOperations::Squared']]],
   ['squaredfrobeniusnorm',['SquaredFrobeniusNorm',['../structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm.html#ae9dfaea546dd55106ab886a10a255792',1,'FunG::LinearAlgebra::SquaredFrobeniusNorm::SquaredFrobeniusNorm()=default'],['../structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm.html#af33cdb4a7282ceb03b707ff7fa85ebe4',1,'FunG::LinearAlgebra::SquaredFrobeniusNorm::SquaredFrobeniusNorm(const Matrix &amp;A)']]],
   ['straintensor',['strainTensor',['../namespaceFunG_1_1LinearAlgebra.html#aca163950a2c0cb159fb83629b08337ba',1,'FunG::LinearAlgebra']]],
-  ['sum',['Sum',['../structFunG_1_1MathematicalOperations_1_1Sum.html#ac19577debb0ed58ab8dc809e46d5d18c',1,'FunG::MathematicalOperations::Sum']]],
-  ['summation',['summation',['../namespaceFunG_1_1Checks.html#a2dd2bf4016317339c1a609ddda1f4915',1,'FunG::Checks']]]
+  ['sum',['Sum',['../structFunG_1_1MathematicalOperations_1_1Sum.html#ac19577debb0ed58ab8dc809e46d5d18c',1,'FunG::MathematicalOperations::Sum']]]
 ];

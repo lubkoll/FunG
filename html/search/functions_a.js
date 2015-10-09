@@ -6,8 +6,5 @@ var searchData=
   ['mi5',['mi5',['../group__InvariantGroup.html#ga189bc682b34d13902da335c5eb502faa',1,'FunG::LinearAlgebra']]],
   ['mi6',['mi6',['../group__InvariantGroup.html#ga3e451f9e15fa95080f81d0c0f69f93e6',1,'FunG::LinearAlgebra']]],
   ['modifiedcompressibleneohooke',['modifiedCompressibleNeoHooke',['../group__Rubber.html#gac10942df03f037afdf0a81d330361a6b',1,'FunG']]],
-  ['modifiedincompressibleneohooke',['modifiedIncompressibleNeoHooke',['../group__Rubber.html#gaf6f5ab6a379ef03d513acc5042731a01',1,'FunG']]],
-  ['multiplication',['multiplication',['../namespaceFunG_1_1Checks.html#afc0d2ac0287022a297061359d40073d2',1,'FunG::Checks']]],
-  ['multiplicationwitharithmeticfromleft',['multiplicationWithArithmeticFromLeft',['../namespaceFunG_1_1Checks.html#a023e0071a13fe19a14bd71df1a02a290',1,'FunG::Checks']]],
-  ['multiplicationwitharithmeticfromright',['multiplicationWithArithmeticFromRight',['../namespaceFunG_1_1Checks.html#a584f795b6dfaffd9657888893afd32f3',1,'FunG::Checks']]]
+  ['modifiedincompressibleneohooke',['modifiedIncompressibleNeoHooke',['../group__Rubber.html#gaf6f5ab6a379ef03d513acc5042731a01',1,'FunG']]]
 ];

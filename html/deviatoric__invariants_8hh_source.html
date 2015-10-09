@@ -97,59 +97,42 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">deviatoric_invariants.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="deviatoric__invariants_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*   This file is part of the C++-library FunG.                              */</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/*   Copyright 2015 Lars Lubkoll                                               */</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   FunG is free software: you can redistribute it and/or modify            */</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*   it under the terms of the GNU General Public License as published by      */</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*   the Free Software Foundation, either version 3 of the License, or         */</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   (at your option) any later version.                                       */</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*   FunG is distributed in the hope that it will be useful,                 */</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/*   but WITHOUT ANY WARRANTY; without even the implied warranty of            */</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the             */</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/*   GNU General Public License for more details.                              */</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/*   You should have received a copy of the GNU General Public License         */</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/*   along with FunG.  If not, see &lt;http://www.gnu.org/licenses/&gt;.           */</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef FUNG_LINEAR_ALGEBRA_DEVIATORIC_INVARIANTS_HH</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define FUNG_LINEAR_ALGEBRA_DEVIATORIC_INVARIANTS_HH</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="deviator_8hh.html">deviator.hh</a>&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="frobenius__norm_8hh.html">frobenius_norm.hh</a>&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chain_8hh.html">fung/mathematical_operations/chain.hh</a>&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base_8hh.html">fung/util/base.hh</a>&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceFunG.html">FunG</a></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">namespace </span>LinearAlgebra</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class </span>Matrix,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;              std::enable_if_t&lt;!std::is_base_of&lt;Base,Matrix&gt;::value&gt;* = <span class="keyword">nullptr</span>&gt;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="group__InvariantGroup.html#ga9a2bc859fe1ae34b1a3ada91a39d69df">   40</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__InvariantGroup.html#ga9a2bc859fe1ae34b1a3ada91a39d69df">j2</a>(<span class="keyword">const</span> Matrix&amp; A)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="group__LinearAlgebraGroup.html#gaa893e7d667dde98d2b119ca004745186">frobeniusNorm</a>(A)( <a class="code" href="group__LinearAlgebraGroup.html#ga7c0b1db93cfc5779a3b1e7eb1646c213">deviator</a>(A) );</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif // FUNG_LINEAR_ALGEBRA_DEVIATORIC_INVARIANTS_HH</span></div>
-<div class="ttc" id="group__InvariantGroup_html_ga9a2bc859fe1ae34b1a3ada91a39d69df"><div class="ttname"><a href="group__InvariantGroup.html#ga9a2bc859fe1ae34b1a3ada91a39d69df">FunG::LinearAlgebra::j2</a></div><div class="ttdeci">auto j2(const Matrix &amp;A)</div><div class="ttdoc">Second deviatoric invariant  with  and . </div><div class="ttdef"><b>Definition:</b> deviatoric_invariants.hh:40</div></div>
+<a href="deviatoric__invariants_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Released under the terms of the GNU General Public License version 3 or later.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef FUNG_LINEAR_ALGEBRA_DEVIATORIC_INVARIANTS_HH</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define FUNG_LINEAR_ALGEBRA_DEVIATORIC_INVARIANTS_HH</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="deviator_8hh.html">deviator.hh</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="frobenius__norm_8hh.html">frobenius_norm.hh</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chain_8hh.html">fung/mathematical_operations/chain.hh</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base_8hh.html">fung/util/base.hh</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceFunG.html">FunG</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">namespace </span>LinearAlgebra</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class </span>Matrix,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;              std::enable_if_t&lt;!std::is_base_of&lt;Base,Matrix&gt;::value&gt;* = <span class="keyword">nullptr</span>&gt;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="group__InvariantGroup.html#ga9a2bc859fe1ae34b1a3ada91a39d69df">   23</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__InvariantGroup.html#ga9a2bc859fe1ae34b1a3ada91a39d69df">j2</a>(<span class="keyword">const</span> Matrix&amp; A)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="group__LinearAlgebraGroup.html#gaa893e7d667dde98d2b119ca004745186">frobeniusNorm</a>(A)( <a class="code" href="group__LinearAlgebraGroup.html#ga7c0b1db93cfc5779a3b1e7eb1646c213">deviator</a>(A) );</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif // FUNG_LINEAR_ALGEBRA_DEVIATORIC_INVARIANTS_HH</span></div>
+<div class="ttc" id="group__InvariantGroup_html_ga9a2bc859fe1ae34b1a3ada91a39d69df"><div class="ttname"><a href="group__InvariantGroup.html#ga9a2bc859fe1ae34b1a3ada91a39d69df">FunG::LinearAlgebra::j2</a></div><div class="ttdeci">auto j2(const Matrix &amp;A)</div><div class="ttdoc">Second deviatoric invariant  with  and . </div><div class="ttdef"><b>Definition:</b> deviatoric_invariants.hh:23</div></div>
 <div class="ttc" id="chain_8hh_html"><div class="ttname"><a href="chain_8hh.html">chain.hh</a></div></div>
 <div class="ttc" id="deviator_8hh_html"><div class="ttname"><a href="deviator_8hh.html">deviator.hh</a></div></div>
-<div class="ttc" id="group__LinearAlgebraGroup_html_ga7c0b1db93cfc5779a3b1e7eb1646c213"><div class="ttname"><a href="group__LinearAlgebraGroup.html#ga7c0b1db93cfc5779a3b1e7eb1646c213">FunG::LinearAlgebra::deviator</a></div><div class="ttdeci">auto deviator(const Matrix &amp;A)</div><div class="ttdoc">Generate deviator  of a matrix . </div><div class="ttdef"><b>Definition:</b> deviator.hh:50</div></div>
+<div class="ttc" id="group__LinearAlgebraGroup_html_ga7c0b1db93cfc5779a3b1e7eb1646c213"><div class="ttname"><a href="group__LinearAlgebraGroup.html#ga7c0b1db93cfc5779a3b1e7eb1646c213">FunG::LinearAlgebra::deviator</a></div><div class="ttdeci">auto deviator(const Matrix &amp;A)</div><div class="ttdoc">Generate deviator  of a matrix . </div><div class="ttdef"><b>Definition:</b> deviator.hh:33</div></div>
 <div class="ttc" id="base_8hh_html"><div class="ttname"><a href="base_8hh.html">base.hh</a></div></div>
 <div class="ttc" id="namespaceFunG_html"><div class="ttname"><a href="namespaceFunG.html">FunG</a></div><div class="ttdoc">Main namespace of the FunG library. </div></div>
-<div class="ttc" id="group__LinearAlgebraGroup_html_gaa893e7d667dde98d2b119ca004745186"><div class="ttname"><a href="group__LinearAlgebraGroup.html#gaa893e7d667dde98d2b119ca004745186">FunG::LinearAlgebra::frobeniusNorm</a></div><div class="ttdeci">auto frobeniusNorm(const Matrix &amp;A)</div><div class="ttdoc">Generate Frobenius norm . </div><div class="ttdef"><b>Definition:</b> frobenius_norm.hh:142</div></div>
+<div class="ttc" id="group__LinearAlgebraGroup_html_gaa893e7d667dde98d2b119ca004745186"><div class="ttname"><a href="group__LinearAlgebraGroup.html#gaa893e7d667dde98d2b119ca004745186">FunG::LinearAlgebra::frobeniusNorm</a></div><div class="ttdeci">auto frobeniusNorm(const Matrix &amp;A)</div><div class="ttdoc">Generate Frobenius norm . </div><div class="ttdef"><b>Definition:</b> frobenius_norm.hh:125</div></div>
 <div class="ttc" id="frobenius__norm_8hh_html"><div class="ttname"><a href="frobenius__norm_8hh.html">frobenius_norm.hh</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Oct 3 2015 01:36:37 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 9 2015 20:39:26 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

@@ -97,100 +97,117 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">add_missing_operators.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="add__missing__operators_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*   This file is part of the C++-library FunG.                              */</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/*   Copyright 2015 Lars Lubkoll                                               */</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   FunG is free software: you can redistribute it and/or modify            */</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*   it under the terms of the GNU General Public License as published by      */</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*   the Free Software Foundation, either version 3 of the License, or         */</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   (at your option) any later version.                                       */</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*   FunG is distributed in the hope that it will be useful,                 */</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/*   but WITHOUT ANY WARRANTY; without even the implied warranty of            */</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the             */</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/*   GNU General Public License for more details.                              */</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/*   You should have received a copy of the GNU General Public License         */</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/*   along with FunG.  If not, see &lt;http://www.gnu.org/licenses/&gt;.           */</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef FUNG_UTIL_ADDMISSINGOPERATORS_HH</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define FUNG_UTIL_ADDMISSINGOPERATORS_HH</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base_8hh.html">base.hh</a>&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="static__checks_8hh.html">static_checks.hh</a>&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceFunG.html">FunG</a></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">template</span> &lt; <span class="keyword">class </span>Arg ,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;             <span class="keyword">class </span>= std::enable_if_t&lt; !std::is_base_of&lt;Base,Arg&gt;() &amp;&amp; !std::is_arithmetic&lt;Arg&gt;() &gt; ,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;             <span class="keyword">class </span>= std::enable_if_t&lt; !Checks::<a class="code" href="namespaceFunG_1_1Checks.html#a2dd2bf4016317339c1a609ddda1f4915">summation</a>&lt;Arg&gt;() &amp;&amp;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                       <a class="code" href="namespaceFunG_1_1Checks.html#a9ff694f025cc9f2ff379b1f3833641bb">Checks::inPlaceSummation</a>&lt;Arg&gt;() &gt; &gt;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="namespaceFunG.html#a063d3e8c19dbea3ee1396736fecb64e1">   35</a></span>&#160;  auto operator+(Arg x, const Arg&amp; y)</div>
+<a href="add__missing__operators_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Released under the terms of the GNU General Public License version 3 or later.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef FUNG_UTIL_ADDMISSINGOPERATORS_HH</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define FUNG_UTIL_ADDMISSINGOPERATORS_HH</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base_8hh.html">base.hh</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="static__checks_8hh.html">static_checks.hh</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span>Dune</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span>,<span class="keywordtype">int</span>&gt; <span class="keyword">class </span>FieldVector;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span>,<span class="keywordtype">int</span>,<span class="keywordtype">int</span>&gt; <span class="keyword">class </span>FieldMatrix;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceFunG.html">FunG</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class </span>Scalar, <span class="keyword">class </span>OtherScalar, <span class="keywordtype">int</span> n,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            std::enable_if_t&lt; !Checks::hasFree_Multiplication&lt; Dune::FieldVector&lt;Scalar,n&gt; , Dune::FieldVector&lt;OtherScalar,n&gt; &gt;() &gt;* = <span class="keyword">nullptr</span>&gt;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespaceFunG.html#a5e258023361844926f485229c62a733b">   24</a></span>&#160;  <span class="keyword">auto</span> <span class="keyword">operator</span>*(<span class="keyword">const</span> Dune::FieldVector&lt;Scalar,n&gt;&amp; a, <span class="keyword">const</span> Dune::FieldVector&lt;OtherScalar,n&gt;&amp; b)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    Scalar result = a[0] * b[0];</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;n; ++i)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      result += a[i]*b[i];</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class </span>Scalar, <span class="keyword">class </span>OtherScalar, <span class="keywordtype">int</span> n, <span class="keywordtype">int</span> m,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            std::enable_if_t&lt; !Checks::hasFree_Multiplication&lt; Dune::FieldMatrix&lt;Scalar,n,m&gt; , Dune::FieldVector&lt;OtherScalar,m&gt; &gt;() &gt;* = <span class="keyword">nullptr</span>&gt;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="namespaceFunG.html#abadb8da34a5abc3dde0107231ab91c6f">   35</a></span>&#160;  <span class="keyword">auto</span> <span class="keyword">operator</span>*(<span class="keyword">const</span> Dune::FieldMatrix&lt;Scalar,n,m&gt;&amp; A, <span class="keyword">const</span> Dune::FieldVector&lt;OtherScalar,m&gt;&amp; x)</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    x += y;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> x;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">template</span> &lt; <span class="keyword">class </span>Arg , <span class="keyword">class </span>ScalarArg ,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;             <span class="keyword">class </span>= std::enable_if_t&lt; std::is_arithmetic&lt;ScalarArg&gt;::value &gt; ,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;             <span class="keyword">class </span>= std::enable_if_t&lt; !std::is_base_of&lt;Base,Arg&gt;() &amp;&amp; !std::is_arithmetic&lt;Arg&gt;() &gt; ,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;             class = std::enable_if_t&lt; !Checks::multiplicationWithArithmeticFromLeft&lt;Arg,ScalarArg&gt;() &amp;&amp;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                       Checks::inPlaceMultiplicationWithArithmetic&lt;Arg,ScalarArg&gt;() &gt; &gt;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="namespaceFunG.html#a9b303ce8718a6f64b035e7e782370734">   47</a></span>&#160;  auto operator*( ScalarArg a , Arg x )</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    x *= a;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> x;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    Dune::FieldVector&lt;decltype(std::declval&lt;Scalar&gt;()*std::declval&lt;OtherScalar&gt;()),n&gt; y(0);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    A.mv(x,y);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> y;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class </span>Scalar, <span class="keyword">class </span>OtherScalar, <span class="keywordtype">int</span> n, <span class="keywordtype">int</span> m,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            std::enable_if_t&lt; !Checks::hasFree_Multiplication&lt; Dune::FieldVector&lt;OtherScalar,n&gt; , Dune::FieldMatrix&lt;Scalar,n,m&gt; &gt;() &gt;* = <span class="keyword">nullptr</span>&gt;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="namespaceFunG.html#a19a9d7b55b56f5101560034413a1dbfe">   45</a></span>&#160;  <span class="keyword">auto</span> <span class="keyword">operator</span>*(<span class="keyword">const</span> Dune::FieldVector&lt;OtherScalar,n&gt;&amp; x, <span class="keyword">const</span> Dune::FieldMatrix&lt;Scalar,n,m&gt;&amp; A)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    Dune::FieldVector&lt;decltype(std::declval&lt;Scalar&gt;()*std::declval&lt;OtherScalar&gt;()),m&gt; y;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    A.mtv(x,y);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> y;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">template</span> &lt; <span class="keyword">class </span>Arg , <span class="keyword">class </span>ScalarArg ,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;             <span class="keyword">class </span>= std::enable_if_t&lt; std::is_arithmetic&lt;ScalarArg&gt;::value &gt; ,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;             <span class="keyword">class </span>= std::enable_if_t&lt; !std::is_base_of&lt;Base,Arg&gt;() &amp;&amp; !std::is_arithmetic&lt;Arg&gt;::value&gt; ,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;             class = std::enable_if_t&lt; !Checks::multiplicationWithArithmeticFromRight&lt;Arg,ScalarArg&gt;() &amp;&amp;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                       Checks::inPlaceMultiplicationWithArithmetic&lt;Arg,ScalarArg&gt;() &gt; &gt;</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="namespaceFunG.html#a3cd5a2cb1abba842154691bb84aab896">   59</a></span>&#160;  auto operator*( Arg x , ScalarArg a )</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;             std::enable_if_t&lt; std::is_arithmetic&lt;ScalarArg&gt;::value &gt;* = nullptr ,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;             std::enable_if_t&lt; !std::is_base_of&lt;Base,Arg&gt;() &amp;&amp; !std::is_arithmetic&lt;Arg&gt;() &gt;* = nullptr ,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;             std::enable_if_t&lt; !Checks::hasFree_Multiplication&lt;Arg,ScalarArg&gt;() &amp;&amp;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                Checks::hasMemFn_InPlaceMultiplication&lt;Arg,ScalarArg&gt;() &gt;* = <span class="keyword">nullptr</span> &gt;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="namespaceFunG.html#a9b303ce8718a6f64b035e7e782370734">   59</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="namespaceFunG.html#a014be932d3b4eb377d8e60271e864438">operator*</a>( ScalarArg a , Arg x )</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  {</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    x *= a;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> x;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  }</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">template</span> &lt; <span class="keyword">class </span>Arg1 , <span class="keyword">class </span>Arg2 ,</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;             <span class="keyword">class </span>= std::enable_if_t&lt; !std::is_base_of&lt;Arg1,Base&gt;() &amp;&amp; !std::is_base_of&lt;Arg2,Base&gt;() &gt; ,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;             <span class="keyword">class </span>= std::enable_if_t&lt; !std::is_arithmetic&lt;Arg1&gt;() &amp;&amp; !std::is_arithmetic&lt;Arg2&gt;() &gt; ,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;             class = std::enable_if_t&lt; !Checks::multiplication&lt;Arg1,Arg2&gt;() &amp;&amp;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                       Checks::inPlaceMultiplication&lt;Arg1,Arg2&gt;() &gt; &gt;</div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="namespaceFunG.html#ad023f2d2273af693f2b4ebceeb296dc8">   71</a></span>&#160;  auto operator*( Arg1 x, const Arg2&amp; y)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">template</span> &lt; <span class="keyword">class </span>Arg , <span class="keyword">class </span>ScalarArg ,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;             std::enable_if_t&lt; std::is_arithmetic&lt;ScalarArg&gt;::value &gt;* = nullptr ,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;             std::enable_if_t&lt; !std::is_base_of&lt;Base,Arg&gt;() &amp;&amp; !std::is_arithmetic&lt;Arg&gt;::value&gt;* = <span class="keyword">nullptr</span> ,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;             std::enable_if_t&lt; !Checks::hasFree_Multiplication&lt;Arg,ScalarArg&gt;() &amp;&amp;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                Checks::hasMemFn_InPlaceMultiplication&lt;Arg,ScalarArg&gt;() &gt;* = <span class="keyword">nullptr</span> &gt;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="namespaceFunG.html#a3cd5a2cb1abba842154691bb84aab896">   71</a></span>&#160;  <span class="keyword">auto</span> <span class="keyword">operator</span>*( Arg x , ScalarArg a )</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    x *= y;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    x *= a;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> x;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  }</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">template</span> &lt; <span class="keyword">class </span>Arg1 , <span class="keyword">class </span>Arg2 ,</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;             <span class="keyword">class </span>= std::enable_if_t&lt; !std::is_base_of&lt;Arg1,Base&gt;() &amp;&amp; !std::is_base_of&lt;Arg2,Base&gt;() &gt; ,</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;             <span class="keyword">class </span>= std::enable_if_t&lt; !std::is_arithmetic&lt;Arg1&gt;() &amp;&amp; !std::is_arithmetic&lt;Arg2&gt;() &gt; ,</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;             class = std::enable_if_t&lt; !Checks::multiplication&lt;Arg1,Arg2&gt;() &amp;&amp;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                       !Checks::inPlaceMultiplication&lt;Arg1,Arg2&gt;() &gt; ,</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;             class = std::enable_if_t&lt; Checks::callToRightMultiply&lt;Arg1,Arg2&gt;() &gt; &gt;</div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="namespaceFunG.html#a6e4d3266e119cd102800bf5c091e57fd">   84</a></span>&#160;  auto operator*( Arg1 x , const Arg2&amp; y)</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> x.rightmultiplyany(y);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;             std::enable_if_t&lt; !std::is_base_of&lt;Arg1,Base&gt;() &amp;&amp; !std::is_base_of&lt;Arg2,Base&gt;() &gt;* = nullptr ,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;             std::enable_if_t&lt; !std::is_arithmetic&lt;Arg1&gt;() &amp;&amp; !std::is_arithmetic&lt;Arg2&gt;() &gt;* = nullptr ,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;             std::enable_if_t&lt; !Checks::hasFree_Multiplication&lt;Arg1,Arg2&gt;() &amp;&amp;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                Checks::hasMemFn_InPlaceMultiplication&lt;Arg1,Arg2&gt;() &gt;* = <span class="keyword">nullptr</span> &gt;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="namespaceFunG.html#ad023f2d2273af693f2b4ebceeb296dc8">   83</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="namespaceFunG.html#a014be932d3b4eb377d8e60271e864438">operator*</a>( Arg1 x, <span class="keyword">const</span> Arg2&amp; y)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    x *= y;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> x;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif // FUNG_UTIL_ADDMISSINGOPERATORS_HH</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keyword">template</span> &lt; <span class="keyword">class </span>Arg1 , <span class="keyword">class </span>Arg2 ,</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;             std::enable_if_t&lt; !std::is_base_of&lt;Arg1,Base&gt;() &amp;&amp; !std::is_base_of&lt;Arg2,Base&gt;() &gt;* = nullptr ,</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;             std::enable_if_t&lt; !std::is_arithmetic&lt;Arg1&gt;() &amp;&amp; !std::is_arithmetic&lt;Arg2&gt;() &gt;* = nullptr ,</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;             std::enable_if_t&lt; !Checks::hasFree_Multiplication&lt;Arg1,Arg2&gt;() &amp;&amp;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                               !Checks::hasMemFn_InPlaceMultiplication&lt;Arg1,Arg2&gt;() &gt;* = nullptr ,</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;             std::enable_if_t&lt; Checks::hasMemFn_rightmultiplyany&lt;Arg1,Arg2&gt;() &gt;* = <span class="keyword">nullptr</span> &gt;</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="namespaceFunG.html#a6e4d3266e119cd102800bf5c091e57fd">   96</a></span>&#160;  <span class="keyword">auto</span> <span class="keyword">operator</span>*( Arg1 x , <span class="keyword">const</span> Arg2&amp; y)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">return</span> x.rightmultiplyany(y);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keyword">template</span> &lt; <span class="keyword">class </span>Arg ,</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;             std::enable_if_t&lt; !std::is_base_of&lt;Base,Arg&gt;() &amp;&amp; !std::is_arithmetic&lt;Arg&gt;() &gt;* = nullptr ,</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;             std::enable_if_t&lt; !Checks::hasFree_Summation&lt;Arg&gt;() &amp;&amp;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                Checks::hasMemFn_InPlaceSummation&lt;Arg&gt;() &gt;* = <span class="keyword">nullptr</span> &gt;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="namespaceFunG.html#a063d3e8c19dbea3ee1396736fecb64e1">  106</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="namespaceFunG.html#ac7f61d48ff610ec4be8ee6994d165077">operator+</a>(Arg x, <span class="keyword">const</span> Arg&amp; y)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    x += y;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">return</span> x;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#endif // FUNG_UTIL_ADDMISSINGOPERATORS_HH</span></div>
+<div class="ttc" id="namespaceFunG_html_ac7f61d48ff610ec4be8ee6994d165077"><div class="ttname"><a href="namespaceFunG.html#ac7f61d48ff610ec4be8ee6994d165077">FunG::operator+</a></div><div class="ttdeci">auto operator+(const F &amp;f, const G &amp;g)</div><div class="ttdoc">overload of "+"-operator for the generation of functions. </div><div class="ttdef"><b>Definition:</b> generate.hh:121</div></div>
+<div class="ttc" id="namespaceFunG_html_a014be932d3b4eb377d8e60271e864438"><div class="ttname"><a href="namespaceFunG.html#a014be932d3b4eb377d8e60271e864438">FunG::operator*</a></div><div class="ttdeci">auto operator*(const F &amp;f, const G &amp;g)</div><div class="ttdoc">overload of "*"-operator for the generation of functions. </div><div class="ttdef"><b>Definition:</b> generate.hh:134</div></div>
 <div class="ttc" id="base_8hh_html"><div class="ttname"><a href="base_8hh.html">base.hh</a></div></div>
-<div class="ttc" id="static__checks_8hh_html"><div class="ttname"><a href="static__checks_8hh.html">static_checks.hh</a></div><div class="ttdoc">Static checks for detection of presence of different operators and functions. </div></div>
+<div class="ttc" id="static__checks_8hh_html"><div class="ttname"><a href="static__checks_8hh.html">static_checks.hh</a></div></div>
 <div class="ttc" id="namespaceFunG_html"><div class="ttname"><a href="namespaceFunG.html">FunG</a></div><div class="ttdoc">Main namespace of the FunG library. </div></div>
-<div class="ttc" id="namespaceFunG_1_1Checks_html_a9ff694f025cc9f2ff379b1f3833641bb"><div class="ttname"><a href="namespaceFunG_1_1Checks.html#a9ff694f025cc9f2ff379b1f3833641bb">FunG::Checks::inPlaceSummation</a></div><div class="ttdeci">constexpr bool inPlaceSummation()</div><div class="ttdoc">Check if objects of type Arg support in-place summation. </div><div class="ttdef"><b>Definition:</b> static_checks.hh:202</div></div>
-<div class="ttc" id="namespaceFunG_1_1Checks_html_a2dd2bf4016317339c1a609ddda1f4915"><div class="ttname"><a href="namespaceFunG_1_1Checks.html#a2dd2bf4016317339c1a609ddda1f4915">FunG::Checks::summation</a></div><div class="ttdeci">constexpr bool summation()</div><div class="ttdoc">Check if objects of type Arg support summation. </div><div class="ttdef"><b>Definition:</b> static_checks.hh:192</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Oct 3 2015 01:36:37 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 9 2015 20:39:26 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

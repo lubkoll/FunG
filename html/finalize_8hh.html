@@ -95,16 +95,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">finalize.hh File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;type_traits&gt;</code><br />
-<code>#include &quot;<a class="el" href="consistency__check_8hh_source.html">fung/util/consistency_check.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="evaluate__if__present_8hh_source.html">fung/util/evaluate_if_present.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="indexed__type_8hh_source.html">fung/util/indexed_type.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="static__checks_8hh_source.html">fung/util/static_checks.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="type__traits_8hh_source.html">fung/util/type_traits.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="zero_8hh_source.html">fung/util/zero.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="variable_8hh_source.html">fung/variable.hh</a>&quot;</code><br />
 </div>
 <p><a href="finalize_8hh_source.html">Go to the source code of this file.</a></p>
@@ -115,28 +115,17 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespaceFunG"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main namespace of the FunG library. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:ab2a52dfbc62e262c67f293fda5f81ef7"><td class="memTemplParams" colspan="2">template&lt;class F , bool arithmeticArgument = false&gt; </td></tr>
-<tr class="memitem:ab2a52dfbc62e262c67f293fda5f81ef7"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#ab2a52dfbc62e262c67f293fda5f81ef7">FunG::Finalize</a> = Detail::FinalizeImpl&lt; F, arithmeticArgument, Checks::hasVariable&lt; F &gt;() &gt;</td></tr>
-<tr class="memdesc:ab2a52dfbc62e262c67f293fda5f81ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish function definition.  <a href="#ab2a52dfbc62e262c67f293fda5f81ef7">More...</a><br /></td></tr>
-<tr class="separator:ab2a52dfbc62e262c67f293fda5f81ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a3a2af76439713dc7635e0c538ac34f15"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
 <tr class="memitem:a3a2af76439713dc7635e0c538ac34f15"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a3a2af76439713dc7635e0c538ac34f15">FunG::finalize</a> (const F &amp;f)</td></tr>
 <tr class="memdesc:a3a2af76439713dc7635e0c538ac34f15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish function definition.  <a href="#a3a2af76439713dc7635e0c538ac34f15">More...</a><br /></td></tr>
 <tr class="separator:a3a2af76439713dc7635e0c538ac34f15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c224cd9b212427657c6798ac8adf6ac"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
-<tr class="memitem:a0c224cd9b212427657c6798ac8adf6ac"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a0c224cd9b212427657c6798ac8adf6ac">FunG::finalize_scalar</a> (const F &amp;f)</td></tr>
-<tr class="memdesc:a0c224cd9b212427657c6798ac8adf6ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish function definition.  <a href="#a0c224cd9b212427657c6798ac8adf6ac">More...</a><br /></td></tr>
-<tr class="separator:a0c224cd9b212427657c6798ac8adf6ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Oct 3 2015 01:36:37 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 9 2015 20:39:26 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

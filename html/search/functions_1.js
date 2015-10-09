@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['calltorightmultiply',['callToRightMultiply',['../namespaceFunG_1_1Checks.html#a3874c9f52b64baa8ed9a87b9902eb54c',1,'FunG::Checks']]],
   ['cbrt',['cbrt',['../group__CMathGroup.html#gaa7f2552adfb8ec41aeb685adddd8bf98',1,'FunG']]],
   ['cbrt2',['cbrt2',['../group__CMathGroup.html#gafd27322fb64c6df3366f384c93819a06',1,'FunG']]],
   ['chain',['Chain',['../structFunG_1_1MathematicalOperations_1_1Chain.html#a11bbc19be4ace14904de0be6d703fb1f',1,'FunG::MathematicalOperations::Chain::Chain(const InitFunction &amp;...init)'],['../structFunG_1_1MathematicalOperations_1_1Chain.html#a3167b6304026eb0bd92e57d0dd0087e0',1,'FunG::MathematicalOperations::Chain::Chain(const F &amp;f_, const G &amp;g_)']]],
@@ -14,7 +13,6 @@ var searchData=
   ['computecofactor',['computeCofactor',['../group__LinearAlgebraGroup.html#gace32a0876d4a8333f3bfc564316085ed',1,'FunG::LinearAlgebra']]],
   ['computecofactordirectionalderivative',['computeCofactorDirectionalDerivative',['../group__LinearAlgebraGroup.html#ga3970ee7fa4d47612427a59cecf56746c',1,'FunG::LinearAlgebra']]],
   ['constant',['Constant',['../structFunG_1_1Constant.html#a29ead8431e2fadfef397aae5dc5a4511',1,'FunG::Constant::Constant()=default'],['../structFunG_1_1Constant.html#a310783597f488e554de12627bf56aec8',1,'FunG::Constant::Constant(Type const &amp;t_)'],['../namespaceFunG.html#a65c509062b62b3303268cabc97b75a65',1,'FunG::constant()']]],
-  ['constref',['constRef',['../namespaceFunG.html#abcfb38c2e995436816ea884803302f2d',1,'FunG']]],
   ['copyconcept',['CopyConcept',['../structFunG_1_1Concepts_1_1CopyConcept.html#afc08741d422ff46c2e681efc38913144',1,'FunG::Concepts::CopyConcept']]],
   ['cos',['Cos',['../structFunG_1_1Cos.html#a1c3c7f2efe426de2dab5bb4a307442ce',1,'FunG::Cos::Cos()'],['../group__CMathGroup.html#ga7e9b2ac717cd2350663293cb66ba6cbd',1,'FunG::cos()']]]
 ];

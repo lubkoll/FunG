@@ -135,7 +135,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a56701b5e83b96d2d6cc5c482e36caa39"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a56701b5e83b96d2d6cc5c482e36caa39">FunG::operator&lt;&lt;</a> (const F &amp;f, const G &amp;g)</td></tr>
 <tr class="memdesc:a56701b5e83b96d2d6cc5c482e36caa39"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "&lt;&lt;"-operator for chaining functions \(f\) and \(g\) to \( f \circ g \).  <a href="#a56701b5e83b96d2d6cc5c482e36caa39">More...</a><br /></td></tr>
 <tr class="separator:a56701b5e83b96d2d6cc5c482e36caa39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0c4552dee9179fb50b57ece863d835a"><td class="memTemplParams" colspan="2">template&lt;class F , class T , std::enable_if_t&lt; std::is_convertible&lt; T, decltype(std::declval&lt; F &gt;().d0())&gt;::value &amp;&amp;std::is_base_of&lt; Base, F &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:aa0c4552dee9179fb50b57ece863d835a"><td class="memTemplParams" colspan="2">template&lt;class F , class T , std::enable_if_t&lt; std::is_base_of&lt; Base, F &gt;::value &amp;&amp;!std::is_base_of&lt; Base, T &gt;::value &gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:aa0c4552dee9179fb50b57ece863d835a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#aa0c4552dee9179fb50b57ece863d835a">FunG::operator-</a> (const F &amp;f, const T &amp;t)</td></tr>
 <tr class="memdesc:aa0c4552dee9179fb50b57ece863d835a"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "-"-operator for the generation of functions. Here the second argument is a constant that is wrapped in to an object of type <a class="el" href="structFunG_1_1Constant.html" title="Wrap a constant. ">Constant</a>.  <a href="#aa0c4552dee9179fb50b57ece863d835a">More...</a><br /></td></tr>
 <tr class="separator:aa0c4552dee9179fb50b57ece863d835a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,7 +147,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Oct 3 2015 01:36:37 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 9 2015 20:39:26 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

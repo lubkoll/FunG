@@ -97,136 +97,117 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">concept_check.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="concept__check_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*   This file is part of the C++-library FunG.                              */</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/*   Copyright 2015 Lars Lubkoll                                               */</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   FunG is free software: you can redistribute it and/or modify            */</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*   it under the terms of the GNU General Public License as published by      */</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*   the Free Software Foundation, either version 3 of the License, or         */</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   (at your option) any later version.                                       */</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*   FunG is distributed in the hope that it will be useful,                 */</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/*   but WITHOUT ANY WARRANTY; without even the implied warranty of            */</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the             */</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/*   GNU General Public License for more details.                              */</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/*   You should have received a copy of the GNU General Public License         */</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/*   along with FunG.  If not, see &lt;http://www.gnu.org/licenses/&gt;.           */</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef FUNG_CONCEPT_CHECK_HH</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define FUNG_CONCEPT_CHECK_HH</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="consistency__check_8hh.html">fung/util/consistency_check.hh</a>&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="extract__rows__and__cols_8hh.html">fung/util/extract_rows_and_cols.hh</a>&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="static__checks_8hh.html">fung/util/static_checks.hh</a>&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceFunG.html">FunG</a></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">namespace </span>Concepts</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Arg &gt;</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="structFunG_1_1Concepts_1_1CopyConceptCheck.html">   38</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structFunG_1_1Concepts_1_1CopyConceptCheck.html">CopyConceptCheck</a></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      static_assert(std::is_copy_constructible&lt;Arg&gt;(), <span class="stringliteral">&quot;CopyConcept: Input types must be copy-constructible.&quot;</span>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      static_assert(std::is_copy_assignable&lt;Arg&gt;(), <span class="stringliteral">&quot;CopyConcept: Input types must be copy-assignable.&quot;</span>);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    };</div>
+<a href="concept__check_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Released under the terms of the GNU General Public License version 3 or later.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef FUNG_CONCEPT_CHECK_HH</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define FUNG_CONCEPT_CHECK_HH</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="extract__rows__and__cols_8hh.html">fung/util/extract_rows_and_cols.hh</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="static__checks_8hh.html">fung/util/static_checks.hh</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceFunG.html">FunG</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keyword">namespace </span>Concepts</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Arg &gt;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structFunG_1_1Concepts_1_1CopyConceptCheck.html">   20</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structFunG_1_1Concepts_1_1CopyConceptCheck.html">CopyConceptCheck</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      static_assert(std::is_copy_constructible&lt;Arg&gt;(), <span class="stringliteral">&quot;CopyConcept: Input types must be copy-constructible.&quot;</span>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      static_assert(std::is_copy_assignable&lt;Arg&gt;(), <span class="stringliteral">&quot;CopyConcept: Input types must be copy-assignable.&quot;</span>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    };</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Arg &gt;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="structFunG_1_1Concepts_1_1MultiplyWithArithmeticFromLeftConceptCheck.html">   33</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structFunG_1_1Concepts_1_1MultiplyWithArithmeticFromLeftConceptCheck.html">MultiplyWithArithmeticFromLeftConceptCheck</a></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      static_assert(Checks::hasFree_Multiplication&lt; Arg , double &gt; () ||</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    Checks::hasMemFn_InPlaceMultiplication&lt; Arg , double &gt;(),</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    <span class="stringliteral">&quot;MultiplyWithArithmeticFromLeftConcept: Input types must support multiplication with double from the left (operator*(double,const Arg&amp;))&quot;</span>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      static_assert(Checks::hasFree_Multiplication&lt; Arg , int &gt; () ||</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    Checks::hasMemFn_InPlaceMultiplication&lt; Arg , int &gt;(),</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    <span class="stringliteral">&quot;MultiplyWithArithmeticFromLeftConcept: Input types must support multiplication with int from the left (operator*(int,const Arg&amp;))&quot;</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    };</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Arg &gt;</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="structFunG_1_1Concepts_1_1MultiplyWithArithmeticFromLeftConceptCheck.html">   51</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structFunG_1_1Concepts_1_1MultiplyWithArithmeticFromLeftConceptCheck.html">MultiplyWithArithmeticFromLeftConceptCheck</a></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      static_assert(Checks::multiplicationWithArithmeticFromLeft&lt; Arg , double &gt; () ||</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                    Checks::inPlaceMultiplicationWithArithmetic&lt; Arg , double &gt;(),</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                    <span class="stringliteral">&quot;MultiplyWithArithmeticFromLeftConcept: Input types must support multiplication with double from the left (operator*(double,const Arg&amp;))&quot;</span>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      static_assert(Checks::multiplicationWithArithmeticFromLeft&lt; Arg , int &gt; () ||</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                    Checks::inPlaceMultiplicationWithArithmetic&lt; Arg , int &gt;(),</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    <span class="stringliteral">&quot;MultiplyWithArithmeticFromLeftConcept: Input types must support multiplication with int from the left (operator*(int,const Arg&amp;))&quot;</span>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    };</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Arg &gt;</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="structFunG_1_1Concepts_1_1SummationConceptCheck.html">   68</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structFunG_1_1Concepts_1_1SummationConceptCheck.html">SummationConceptCheck</a></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      static_assert(Checks::summation&lt; Arg &gt;() ||</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    Checks::inPlaceSummation&lt; Arg &gt;(),</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    <span class="stringliteral">&quot;SummationConcept: Input types must support summation (operator+(const Arg&amp;, const Arg&amp;)&quot;</span>);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    };</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Arg1 , <span class="keyword">class</span> Arg2 &gt;</div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="structFunG_1_1Concepts_1_1MultiplicationConceptCheck.html">   81</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structFunG_1_1Concepts_1_1MultiplicationConceptCheck.html">MultiplicationConceptCheck</a></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      static_assert(Checks::multiplication&lt; Arg1 , Arg2 &gt;() ||</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                    Checks::callToRightMultiply&lt; Arg1 , Arg2 &gt;() ||</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                    Checks::inPlaceMultiplication&lt; Arg1 , Arg2 &gt;(),</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                    <span class="stringliteral">&quot;MultiplicationConcept: Input types must support multiplication (operator*(const Arg&amp;, const Arg&amp;&quot;</span>);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    };</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Arg&gt;</div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="structFunG_1_1Concepts_1_1ArithmeticConceptCheck.html">   95</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structFunG_1_1Concepts_1_1ArithmeticConceptCheck.html">ArithmeticConceptCheck</a></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        : <a class="code" href="structFunG_1_1Concepts_1_1CopyConceptCheck.html">CopyConceptCheck</a>&lt;Arg&gt; ,</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="structFunG_1_1Concepts_1_1MultiplyWithArithmeticFromLeftConceptCheck.html">MultiplyWithArithmeticFromLeftConceptCheck</a>&lt;Arg&gt; ,</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="structFunG_1_1Concepts_1_1SummationConceptCheck.html">SummationConceptCheck</a>&lt;Arg&gt;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    {};</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix &gt;</div>
-<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="structFunG_1_1Concepts_1_1MatrixConceptCheck.html">  107</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structFunG_1_1Concepts_1_1MatrixConceptCheck.html">MatrixConceptCheck</a> : <a class="code" href="structFunG_1_1Concepts_1_1ArithmeticConceptCheck.html">ArithmeticConceptCheck</a>&lt;Matrix&gt;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      static_assert(Checks::AccessViaSquareBracketsForMatrix&lt;Matrix&gt;::value ||</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                    Checks::AccessViaRoundBracketsForMatrix&lt;Matrix&gt;::value,</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    <span class="stringliteral">&quot;MatrixConcept: Currently only matrices that allow access to their elements via A[i][j] or A(i,j) are supported.\nYou may contact the developer to ask for further access or provide your own patch.&quot;</span>);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    };</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Vector &gt;</div>
-<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="structFunG_1_1Concepts_1_1VectorConceptCheck.html">  120</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structFunG_1_1Concepts_1_1VectorConceptCheck.html">VectorConceptCheck</a> : <a class="code" href="structFunG_1_1Concepts_1_1ArithmeticConceptCheck.html">ArithmeticConceptCheck</a>&lt;Vector&gt;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;      static_assert(Checks::AccessViaSquareBracketsForVector&lt;Vector&gt;::value ||</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                    Checks::AccessViaRoundBracketsForVector&lt;Vector&gt;::value,</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                    <span class="stringliteral">&quot;VectorConcept: Currently only vectors that allow access to their elements via v[i] or v(i) are supported.\nYou may contact the developer to ask for further access or provide your own patch.&quot;</span>);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    };</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix &gt;</div>
-<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="structFunG_1_1Concepts_1_1SquareMatrixConceptCheck.html">  132</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structFunG_1_1Concepts_1_1SquareMatrixConceptCheck.html">SquareMatrixConceptCheck</a> : <a class="code" href="structFunG_1_1Concepts_1_1MatrixConceptCheck.html">MatrixConceptCheck</a>&lt;Matrix&gt;, <a class="code" href="structFunG_1_1Concepts_1_1MultiplicationConceptCheck.html">MultiplicationConceptCheck</a>&lt;Matrix,Matrix&gt;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    {</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;      static_assert( LinearAlgebra::numberOfRows&lt;Matrix&gt;() == LinearAlgebra::numberOfColumns&lt;Matrix&gt;(),</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                     <span class="stringliteral">&quot;SquareMatrixConcept: Input matrix must be symmetric.&quot;</span>);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    };</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> F&gt;</div>
-<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="structFunG_1_1Concepts_1_1FunctionConceptCheck.html">  145</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structFunG_1_1Concepts_1_1FunctionConceptCheck.html">FunctionConceptCheck</a> : <a class="code" href="structFunG_1_1Concepts_1_1CopyConceptCheck.html">CopyConceptCheck</a>&lt;F&gt;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    {</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;      static_assert( hasD0MemberFunction&lt;F&gt;() ,</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                     <span class="stringliteral">&quot;FunctionConcept: Functions must provide a member function d0() to access its value.&quot;</span> );</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    };</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  }</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">#endif // FUNG_CONCEPT_CHECK_HH</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Arg &gt;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="structFunG_1_1Concepts_1_1SummationConceptCheck.html">   50</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structFunG_1_1Concepts_1_1SummationConceptCheck.html">SummationConceptCheck</a></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      static_assert(Checks::hasFree_Summation&lt; Arg &gt;() ||</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    Checks::hasMemFn_InPlaceSummation&lt; Arg &gt;(),</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                    <span class="stringliteral">&quot;SummationConcept: Input types must support summation (operator+(const Arg&amp;, const Arg&amp;)&quot;</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    };</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Arg1 , <span class="keyword">class</span> Arg2 &gt;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="structFunG_1_1Concepts_1_1MultiplicationConceptCheck.html">   63</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structFunG_1_1Concepts_1_1MultiplicationConceptCheck.html">MultiplicationConceptCheck</a></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      static_assert(Checks::hasFree_Multiplication&lt; Arg1 , Arg2 &gt;() ||</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    Checks::hasMemFn_rightmultiplyany&lt; Arg1 , Arg2 &gt;() ||</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    Checks::hasMemFn_InPlaceMultiplication&lt; Arg1 , Arg2 &gt;(),</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    <span class="stringliteral">&quot;MultiplicationConcept: Input types must support multiplication (operator*(const Arg&amp;, const Arg&amp;&quot;</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    };</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Arg&gt;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="structFunG_1_1Concepts_1_1ArithmeticConceptCheck.html">   77</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structFunG_1_1Concepts_1_1ArithmeticConceptCheck.html">ArithmeticConceptCheck</a></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        : <a class="code" href="structFunG_1_1Concepts_1_1CopyConceptCheck.html">CopyConceptCheck</a>&lt;Arg&gt; ,</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="structFunG_1_1Concepts_1_1MultiplyWithArithmeticFromLeftConceptCheck.html">MultiplyWithArithmeticFromLeftConceptCheck</a>&lt;Arg&gt; ,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="structFunG_1_1Concepts_1_1SummationConceptCheck.html">SummationConceptCheck</a>&lt;Arg&gt;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {};</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix &gt;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="structFunG_1_1Concepts_1_1MatrixConceptCheck.html">   89</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structFunG_1_1Concepts_1_1MatrixConceptCheck.html">MatrixConceptCheck</a> : <a class="code" href="structFunG_1_1Concepts_1_1ArithmeticConceptCheck.html">ArithmeticConceptCheck</a>&lt;Matrix&gt;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      static_assert(Checks::HasMemFn_SquareBracketAccessForMatrix&lt;Matrix&gt;::value ||</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                    Checks::HasMemFn_RoundBracketAccessForMatrix&lt;Matrix&gt;::value,</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                    <span class="stringliteral">&quot;MatrixConcept: Currently only matrices that allow access to their elements via A[i][j] or A(i,j) are supported.\nYou may contact the developer to ask for further access or provide your own patch.&quot;</span>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    };</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Vector &gt;</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="structFunG_1_1Concepts_1_1VectorConceptCheck.html">  102</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structFunG_1_1Concepts_1_1VectorConceptCheck.html">VectorConceptCheck</a> : <a class="code" href="structFunG_1_1Concepts_1_1ArithmeticConceptCheck.html">ArithmeticConceptCheck</a>&lt;Vector&gt;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      static_assert(Checks::HasMemFn_SquareBracketAccessForVector&lt;Vector&gt;::value ||</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                    Checks::HasMemFn_RoundBracketAccessForVector&lt;Vector&gt;::value,</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                    <span class="stringliteral">&quot;VectorConcept: Currently only vectors that allow access to their elements via v[i] or v(i) are supported.\nYou may contact the developer to ask for further access or provide your own patch.&quot;</span>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    };</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix &gt;</div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="structFunG_1_1Concepts_1_1SquareMatrixConceptCheck.html">  114</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structFunG_1_1Concepts_1_1SquareMatrixConceptCheck.html">SquareMatrixConceptCheck</a> : <a class="code" href="structFunG_1_1Concepts_1_1MatrixConceptCheck.html">MatrixConceptCheck</a>&lt;Matrix&gt;, <a class="code" href="structFunG_1_1Concepts_1_1MultiplicationConceptCheck.html">MultiplicationConceptCheck</a>&lt;Matrix,Matrix&gt;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      static_assert( LinearAlgebra::numberOfRows&lt;Matrix&gt;() == LinearAlgebra::numberOfColumns&lt;Matrix&gt;(),</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                     <span class="stringliteral">&quot;SquareMatrixConcept: Input matrix must be symmetric.&quot;</span>);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    };</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> F&gt;</div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="structFunG_1_1Concepts_1_1FunctionConceptCheck.html">  127</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structFunG_1_1Concepts_1_1FunctionConceptCheck.html">FunctionConceptCheck</a> : <a class="code" href="structFunG_1_1Concepts_1_1CopyConceptCheck.html">CopyConceptCheck</a>&lt;F&gt;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;      static_assert( Checks::HasMemFn_d0&lt;F&gt;() ,</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                     <span class="stringliteral">&quot;FunctionConcept: Functions must provide a member function d0() to access its value.&quot;</span> );</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    };</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">#endif // FUNG_CONCEPT_CHECK_HH</span></div>
 <div class="ttc" id="extract__rows__and__cols_8hh_html"><div class="ttname"><a href="extract__rows__and__cols_8hh.html">extract_rows_and_cols.hh</a></div></div>
-<div class="ttc" id="structFunG_1_1Concepts_1_1MultiplyWithArithmeticFromLeftConceptCheck_html"><div class="ttname"><a href="structFunG_1_1Concepts_1_1MultiplyWithArithmeticFromLeftConceptCheck.html">FunG::Concepts::MultiplyWithArithmeticFromLeftConceptCheck</a></div><div class="ttdoc">Static check if the requirements of MultiplyWithArithmeticFromLeftConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> concept_check.hh:51</div></div>
-<div class="ttc" id="structFunG_1_1Concepts_1_1MultiplicationConceptCheck_html"><div class="ttname"><a href="structFunG_1_1Concepts_1_1MultiplicationConceptCheck.html">FunG::Concepts::MultiplicationConceptCheck</a></div><div class="ttdoc">Static check if the requirements of MultiplicationConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> concept_check.hh:81</div></div>
-<div class="ttc" id="structFunG_1_1Concepts_1_1SummationConceptCheck_html"><div class="ttname"><a href="structFunG_1_1Concepts_1_1SummationConceptCheck.html">FunG::Concepts::SummationConceptCheck</a></div><div class="ttdoc">Static check if the requirements of SummationConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> concept_check.hh:68</div></div>
-<div class="ttc" id="structFunG_1_1Concepts_1_1ArithmeticConceptCheck_html"><div class="ttname"><a href="structFunG_1_1Concepts_1_1ArithmeticConceptCheck.html">FunG::Concepts::ArithmeticConceptCheck</a></div><div class="ttdoc">Static check if the requirements of ArithmeticConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> concept_check.hh:95</div></div>
-<div class="ttc" id="static__checks_8hh_html"><div class="ttname"><a href="static__checks_8hh.html">static_checks.hh</a></div><div class="ttdoc">Static checks for detection of presence of different operators and functions. </div></div>
-<div class="ttc" id="consistency__check_8hh_html"><div class="ttname"><a href="consistency__check_8hh.html">consistency_check.hh</a></div></div>
-<div class="ttc" id="structFunG_1_1Concepts_1_1VectorConceptCheck_html"><div class="ttname"><a href="structFunG_1_1Concepts_1_1VectorConceptCheck.html">FunG::Concepts::VectorConceptCheck</a></div><div class="ttdoc">Static check if the requirements of VectorConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> concept_check.hh:120</div></div>
-<div class="ttc" id="structFunG_1_1Concepts_1_1MatrixConceptCheck_html"><div class="ttname"><a href="structFunG_1_1Concepts_1_1MatrixConceptCheck.html">FunG::Concepts::MatrixConceptCheck</a></div><div class="ttdoc">Static check if the requirements of MatrixConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> concept_check.hh:107</div></div>
-<div class="ttc" id="structFunG_1_1Concepts_1_1FunctionConceptCheck_html"><div class="ttname"><a href="structFunG_1_1Concepts_1_1FunctionConceptCheck.html">FunG::Concepts::FunctionConceptCheck</a></div><div class="ttdoc">Static check if the requirements of FunctionConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> concept_check.hh:145</div></div>
+<div class="ttc" id="structFunG_1_1Concepts_1_1MultiplyWithArithmeticFromLeftConceptCheck_html"><div class="ttname"><a href="structFunG_1_1Concepts_1_1MultiplyWithArithmeticFromLeftConceptCheck.html">FunG::Concepts::MultiplyWithArithmeticFromLeftConceptCheck</a></div><div class="ttdoc">Static check if the requirements of MultiplyWithArithmeticFromLeftConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> concept_check.hh:33</div></div>
+<div class="ttc" id="structFunG_1_1Concepts_1_1MultiplicationConceptCheck_html"><div class="ttname"><a href="structFunG_1_1Concepts_1_1MultiplicationConceptCheck.html">FunG::Concepts::MultiplicationConceptCheck</a></div><div class="ttdoc">Static check if the requirements of MultiplicationConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> concept_check.hh:63</div></div>
+<div class="ttc" id="structFunG_1_1Concepts_1_1SummationConceptCheck_html"><div class="ttname"><a href="structFunG_1_1Concepts_1_1SummationConceptCheck.html">FunG::Concepts::SummationConceptCheck</a></div><div class="ttdoc">Static check if the requirements of SummationConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> concept_check.hh:50</div></div>
+<div class="ttc" id="structFunG_1_1Concepts_1_1ArithmeticConceptCheck_html"><div class="ttname"><a href="structFunG_1_1Concepts_1_1ArithmeticConceptCheck.html">FunG::Concepts::ArithmeticConceptCheck</a></div><div class="ttdoc">Static check if the requirements of ArithmeticConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> concept_check.hh:77</div></div>
+<div class="ttc" id="static__checks_8hh_html"><div class="ttname"><a href="static__checks_8hh.html">static_checks.hh</a></div></div>
+<div class="ttc" id="structFunG_1_1Concepts_1_1VectorConceptCheck_html"><div class="ttname"><a href="structFunG_1_1Concepts_1_1VectorConceptCheck.html">FunG::Concepts::VectorConceptCheck</a></div><div class="ttdoc">Static check if the requirements of VectorConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> concept_check.hh:102</div></div>
+<div class="ttc" id="structFunG_1_1Concepts_1_1MatrixConceptCheck_html"><div class="ttname"><a href="structFunG_1_1Concepts_1_1MatrixConceptCheck.html">FunG::Concepts::MatrixConceptCheck</a></div><div class="ttdoc">Static check if the requirements of MatrixConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> concept_check.hh:89</div></div>
+<div class="ttc" id="structFunG_1_1Concepts_1_1FunctionConceptCheck_html"><div class="ttname"><a href="structFunG_1_1Concepts_1_1FunctionConceptCheck.html">FunG::Concepts::FunctionConceptCheck</a></div><div class="ttdoc">Static check if the requirements of FunctionConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> concept_check.hh:127</div></div>
 <div class="ttc" id="namespaceFunG_html"><div class="ttname"><a href="namespaceFunG.html">FunG</a></div><div class="ttdoc">Main namespace of the FunG library. </div></div>
-<div class="ttc" id="structFunG_1_1Concepts_1_1CopyConceptCheck_html"><div class="ttname"><a href="structFunG_1_1Concepts_1_1CopyConceptCheck.html">FunG::Concepts::CopyConceptCheck</a></div><div class="ttdoc">Static check if the requirements of CopyConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> concept_check.hh:38</div></div>
-<div class="ttc" id="structFunG_1_1Concepts_1_1SquareMatrixConceptCheck_html"><div class="ttname"><a href="structFunG_1_1Concepts_1_1SquareMatrixConceptCheck.html">FunG::Concepts::SquareMatrixConceptCheck</a></div><div class="ttdoc">Static check if the requirements of SquareMatrixConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> concept_check.hh:132</div></div>
+<div class="ttc" id="structFunG_1_1Concepts_1_1CopyConceptCheck_html"><div class="ttname"><a href="structFunG_1_1Concepts_1_1CopyConceptCheck.html">FunG::Concepts::CopyConceptCheck</a></div><div class="ttdoc">Static check if the requirements of CopyConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> concept_check.hh:20</div></div>
+<div class="ttc" id="structFunG_1_1Concepts_1_1SquareMatrixConceptCheck_html"><div class="ttname"><a href="structFunG_1_1Concepts_1_1SquareMatrixConceptCheck.html">FunG::Concepts::SquareMatrixConceptCheck</a></div><div class="ttdoc">Static check if the requirements of SquareMatrixConcept are satisfied. </div><div class="ttdef"><b>Definition:</b> concept_check.hh:114</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Oct 3 2015 01:36:37 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 9 2015 20:39:26 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

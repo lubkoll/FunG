@@ -97,139 +97,122 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">exp.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="exp_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*   This file is part of the C++-library FunG.                              */</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/*   Copyright 2015 Lars Lubkoll                                               */</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   FunG is free software: you can redistribute it and/or modify            */</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*   it under the terms of the GNU General Public License as published by      */</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*   the Free Software Foundation, either version 3 of the License, or         */</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   (at your option) any later version.                                       */</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*   FunG is distributed in the hope that it will be useful,                 */</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/*   but WITHOUT ANY WARRANTY; without even the implied warranty of            */</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the             */</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/*   GNU General Public License for more details.                              */</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/*   You should have received a copy of the GNU General Public License         */</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/*   along with FunG.  If not, see &lt;http://www.gnu.org/licenses/&gt;.           */</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/*                                                                             */</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef FUNG_CMATH_EXP_HH</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define FUNG_CMATH_EXP_HH</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base_8hh.html">fung/util/base.hh</a>&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chainer_8hh.html">fung/util/chainer.hh</a>&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceFunG.html">FunG</a></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp.html">   38</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structFunG_1_1Exp.html">Exp</a> : <a class="code" href="structFunG_1_1Base.html">Base</a> , Chainer&lt;Exp&gt;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  {</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp.html#a2abec31ebf5f8ee4877fb1c05d2fdad2">   41</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="structFunG_1_1Exp.html#a2abec31ebf5f8ee4877fb1c05d2fdad2">Exp</a>(<span class="keywordtype">double</span> x=0.) { <a class="code" href="structFunG_1_1Exp.html#aabd4ab4e94bdc06bc1e773ffd023e0a7">update</a>(x); }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp.html#aabd4ab4e94bdc06bc1e773ffd023e0a7">   44</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structFunG_1_1Exp.html#aabd4ab4e94bdc06bc1e773ffd023e0a7">update</a>(<span class="keywordtype">double</span> x)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      e_x = <a class="code" href="group__CMathGroup.html#ga00135c8521411f13813f9b972ea4e231">::exp</a>(x);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp.html#a753d56db833507c33fe91714d119c755">   50</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structFunG_1_1Exp.html#a753d56db833507c33fe91714d119c755">d0</a>() const noexcept</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <span class="keywordflow">return</span> e_x;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp.html#ac02fb3f10f654a60fef470b271e26b41">   56</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structFunG_1_1Exp.html#ac02fb3f10f654a60fef470b271e26b41">d1</a>(<span class="keywordtype">double</span> dx = 1.)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="keywordflow">return</span> e_x * dx;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp.html#a1a5b4e6b0cedb08548d0e83457908182">   62</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structFunG_1_1Exp.html#a1a5b4e6b0cedb08548d0e83457908182">d2</a>(<span class="keywordtype">double</span> dx = 1., <span class="keywordtype">double</span> dy = 1.)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      <span class="keywordflow">return</span> e_x * dx * dy;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp.html#adea30657eb96144009f7cc96451391e8">   68</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structFunG_1_1Exp.html#adea30657eb96144009f7cc96451391e8">d3</a>(<span class="keywordtype">double</span> dx = 1., <span class="keywordtype">double</span> dy = 1., <span class="keywordtype">double</span> dz = 1.)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="keywordflow">return</span> e_x * dx * dy * dz;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<a href="exp_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Released under the terms of the GNU General Public License version 3 or later.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef FUNG_CMATH_EXP_HH</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define FUNG_CMATH_EXP_HH</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base_8hh.html">fung/util/base.hh</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chainer_8hh.html">fung/util/chainer.hh</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceFunG.html">FunG</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp.html">   21</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structFunG_1_1Exp.html">Exp</a> : <a class="code" href="structFunG_1_1Base.html">Base</a> , Chainer&lt;Exp&gt;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  {</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp.html#a2abec31ebf5f8ee4877fb1c05d2fdad2">   24</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="structFunG_1_1Exp.html#a2abec31ebf5f8ee4877fb1c05d2fdad2">Exp</a>(<span class="keywordtype">double</span> x=0.) { <a class="code" href="structFunG_1_1Exp.html#aabd4ab4e94bdc06bc1e773ffd023e0a7">update</a>(x); }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp.html#aabd4ab4e94bdc06bc1e773ffd023e0a7">   27</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structFunG_1_1Exp.html#aabd4ab4e94bdc06bc1e773ffd023e0a7">update</a>(<span class="keywordtype">double</span> x)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      e_x = <a class="code" href="group__CMathGroup.html#ga00135c8521411f13813f9b972ea4e231">::exp</a>(x);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp.html#a753d56db833507c33fe91714d119c755">   33</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structFunG_1_1Exp.html#a753d56db833507c33fe91714d119c755">d0</a>() const noexcept</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      <span class="keywordflow">return</span> e_x;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp.html#ac02fb3f10f654a60fef470b271e26b41">   39</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structFunG_1_1Exp.html#ac02fb3f10f654a60fef470b271e26b41">d1</a>(<span class="keywordtype">double</span> dx = 1.)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="keywordflow">return</span> e_x * dx;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp.html#a1a5b4e6b0cedb08548d0e83457908182">   45</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structFunG_1_1Exp.html#a1a5b4e6b0cedb08548d0e83457908182">d2</a>(<span class="keywordtype">double</span> dx = 1., <span class="keywordtype">double</span> dy = 1.)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <span class="keywordflow">return</span> e_x * dx * dy;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp.html#adea30657eb96144009f7cc96451391e8">   51</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structFunG_1_1Exp.html#adea30657eb96144009f7cc96451391e8">d3</a>(<span class="keywordtype">double</span> dx = 1., <span class="keywordtype">double</span> dy = 1., <span class="keywordtype">double</span> dz = 1.)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <span class="keywordflow">return</span> e_x * dx * dy * dz;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">double</span> e_x = 1.;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  };</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp2.html">   68</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structFunG_1_1Exp2.html">Exp2</a> : <a class="code" href="structFunG_1_1Base.html">Base</a> , Chainer&lt;Exp2&gt;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  {</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp2.html#aa5e03d1e3a39a1c2151cdfe092461060">   71</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="structFunG_1_1Exp2.html#aa5e03d1e3a39a1c2151cdfe092461060">Exp2</a>(<span class="keywordtype">double</span> x=0.) { <a class="code" href="structFunG_1_1Exp2.html#a256e50dac0e06814d2fb150ac997ea5d">update</a>(x); }</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">double</span> e_x = 1.;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  };</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp2.html">   85</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structFunG_1_1Exp2.html">Exp2</a> : <a class="code" href="structFunG_1_1Base.html">Base</a> , Chainer&lt;Exp2&gt;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  {</div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp2.html#aa5e03d1e3a39a1c2151cdfe092461060">   88</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="structFunG_1_1Exp2.html#aa5e03d1e3a39a1c2151cdfe092461060">Exp2</a>(<span class="keywordtype">double</span> x=0.) { <a class="code" href="structFunG_1_1Exp2.html#a256e50dac0e06814d2fb150ac997ea5d">update</a>(x); }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp2.html#a256e50dac0e06814d2fb150ac997ea5d">   91</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structFunG_1_1Exp2.html#a256e50dac0e06814d2fb150ac997ea5d">update</a>(<span class="keywordtype">double</span> x)</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      value = <a class="code" href="group__CMathGroup.html#ga7724faf7db6e9583ac91df322c26ecf5">exp2</a>(x);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp2.html#a70a452fa4b190e2c427fd87f17c98dc5">   97</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structFunG_1_1Exp2.html#a70a452fa4b190e2c427fd87f17c98dc5">d0</a>() const noexcept</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      <span class="keywordflow">return</span> value;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp2.html#a45eae0e2d4a7d3ec8c02eeb237fcc8ae">  103</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structFunG_1_1Exp2.html#a45eae0e2d4a7d3ec8c02eeb237fcc8ae">d1</a>(<span class="keywordtype">double</span> dx = 1.)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      <span class="keywordflow">return</span> value * ln2 * dx;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp2.html#a5f4e6755ebce5994f79a0711725bf9a3">  109</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structFunG_1_1Exp2.html#a5f4e6755ebce5994f79a0711725bf9a3">d2</a>(<span class="keywordtype">double</span> dx = 1., <span class="keywordtype">double</span> dy = 1.)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      <span class="keywordflow">return</span> value * ln2 * ln2 * dx * dy;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp2.html#aff3797bff08d2ec89a72a8ce7779d08e">  115</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structFunG_1_1Exp2.html#aff3797bff08d2ec89a72a8ce7779d08e">d3</a>(<span class="keywordtype">double</span> dx = 1., <span class="keywordtype">double</span> dy = 1., <span class="keywordtype">double</span> dz = 1.)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      <span class="keywordflow">return</span> value * ln2 * ln2 * ln2 * dx * dy * dz;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">double</span> value = 1., ln2 = log(2.);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  };</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  template &lt;class Function, class = std::enable_if_t&lt;std::is_base_of&lt;Base,Function&gt;::value&gt; &gt;</div>
-<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="group__CMathGroup.html#ga00135c8521411f13813f9b972ea4e231">  131</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__CMathGroup.html#ga00135c8521411f13813f9b972ea4e231">exp</a>(<span class="keyword">const</span> Function&amp; f)</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  {</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structFunG_1_1Exp.html">Exp</a>()(f);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  template &lt;class Function, class = std::enable_if_t&lt;std::is_base_of&lt;Base,Function&gt;::value&gt; &gt;</div>
-<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="group__CMathGroup.html#ga7724faf7db6e9583ac91df322c26ecf5">  143</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__CMathGroup.html#ga7724faf7db6e9583ac91df322c26ecf5">exp2</a>(<span class="keyword">const</span> Function&amp; f)</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  {</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structFunG_1_1Exp2.html">Exp2</a>()(f);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  }</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">#endif // FUNG_CMATH_EXP_HH</span></div>
-<div class="ttc" id="structFunG_1_1Exp2_html_a70a452fa4b190e2c427fd87f17c98dc5"><div class="ttname"><a href="structFunG_1_1Exp2.html#a70a452fa4b190e2c427fd87f17c98dc5">FunG::Exp2::d0</a></div><div class="ttdeci">double d0() const noexcept</div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> exp.hh:97</div></div>
-<div class="ttc" id="structFunG_1_1Base_html"><div class="ttname"><a href="structFunG_1_1Base.html">FunG::Base</a></div><div class="ttdoc">Base class for functions satisfying FunctionConcept. Required a.o. for enabling the operators in gene...</div><div class="ttdef"><b>Definition:</b> base.hh:27</div></div>
-<div class="ttc" id="structFunG_1_1Exp2_html_a256e50dac0e06814d2fb150ac997ea5d"><div class="ttname"><a href="structFunG_1_1Exp2.html#a256e50dac0e06814d2fb150ac997ea5d">FunG::Exp2::update</a></div><div class="ttdeci">void update(double x)</div><div class="ttdoc">Set point of evaluation. </div><div class="ttdef"><b>Definition:</b> exp.hh:91</div></div>
-<div class="ttc" id="structFunG_1_1Exp_html_a1a5b4e6b0cedb08548d0e83457908182"><div class="ttname"><a href="structFunG_1_1Exp.html#a1a5b4e6b0cedb08548d0e83457908182">FunG::Exp::d2</a></div><div class="ttdeci">double d2(double dx=1., double dy=1.) const </div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> exp.hh:62</div></div>
-<div class="ttc" id="structFunG_1_1Exp_html_a753d56db833507c33fe91714d119c755"><div class="ttname"><a href="structFunG_1_1Exp.html#a753d56db833507c33fe91714d119c755">FunG::Exp::d0</a></div><div class="ttdeci">double d0() const noexcept</div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> exp.hh:50</div></div>
-<div class="ttc" id="group__CMathGroup_html_ga7724faf7db6e9583ac91df322c26ecf5"><div class="ttname"><a href="group__CMathGroup.html#ga7724faf7db6e9583ac91df322c26ecf5">FunG::exp2</a></div><div class="ttdeci">auto exp2(const Function &amp;f)</div><div class="ttdoc">Generate . </div><div class="ttdef"><b>Definition:</b> exp.hh:143</div></div>
-<div class="ttc" id="structFunG_1_1Exp_html_a2abec31ebf5f8ee4877fb1c05d2fdad2"><div class="ttname"><a href="structFunG_1_1Exp.html#a2abec31ebf5f8ee4877fb1c05d2fdad2">FunG::Exp::Exp</a></div><div class="ttdeci">Exp(double x=0.)</div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> exp.hh:41</div></div>
-<div class="ttc" id="structFunG_1_1Exp_html_ac02fb3f10f654a60fef470b271e26b41"><div class="ttname"><a href="structFunG_1_1Exp.html#ac02fb3f10f654a60fef470b271e26b41">FunG::Exp::d1</a></div><div class="ttdeci">double d1(double dx=1.) const </div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> exp.hh:56</div></div>
-<div class="ttc" id="structFunG_1_1Exp2_html_aff3797bff08d2ec89a72a8ce7779d08e"><div class="ttname"><a href="structFunG_1_1Exp2.html#aff3797bff08d2ec89a72a8ce7779d08e">FunG::Exp2::d3</a></div><div class="ttdeci">double d3(double dx=1., double dy=1., double dz=1.) const </div><div class="ttdoc">Third (directional) derivative. </div><div class="ttdef"><b>Definition:</b> exp.hh:115</div></div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp2.html#a256e50dac0e06814d2fb150ac997ea5d">   74</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structFunG_1_1Exp2.html#a256e50dac0e06814d2fb150ac997ea5d">update</a>(<span class="keywordtype">double</span> x)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      value = <a class="code" href="group__CMathGroup.html#ga7724faf7db6e9583ac91df322c26ecf5">exp2</a>(x);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp2.html#a70a452fa4b190e2c427fd87f17c98dc5">   80</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structFunG_1_1Exp2.html#a70a452fa4b190e2c427fd87f17c98dc5">d0</a>() const noexcept</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      <span class="keywordflow">return</span> value;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp2.html#a45eae0e2d4a7d3ec8c02eeb237fcc8ae">   86</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structFunG_1_1Exp2.html#a45eae0e2d4a7d3ec8c02eeb237fcc8ae">d1</a>(<span class="keywordtype">double</span> dx = 1.)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      <span class="keywordflow">return</span> value * ln2 * dx;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp2.html#a5f4e6755ebce5994f79a0711725bf9a3">   92</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structFunG_1_1Exp2.html#a5f4e6755ebce5994f79a0711725bf9a3">d2</a>(<span class="keywordtype">double</span> dx = 1., <span class="keywordtype">double</span> dy = 1.)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      <span class="keywordflow">return</span> value * ln2 * ln2 * dx * dy;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="structFunG_1_1Exp2.html#aff3797bff08d2ec89a72a8ce7779d08e">   98</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structFunG_1_1Exp2.html#aff3797bff08d2ec89a72a8ce7779d08e">d3</a>(<span class="keywordtype">double</span> dx = 1., <span class="keywordtype">double</span> dy = 1., <span class="keywordtype">double</span> dz = 1.)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      <span class="keywordflow">return</span> value * ln2 * ln2 * ln2 * dx * dy * dz;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">double</span> value = 1., ln2 = log(2.);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  };</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  template &lt;class Function, class = std::enable_if_t&lt;std::is_base_of&lt;Base,Function&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="group__CMathGroup.html#ga00135c8521411f13813f9b972ea4e231">  114</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__CMathGroup.html#ga00135c8521411f13813f9b972ea4e231">exp</a>(<span class="keyword">const</span> Function&amp; f)</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structFunG_1_1Exp.html">Exp</a>()(f);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  template &lt;class Function, class = std::enable_if_t&lt;std::is_base_of&lt;Base,Function&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="group__CMathGroup.html#ga7724faf7db6e9583ac91df322c26ecf5">  126</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__CMathGroup.html#ga7724faf7db6e9583ac91df322c26ecf5">exp2</a>(<span class="keyword">const</span> Function&amp; f)</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structFunG_1_1Exp2.html">Exp2</a>()(f);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">#endif // FUNG_CMATH_EXP_HH</span></div>
+<div class="ttc" id="structFunG_1_1Exp2_html_a70a452fa4b190e2c427fd87f17c98dc5"><div class="ttname"><a href="structFunG_1_1Exp2.html#a70a452fa4b190e2c427fd87f17c98dc5">FunG::Exp2::d0</a></div><div class="ttdeci">double d0() const noexcept</div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> exp.hh:80</div></div>
+<div class="ttc" id="structFunG_1_1Base_html"><div class="ttname"><a href="structFunG_1_1Base.html">FunG::Base</a></div><div class="ttdoc">Base class for functions satisfying FunctionConcept. Required a.o. for enabling the operators in gene...</div><div class="ttdef"><b>Definition:</b> base.hh:10</div></div>
+<div class="ttc" id="structFunG_1_1Exp2_html_a256e50dac0e06814d2fb150ac997ea5d"><div class="ttname"><a href="structFunG_1_1Exp2.html#a256e50dac0e06814d2fb150ac997ea5d">FunG::Exp2::update</a></div><div class="ttdeci">void update(double x)</div><div class="ttdoc">Set point of evaluation. </div><div class="ttdef"><b>Definition:</b> exp.hh:74</div></div>
+<div class="ttc" id="structFunG_1_1Exp_html_a1a5b4e6b0cedb08548d0e83457908182"><div class="ttname"><a href="structFunG_1_1Exp.html#a1a5b4e6b0cedb08548d0e83457908182">FunG::Exp::d2</a></div><div class="ttdeci">double d2(double dx=1., double dy=1.) const </div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> exp.hh:45</div></div>
+<div class="ttc" id="structFunG_1_1Exp_html_a753d56db833507c33fe91714d119c755"><div class="ttname"><a href="structFunG_1_1Exp.html#a753d56db833507c33fe91714d119c755">FunG::Exp::d0</a></div><div class="ttdeci">double d0() const noexcept</div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> exp.hh:33</div></div>
+<div class="ttc" id="group__CMathGroup_html_ga7724faf7db6e9583ac91df322c26ecf5"><div class="ttname"><a href="group__CMathGroup.html#ga7724faf7db6e9583ac91df322c26ecf5">FunG::exp2</a></div><div class="ttdeci">auto exp2(const Function &amp;f)</div><div class="ttdoc">Generate . </div><div class="ttdef"><b>Definition:</b> exp.hh:126</div></div>
+<div class="ttc" id="structFunG_1_1Exp_html_a2abec31ebf5f8ee4877fb1c05d2fdad2"><div class="ttname"><a href="structFunG_1_1Exp.html#a2abec31ebf5f8ee4877fb1c05d2fdad2">FunG::Exp::Exp</a></div><div class="ttdeci">Exp(double x=0.)</div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> exp.hh:24</div></div>
+<div class="ttc" id="structFunG_1_1Exp_html_ac02fb3f10f654a60fef470b271e26b41"><div class="ttname"><a href="structFunG_1_1Exp.html#ac02fb3f10f654a60fef470b271e26b41">FunG::Exp::d1</a></div><div class="ttdeci">double d1(double dx=1.) const </div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> exp.hh:39</div></div>
+<div class="ttc" id="structFunG_1_1Exp2_html_aff3797bff08d2ec89a72a8ce7779d08e"><div class="ttname"><a href="structFunG_1_1Exp2.html#aff3797bff08d2ec89a72a8ce7779d08e">FunG::Exp2::d3</a></div><div class="ttdeci">double d3(double dx=1., double dy=1., double dz=1.) const </div><div class="ttdoc">Third (directional) derivative. </div><div class="ttdef"><b>Definition:</b> exp.hh:98</div></div>
 <div class="ttc" id="base_8hh_html"><div class="ttname"><a href="base_8hh.html">base.hh</a></div></div>
-<div class="ttc" id="structFunG_1_1Exp2_html_a5f4e6755ebce5994f79a0711725bf9a3"><div class="ttname"><a href="structFunG_1_1Exp2.html#a5f4e6755ebce5994f79a0711725bf9a3">FunG::Exp2::d2</a></div><div class="ttdeci">double d2(double dx=1., double dy=1.) const </div><div class="ttdoc">Second (directional) derivative. </div><div class="ttdef"><b>Definition:</b> exp.hh:109</div></div>
-<div class="ttc" id="structFunG_1_1Exp_html"><div class="ttname"><a href="structFunG_1_1Exp.html">FunG::Exp</a></div><div class="ttdoc">Exponential function including first three derivatives. </div><div class="ttdef"><b>Definition:</b> exp.hh:38</div></div>
-<div class="ttc" id="group__CMathGroup_html_ga00135c8521411f13813f9b972ea4e231"><div class="ttname"><a href="group__CMathGroup.html#ga00135c8521411f13813f9b972ea4e231">FunG::exp</a></div><div class="ttdeci">auto exp(const Function &amp;f)</div><div class="ttdoc">Generate . </div><div class="ttdef"><b>Definition:</b> exp.hh:131</div></div>
-<div class="ttc" id="structFunG_1_1Exp2_html_a45eae0e2d4a7d3ec8c02eeb237fcc8ae"><div class="ttname"><a href="structFunG_1_1Exp2.html#a45eae0e2d4a7d3ec8c02eeb237fcc8ae">FunG::Exp2::d1</a></div><div class="ttdeci">double d1(double dx=1.) const </div><div class="ttdoc">First (directional) derivative. </div><div class="ttdef"><b>Definition:</b> exp.hh:103</div></div>
+<div class="ttc" id="structFunG_1_1Exp2_html_a5f4e6755ebce5994f79a0711725bf9a3"><div class="ttname"><a href="structFunG_1_1Exp2.html#a5f4e6755ebce5994f79a0711725bf9a3">FunG::Exp2::d2</a></div><div class="ttdeci">double d2(double dx=1., double dy=1.) const </div><div class="ttdoc">Second (directional) derivative. </div><div class="ttdef"><b>Definition:</b> exp.hh:92</div></div>
+<div class="ttc" id="structFunG_1_1Exp_html"><div class="ttname"><a href="structFunG_1_1Exp.html">FunG::Exp</a></div><div class="ttdoc">Exponential function including first three derivatives. </div><div class="ttdef"><b>Definition:</b> exp.hh:21</div></div>
+<div class="ttc" id="group__CMathGroup_html_ga00135c8521411f13813f9b972ea4e231"><div class="ttname"><a href="group__CMathGroup.html#ga00135c8521411f13813f9b972ea4e231">FunG::exp</a></div><div class="ttdeci">auto exp(const Function &amp;f)</div><div class="ttdoc">Generate . </div><div class="ttdef"><b>Definition:</b> exp.hh:114</div></div>
+<div class="ttc" id="structFunG_1_1Exp2_html_a45eae0e2d4a7d3ec8c02eeb237fcc8ae"><div class="ttname"><a href="structFunG_1_1Exp2.html#a45eae0e2d4a7d3ec8c02eeb237fcc8ae">FunG::Exp2::d1</a></div><div class="ttdeci">double d1(double dx=1.) const </div><div class="ttdoc">First (directional) derivative. </div><div class="ttdef"><b>Definition:</b> exp.hh:86</div></div>
 <div class="ttc" id="namespaceFunG_html"><div class="ttname"><a href="namespaceFunG.html">FunG</a></div><div class="ttdoc">Main namespace of the FunG library. </div></div>
-<div class="ttc" id="structFunG_1_1Exp2_html_aa5e03d1e3a39a1c2151cdfe092461060"><div class="ttname"><a href="structFunG_1_1Exp2.html#aa5e03d1e3a39a1c2151cdfe092461060">FunG::Exp2::Exp2</a></div><div class="ttdeci">Exp2(double x=0.)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> exp.hh:88</div></div>
-<div class="ttc" id="structFunG_1_1Exp2_html"><div class="ttname"><a href="structFunG_1_1Exp2.html">FunG::Exp2</a></div><div class="ttdoc">Function  including first three derivatives. </div><div class="ttdef"><b>Definition:</b> exp.hh:85</div></div>
-<div class="ttc" id="structFunG_1_1Exp_html_aabd4ab4e94bdc06bc1e773ffd023e0a7"><div class="ttname"><a href="structFunG_1_1Exp.html#aabd4ab4e94bdc06bc1e773ffd023e0a7">FunG::Exp::update</a></div><div class="ttdeci">void update(double x)</div><div class="ttdoc">Set point of evaluation. </div><div class="ttdef"><b>Definition:</b> exp.hh:44</div></div>
+<div class="ttc" id="structFunG_1_1Exp2_html_aa5e03d1e3a39a1c2151cdfe092461060"><div class="ttname"><a href="structFunG_1_1Exp2.html#aa5e03d1e3a39a1c2151cdfe092461060">FunG::Exp2::Exp2</a></div><div class="ttdeci">Exp2(double x=0.)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> exp.hh:71</div></div>
+<div class="ttc" id="structFunG_1_1Exp2_html"><div class="ttname"><a href="structFunG_1_1Exp2.html">FunG::Exp2</a></div><div class="ttdoc">Function  including first three derivatives. </div><div class="ttdef"><b>Definition:</b> exp.hh:68</div></div>
+<div class="ttc" id="structFunG_1_1Exp_html_aabd4ab4e94bdc06bc1e773ffd023e0a7"><div class="ttname"><a href="structFunG_1_1Exp.html#aabd4ab4e94bdc06bc1e773ffd023e0a7">FunG::Exp::update</a></div><div class="ttdeci">void update(double x)</div><div class="ttdoc">Set point of evaluation. </div><div class="ttdef"><b>Definition:</b> exp.hh:27</div></div>
 <div class="ttc" id="chainer_8hh_html"><div class="ttname"><a href="chainer_8hh.html">chainer.hh</a></div></div>
-<div class="ttc" id="structFunG_1_1Exp_html_adea30657eb96144009f7cc96451391e8"><div class="ttname"><a href="structFunG_1_1Exp.html#adea30657eb96144009f7cc96451391e8">FunG::Exp::d3</a></div><div class="ttdeci">double d3(double dx=1., double dy=1., double dz=1.) const </div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> exp.hh:68</div></div>
+<div class="ttc" id="structFunG_1_1Exp_html_adea30657eb96144009f7cc96451391e8"><div class="ttname"><a href="structFunG_1_1Exp.html#adea30657eb96144009f7cc96451391e8">FunG::Exp::d3</a></div><div class="ttdeci">double d3(double dx=1., double dy=1., double dz=1.) const </div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> exp.hh:51</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Oct 3 2015 01:36:37 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 9 2015 20:39:26 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

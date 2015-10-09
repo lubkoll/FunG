@@ -8,7 +8,6 @@ var searchData=
   ['compute_5fsum_2ehh',['compute_sum.hh',['../compute__sum_8hh.html',1,'']]],
   ['concept_5fcheck_2ehh',['concept_check.hh',['../concept__check_8hh.html',1,'']]],
   ['concepts_2ehh',['concepts.hh',['../concepts_8hh.html',1,'']]],
-  ['consistency_5fcheck_2ehh',['consistency_check.hh',['../consistency__check_8hh.html',1,'']]],
   ['constant_2ehh',['constant.hh',['../constant_8hh.html',1,'']]],
   ['cosine_2ehh',['cosine.hh',['../cosine_8hh.html',1,'']]]
 ];

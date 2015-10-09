@@ -6,8 +6,8 @@ var searchData=
   ['i4',['i4',['../group__InvariantGroup.html#ga1898785172ecce11af0c27e54d555009',1,'FunG::LinearAlgebra::i4(const Matrix &amp;A, const Matrix &amp;M)'],['../group__InvariantGroup.html#ga0df96cdb1e4b8b5a040f2adc97c51100',1,'FunG::LinearAlgebra::i4(const F &amp;f, const Matrix &amp;M)']]],
   ['i5',['i5',['../group__InvariantGroup.html#gabedc42182203d883278e29fd16b355a0',1,'FunG::LinearAlgebra::i5(const Matrix &amp;A, const Matrix &amp;M)'],['../group__InvariantGroup.html#gaed7e47c39d89f2b01e25c992da78b44d',1,'FunG::LinearAlgebra::i5(const F &amp;f, const Matrix &amp;M)']]],
   ['i6',['i6',['../group__InvariantGroup.html#gad9f0627946667bb052212f65ecdd002b',1,'FunG::LinearAlgebra::i6(const Matrix &amp;A, const Matrix &amp;M)'],['../group__InvariantGroup.html#ga2536c80df733bb3e089487202c3688c1',1,'FunG::LinearAlgebra::i6(const F &amp;f, const Matrix &amp;M)']]],
-  ['identity',['Identity',['../structFunG_1_1Identity.html',1,'FunG']]],
   ['identity',['Identity',['../structFunG_1_1Identity.html#a2480f818e33371734d328558f71248ec',1,'FunG::Identity::Identity()=default'],['../structFunG_1_1Identity.html#a080e9bf064c469a5141765f3ee0416b0',1,'FunG::Identity::Identity(const Arg &amp;x)'],['../namespaceFunG.html#a165e879e76d3a2a8906938f3658445ce',1,'FunG::identity()']]],
+  ['identity',['Identity',['../structFunG_1_1Identity.html',1,'FunG']]],
   ['identity_2ehh',['identity.hh',['../identity_8hh.html',1,'']]],
   ['incompressibleadiposetissue_5fsommerholzapfel',['incompressibleAdiposeTissue_SommerHolzapfel',['../group__Biomechanics.html#gac269eefc1abb994044e1634c20a98061',1,'FunG::incompressibleAdiposeTissue_SommerHolzapfel(double cCells, double k1, double k2, double kappa, const Matrix &amp;M, const Matrix &amp;F)'],['../group__Biomechanics.html#ga01ab128bcf179f4431b0270179af9e20',1,'FunG::incompressibleAdiposeTissue_SommerHolzapfel(const Matrix &amp;M, const Matrix &amp;F)']]],
   ['incompressiblemooneyrivlin',['incompressibleMooneyRivlin',['../group__Rubber.html#gace19173e33490aadd36ae3a03fd1d85c',1,'FunG']]],
@@ -15,10 +15,9 @@ var searchData=
   ['incompressibleneohooke',['incompressibleNeoHooke',['../group__Rubber.html#ga5bb28aef7006413775791998936d6b81',1,'FunG']]],
   ['incompressibleskin_5fhendriks',['incompressibleSkin_Hendriks',['../group__Biomechanics.html#gaa20bf15ef6976d64d89490429035b2c4',1,'FunG::incompressibleSkin_Hendriks(double c0, double c1, const Matrix &amp;F)'],['../group__Biomechanics.html#gad8653218bd2afb4e3cfd601a5142956c',1,'FunG::incompressibleSkin_Hendriks(const Matrix &amp;F)']]],
   ['indexed_5ftype_2ehh',['indexed_type.hh',['../indexed__type_8hh.html',1,'']]],
-  ['inplacemultiplication',['inPlaceMultiplication',['../namespaceFunG_1_1Checks.html#abeeb72e6dc640672187145a0469da9cc',1,'FunG::Checks']]],
-  ['inplacemultiplicationwitharithmetic',['inPlaceMultiplicationWithArithmetic',['../namespaceFunG_1_1Checks.html#a3b91969c5e1b84915c384cee63bdb649',1,'FunG::Checks']]],
-  ['inplacesummation',['inPlaceSummation',['../namespaceFunG_1_1Checks.html#a9ff694f025cc9f2ff379b1f3833641bb',1,'FunG::Checks']]],
   ['invariants',['Invariants',['../group__InvariantGroup.html',1,'']]],
+  ['is_5farithmetic',['is_arithmetic',['../namespaceFunG.html#a6dd0f05fb05ea031b7b9678fe3730c73',1,'FunG']]],
+  ['isarithmetic',['IsArithmetic',['../structFunG_1_1IsArithmetic.html',1,'FunG']]],
   ['isconstantsize',['isConstantSize',['../namespaceFunG_1_1Checks.html#adcc3e179af2ed0384a3773ea086045b9',1,'FunG::Checks']]],
   ['isvariable',['isVariable',['../namespaceFunG_1_1Checks.html#ac2a1a8aedf54c42cb6d47b3b64bbc761',1,'FunG::Checks']]]
 ];

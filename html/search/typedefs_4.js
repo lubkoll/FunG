@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['variable_5ft',['Variable_t',['../namespaceFunG.html#a3d589ef7d011a46a72847eabcbbb4532',1,'FunG']]],
-  ['void_5ft',['void_t',['../namespaceFunG.html#a0cde667596590eb8d32e4a5ee76ddbb9',1,'FunG']]]
+  ['returntype',['ReturnType',['../structFunG_1_1MathematicalOperations_1_1Scale.html#ac8d3f432c36c678cbf156132e46607ae',1,'FunG::MathematicalOperations::Scale']]]
 ];

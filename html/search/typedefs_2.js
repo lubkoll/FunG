@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sqrt',['Sqrt',['../group__CMathGroup.html#gaca80e773d5886f47cd49dc19b130263f',1,'FunG']]]
+  ['frobeniusnorm',['FrobeniusNorm',['../group__LinearAlgebraGroup.html#gad209833e37a25e863fe72868d37795b8',1,'FunG::LinearAlgebra']]]
 ];

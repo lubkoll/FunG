@@ -534,7 +534,7 @@ template&lt;class F , std::enable_if_t&lt; std::is_base_of&lt; Base, F &gt;::val
 </div><div class="memdoc">
 
 <p>Generate \(\mathrm{tr}\circ f\), where \(f:\cdot\mapsto\mathbb{R}^{n,n} \). </p>
-<dl class="section return"><dt>Returns</dt><dd>Trace&lt; std::decay_t&lt;decltype(f.d0())&gt; &gt;(arg.d0())( arg ) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Trace&lt; std::decay_t&lt;decltype(f.d0())&gt; &gt;(f.d0())( f ) </dd></dl>
 
 </div>
 </div>
@@ -640,7 +640,7 @@ template&lt;class Matrix , class  = std::enable_if_t&lt;!Checks::isConstantSize&
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Oct 3 2015 01:36:37 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 9 2015 20:39:26 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

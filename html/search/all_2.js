@@ -1,10 +1,9 @@
 var searchData=
 [
-  ['calltorightmultiply',['callToRightMultiply',['../namespaceFunG_1_1Checks.html#a3874c9f52b64baa8ed9a87b9902eb54c',1,'FunG::Checks']]],
   ['cbrt',['Cbrt',['../group__CMathGroup.html#ga2e4363ad8400e1c8431c10de2152ec2b',1,'FunG::Cbrt()'],['../group__CMathGroup.html#gaa7f2552adfb8ec41aeb685adddd8bf98',1,'FunG::cbrt(const Function &amp;f)']]],
-  ['cbrt2',['cbrt2',['../group__CMathGroup.html#gafd27322fb64c6df3366f384c93819a06',1,'FunG::cbrt2(const Function &amp;f)'],['../group__CMathGroup.html#ga9bcbef859d7ffd0d6570d69e1bd8503a',1,'FunG::Cbrt2()']]],
-  ['chain',['Chain',['../structFunG_1_1MathematicalOperations_1_1Chain.html#a11bbc19be4ace14904de0be6d703fb1f',1,'FunG::MathematicalOperations::Chain::Chain(const InitFunction &amp;...init)'],['../structFunG_1_1MathematicalOperations_1_1Chain.html#a3167b6304026eb0bd92e57d0dd0087e0',1,'FunG::MathematicalOperations::Chain::Chain(const F &amp;f_, const G &amp;g_)']]],
+  ['cbrt2',['Cbrt2',['../group__CMathGroup.html#ga9bcbef859d7ffd0d6570d69e1bd8503a',1,'FunG::Cbrt2()'],['../group__CMathGroup.html#gafd27322fb64c6df3366f384c93819a06',1,'FunG::cbrt2(const Function &amp;f)']]],
   ['chain',['Chain',['../structFunG_1_1MathematicalOperations_1_1Chain.html',1,'FunG::MathematicalOperations']]],
+  ['chain',['Chain',['../structFunG_1_1MathematicalOperations_1_1Chain.html#a11bbc19be4ace14904de0be6d703fb1f',1,'FunG::MathematicalOperations::Chain::Chain(const InitFunction &amp;...init)'],['../structFunG_1_1MathematicalOperations_1_1Chain.html#a3167b6304026eb0bd92e57d0dd0087e0',1,'FunG::MathematicalOperations::Chain::Chain(const F &amp;f_, const G &amp;g_)']]],
   ['chain_2ehh',['chain.hh',['../chain_8hh.html',1,'']]],
   ['chainer_2ehh',['chainer.hh',['../chainer_8hh.html',1,'']]],
   ['checkargument',['checkArgument',['../namespaceFunG_1_1Checks.html#a31790e5d021a40ac34b7469323c658f9',1,'FunG::Checks']]],
@@ -25,18 +24,16 @@ var searchData=
   ['conceptcheck',['ConceptCheck',['../group__ConceptCheck.html',1,'']]],
   ['concepts',['Concepts',['../group__Concepts.html',1,'']]],
   ['concepts_2ehh',['concepts.hh',['../concepts_8hh.html',1,'']]],
-  ['consistency_5fcheck_2ehh',['consistency_check.hh',['../consistency__check_8hh.html',1,'']]],
   ['constant',['Constant',['../structFunG_1_1Constant.html#a29ead8431e2fadfef397aae5dc5a4511',1,'FunG::Constant::Constant()=default'],['../structFunG_1_1Constant.html#a310783597f488e554de12627bf56aec8',1,'FunG::Constant::Constant(Type const &amp;t_)'],['../namespaceFunG.html#a65c509062b62b3303268cabc97b75a65',1,'FunG::constant()']]],
   ['constant',['Constant',['../structFunG_1_1Constant.html',1,'FunG']]],
   ['constant_2ehh',['constant.hh',['../constant_8hh.html',1,'']]],
-  ['constref',['constRef',['../namespaceFunG.html#abcfb38c2e995436816ea884803302f2d',1,'FunG']]],
-  ['copyconcept',['CopyConcept',['../structFunG_1_1Concepts_1_1CopyConcept.html#afc08741d422ff46c2e681efc38913144',1,'FunG::Concepts::CopyConcept::CopyConcept()'],['../group__CopyConcept.html',1,'(Global Namespace)']]],
   ['copyconcept',['CopyConcept',['../structFunG_1_1Concepts_1_1CopyConcept.html',1,'FunG::Concepts']]],
+  ['copyconcept',['CopyConcept',['../structFunG_1_1Concepts_1_1CopyConcept.html#afc08741d422ff46c2e681efc38913144',1,'FunG::Concepts::CopyConcept::CopyConcept()'],['../group__CopyConcept.html',1,'(Global Namespace)']]],
   ['copyconceptcheck',['CopyConceptCheck',['../structFunG_1_1Concepts_1_1CopyConceptCheck.html',1,'FunG::Concepts']]],
   ['copyconceptcheck_3c_20f_20_3e',['CopyConceptCheck&lt; F &gt;',['../structFunG_1_1Concepts_1_1CopyConceptCheck.html',1,'FunG::Concepts']]],
   ['copyconceptcheck_3c_20matrix_20_3e',['CopyConceptCheck&lt; Matrix &gt;',['../structFunG_1_1Concepts_1_1CopyConceptCheck.html',1,'FunG::Concepts']]],
   ['copyconceptcheck_3c_20vector_20_3e',['CopyConceptCheck&lt; Vector &gt;',['../structFunG_1_1Concepts_1_1CopyConceptCheck.html',1,'FunG::Concepts']]],
-  ['cos',['Cos',['../structFunG_1_1Cos.html',1,'FunG']]],
   ['cos',['Cos',['../structFunG_1_1Cos.html#a1c3c7f2efe426de2dab5bb4a307442ce',1,'FunG::Cos::Cos()'],['../group__CMathGroup.html#ga7e9b2ac717cd2350663293cb66ba6cbd',1,'FunG::cos()']]],
+  ['cos',['Cos',['../structFunG_1_1Cos.html',1,'FunG']]],
   ['cosine_2ehh',['cosine.hh',['../cosine_8hh.html',1,'']]]
 ];

@@ -131,6 +131,12 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1Cos.html">Cos</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cosine function including first three derivatives (based on cos(double) in &lt;cmath&gt;).  <a href="structFunG_1_1Cos.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1Decay.html">Decay</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structFunG_1_1Identity.html" title="Identity mapping . ">Identity</a>, i.e. <a class="el" href="structFunG_1_1Decay.html#a4b2916cbb7c8587ab3fccc9b896b9df4">Decay&lt;F&gt;::type</a> == F.  <a href="structFunG_1_1Decay.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1Decay_3_01F_00_01void__t_3_01Checks_1_1TryNestedType__PlainObject_3_01F_01_4_01_4_01_4.html">Decay&lt; F, void_t&lt; Checks::TryNestedType_PlainObject&lt; F &gt; &gt; &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Underlying type for expression templates of the Eigen library.  <a href="structFunG_1_1Decay_3_01F_00_01void__t_3_01Checks_1_1TryNestedType__PlainObject_3_01F_01_4_01_4_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1Exp.html">Exp</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exponential function including first three derivatives.  <a href="structFunG_1_1Exp.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,6 +145,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1Identity.html">Identity</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identity mapping \( f(x)=x \).  <a href="structFunG_1_1Identity.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1IsArithmetic.html">IsArithmetic</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialize this template class to register arithmetic types that are not built-in.  <a href="structFunG_1_1IsArithmetic.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1LN.html">LN</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Natural logarithm including first three derivatives.  <a href="structFunG_1_1LN.html#details">More...</a><br /></td></tr>
@@ -185,10 +194,13 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga9bcbef859d7ffd0d6570d69e1bd8503a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#ga9bcbef859d7ffd0d6570d69e1bd8503a">Cbrt2</a> = <a class="el" href="structFunG_1_1Pow.html">Pow</a>&lt; 2, 3 &gt;</td></tr>
 <tr class="memdesc:ga9bcbef859d7ffd0d6570d69e1bd8503a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Third root squared including first three derivatives (based on sqrt(double) in &lt;cmath&gt;).  <a href="group__CMathGroup.html#ga9bcbef859d7ffd0d6570d69e1bd8503a">More...</a><br /></td></tr>
 <tr class="separator:ga9bcbef859d7ffd0d6570d69e1bd8503a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2a52dfbc62e262c67f293fda5f81ef7"><td class="memTemplParams" colspan="2">template&lt;class F , bool arithmeticArgument = false&gt; </td></tr>
-<tr class="memitem:ab2a52dfbc62e262c67f293fda5f81ef7"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#ab2a52dfbc62e262c67f293fda5f81ef7">Finalize</a> = Detail::FinalizeImpl&lt; F, arithmeticArgument, <a class="el" href="namespaceFunG_1_1Checks.html#a6d289274975a662346a1b5adf0d31f37">Checks::hasVariable</a>&lt; F &gt;() &gt;</td></tr>
-<tr class="memdesc:ab2a52dfbc62e262c67f293fda5f81ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish function definition.  <a href="#ab2a52dfbc62e262c67f293fda5f81ef7">More...</a><br /></td></tr>
-<tr class="separator:ab2a52dfbc62e262c67f293fda5f81ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a195ac37d8696970c89b112c81a1e4d6e"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
+<tr class="memitem:a195ac37d8696970c89b112c81a1e4d6e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a195ac37d8696970c89b112c81a1e4d6e">decay_t</a> = typename <a class="el" href="structFunG_1_1Decay.html">Decay</a>&lt; std::decay_t&lt; F &gt; &gt;::type</td></tr>
+<tr class="memdesc:a195ac37d8696970c89b112c81a1e4d6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access underlying type (if it is hidden by expression templates).  <a href="#a195ac37d8696970c89b112c81a1e4d6e">More...</a><br /></td></tr>
+<tr class="separator:a195ac37d8696970c89b112c81a1e4d6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dd0f05fb05ea031b7b9678fe3730c73"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
+<tr class="memitem:a6dd0f05fb05ea031b7b9678fe3730c73"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a6dd0f05fb05ea031b7b9678fe3730c73">is_arithmetic</a> = std::integral_constant&lt; bool, std::is_arithmetic&lt; F &gt;::value||<a class="el" href="structFunG_1_1IsArithmetic.html">IsArithmetic</a>&lt; F &gt;::value &gt;</td></tr>
+<tr class="separator:a6dd0f05fb05ea031b7b9678fe3730c73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cde667596590eb8d32e4a5ee76ddbb9"><td class="memTemplParams" colspan="2">template&lt;class... Types&gt; </td></tr>
 <tr class="memitem:a0cde667596590eb8d32e4a5ee76ddbb9"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a0cde667596590eb8d32e4a5ee76ddbb9">void_t</a> = typename Detail::voider&lt; Types...&gt;::type</td></tr>
 <tr class="memdesc:a0cde667596590eb8d32e4a5ee76ddbb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Most fascinating type ever. Is void for all input types.  <a href="#a0cde667596590eb8d32e4a5ee76ddbb9">More...</a><br /></td></tr>
@@ -256,13 +268,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gae03f57bd4efb4449ad1dc60cb74c742d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#gae03f57bd4efb4449ad1dc60cb74c742d">tan</a> (const Function &amp;f)</td></tr>
 <tr class="memdesc:gae03f57bd4efb4449ad1dc60cb74c742d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate \( \tan\circ f \).  <a href="group__CMathGroup.html#gae03f57bd4efb4449ad1dc60cb74c742d">More...</a><br /></td></tr>
 <tr class="separator:gae03f57bd4efb4449ad1dc60cb74c742d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcfb38c2e995436816ea884803302f2d"><td class="memTemplParams" colspan="2">template&lt;class Arg &gt; </td></tr>
-<tr class="memitem:abcfb38c2e995436816ea884803302f2d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#abcfb38c2e995436816ea884803302f2d">constRef</a> (const Arg &amp;x)</td></tr>
-<tr class="memdesc:abcfb38c2e995436816ea884803302f2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a constant function that stores its argument as constant reference.  <a href="#abcfb38c2e995436816ea884803302f2d">More...</a><br /></td></tr>
-<tr class="separator:abcfb38c2e995436816ea884803302f2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65c509062b62b3303268cabc97b75a65"><td class="memTemplParams" colspan="2">template&lt;class Arg &gt; </td></tr>
 <tr class="memitem:a65c509062b62b3303268cabc97b75a65"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a65c509062b62b3303268cabc97b75a65">constant</a> (const Arg &amp;x)</td></tr>
-<tr class="memdesc:a65c509062b62b3303268cabc97b75a65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrap a constant.  <a href="#a65c509062b62b3303268cabc97b75a65">More...</a><br /></td></tr>
+<tr class="memdesc:a65c509062b62b3303268cabc97b75a65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a constant function that stores its argument as constant reference.  <a href="#a65c509062b62b3303268cabc97b75a65">More...</a><br /></td></tr>
 <tr class="separator:a65c509062b62b3303268cabc97b75a65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac269eefc1abb994044e1634c20a98061"><td class="memTemplParams" colspan="2">template&lt;class Matrix , int offset = LinearAlgebra::dim&lt;Matrix&gt;()&gt; </td></tr>
 <tr class="memitem:gac269eefc1abb994044e1634c20a98061"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#gac269eefc1abb994044e1634c20a98061">incompressibleAdiposeTissue_SommerHolzapfel</a> (double cCells, double k1, double k2, double kappa, const Matrix &amp;M, const Matrix &amp;F)</td></tr>
@@ -312,6 +320,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ga42721e772b7eada1b0bca98247ad440f"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#ga42721e772b7eada1b0bca98247ad440f">compressibleSkin_Hendriks</a> (double d0, double d1, const Matrix &amp;F)</td></tr>
 <tr class="memdesc:ga42721e772b7eada1b0bca98247ad440f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compressible version of the model for skin tissue of <a class="el" href="citelist.html#CITEREF_Hendriks2005">[1]</a>.  <a href="group__Biomechanics.html#ga42721e772b7eada1b0bca98247ad440f">More...</a><br /></td></tr>
 <tr class="separator:ga42721e772b7eada1b0bca98247ad440f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab17a1468e61f58564333b3fcd7900d6"><td class="memTemplParams" colspan="2">template&lt;class Scalar , class Vector &gt; </td></tr>
+<tr class="memitem:aab17a1468e61f58564333b3fcd7900d6"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#aab17a1468e61f58564333b3fcd7900d6">heatModel</a> (double c, double d, Scalar u, const Vector &amp;du)</td></tr>
+<tr class="memdesc:aab17a1468e61f58564333b3fcd7900d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yield surface \( \frac{\beta}{3}\iota_1(\sigma) + J_2(\sigma)-offset \), where \(\iota_1\) is the first principal and \(J_2\) is the second deviatoric invariant.  <a href="#aab17a1468e61f58564333b3fcd7900d6">More...</a><br /></td></tr>
+<tr class="separator:aab17a1468e61f58564333b3fcd7900d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gace19173e33490aadd36ae3a03fd1d85c"><td class="memTemplParams" colspan="2">template&lt;class Matrix , int n = LinearAlgebra::dim&lt;Matrix&gt;()&gt; </td></tr>
 <tr class="memitem:gace19173e33490aadd36ae3a03fd1d85c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Rubber.html#gace19173e33490aadd36ae3a03fd1d85c">incompressibleMooneyRivlin</a> (double c0, double c1, const Matrix &amp;F)</td></tr>
 <tr class="memdesc:gace19173e33490aadd36ae3a03fd1d85c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an "incompressible" Mooney-Rivlin material law \( W(F)=c_0\iota_1(F^T F) + c_1\iota_2(F^T F) \), where \(\iota_1\) is the first and \(\iota_2\) the second principal matrix invariant.  <a href="group__Rubber.html#gace19173e33490aadd36ae3a03fd1d85c">More...</a><br /></td></tr>
@@ -356,10 +368,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a3a2af76439713dc7635e0c538ac34f15"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a3a2af76439713dc7635e0c538ac34f15">finalize</a> (const F &amp;f)</td></tr>
 <tr class="memdesc:a3a2af76439713dc7635e0c538ac34f15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish function definition.  <a href="#a3a2af76439713dc7635e0c538ac34f15">More...</a><br /></td></tr>
 <tr class="separator:a3a2af76439713dc7635e0c538ac34f15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c224cd9b212427657c6798ac8adf6ac"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
-<tr class="memitem:a0c224cd9b212427657c6798ac8adf6ac"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a0c224cd9b212427657c6798ac8adf6ac">finalize_scalar</a> (const F &amp;f)</td></tr>
-<tr class="memdesc:a0c224cd9b212427657c6798ac8adf6ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish function definition.  <a href="#a0c224cd9b212427657c6798ac8adf6ac">More...</a><br /></td></tr>
-<tr class="separator:a0c224cd9b212427657c6798ac8adf6ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7f61d48ff610ec4be8ee6994d165077"><td class="memTemplParams" colspan="2">template&lt;class F , class G , class  = std::enable_if_t&lt; std::is_base_of&lt;Base,F&gt;::value ||                                      std::is_base_of&lt;Base,G&gt;::value &gt;&gt; </td></tr>
 <tr class="memitem:ac7f61d48ff610ec4be8ee6994d165077"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#ac7f61d48ff610ec4be8ee6994d165077">operator+</a> (const F &amp;f, const G &amp;g)</td></tr>
 <tr class="memdesc:ac7f61d48ff610ec4be8ee6994d165077"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "+"-operator for the generation of functions.  <a href="#ac7f61d48ff610ec4be8ee6994d165077">More...</a><br /></td></tr>
@@ -376,7 +384,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a56701b5e83b96d2d6cc5c482e36caa39"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a56701b5e83b96d2d6cc5c482e36caa39">operator&lt;&lt;</a> (const F &amp;f, const G &amp;g)</td></tr>
 <tr class="memdesc:a56701b5e83b96d2d6cc5c482e36caa39"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "&lt;&lt;"-operator for chaining functions \(f\) and \(g\) to \( f \circ g \).  <a href="#a56701b5e83b96d2d6cc5c482e36caa39">More...</a><br /></td></tr>
 <tr class="separator:a56701b5e83b96d2d6cc5c482e36caa39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0c4552dee9179fb50b57ece863d835a"><td class="memTemplParams" colspan="2">template&lt;class F , class T , std::enable_if_t&lt; std::is_convertible&lt; T, decltype(std::declval&lt; F &gt;().d0())&gt;::value &amp;&amp;std::is_base_of&lt; Base, F &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:aa0c4552dee9179fb50b57ece863d835a"><td class="memTemplParams" colspan="2">template&lt;class F , class T , std::enable_if_t&lt; std::is_base_of&lt; Base, F &gt;::value &amp;&amp;!std::is_base_of&lt; Base, T &gt;::value &gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:aa0c4552dee9179fb50b57ece863d835a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#aa0c4552dee9179fb50b57ece863d835a">operator-</a> (const F &amp;f, const T &amp;t)</td></tr>
 <tr class="memdesc:aa0c4552dee9179fb50b57ece863d835a"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "-"-operator for the generation of functions. Here the second argument is a constant that is wrapped in to an object of type <a class="el" href="structFunG_1_1Constant.html" title="Wrap a constant. ">Constant</a>.  <a href="#aa0c4552dee9179fb50b57ece863d835a">More...</a><br /></td></tr>
 <tr class="separator:aa0c4552dee9179fb50b57ece863d835a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -388,34 +396,46 @@ Functions</h2></td></tr>
 <tr class="memitem:a165e879e76d3a2a8906938f3658445ce"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a165e879e76d3a2a8906938f3658445ce">identity</a> (const Arg &amp;x)</td></tr>
 <tr class="memdesc:a165e879e76d3a2a8906938f3658445ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct Identity&lt;Arg&gt;(x).  <a href="#a165e879e76d3a2a8906938f3658445ce">More...</a><br /></td></tr>
 <tr class="separator:a165e879e76d3a2a8906938f3658445ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a063d3e8c19dbea3ee1396736fecb64e1"><td class="memTemplParams" colspan="2">template&lt;class Arg , class  = std::enable_if_t&lt; !std::is_base_of&lt;Base,Arg&gt;() &amp;&amp; !std::is_arithmetic&lt;Arg&gt;() &gt;, class  = std::enable_if_t&lt; !Checks::summation&lt;Arg&gt;() &amp;&amp;                                       Checks::inPlaceSummation&lt;Arg&gt;() &gt;&gt; </td></tr>
-<tr class="memitem:a063d3e8c19dbea3ee1396736fecb64e1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a063d3e8c19dbea3ee1396736fecb64e1">operator+</a> (Arg x, const Arg &amp;y)</td></tr>
-<tr class="memdesc:a063d3e8c19dbea3ee1396736fecb64e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines operator+ if not yet defined and in-place summation (operator+=()) is supported.  <a href="#a063d3e8c19dbea3ee1396736fecb64e1">More...</a><br /></td></tr>
-<tr class="separator:a063d3e8c19dbea3ee1396736fecb64e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b303ce8718a6f64b035e7e782370734"><td class="memTemplParams" colspan="2">template&lt;class Arg , class ScalarArg , class  = std::enable_if_t&lt; std::is_arithmetic&lt;ScalarArg&gt;::value &gt;, class  = std::enable_if_t&lt; !std::is_base_of&lt;Base,Arg&gt;() &amp;&amp; !std::is_arithmetic&lt;Arg&gt;() &gt;, class  = std::enable_if_t&lt; !Checks::multiplicationWithArithmeticFromLeft&lt;Arg,ScalarArg&gt;() &amp;&amp;                                       Checks::inPlaceMultiplicationWithArithmetic&lt;Arg,ScalarArg&gt;() &gt;&gt; </td></tr>
+<tr class="memitem:a5e258023361844926f485229c62a733b"><td class="memTemplParams" colspan="2">template&lt;class Scalar , class OtherScalar , int n, std::enable_if_t&lt; !Checks::hasFree_Multiplication&lt; Dune::FieldVector&lt; Scalar, n &gt;, Dune::FieldVector&lt; OtherScalar, n &gt; &gt;() &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:a5e258023361844926f485229c62a733b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a5e258023361844926f485229c62a733b">operator*</a> (const Dune::FieldVector&lt; Scalar, n &gt; &amp;a, const Dune::FieldVector&lt; OtherScalar, n &gt; &amp;b)</td></tr>
+<tr class="memdesc:a5e258023361844926f485229c62a733b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computation of the l2 scalar product for Dune::FieldVector.  <a href="#a5e258023361844926f485229c62a733b">More...</a><br /></td></tr>
+<tr class="separator:a5e258023361844926f485229c62a733b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abadb8da34a5abc3dde0107231ab91c6f"><td class="memTemplParams" colspan="2">template&lt;class Scalar , class OtherScalar , int n, int m, std::enable_if_t&lt; !Checks::hasFree_Multiplication&lt; Dune::FieldMatrix&lt; Scalar, n, m &gt;, Dune::FieldVector&lt; OtherScalar, m &gt; &gt;() &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:abadb8da34a5abc3dde0107231ab91c6f"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#abadb8da34a5abc3dde0107231ab91c6f">operator*</a> (const Dune::FieldMatrix&lt; Scalar, n, m &gt; &amp;A, const Dune::FieldVector&lt; OtherScalar, m &gt; &amp;x)</td></tr>
+<tr class="memdesc:abadb8da34a5abc3dde0107231ab91c6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define matrix-vector multiplication for Dune::FieldMatrix and Dune::FieldVector, i.e. compute \(y=Ax\).  <a href="#abadb8da34a5abc3dde0107231ab91c6f">More...</a><br /></td></tr>
+<tr class="separator:abadb8da34a5abc3dde0107231ab91c6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19a9d7b55b56f5101560034413a1dbfe"><td class="memTemplParams" colspan="2">template&lt;class Scalar , class OtherScalar , int n, int m, std::enable_if_t&lt; !Checks::hasFree_Multiplication&lt; Dune::FieldVector&lt; OtherScalar, n &gt;, Dune::FieldMatrix&lt; Scalar, n, m &gt; &gt;() &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:a19a9d7b55b56f5101560034413a1dbfe"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a19a9d7b55b56f5101560034413a1dbfe">operator*</a> (const Dune::FieldVector&lt; OtherScalar, n &gt; &amp;x, const Dune::FieldMatrix&lt; Scalar, n, m &gt; &amp;A)</td></tr>
+<tr class="memdesc:a19a9d7b55b56f5101560034413a1dbfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define vector-matrix multiplication for Dune::FieldMatrix and Dune::FieldVector, i.e. compute \(x^T A = y^T\) resp. \(y=A^T x\).  <a href="#a19a9d7b55b56f5101560034413a1dbfe">More...</a><br /></td></tr>
+<tr class="separator:a19a9d7b55b56f5101560034413a1dbfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b303ce8718a6f64b035e7e782370734"><td class="memTemplParams" colspan="2">template&lt;class Arg , class ScalarArg , std::enable_if_t&lt; std::is_arithmetic&lt; ScalarArg &gt;::value &gt; *  = nullptr, std::enable_if_t&lt; !std::is_base_of&lt; Base, Arg &gt;()&amp;&amp;!std::is_arithmetic&lt; Arg &gt;() &gt; *  = nullptr, std::enable_if_t&lt; !Checks::hasFree_Multiplication&lt; Arg, ScalarArg &gt;()&amp;&amp;Checks::hasMemFn_InPlaceMultiplication&lt; Arg, ScalarArg &gt;() &gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:a9b303ce8718a6f64b035e7e782370734"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a9b303ce8718a6f64b035e7e782370734">operator*</a> (ScalarArg a, Arg x)</td></tr>
 <tr class="memdesc:a9b303ce8718a6f64b035e7e782370734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines operator* for multiplication with built-in arithmetic types from the left if undefined and in-place multiplication (operator*=()) is supported.  <a href="#a9b303ce8718a6f64b035e7e782370734">More...</a><br /></td></tr>
 <tr class="separator:a9b303ce8718a6f64b035e7e782370734"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cd5a2cb1abba842154691bb84aab896"><td class="memTemplParams" colspan="2">template&lt;class Arg , class ScalarArg , class  = std::enable_if_t&lt; std::is_arithmetic&lt;ScalarArg&gt;::value &gt;, class  = std::enable_if_t&lt; !std::is_base_of&lt;Base,Arg&gt;() &amp;&amp; !std::is_arithmetic&lt;Arg&gt;::value&gt;, class  = std::enable_if_t&lt; !Checks::multiplicationWithArithmeticFromRight&lt;Arg,ScalarArg&gt;() &amp;&amp;                                       Checks::inPlaceMultiplicationWithArithmetic&lt;Arg,ScalarArg&gt;() &gt;&gt; </td></tr>
+<tr class="memitem:a3cd5a2cb1abba842154691bb84aab896"><td class="memTemplParams" colspan="2">template&lt;class Arg , class ScalarArg , std::enable_if_t&lt; std::is_arithmetic&lt; ScalarArg &gt;::value &gt; *  = nullptr, std::enable_if_t&lt; !std::is_base_of&lt; Base, Arg &gt;()&amp;&amp;!std::is_arithmetic&lt; Arg &gt;::value &gt; *  = nullptr, std::enable_if_t&lt; !Checks::hasFree_Multiplication&lt; Arg, ScalarArg &gt;()&amp;&amp;Checks::hasMemFn_InPlaceMultiplication&lt; Arg, ScalarArg &gt;() &gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:a3cd5a2cb1abba842154691bb84aab896"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a3cd5a2cb1abba842154691bb84aab896">operator*</a> (Arg x, ScalarArg a)</td></tr>
 <tr class="memdesc:a3cd5a2cb1abba842154691bb84aab896"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines operator* for multiplication with built-in arithmetic types from the right if undefined and in-place multiplication (operator*=()) is supported.  <a href="#a3cd5a2cb1abba842154691bb84aab896">More...</a><br /></td></tr>
 <tr class="separator:a3cd5a2cb1abba842154691bb84aab896"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad023f2d2273af693f2b4ebceeb296dc8"><td class="memTemplParams" colspan="2">template&lt;class Arg1 , class Arg2 , class  = std::enable_if_t&lt; !std::is_base_of&lt;Arg1,Base&gt;() &amp;&amp; !std::is_base_of&lt;Arg2,Base&gt;() &gt;, class  = std::enable_if_t&lt; !std::is_arithmetic&lt;Arg1&gt;() &amp;&amp; !std::is_arithmetic&lt;Arg2&gt;() &gt;, class  = std::enable_if_t&lt; !Checks::multiplication&lt;Arg1,Arg2&gt;() &amp;&amp;                                       Checks::inPlaceMultiplication&lt;Arg1,Arg2&gt;() &gt;&gt; </td></tr>
+<tr class="memitem:ad023f2d2273af693f2b4ebceeb296dc8"><td class="memTemplParams" colspan="2">template&lt;class Arg1 , class Arg2 , std::enable_if_t&lt; !std::is_base_of&lt; Arg1, Base &gt;()&amp;&amp;!std::is_base_of&lt; Arg2, Base &gt;() &gt; *  = nullptr, std::enable_if_t&lt; !std::is_arithmetic&lt; Arg1 &gt;()&amp;&amp;!std::is_arithmetic&lt; Arg2 &gt;() &gt; *  = nullptr, std::enable_if_t&lt; !Checks::hasFree_Multiplication&lt; Arg1, Arg2 &gt;()&amp;&amp;Checks::hasMemFn_InPlaceMultiplication&lt; Arg1, Arg2 &gt;() &gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:ad023f2d2273af693f2b4ebceeb296dc8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#ad023f2d2273af693f2b4ebceeb296dc8">operator*</a> (Arg1 x, const Arg2 &amp;y)</td></tr>
 <tr class="memdesc:ad023f2d2273af693f2b4ebceeb296dc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines operator* for multiplication of non-arithmetic types if undefined and in-place multiplication (operator*=()) is supported.  <a href="#ad023f2d2273af693f2b4ebceeb296dc8">More...</a><br /></td></tr>
 <tr class="separator:ad023f2d2273af693f2b4ebceeb296dc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e4d3266e119cd102800bf5c091e57fd"><td class="memTemplParams" colspan="2">template&lt;class Arg1 , class Arg2 , class  = std::enable_if_t&lt; !std::is_base_of&lt;Arg1,Base&gt;() &amp;&amp; !std::is_base_of&lt;Arg2,Base&gt;() &gt;, class  = std::enable_if_t&lt; !std::is_arithmetic&lt;Arg1&gt;() &amp;&amp; !std::is_arithmetic&lt;Arg2&gt;() &gt;, class  = std::enable_if_t&lt; !Checks::multiplication&lt;Arg1,Arg2&gt;() &amp;&amp;                                       !Checks::inPlaceMultiplication&lt;Arg1,Arg2&gt;() &gt;, class  = std::enable_if_t&lt; Checks::callToRightMultiply&lt;Arg1,Arg2&gt;() &gt;&gt; </td></tr>
+<tr class="memitem:a6e4d3266e119cd102800bf5c091e57fd"><td class="memTemplParams" colspan="2">template&lt;class Arg1 , class Arg2 , std::enable_if_t&lt; !std::is_base_of&lt; Arg1, Base &gt;()&amp;&amp;!std::is_base_of&lt; Arg2, Base &gt;() &gt; *  = nullptr, std::enable_if_t&lt; !std::is_arithmetic&lt; Arg1 &gt;()&amp;&amp;!std::is_arithmetic&lt; Arg2 &gt;() &gt; *  = nullptr, std::enable_if_t&lt; !Checks::hasFree_Multiplication&lt; Arg1, Arg2 &gt;()&amp;&amp;!Checks::hasMemFn_InPlaceMultiplication&lt; Arg1, Arg2 &gt;() &gt; *  = nullptr, std::enable_if_t&lt; Checks::hasMemFn_rightmultiplyany&lt; Arg1, Arg2 &gt;() &gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:a6e4d3266e119cd102800bf5c091e57fd"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a6e4d3266e119cd102800bf5c091e57fd">operator*</a> (Arg1 x, const Arg2 &amp;y)</td></tr>
 <tr class="memdesc:a6e4d3266e119cd102800bf5c091e57fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines operator* for multiplication of non-arithmetic types if undefined and in-place multiplication is provided in terms of the member function rightmultiplyany() (such as for Dune::FieldMatrix).  <a href="#a6e4d3266e119cd102800bf5c091e57fd">More...</a><br /></td></tr>
 <tr class="separator:a6e4d3266e119cd102800bf5c091e57fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a063d3e8c19dbea3ee1396736fecb64e1"><td class="memTemplParams" colspan="2">template&lt;class Arg , std::enable_if_t&lt; !std::is_base_of&lt; Base, Arg &gt;()&amp;&amp;!std::is_arithmetic&lt; Arg &gt;() &gt; *  = nullptr, std::enable_if_t&lt; !Checks::hasFree_Summation&lt; Arg &gt;()&amp;&amp;Checks::hasMemFn_InPlaceSummation&lt; Arg &gt;() &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:a063d3e8c19dbea3ee1396736fecb64e1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a063d3e8c19dbea3ee1396736fecb64e1">operator+</a> (Arg x, const Arg &amp;y)</td></tr>
+<tr class="memdesc:a063d3e8c19dbea3ee1396736fecb64e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines operator+ if not yet defined and in-place summation (operator+=()) is supported.  <a href="#a063d3e8c19dbea3ee1396736fecb64e1">More...</a><br /></td></tr>
+<tr class="separator:a063d3e8c19dbea3ee1396736fecb64e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0211d0d26c669d56b5113fd2292902e5"><td class="memTemplParams" colspan="2">template&lt;class Matrix , std::enable_if_t&lt; Checks::isConstantSize&lt; Matrix &gt;()&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:a0211d0d26c669d56b5113fd2292902e5"><td class="memTemplItemLeft" align="right" valign="top">Matrix&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a0211d0d26c669d56b5113fd2292902e5">addTransposed</a> (Matrix &amp;A)</td></tr>
 <tr class="memdesc:a0211d0d26c669d56b5113fd2292902e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overwrites \(A\) with \(A+A^T\).  <a href="#a0211d0d26c669d56b5113fd2292902e5">More...</a><br /></td></tr>
 <tr class="separator:a0211d0d26c669d56b5113fd2292902e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a649b4470d6def401959bfea3a368c48c"><td class="memTemplParams" colspan="2">template&lt;class Matrix , class  = std::enable_if_t&lt;Checks::isConstantSize&lt;Matrix&gt;()&gt;&gt; </td></tr>
+<tr class="memitem:a649b4470d6def401959bfea3a368c48c"><td class="memTemplParams" colspan="2">template&lt;class Matrix , class  = std::enable_if_t&lt;Checks::isConstantSize&lt;Matrix&gt;() || std::is_arithmetic&lt;Matrix&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:a649b4470d6def401959bfea3a368c48c"><td class="memTemplItemLeft" align="right" valign="top">Matrix&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a649b4470d6def401959bfea3a368c48c">zero</a> ()</td></tr>
 <tr class="separator:a649b4470d6def401959bfea3a368c48c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae633433339ba30207aa526e54e3924b4"><td class="memTemplParams" colspan="2">template&lt;class Matrix , class  = std::enable_if_t&lt;!Checks::isConstantSize&lt;Matrix&gt;()&gt;&gt; </td></tr>
+<tr class="memitem:ae633433339ba30207aa526e54e3924b4"><td class="memTemplParams" colspan="2">template&lt;class Matrix , class  = std::enable_if_t&lt;!Checks::isConstantSize&lt;Matrix&gt;() &amp;&amp; !std::is_arithmetic&lt;Matrix&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:ae633433339ba30207aa526e54e3924b4"><td class="memTemplItemLeft" align="right" valign="top">constexpr Matrix&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#ae633433339ba30207aa526e54e3924b4">zero</a> (int rows, int cols)</td></tr>
 <tr class="separator:ae633433339ba30207aa526e54e3924b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c474456411f028e14eab67ff6eebe0c"><td class="memTemplParams" colspan="2">template&lt;int id, class T &gt; </td></tr>
@@ -431,20 +451,33 @@ Functions</h2></td></tr>
 <dd>
 <a class="el" href="group__LinearAlgebraGroup.html" title="Functionality from linear algebra such as (modified) principal and mixed matrix invariants. ">Linear Algebra</a> </dd></dl>
 </div><h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="ab2a52dfbc62e262c67f293fda5f81ef7"></a>
+<a class="anchor" id="a195ac37d8696970c89b112c81a1e4d6e"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class F , bool arithmeticArgument = false&gt; </div>
+template&lt;class F &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespaceFunG.html#ab2a52dfbc62e262c67f293fda5f81ef7">FunG::Finalize</a> = typedef Detail::FinalizeImpl&lt; F , arithmeticArgument , <a class="el" href="namespaceFunG_1_1Checks.html#a6d289274975a662346a1b5adf0d31f37">Checks::hasVariable</a>&lt;F&gt;() &gt;</td>
+          <td class="memname">using <a class="el" href="namespaceFunG.html#a195ac37d8696970c89b112c81a1e4d6e">FunG::decay_t</a> = typedef typename <a class="el" href="structFunG_1_1Decay.html">Decay</a>&lt; std::decay_t&lt;F&gt; &gt;::type</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Finish function definition. </p>
-<p>Adds the definition of possibly undefined vanishing higher order derivatives. </p>
+<p>Access underlying type (if it is hidden by expression templates). </p>
+
+</div>
+</div>
+<a class="anchor" id="a6dd0f05fb05ea031b7b9678fe3730c73"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceFunG.html#a6dd0f05fb05ea031b7b9678fe3730c73">FunG::is_arithmetic</a> = typedef std::integral_constant&lt; bool , std::is_arithmetic&lt;F&gt;::value || <a class="el" href="structFunG_1_1IsArithmetic.html">IsArithmetic</a>&lt;F&gt;::value &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -518,29 +551,8 @@ template&lt;class Arg &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Wrap a constant. </p>
-<dl class="section return"><dt>Returns</dt><dd>Constant&lt;Arg&gt;(x) </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="abcfb38c2e995436816ea884803302f2d"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Arg &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">auto FunG::constRef </td>
-          <td>(</td>
-          <td class="paramtype">const Arg &amp;&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
 <p>Generate a constant function that stores its argument as constant reference. </p>
-<p>This admits to use variable constant arguments, i.e. parameters that we want to study. </p>
+<p>This admits to use variable constant arguments, i.e. parameters that we want to study. Wrap a constant. </p><dl class="section return"><dt>Returns</dt><dd>Constant&lt;Arg&gt;(x) </dd></dl>
 
 </div>
 </div>
@@ -565,24 +577,54 @@ template&lt;class F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a0c224cd9b212427657c6798ac8adf6ac"></a>
+<a class="anchor" id="aab17a1468e61f58564333b3fcd7900d6"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class F &gt; </div>
+template&lt;class Scalar , class Vector &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">auto FunG::finalize_scalar </td>
+          <td class="memname">auto FunG::heatModel </td>
           <td>(</td>
-          <td class="paramtype">const F &amp;&#160;</td>
-          <td class="paramname"><em>f</em></td><td>)</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Scalar&#160;</td>
+          <td class="paramname"><em>u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Vector &amp;&#160;</td>
+          <td class="paramname"><em>du</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Finish function definition. </p>
-<p>Adds the definition of possibly undefined vanishing higher order derivatives. </p>
+<p>Yield surface \( \frac{\beta}{3}\iota_1(\sigma) + J_2(\sigma)-offset \), where \(\iota_1\) is the first principal and \(J_2\) is the second deviatoric invariant. </p>
+<p>Weak model for nonlinear heat transfer \( (c+du^2)\nabla u \). </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>weighing of linearity </td></tr>
+    <tr><td class="paramname">d</td><td>weighing of nonlinearity </td></tr>
+    <tr><td class="paramname">u</td><td>heat </td></tr>
+    <tr><td class="paramname">du</td><td>heat gradient </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -606,11 +648,101 @@ template&lt;class Arg &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a5e258023361844926f485229c62a733b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Scalar , class OtherScalar , int n, std::enable_if_t&lt; !Checks::hasFree_Multiplication&lt; Dune::FieldVector&lt; Scalar, n &gt;, Dune::FieldVector&lt; OtherScalar, n &gt; &gt;() &gt; *  = nullptr&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto FunG::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const Dune::FieldVector&lt; Scalar, n &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Dune::FieldVector&lt; OtherScalar, n &gt; &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computation of the l2 scalar product for Dune::FieldVector. </p>
+
+</div>
+</div>
+<a class="anchor" id="abadb8da34a5abc3dde0107231ab91c6f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Scalar , class OtherScalar , int n, int m, std::enable_if_t&lt; !Checks::hasFree_Multiplication&lt; Dune::FieldMatrix&lt; Scalar, n, m &gt;, Dune::FieldVector&lt; OtherScalar, m &gt; &gt;() &gt; *  = nullptr&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto FunG::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const Dune::FieldMatrix&lt; Scalar, n, m &gt; &amp;&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Dune::FieldVector&lt; OtherScalar, m &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Define matrix-vector multiplication for Dune::FieldMatrix and Dune::FieldVector, i.e. compute \(y=Ax\). </p>
+
+</div>
+</div>
+<a class="anchor" id="a19a9d7b55b56f5101560034413a1dbfe"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Scalar , class OtherScalar , int n, int m, std::enable_if_t&lt; !Checks::hasFree_Multiplication&lt; Dune::FieldVector&lt; OtherScalar, n &gt;, Dune::FieldMatrix&lt; Scalar, n, m &gt; &gt;() &gt; *  = nullptr&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto FunG::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const Dune::FieldVector&lt; OtherScalar, n &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Dune::FieldMatrix&lt; Scalar, n, m &gt; &amp;&#160;</td>
+          <td class="paramname"><em>A</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Define vector-matrix multiplication for Dune::FieldMatrix and Dune::FieldVector, i.e. compute \(x^T A = y^T\) resp. \(y=A^T x\). </p>
+
+</div>
+</div>
 <a class="anchor" id="a9b303ce8718a6f64b035e7e782370734"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Arg , class ScalarArg , class  = std::enable_if_t&lt; std::is_arithmetic&lt;ScalarArg&gt;::value &gt;, class  = std::enable_if_t&lt; !std::is_base_of&lt;Base,Arg&gt;() &amp;&amp; !std::is_arithmetic&lt;Arg&gt;() &gt;, class  = std::enable_if_t&lt; !Checks::multiplicationWithArithmeticFromLeft&lt;Arg,ScalarArg&gt;() &amp;&amp;                                       Checks::inPlaceMultiplicationWithArithmetic&lt;Arg,ScalarArg&gt;() &gt;&gt; </div>
+template&lt;class Arg , class ScalarArg , std::enable_if_t&lt; std::is_arithmetic&lt; ScalarArg &gt;::value &gt; *  = nullptr, std::enable_if_t&lt; !std::is_base_of&lt; Base, Arg &gt;()&amp;&amp;!std::is_arithmetic&lt; Arg &gt;() &gt; *  = nullptr, std::enable_if_t&lt; !Checks::hasFree_Multiplication&lt; Arg, ScalarArg &gt;()&amp;&amp;Checks::hasMemFn_InPlaceMultiplication&lt; Arg, ScalarArg &gt;() &gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::operator* </td>
@@ -640,7 +772,7 @@ template&lt;class Arg , class ScalarArg , class  = std::enable_if_t&lt; std::is_
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Arg , class ScalarArg , class  = std::enable_if_t&lt; std::is_arithmetic&lt;ScalarArg&gt;::value &gt;, class  = std::enable_if_t&lt; !std::is_base_of&lt;Base,Arg&gt;() &amp;&amp; !std::is_arithmetic&lt;Arg&gt;::value&gt;, class  = std::enable_if_t&lt; !Checks::multiplicationWithArithmeticFromRight&lt;Arg,ScalarArg&gt;() &amp;&amp;                                       Checks::inPlaceMultiplicationWithArithmetic&lt;Arg,ScalarArg&gt;() &gt;&gt; </div>
+template&lt;class Arg , class ScalarArg , std::enable_if_t&lt; std::is_arithmetic&lt; ScalarArg &gt;::value &gt; *  = nullptr, std::enable_if_t&lt; !std::is_base_of&lt; Base, Arg &gt;()&amp;&amp;!std::is_arithmetic&lt; Arg &gt;::value &gt; *  = nullptr, std::enable_if_t&lt; !Checks::hasFree_Multiplication&lt; Arg, ScalarArg &gt;()&amp;&amp;Checks::hasMemFn_InPlaceMultiplication&lt; Arg, ScalarArg &gt;() &gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::operator* </td>
@@ -670,7 +802,7 @@ template&lt;class Arg , class ScalarArg , class  = std::enable_if_t&lt; std::is_
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Arg1 , class Arg2 , class  = std::enable_if_t&lt; !std::is_base_of&lt;Arg1,Base&gt;() &amp;&amp; !std::is_base_of&lt;Arg2,Base&gt;() &gt;, class  = std::enable_if_t&lt; !std::is_arithmetic&lt;Arg1&gt;() &amp;&amp; !std::is_arithmetic&lt;Arg2&gt;() &gt;, class  = std::enable_if_t&lt; !Checks::multiplication&lt;Arg1,Arg2&gt;() &amp;&amp;                                       Checks::inPlaceMultiplication&lt;Arg1,Arg2&gt;() &gt;&gt; </div>
+template&lt;class Arg1 , class Arg2 , std::enable_if_t&lt; !std::is_base_of&lt; Arg1, Base &gt;()&amp;&amp;!std::is_base_of&lt; Arg2, Base &gt;() &gt; *  = nullptr, std::enable_if_t&lt; !std::is_arithmetic&lt; Arg1 &gt;()&amp;&amp;!std::is_arithmetic&lt; Arg2 &gt;() &gt; *  = nullptr, std::enable_if_t&lt; !Checks::hasFree_Multiplication&lt; Arg1, Arg2 &gt;()&amp;&amp;Checks::hasMemFn_InPlaceMultiplication&lt; Arg1, Arg2 &gt;() &gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::operator* </td>
@@ -700,7 +832,7 @@ template&lt;class Arg1 , class Arg2 , class  = std::enable_if_t&lt; !std::is_bas
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Arg1 , class Arg2 , class  = std::enable_if_t&lt; !std::is_base_of&lt;Arg1,Base&gt;() &amp;&amp; !std::is_base_of&lt;Arg2,Base&gt;() &gt;, class  = std::enable_if_t&lt; !std::is_arithmetic&lt;Arg1&gt;() &amp;&amp; !std::is_arithmetic&lt;Arg2&gt;() &gt;, class  = std::enable_if_t&lt; !Checks::multiplication&lt;Arg1,Arg2&gt;() &amp;&amp;                                       !Checks::inPlaceMultiplication&lt;Arg1,Arg2&gt;() &gt;, class  = std::enable_if_t&lt; Checks::callToRightMultiply&lt;Arg1,Arg2&gt;() &gt;&gt; </div>
+template&lt;class Arg1 , class Arg2 , std::enable_if_t&lt; !std::is_base_of&lt; Arg1, Base &gt;()&amp;&amp;!std::is_base_of&lt; Arg2, Base &gt;() &gt; *  = nullptr, std::enable_if_t&lt; !std::is_arithmetic&lt; Arg1 &gt;()&amp;&amp;!std::is_arithmetic&lt; Arg2 &gt;() &gt; *  = nullptr, std::enable_if_t&lt; !Checks::hasFree_Multiplication&lt; Arg1, Arg2 &gt;()&amp;&amp;!Checks::hasMemFn_InPlaceMultiplication&lt; Arg1, Arg2 &gt;() &gt; *  = nullptr, std::enable_if_t&lt; Checks::hasMemFn_rightmultiplyany&lt; Arg1, Arg2 &gt;() &gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::operator* </td>
@@ -761,7 +893,7 @@ template&lt;class F , class G , class  = std::enable_if_t&lt; std::is_base_of&lt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Arg , class  = std::enable_if_t&lt; !std::is_base_of&lt;Base,Arg&gt;() &amp;&amp; !std::is_arithmetic&lt;Arg&gt;() &gt;, class  = std::enable_if_t&lt; !Checks::summation&lt;Arg&gt;() &amp;&amp;                                       Checks::inPlaceSummation&lt;Arg&gt;() &gt;&gt; </div>
+template&lt;class Arg , std::enable_if_t&lt; !std::is_base_of&lt; Base, Arg &gt;()&amp;&amp;!std::is_arithmetic&lt; Arg &gt;() &gt; *  = nullptr, std::enable_if_t&lt; !Checks::hasFree_Summation&lt; Arg &gt;()&amp;&amp;Checks::hasMemFn_InPlaceSummation&lt; Arg &gt;() &gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::operator+ </td>
@@ -822,7 +954,7 @@ template&lt;class F , class G , class  = std::enable_if_t&lt; std::is_base_of&lt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class F , class T , std::enable_if_t&lt; std::is_convertible&lt; T, decltype(std::declval&lt; F &gt;().d0())&gt;::value &amp;&amp;std::is_base_of&lt; Base, F &gt;::value &gt; *  = nullptr&gt; </div>
+template&lt;class F , class T , std::enable_if_t&lt; std::is_base_of&lt; Base, F &gt;::value &amp;&amp;!std::is_base_of&lt; Base, T &gt;::value &gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::operator- </td>
@@ -1110,7 +1242,7 @@ template&lt;class Matrix &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Matrix , class  = std::enable_if_t&lt;Checks::isConstantSize&lt;Matrix&gt;()&gt;&gt; </div>
+template&lt;class Matrix , class  = std::enable_if_t&lt;Checks::isConstantSize&lt;Matrix&gt;() || std::is_arithmetic&lt;Matrix&gt;::value&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">Matrix FunG::zero </td>
@@ -1128,7 +1260,7 @@ template&lt;class Matrix , class  = std::enable_if_t&lt;Checks::isConstantSize&l
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Matrix , class  = std::enable_if_t&lt;!Checks::isConstantSize&lt;Matrix&gt;()&gt;&gt; </div>
+template&lt;class Matrix , class  = std::enable_if_t&lt;!Checks::isConstantSize&lt;Matrix&gt;() &amp;&amp; !std::is_arithmetic&lt;Matrix&gt;::value&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">constexpr Matrix FunG::zero </td>
@@ -1156,7 +1288,7 @@ template&lt;class Matrix , class  = std::enable_if_t&lt;!Checks::isConstantSize&
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Oct 3 2015 01:36:37 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 9 2015 20:39:26 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

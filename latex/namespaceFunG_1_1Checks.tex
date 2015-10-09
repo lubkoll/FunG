@@ -8,31 +8,31 @@ Static checks for the presence of different operators and functions.
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$class Arg , class Scalar\+Arg $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_a023e0071a13fe19a14bd71df1a02a290}{multiplication\+With\+Arithmetic\+From\+Left} ()
-\begin{DoxyCompactList}\small\item\em Check if objects of type Arg support multiplication with objects of type Scalar\+Arg from the left. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Arg , class Scalar\+Arg $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_a584f795b6dfaffd9657888893afd32f3}{multiplication\+With\+Arithmetic\+From\+Right} ()
-\begin{DoxyCompactList}\small\item\em Check if objects of type Arg support multiplication with objects of type Scalar\+Arg from the right. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Arg , class Scalar\+Arg $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_a3b91969c5e1b84915c384cee63bdb649}{in\+Place\+Multiplication\+With\+Arithmetic} ()
-\begin{DoxyCompactList}\small\item\em Check if objects of type Arg support in-\/place multiplication with objects of type Scalar\+Arg. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Arg1 , class Arg2 $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_afc0d2ac0287022a297061359d40073d2}{multiplication} ()
+{\footnotesize template$<$class Arg1 , class Arg2 $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_a81302dfb773e50401ec899c3b9a53c4c}{has\+Free\+\_\+\+Multiplication} ()
 \begin{DoxyCompactList}\small\item\em Check if objects of typed Arg1 and Arg2 support multiplication (free operator$\ast$). \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Arg1 , class Arg2 $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_abeeb72e6dc640672187145a0469da9cc}{in\+Place\+Multiplication} ()
+{\footnotesize template$<$class Arg1 , class Arg2 $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_a1fb52331af88ccf29e380c8e5597e801}{has\+Mem\+Fn\+\_\+\+In\+Place\+Multiplication} ()
 \begin{DoxyCompactList}\small\item\em Check if objects of type Arg1 support in-\/place multiplication with objects of type Arg2. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Arg1 , class Arg2 $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_a3874c9f52b64baa8ed9a87b9902eb54c}{call\+To\+Right\+Multiply} ()
+{\footnotesize template$<$class Arg1 , class Arg2 $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_a88d1f93f87cf5f51d426fcfee862d6f6}{has\+Mem\+Fn\+\_\+rightmultiplyany} ()
 \begin{DoxyCompactList}\small\item\em Check if objects of type Arg1 support multiplication with objects of type Arg2 via call to rightmultiplyany(\+Arg2). \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Arg $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_a2dd2bf4016317339c1a609ddda1f4915}{summation} ()
+{\footnotesize template$<$class Arg $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_a8545906a81acf9f533c3342b0d02a6e9}{has\+Free\+\_\+\+Summation} ()
 \begin{DoxyCompactList}\small\item\em Check if objects of type Arg support summation. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Arg $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_a9ff694f025cc9f2ff379b1f3833641bb}{in\+Place\+Summation} ()
+{\footnotesize template$<$class Arg $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_a5357edca3d0fdcfbc1fba5fd43713b40}{has\+Mem\+Fn\+\_\+\+In\+Place\+Summation} ()
 \begin{DoxyCompactList}\small\item\em Check if objects of type Arg support in-\/place summation. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Arg $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_adcc3e179af2ed0384a3773ea086045b9}{is\+Constant\+Size} ()
-\begin{DoxyCompactList}\small\item\em Check if object is a static matrix for some type satisfying \hyperlink{structFunG_1_1Concepts_1_1MatrixConcept}{Concepts\+::\+Matrix\+Concept}. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Matrix $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_a45a54dc6fc2c1d24a88be78a79a5a72c}{has\+Rows\+Function} ()
+\begin{DoxyCompactList}\small\item\em Check if object is a static vector for some type satisfying \hyperlink{structFunG_1_1Concepts_1_1VectorConcept}{Concepts\+::\+Vector\+Concept}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class F $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_a5f9a3a474205df6f565dd1a03ebb5e28}{has\+Consistent\+First\+Derivative} ()
+\item 
+{\footnotesize template$<$class F , class Indexed\+Arg\+X , class Indexed\+Arg\+Y $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_a072e2c21fa90be998a34975fb2975772}{has\+Consistent\+Second\+Derivative} ()
+\item 
+{\footnotesize template$<$class F , class Indexed\+Arg\+X , class Indexed\+Arg\+Y , class Indexed\+Arg\+Z $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_aad092e45db1d0c1d7b6f69a5562679fa}{has\+Consistent\+Third\+Derivative} ()
+\item 
+{\footnotesize template$<$class Matrix $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_a68fd30eff9d106c399b2b0e9a1f1b822}{has\+Mem\+Fn\+\_\+rows} ()
 \begin{DoxyCompactList}\small\item\em Check if object of type Matrix has a member function \hyperlink{namespaceFunG_1_1LinearAlgebra_abd3afa2fcd2194787342b2662cfa9f5a}{rows()}. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Matrix $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_ae4d420ada8ff4b411cd351645325125e}{has\+Member\+\_\+n\+\_\+rows} ()
+{\footnotesize template$<$class Matrix $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_a6f66adbc63ed46140f1080e9914cb5de}{has\+Mem\+\_\+n\+\_\+rows} ()
 \begin{DoxyCompactList}\small\item\em Check if object of type Matrix has a member n\+\_\+rows. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Matrix $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_a3da195bf2a00ee02d12b19857723cb34}{has\+Cols\+Function} ()
+{\footnotesize template$<$class Matrix $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_a4979df2d7b7abebb0253a569e41274b1}{has\+Mem\+Fn\+\_\+cols} ()
 \begin{DoxyCompactList}\small\item\em Check if object of type Matrix has a member function \hyperlink{namespaceFunG_1_1LinearAlgebra_ae981b8bee32eea3ce87f41874835c9c1}{cols()}. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Matrix $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_aa93bc7629b88570df808e580ab436d8c}{has\+Member\+\_\+n\+\_\+cols} ()
+{\footnotesize template$<$class Matrix $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_a0a87aaa714499abcaabd921297be61e4}{has\+Mem\+\_\+n\+\_\+cols} ()
 \begin{DoxyCompactList}\small\item\em Check if object of type Matrix has a member n\+\_\+cols. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_ac2a1a8aedf54c42cb6d47b3b64bbc761}{is\+Variable} ()
 \begin{DoxyCompactList}\small\item\em Check if T is of type Variable$<$\+Type,n$>$. \end{DoxyCompactList}\item 
@@ -50,17 +50,6 @@ Static checks for the presence of different operators and functions.
 Static checks for the presence of different operators and functions. 
 
 \subsection{Function Documentation}
-\hypertarget{namespaceFunG_1_1Checks_a3874c9f52b64baa8ed9a87b9902eb54c}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!call\+To\+Right\+Multiply@{call\+To\+Right\+Multiply}}
-\index{call\+To\+Right\+Multiply@{call\+To\+Right\+Multiply}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
-\subsubsection[{call\+To\+Right\+Multiply}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg1 , class Arg2 $>$ constexpr bool Fun\+G\+::\+Checks\+::call\+To\+Right\+Multiply (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\label{namespaceFunG_1_1Checks_a3874c9f52b64baa8ed9a87b9902eb54c}
-
-
-Check if objects of type Arg1 support multiplication with objects of type Arg2 via call to rightmultiplyany(\+Arg2). 
-
 \hypertarget{namespaceFunG_1_1Checks_a31790e5d021a40ac34b7469323c658f9}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!check\+Argument@{check\+Argument}}
 \index{check\+Argument@{check\+Argument}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
 \subsubsection[{check\+Argument}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class Type , int id$>$ constexpr bool Fun\+G\+::\+Checks\+::check\+Argument (
@@ -72,38 +61,125 @@ Check if objects of type Arg1 support multiplication with objects of type Arg2 v
 
 Check if variable with index id has type Type. 
 
-\hypertarget{namespaceFunG_1_1Checks_a3da195bf2a00ee02d12b19857723cb34}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!has\+Cols\+Function@{has\+Cols\+Function}}
-\index{has\+Cols\+Function@{has\+Cols\+Function}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
-\subsubsection[{has\+Cols\+Function}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix $>$ constexpr bool Fun\+G\+::\+Checks\+::has\+Cols\+Function (
+\hypertarget{namespaceFunG_1_1Checks_a5f9a3a474205df6f565dd1a03ebb5e28}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!has\+Consistent\+First\+Derivative@{has\+Consistent\+First\+Derivative}}
+\index{has\+Consistent\+First\+Derivative@{has\+Consistent\+First\+Derivative}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
+\subsubsection[{has\+Consistent\+First\+Derivative}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F $>$ constexpr bool Fun\+G\+::\+Checks\+::has\+Consistent\+First\+Derivative (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_1_1Checks_a3da195bf2a00ee02d12b19857723cb34}
-
-
-Check if object of type Matrix has a member function \hyperlink{namespaceFunG_1_1LinearAlgebra_ae981b8bee32eea3ce87f41874835c9c1}{cols()}. 
-
-\hypertarget{namespaceFunG_1_1Checks_aa93bc7629b88570df808e580ab436d8c}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!has\+Member\+\_\+n\+\_\+cols@{has\+Member\+\_\+n\+\_\+cols}}
-\index{has\+Member\+\_\+n\+\_\+cols@{has\+Member\+\_\+n\+\_\+cols}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
-\subsubsection[{has\+Member\+\_\+n\+\_\+cols}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix $>$ constexpr bool Fun\+G\+::\+Checks\+::has\+Member\+\_\+n\+\_\+cols (
+)}\label{namespaceFunG_1_1Checks_a5f9a3a474205df6f565dd1a03ebb5e28}
+\hypertarget{namespaceFunG_1_1Checks_a072e2c21fa90be998a34975fb2975772}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!has\+Consistent\+Second\+Derivative@{has\+Consistent\+Second\+Derivative}}
+\index{has\+Consistent\+Second\+Derivative@{has\+Consistent\+Second\+Derivative}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
+\subsubsection[{has\+Consistent\+Second\+Derivative}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class Indexed\+Arg\+X , class Indexed\+Arg\+Y $>$ constexpr bool Fun\+G\+::\+Checks\+::has\+Consistent\+Second\+Derivative (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_1_1Checks_aa93bc7629b88570df808e580ab436d8c}
+)}\label{namespaceFunG_1_1Checks_a072e2c21fa90be998a34975fb2975772}
+\hypertarget{namespaceFunG_1_1Checks_aad092e45db1d0c1d7b6f69a5562679fa}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!has\+Consistent\+Third\+Derivative@{has\+Consistent\+Third\+Derivative}}
+\index{has\+Consistent\+Third\+Derivative@{has\+Consistent\+Third\+Derivative}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
+\subsubsection[{has\+Consistent\+Third\+Derivative}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class Indexed\+Arg\+X , class Indexed\+Arg\+Y , class Indexed\+Arg\+Z $>$ constexpr bool Fun\+G\+::\+Checks\+::has\+Consistent\+Third\+Derivative (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{namespaceFunG_1_1Checks_aad092e45db1d0c1d7b6f69a5562679fa}
+\hypertarget{namespaceFunG_1_1Checks_a81302dfb773e50401ec899c3b9a53c4c}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!has\+Free\+\_\+\+Multiplication@{has\+Free\+\_\+\+Multiplication}}
+\index{has\+Free\+\_\+\+Multiplication@{has\+Free\+\_\+\+Multiplication}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
+\subsubsection[{has\+Free\+\_\+\+Multiplication}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg1 , class Arg2 $>$ constexpr bool Fun\+G\+::\+Checks\+::has\+Free\+\_\+\+Multiplication (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{namespaceFunG_1_1Checks_a81302dfb773e50401ec899c3b9a53c4c}
+
+
+Check if objects of typed Arg1 and Arg2 support multiplication (free operator$\ast$). 
+
+\hypertarget{namespaceFunG_1_1Checks_a8545906a81acf9f533c3342b0d02a6e9}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!has\+Free\+\_\+\+Summation@{has\+Free\+\_\+\+Summation}}
+\index{has\+Free\+\_\+\+Summation@{has\+Free\+\_\+\+Summation}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
+\subsubsection[{has\+Free\+\_\+\+Summation}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg $>$ constexpr bool Fun\+G\+::\+Checks\+::has\+Free\+\_\+\+Summation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{namespaceFunG_1_1Checks_a8545906a81acf9f533c3342b0d02a6e9}
+
+
+Check if objects of type Arg support summation. 
+
+\hypertarget{namespaceFunG_1_1Checks_a0a87aaa714499abcaabd921297be61e4}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!has\+Mem\+\_\+n\+\_\+cols@{has\+Mem\+\_\+n\+\_\+cols}}
+\index{has\+Mem\+\_\+n\+\_\+cols@{has\+Mem\+\_\+n\+\_\+cols}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
+\subsubsection[{has\+Mem\+\_\+n\+\_\+cols}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix $>$ constexpr bool Fun\+G\+::\+Checks\+::has\+Mem\+\_\+n\+\_\+cols (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{namespaceFunG_1_1Checks_a0a87aaa714499abcaabd921297be61e4}
 
 
 Check if object of type Matrix has a member n\+\_\+cols. 
 
-\hypertarget{namespaceFunG_1_1Checks_ae4d420ada8ff4b411cd351645325125e}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!has\+Member\+\_\+n\+\_\+rows@{has\+Member\+\_\+n\+\_\+rows}}
-\index{has\+Member\+\_\+n\+\_\+rows@{has\+Member\+\_\+n\+\_\+rows}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
-\subsubsection[{has\+Member\+\_\+n\+\_\+rows}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix $>$ constexpr bool Fun\+G\+::\+Checks\+::has\+Member\+\_\+n\+\_\+rows (
+\hypertarget{namespaceFunG_1_1Checks_a6f66adbc63ed46140f1080e9914cb5de}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!has\+Mem\+\_\+n\+\_\+rows@{has\+Mem\+\_\+n\+\_\+rows}}
+\index{has\+Mem\+\_\+n\+\_\+rows@{has\+Mem\+\_\+n\+\_\+rows}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
+\subsubsection[{has\+Mem\+\_\+n\+\_\+rows}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix $>$ constexpr bool Fun\+G\+::\+Checks\+::has\+Mem\+\_\+n\+\_\+rows (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_1_1Checks_ae4d420ada8ff4b411cd351645325125e}
+)}\label{namespaceFunG_1_1Checks_a6f66adbc63ed46140f1080e9914cb5de}
 
 
 Check if object of type Matrix has a member n\+\_\+rows. 
+
+\hypertarget{namespaceFunG_1_1Checks_a4979df2d7b7abebb0253a569e41274b1}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!has\+Mem\+Fn\+\_\+cols@{has\+Mem\+Fn\+\_\+cols}}
+\index{has\+Mem\+Fn\+\_\+cols@{has\+Mem\+Fn\+\_\+cols}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
+\subsubsection[{has\+Mem\+Fn\+\_\+cols}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix $>$ constexpr bool Fun\+G\+::\+Checks\+::has\+Mem\+Fn\+\_\+cols (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{namespaceFunG_1_1Checks_a4979df2d7b7abebb0253a569e41274b1}
+
+
+Check if object of type Matrix has a member function \hyperlink{namespaceFunG_1_1LinearAlgebra_ae981b8bee32eea3ce87f41874835c9c1}{cols()}. 
+
+\hypertarget{namespaceFunG_1_1Checks_a1fb52331af88ccf29e380c8e5597e801}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!has\+Mem\+Fn\+\_\+\+In\+Place\+Multiplication@{has\+Mem\+Fn\+\_\+\+In\+Place\+Multiplication}}
+\index{has\+Mem\+Fn\+\_\+\+In\+Place\+Multiplication@{has\+Mem\+Fn\+\_\+\+In\+Place\+Multiplication}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
+\subsubsection[{has\+Mem\+Fn\+\_\+\+In\+Place\+Multiplication}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg1 , class Arg2 $>$ constexpr bool Fun\+G\+::\+Checks\+::has\+Mem\+Fn\+\_\+\+In\+Place\+Multiplication (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{namespaceFunG_1_1Checks_a1fb52331af88ccf29e380c8e5597e801}
+
+
+Check if objects of type Arg1 support in-\/place multiplication with objects of type Arg2. 
+
+\hypertarget{namespaceFunG_1_1Checks_a5357edca3d0fdcfbc1fba5fd43713b40}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!has\+Mem\+Fn\+\_\+\+In\+Place\+Summation@{has\+Mem\+Fn\+\_\+\+In\+Place\+Summation}}
+\index{has\+Mem\+Fn\+\_\+\+In\+Place\+Summation@{has\+Mem\+Fn\+\_\+\+In\+Place\+Summation}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
+\subsubsection[{has\+Mem\+Fn\+\_\+\+In\+Place\+Summation}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg $>$ constexpr bool Fun\+G\+::\+Checks\+::has\+Mem\+Fn\+\_\+\+In\+Place\+Summation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{namespaceFunG_1_1Checks_a5357edca3d0fdcfbc1fba5fd43713b40}
+
+
+Check if objects of type Arg support in-\/place summation. 
+
+\hypertarget{namespaceFunG_1_1Checks_a88d1f93f87cf5f51d426fcfee862d6f6}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!has\+Mem\+Fn\+\_\+rightmultiplyany@{has\+Mem\+Fn\+\_\+rightmultiplyany}}
+\index{has\+Mem\+Fn\+\_\+rightmultiplyany@{has\+Mem\+Fn\+\_\+rightmultiplyany}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
+\subsubsection[{has\+Mem\+Fn\+\_\+rightmultiplyany}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg1 , class Arg2 $>$ constexpr bool Fun\+G\+::\+Checks\+::has\+Mem\+Fn\+\_\+rightmultiplyany (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{namespaceFunG_1_1Checks_a88d1f93f87cf5f51d426fcfee862d6f6}
+
+
+Check if objects of type Arg1 support multiplication with objects of type Arg2 via call to rightmultiplyany(\+Arg2). 
+
+\hypertarget{namespaceFunG_1_1Checks_a68fd30eff9d106c399b2b0e9a1f1b822}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!has\+Mem\+Fn\+\_\+rows@{has\+Mem\+Fn\+\_\+rows}}
+\index{has\+Mem\+Fn\+\_\+rows@{has\+Mem\+Fn\+\_\+rows}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
+\subsubsection[{has\+Mem\+Fn\+\_\+rows}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix $>$ constexpr bool Fun\+G\+::\+Checks\+::has\+Mem\+Fn\+\_\+rows (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{namespaceFunG_1_1Checks_a68fd30eff9d106c399b2b0e9a1f1b822}
+
+
+Check if object of type Matrix has a member function \hyperlink{namespaceFunG_1_1LinearAlgebra_abd3afa2fcd2194787342b2662cfa9f5a}{rows()}. 
 
 \hypertarget{namespaceFunG_1_1Checks_a5ff379f125d36c212332fd51012195d5}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!has\+More\+Than\+One\+Variable@{has\+More\+Than\+One\+Variable}}
 \index{has\+More\+Than\+One\+Variable@{has\+More\+Than\+One\+Variable}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
@@ -115,17 +191,6 @@ Check if object of type Matrix has a member n\+\_\+rows.
 
 
 Check if T contains at least two variables. 
-
-\hypertarget{namespaceFunG_1_1Checks_a45a54dc6fc2c1d24a88be78a79a5a72c}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!has\+Rows\+Function@{has\+Rows\+Function}}
-\index{has\+Rows\+Function@{has\+Rows\+Function}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
-\subsubsection[{has\+Rows\+Function}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix $>$ constexpr bool Fun\+G\+::\+Checks\+::has\+Rows\+Function (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\label{namespaceFunG_1_1Checks_a45a54dc6fc2c1d24a88be78a79a5a72c}
-
-
-Check if object of type Matrix has a member function \hyperlink{namespaceFunG_1_1LinearAlgebra_abd3afa2fcd2194787342b2662cfa9f5a}{rows()}. 
 
 \hypertarget{namespaceFunG_1_1Checks_a6d289274975a662346a1b5adf0d31f37}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!has\+Variable@{has\+Variable}}
 \index{has\+Variable@{has\+Variable}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
@@ -149,39 +214,6 @@ Check if T contains a type Variable$<$\+Type,n$>$.
 
 Check if T contains a type Variable$<$\+Type,id$>$. 
 
-\hypertarget{namespaceFunG_1_1Checks_abeeb72e6dc640672187145a0469da9cc}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!in\+Place\+Multiplication@{in\+Place\+Multiplication}}
-\index{in\+Place\+Multiplication@{in\+Place\+Multiplication}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
-\subsubsection[{in\+Place\+Multiplication}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg1 , class Arg2 $>$ constexpr bool Fun\+G\+::\+Checks\+::in\+Place\+Multiplication (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\label{namespaceFunG_1_1Checks_abeeb72e6dc640672187145a0469da9cc}
-
-
-Check if objects of type Arg1 support in-\/place multiplication with objects of type Arg2. 
-
-\hypertarget{namespaceFunG_1_1Checks_a3b91969c5e1b84915c384cee63bdb649}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!in\+Place\+Multiplication\+With\+Arithmetic@{in\+Place\+Multiplication\+With\+Arithmetic}}
-\index{in\+Place\+Multiplication\+With\+Arithmetic@{in\+Place\+Multiplication\+With\+Arithmetic}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
-\subsubsection[{in\+Place\+Multiplication\+With\+Arithmetic}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg , class Scalar\+Arg $>$ constexpr bool Fun\+G\+::\+Checks\+::in\+Place\+Multiplication\+With\+Arithmetic (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\label{namespaceFunG_1_1Checks_a3b91969c5e1b84915c384cee63bdb649}
-
-
-Check if objects of type Arg support in-\/place multiplication with objects of type Scalar\+Arg. 
-
-\hypertarget{namespaceFunG_1_1Checks_a9ff694f025cc9f2ff379b1f3833641bb}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!in\+Place\+Summation@{in\+Place\+Summation}}
-\index{in\+Place\+Summation@{in\+Place\+Summation}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
-\subsubsection[{in\+Place\+Summation}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg $>$ constexpr bool Fun\+G\+::\+Checks\+::in\+Place\+Summation (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\label{namespaceFunG_1_1Checks_a9ff694f025cc9f2ff379b1f3833641bb}
-
-
-Check if objects of type Arg support in-\/place summation. 
-
 \hypertarget{namespaceFunG_1_1Checks_adcc3e179af2ed0384a3773ea086045b9}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!is\+Constant\+Size@{is\+Constant\+Size}}
 \index{is\+Constant\+Size@{is\+Constant\+Size}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
 \subsubsection[{is\+Constant\+Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg $>$ constexpr bool Fun\+G\+::\+Checks\+::is\+Constant\+Size (
@@ -191,11 +223,7 @@ Check if objects of type Arg support in-\/place summation.
 )}\label{namespaceFunG_1_1Checks_adcc3e179af2ed0384a3773ea086045b9}
 
 
-Check if object is a static matrix for some type satisfying \hyperlink{structFunG_1_1Concepts_1_1MatrixConcept}{Concepts\+::\+Matrix\+Concept}. 
-
-\hyperlink{namespaceFunG_1_1Checks}{Checks} if number of rows and number of columns are positive.
-
-Check if object is a static vector for some type satisfying \hyperlink{structFunG_1_1Concepts_1_1VectorConcept}{Concepts\+::\+Vector\+Concept}.
+Check if object is a static vector for some type satisfying \hyperlink{structFunG_1_1Concepts_1_1VectorConcept}{Concepts\+::\+Vector\+Concept}. 
 
 \hyperlink{namespaceFunG_1_1Checks}{Checks} if number of rows is positive. \hypertarget{namespaceFunG_1_1Checks_ac2a1a8aedf54c42cb6d47b3b64bbc761}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!is\+Variable@{is\+Variable}}
 \index{is\+Variable@{is\+Variable}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
@@ -207,48 +235,4 @@ Check if object is a static vector for some type satisfying \hyperlink{structFun
 
 
 Check if T is of type Variable$<$\+Type,n$>$. 
-
-\hypertarget{namespaceFunG_1_1Checks_afc0d2ac0287022a297061359d40073d2}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!multiplication@{multiplication}}
-\index{multiplication@{multiplication}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
-\subsubsection[{multiplication}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg1 , class Arg2 $>$ constexpr bool Fun\+G\+::\+Checks\+::multiplication (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\label{namespaceFunG_1_1Checks_afc0d2ac0287022a297061359d40073d2}
-
-
-Check if objects of typed Arg1 and Arg2 support multiplication (free operator$\ast$). 
-
-\hypertarget{namespaceFunG_1_1Checks_a023e0071a13fe19a14bd71df1a02a290}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!multiplication\+With\+Arithmetic\+From\+Left@{multiplication\+With\+Arithmetic\+From\+Left}}
-\index{multiplication\+With\+Arithmetic\+From\+Left@{multiplication\+With\+Arithmetic\+From\+Left}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
-\subsubsection[{multiplication\+With\+Arithmetic\+From\+Left}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg , class Scalar\+Arg $>$ constexpr bool Fun\+G\+::\+Checks\+::multiplication\+With\+Arithmetic\+From\+Left (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\label{namespaceFunG_1_1Checks_a023e0071a13fe19a14bd71df1a02a290}
-
-
-Check if objects of type Arg support multiplication with objects of type Scalar\+Arg from the left. 
-
-\hypertarget{namespaceFunG_1_1Checks_a584f795b6dfaffd9657888893afd32f3}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!multiplication\+With\+Arithmetic\+From\+Right@{multiplication\+With\+Arithmetic\+From\+Right}}
-\index{multiplication\+With\+Arithmetic\+From\+Right@{multiplication\+With\+Arithmetic\+From\+Right}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
-\subsubsection[{multiplication\+With\+Arithmetic\+From\+Right}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg , class Scalar\+Arg $>$ constexpr bool Fun\+G\+::\+Checks\+::multiplication\+With\+Arithmetic\+From\+Right (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\label{namespaceFunG_1_1Checks_a584f795b6dfaffd9657888893afd32f3}
-
-
-Check if objects of type Arg support multiplication with objects of type Scalar\+Arg from the right. 
-
-\hypertarget{namespaceFunG_1_1Checks_a2dd2bf4016317339c1a609ddda1f4915}{}\index{Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}!summation@{summation}}
-\index{summation@{summation}!Fun\+G\+::\+Checks@{Fun\+G\+::\+Checks}}
-\subsubsection[{summation}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg $>$ constexpr bool Fun\+G\+::\+Checks\+::summation (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\label{namespaceFunG_1_1Checks_a2dd2bf4016317339c1a609ddda1f4915}
-
-
-Check if objects of type Arg support summation. 
 

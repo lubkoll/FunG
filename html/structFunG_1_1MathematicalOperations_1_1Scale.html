@@ -96,6 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="structFunG_1_1MathematicalOperations_1_1Scale-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -117,6 +118,11 @@ Inheritance diagram for FunG::MathematicalOperations::Scale&lt; F, class &gt;:</
 </map>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ac8d3f432c36c678cbf156132e46607ae"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html#ac8d3f432c36c678cbf156132e46607ae">ReturnType</a> = std::decay_t&lt; decltype(std::declval&lt; F &gt;().<a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html#aec01731655fabb0f6fcfd06493aec4af">d0</a>())&gt;</td></tr>
+<tr class="separator:ac8d3f432c36c678cbf156132e46607ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab86612b868aaee66786793da2ec7a54a"><td class="memTemplParams" colspan="2">template&lt;class InitF &gt; </td></tr>
@@ -131,28 +137,43 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a49b277539bf6582956f68d325ce4a44d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html#a49b277539bf6582956f68d325ce4a44d">update</a> (const Arg &amp;x)</td></tr>
 <tr class="memdesc:a49b277539bf6582956f68d325ce4a44d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update variable corresponding to index.  <a href="#a49b277539bf6582956f68d325ce4a44d">More...</a><br /></td></tr>
 <tr class="separator:a49b277539bf6582956f68d325ce4a44d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae49c1126f8dbc9d3b03e6890392b86ea"><td class="memItemLeft" align="right" valign="top">const auto &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html#ae49c1126f8dbc9d3b03e6890392b86ea">d0</a> () const noexcept</td></tr>
-<tr class="memdesc:ae49c1126f8dbc9d3b03e6890392b86ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function value.  <a href="#ae49c1126f8dbc9d3b03e6890392b86ea">More...</a><br /></td></tr>
-<tr class="separator:ae49c1126f8dbc9d3b03e6890392b86ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63b6f3353439de0125836020bd2b15ba"><td class="memTemplParams" colspan="2">template&lt;int idx, class Arg , class IndexedArg  = IndexedType&lt;Arg,idx&gt;, class  = std::enable_if_t&lt; D1&lt;F,IndexedArg&gt;::present&gt;&gt; </td></tr>
-<tr class="memitem:a63b6f3353439de0125836020bd2b15ba"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html#a63b6f3353439de0125836020bd2b15ba">d1</a> (Arg const &amp;dx) const </td></tr>
-<tr class="memdesc:a63b6f3353439de0125836020bd2b15ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">First directional derivative.  <a href="#a63b6f3353439de0125836020bd2b15ba">More...</a><br /></td></tr>
-<tr class="separator:a63b6f3353439de0125836020bd2b15ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79be0256e8b2b28c32dbcc9d3c098909"><td class="memTemplParams" colspan="2">template&lt;int idx, int idy, class ArgX , class ArgY , class IndexedArgX  = IndexedType&lt;ArgX,idx&gt;, class IndexedArgY  = IndexedType&lt;ArgY,idy&gt;, class  = std::enable_if_t&lt; D2&lt;F,IndexedArgX,IndexedArgY&gt;::present&gt;&gt; </td></tr>
-<tr class="memitem:a79be0256e8b2b28c32dbcc9d3c098909"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html#a79be0256e8b2b28c32dbcc9d3c098909">d2</a> (ArgX const &amp;dx, ArgY const &amp;dy) const </td></tr>
-<tr class="memdesc:a79be0256e8b2b28c32dbcc9d3c098909"><td class="mdescLeft">&#160;</td><td class="mdescRight">Second directional derivative.  <a href="#a79be0256e8b2b28c32dbcc9d3c098909">More...</a><br /></td></tr>
-<tr class="separator:a79be0256e8b2b28c32dbcc9d3c098909"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8cb9d13e8bd87c2d4657ae1c075e7f39"><td class="memTemplParams" colspan="2">template&lt;int idx, int idy, int idz, class ArgX , class ArgY , class ArgZ , class IndexedArgX  = IndexedType&lt;ArgX,idx&gt;, class IndexedArgY  = IndexedType&lt;ArgY,idy&gt;, class IndexedArgZ  = IndexedType&lt;ArgZ,idz&gt;, class  = std::enable_if_t&lt; D3&lt;F,IndexedArgX,IndexedArgY,IndexedArgZ&gt;::present &gt;&gt; </td></tr>
-<tr class="memitem:a8cb9d13e8bd87c2d4657ae1c075e7f39"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html#a8cb9d13e8bd87c2d4657ae1c075e7f39">d3</a> (ArgX const &amp;dx, ArgY const &amp;dy, ArgZ const &amp;dz) const </td></tr>
-<tr class="memdesc:a8cb9d13e8bd87c2d4657ae1c075e7f39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Third directional derivative.  <a href="#a8cb9d13e8bd87c2d4657ae1c075e7f39">More...</a><br /></td></tr>
-<tr class="separator:a8cb9d13e8bd87c2d4657ae1c075e7f39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec01731655fabb0f6fcfd06493aec4af"><td class="memItemLeft" align="right" valign="top">decltype(auto)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html#aec01731655fabb0f6fcfd06493aec4af">d0</a> () const noexcept</td></tr>
+<tr class="memdesc:aec01731655fabb0f6fcfd06493aec4af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function value.  <a href="#aec01731655fabb0f6fcfd06493aec4af">More...</a><br /></td></tr>
+<tr class="separator:aec01731655fabb0f6fcfd06493aec4af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb6db8654d08b056e75d3355c41a2a2b"><td class="memTemplParams" colspan="2">template&lt;int idx, class Arg , class IndexedArg  = IndexedType&lt;Arg,idx&gt;, class  = std::enable_if_t&lt; D1&lt;F,IndexedArg&gt;::present&gt;&gt; </td></tr>
+<tr class="memitem:adb6db8654d08b056e75d3355c41a2a2b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html#ac8d3f432c36c678cbf156132e46607ae">ReturnType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html#adb6db8654d08b056e75d3355c41a2a2b">d1</a> (Arg const &amp;dx) const </td></tr>
+<tr class="memdesc:adb6db8654d08b056e75d3355c41a2a2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">First directional derivative.  <a href="#adb6db8654d08b056e75d3355c41a2a2b">More...</a><br /></td></tr>
+<tr class="separator:adb6db8654d08b056e75d3355c41a2a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af62128a54afef7bb17c24345226708f1"><td class="memTemplParams" colspan="2">template&lt;int idx, int idy, class ArgX , class ArgY , class IndexedArgX  = IndexedType&lt;ArgX,idx&gt;, class IndexedArgY  = IndexedType&lt;ArgY,idy&gt;, class  = std::enable_if_t&lt; D2&lt;F,IndexedArgX,IndexedArgY&gt;::present&gt;&gt; </td></tr>
+<tr class="memitem:af62128a54afef7bb17c24345226708f1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html#ac8d3f432c36c678cbf156132e46607ae">ReturnType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html#af62128a54afef7bb17c24345226708f1">d2</a> (ArgX const &amp;dx, ArgY const &amp;dy) const </td></tr>
+<tr class="memdesc:af62128a54afef7bb17c24345226708f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Second directional derivative.  <a href="#af62128a54afef7bb17c24345226708f1">More...</a><br /></td></tr>
+<tr class="separator:af62128a54afef7bb17c24345226708f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5a15553e3e2848a5d6057c99d267438"><td class="memTemplParams" colspan="2">template&lt;int idx, int idy, int idz, class ArgX , class ArgY , class ArgZ , class IndexedArgX  = IndexedType&lt;ArgX,idx&gt;, class IndexedArgY  = IndexedType&lt;ArgY,idy&gt;, class IndexedArgZ  = IndexedType&lt;ArgZ,idz&gt;, class  = std::enable_if_t&lt; D3&lt;F,IndexedArgX,IndexedArgY,IndexedArgZ&gt;::present &gt;&gt; </td></tr>
+<tr class="memitem:ac5a15553e3e2848a5d6057c99d267438"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html#ac8d3f432c36c678cbf156132e46607ae">ReturnType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html#ac5a15553e3e2848a5d6057c99d267438">d3</a> (ArgX const &amp;dx, ArgY const &amp;dy, ArgZ const &amp;dz) const </td></tr>
+<tr class="memdesc:ac5a15553e3e2848a5d6057c99d267438"><td class="mdescLeft">&#160;</td><td class="mdescRight">Third directional derivative.  <a href="#ac5a15553e3e2848a5d6057c99d267438">More...</a><br /></td></tr>
+<tr class="separator:ac5a15553e3e2848a5d6057c99d267438"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class F, class = Concepts::FunctionConceptCheck&lt;F&gt;&gt;<br />
 struct FunG::MathematicalOperations::Scale&lt; F, class &gt;</h3>
 
 <p>Scaling \( af \) of some function \( f \) with a double \( a \) (F must satisfy the requirements of <a class="el" href="structFunG_1_1Concepts_1_1FunctionConcept.html" title="Minimal requirements for functions. ">Concepts::FunctionConcept</a>). </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a class="anchor" id="ac8d3f432c36c678cbf156132e46607ae"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F , class  = Concepts::FunctionConceptCheck&lt;F&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html">FunG::MathematicalOperations::Scale</a>&lt; F, class &gt;::<a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html#ac8d3f432c36c678cbf156132e46607ae">ReturnType</a> =  std::decay_t&lt;decltype(std::declval&lt;F&gt;().<a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html#aec01731655fabb0f6fcfd06493aec4af">d0</a>())&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ab86612b868aaee66786793da2ec7a54a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -201,7 +222,7 @@ template&lt;class InitF &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ae49c1126f8dbc9d3b03e6890392b86ea"></a>
+<a class="anchor" id="aec01731655fabb0f6fcfd06493aec4af"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -211,7 +232,7 @@ template&lt;class F , class  = Concepts::FunctionConceptCheck&lt;F&gt;&gt; </div
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const auto&amp; <a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html">FunG::MathematicalOperations::Scale</a>&lt; F, class &gt;::d0 </td>
+          <td class="memname">decltype(auto) <a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html">FunG::MathematicalOperations::Scale</a>&lt; F, class &gt;::d0 </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -228,7 +249,7 @@ template&lt;class F , class  = Concepts::FunctionConceptCheck&lt;F&gt;&gt; </div
 
 </div>
 </div>
-<a class="anchor" id="a63b6f3353439de0125836020bd2b15ba"></a>
+<a class="anchor" id="adb6db8654d08b056e75d3355c41a2a2b"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -240,7 +261,7 @@ template&lt;int idx, class Arg , class IndexedArg  = IndexedType&lt;Arg,idx&gt;,
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html">FunG::MathematicalOperations::Scale</a>&lt; F, class &gt;::d1 </td>
+          <td class="memname"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html#ac8d3f432c36c678cbf156132e46607ae">ReturnType</a> <a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html">FunG::MathematicalOperations::Scale</a>&lt; F, class &gt;::d1 </td>
           <td>(</td>
           <td class="paramtype">Arg const &amp;&#160;</td>
           <td class="paramname"><em>dx</em></td><td>)</td>
@@ -264,7 +285,7 @@ template&lt;int idx, class Arg , class IndexedArg  = IndexedType&lt;Arg,idx&gt;,
 
 </div>
 </div>
-<a class="anchor" id="a79be0256e8b2b28c32dbcc9d3c098909"></a>
+<a class="anchor" id="af62128a54afef7bb17c24345226708f1"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -276,7 +297,7 @@ template&lt;int idx, int idy, class ArgX , class ArgY , class IndexedArgX  = Ind
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html">FunG::MathematicalOperations::Scale</a>&lt; F, class &gt;::d2 </td>
+          <td class="memname"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html#ac8d3f432c36c678cbf156132e46607ae">ReturnType</a> <a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html">FunG::MathematicalOperations::Scale</a>&lt; F, class &gt;::d2 </td>
           <td>(</td>
           <td class="paramtype">ArgX const &amp;&#160;</td>
           <td class="paramname"><em>dx</em>, </td>
@@ -311,7 +332,7 @@ template&lt;int idx, int idy, class ArgX , class ArgY , class IndexedArgX  = Ind
 
 </div>
 </div>
-<a class="anchor" id="a8cb9d13e8bd87c2d4657ae1c075e7f39"></a>
+<a class="anchor" id="ac5a15553e3e2848a5d6057c99d267438"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -323,7 +344,7 @@ template&lt;int idx, int idy, int idz, class ArgX , class ArgY , class ArgZ , cl
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html">FunG::MathematicalOperations::Scale</a>&lt; F, class &gt;::d3 </td>
+          <td class="memname"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html#ac8d3f432c36c678cbf156132e46607ae">ReturnType</a> <a class="el" href="structFunG_1_1MathematicalOperations_1_1Scale.html">FunG::MathematicalOperations::Scale</a>&lt; F, class &gt;::d3 </td>
           <td>(</td>
           <td class="paramtype">ArgX const &amp;&#160;</td>
           <td class="paramname"><em>dx</em>, </td>
@@ -431,7 +452,7 @@ template&lt;int index, class Arg &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Oct 3 2015 01:36:44 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 9 2015 20:39:34 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
