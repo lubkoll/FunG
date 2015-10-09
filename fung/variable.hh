@@ -110,6 +110,64 @@ namespace FunG
       template <class T, class Arg>
       static void apply(const T&, const Arg&) {}
     };
+  }
+  /**
+   * \endcond
+   */
+
+  /**
+   * \brief Independent variable. Can be uniquely identified by its id.
+   */
+  template <class T, int id>
+  struct Variable : Base , Chainer< Variable<T,id> >
+  {
+    Variable() = default;
+
+    /// Construct variable with meaningful default value.
+    explicit Variable(const T& t_) : t(t_) {}
+
+    /// Update variable.
+    template <int index, class Arg>
+    void update(const Arg& t_)
+    {
+      VariableDetail::Update<index==id>::apply(t,t_);
+    }
+
+    /// Value of the variable.
+    const T& d0() const noexcept
+    {
+      return t;
+    }
+
+    /**
+     * \brief First directional derivative.
+     *
+     * Only available if id==index.
+     */
+    template < int index , class Arg ,
+               class = std::enable_if_t< id == index > >
+    const T& d1(const Arg& dt) const noexcept
+    {
+      return VariableDetail::ExtractReturnValue<T,Arg>::apply(dt);
+    }
+
+  private:
+    T t;
+  };
+
+  /// Generate variable from input type.
+  template <int id, class T>
+  Variable<T,id> variable(const T& t)
+  {
+    return Variable<T,id>(t);
+  }
+
+
+  /**
+   * @cond DOCUMENT_IMPLEMENATION_DETAILS
+   */
+  namespace VariableDetail
+  {
 
 
     /// Check if Type is variable.
@@ -213,56 +271,8 @@ namespace FunG
     struct VariableType< Variable<T,id>, id > { using type = T; };
   }
   /**
-   * \endcond
+   * @endcond
    */
-
-  /**
-   * \brief Independent variable. Can be uniquely identified by its id.
-   */
-  template <class T, int id>
-  struct Variable : Base , Chainer< Variable<T,id> >
-  {
-    Variable() = default;
-
-    /// Construct variable with meaningful default value.
-    explicit Variable(const T& t_) : t(t_) {}
-
-    /// Update variable.
-    template <int index, class Arg>
-    void update(const Arg& t_)
-    {
-      VariableDetail::Update<index==id>::apply(t,t_);
-    }
-
-    /// Value of the variable.
-    const T& d0() const noexcept
-    {
-      return t;
-    }
-
-    /**
-     * \brief First directional derivative.
-     *
-     * Only available if id==index.
-     */
-    template < int index , class Arg ,
-               class = std::enable_if_t< id == index > >
-    const T& d1(const Arg& dt) const noexcept
-    {
-      return VariableDetail::ExtractReturnValue<T,Arg>::apply(dt);
-//      return dt;
-    }
-
-  private:
-    T t;
-  };
-
-  /// Generate variable from input type.
-  template <int id, class T>
-  Variable<T,id> variable(const T& t)
-  {
-    return Variable<T,id>(t);
-  }
 
   /**
    * \brief Get underlying type of variable with index id.
@@ -311,7 +321,6 @@ namespace FunG
     constexpr bool checkArgument()
     {
       return ContainsType<typename VariableDetail::VariableType<F,id>::type, Type>::value;
-//      return std::is_same<typename VariableDetail::VariableType<F,id>::type, Type>::value;
     }
   }
 }

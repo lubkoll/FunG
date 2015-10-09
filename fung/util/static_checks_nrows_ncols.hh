@@ -14,30 +14,51 @@ namespace FunG
     /**
      * \cond DOCUMENT_IMPLEMENTATION_DETAILS
      */
-    // check functions for accessing the number of rows and columns in a dynamic matrix
     template < class Matrix >
-    using TryCallOfRowsForMatrix = decltype(std::declval<Matrix>().rows());
-
-    template < class Matrix >
-    using TryAccessTo_n_rowsForMatrix = decltype(std::declval<Matrix>().n_rows);
+    using TryMemFn_nrows = decltype(std::declval<Matrix>().rows());
 
     template < class Matrix >
-    using TryCallOfColsForMatrix = decltype(std::declval<Matrix>().cols());
+    using TryMemFn_cols = decltype(std::declval<Matrix>().cols());
 
     template < class Matrix >
-    using TryAccessTo_n_colsForMatrix = decltype(std::declval<Matrix>().n_cols);
+    using TryMem_n_rows = decltype(std::declval<Matrix>().n_rows);
 
-    template < class Matrix , class = void > struct CallOfRowsForMatrix                                                                 : std::false_type {};
-    template < class Matrix > struct CallOfRowsForMatrix< Matrix , void_t< TryCallOfRowsForMatrix< Matrix > > >                         : std::true_type {};
+    template < class Matrix >
+    using TryMem_n_cols = decltype(std::declval<Matrix>().n_cols);
 
-    template < class Matrix , class = void > struct CallOfColsForMatrix                                                                 : std::false_type {};
-    template < class Matrix > struct CallOfColsForMatrix< Matrix , void_t< TryCallOfColsForMatrix< Matrix > > >                         : std::true_type {};
 
-    template < class Matrix , class = void > struct AccessTo_n_rows                                                                     : std::false_type {};
-    template < class Matrix > struct AccessTo_n_rows< Matrix , void_t < TryAccessTo_n_rowsForMatrix<Matrix> > >                         : std::true_type {};
+    template < class Matrix , class = void >
+    struct HasMemFn_nrows
+        : std::false_type {};
 
-    template < class Matrix , class = void > struct AccessTo_n_cols                                                                     : std::false_type {};
-    template < class Matrix > struct AccessTo_n_cols< Matrix , void_t < TryAccessTo_n_colsForMatrix<Matrix> > >                         : std::true_type {};
+    template < class Matrix >
+    struct HasMemFn_nrows< Matrix , void_t< TryMemFn_nrows< Matrix > > >
+        : std::true_type {};
+
+
+    template < class Matrix , class = void >
+    struct HasMemFn_cols
+        : std::false_type {};
+    template < class Matrix >
+    struct HasMemFn_cols< Matrix , void_t< TryMemFn_cols< Matrix > > >
+        : std::true_type {};
+
+
+    template < class Matrix , class = void >
+    struct HasMem_n_rows
+        : std::false_type {};
+    template < class Matrix >
+    struct HasMem_n_rows< Matrix , void_t < TryMem_n_rows<Matrix> > >
+        : std::true_type {};
+
+
+    template < class Matrix , class = void >
+    struct HasMem_n_cols
+        : std::false_type {};
+
+    template < class Matrix >
+    struct HasMem_n_cols< Matrix , void_t < TryMem_n_cols<Matrix> > >
+        : std::true_type {};
     /**
      * \endcond
      */
@@ -47,9 +68,9 @@ namespace FunG
      * \brief Check if object of type Matrix has a member function rows().
      */
     template < class Matrix >
-    constexpr bool hasRowsFunction()
+    constexpr bool hasMemFn_rows()
     {
-      return CallOfRowsForMatrix<Matrix>::value;
+      return HasMemFn_nrows<Matrix>::value;
     }
 
     /**
@@ -57,9 +78,9 @@ namespace FunG
      * \brief Check if object of type Matrix has a member n_rows.
      */
     template < class Matrix >
-    constexpr bool hasMember_n_rows()
+    constexpr bool hasMem_n_rows()
     {
-      return AccessTo_n_rows<Matrix>::value;
+      return HasMem_n_rows<Matrix>::value;
     }
 
     /**
@@ -67,9 +88,9 @@ namespace FunG
      * \brief Check if object of type Matrix has a member function cols().
      */
     template < class Matrix >
-    constexpr bool hasColsFunction()
+    constexpr bool hasMemFn_cols()
     {
-      return CallOfColsForMatrix<Matrix>::value;
+      return HasMemFn_cols<Matrix>::value;
     }
 
     /**
@@ -77,9 +98,9 @@ namespace FunG
      * \brief Check if object of type Matrix has a member n_cols.
      */
     template < class Matrix >
-    constexpr bool hasMember_n_cols()
+    constexpr bool hasMem_n_cols()
     {
-      return AccessTo_n_cols<Matrix>::value;
+      return HasMem_n_cols<Matrix>::value;
     }
 
 //    /**

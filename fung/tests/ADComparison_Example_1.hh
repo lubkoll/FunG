@@ -63,32 +63,33 @@ namespace Example_1
   struct Func
   {
     template <typename T>
-    T operator()(const T& x) const
+    auto operator()(const T& x) const
     {
-      T z=sqrt(x);
+      auto z=sqrt(x);
       return x*z+sin(z);
     }
 
     template <class T>
-    T d1(const T& x) const
+    auto d1(const T& x) const
     {
-      T z = sqrt(x);
+      auto z = sqrt(x);
       return 1.5*z+0.5*cos(z)/z;
     }
   };
 
-  auto generateTestFunction()
-  {
-    using namespace FunG;
-    auto h = Pow<3>() + Sin();
-    auto g = Sqrt();
-    return FunG::finalize_scalar( h(g) );
-  }
-
   template <class Scalar>
-  inline Scalar func(const Scalar& x)
+  inline auto func(const Scalar& x)
   {
     return Func()(x);
+  }
+
+  auto generateTestFunction()
+  {
+    return FunG::finalize( func(FunG::variable<0>(1.)) );
+//    using namespace FunG;
+//    auto h = Pow<3>() + Sin();
+//    auto g = Sqrt();
+//    return FunG::finalize_scalar( h(g) );
   }
 
   template <typename C>
@@ -218,9 +219,9 @@ void ADComparison_Example_1()
   for(auto i=0u; i<iter; ++i)
   {
     x*=1.00000001;
-//    testF.update(x);
-    f = testF(x);
-    dfdx = testF.d1();
+    testF.template update<0>(x);
+    f = testF.d0();
+    dfdx = testF.template d1<0>();
   }
   cout << "computation time: " << duration_cast<milliseconds>(high_resolution_clock::now()-startTime).count()/1000. << "s\n";
   cout << "function value: " << f << endl;

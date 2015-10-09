@@ -32,23 +32,23 @@ TEST(ScaleTest,D0)
 TEST(ScaleTest,D1)
 {
   using FunG::Pow;
-  auto fun = FunG::finalize_scalar ( 2*Pow<3,1>(2.) );
-  EXPECT_DOUBLE_EQ( fun.d1() , 24. );
+  auto fun = FunG::finalize ( 2*Pow<3,1>(2.) );
+  EXPECT_DOUBLE_EQ( fun.d1(1) , 24. );
 }
 
 TEST(ScaleTest,D2)
 {
   using FunG::Pow;
-  auto fun = FunG::finalize_scalar( 2*Pow<3,1>(2.) );
-  EXPECT_DOUBLE_EQ( fun.d2() , 24. );
+  auto fun = FunG::finalize( 2*Pow<3,1>(2.) );
+  EXPECT_DOUBLE_EQ( fun.d2(1,1) , 24. );
 }
 
 TEST(ScaleTest,D3)
 {
   using FunG::Pow;
   auto a = 0;
-  auto fun = FunG::finalize_scalar( 2*Pow<3,1>(2.) );
-  EXPECT_DOUBLE_EQ( fun.d3() , 12. );
+  auto fun = FunG::finalize( 2*Pow<3,1>(2.) );
+  EXPECT_DOUBLE_EQ( fun.d3(1,1,1) , 12. );
 }
 
 

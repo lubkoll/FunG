@@ -189,30 +189,14 @@ namespace FunG
     {
       return Detail::SecondPrincipalInvariant<Matrix>(A);
     }
-
-    /**
-     * \ingroup InvariantGroup
-     * \brief Convenient generation of second principal invariant \f$ \iota_2\circ f \f$ for \f$f:\cdot\mapsto\mathbb{R}^{n,n}\f$.
-     * \return SecondPrincipalInvariant<Matrix>(A)
-     */
-    template <class F,
-              std::enable_if_t<std::is_base_of<Base,F>::value && !Checks::HasTypePlainObject<decltype(std::declval<F>().d0())>::value >* = nullptr>
-    auto i2(const F& f)
-    {
-      using Matrix = std::decay_t<decltype(f.d0())>;
-      return Detail::SecondPrincipalInvariant<Matrix>( f.d0() )( f );
-    }
-
     /**
      * \ingroup InvariantGroup
      * \brief Convenient generation of second principal invariant \f$ \iota_2\circ f \f$ for \f$f:\cdot\mapsto\mathbb{R}^{n,n}\f$.
      *
-     * Implementation for expression templates of the Eigen library.
-     *
      * \return SecondPrincipalInvariant<Matrix>(A)
      */
     template <class F,
-              std::enable_if_t<std::is_base_of<Base,F>::value && Checks::HasTypePlainObject<decltype(std::declval<F>().d0())>::value >* = nullptr>
+              std::enable_if_t<std::is_base_of<Base,F>::value >* = nullptr>
     auto i2(const F& f)
     {
       return Detail::SecondPrincipalInvariant< decay_t<decltype(f.d0())> >( f.d0() )( f );

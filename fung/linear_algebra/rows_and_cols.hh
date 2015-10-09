@@ -69,7 +69,7 @@ namespace FunG
                std::enable_if_t<!Checks::isConstantSize<Matrix>()>* = nullptr >
     auto rows(const Matrix& A)
     {
-      return Detail::Rows<Matrix,Checks::hasRowsFunction<Matrix>(),Checks::hasMember_n_rows<Matrix>()>()(A);
+      return Detail::Rows<Matrix,Checks::hasMemFn_rows<Matrix>(),Checks::hasMem_n_rows<Matrix>()>()(A);
     }
 
     /**
@@ -89,7 +89,7 @@ namespace FunG
                std::enable_if_t<!Checks::isConstantSize<Matrix>()>* = nullptr>
     auto cols(const Matrix& A)
     {
-      return Detail::Cols<Matrix,Checks::hasColsFunction<Matrix>(),Checks::hasMember_n_cols<Matrix>()>()(A);
+      return Detail::Cols<Matrix,Checks::hasMemFn_cols<Matrix>(),Checks::hasMem_n_cols<Matrix>()>()(A);
     }
 
     /**

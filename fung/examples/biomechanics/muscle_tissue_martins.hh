@@ -4,6 +4,7 @@
 #ifndef FUNG_MUSCLE_TISSUE_MARTINS_HH
 #define FUNG_MUSCLE_TISSUE_MARTINS_HH
 
+#include "fung/finalize.hh"
 #include "fung/generate.hh"
 #include "fung/cmath/exp.hh"
 #include "fung/linear_algebra/principal_invariants.hh"
@@ -59,7 +60,7 @@ namespace FunG
   template < class Matrix , int offset = LinearAlgebra::dim<Matrix>()>
   auto incompressibleMuscleTissue_Martins(double c, double b, double A, double a, const Matrix& M, const Matrix& F)
   {
-    return MuscleTissueDetail::generateIncompressibleMuscleTissue_Martins<Matrix,offset>(c,b,A,a,M,F);
+    return finalize( MuscleTissueDetail::generateIncompressibleMuscleTissue_Martins<Matrix,offset>(c,b,A,a,M,F) );
   }
 
   /**
@@ -102,7 +103,7 @@ namespace FunG
   template < class Inflation , class Compression , class Matrix , int offset = LinearAlgebra::dim<Matrix>()>
   auto compressibleMuscleTissue_Martins(double c, double b, double A, double a, double d0, double d1, const Matrix& M, const Matrix& F)
   {
-    return MuscleTissueDetail::generateIncompressibleMuscleTissue_Martins<Matrix,offset>(c,b,A,a,M,F) + volumetricPenalty<Inflation,Compression>(d0,d1,F);
+    return finalize( MuscleTissueDetail::generateIncompressibleMuscleTissue_Martins<Matrix,offset>(c,b,A,a,M,F) + volumetricPenalty<Inflation,Compression>(d0,d1,F) );
   }
 
   /**

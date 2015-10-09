@@ -4,6 +4,7 @@
 #ifndef FUNG_EXAMPLES_SKIN_HENDRIKS_HH
 #define FUNG_EXAMPLES_SKIN_HENDRIKS_HH
 
+#include "fung/finalize.hh"
 #include "fung/generate.hh"
 #include "fung/linear_algebra/strain_tensor.hh"
 #include "fung/linear_algebra/unit_matrix.hh"
@@ -17,6 +18,22 @@
 
 namespace FunG
 {
+  /** @cond */
+  namespace SkinDetail
+  {
+    template < class Matrix , int n = LinearAlgebra::dim<Matrix>()>
+    auto incompressibleSkin_HendriksImpl(double c0, double c1, const Matrix& F)
+    {
+      using namespace LinearAlgebra;
+      auto S = strainTensor(F);
+      auto si1 = i1(S()) - n;
+      auto si2 = i2(S()) - n;
+      auto f = c0*si1 + c1*si1*si2;
+      return f(S);
+    }
+  }
+  /** @endcond */
+
   /**
    * \ingroup Biomechanics
    * \brief Model for skin tissue of \cite Hendriks2005.
@@ -31,12 +48,7 @@ namespace FunG
   template < class Matrix , int n = LinearAlgebra::dim<Matrix>()>
   auto incompressibleSkin_Hendriks(double c0, double c1, const Matrix& F)
   {
-    using namespace LinearAlgebra;
-    auto S = LeftCauchyGreenStrainTensor<Matrix>(F);
-    auto si1 = i1(S()) - n;
-    auto si2 = i2(S()) - n;
-    auto f = c0*si1 + c1*si1*si2;
-    return f(S);
+    return finalize( SkinDetail::incompressibleSkin_HendriksImpl<Matrix,n>(c0,c1,F) );
   }
 
   /**
@@ -74,7 +86,7 @@ namespace FunG
   template <class InflationPenalty, class CompressionPenalty, class Matrix, int n = LinearAlgebra::dim<Matrix>()>
   auto compressibleSkin_Hendriks(double c0, double c1, double d0, double d1, const Matrix& F)
   {
-    return incompressibleSkin_Hendriks<Matrix,n>(c0,c1,F) + volumetricPenalty<InflationPenalty,CompressionPenalty>(d0,d1,F);
+    return finalize( SkinDetail::incompressibleSkin_HendriksImpl<Matrix,n>(c0,c1,F) + volumetricPenalty<InflationPenalty,CompressionPenalty>(d0,d1,F) );
   }
 
   /**

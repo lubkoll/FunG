@@ -5,7 +5,7 @@ auto generateTestFunction()
 {
   using namespace FunG;
   auto f = ( variable<0>(1.) + variable<1>(2.) ) * pow<2>(variable<2>(3.));
-  return finalize_scalar(f);
+  return finalize(f);
 }
 
 TEST(VariableTest,D0)

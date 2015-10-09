@@ -59,7 +59,7 @@ namespace Example_2
   struct Func
   {
     template <typename T>
-    T operator()(const T& x) const
+    auto operator()(const T& x) const
     {
       auto z = exp(sqrt(x))+1;
       return x*z+sin(z);
@@ -83,18 +83,15 @@ namespace Example_2
     return x*z+sin(z);
   }
 
-  auto generateTestFunction()
-  {
-    using namespace FunG;
-    auto g = exp(Sqrt()) + 1;
-    auto f = identity(1.) * g + sin(g);
-    return finalize_scalar(f);
-  }
-
   template <class Scalar>
-  Scalar func(const Scalar& x)
+  auto func(const Scalar& x)
   {
     return Func()(x);
+  }
+
+  auto generateTestFunction()
+  {
+    return FunG::finalize( func(FunG::variable<0>(1.)) );
   }
 
   template <typename C>
@@ -224,9 +221,9 @@ void ADComparison_Example_2()
   for(auto i=0u; i<iter; ++i)
   {
     x*=1.00000001;
-    testF.update(x);
+    testF.update<0>(x);
     f = testF();
-    dfdx = testF.d1();
+    dfdx = testF.d1<0>();
   }
   cout << "computation time: " << duration_cast<milliseconds>(high_resolution_clock::now() - startTime).count()/1000. << "s\n";
   cout << "function value: " << f << endl;

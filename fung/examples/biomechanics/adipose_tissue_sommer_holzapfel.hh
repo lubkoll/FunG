@@ -4,6 +4,7 @@
 #ifndef FUNG_ADIPOSE_TISSUE_SOMMER_HOLZAPFEL_HH
 #define FUNG_ADIPOSE_TISSUE_SOMMER_HOLZAPFEL_HH
 
+#include "fung/finalize.hh"
 #include "fung/generate.hh"
 #include "fung/cmath/exp.hh"
 #include "fung/linear_algebra/principal_invariants.hh"
@@ -57,7 +58,7 @@ namespace FunG
   template < class Matrix , int offset = LinearAlgebra::dim<Matrix>()>
   auto incompressibleAdiposeTissue_SommerHolzapfel(double cCells, double k1, double k2, double kappa, const Matrix& M, const Matrix& F)
   {
-    return Detail::generateIncompressibleAdiposeTissue_SommerHolzapfel<Matrix,offset>(cCells,k1,k2,kappa,M,F);
+    return finalize( Detail::generateIncompressibleAdiposeTissue_SommerHolzapfel<Matrix,offset>(cCells,k1,k2,kappa,M,F) );
   }
 
   /**
@@ -100,7 +101,7 @@ namespace FunG
   template <class Inflation, class Compression, class Matrix , int offset = LinearAlgebra::dim<Matrix>()>
   auto compressibleAdiposeTissue_SommerHolzapfel(double cCells, double k1, double k2, double kappa, double d0, double d1, const Matrix& M, const Matrix& F)
   {
-    return Detail::generateIncompressibleAdiposeTissue_SommerHolzapfel<Matrix,offset>(cCells,k1,k2,kappa,M,F) + volumetricPenalty<Inflation,Compression>(d0,d1,F);
+    return finalize( Detail::generateIncompressibleAdiposeTissue_SommerHolzapfel<Matrix,offset>(cCells,k1,k2,kappa,M,F) + volumetricPenalty<Inflation,Compression>(d0,d1,F) );
   }
 
   /**

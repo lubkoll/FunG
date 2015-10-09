@@ -31,7 +31,7 @@ namespace FunG
     };
 
     template <class Matrix>
-    struct At< Matrix , void_t< Checks::TryAccessViaSquareBracketsForMatrix<Matrix> > >
+    struct At< Matrix , void_t< Checks::TryMemFn_SquareBracketAccessForMatrix<Matrix> > >
     {
       static decltype(auto) apply(Matrix& A, int i, int j)
       {
@@ -59,7 +59,7 @@ namespace FunG
     };
 
     template <class Vector>
-    struct At_v< Vector , void_t< Checks::TryAccessViaSquareBracketsForVector<Vector> > >
+    struct At_v< Vector , void_t< Checks::TryMemFn_SquareBracketAccessForVector<Vector> > >
     {
       static decltype(auto) apply(Vector& v, int i)
       {

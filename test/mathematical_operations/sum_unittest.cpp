@@ -27,21 +27,21 @@ TEST(SumTest,D0)
 TEST(SumTest,D1)
 {
   using FunG::Pow;
-  auto fun = FunG::finalize_scalar( Pow<3,1>(2.) + Pow<3,2>(1.) );
-  EXPECT_DOUBLE_EQ( fun.d1() , 13.5 );
+  auto fun = FunG::finalize( Pow<3,1>(2.) + Pow<3,2>(1.) );
+  EXPECT_DOUBLE_EQ( fun.d1(1) , 13.5 );
 }
 
 TEST(SumTest,D2)
 {
   using FunG::Pow;
-  auto fun = FunG::finalize_scalar( Pow<3,1>(2.) + Pow<3,2>(1.) );
-  EXPECT_DOUBLE_EQ( fun.d2() , 12.75 );
+  auto fun = FunG::finalize( Pow<3,1>(2.) + Pow<3,2>(1.) );
+  EXPECT_DOUBLE_EQ( fun.d2(1,1) , 12.75 );
 }
 
 TEST(SumTest,D3)
 {
   using FunG::Pow;
-  auto fun = FunG::finalize_scalar( Pow<3,1>(2.) + Pow<3,2>(1.) );
-  EXPECT_DOUBLE_EQ( fun.d3() , 5.625 );
+  auto fun = FunG::finalize( Pow<3,1>(2.) + Pow<3,2>(1.) );
+  EXPECT_DOUBLE_EQ( fun.d3(1,1,1) , 5.625 );
 }
 

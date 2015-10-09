@@ -7,6 +7,7 @@
 #include <iostream>
 
 #include "fung/identity.hh"
+#include "fung/finalize.hh"
 #include "fung/generate.hh"
 #include "fung/linear_algebra/strain_tensor.hh"
 #include "fung/linear_algebra/unit_matrix.hh"
@@ -30,7 +31,7 @@ namespace FunG
     using namespace LinearAlgebra;
     auto S = LeftCauchyGreenStrainTensor<Matrix>(F);
     auto f = ( c0 * ( i1(F) - n ) + c1 * ( i2(F) - n ) );
-    return f(S);
+    return finalize( f(S) );
   }
 
 
@@ -45,7 +46,7 @@ namespace FunG
     using namespace LinearAlgebra;
     auto S = LeftCauchyGreenStrainTensor<Matrix>(F);
     auto f = ( c0 * ( i1(F) - n ) + c1 * ( i2(F) - n ) );
-    return f(S) + volumetricPenalty<InflationPenalty,CompressionPenalty>(d0,d1,F);
+    return finalize( f(S) + volumetricPenalty<InflationPenalty,CompressionPenalty>(d0,d1,F) );
   }
 
 

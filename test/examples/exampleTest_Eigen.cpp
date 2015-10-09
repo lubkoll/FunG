@@ -40,7 +40,7 @@ namespace
 
     f.update(a);
 
-    return std::make_tuple( f() , f.template d1<0>(da0) , f.template d2<0,0>(da0,da1) , f.template d3<0,0,0>(da0,da1,da2) );
+    return std::make_tuple( f() , f.d1(da0) , f.d2(da0,da1) , f.d3(da0,da1,da2) );
   }
 
   using FunG::LN;

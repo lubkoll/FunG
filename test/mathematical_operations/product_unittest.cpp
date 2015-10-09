@@ -27,22 +27,22 @@ TEST(ProductTest,D0)
 TEST(ProductTest,D1)
 {
   using FunG::Pow;
-  auto fun = FunG::finalize_scalar( Pow<1,2>(4.) * Pow<3,2>(4.) );
-  EXPECT_DOUBLE_EQ( fun.d1() , 8. );
+  auto fun = FunG::finalize( Pow<1,2>(4.) * Pow<3,2>(4.) );
+  EXPECT_DOUBLE_EQ( fun.d1(1) , 8. );
 }
 
 TEST(ProductTest,D2)
 {
   using FunG::Pow;
-  auto fun = FunG::finalize_scalar( Pow<1,2>(5.) * Pow<3,2>(5.) );
-  EXPECT_DOUBLE_EQ( fun.d2() , 2. );
+  auto fun = FunG::finalize( Pow<1,2>(5.) * Pow<3,2>(5.) );
+  EXPECT_DOUBLE_EQ( fun.d2(1,1) , 2. );
 }
 
 TEST(ProductTest,D3)
 {
   using FunG::Pow;
-  auto fun = FunG::finalize_scalar( Pow<1,2>(3.) * Pow<3,2>(3.) );
-  EXPECT_DOUBLE_EQ( fun.d3() , 0. );
+  auto fun = FunG::finalize( Pow<1,2>(3.) * Pow<3,2>(3.) );
+  EXPECT_DOUBLE_EQ( fun.d3(1,1,1) , 0. );
 }
 
 

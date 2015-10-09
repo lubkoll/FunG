@@ -33,17 +33,17 @@ TEST(ChainTest,D1)
 TEST(ChainTest,D2)
 {
   using FunG::Pow;
-  auto fun = FunG::finalize_scalar( Pow<1,4>(1.) << Pow<2>(4.) );
+  auto fun = FunG::finalize( Pow<1,4>(1.) << Pow<2>(4.) );
   auto val = -0.25*Pow<-3,2>(4.)();
-  EXPECT_DOUBLE_EQ( fun.d2() , val );
+  EXPECT_DOUBLE_EQ( fun.d2(1,1) , val );
 }
 
 TEST(ChainTest,D3)
 {
   using FunG::Pow;
-  auto fun = FunG::finalize_scalar( Pow<1,4>(1.) << Pow<2>(4.) );
+  auto fun = FunG::finalize( Pow<1,4>(1.) << Pow<2>(4.) );
   auto val = 3./8*Pow<-5,2>(4.)();
-  EXPECT_DOUBLE_EQ( fun.d3() , val );
+  EXPECT_DOUBLE_EQ( fun.d3(1,1,1) , val );
 }
 
 

@@ -235,23 +235,7 @@ namespace FunG
      * \return Determinant< std::decay_t<decltype(f.d0())> >(f.d0())(f)
      */
     template<class F,
-             std::enable_if_t<std::is_base_of<Base,F>::value && !Checks::HasTypePlainObject<decltype(std::declval<F>().d0())>::value >* = nullptr>
-    auto det(F const& f)
-    {
-      return Determinant< std::decay_t<decltype(f.d0())> >(f.d0())(f);
-    }
-
-    /**
-     * \ingroup LinearAlgebraGroup
-     * \brief Generate \f$\det\circ f\f$.
-     *
-     * Implementation for expression templates of the Eigen library.
-     *
-     * \param f function mapping into a space of square matrices
-     * \return Determinant< std::decay_t<decltype(f.d0())> >(f.d0())(f)
-     */
-    template<class F,
-             std::enable_if_t<std::is_base_of<Base,F>::value && Checks::HasTypePlainObject<decltype(std::declval<F>().d0())>::value >* = nullptr>
+             std::enable_if_t<std::is_base_of<Base,F>::value >* = nullptr>
     auto det(F const& f)
     {
       return Determinant< decay_t<decltype(f.d0())> >(f.d0())(f);

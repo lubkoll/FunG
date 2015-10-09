@@ -27,8 +27,7 @@ namespace FunG
   auto incompressibleNeoHooke(double c, const Matrix& F)
   {
     using namespace LinearAlgebra;
-    auto S = LeftCauchyGreenStrainTensor<Matrix>(F);
-    return finalize( c*(i1(S) - n) );
+    return finalize( c*(i1(strainTensor(F)) - n) );
   }
 
   /**
@@ -40,7 +39,7 @@ namespace FunG
   {
     using namespace LinearAlgebra;
     auto S = LeftCauchyGreenStrainTensor<Matrix>(F);
-    return c*(mi1<decltype(S),n>(S) - n);
+    return finalize( c*(mi1<decltype(S),n>(S) - n) );
   }
 
   /**
@@ -52,8 +51,7 @@ namespace FunG
   auto compressibleNeoHooke(double c, double d0, double d1, const Matrix& F)
   {
     using namespace LinearAlgebra;
-    auto S = LeftCauchyGreenStrainTensor<Matrix>(F);
-    return c*(i1(S) - n) + volumetricPenalty<InflationPenalty,CompressionPenalty>(d0,d1,F);
+    return finalize( c*(i1(strainTensor(F)) - n) + volumetricPenalty<InflationPenalty,CompressionPenalty>(d0,d1,F) );
   }
 
   /**
@@ -66,7 +64,7 @@ namespace FunG
   {
     using namespace LinearAlgebra;
     auto S = LeftCauchyGreenStrainTensor<Matrix>(F);
-    return c*(mi1<decltype(S),n>(S) - n) + volumetricPenalty<InflationPenalty,CompressionPenalty>(d0,d1,F);
+    return finalize( c*(mi1<decltype(S),n>(S) - n) + volumetricPenalty<InflationPenalty,CompressionPenalty>(d0,d1,F) );
   }
 }
 

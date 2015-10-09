@@ -214,22 +214,7 @@ namespace FunG
      * \return Trace< std::decay_t<decltype(f.d0())> >(f.d0())( f )
      */
     template <class F,
-              std::enable_if_t<std::is_base_of<Base,F>::value && !Checks::HasTypePlainObject<decltype(std::declval<F>().d0())>::value >* = nullptr>
-    auto trace(const F& f)
-    {
-      return Trace< std::decay_t<decltype(f.d0())> >( f.d0() )( f );
-    }
-
-    /**
-     * \ingroup LinearAlgebraGroup
-     * \brief Generate \f$\mathrm{tr}\circ f\f$, where \f$f:\cdot\mapsto\mathbb{R}^{n,n} \f$.
-     *
-     * Implementation for expression templates of the Eigen library.
-     *
-     * \return Trace< std::decay_t<typename decltype(f.d0())::PlainObject> >(f.d0())( f )
-     */
-    template <class F,
-              std::enable_if_t<std::is_base_of<Base,F>::value && Checks::HasTypePlainObject<decltype(std::declval<F>().d0())>::value >* = nullptr>
+              std::enable_if_t<std::is_base_of<Base,F>::value >* = nullptr>
     auto trace(const F& f)
     {
       return Trace< decay_t<decltype(f.d0())> >( f.d0() )( f );

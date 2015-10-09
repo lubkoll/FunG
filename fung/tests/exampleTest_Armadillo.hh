@@ -60,15 +60,15 @@ namespace ArmadilloDetail
     cout << "d0: " << duration_cast<nanoseconds>(high_resolution_clock::now() - startTime).count() << "ns\n";
     cout << "value: " << val << endl;
     startTime = high_resolution_clock::now();
-    for(auto i=0u; i<nEval; ++i) val = f.template d1<0>(da0);
+    for(auto i=0u; i<nEval; ++i) val = f.d1(da0);
     cout << "d1: " << duration_cast<milliseconds>(high_resolution_clock::now() - startTime).count() << "ms\n";
     cout << "value: " << val << endl;
     startTime = high_resolution_clock::now();
-    for(auto i=0u; i<nEval; ++i) val = f.template d2<0,0>(da0,da1);
+    for(auto i=0u; i<nEval; ++i) val = f.d2(da0,da1);
     cout << "d2: " << duration_cast<milliseconds>(high_resolution_clock::now() - startTime).count() << "ms\n";
     cout << "value: " << val << endl;
     startTime = high_resolution_clock::now();
-    for(auto i=0u; i<nEval; ++i) val = f.template d3<0,0,0>(da0,da1,da2);
+    for(auto i=0u; i<nEval; ++i) val = f.d3(da0,da1,da2);
     cout << "d3: " << duration_cast<milliseconds>(high_resolution_clock::now() - startTime).count() << "ms\n";
     cout << "value: " << val << endl;
     cout << endl;

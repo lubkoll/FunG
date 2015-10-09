@@ -4,7 +4,6 @@
 #ifndef FUNG_CONCEPT_CHECK_HH
 #define FUNG_CONCEPT_CHECK_HH
 
-#include "fung/util/consistency_check.hh"
 #include "fung/util/extract_rows_and_cols.hh"
 #include "fung/util/static_checks.hh"
 
@@ -33,11 +32,11 @@ namespace FunG
     template < class Arg >
     struct MultiplyWithArithmeticFromLeftConceptCheck
     {
-      static_assert(Checks::multiplicationWithArithmeticFromLeft< Arg , double > () ||
-                    Checks::inPlaceMultiplicationWithArithmetic< Arg , double >(),
+      static_assert(Checks::hasFree_Multiplication< Arg , double > () ||
+                    Checks::hasMemFn_InPlaceMultiplication< Arg , double >(),
                     "MultiplyWithArithmeticFromLeftConcept: Input types must support multiplication with double from the left (operator*(double,const Arg&))");
-      static_assert(Checks::multiplicationWithArithmeticFromLeft< Arg , int > () ||
-                    Checks::inPlaceMultiplicationWithArithmetic< Arg , int >(),
+      static_assert(Checks::hasFree_Multiplication< Arg , int > () ||
+                    Checks::hasMemFn_InPlaceMultiplication< Arg , int >(),
                     "MultiplyWithArithmeticFromLeftConcept: Input types must support multiplication with int from the left (operator*(int,const Arg&))");
     };
 
@@ -50,8 +49,8 @@ namespace FunG
     template < class Arg >
     struct SummationConceptCheck
     {
-      static_assert(Checks::summation< Arg >() ||
-                    Checks::inPlaceSummation< Arg >(),
+      static_assert(Checks::hasFree_Summation< Arg >() ||
+                    Checks::hasMemFn_InPlaceSummation< Arg >(),
                     "SummationConcept: Input types must support summation (operator+(const Arg&, const Arg&)");
     };
 
@@ -63,9 +62,9 @@ namespace FunG
     template < class Arg1 , class Arg2 >
     struct MultiplicationConceptCheck
     {
-      static_assert(Checks::multiplication< Arg1 , Arg2 >() ||
-                    Checks::callToRightMultiply< Arg1 , Arg2 >() ||
-                    Checks::inPlaceMultiplication< Arg1 , Arg2 >(),
+      static_assert(Checks::hasFree_Multiplication< Arg1 , Arg2 >() ||
+                    Checks::hasMemFn_rightmultiplyany< Arg1 , Arg2 >() ||
+                    Checks::hasMemFn_InPlaceMultiplication< Arg1 , Arg2 >(),
                     "MultiplicationConcept: Input types must support multiplication (operator*(const Arg&, const Arg&");
     };
 
@@ -89,8 +88,8 @@ namespace FunG
     template < class Matrix >
     struct MatrixConceptCheck : ArithmeticConceptCheck<Matrix>
     {
-      static_assert(Checks::AccessViaSquareBracketsForMatrix<Matrix>::value ||
-                    Checks::AccessViaRoundBracketsForMatrix<Matrix>::value,
+      static_assert(Checks::HasMemFn_SquareBracketAccessForMatrix<Matrix>::value ||
+                    Checks::HasMemFn_RoundBracketAccessForMatrix<Matrix>::value,
                     "MatrixConcept: Currently only matrices that allow access to their elements via A[i][j] or A(i,j) are supported.\nYou may contact the developer to ask for further access or provide your own patch.");
     };
 
@@ -102,8 +101,8 @@ namespace FunG
     template < class Vector >
     struct VectorConceptCheck : ArithmeticConceptCheck<Vector>
     {
-      static_assert(Checks::AccessViaSquareBracketsForVector<Vector>::value ||
-                    Checks::AccessViaRoundBracketsForVector<Vector>::value,
+      static_assert(Checks::HasMemFn_SquareBracketAccessForVector<Vector>::value ||
+                    Checks::HasMemFn_RoundBracketAccessForVector<Vector>::value,
                     "VectorConcept: Currently only vectors that allow access to their elements via v[i] or v(i) are supported.\nYou may contact the developer to ask for further access or provide your own patch.");
     };
 
@@ -127,7 +126,7 @@ namespace FunG
     template <class F>
     struct FunctionConceptCheck : CopyConceptCheck<F>
     {
-      static_assert( hasD0MemberFunction<F>() ,
+      static_assert( Checks::HasMemFn_d0<F>() ,
                      "FunctionConcept: Functions must provide a member function d0() to access its value." );
     };
   }

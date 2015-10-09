@@ -32,22 +32,22 @@ TEST(SquaredTest,D0)
 TEST(SquaredTest,D1)
 {
   using FunG::Pow;
-  auto fun = FunG::finalize_scalar ( Pow<2>(2.)^2 );
-  EXPECT_DOUBLE_EQ( fun.d1() , 32. );
+  auto fun = FunG::finalize ( Pow<2>(2.)^2 );
+  EXPECT_DOUBLE_EQ( fun.d1(1) , 32. );
 }
 
 TEST(SquaredTest,D2)
 {
   using FunG::Pow;
-  auto fun = FunG::finalize_scalar( Pow<2>(2.)^2 );
-  EXPECT_DOUBLE_EQ( fun.d2() , 48. );
+  auto fun = FunG::finalize( Pow<2>(2.)^2 );
+  EXPECT_DOUBLE_EQ( fun.d2(1,1) , 48. );
 }
 
 TEST(SquaredTest,D3)
 {
   using FunG::Pow;
-  auto fun = FunG::finalize_scalar( Pow<2>(2.)^2 );
-  EXPECT_DOUBLE_EQ( fun.d3() , 48. );
+  auto fun = FunG::finalize( Pow<2>(2.)^2 );
+  EXPECT_DOUBLE_EQ( fun.d3(1,1,1) , 48. );
 }
 
 

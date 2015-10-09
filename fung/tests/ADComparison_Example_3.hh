@@ -55,10 +55,10 @@ namespace Example_3
 
   struct Func
   {
-    template <typename T>
-    T operator()(const T& x, const T& y) const
+    template <class T, class T0>
+    auto operator()(const T& x, const T0& y) const
     {
-      T z=sqrt(x);
+      auto z=sqrt(x);
       return y*z+sin(z);
     }
 
@@ -72,6 +72,12 @@ namespace Example_3
 
   };
 
+  template <class Scalar, class Scalar2>
+  auto func(const Scalar& x, const Scalar2& y)
+  {
+    return Func()(x,y);
+  }
+
   template <class adouble>
   adouble adeptFunc(const adouble x[2])
   {
@@ -81,18 +87,7 @@ namespace Example_3
 
   auto generateTestFunction()
   {
-    using namespace FunG;
-
-    auto g = sqrt(variable<0>(1.));
-    auto f = variable<1>(1.) * g + sin(g);
-
-    return finalize_scalar(f);
-  }
-
-  template <class Scalar>
-  Scalar func(const Scalar& x, const Scalar& y)
-  {
-    return Func()(x,y);
+    return FunG::finalize( func(FunG::variable<0>(1.),FunG::variable<1>(1.)) );
   }
 
   template <typename C>

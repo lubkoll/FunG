@@ -8,25 +8,54 @@
 #include "base.hh"
 #include "static_checks.hh"
 
+/** @cond */
+namespace Dune
+{
+  template <class,int> class FieldVector;
+  template <class,int,int> class FieldMatrix;
+}
+/** @endcond */
+
 namespace FunG
 {
-  /// Defines operator+ if not yet defined and in-place summation (operator+=()) is supported.
-  template < class Arg ,
-             class = std::enable_if_t< !std::is_base_of<Base,Arg>() && !std::is_arithmetic<Arg>() > ,
-             class = std::enable_if_t< !Checks::summation<Arg>() &&
-                                       Checks::inPlaceSummation<Arg>() > >
-  auto operator+(Arg x, const Arg& y)
+  /// Computation of the l2 scalar product for Dune::FieldVector.
+  template <class Scalar, class OtherScalar, int n,
+            std::enable_if_t< !Checks::hasFree_Multiplication< Dune::FieldVector<Scalar,n> , Dune::FieldVector<OtherScalar,n> >() >* = nullptr>
+  auto operator*(const Dune::FieldVector<Scalar,n>& a, const Dune::FieldVector<OtherScalar,n>& b)
   {
-    x += y;
-    return x;
+    Scalar result = a[0] * b[0];
+    for(int i=1; i<n; ++i)
+      result += a[i]*b[i];
+    return result;
   }
+
+  /// Define matrix-vector multiplication for Dune::FieldMatrix and Dune::FieldVector, i.e. compute \f$y=Ax\f$.
+  template <class Scalar, class OtherScalar, int n, int m,
+            std::enable_if_t< !Checks::hasFree_Multiplication< Dune::FieldMatrix<Scalar,n,m> , Dune::FieldVector<OtherScalar,m> >() >* = nullptr>
+  auto operator*(const Dune::FieldMatrix<Scalar,n,m>& A, const Dune::FieldVector<OtherScalar,m>& x)
+  {
+    Dune::FieldVector<decltype(std::declval<Scalar>()*std::declval<OtherScalar>()),n> y(0);
+    A.mv(x,y);
+    return y;
+  }
+
+  /// Define vector-matrix multiplication for Dune::FieldMatrix and Dune::FieldVector, i.e. compute \f$x^T A = y^T\f$ resp. \f$y=A^T x\f$.
+  template <class Scalar, class OtherScalar, int n, int m,
+            std::enable_if_t< !Checks::hasFree_Multiplication< Dune::FieldVector<OtherScalar,n> , Dune::FieldMatrix<Scalar,n,m> >() >* = nullptr>
+  auto operator*(const Dune::FieldVector<OtherScalar,n>& x, const Dune::FieldMatrix<Scalar,n,m>& A)
+  {
+    Dune::FieldVector<decltype(std::declval<Scalar>()*std::declval<OtherScalar>()),m> y;
+    A.mtv(x,y);
+    return y;
+  }
+
 
   /// Defines operator* for multiplication with built-in arithmetic types from the left if undefined and in-place multiplication (operator*=()) is supported.
   template < class Arg , class ScalarArg ,
-             class = std::enable_if_t< std::is_arithmetic<ScalarArg>::value > ,
-             class = std::enable_if_t< !std::is_base_of<Base,Arg>() && !std::is_arithmetic<Arg>() > ,
-             class = std::enable_if_t< !Checks::multiplicationWithArithmeticFromLeft<Arg,ScalarArg>() &&
-                                       Checks::inPlaceMultiplicationWithArithmetic<Arg,ScalarArg>() > >
+             std::enable_if_t< std::is_arithmetic<ScalarArg>::value >* = nullptr ,
+             std::enable_if_t< !std::is_base_of<Base,Arg>() && !std::is_arithmetic<Arg>() >* = nullptr ,
+             std::enable_if_t< !Checks::hasFree_Multiplication<Arg,ScalarArg>() &&
+                                Checks::hasMemFn_InPlaceMultiplication<Arg,ScalarArg>() >* = nullptr >
   auto operator*( ScalarArg a , Arg x )
   {
     x *= a;
@@ -35,10 +64,10 @@ namespace FunG
 
   /// Defines operator* for multiplication with built-in arithmetic types from the right if undefined and in-place multiplication (operator*=()) is supported.
   template < class Arg , class ScalarArg ,
-             class = std::enable_if_t< std::is_arithmetic<ScalarArg>::value > ,
-             class = std::enable_if_t< !std::is_base_of<Base,Arg>() && !std::is_arithmetic<Arg>::value> ,
-             class = std::enable_if_t< !Checks::multiplicationWithArithmeticFromRight<Arg,ScalarArg>() &&
-                                       Checks::inPlaceMultiplicationWithArithmetic<Arg,ScalarArg>() > >
+             std::enable_if_t< std::is_arithmetic<ScalarArg>::value >* = nullptr ,
+             std::enable_if_t< !std::is_base_of<Base,Arg>() && !std::is_arithmetic<Arg>::value>* = nullptr ,
+             std::enable_if_t< !Checks::hasFree_Multiplication<Arg,ScalarArg>() &&
+                                Checks::hasMemFn_InPlaceMultiplication<Arg,ScalarArg>() >* = nullptr >
   auto operator*( Arg x , ScalarArg a )
   {
     x *= a;
@@ -47,10 +76,10 @@ namespace FunG
 
   /// Defines operator* for multiplication of non-arithmetic types if undefined and in-place multiplication (operator*=()) is supported.
   template < class Arg1 , class Arg2 ,
-             class = std::enable_if_t< !std::is_base_of<Arg1,Base>() && !std::is_base_of<Arg2,Base>() > ,
-             class = std::enable_if_t< !std::is_arithmetic<Arg1>() && !std::is_arithmetic<Arg2>() > ,
-             class = std::enable_if_t< !Checks::multiplication<Arg1,Arg2>() &&
-                                       Checks::inPlaceMultiplication<Arg1,Arg2>() > >
+             std::enable_if_t< !std::is_base_of<Arg1,Base>() && !std::is_base_of<Arg2,Base>() >* = nullptr ,
+             std::enable_if_t< !std::is_arithmetic<Arg1>() && !std::is_arithmetic<Arg2>() >* = nullptr ,
+             std::enable_if_t< !Checks::hasFree_Multiplication<Arg1,Arg2>() &&
+                                Checks::hasMemFn_InPlaceMultiplication<Arg1,Arg2>() >* = nullptr >
   auto operator*( Arg1 x, const Arg2& y)
   {
     x *= y;
@@ -59,14 +88,25 @@ namespace FunG
 
   /// Defines operator* for multiplication of non-arithmetic types if undefined and in-place multiplication is provided in terms of the member function rightmultiplyany() (such as for Dune::FieldMatrix).
   template < class Arg1 , class Arg2 ,
-             class = std::enable_if_t< !std::is_base_of<Arg1,Base>() && !std::is_base_of<Arg2,Base>() > ,
-             class = std::enable_if_t< !std::is_arithmetic<Arg1>() && !std::is_arithmetic<Arg2>() > ,
-             class = std::enable_if_t< !Checks::multiplication<Arg1,Arg2>() &&
-                                       !Checks::inPlaceMultiplication<Arg1,Arg2>() > ,
-             class = std::enable_if_t< Checks::callToRightMultiply<Arg1,Arg2>() > >
+             std::enable_if_t< !std::is_base_of<Arg1,Base>() && !std::is_base_of<Arg2,Base>() >* = nullptr ,
+             std::enable_if_t< !std::is_arithmetic<Arg1>() && !std::is_arithmetic<Arg2>() >* = nullptr ,
+             std::enable_if_t< !Checks::hasFree_Multiplication<Arg1,Arg2>() &&
+                               !Checks::hasMemFn_InPlaceMultiplication<Arg1,Arg2>() >* = nullptr ,
+             std::enable_if_t< Checks::hasMemFn_rightmultiplyany<Arg1,Arg2>() >* = nullptr >
   auto operator*( Arg1 x , const Arg2& y)
   {
     return x.rightmultiplyany(y);
+  }
+
+  /// Defines operator+ if not yet defined and in-place summation (operator+=()) is supported.
+  template < class Arg ,
+             std::enable_if_t< !std::is_base_of<Base,Arg>() && !std::is_arithmetic<Arg>() >* = nullptr ,
+             std::enable_if_t< !Checks::hasFree_Summation<Arg>() &&
+                                Checks::hasMemFn_InPlaceSummation<Arg>() >* = nullptr >
+  auto operator+(Arg x, const Arg& y)
+  {
+    x += y;
+    return x;
   }
 }
 
