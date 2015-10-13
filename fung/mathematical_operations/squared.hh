@@ -13,6 +13,7 @@
 #include "fung/util/derivative_wrappers.hh"
 #include "fung/util/evaluate_if_present.hh"
 #include "fung/util/indexed_type.hh"
+#include "fung/util/type_traits.hh"
 
 namespace FunG
 {
@@ -130,7 +131,7 @@ namespace FunG
 
     private:
       F f;
-      std::decay_t<decltype(std::declval<F>().d0())> value;
+      decay_t<decltype(std::declval<F>().d0()*std::declval<F>().d0())> value;
     };
   }
 }
