@@ -43,12 +43,12 @@ function loadAndAdjustBackground(newPageName){
 }
 
 function loadExample(newPageName){
+    clearExampleLinks();
+    $('[href="' + spacyDelimiter() + newPageName + '"]').parent().addClass('current-example');
     $('.example-container').addClass('hidden');
     $('.example-container').load('content/' + newPageName + '.html' , function(){
-        MathJax.Hub.Queue(["Typeset",MathJax.Hub], adjustBackgroundHeight);
-        MathJax.Hub.Queue( function(){
-            clearExampleLinks();
-            $('[href="' + spacyDelimiter() + newPageName + '"]').parent().addClass('current-example');
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub], function(){
+            adjustBackgroundHeight();
             $('.example-container').removeClass('hidden');
         });
     });

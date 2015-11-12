@@ -17,7 +17,17 @@ body{
     because of normalize.css */
 a:focus{ outline: none;}
 
+.example-list li a{
+    color:rgb(102,102,102);
+}
+
+.example-list li a:hover{
+    color:black;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, .5);
+}
+
 .example-list li.current-example a{
+    color: black;
     text-shadow: 0px 1px 1px rgba(0, 0, 0, .5);
 }
 
