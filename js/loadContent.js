@@ -116,10 +116,10 @@ $(document).ready( function(){
 
                 var fullPageName = spacyDelimiter() + page;
                 if(/^examples/.test(page) && page.length > 8){
-                    $('[href=#examples]').parent().addClass('current');
+                    $('.tablist li a[href=#examples-scalar]').parent().addClass('current');
                 }
                 else{
-                    $('[href="' + fullPageName + '"]').parent().addClass('current');
+                    $('.tablist li a[href="' + fullPageName + '"]').parent().addClass('current');
                 }
             }
             else{
