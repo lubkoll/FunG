@@ -89,7 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_524b28c425207d1d52dc11752a1f3164.html">fung</a></li><li class="navelem"><a class="el" href="dir_d0cefc2e219e15af34f83f4b36ac2c52.html">linear_algebra</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_11cbdf91b8ee8cc09aabfde7148319ec.html">fung</a></li><li class="navelem"><a class="el" href="dir_3618da3dd8c44ceb33c93a950e03bea2.html">linear_algebra</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -109,9 +109,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dimension_8hh.html">dimension.hh</a>&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="rows__and__cols_8hh.html">rows_and_cols.hh</a>&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="at_8hh.html">fung/util/at.hh</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base_8hh.html">fung/util/base.hh</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chainer_8hh.html">fung/util/chainer.hh</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="exceptions_8hh.html">fung/util/exceptions.hh</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chainer_8hh.html">fung/util/chainer.hh</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="exceptions_8hh.html">fung/util/exceptions.hh</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="static__checks_8hh.html">fung/util/static_checks.hh</a>&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="type__traits_8hh.html">fung/util/type_traits.hh</a>&quot;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="zero_8hh.html">fung/util/zero.hh</a>&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
@@ -149,7 +149,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <span class="keyword">template</span>&lt;<span class="keyword">class</span> Matrix&gt;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <span class="keyword">class </span>DeterminantImpl&lt; Matrix , 2 , Concepts::SquareMatrixConceptCheck&lt;Matrix&gt; &gt;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;          : <span class="keyword">public</span> Base , <span class="keyword">public</span> Chainer&lt; DeterminantImpl&lt;Matrix,2,Concepts::SquareMatrixConceptCheck&lt;Matrix&gt; &gt; &gt;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;          : <span class="keyword">public</span> Chainer&lt; DeterminantImpl&lt;Matrix,2,Concepts::SquareMatrixConceptCheck&lt;Matrix&gt; &gt; &gt;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      {</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        DeterminantImpl() = <span class="keywordflow">default</span>;</div>
@@ -190,7 +190,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix&gt;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      <span class="keyword">class </span>DeterminantImpl&lt;Matrix,3,Concepts::SquareMatrixConceptCheck&lt;Matrix&gt; &gt;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;          : <span class="keyword">public</span> Base , <span class="keyword">public</span> Chainer&lt; DeterminantImpl&lt;Matrix,3,Concepts::SquareMatrixConceptCheck&lt;Matrix&gt; &gt; &gt;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;          : <span class="keyword">public</span> Chainer&lt; DeterminantImpl&lt;Matrix,3,Concepts::SquareMatrixConceptCheck&lt;Matrix&gt; &gt; &gt;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      {</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        DeterminantImpl() = <span class="keywordflow">default</span>;</div>
@@ -237,7 +237,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Matrix&gt;</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keyword">class </span>DynamicSizeDeterminant :</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keyword">public</span> Base , <span class="keyword">public</span> Chainer&lt; DynamicSizeDeterminant&lt;Matrix&gt; &gt;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keyword">public</span> Chainer&lt; DynamicSizeDeterminant&lt;Matrix&gt; &gt;</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    {</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      DynamicSizeDeterminant() = <span class="keywordflow">default</span>;</div>
@@ -283,14 +283,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix &gt;</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keyword">using</span> Determinant = std::conditional_t&lt; Checks::isConstantSize&lt;Matrix&gt;() , ConstantSizeDeterminant&lt;Matrix&gt; , DynamicSizeDeterminant&lt;Matrix&gt; &gt;;</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class </span>Matrix,</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;             std::enable_if_t&lt;!std::is_base_of&lt;Base,Matrix&gt;::value&gt;* = <span class="keyword">nullptr</span>&gt;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;             std::enable_if_t&lt;!Checks::isFunction&lt;Matrix&gt;()&gt;* = <span class="keyword">nullptr</span>&gt;</div>
 <div class="line"><a name="l00226"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#gadb3017b4b2828e25a0784b10396a836f">  226</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__LinearAlgebraGroup.html#gadb3017b4b2828e25a0784b10396a836f">det</a>(Matrix <span class="keyword">const</span>&amp; A)</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    {</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;      <span class="keywordflow">return</span> Determinant&lt;Matrix&gt;(A);</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    }</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class </span>F,</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;             std::enable_if_t&lt;std::is_base_of&lt;Base,F&gt;::value &gt;* = <span class="keyword">nullptr</span>&gt;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;             std::enable_if_t&lt;Checks::isFunction&lt;F&gt;() &gt;* = <span class="keyword">nullptr</span>&gt;</div>
 <div class="line"><a name="l00239"></a><span class="lineno"><a class="line" href="group__LinearAlgebraGroup.html#ga552048de67f3412ae0a220b3123db6e5">  239</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__LinearAlgebraGroup.html#gadb3017b4b2828e25a0784b10396a836f">det</a>(F <span class="keyword">const</span>&amp; f)</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    {</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;      <span class="keywordflow">return</span> Determinant&lt; <a class="code" href="namespaceFunG.html#a195ac37d8696970c89b112c81a1e4d6e">decay_t</a>&lt;decltype(f.d0())&gt; &gt;(f.d0())(f);</div>
@@ -302,10 +302,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="namespaceFunG_1_1LinearAlgebra_html_abd3afa2fcd2194787342b2662cfa9f5a"><div class="ttname"><a href="namespaceFunG_1_1LinearAlgebra.html#abd3afa2fcd2194787342b2662cfa9f5a">FunG::LinearAlgebra::rows</a></div><div class="ttdeci">auto rows(const Matrix &amp;A)</div><div class="ttdoc">Number of rows of a dynamic size matrix. </div><div class="ttdef"><b>Definition:</b> rows_and_cols.hh:70</div></div>
 <div class="ttc" id="dimension_8hh_html"><div class="ttname"><a href="dimension_8hh.html">dimension.hh</a></div></div>
 <div class="ttc" id="zero_8hh_html"><div class="ttname"><a href="zero_8hh.html">zero.hh</a></div></div>
-<div class="ttc" id="base_8hh_html"><div class="ttname"><a href="base_8hh.html">base.hh</a></div></div>
 <div class="ttc" id="namespaceFunG_1_1LinearAlgebra_html_a13a029820c29d530274ae94968d642d4"><div class="ttname"><a href="namespaceFunG_1_1LinearAlgebra.html#a13a029820c29d530274ae94968d642d4">FunG::LinearAlgebra::dim</a></div><div class="ttdeci">constexpr int dim()</div><div class="ttdoc">Dimension  of a fixed size matrix in . </div><div class="ttdef"><b>Definition:</b> dimension.hh:34</div></div>
 <div class="ttc" id="exceptions_8hh_html"><div class="ttname"><a href="exceptions_8hh.html">exceptions.hh</a></div></div>
 <div class="ttc" id="at_8hh_html"><div class="ttname"><a href="at_8hh.html">at.hh</a></div></div>
+<div class="ttc" id="static__checks_8hh_html"><div class="ttname"><a href="static__checks_8hh.html">static_checks.hh</a></div></div>
 <div class="ttc" id="namespaceFunG_1_1LinearAlgebra_html_ae981b8bee32eea3ce87f41874835c9c1"><div class="ttname"><a href="namespaceFunG_1_1LinearAlgebra.html#ae981b8bee32eea3ce87f41874835c9c1">FunG::LinearAlgebra::cols</a></div><div class="ttdeci">auto cols(const Matrix &amp;A)</div><div class="ttdoc">Number of columns of a dynamic size matrix. </div><div class="ttdef"><b>Definition:</b> rows_and_cols.hh:90</div></div>
 <div class="ttc" id="type__traits_8hh_html"><div class="ttname"><a href="type__traits_8hh.html">type_traits.hh</a></div></div>
 <div class="ttc" id="group__LinearAlgebraGroup_html_gadb3017b4b2828e25a0784b10396a836f"><div class="ttname"><a href="group__LinearAlgebraGroup.html#gadb3017b4b2828e25a0784b10396a836f">FunG::LinearAlgebra::det</a></div><div class="ttdeci">auto det(Matrix const &amp;A)</div><div class="ttdoc">Generate . </div><div class="ttdef"><b>Definition:</b> determinant.hh:226</div></div>
@@ -316,7 +316,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 9 2015 20:39:26 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 15 2015 15:04:19 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

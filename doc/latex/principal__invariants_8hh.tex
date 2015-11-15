@@ -6,7 +6,6 @@
 {\ttfamily \#include \char`\"{}trace.\+hh\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}cofactor.\+hh\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}determinant.\+hh\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}fung/util/base.\+hh\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}fung/util/chainer.\+hh\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}fung/util/type\+\_\+traits.\+hh\char`\"{}}\\*
 \subsection*{Namespaces}
@@ -21,9 +20,9 @@
 \item 
 {\footnotesize template$<$class Arg $>$ }\\auto \hyperlink{group__InvariantGroup_gafaead59b618d87239270f8eca2bf75c8}{Fun\+G\+::\+Linear\+Algebra\+::i1} (const Arg \&x)
 \begin{DoxyCompactList}\small\item\em Generate first principal invariant. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$ !std\+::is\+\_\+base\+\_\+of$<$ Base, Matrix $>$\+::value $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__InvariantGroup_ga9e442bab8f203bcd5634a3d0e65bf802}{Fun\+G\+::\+Linear\+Algebra\+::i2} (const Matrix \&A)
+{\footnotesize template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::is\+Function$<$ Matrix $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__InvariantGroup_ga9e442bab8f203bcd5634a3d0e65bf802}{Fun\+G\+::\+Linear\+Algebra\+::i2} (const Matrix \&A)
 \begin{DoxyCompactList}\small\item\em Convenient generation of second principal invariant $ \iota_2(A)=\mathrm{tr}(\mathrm{cof}(A)) $ for $A\in\mathbb{R}^{n,n}$. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+base\+\_\+of$<$ Base, F $>$\+::value $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__InvariantGroup_gad3987f97353c8696e602ed1915b3cf47}{Fun\+G\+::\+Linear\+Algebra\+::i2} (const F \&f)
+{\footnotesize template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ F $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__InvariantGroup_gad3987f97353c8696e602ed1915b3cf47}{Fun\+G\+::\+Linear\+Algebra\+::i2} (const F \&f)
 \begin{DoxyCompactList}\small\item\em Convenient generation of second principal invariant $ \iota_2\circ f $ for $f:\cdot\mapsto\mathbb{R}^{n,n}$. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Arg $>$ }\\auto \hyperlink{group__InvariantGroup_gae1ad80b4b2f34a10564114fad28bc313}{Fun\+G\+::\+Linear\+Algebra\+::i3} (const Arg \&x)
 \begin{DoxyCompactList}\small\item\em Generate third principal invariant. \end{DoxyCompactList}\item 

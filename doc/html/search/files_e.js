@@ -1,11 +1,9 @@
 var searchData=
 [
-  ['scale_2ehh',['scale.hh',['../scale_8hh.html',1,'']]],
-  ['sine_2ehh',['sine.hh',['../sine_8hh.html',1,'']]],
-  ['skin_5ftissue_5fhendriks_2ehh',['skin_tissue_hendriks.hh',['../skin__tissue__hendriks_8hh.html',1,'']]],
-  ['squared_2ehh',['squared.hh',['../squared_8hh.html',1,'']]],
-  ['static_5fchecks_2ehh',['static_checks.hh',['../static__checks_8hh.html',1,'']]],
-  ['static_5fchecks_5fnrows_5fncols_2ehh',['static_checks_nrows_ncols.hh',['../static__checks__nrows__ncols_8hh.html',1,'']]],
-  ['strain_5ftensor_2ehh',['strain_tensor.hh',['../strain__tensor_8hh.html',1,'']]],
-  ['sum_2ehh',['sum.hh',['../sum_8hh.html',1,'']]]
+  ['tan_2ehh',['tan.hh',['../tan_8hh.html',1,'']]],
+  ['tensor_5fproduct_2ehh',['tensor_product.hh',['../tensor__product_8hh.html',1,'']]],
+  ['third_2ehh',['third.hh',['../third_8hh.html',1,'']]],
+  ['trace_2ehh',['trace.hh',['../trace_8hh.html',1,'']]],
+  ['transpose_2ehh',['transpose.hh',['../transpose_8hh.html',1,'']]],
+  ['type_5ftraits_2ehh',['type_traits.hh',['../type__traits_8hh.html',1,'']]]
 ];

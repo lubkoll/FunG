@@ -95,31 +95,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga9a2bc859fe1ae34b1a3ada91a39d69df"><td class="memTemplParams" colspan="2">template&lt;class Matrix , std::enable_if_t&lt;!std::is_base_of&lt; Base, Matrix &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:ga9a2bc859fe1ae34b1a3ada91a39d69df"><td class="memTemplParams" colspan="2">template&lt;class Matrix , std::enable_if_t&lt;!Checks::isFunction&lt; Matrix &gt;()&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:ga9a2bc859fe1ae34b1a3ada91a39d69df"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__InvariantGroup.html#ga9a2bc859fe1ae34b1a3ada91a39d69df">FunG::LinearAlgebra::j2</a> (const Matrix &amp;A)</td></tr>
 <tr class="memdesc:ga9a2bc859fe1ae34b1a3ada91a39d69df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Second deviatoric invariant \( j_2(\sigma)=\sqrt{\bar\sigma\negthinspace:\negthinspace\bar\sigma} \) with \(\bar\sigma = \sigma - \frac{\mathrm{tr}(\sigma)}{n}I\) and \(\sigma\in\mathbb{R}^{n,n}\).  <a href="#ga9a2bc859fe1ae34b1a3ada91a39d69df">More...</a><br /></td></tr>
 <tr class="separator:ga9a2bc859fe1ae34b1a3ada91a39d69df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1898785172ecce11af0c27e54d555009"><td class="memTemplParams" colspan="2">template&lt;class Matrix , std::enable_if_t&lt;!std::is_base_of&lt; Base, Matrix &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:ga1898785172ecce11af0c27e54d555009"><td class="memTemplParams" colspan="2">template&lt;class Matrix , std::enable_if_t&lt;!Checks::isFunction&lt; Matrix &gt;()&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:ga1898785172ecce11af0c27e54d555009"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__InvariantGroup.html#ga1898785172ecce11af0c27e54d555009">FunG::LinearAlgebra::i4</a> (const Matrix &amp;A, const Matrix &amp;M)</td></tr>
 <tr class="memdesc:ga1898785172ecce11af0c27e54d555009"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate first mixed invariant \( \iota_4=\iota_1(AM) \) of a matrix \(A\in\mathbb{R}^{n,n}\) with respect to the structural tensor \(M\in\mathbb{R}^{n,n}\).  <a href="#ga1898785172ecce11af0c27e54d555009">More...</a><br /></td></tr>
 <tr class="separator:ga1898785172ecce11af0c27e54d555009"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0df96cdb1e4b8b5a040f2adc97c51100"><td class="memTemplParams" colspan="2">template&lt;class F , class Matrix , std::enable_if_t&lt; std::is_base_of&lt; Base, F &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:ga0df96cdb1e4b8b5a040f2adc97c51100"><td class="memTemplParams" colspan="2">template&lt;class F , class Matrix , std::enable_if_t&lt; Checks::isFunction&lt; F &gt;()&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:ga0df96cdb1e4b8b5a040f2adc97c51100"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__InvariantGroup.html#ga0df96cdb1e4b8b5a040f2adc97c51100">FunG::LinearAlgebra::i4</a> (const F &amp;f, const Matrix &amp;M)</td></tr>
 <tr class="memdesc:ga0df96cdb1e4b8b5a040f2adc97c51100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate first mixed invariant \( \iota_4\circ f \) with \(f\mapsto\mathbb{R}^{n,n}\) and structural tensor \(M\in\mathbb{R}^{n,n}\).  <a href="#ga0df96cdb1e4b8b5a040f2adc97c51100">More...</a><br /></td></tr>
 <tr class="separator:ga0df96cdb1e4b8b5a040f2adc97c51100"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabedc42182203d883278e29fd16b355a0"><td class="memTemplParams" colspan="2">template&lt;class Matrix , std::enable_if_t&lt;!std::is_base_of&lt; Base, Matrix &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:gabedc42182203d883278e29fd16b355a0"><td class="memTemplParams" colspan="2">template&lt;class Matrix , std::enable_if_t&lt;!Checks::isFunction&lt; Matrix &gt;()&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:gabedc42182203d883278e29fd16b355a0"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__InvariantGroup.html#gabedc42182203d883278e29fd16b355a0">FunG::LinearAlgebra::i5</a> (const Matrix &amp;A, const Matrix &amp;M)</td></tr>
 <tr class="memdesc:gabedc42182203d883278e29fd16b355a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate second mixed invariant \( \iota_5=\iota_1(A^2M) \) of a matrix \(A\in\mathbb{R}^{n,n}\) with respect to the structural tensor \(M\in\mathbb{R}^{n,n}\).  <a href="#gabedc42182203d883278e29fd16b355a0">More...</a><br /></td></tr>
 <tr class="separator:gabedc42182203d883278e29fd16b355a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaed7e47c39d89f2b01e25c992da78b44d"><td class="memTemplParams" colspan="2">template&lt;class F , class Matrix , std::enable_if_t&lt; std::is_base_of&lt; Base, F &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:gaed7e47c39d89f2b01e25c992da78b44d"><td class="memTemplParams" colspan="2">template&lt;class F , class Matrix , std::enable_if_t&lt; Checks::isFunction&lt; F &gt;()&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:gaed7e47c39d89f2b01e25c992da78b44d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__InvariantGroup.html#gaed7e47c39d89f2b01e25c992da78b44d">FunG::LinearAlgebra::i5</a> (const F &amp;f, const Matrix &amp;M)</td></tr>
 <tr class="memdesc:gaed7e47c39d89f2b01e25c992da78b44d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate second mixed invariant \( \iota_5\circ f \) with \(f\mapsto\mathbb{R}^{n,n}\) and structural tensor \(M\in\mathbb{R}^{n,n}\).  <a href="#gaed7e47c39d89f2b01e25c992da78b44d">More...</a><br /></td></tr>
 <tr class="separator:gaed7e47c39d89f2b01e25c992da78b44d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad9f0627946667bb052212f65ecdd002b"><td class="memTemplParams" colspan="2">template&lt;class Matrix , std::enable_if_t&lt;!std::is_base_of&lt; Base, Matrix &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:gad9f0627946667bb052212f65ecdd002b"><td class="memTemplParams" colspan="2">template&lt;class Matrix , std::enable_if_t&lt;!Checks::isFunction&lt; Matrix &gt;()&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:gad9f0627946667bb052212f65ecdd002b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__InvariantGroup.html#gad9f0627946667bb052212f65ecdd002b">FunG::LinearAlgebra::i6</a> (const Matrix &amp;A, const Matrix &amp;M)</td></tr>
 <tr class="memdesc:gad9f0627946667bb052212f65ecdd002b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate third mixed invariant \( \iota_6=\iota_1(AM^2) \) of a matrix \(A\in\mathbb{R}^{n,n}\) with respect to the structural tensor \(M\in\mathbb{R}^{n,n}\).  <a href="#gad9f0627946667bb052212f65ecdd002b">More...</a><br /></td></tr>
 <tr class="separator:gad9f0627946667bb052212f65ecdd002b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2536c80df733bb3e089487202c3688c1"><td class="memTemplParams" colspan="2">template&lt;class F , class Matrix , std::enable_if_t&lt; std::is_base_of&lt; Base, F &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:ga2536c80df733bb3e089487202c3688c1"><td class="memTemplParams" colspan="2">template&lt;class F , class Matrix , std::enable_if_t&lt; Checks::isFunction&lt; F &gt;()&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:ga2536c80df733bb3e089487202c3688c1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__InvariantGroup.html#ga2536c80df733bb3e089487202c3688c1">FunG::LinearAlgebra::i6</a> (const F &amp;f, const Matrix &amp;M)</td></tr>
 <tr class="memdesc:ga2536c80df733bb3e089487202c3688c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate third mixed invariant \( \iota_6\circ f \) with \(f\mapsto\mathbb{R}^{n,n}\) and structural tensor \(M\in\mathbb{R}^{n,n}\).  <a href="#ga2536c80df733bb3e089487202c3688c1">More...</a><br /></td></tr>
 <tr class="separator:ga2536c80df733bb3e089487202c3688c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,11 +139,11 @@ Functions</h2></td></tr>
 <tr class="memitem:gafaead59b618d87239270f8eca2bf75c8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__InvariantGroup.html#gafaead59b618d87239270f8eca2bf75c8">FunG::LinearAlgebra::i1</a> (const Arg &amp;x)</td></tr>
 <tr class="memdesc:gafaead59b618d87239270f8eca2bf75c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate first principal invariant.  <a href="#gafaead59b618d87239270f8eca2bf75c8">More...</a><br /></td></tr>
 <tr class="separator:gafaead59b618d87239270f8eca2bf75c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9e442bab8f203bcd5634a3d0e65bf802"><td class="memTemplParams" colspan="2">template&lt;class Matrix , std::enable_if_t&lt; !std::is_base_of&lt; Base, Matrix &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:ga9e442bab8f203bcd5634a3d0e65bf802"><td class="memTemplParams" colspan="2">template&lt;class Matrix , std::enable_if_t&lt; !Checks::isFunction&lt; Matrix &gt;() &gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:ga9e442bab8f203bcd5634a3d0e65bf802"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__InvariantGroup.html#ga9e442bab8f203bcd5634a3d0e65bf802">FunG::LinearAlgebra::i2</a> (const Matrix &amp;A)</td></tr>
 <tr class="memdesc:ga9e442bab8f203bcd5634a3d0e65bf802"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient generation of second principal invariant \( \iota_2(A)=\mathrm{tr}(\mathrm{cof}(A)) \) for \(A\in\mathbb{R}^{n,n}\).  <a href="#ga9e442bab8f203bcd5634a3d0e65bf802">More...</a><br /></td></tr>
 <tr class="separator:ga9e442bab8f203bcd5634a3d0e65bf802"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad3987f97353c8696e602ed1915b3cf47"><td class="memTemplParams" colspan="2">template&lt;class F , std::enable_if_t&lt; std::is_base_of&lt; Base, F &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:gad3987f97353c8696e602ed1915b3cf47"><td class="memTemplParams" colspan="2">template&lt;class F , std::enable_if_t&lt; Checks::isFunction&lt; F &gt;() &gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:gad3987f97353c8696e602ed1915b3cf47"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__InvariantGroup.html#gad3987f97353c8696e602ed1915b3cf47">FunG::LinearAlgebra::i2</a> (const F &amp;f)</td></tr>
 <tr class="memdesc:gad3987f97353c8696e602ed1915b3cf47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient generation of second principal invariant \( \iota_2\circ f \) for \(f:\cdot\mapsto\mathbb{R}^{n,n}\).  <a href="#gad3987f97353c8696e602ed1915b3cf47">More...</a><br /></td></tr>
 <tr class="separator:gad3987f97353c8696e602ed1915b3cf47"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -189,7 +189,7 @@ template&lt;class Arg &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Matrix , std::enable_if_t&lt; !std::is_base_of&lt; Base, Matrix &gt;::value &gt; *  = nullptr&gt; </div>
+template&lt;class Matrix , std::enable_if_t&lt; !Checks::isFunction&lt; Matrix &gt;() &gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::LinearAlgebra::i2 </td>
@@ -210,7 +210,7 @@ template&lt;class Matrix , std::enable_if_t&lt; !std::is_base_of&lt; Base, Matri
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class F , std::enable_if_t&lt; std::is_base_of&lt; Base, F &gt;::value &gt; *  = nullptr&gt; </div>
+template&lt;class F , std::enable_if_t&lt; Checks::isFunction&lt; F &gt;() &gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::LinearAlgebra::i2 </td>
@@ -253,7 +253,7 @@ template&lt;class Arg &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Matrix , std::enable_if_t&lt;!std::is_base_of&lt; Base, Matrix &gt;::value &gt; *  = nullptr&gt; </div>
+template&lt;class Matrix , std::enable_if_t&lt;!Checks::isFunction&lt; Matrix &gt;()&gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::LinearAlgebra::i4 </td>
@@ -290,7 +290,7 @@ template&lt;class Matrix , std::enable_if_t&lt;!std::is_base_of&lt; Base, Matrix
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class F , class Matrix , std::enable_if_t&lt; std::is_base_of&lt; Base, F &gt;::value &gt; *  = nullptr&gt; </div>
+template&lt;class F , class Matrix , std::enable_if_t&lt; Checks::isFunction&lt; F &gt;()&gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::LinearAlgebra::i4 </td>
@@ -327,7 +327,7 @@ template&lt;class F , class Matrix , std::enable_if_t&lt; std::is_base_of&lt; Ba
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Matrix , std::enable_if_t&lt;!std::is_base_of&lt; Base, Matrix &gt;::value &gt; *  = nullptr&gt; </div>
+template&lt;class Matrix , std::enable_if_t&lt;!Checks::isFunction&lt; Matrix &gt;()&gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::LinearAlgebra::i5 </td>
@@ -364,7 +364,7 @@ template&lt;class Matrix , std::enable_if_t&lt;!std::is_base_of&lt; Base, Matrix
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class F , class Matrix , std::enable_if_t&lt; std::is_base_of&lt; Base, F &gt;::value &gt; *  = nullptr&gt; </div>
+template&lt;class F , class Matrix , std::enable_if_t&lt; Checks::isFunction&lt; F &gt;()&gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::LinearAlgebra::i5 </td>
@@ -401,7 +401,7 @@ template&lt;class F , class Matrix , std::enable_if_t&lt; std::is_base_of&lt; Ba
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Matrix , std::enable_if_t&lt;!std::is_base_of&lt; Base, Matrix &gt;::value &gt; *  = nullptr&gt; </div>
+template&lt;class Matrix , std::enable_if_t&lt;!Checks::isFunction&lt; Matrix &gt;()&gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::LinearAlgebra::i6 </td>
@@ -438,7 +438,7 @@ template&lt;class Matrix , std::enable_if_t&lt;!std::is_base_of&lt; Base, Matrix
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class F , class Matrix , std::enable_if_t&lt; std::is_base_of&lt; Base, F &gt;::value &gt; *  = nullptr&gt; </div>
+template&lt;class F , class Matrix , std::enable_if_t&lt; Checks::isFunction&lt; F &gt;()&gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::LinearAlgebra::i6 </td>
@@ -475,7 +475,7 @@ template&lt;class F , class Matrix , std::enable_if_t&lt; std::is_base_of&lt; Ba
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Matrix , std::enable_if_t&lt;!std::is_base_of&lt; Base, Matrix &gt;::value &gt; *  = nullptr&gt; </div>
+template&lt;class Matrix , std::enable_if_t&lt;!Checks::isFunction&lt; Matrix &gt;()&gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::LinearAlgebra::j2 </td>
@@ -660,7 +660,7 @@ template&lt;class Arg , class Matrix , int n = dim&lt;Matrix&gt;()&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 9 2015 20:39:26 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 15 2015 15:04:19 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

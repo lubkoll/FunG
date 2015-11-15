@@ -89,7 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_524b28c425207d1d52dc11752a1f3164.html">fung</a></li><li class="navelem"><a class="el" href="dir_c46b7b48ea6258ec8e9866167dcc77dd.html">cmath</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_11cbdf91b8ee8cc09aabfde7148319ec.html">fung</a></li><li class="navelem"><a class="el" href="dir_74627e6c4d430650681dc68acc614490.html">cmath</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -104,12 +104,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define FUNG_CMATH_TAN_HH</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base_8hh.html">fung/util/base.hh</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chainer_8hh.html">fung/util/chainer.hh</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chainer_8hh.html">fung/util/chainer.hh</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="static__checks_8hh.html">fung/util/static_checks.hh</a>&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceFunG.html">FunG</a></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structFunG_1_1Tan.html">   21</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structFunG_1_1Tan.html">Tan</a> : <a class="code" href="structFunG_1_1Base.html">Base</a> , Chainer&lt;Tan&gt;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structFunG_1_1Tan.html">   21</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structFunG_1_1Tan.html">Tan</a> : Chainer&lt;Tan&gt;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  {</div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structFunG_1_1Tan.html#a8dba98f71a80778db0384acefa7684c7">   24</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="structFunG_1_1Tan.html#a8dba98f71a80778db0384acefa7684c7">Tan</a>(<span class="keywordtype">double</span> x=0.) { <a class="code" href="structFunG_1_1Tan.html#aba1f528723d9e54f873f92bcd968f1fd">update</a>(x); }</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
@@ -144,7 +144,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  };</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class </span>Function,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keyword">class </span>= std::enable_if_t&lt;std::is_base_of&lt;Base,Function&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keyword">class </span>= std::enable_if_t&lt;Checks::isFunction&lt;Function&gt;()&gt; &gt;</div>
 <div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="group__CMathGroup.html#gae03f57bd4efb4449ad1dc60cb74c742d">   69</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__CMathGroup.html#gae03f57bd4efb4449ad1dc60cb74c742d">tan</a>(<span class="keyword">const</span> Function&amp; f)</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  {</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structFunG_1_1Tan.html">Tan</a>()(f);</div>
@@ -153,21 +153,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif // FUNG_CMATH_TAN_HH</span></div>
 <div class="ttc" id="structFunG_1_1Tan_html_aba1f528723d9e54f873f92bcd968f1fd"><div class="ttname"><a href="structFunG_1_1Tan.html#aba1f528723d9e54f873f92bcd968f1fd">FunG::Tan::update</a></div><div class="ttdeci">void update(double x)</div><div class="ttdoc">Set point of evaluation. </div><div class="ttdef"><b>Definition:</b> tan.hh:27</div></div>
-<div class="ttc" id="structFunG_1_1Base_html"><div class="ttname"><a href="structFunG_1_1Base.html">FunG::Base</a></div><div class="ttdoc">Base class for functions satisfying FunctionConcept. Required a.o. for enabling the operators in gene...</div><div class="ttdef"><b>Definition:</b> base.hh:10</div></div>
 <div class="ttc" id="structFunG_1_1Tan_html"><div class="ttname"><a href="structFunG_1_1Tan.html">FunG::Tan</a></div><div class="ttdoc">Tangent function including first three derivatives. </div><div class="ttdef"><b>Definition:</b> tan.hh:21</div></div>
 <div class="ttc" id="structFunG_1_1Tan_html_a74556fc11c2f5eaeb39c84bf3b5671e7"><div class="ttname"><a href="structFunG_1_1Tan.html#a74556fc11c2f5eaeb39c84bf3b5671e7">FunG::Tan::d1</a></div><div class="ttdeci">double d1(double dx=1.) const </div><div class="ttdoc">First (directional) derivative. </div><div class="ttdef"><b>Definition:</b> tan.hh:40</div></div>
 <div class="ttc" id="structFunG_1_1Tan_html_a1d133a305b0e72eddc8ef2f675d72557"><div class="ttname"><a href="structFunG_1_1Tan.html#a1d133a305b0e72eddc8ef2f675d72557">FunG::Tan::d2</a></div><div class="ttdeci">double d2(double dx=1., double dy=1.) const </div><div class="ttdoc">Second (directional) derivative. </div><div class="ttdef"><b>Definition:</b> tan.hh:46</div></div>
 <div class="ttc" id="group__CMathGroup_html_gae03f57bd4efb4449ad1dc60cb74c742d"><div class="ttname"><a href="group__CMathGroup.html#gae03f57bd4efb4449ad1dc60cb74c742d">FunG::tan</a></div><div class="ttdeci">auto tan(const Function &amp;f)</div><div class="ttdoc">Generate . </div><div class="ttdef"><b>Definition:</b> tan.hh:69</div></div>
 <div class="ttc" id="structFunG_1_1Tan_html_af5c94edc51602bba744830a7fd96a161"><div class="ttname"><a href="structFunG_1_1Tan.html#af5c94edc51602bba744830a7fd96a161">FunG::Tan::d3</a></div><div class="ttdeci">double d3(double dx=1., double dy=1., double dz=1.) const </div><div class="ttdoc">Third (directional) derivative. </div><div class="ttdef"><b>Definition:</b> tan.hh:52</div></div>
-<div class="ttc" id="base_8hh_html"><div class="ttname"><a href="base_8hh.html">base.hh</a></div></div>
 <div class="ttc" id="structFunG_1_1Tan_html_a8dba98f71a80778db0384acefa7684c7"><div class="ttname"><a href="structFunG_1_1Tan.html#a8dba98f71a80778db0384acefa7684c7">FunG::Tan::Tan</a></div><div class="ttdeci">Tan(double x=0.)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> tan.hh:24</div></div>
+<div class="ttc" id="static__checks_8hh_html"><div class="ttname"><a href="static__checks_8hh.html">static_checks.hh</a></div></div>
 <div class="ttc" id="structFunG_1_1Tan_html_ad707e21ba717e18d836b08118f4b33be"><div class="ttname"><a href="structFunG_1_1Tan.html#ad707e21ba717e18d836b08118f4b33be">FunG::Tan::d0</a></div><div class="ttdeci">double d0() const noexcept</div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> tan.hh:34</div></div>
 <div class="ttc" id="namespaceFunG_html"><div class="ttname"><a href="namespaceFunG.html">FunG</a></div><div class="ttdoc">Main namespace of the FunG library. </div></div>
 <div class="ttc" id="chainer_8hh_html"><div class="ttname"><a href="chainer_8hh.html">chainer.hh</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 9 2015 20:39:26 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 15 2015 15:04:19 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

@@ -89,7 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_524b28c425207d1d52dc11752a1f3164.html">fung</a></li><li class="navelem"><a class="el" href="dir_c46b7b48ea6258ec8e9866167dcc77dd.html">cmath</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_11cbdf91b8ee8cc09aabfde7148319ec.html">fung</a></li><li class="navelem"><a class="el" href="dir_74627e6c4d430650681dc68acc614490.html">cmath</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -104,12 +104,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define FUNG_CMATH_COSINE_HH</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base_8hh.html">fung/util/base.hh</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chainer_8hh.html">fung/util/chainer.hh</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chainer_8hh.html">fung/util/chainer.hh</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="static__checks_8hh.html">fung/util/static_checks.hh</a>&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceFunG.html">FunG</a></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structFunG_1_1Cos.html">   23</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structFunG_1_1Cos.html">Cos</a> : <a class="code" href="structFunG_1_1Base.html">Base</a> , Chainer&lt;Cos&gt;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structFunG_1_1Cos.html">   23</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structFunG_1_1Cos.html">Cos</a> : Chainer&lt;Cos&gt;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  {</div>
 <div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structFunG_1_1Cos.html#a1c3c7f2efe426de2dab5bb4a307442ce">   29</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="structFunG_1_1Cos.html#a1c3c7f2efe426de2dab5bb4a307442ce">Cos</a>(<span class="keywordtype">double</span> x=0.)</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    {</div>
@@ -135,7 +135,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  };</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">template</span> &lt; <span class="keyword">class </span>Function ,</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;             <span class="keyword">class </span>= std::enable_if_t&lt; std::is_base_of&lt;Base,Function&gt;::value &gt; &gt;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;             <span class="keyword">class </span>= std::enable_if_t&lt; Checks::isFunction&lt;Function&gt;() &gt; &gt;</div>
 <div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="group__CMathGroup.html#ga7e9b2ac717cd2350663293cb66ba6cbd">   65</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__CMathGroup.html#ga7e9b2ac717cd2350663293cb66ba6cbd">cos</a>(<span class="keyword">const</span> Function&amp; f)</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  {</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structFunG_1_1Cos.html">Cos</a>()(f);</div>
@@ -143,13 +143,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif // FUNG_CMATH_COSINE_HH</span></div>
-<div class="ttc" id="structFunG_1_1Base_html"><div class="ttname"><a href="structFunG_1_1Base.html">FunG::Base</a></div><div class="ttdoc">Base class for functions satisfying FunctionConcept. Required a.o. for enabling the operators in gene...</div><div class="ttdef"><b>Definition:</b> base.hh:10</div></div>
 <div class="ttc" id="group__CMathGroup_html_ga7e9b2ac717cd2350663293cb66ba6cbd"><div class="ttname"><a href="group__CMathGroup.html#ga7e9b2ac717cd2350663293cb66ba6cbd">FunG::cos</a></div><div class="ttdeci">auto cos(const Function &amp;f)</div><div class="ttdoc">Generate . </div><div class="ttdef"><b>Definition:</b> cosine.hh:65</div></div>
 <div class="ttc" id="structFunG_1_1Cos_html"><div class="ttname"><a href="structFunG_1_1Cos.html">FunG::Cos</a></div><div class="ttdoc">Cosine function including first three derivatives (based on cos(double) in <cmath>). </div><div class="ttdef"><b>Definition:</b> cosine.hh:23</div></div>
 <div class="ttc" id="structFunG_1_1Cos_html_a1c3c7f2efe426de2dab5bb4a307442ce"><div class="ttname"><a href="structFunG_1_1Cos.html#a1c3c7f2efe426de2dab5bb4a307442ce">FunG::Cos::Cos</a></div><div class="ttdeci">Cos(double x=0.)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> cosine.hh:29</div></div>
 <div class="ttc" id="structFunG_1_1Cos_html_a502c2a5f9f7e055e00192d185a5a0a50"><div class="ttname"><a href="structFunG_1_1Cos.html#a502c2a5f9f7e055e00192d185a5a0a50">FunG::Cos::update</a></div><div class="ttdeci">void update(const double &amp;x)</div><div class="ttdoc">Set point of evaluation. </div><div class="ttdef"><b>Definition:</b> cosine.hh:35</div></div>
 <div class="ttc" id="structFunG_1_1Cos_html_abda328f29bee29f2af535c5f307de9c8"><div class="ttname"><a href="structFunG_1_1Cos.html#abda328f29bee29f2af535c5f307de9c8">FunG::Cos::d3</a></div><div class="ttdeci">double d3(double dx=1., double dy=1., double dz=1.) const </div><div class="ttdoc">Third (directional) derivative. </div><div class="ttdef"><b>Definition:</b> cosine.hh:51</div></div>
-<div class="ttc" id="base_8hh_html"><div class="ttname"><a href="base_8hh.html">base.hh</a></div></div>
+<div class="ttc" id="static__checks_8hh_html"><div class="ttname"><a href="static__checks_8hh.html">static_checks.hh</a></div></div>
 <div class="ttc" id="structFunG_1_1Cos_html_af1391a01b4031ebeb9a2db8127486127"><div class="ttname"><a href="structFunG_1_1Cos.html#af1391a01b4031ebeb9a2db8127486127">FunG::Cos::d0</a></div><div class="ttdeci">double d0() const noexcept</div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> cosine.hh:42</div></div>
 <div class="ttc" id="namespaceFunG_html"><div class="ttname"><a href="namespaceFunG.html">FunG</a></div><div class="ttdoc">Main namespace of the FunG library. </div></div>
 <div class="ttc" id="structFunG_1_1Cos_html_a0d3494ce7fda10e3f64a2790d64c3b31"><div class="ttname"><a href="structFunG_1_1Cos.html#a0d3494ce7fda10e3f64a2790d64c3b31">FunG::Cos::d1</a></div><div class="ttdeci">double d1(double dx=1.) const </div><div class="ttdoc">First (directional) derivative. </div><div class="ttdef"><b>Definition:</b> cosine.hh:45</div></div>
@@ -159,7 +158,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 9 2015 20:39:26 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 15 2015 15:04:18 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

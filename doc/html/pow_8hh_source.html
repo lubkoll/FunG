@@ -89,7 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_524b28c425207d1d52dc11752a1f3164.html">fung</a></li><li class="navelem"><a class="el" href="dir_c46b7b48ea6258ec8e9866167dcc77dd.html">cmath</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_11cbdf91b8ee8cc09aabfde7148319ec.html">fung</a></li><li class="navelem"><a class="el" href="dir_74627e6c4d430650681dc68acc614490.html">cmath</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -104,14 +104,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define FUNG_CMATH_POW_HH</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base_8hh.html">fung/util/base.hh</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chainer_8hh.html">fung/util/chainer.hh</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="exceptions_8hh.html">fung/util/exceptions.hh</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chainer_8hh.html">fung/util/chainer.hh</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="exceptions_8hh.html">fung/util/exceptions.hh</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="static__checks_8hh.html">fung/util/static_checks.hh</a>&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceFunG.html">FunG</a></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">template</span> &lt;<span class="keywordtype">int</span> div<span class="keywordtype">id</span>end, <span class="keywordtype">int</span> divisor=1&gt;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structFunG_1_1Pow.html">   24</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structFunG_1_1Pow.html">Pow</a> : <a class="code" href="structFunG_1_1Base.html">Base</a> , Chainer&lt; Pow&lt;dividend,divisor&gt; &gt;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structFunG_1_1Pow.html">   24</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structFunG_1_1Pow.html">Pow</a> : Chainer&lt; Pow&lt;dividend,divisor&gt; &gt;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  {</div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structFunG_1_1Pow.html#a80be1d3a5c208e7ac74efa7ff3a7a18f">   27</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="structFunG_1_1Pow.html#a80be1d3a5c208e7ac74efa7ff3a7a18f">Pow</a>(<span class="keywordtype">double</span> x=1) { <a class="code" href="structFunG_1_1Pow.html#a2cb004b3cb89c4887b67eb8e666f4852">update</a>(x); }</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
@@ -149,7 +149,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  };</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keyword">struct </span>Pow&lt;2,1&gt; : Base, Chainer&lt; Pow&lt;2,1&gt; &gt;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keyword">struct </span>Pow&lt;2,1&gt; : Chainer&lt; Pow&lt;2,1&gt; &gt;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  {</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="structFunG_1_1Pow.html#a80be1d3a5c208e7ac74efa7ff3a7a18f">Pow</a>(<span class="keywordtype">double</span> x_=0) { <a class="code" href="structFunG_1_1Pow.html#a2cb004b3cb89c4887b67eb8e666f4852">update</a>(x_); }</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
@@ -179,7 +179,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  };</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keyword">struct </span>Pow&lt;3,1&gt; : Base , Chainer&lt; Pow&lt;3,1&gt; &gt;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keyword">struct </span>Pow&lt;3,1&gt; : Chainer&lt; Pow&lt;3,1&gt; &gt;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  {</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="structFunG_1_1Pow.html#a80be1d3a5c208e7ac74efa7ff3a7a18f">Pow</a>(<span class="keywordtype">double</span> x_=0) { <a class="code" href="structFunG_1_1Pow.html#a2cb004b3cb89c4887b67eb8e666f4852">update</a>(x_); }</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
@@ -215,7 +215,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  };</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="keyword">struct </span>Pow&lt;-1,1&gt; : Base , Chainer&lt; Pow&lt;-1,1&gt; &gt;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="keyword">struct </span>Pow&lt;-1,1&gt; : Chainer&lt; Pow&lt;-1,1&gt; &gt;</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  {</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="structFunG_1_1Pow.html#a80be1d3a5c208e7ac74efa7ff3a7a18f">Pow</a>(<span class="keywordtype">double</span> x=1.) { <a class="code" href="structFunG_1_1Pow.html#a2cb004b3cb89c4887b67eb8e666f4852">update</a>(x); }</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
@@ -253,7 +253,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  };</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  <span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="keyword">struct </span>Pow&lt;1,2&gt; : Base, Chainer&lt; Pow&lt;1,2&gt; &gt;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="keyword">struct </span>Pow&lt;1,2&gt; : Chainer&lt; Pow&lt;1,2&gt; &gt;</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  {</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="structFunG_1_1Pow.html#a80be1d3a5c208e7ac74efa7ff3a7a18f">Pow</a>(<span class="keywordtype">double</span> x=0) { <a class="code" href="structFunG_1_1Pow.html#a2cb004b3cb89c4887b67eb8e666f4852">update</a>(x); }</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
@@ -291,7 +291,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  };</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  <span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  <span class="keyword">struct </span>Pow&lt;-1,3&gt; : Base , Chainer&lt; Pow&lt;-1,3&gt; &gt;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  <span class="keyword">struct </span>Pow&lt;-1,3&gt; : Chainer&lt; Pow&lt;-1,3&gt; &gt;</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  {</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="structFunG_1_1Pow.html#a80be1d3a5c208e7ac74efa7ff3a7a18f">Pow</a>(<span class="keywordtype">double</span> t=1) { <a class="code" href="structFunG_1_1Pow.html#a2cb004b3cb89c4887b67eb8e666f4852">update</a>(t); }</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;</div>
@@ -324,7 +324,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  <span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  <span class="keyword">struct </span>Pow&lt;-2,3&gt; : Base , Chainer&lt; Pow&lt;-2,3&gt; &gt;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  <span class="keyword">struct </span>Pow&lt;-2,3&gt; : Chainer&lt; Pow&lt;-2,3&gt; &gt;</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  {</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="structFunG_1_1Pow.html#a80be1d3a5c208e7ac74efa7ff3a7a18f">Pow</a>(<span class="keywordtype">double</span> t=1.)  { <a class="code" href="structFunG_1_1Pow.html#a2cb004b3cb89c4887b67eb8e666f4852">update</a>(t); }</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;</div>
@@ -361,19 +361,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;</div>
 <div class="line"><a name="l00345"></a><span class="lineno"><a class="line" href="group__CMathGroup.html#ga9bcbef859d7ffd0d6570d69e1bd8503a">  345</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="structFunG_1_1Pow.html">Cbrt2</a> = <a class="code" href="structFunG_1_1Pow.html">Pow&lt;2,3&gt;</a>;</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;  template &lt;class Function, class = std::enable_if_t&lt;std::is_base_of&lt;Base,Function&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Function, <span class="keyword">class</span> = std::enable_if_t&lt;Checks::isFunction&lt;Function&gt;()&gt; &gt;</div>
 <div class="line"><a name="l00354"></a><span class="lineno"><a class="line" href="group__CMathGroup.html#ga136c890475e48f88469a737d95368d05">  354</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__CMathGroup.html#ga136c890475e48f88469a737d95368d05">sqrt</a>(<span class="keyword">const</span> Function&amp; f)</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;  {</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="group__CMathGroup.html#gaca80e773d5886f47cd49dc19b130263f">Sqrt</a>()(f);</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;  }</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;  template &lt;class Function, class = std::enable_if_t&lt;std::is_base_of&lt;Base,Function&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Function, <span class="keyword">class</span> = std::enable_if_t&lt;Checks::isFunction&lt;Function&gt;()&gt; &gt;</div>
 <div class="line"><a name="l00366"></a><span class="lineno"><a class="line" href="group__CMathGroup.html#gaa7f2552adfb8ec41aeb685adddd8bf98">  366</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__CMathGroup.html#gaa7f2552adfb8ec41aeb685adddd8bf98">cbrt</a>(<span class="keyword">const</span> Function&amp; f)</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  {</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="group__CMathGroup.html#ga2e4363ad8400e1c8431c10de2152ec2b">Cbrt</a>()(f);</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;  }</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;  template &lt;class Function, class = std::enable_if_t&lt;std::is_base_of&lt;Base,Function&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Function, <span class="keyword">class</span> = std::enable_if_t&lt;Checks::isFunction&lt;Function&gt;()&gt; &gt;</div>
 <div class="line"><a name="l00378"></a><span class="lineno"><a class="line" href="group__CMathGroup.html#gafd27322fb64c6df3366f384c93819a06">  378</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__CMathGroup.html#gafd27322fb64c6df3366f384c93819a06">cbrt2</a>(<span class="keyword">const</span> Function&amp; f)</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;  {</div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="group__CMathGroup.html#ga9bcbef859d7ffd0d6570d69e1bd8503a">Cbrt2</a>()(f);</div>
@@ -381,7 +381,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;</div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;  <span class="keyword">template</span> &lt;<span class="keywordtype">int</span> k, <span class="keywordtype">int</span> l,</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            <span class="keyword">class </span>Function,</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            <span class="keyword">class </span>= std::enable_if_t&lt;std::is_base_of&lt;Base,Function&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            <span class="keyword">class </span>= std::enable_if_t&lt;Checks::isFunction&lt;Function&gt;()&gt; &gt;</div>
 <div class="line"><a name="l00394"></a><span class="lineno"><a class="line" href="group__CMathGroup.html#gaecae6fa60bbfc0eb1867581ee4577d4e">  394</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__CMathGroup.html#gaecae6fa60bbfc0eb1867581ee4577d4e">pow</a>(<span class="keyword">const</span> Function&amp; f)</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;  {</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structFunG_1_1Pow.html">Pow&lt;k,l&gt;</a>()(f);</div>
@@ -389,7 +389,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;  <span class="keyword">template</span> &lt;<span class="keywordtype">int</span> k,</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            <span class="keyword">class </span>Function,</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            <span class="keyword">class </span>= std::enable_if_t&lt;std::is_base_of&lt;Base,Function&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            <span class="keyword">class </span>= std::enable_if_t&lt;Checks::isFunction&lt;Function&gt;()&gt; &gt;</div>
 <div class="line"><a name="l00409"></a><span class="lineno"><a class="line" href="group__CMathGroup.html#gab52ffe2efd379aad7ea322de46103465">  409</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__CMathGroup.html#gaecae6fa60bbfc0eb1867581ee4577d4e">pow</a>(<span class="keyword">const</span> Function&amp; f)</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;  {</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structFunG_1_1Pow.html">Pow&lt;k&gt;</a>()(f);</div>
@@ -399,17 +399,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;<span class="preprocessor">#endif // FUNG_CMATH_POW_HH</span></div>
 <div class="ttc" id="group__CMathGroup_html_gaca80e773d5886f47cd49dc19b130263f"><div class="ttname"><a href="group__CMathGroup.html#gaca80e773d5886f47cd49dc19b130263f">FunG::Sqrt</a></div><div class="ttdeci">Pow&lt; 1, 2 &gt; Sqrt</div><div class="ttdoc">Square root including first three derivatives (based on sqrt(double) in <cmath>). ...</div><div class="ttdef"><b>Definition:</b> pow.hh:333</div></div>
 <div class="ttc" id="structFunG_1_1Pow_html_a80be1d3a5c208e7ac74efa7ff3a7a18f"><div class="ttname"><a href="structFunG_1_1Pow.html#a80be1d3a5c208e7ac74efa7ff3a7a18f">FunG::Pow::Pow</a></div><div class="ttdeci">Pow(double x=1)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> pow.hh:27</div></div>
-<div class="ttc" id="structFunG_1_1Base_html"><div class="ttname"><a href="structFunG_1_1Base.html">FunG::Base</a></div><div class="ttdoc">Base class for functions satisfying FunctionConcept. Required a.o. for enabling the operators in gene...</div><div class="ttdef"><b>Definition:</b> base.hh:10</div></div>
 <div class="ttc" id="group__CMathGroup_html_gaecae6fa60bbfc0eb1867581ee4577d4e"><div class="ttname"><a href="group__CMathGroup.html#gaecae6fa60bbfc0eb1867581ee4577d4e">FunG::pow</a></div><div class="ttdeci">auto pow(const Function &amp;f)</div><div class="ttdoc">Generate . </div><div class="ttdef"><b>Definition:</b> pow.hh:394</div></div>
 <div class="ttc" id="structFunG_1_1Pow_html"><div class="ttname"><a href="structFunG_1_1Pow.html">FunG::Pow</a></div><div class="ttdoc">Power function with rational exponent  including first three derivatives. </div><div class="ttdef"><b>Definition:</b> pow.hh:24</div></div>
 <div class="ttc" id="group__CMathGroup_html_gafd27322fb64c6df3366f384c93819a06"><div class="ttname"><a href="group__CMathGroup.html#gafd27322fb64c6df3366f384c93819a06">FunG::cbrt2</a></div><div class="ttdeci">auto cbrt2(const Function &amp;f)</div><div class="ttdoc">Generate . </div><div class="ttdef"><b>Definition:</b> pow.hh:378</div></div>
 <div class="ttc" id="group__CMathGroup_html_ga2e4363ad8400e1c8431c10de2152ec2b"><div class="ttname"><a href="group__CMathGroup.html#ga2e4363ad8400e1c8431c10de2152ec2b">FunG::Cbrt</a></div><div class="ttdeci">Pow&lt; 1, 3 &gt; Cbrt</div><div class="ttdoc">Third root including first three derivatives (based on sqrt(double) in <cmath>). </div><div class="ttdef"><b>Definition:</b> pow.hh:339</div></div>
 <div class="ttc" id="group__CMathGroup_html_gaa7f2552adfb8ec41aeb685adddd8bf98"><div class="ttname"><a href="group__CMathGroup.html#gaa7f2552adfb8ec41aeb685adddd8bf98">FunG::cbrt</a></div><div class="ttdeci">auto cbrt(const Function &amp;f)</div><div class="ttdoc">Generate . </div><div class="ttdef"><b>Definition:</b> pow.hh:366</div></div>
-<div class="ttc" id="base_8hh_html"><div class="ttname"><a href="base_8hh.html">base.hh</a></div></div>
 <div class="ttc" id="classFunG_1_1OutOfDomainException_html"><div class="ttname"><a href="classFunG_1_1OutOfDomainException.html">FunG::OutOfDomainException</a></div><div class="ttdoc">Exception for scalar function arguments that are outside the domain of the function. </div><div class="ttdef"><b>Definition:</b> exceptions.hh:23</div></div>
 <div class="ttc" id="group__CMathGroup_html_ga9bcbef859d7ffd0d6570d69e1bd8503a"><div class="ttname"><a href="group__CMathGroup.html#ga9bcbef859d7ffd0d6570d69e1bd8503a">FunG::Cbrt2</a></div><div class="ttdeci">Pow&lt; 2, 3 &gt; Cbrt2</div><div class="ttdoc">Third root squared including first three derivatives (based on sqrt(double) in <cmath>). </div><div class="ttdef"><b>Definition:</b> pow.hh:345</div></div>
 <div class="ttc" id="exceptions_8hh_html"><div class="ttname"><a href="exceptions_8hh.html">exceptions.hh</a></div></div>
 <div class="ttc" id="structFunG_1_1Pow_html_a9e1301ef812a58af196556bc2b33b7c0"><div class="ttname"><a href="structFunG_1_1Pow.html#a9e1301ef812a58af196556bc2b33b7c0">FunG::Pow::d1</a></div><div class="ttdeci">double d1(double dx=1.) const </div><div class="ttdoc">First (directional) derivative. </div><div class="ttdef"><b>Definition:</b> pow.hh:45</div></div>
+<div class="ttc" id="static__checks_8hh_html"><div class="ttname"><a href="static__checks_8hh.html">static_checks.hh</a></div></div>
 <div class="ttc" id="structFunG_1_1Pow_html_a2cb004b3cb89c4887b67eb8e666f4852"><div class="ttname"><a href="structFunG_1_1Pow.html#a2cb004b3cb89c4887b67eb8e666f4852">FunG::Pow::update</a></div><div class="ttdeci">void update(double x)</div><div class="ttdoc">Set point of evaluation. </div><div class="ttdef"><b>Definition:</b> pow.hh:30</div></div>
 <div class="ttc" id="structFunG_1_1Pow_html_a5ad0887482ea7a9f146d9dc41742c11a"><div class="ttname"><a href="structFunG_1_1Pow.html#a5ad0887482ea7a9f146d9dc41742c11a">FunG::Pow::d3</a></div><div class="ttdeci">double d3(double dx=1., double dy=1., double dz=1.) const </div><div class="ttdoc">Third (directional) derivative. </div><div class="ttdef"><b>Definition:</b> pow.hh:57</div></div>
 <div class="ttc" id="structFunG_1_1Pow_html_a840ccc0dbcfabc71863d2932074b955a"><div class="ttname"><a href="structFunG_1_1Pow.html#a840ccc0dbcfabc71863d2932074b955a">FunG::Pow::d0</a></div><div class="ttdeci">double d0() const noexcept</div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> pow.hh:39</div></div>
@@ -420,7 +419,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 9 2015 20:39:26 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 15 2015 15:04:19 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

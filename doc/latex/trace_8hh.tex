@@ -3,7 +3,6 @@
 {\ttfamily \#include $<$type\+\_\+traits$>$}\\*
 {\ttfamily \#include $<$utility$>$}\\*
 {\ttfamily \#include \char`\"{}fung/util/at.\+hh\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}fung/util/base.\+hh\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}fung/util/exceptions.\+hh\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}fung/util/type\+\_\+traits.\+hh\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}dimension.\+hh\char`\"{}}\\*
@@ -23,7 +22,7 @@
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!std\+::is\+\_\+base\+\_\+of$<$ Base, Matrix $>$\+::value $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_ga4d73eb4d46dd9196a31e2d6d557d509e}{Fun\+G\+::\+Linear\+Algebra\+::trace} (const Matrix \&A)
+{\footnotesize template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Function$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_ga4d73eb4d46dd9196a31e2d6d557d509e}{Fun\+G\+::\+Linear\+Algebra\+::trace} (const Matrix \&A)
 \begin{DoxyCompactList}\small\item\em Generate $\mathrm{tr}(A)$. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+base\+\_\+of$<$ Base, F $>$\+::value $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_ga950717870525c43be79245413717673c}{Fun\+G\+::\+Linear\+Algebra\+::trace} (const F \&f)
+{\footnotesize template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ F $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_ga950717870525c43be79245413717673c}{Fun\+G\+::\+Linear\+Algebra\+::trace} (const F \&f)
 \begin{DoxyCompactList}\small\item\em Generate $\mathrm{tr}\circ f$, where $f:\cdot\mapsto\mathbb{R}^{n,n} $. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['derivative_5fwrappers_2ehh',['derivative_wrappers.hh',['../derivative__wrappers_8hh.html',1,'']]],
-  ['determinant_2ehh',['determinant.hh',['../determinant_8hh.html',1,'']]],
-  ['deviator_2ehh',['deviator.hh',['../deviator_8hh.html',1,'']]],
-  ['deviatoric_5finvariants_2ehh',['deviatoric_invariants.hh',['../deviatoric__invariants_8hh.html',1,'']]],
-  ['dimension_2ehh',['dimension.hh',['../dimension_8hh.html',1,'']]],
-  ['documentation_2edox',['documentation.dox',['../documentation_8dox.html',1,'']]]
+  ['evaluate_5fif_5fpresent_2ehh',['evaluate_if_present.hh',['../evaluate__if__present_8hh.html',1,'']]],
+  ['exceptions_2ehh',['exceptions.hh',['../exceptions_8hh.html',1,'']]],
+  ['exp_2ehh',['exp.hh',['../exp_8hh.html',1,'']]],
+  ['extract_5frows_5fand_5fcols_2ehh',['extract_rows_and_cols.hh',['../extract__rows__and__cols_8hh.html',1,'']]]
 ];

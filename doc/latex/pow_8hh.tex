@@ -1,9 +1,9 @@
 \hypertarget{pow_8hh}{}\section{fung/cmath/pow.hh File Reference}
 \label{pow_8hh}\index{fung/cmath/pow.\+hh@{fung/cmath/pow.\+hh}}
 {\ttfamily \#include $<$cmath$>$}\\*
-{\ttfamily \#include \char`\"{}fung/util/base.\+hh\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}fung/util/chainer.\+hh\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}fung/util/exceptions.\+hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fung/util/static\+\_\+checks.\+hh\char`\"{}}\\*
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -26,13 +26,13 @@ using \hyperlink{group__CMathGroup_ga9bcbef859d7ffd0d6570d69e1bd8503a}{Fun\+G\+:
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$class Function , class  = std\+::enable\+\_\+if\+\_\+t$<$std\+::is\+\_\+base\+\_\+of$<$\+Base,\+Function$>$\+::value$>$$>$ }\\auto \hyperlink{group__CMathGroup_ga136c890475e48f88469a737d95368d05}{Fun\+G\+::sqrt} (const Function \&f)
+{\footnotesize template$<$class Function , class  = std\+::enable\+\_\+if\+\_\+t$<$\+Checks\+::is\+Function$<$\+Function$>$()$>$$>$ }\\auto \hyperlink{group__CMathGroup_ga136c890475e48f88469a737d95368d05}{Fun\+G\+::sqrt} (const Function \&f)
 \begin{DoxyCompactList}\small\item\em Generate $ \sqrt{f} $. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Function , class  = std\+::enable\+\_\+if\+\_\+t$<$std\+::is\+\_\+base\+\_\+of$<$\+Base,\+Function$>$\+::value$>$$>$ }\\auto \hyperlink{group__CMathGroup_gaa7f2552adfb8ec41aeb685adddd8bf98}{Fun\+G\+::cbrt} (const Function \&f)
+{\footnotesize template$<$class Function , class  = std\+::enable\+\_\+if\+\_\+t$<$\+Checks\+::is\+Function$<$\+Function$>$()$>$$>$ }\\auto \hyperlink{group__CMathGroup_gaa7f2552adfb8ec41aeb685adddd8bf98}{Fun\+G\+::cbrt} (const Function \&f)
 \begin{DoxyCompactList}\small\item\em Generate $ \sqrt[3]{f} $. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Function , class  = std\+::enable\+\_\+if\+\_\+t$<$std\+::is\+\_\+base\+\_\+of$<$\+Base,\+Function$>$\+::value$>$$>$ }\\auto \hyperlink{group__CMathGroup_gafd27322fb64c6df3366f384c93819a06}{Fun\+G\+::cbrt2} (const Function \&f)
+{\footnotesize template$<$class Function , class  = std\+::enable\+\_\+if\+\_\+t$<$\+Checks\+::is\+Function$<$\+Function$>$()$>$$>$ }\\auto \hyperlink{group__CMathGroup_gafd27322fb64c6df3366f384c93819a06}{Fun\+G\+::cbrt2} (const Function \&f)
 \begin{DoxyCompactList}\small\item\em Generate $ \sqrt[3]{f^2}$. \end{DoxyCompactList}\item 
-{\footnotesize template$<$int k, int l, class Function , class  = std\+::enable\+\_\+if\+\_\+t$<$std\+::is\+\_\+base\+\_\+of$<$\+Base,\+Function$>$\+::value$>$$>$ }\\auto \hyperlink{group__CMathGroup_gaecae6fa60bbfc0eb1867581ee4577d4e}{Fun\+G\+::pow} (const Function \&f)
+{\footnotesize template$<$int k, int l, class Function , class  = std\+::enable\+\_\+if\+\_\+t$<$\+Checks\+::is\+Function$<$\+Function$>$()$>$$>$ }\\auto \hyperlink{group__CMathGroup_gaecae6fa60bbfc0eb1867581ee4577d4e}{Fun\+G\+::pow} (const Function \&f)
 \begin{DoxyCompactList}\small\item\em Generate $ f^{k/l} $. \end{DoxyCompactList}\item 
-{\footnotesize template$<$int k, class Function , class  = std\+::enable\+\_\+if\+\_\+t$<$std\+::is\+\_\+base\+\_\+of$<$\+Base,\+Function$>$\+::value$>$$>$ }\\auto \hyperlink{group__CMathGroup_gab52ffe2efd379aad7ea322de46103465}{Fun\+G\+::pow} (const Function \&f)
+{\footnotesize template$<$int k, class Function , class  = std\+::enable\+\_\+if\+\_\+t$<$\+Checks\+::is\+Function$<$\+Function$>$()$>$$>$ }\\auto \hyperlink{group__CMathGroup_gab52ffe2efd379aad7ea322de46103465}{Fun\+G\+::pow} (const Function \&f)
 \begin{DoxyCompactList}\small\item\em Generate $ f^k,\ k\in\mathbb{N}$. \end{DoxyCompactList}\end{DoxyCompactItemize}

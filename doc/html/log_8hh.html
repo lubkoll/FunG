@@ -89,7 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_524b28c425207d1d52dc11752a1f3164.html">fung</a></li><li class="navelem"><a class="el" href="dir_c46b7b48ea6258ec8e9866167dcc77dd.html">cmath</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_11cbdf91b8ee8cc09aabfde7148319ec.html">fung</a></li><li class="navelem"><a class="el" href="dir_74627e6c4d430650681dc68acc614490.html">cmath</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -102,9 +102,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;cmath&gt;</code><br />
-<code>#include &quot;<a class="el" href="base_8hh_source.html">fung/util/base.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="chainer_8hh_source.html">fung/util/chainer.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="exceptions_8hh_source.html">fung/util/exceptions.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="static__checks_8hh_source.html">fung/util/static_checks.hh</a>&quot;</code><br />
 </div>
 <p><a href="log_8hh_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -128,15 +128,15 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga31313571b08f65b853643e14fc8fc714"><td class="memTemplParams" colspan="2">template&lt;class Function , class  = std::enable_if_t&lt;std::is_base_of&lt;Base,Function&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:ga31313571b08f65b853643e14fc8fc714"><td class="memTemplParams" colspan="2">template&lt;class Function , class  = std::enable_if_t&lt;Checks::isFunction&lt;Function&gt;()&gt;&gt; </td></tr>
 <tr class="memitem:ga31313571b08f65b853643e14fc8fc714"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#ga31313571b08f65b853643e14fc8fc714">FunG::ln</a> (const Function &amp;f)</td></tr>
 <tr class="memdesc:ga31313571b08f65b853643e14fc8fc714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate \( \mathrm{ln}\circ f \).  <a href="group__CMathGroup.html#ga31313571b08f65b853643e14fc8fc714">More...</a><br /></td></tr>
 <tr class="separator:ga31313571b08f65b853643e14fc8fc714"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae9506f4e0e6fad4f756f636044697bfe"><td class="memTemplParams" colspan="2">template&lt;class Function , class  = std::enable_if_t&lt;std::is_base_of&lt;Base,Function&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:gae9506f4e0e6fad4f756f636044697bfe"><td class="memTemplParams" colspan="2">template&lt;class Function , class  = std::enable_if_t&lt;Checks::isFunction&lt;Function&gt;()&gt;&gt; </td></tr>
 <tr class="memitem:gae9506f4e0e6fad4f756f636044697bfe"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#gae9506f4e0e6fad4f756f636044697bfe">FunG::log10</a> (const Function &amp;f)</td></tr>
 <tr class="memdesc:gae9506f4e0e6fad4f756f636044697bfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate \( \mathrm{log}_{10}\circ f \).  <a href="group__CMathGroup.html#gae9506f4e0e6fad4f756f636044697bfe">More...</a><br /></td></tr>
 <tr class="separator:gae9506f4e0e6fad4f756f636044697bfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacd6be7e9de7bbd54c852f0acf0c7d2c2"><td class="memTemplParams" colspan="2">template&lt;class Function , class  = std::enable_if_t&lt;std::is_base_of&lt;Base,Function&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:gacd6be7e9de7bbd54c852f0acf0c7d2c2"><td class="memTemplParams" colspan="2">template&lt;class Function , class  = std::enable_if_t&lt;Checks::isFunction&lt;Function&gt;()&gt;&gt; </td></tr>
 <tr class="memitem:gacd6be7e9de7bbd54c852f0acf0c7d2c2"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#gacd6be7e9de7bbd54c852f0acf0c7d2c2">FunG::log2</a> (const Function &amp;f)</td></tr>
 <tr class="memdesc:gacd6be7e9de7bbd54c852f0acf0c7d2c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate \( \mathrm{log}_{2}\circ f \).  <a href="group__CMathGroup.html#gacd6be7e9de7bbd54c852f0acf0c7d2c2">More...</a><br /></td></tr>
 <tr class="separator:gacd6be7e9de7bbd54c852f0acf0c7d2c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,7 +144,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 9 2015 20:39:26 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 15 2015 15:04:19 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

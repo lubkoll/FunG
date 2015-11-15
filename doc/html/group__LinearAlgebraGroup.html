@@ -139,31 +139,31 @@ Functions</h2></td></tr>
 <tr class="memitem:ga3970ee7fa4d47612427a59cecf56746c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#ga3970ee7fa4d47612427a59cecf56746c">FunG::LinearAlgebra::computeCofactorDirectionalDerivative</a> (Matrix const &amp;A, Matrix const &amp;B)</td></tr>
 <tr class="memdesc:ga3970ee7fa4d47612427a59cecf56746c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the first directional derivative in direction \( B \) of the \((row,col)\)-cofactor of \( A \). Implemented for \( A\in \mathbb{R}^{n,n} \) with \( n=2,3 \).  <a href="#ga3970ee7fa4d47612427a59cecf56746c">More...</a><br /></td></tr>
 <tr class="separator:ga3970ee7fa4d47612427a59cecf56746c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadb3017b4b2828e25a0784b10396a836f"><td class="memTemplParams" colspan="2">template&lt;class Matrix , std::enable_if_t&lt;!std::is_base_of&lt; Base, Matrix &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:gadb3017b4b2828e25a0784b10396a836f"><td class="memTemplParams" colspan="2">template&lt;class Matrix , std::enable_if_t&lt;!Checks::isFunction&lt; Matrix &gt;()&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:gadb3017b4b2828e25a0784b10396a836f"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#gadb3017b4b2828e25a0784b10396a836f">FunG::LinearAlgebra::det</a> (Matrix const &amp;A)</td></tr>
 <tr class="memdesc:gadb3017b4b2828e25a0784b10396a836f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate \(\det(A)\).  <a href="#gadb3017b4b2828e25a0784b10396a836f">More...</a><br /></td></tr>
 <tr class="separator:gadb3017b4b2828e25a0784b10396a836f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga552048de67f3412ae0a220b3123db6e5"><td class="memTemplParams" colspan="2">template&lt;class F , std::enable_if_t&lt; std::is_base_of&lt; Base, F &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:ga552048de67f3412ae0a220b3123db6e5"><td class="memTemplParams" colspan="2">template&lt;class F , std::enable_if_t&lt; Checks::isFunction&lt; F &gt;() &gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:ga552048de67f3412ae0a220b3123db6e5"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#ga552048de67f3412ae0a220b3123db6e5">FunG::LinearAlgebra::det</a> (F const &amp;f)</td></tr>
 <tr class="memdesc:ga552048de67f3412ae0a220b3123db6e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate \(\det\circ f\).  <a href="#ga552048de67f3412ae0a220b3123db6e5">More...</a><br /></td></tr>
 <tr class="separator:ga552048de67f3412ae0a220b3123db6e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7c0b1db93cfc5779a3b1e7eb1646c213"><td class="memTemplParams" colspan="2">template&lt;class Matrix , int n = dim&lt;Matrix&gt;(), std::enable_if_t&lt; Checks::isConstantSize&lt; Matrix &gt;()&amp;&amp;!std::is_base_of&lt; Base, Matrix &gt;::value &gt; *  = nullptr, class  = Concepts::SquareMatrixConceptCheck&lt;Matrix&gt;&gt; </td></tr>
+<tr class="memitem:ga7c0b1db93cfc5779a3b1e7eb1646c213"><td class="memTemplParams" colspan="2">template&lt;class Matrix , int n = dim&lt;Matrix&gt;(), std::enable_if_t&lt; Checks::isConstantSize&lt; Matrix &gt;()&amp;&amp;!Checks::isFunction&lt; Matrix &gt;()&gt; *  = nullptr, class  = Concepts::SquareMatrixConceptCheck&lt;Matrix&gt;&gt; </td></tr>
 <tr class="memitem:ga7c0b1db93cfc5779a3b1e7eb1646c213"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#ga7c0b1db93cfc5779a3b1e7eb1646c213">FunG::LinearAlgebra::deviator</a> (const Matrix &amp;A)</td></tr>
 <tr class="memdesc:ga7c0b1db93cfc5779a3b1e7eb1646c213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate deviator \( \mathrm{dev}(A) = A - \frac{\mathrm{tr}(A)}{n}I \) of a matrix \( A\in\mathbb{R}^{n,n} \).  <a href="#ga7c0b1db93cfc5779a3b1e7eb1646c213">More...</a><br /></td></tr>
 <tr class="separator:ga7c0b1db93cfc5779a3b1e7eb1646c213"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabc90de0d1754cd2e2d190ea8ba62245f"><td class="memTemplParams" colspan="2">template&lt;class Matrix , std::enable_if_t&lt;!Checks::isConstantSize&lt; Matrix &gt;()&amp;&amp;!std::is_base_of&lt; Base, Matrix &gt;::value &gt; *  = nullptr, class  = Concepts::SquareMatrixConceptCheck&lt;Matrix&gt;&gt; </td></tr>
+<tr class="memitem:gabc90de0d1754cd2e2d190ea8ba62245f"><td class="memTemplParams" colspan="2">template&lt;class Matrix , std::enable_if_t&lt;!Checks::isConstantSize&lt; Matrix &gt;()&amp;&amp;!Checks::isFunction&lt; Matrix &gt;()&gt; *  = nullptr, class  = Concepts::SquareMatrixConceptCheck&lt;Matrix&gt;&gt; </td></tr>
 <tr class="memitem:gabc90de0d1754cd2e2d190ea8ba62245f"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#gabc90de0d1754cd2e2d190ea8ba62245f">FunG::LinearAlgebra::deviator</a> (const Matrix &amp;A)</td></tr>
 <tr class="memdesc:gabc90de0d1754cd2e2d190ea8ba62245f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate deviator \( \mathrm{dev}(A) = A - \frac{\mathrm{tr}(A)}{n}I \) of a matrix \( A\in\mathbb{R}^{n,n} \).  <a href="#gabc90de0d1754cd2e2d190ea8ba62245f">More...</a><br /></td></tr>
 <tr class="separator:gabc90de0d1754cd2e2d190ea8ba62245f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad363f3add577abc046fc525ce83e22d3"><td class="memTemplParams" colspan="2">template&lt;class F , std::enable_if_t&lt; std::is_base_of&lt; Base, F &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:gad363f3add577abc046fc525ce83e22d3"><td class="memTemplParams" colspan="2">template&lt;class F , std::enable_if_t&lt; Checks::isFunction&lt; F &gt;()&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:gad363f3add577abc046fc525ce83e22d3"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#gad363f3add577abc046fc525ce83e22d3">FunG::LinearAlgebra::deviator</a> (const F &amp;f)</td></tr>
 <tr class="memdesc:gad363f3add577abc046fc525ce83e22d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate deviator \( \mathrm{dev}\circ f\).  <a href="#gad363f3add577abc046fc525ce83e22d3">More...</a><br /></td></tr>
 <tr class="separator:gad363f3add577abc046fc525ce83e22d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa893e7d667dde98d2b119ca004745186"><td class="memTemplParams" colspan="2">template&lt;class Matrix , std::enable_if_t&lt;!std::is_base_of&lt; Base, Matrix &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:gaa893e7d667dde98d2b119ca004745186"><td class="memTemplParams" colspan="2">template&lt;class Matrix , std::enable_if_t&lt;!Checks::isFunction&lt; Matrix &gt;()&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:gaa893e7d667dde98d2b119ca004745186"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#gaa893e7d667dde98d2b119ca004745186">FunG::LinearAlgebra::frobeniusNorm</a> (const Matrix &amp;A)</td></tr>
 <tr class="memdesc:gaa893e7d667dde98d2b119ca004745186"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate Frobenius norm \( \|A\| = \sqrt{A\negthinspace : \negthinspace A }= \sqrt{\mathrm{tr}(A^TA)} = \sqrt{\sum_{i,j} A_{ij}^2}. \).  <a href="#gaa893e7d667dde98d2b119ca004745186">More...</a><br /></td></tr>
 <tr class="separator:gaa893e7d667dde98d2b119ca004745186"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafa2f358f9310cecb787620ad8ec460a6"><td class="memTemplParams" colspan="2">template&lt;class F , std::enable_if_t&lt; std::is_base_of&lt; Base, F &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:gafa2f358f9310cecb787620ad8ec460a6"><td class="memTemplParams" colspan="2">template&lt;class F , std::enable_if_t&lt; Checks::isFunction&lt; F &gt;()&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:gafa2f358f9310cecb787620ad8ec460a6"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#gafa2f358f9310cecb787620ad8ec460a6">FunG::LinearAlgebra::frobeniusNorm</a> (const F &amp;f)</td></tr>
 <tr class="memdesc:gafa2f358f9310cecb787620ad8ec460a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate Frobenius norm \( \|A\| = \sqrt{A\negthinspace : \negthinspace A }= \sqrt{\mathrm{tr}(A^TA)} = \sqrt{\sum_{i,j} A_{ij}^2}. \).  <a href="#gafa2f358f9310cecb787620ad8ec460a6">More...</a><br /></td></tr>
 <tr class="separator:gafa2f358f9310cecb787620ad8ec460a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -175,11 +175,11 @@ Functions</h2></td></tr>
 <tr class="memitem:gae5e82b9e66319511dae5ff0d9304a6b7"><td class="memTemplItemLeft" align="right" valign="top">Matrix&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#gae5e82b9e66319511dae5ff0d9304a6b7">FunG::LinearAlgebra::tensorProduct</a> (const Vector &amp;v)</td></tr>
 <tr class="memdesc:gae5e82b9e66319511dae5ff0d9304a6b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute tensor product \( M = v \otimes v \).  <a href="#gae5e82b9e66319511dae5ff0d9304a6b7">More...</a><br /></td></tr>
 <tr class="separator:gae5e82b9e66319511dae5ff0d9304a6b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4d73eb4d46dd9196a31e2d6d557d509e"><td class="memTemplParams" colspan="2">template&lt;class Matrix , std::enable_if_t&lt;!std::is_base_of&lt; Base, Matrix &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:ga4d73eb4d46dd9196a31e2d6d557d509e"><td class="memTemplParams" colspan="2">template&lt;class Matrix , std::enable_if_t&lt;!Checks::isFunction&lt; Matrix &gt;()&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:ga4d73eb4d46dd9196a31e2d6d557d509e"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#ga4d73eb4d46dd9196a31e2d6d557d509e">FunG::LinearAlgebra::trace</a> (const Matrix &amp;A)</td></tr>
 <tr class="memdesc:ga4d73eb4d46dd9196a31e2d6d557d509e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate \(\mathrm{tr}(A)\).  <a href="#ga4d73eb4d46dd9196a31e2d6d557d509e">More...</a><br /></td></tr>
 <tr class="separator:ga4d73eb4d46dd9196a31e2d6d557d509e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga950717870525c43be79245413717673c"><td class="memTemplParams" colspan="2">template&lt;class F , std::enable_if_t&lt; std::is_base_of&lt; Base, F &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:ga950717870525c43be79245413717673c"><td class="memTemplParams" colspan="2">template&lt;class F , std::enable_if_t&lt; Checks::isFunction&lt; F &gt;() &gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:ga950717870525c43be79245413717673c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#ga950717870525c43be79245413717673c">FunG::LinearAlgebra::trace</a> (const F &amp;f)</td></tr>
 <tr class="memdesc:ga950717870525c43be79245413717673c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate \(\mathrm{tr}\circ f\), where \(f:\cdot\mapsto\mathbb{R}^{n,n} \).  <a href="#ga950717870525c43be79245413717673c">More...</a><br /></td></tr>
 <tr class="separator:ga950717870525c43be79245413717673c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -296,7 +296,7 @@ template&lt;int row, int col, class Matrix , std::enable_if_t&lt; Checks::isCons
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Matrix , std::enable_if_t&lt;!std::is_base_of&lt; Base, Matrix &gt;::value &gt; *  = nullptr&gt; </div>
+template&lt;class Matrix , std::enable_if_t&lt;!Checks::isFunction&lt; Matrix &gt;()&gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::LinearAlgebra::det </td>
@@ -323,7 +323,7 @@ template&lt;class Matrix , std::enable_if_t&lt;!std::is_base_of&lt; Base, Matrix
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class F , std::enable_if_t&lt; std::is_base_of&lt; Base, F &gt;::value &gt; *  = nullptr&gt; </div>
+template&lt;class F , std::enable_if_t&lt; Checks::isFunction&lt; F &gt;() &gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::LinearAlgebra::det </td>
@@ -350,7 +350,7 @@ template&lt;class F , std::enable_if_t&lt; std::is_base_of&lt; Base, F &gt;::val
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Matrix , int n = dim&lt;Matrix&gt;(), std::enable_if_t&lt; Checks::isConstantSize&lt; Matrix &gt;()&amp;&amp;!std::is_base_of&lt; Base, Matrix &gt;::value &gt; *  = nullptr, class  = Concepts::SquareMatrixConceptCheck&lt;Matrix&gt;&gt; </div>
+template&lt;class Matrix , int n = dim&lt;Matrix&gt;(), std::enable_if_t&lt; Checks::isConstantSize&lt; Matrix &gt;()&amp;&amp;!Checks::isFunction&lt; Matrix &gt;()&gt; *  = nullptr, class  = Concepts::SquareMatrixConceptCheck&lt;Matrix&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::LinearAlgebra::deviator </td>
@@ -370,7 +370,7 @@ template&lt;class Matrix , int n = dim&lt;Matrix&gt;(), std::enable_if_t&lt; Che
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Matrix , std::enable_if_t&lt;!Checks::isConstantSize&lt; Matrix &gt;()&amp;&amp;!std::is_base_of&lt; Base, Matrix &gt;::value &gt; *  = nullptr, class  = Concepts::SquareMatrixConceptCheck&lt;Matrix&gt;&gt; </div>
+template&lt;class Matrix , std::enable_if_t&lt;!Checks::isConstantSize&lt; Matrix &gt;()&amp;&amp;!Checks::isFunction&lt; Matrix &gt;()&gt; *  = nullptr, class  = Concepts::SquareMatrixConceptCheck&lt;Matrix&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::LinearAlgebra::deviator </td>
@@ -390,7 +390,7 @@ template&lt;class Matrix , std::enable_if_t&lt;!Checks::isConstantSize&lt; Matri
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class F , std::enable_if_t&lt; std::is_base_of&lt; Base, F &gt;::value &gt; *  = nullptr&gt; </div>
+template&lt;class F , std::enable_if_t&lt; Checks::isFunction&lt; F &gt;()&gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::LinearAlgebra::deviator </td>
@@ -410,7 +410,7 @@ template&lt;class F , std::enable_if_t&lt; std::is_base_of&lt; Base, F &gt;::val
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Matrix , std::enable_if_t&lt;!std::is_base_of&lt; Base, Matrix &gt;::value &gt; *  = nullptr&gt; </div>
+template&lt;class Matrix , std::enable_if_t&lt;!Checks::isFunction&lt; Matrix &gt;()&gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::LinearAlgebra::frobeniusNorm </td>
@@ -430,7 +430,7 @@ template&lt;class Matrix , std::enable_if_t&lt;!std::is_base_of&lt; Base, Matrix
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class F , std::enable_if_t&lt; std::is_base_of&lt; Base, F &gt;::value &gt; *  = nullptr&gt; </div>
+template&lt;class F , std::enable_if_t&lt; Checks::isFunction&lt; F &gt;()&gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::LinearAlgebra::frobeniusNorm </td>
@@ -500,7 +500,7 @@ template&lt;class Matrix , class Vector &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Matrix , std::enable_if_t&lt;!std::is_base_of&lt; Base, Matrix &gt;::value &gt; *  = nullptr&gt; </div>
+template&lt;class Matrix , std::enable_if_t&lt;!Checks::isFunction&lt; Matrix &gt;()&gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::LinearAlgebra::trace </td>
@@ -521,7 +521,7 @@ template&lt;class Matrix , std::enable_if_t&lt;!std::is_base_of&lt; Base, Matrix
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class F , std::enable_if_t&lt; std::is_base_of&lt; Base, F &gt;::value &gt; *  = nullptr&gt; </div>
+template&lt;class F , std::enable_if_t&lt; Checks::isFunction&lt; F &gt;() &gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::LinearAlgebra::trace </td>
@@ -640,7 +640,7 @@ template&lt;class Matrix , class  = std::enable_if_t&lt;!Checks::isConstantSize&
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 9 2015 20:39:26 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 15 2015 15:04:19 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

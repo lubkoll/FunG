@@ -89,7 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_524b28c425207d1d52dc11752a1f3164.html">fung</a></li><li class="navelem"><a class="el" href="dir_d0cefc2e219e15af34f83f4b36ac2c52.html">linear_algebra</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_11cbdf91b8ee8cc09aabfde7148319ec.html">fung</a></li><li class="navelem"><a class="el" href="dir_3618da3dd8c44ceb33c93a950e03bea2.html">linear_algebra</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -106,7 +106,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="trace_8hh_source.html">trace.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="cofactor_8hh_source.html">cofactor.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="determinant_8hh_source.html">determinant.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="base_8hh_source.html">fung/util/base.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="chainer_8hh_source.html">fung/util/chainer.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="type__traits_8hh_source.html">fung/util/type_traits.hh</a>&quot;</code><br />
 </div>
@@ -127,11 +126,11 @@ Functions</h2></td></tr>
 <tr class="memitem:gafaead59b618d87239270f8eca2bf75c8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__InvariantGroup.html#gafaead59b618d87239270f8eca2bf75c8">FunG::LinearAlgebra::i1</a> (const Arg &amp;x)</td></tr>
 <tr class="memdesc:gafaead59b618d87239270f8eca2bf75c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate first principal invariant.  <a href="group__InvariantGroup.html#gafaead59b618d87239270f8eca2bf75c8">More...</a><br /></td></tr>
 <tr class="separator:gafaead59b618d87239270f8eca2bf75c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9e442bab8f203bcd5634a3d0e65bf802"><td class="memTemplParams" colspan="2">template&lt;class Matrix , std::enable_if_t&lt; !std::is_base_of&lt; Base, Matrix &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:ga9e442bab8f203bcd5634a3d0e65bf802"><td class="memTemplParams" colspan="2">template&lt;class Matrix , std::enable_if_t&lt; !Checks::isFunction&lt; Matrix &gt;() &gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:ga9e442bab8f203bcd5634a3d0e65bf802"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__InvariantGroup.html#ga9e442bab8f203bcd5634a3d0e65bf802">FunG::LinearAlgebra::i2</a> (const Matrix &amp;A)</td></tr>
 <tr class="memdesc:ga9e442bab8f203bcd5634a3d0e65bf802"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient generation of second principal invariant \( \iota_2(A)=\mathrm{tr}(\mathrm{cof}(A)) \) for \(A\in\mathbb{R}^{n,n}\).  <a href="group__InvariantGroup.html#ga9e442bab8f203bcd5634a3d0e65bf802">More...</a><br /></td></tr>
 <tr class="separator:ga9e442bab8f203bcd5634a3d0e65bf802"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad3987f97353c8696e602ed1915b3cf47"><td class="memTemplParams" colspan="2">template&lt;class F , std::enable_if_t&lt; std::is_base_of&lt; Base, F &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:gad3987f97353c8696e602ed1915b3cf47"><td class="memTemplParams" colspan="2">template&lt;class F , std::enable_if_t&lt; Checks::isFunction&lt; F &gt;() &gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:gad3987f97353c8696e602ed1915b3cf47"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__InvariantGroup.html#gad3987f97353c8696e602ed1915b3cf47">FunG::LinearAlgebra::i2</a> (const F &amp;f)</td></tr>
 <tr class="memdesc:gad3987f97353c8696e602ed1915b3cf47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient generation of second principal invariant \( \iota_2\circ f \) for \(f:\cdot\mapsto\mathbb{R}^{n,n}\).  <a href="group__InvariantGroup.html#gad3987f97353c8696e602ed1915b3cf47">More...</a><br /></td></tr>
 <tr class="separator:gad3987f97353c8696e602ed1915b3cf47"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,7 +150,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 9 2015 20:39:26 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 15 2015 15:04:19 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

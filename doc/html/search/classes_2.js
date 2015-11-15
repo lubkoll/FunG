@@ -1,11 +1,5 @@
 var searchData=
 [
-  ['chain',['Chain',['../structFunG_1_1MathematicalOperations_1_1Chain.html',1,'FunG::MathematicalOperations']]],
-  ['constant',['Constant',['../structFunG_1_1Constant.html',1,'FunG']]],
-  ['copyconcept',['CopyConcept',['../structFunG_1_1Concepts_1_1CopyConcept.html',1,'FunG::Concepts']]],
-  ['copyconceptcheck',['CopyConceptCheck',['../structFunG_1_1Concepts_1_1CopyConceptCheck.html',1,'FunG::Concepts']]],
-  ['copyconceptcheck_3c_20f_20_3e',['CopyConceptCheck&lt; F &gt;',['../structFunG_1_1Concepts_1_1CopyConceptCheck.html',1,'FunG::Concepts']]],
-  ['copyconceptcheck_3c_20matrix_20_3e',['CopyConceptCheck&lt; Matrix &gt;',['../structFunG_1_1Concepts_1_1CopyConceptCheck.html',1,'FunG::Concepts']]],
-  ['copyconceptcheck_3c_20vector_20_3e',['CopyConceptCheck&lt; Vector &gt;',['../structFunG_1_1Concepts_1_1CopyConceptCheck.html',1,'FunG::Concepts']]],
-  ['cos',['Cos',['../structFunG_1_1Cos.html',1,'FunG']]]
+  ['decay',['Decay',['../structFunG_1_1Decay.html',1,'FunG']]],
+  ['decay_3c_20f_2c_20void_5ft_3c_20checks_3a_3atrynestedtype_5fplainobject_3c_20f_20_3e_20_3e_20_3e',['Decay&lt; F, void_t&lt; Checks::TryNestedType_PlainObject&lt; F &gt; &gt; &gt;',['../structFunG_1_1Decay_3_01F_00_01void__t_3_01Checks_1_1TryNestedType__PlainObject_3_01F_01_4_01_4_01_4.html',1,'FunG']]]
 ];

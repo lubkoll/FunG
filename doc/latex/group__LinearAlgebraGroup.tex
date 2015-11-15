@@ -36,27 +36,27 @@ class \hyperlink{classFunG_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor}{Fun\
 \begin{DoxyCompactList}\small\item\em Compute the $(row,col)$-\/cofactor of $ A $. Implemented for $ A\in \mathbb{R}^{n,n} $ with $ n=2,3 $. \end{DoxyCompactList}\item 
 {\footnotesize template$<$int row, int col, class Matrix , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Constant\+Size$<$ Matrix $>$()$>$ $\ast$  = nullptr, class  = Concepts\+::\+Matrix\+Concept\+Check$<$\+Matrix$>$$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_ga3970ee7fa4d47612427a59cecf56746c}{Fun\+G\+::\+Linear\+Algebra\+::compute\+Cofactor\+Directional\+Derivative} (Matrix const \&A, Matrix const \&B)
 \begin{DoxyCompactList}\small\item\em Compute the first directional derivative in direction $ B $ of the $(row,col)$-\/cofactor of $ A $. Implemented for $ A\in \mathbb{R}^{n,n} $ with $ n=2,3 $. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!std\+::is\+\_\+base\+\_\+of$<$ Base, Matrix $>$\+::value $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_gadb3017b4b2828e25a0784b10396a836f}{Fun\+G\+::\+Linear\+Algebra\+::det} (Matrix const \&A)
+{\footnotesize template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Function$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_gadb3017b4b2828e25a0784b10396a836f}{Fun\+G\+::\+Linear\+Algebra\+::det} (Matrix const \&A)
 \begin{DoxyCompactList}\small\item\em Generate $\det(A)$. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+base\+\_\+of$<$ Base, F $>$\+::value $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_ga552048de67f3412ae0a220b3123db6e5}{Fun\+G\+::\+Linear\+Algebra\+::det} (F const \&f)
+{\footnotesize template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ F $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_ga552048de67f3412ae0a220b3123db6e5}{Fun\+G\+::\+Linear\+Algebra\+::det} (F const \&f)
 \begin{DoxyCompactList}\small\item\em Generate $\det\circ f$. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Matrix , int n = dim$<$\+Matrix$>$(), std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Constant\+Size$<$ Matrix $>$()\&\&!std\+::is\+\_\+base\+\_\+of$<$ Base, Matrix $>$\+::value $>$ $\ast$  = nullptr, class  = Concepts\+::\+Square\+Matrix\+Concept\+Check$<$\+Matrix$>$$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_ga7c0b1db93cfc5779a3b1e7eb1646c213}{Fun\+G\+::\+Linear\+Algebra\+::deviator} (const Matrix \&A)
+{\footnotesize template$<$class Matrix , int n = dim$<$\+Matrix$>$(), std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Constant\+Size$<$ Matrix $>$()\&\&!\+Checks\+::is\+Function$<$ Matrix $>$()$>$ $\ast$  = nullptr, class  = Concepts\+::\+Square\+Matrix\+Concept\+Check$<$\+Matrix$>$$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_ga7c0b1db93cfc5779a3b1e7eb1646c213}{Fun\+G\+::\+Linear\+Algebra\+::deviator} (const Matrix \&A)
 \begin{DoxyCompactList}\small\item\em Generate deviator $ \mathrm{dev}(A) = A - \frac{\mathrm{tr}(A)}{n}I $ of a matrix $ A\in\mathbb{R}^{n,n} $. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Constant\+Size$<$ Matrix $>$()\&\&!std\+::is\+\_\+base\+\_\+of$<$ Base, Matrix $>$\+::value $>$ $\ast$  = nullptr, class  = Concepts\+::\+Square\+Matrix\+Concept\+Check$<$\+Matrix$>$$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_gabc90de0d1754cd2e2d190ea8ba62245f}{Fun\+G\+::\+Linear\+Algebra\+::deviator} (const Matrix \&A)
+{\footnotesize template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Constant\+Size$<$ Matrix $>$()\&\&!\+Checks\+::is\+Function$<$ Matrix $>$()$>$ $\ast$  = nullptr, class  = Concepts\+::\+Square\+Matrix\+Concept\+Check$<$\+Matrix$>$$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_gabc90de0d1754cd2e2d190ea8ba62245f}{Fun\+G\+::\+Linear\+Algebra\+::deviator} (const Matrix \&A)
 \begin{DoxyCompactList}\small\item\em Generate deviator $ \mathrm{dev}(A) = A - \frac{\mathrm{tr}(A)}{n}I $ of a matrix $ A\in\mathbb{R}^{n,n} $. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+base\+\_\+of$<$ Base, F $>$\+::value $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_gad363f3add577abc046fc525ce83e22d3}{Fun\+G\+::\+Linear\+Algebra\+::deviator} (const F \&f)
+{\footnotesize template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ F $>$()$>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_gad363f3add577abc046fc525ce83e22d3}{Fun\+G\+::\+Linear\+Algebra\+::deviator} (const F \&f)
 \begin{DoxyCompactList}\small\item\em Generate deviator $ \mathrm{dev}\circ f$. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!std\+::is\+\_\+base\+\_\+of$<$ Base, Matrix $>$\+::value $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_gaa893e7d667dde98d2b119ca004745186}{Fun\+G\+::\+Linear\+Algebra\+::frobenius\+Norm} (const Matrix \&A)
+{\footnotesize template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Function$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_gaa893e7d667dde98d2b119ca004745186}{Fun\+G\+::\+Linear\+Algebra\+::frobenius\+Norm} (const Matrix \&A)
 \begin{DoxyCompactList}\small\item\em Generate Frobenius norm $ \|A\| = \sqrt{A\negthinspace : \negthinspace A }= \sqrt{\mathrm{tr}(A^TA)} = \sqrt{\sum_{i,j} A_{ij}^2}. $. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+base\+\_\+of$<$ Base, F $>$\+::value $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_gafa2f358f9310cecb787620ad8ec460a6}{Fun\+G\+::\+Linear\+Algebra\+::frobenius\+Norm} (const F \&f)
+{\footnotesize template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ F $>$()$>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_gafa2f358f9310cecb787620ad8ec460a6}{Fun\+G\+::\+Linear\+Algebra\+::frobenius\+Norm} (const F \&f)
 \begin{DoxyCompactList}\small\item\em Generate Frobenius norm $ \|A\| = \sqrt{A\negthinspace : \negthinspace A }= \sqrt{\mathrm{tr}(A^TA)} = \sqrt{\sum_{i,j} A_{ij}^2}. $. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Matrix , class Vector1 , class Vector2 , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Constant\+Size$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ }\\Matrix \hyperlink{group__LinearAlgebraGroup_ga5d0e066e6184fb3324d96d20087b5578}{Fun\+G\+::\+Linear\+Algebra\+::tensor\+Product} (const Vector1 \&v, const Vector2 \&w)
 \begin{DoxyCompactList}\small\item\em Compute tensor product $ M = v \otimes w $. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Matrix , class Vector $>$ }\\Matrix \hyperlink{group__LinearAlgebraGroup_gae5e82b9e66319511dae5ff0d9304a6b7}{Fun\+G\+::\+Linear\+Algebra\+::tensor\+Product} (const Vector \&v)
 \begin{DoxyCompactList}\small\item\em Compute tensor product $ M = v \otimes v $. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!std\+::is\+\_\+base\+\_\+of$<$ Base, Matrix $>$\+::value $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_ga4d73eb4d46dd9196a31e2d6d557d509e}{Fun\+G\+::\+Linear\+Algebra\+::trace} (const Matrix \&A)
+{\footnotesize template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Function$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_ga4d73eb4d46dd9196a31e2d6d557d509e}{Fun\+G\+::\+Linear\+Algebra\+::trace} (const Matrix \&A)
 \begin{DoxyCompactList}\small\item\em Generate $\mathrm{tr}(A)$. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+base\+\_\+of$<$ Base, F $>$\+::value $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_ga950717870525c43be79245413717673c}{Fun\+G\+::\+Linear\+Algebra\+::trace} (const F \&f)
+{\footnotesize template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ F $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_ga950717870525c43be79245413717673c}{Fun\+G\+::\+Linear\+Algebra\+::trace} (const F \&f)
 \begin{DoxyCompactList}\small\item\em Generate $\mathrm{tr}\circ f$, where $f:\cdot\mapsto\mathbb{R}^{n,n} $. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Matrix , class Transposed\+Matrix  = Matrix, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+same$<$ Matrix, Transposed\+Matrix $>$\+::value \&\&\+Checks\+::is\+Constant\+Size$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ }\\Transposed\+Matrix \hyperlink{group__LinearAlgebraGroup_gaf299ac9490ae23da0a3a3d784e379d1f}{Fun\+G\+::\+Linear\+Algebra\+::transpose} (Matrix A)
 \begin{DoxyCompactList}\small\item\em Compute transpose of square matrix. \end{DoxyCompactList}\item 
@@ -118,7 +118,7 @@ Compute the first directional derivative in direction $ B $ of the $(row,col)$-\
 
 The $(i,j)$-\/cofactor of a matrix $ A $ is $ (-1)^{i+j} \det(A^\#_{ij}) $, where $ A^\#_{ij} $ is obtained from $ A $ by deleting the $i$-\/th row and $ j $-\/th column. If $ A\in \mathbb{R}^{3,3} $, then the cofactors are quadratic polynomials of the entries of $ A^\#_{ij} $. In this case this function can also used to compute the second directional derivative in directions $ A $ and $ B $. \hypertarget{group__LinearAlgebraGroup_gadb3017b4b2828e25a0784b10396a836f}{}\index{Linear Algebra@{Linear Algebra}!det@{det}}
 \index{det@{det}!Linear Algebra@{Linear Algebra}}
-\subsubsection[{det}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!std\+::is\+\_\+base\+\_\+of$<$ Base, Matrix $>$\+::value $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::\+Linear\+Algebra\+::det (
+\subsubsection[{det}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Function$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ auto Fun\+G\+::\+Linear\+Algebra\+::det (
 \begin{DoxyParamCaption}
 \item[{Matrix const \&}]{A}
 \end{DoxyParamCaption}
@@ -137,7 +137,7 @@ Determinant$<$\+Matrix$>$(\+A)
 \end{DoxyReturn}
 \hypertarget{group__LinearAlgebraGroup_ga552048de67f3412ae0a220b3123db6e5}{}\index{Linear Algebra@{Linear Algebra}!det@{det}}
 \index{det@{det}!Linear Algebra@{Linear Algebra}}
-\subsubsection[{det}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+base\+\_\+of$<$ Base, F $>$\+::value $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::\+Linear\+Algebra\+::det (
+\subsubsection[{det}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ F $>$() $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::\+Linear\+Algebra\+::det (
 \begin{DoxyParamCaption}
 \item[{F const \&}]{f}
 \end{DoxyParamCaption}
@@ -156,7 +156,7 @@ Determinant$<$ std\+::decay\+\_\+t$<$decltype(f.\+d0())$>$ $>$(f.\+d0())(f)
 \end{DoxyReturn}
 \hypertarget{group__LinearAlgebraGroup_ga7c0b1db93cfc5779a3b1e7eb1646c213}{}\index{Linear Algebra@{Linear Algebra}!deviator@{deviator}}
 \index{deviator@{deviator}!Linear Algebra@{Linear Algebra}}
-\subsubsection[{deviator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , int n = dim$<$\+Matrix$>$(), std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Constant\+Size$<$ Matrix $>$()\&\&!std\+::is\+\_\+base\+\_\+of$<$ Base, Matrix $>$\+::value $>$ $\ast$  = nullptr, class  = Concepts\+::\+Square\+Matrix\+Concept\+Check$<$\+Matrix$>$$>$ auto Fun\+G\+::\+Linear\+Algebra\+::deviator (
+\subsubsection[{deviator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , int n = dim$<$\+Matrix$>$(), std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Constant\+Size$<$ Matrix $>$()\&\&!\+Checks\+::is\+Function$<$ Matrix $>$()$>$ $\ast$  = nullptr, class  = Concepts\+::\+Square\+Matrix\+Concept\+Check$<$\+Matrix$>$$>$ auto Fun\+G\+::\+Linear\+Algebra\+::deviator (
 \begin{DoxyParamCaption}
 \item[{const Matrix \&}]{A}
 \end{DoxyParamCaption}
@@ -167,7 +167,7 @@ Generate deviator $ \mathrm{dev}(A) = A - \frac{\mathrm{tr}(A)}{n}I $ of a matri
 
 \hypertarget{group__LinearAlgebraGroup_gabc90de0d1754cd2e2d190ea8ba62245f}{}\index{Linear Algebra@{Linear Algebra}!deviator@{deviator}}
 \index{deviator@{deviator}!Linear Algebra@{Linear Algebra}}
-\subsubsection[{deviator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Constant\+Size$<$ Matrix $>$()\&\&!std\+::is\+\_\+base\+\_\+of$<$ Base, Matrix $>$\+::value $>$ $\ast$  = nullptr, class  = Concepts\+::\+Square\+Matrix\+Concept\+Check$<$\+Matrix$>$$>$ auto Fun\+G\+::\+Linear\+Algebra\+::deviator (
+\subsubsection[{deviator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Constant\+Size$<$ Matrix $>$()\&\&!\+Checks\+::is\+Function$<$ Matrix $>$()$>$ $\ast$  = nullptr, class  = Concepts\+::\+Square\+Matrix\+Concept\+Check$<$\+Matrix$>$$>$ auto Fun\+G\+::\+Linear\+Algebra\+::deviator (
 \begin{DoxyParamCaption}
 \item[{const Matrix \&}]{A}
 \end{DoxyParamCaption}
@@ -178,7 +178,7 @@ Generate deviator $ \mathrm{dev}(A) = A - \frac{\mathrm{tr}(A)}{n}I $ of a matri
 
 \hypertarget{group__LinearAlgebraGroup_gad363f3add577abc046fc525ce83e22d3}{}\index{Linear Algebra@{Linear Algebra}!deviator@{deviator}}
 \index{deviator@{deviator}!Linear Algebra@{Linear Algebra}}
-\subsubsection[{deviator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+base\+\_\+of$<$ Base, F $>$\+::value $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::\+Linear\+Algebra\+::deviator (
+\subsubsection[{deviator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ F $>$()$>$ $\ast$  = nullptr$>$ auto Fun\+G\+::\+Linear\+Algebra\+::deviator (
 \begin{DoxyParamCaption}
 \item[{const F \&}]{f}
 \end{DoxyParamCaption}
@@ -189,7 +189,7 @@ Generate deviator $ \mathrm{dev}\circ f$.
 
 \hypertarget{group__LinearAlgebraGroup_gaa893e7d667dde98d2b119ca004745186}{}\index{Linear Algebra@{Linear Algebra}!frobenius\+Norm@{frobenius\+Norm}}
 \index{frobenius\+Norm@{frobenius\+Norm}!Linear Algebra@{Linear Algebra}}
-\subsubsection[{frobenius\+Norm}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!std\+::is\+\_\+base\+\_\+of$<$ Base, Matrix $>$\+::value $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::\+Linear\+Algebra\+::frobenius\+Norm (
+\subsubsection[{frobenius\+Norm}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Function$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ auto Fun\+G\+::\+Linear\+Algebra\+::frobenius\+Norm (
 \begin{DoxyParamCaption}
 \item[{const Matrix \&}]{A}
 \end{DoxyParamCaption}
@@ -200,7 +200,7 @@ Generate Frobenius norm $ \|A\| = \sqrt{A\negthinspace : \negthinspace A }= \sqr
 
 \hypertarget{group__LinearAlgebraGroup_gafa2f358f9310cecb787620ad8ec460a6}{}\index{Linear Algebra@{Linear Algebra}!frobenius\+Norm@{frobenius\+Norm}}
 \index{frobenius\+Norm@{frobenius\+Norm}!Linear Algebra@{Linear Algebra}}
-\subsubsection[{frobenius\+Norm}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+base\+\_\+of$<$ Base, F $>$\+::value $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::\+Linear\+Algebra\+::frobenius\+Norm (
+\subsubsection[{frobenius\+Norm}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ F $>$()$>$ $\ast$  = nullptr$>$ auto Fun\+G\+::\+Linear\+Algebra\+::frobenius\+Norm (
 \begin{DoxyParamCaption}
 \item[{const F \&}]{f}
 \end{DoxyParamCaption}
@@ -234,7 +234,7 @@ Compute tensor product $ M = v \otimes v $.
 
 \hypertarget{group__LinearAlgebraGroup_ga4d73eb4d46dd9196a31e2d6d557d509e}{}\index{Linear Algebra@{Linear Algebra}!trace@{trace}}
 \index{trace@{trace}!Linear Algebra@{Linear Algebra}}
-\subsubsection[{trace}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!std\+::is\+\_\+base\+\_\+of$<$ Base, Matrix $>$\+::value $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::\+Linear\+Algebra\+::trace (
+\subsubsection[{trace}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Function$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ auto Fun\+G\+::\+Linear\+Algebra\+::trace (
 \begin{DoxyParamCaption}
 \item[{const Matrix \&}]{A}
 \end{DoxyParamCaption}
@@ -248,7 +248,7 @@ Trace$<$\+Matrix$>$(\+A)
 \end{DoxyReturn}
 \hypertarget{group__LinearAlgebraGroup_ga950717870525c43be79245413717673c}{}\index{Linear Algebra@{Linear Algebra}!trace@{trace}}
 \index{trace@{trace}!Linear Algebra@{Linear Algebra}}
-\subsubsection[{trace}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+base\+\_\+of$<$ Base, F $>$\+::value $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::\+Linear\+Algebra\+::trace (
+\subsubsection[{trace}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ F $>$() $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::\+Linear\+Algebra\+::trace (
 \begin{DoxyParamCaption}
 \item[{const F \&}]{f}
 \end{DoxyParamCaption}

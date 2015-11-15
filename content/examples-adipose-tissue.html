@@ -22,14 +22,13 @@ auto generateAdiposeTissue(double cCells, double k1, double k2,
 
 f.update(F) //  change function argument
 
-double value = f(); // or f.d0()
+double value = f();
 double firstDerivative  = f.d1(dF0);
 double secondDerivative = f.d2(dF0,dF1);
 double thirdDerivative  = f.d3(dF0,dF1,dF2);
 </pre>
 
-<p>Observe that the derivatives are DIRECTIONAL derivatives. This approach admits to work with any (reasonable) input types. In the first example, where the input variable was a scalar, the call to finalize did generate 
-suitable default values for the directions. Here this is not admissible. </p>
+<p>Observe that the derivatives are DIRECTIONAL derivatives. This approach admits to work with any (reasonable) input types.
 
 <p>Take care to not use functions such as 'exp' with built-in arithmetic types, since in this case the corresponding functions from  are called and the resulting value is treated as constant.</p>
 

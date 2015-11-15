@@ -89,7 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_524b28c425207d1d52dc11752a1f3164.html">fung</a></li><li class="navelem"><a class="el" href="dir_bf6330a8fe922bd32e3346cbf96f4ef2.html">util</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_11cbdf91b8ee8cc09aabfde7148319ec.html">fung</a></li><li class="navelem"><a class="el" href="dir_c07f75946d1de6db7f0b762e3b815d09.html">util</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define FUNG_UTIL_CHAINER_HH</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base_8hh.html">base.hh</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="static__checks_8hh.html">static_checks.hh</a>&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chain_8hh.html">fung/mathematical_operations/chain.hh</a>&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceFunG.html">FunG</a></div>
@@ -118,7 +118,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class </span>Arg ,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;               <span class="keyword">class </span>= std::enable_if_t&lt; !std::is_base_of&lt;Base,Arg&gt;::value &gt; &gt;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;               <span class="keyword">class </span>= std::enable_if_t&lt; !Checks::isFunction&lt;Arg&gt;() &gt; &gt;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    decltype(<span class="keyword">auto</span>) operator()(const Arg&amp; x)</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      <span class="keyword">static_cast&lt;</span>Function*<span class="keyword">&gt;</span>(<span class="keyword">this</span>)-&gt;update(x);</div>
@@ -126,8 +126,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class </span>OtherFunction ,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;               <span class="keyword">class </span>= std::enable_if_t&lt; std::is_base_of&lt;Base,OtherFunction&gt;::value &gt; &gt;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">auto</span> operator()(<span class="keyword">const</span> OtherFunction&amp; g)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;               <span class="keyword">class </span>= std::enable_if_t&lt; Checks::isFunction&lt;OtherFunction&gt;() &gt; &gt;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">auto</span> <span class="keyword">operator</span>()(<span class="keyword">const</span> OtherFunction&amp; g)</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      <span class="keywordflow">return</span> MathematicalOperations::Chain&lt;Function,OtherFunction&gt;(*<span class="keyword">static_cast&lt;</span><span class="keyword">const </span>Function*<span class="keyword">&gt;</span>(<span class="keyword">this</span>),g);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
@@ -135,12 +135,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif // FUNG_UTIL_CHAINER_HH</span></div>
 <div class="ttc" id="chain_8hh_html"><div class="ttname"><a href="chain_8hh.html">chain.hh</a></div></div>
-<div class="ttc" id="base_8hh_html"><div class="ttname"><a href="base_8hh.html">base.hh</a></div></div>
+<div class="ttc" id="static__checks_8hh_html"><div class="ttname"><a href="static__checks_8hh.html">static_checks.hh</a></div></div>
 <div class="ttc" id="namespaceFunG_html"><div class="ttname"><a href="namespaceFunG.html">FunG</a></div><div class="ttdoc">Main namespace of the FunG library. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 9 2015 20:39:26 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 15 2015 15:04:19 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

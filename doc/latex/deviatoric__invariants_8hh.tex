@@ -3,7 +3,7 @@
 {\ttfamily \#include \char`\"{}deviator.\+hh\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}frobenius\+\_\+norm.\+hh\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}fung/mathematical\+\_\+operations/chain.\+hh\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}fung/util/base.\+hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fung/util/static\+\_\+checks.\+hh\char`\"{}}\\*
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -14,5 +14,5 @@
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!std\+::is\+\_\+base\+\_\+of$<$ Base, Matrix $>$\+::value $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__InvariantGroup_ga9a2bc859fe1ae34b1a3ada91a39d69df}{Fun\+G\+::\+Linear\+Algebra\+::j2} (const Matrix \&A)
+{\footnotesize template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Function$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__InvariantGroup_ga9a2bc859fe1ae34b1a3ada91a39d69df}{Fun\+G\+::\+Linear\+Algebra\+::j2} (const Matrix \&A)
 \begin{DoxyCompactList}\small\item\em Second deviatoric invariant $ j_2(\sigma)=\sqrt{\bar\sigma\negthinspace:\negthinspace\bar\sigma} $ with $\bar\sigma = \sigma - \frac{\mathrm{tr}(\sigma)}{n}I$ and $\sigma\in\mathbb{R}^{n,n}$. \end{DoxyCompactList}\end{DoxyCompactItemize}

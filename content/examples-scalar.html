@@ -5,7 +5,7 @@
 template &lt;class Variable&gt;
 auto generateFunction(const Variable&amp; x)
 {
-  return FunG::finalize( pow&lt;3&gt;(sqrt(x)) + sin(sqrt(x)) ); 
+  return pow&lt;3&gt;(sqrt(x)) + sin(sqrt(x)); 
 }
 </pre>
 
@@ -15,11 +15,8 @@ auto generateFunction(const Variable&amp; x)
 
 f.template update&lt;0&gt;(1.) //  change function argument
 
-auto value = f(); // or f.d0()
-auto firstDerivative  = f.template d1&lt;0&gt;();
-auto secondDerivative = f.template d2&lt;0,0&gt;();
-auto thirdDerivative  = f.template d3&lt;0,0,0&gt;();
+auto value = f();
+auto firstDerivative  = f.template d1&lt;0&gt;(1);
+auto secondDerivative = f.template d2&lt;0,0&gt;(1,1);
+auto thirdDerivative  = f.template d3&lt;0,0,0&gt;(1,1,1);
 </pre>
-
-<p>The call to <code>finalize</code> is necessary to simplify usage of the generated function. For functions depending only on scalar variables it adds default arguments for the directional derivatives. Without usage is slightly less convenient. This 
-is illustrated in the other examples. </p> 

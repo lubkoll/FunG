@@ -18,6 +18,7 @@ var searchData=
   ['invariants',['Invariants',['../group__InvariantGroup.html',1,'']]],
   ['is_5farithmetic',['is_arithmetic',['../namespaceFunG.html#a6dd0f05fb05ea031b7b9678fe3730c73',1,'FunG']]],
   ['isarithmetic',['IsArithmetic',['../structFunG_1_1IsArithmetic.html',1,'FunG']]],
-  ['isconstantsize',['isConstantSize',['../namespaceFunG_1_1Checks.html#adcc3e179af2ed0384a3773ea086045b9',1,'FunG::Checks']]],
-  ['isvariable',['isVariable',['../namespaceFunG_1_1Checks.html#ac2a1a8aedf54c42cb6d47b3b64bbc761',1,'FunG::Checks']]]
+  ['isconstantsize',['isConstantSize',['../group__Checks.html#gadcc3e179af2ed0384a3773ea086045b9',1,'FunG::Checks']]],
+  ['isfunction',['isFunction',['../group__Checks.html#gac6e6c5574a8497cc0749e5a613e4d57c',1,'FunG::Checks']]],
+  ['isvariable',['isVariable',['../group__Checks.html#gac2a1a8aedf54c42cb6d47b3b64bbc761',1,'FunG::Checks']]]
 ];

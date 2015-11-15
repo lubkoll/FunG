@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['pow_2ehh',['pow.hh',['../pow_8hh.html',1,'']]],
-  ['principal_5finvariants_2ehh',['principal_invariants.hh',['../principal__invariants_8hh.html',1,'']]],
-  ['product_2ehh',['product.hh',['../product_8hh.html',1,'']]]
+  ['rows_5fand_5fcols_2ehh',['rows_and_cols.hh',['../rows__and__cols_8hh.html',1,'']]]
 ];

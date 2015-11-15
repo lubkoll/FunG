@@ -3,7 +3,7 @@ var searchData=
   ['cbrt',['cbrt',['../group__CMathGroup.html#gaa7f2552adfb8ec41aeb685adddd8bf98',1,'FunG']]],
   ['cbrt2',['cbrt2',['../group__CMathGroup.html#gafd27322fb64c6df3366f384c93819a06',1,'FunG']]],
   ['chain',['Chain',['../structFunG_1_1MathematicalOperations_1_1Chain.html#a11bbc19be4ace14904de0be6d703fb1f',1,'FunG::MathematicalOperations::Chain::Chain(const InitFunction &amp;...init)'],['../structFunG_1_1MathematicalOperations_1_1Chain.html#a3167b6304026eb0bd92e57d0dd0087e0',1,'FunG::MathematicalOperations::Chain::Chain(const F &amp;f_, const G &amp;g_)']]],
-  ['checkargument',['checkArgument',['../namespaceFunG_1_1Checks.html#a31790e5d021a40ac34b7469323c658f9',1,'FunG::Checks']]],
+  ['checkargument',['checkArgument',['../group__Checks.html#ga31790e5d021a40ac34b7469323c658f9',1,'FunG::Checks']]],
   ['cols',['cols',['../namespaceFunG_1_1LinearAlgebra.html#ae981b8bee32eea3ce87f41874835c9c1',1,'FunG::LinearAlgebra::cols(const Matrix &amp;A)'],['../namespaceFunG_1_1LinearAlgebra.html#a9eb685419fe4c5f91619d5aa0f973320',1,'FunG::LinearAlgebra::cols()']]],
   ['compressibleadiposetissue_5fsommerholzapfel',['compressibleAdiposeTissue_SommerHolzapfel',['../group__Biomechanics.html#ga5c3388564c0420b62e58f48c739d27f1',1,'FunG::compressibleAdiposeTissue_SommerHolzapfel(double cCells, double k1, double k2, double kappa, double d0, double d1, const Matrix &amp;M, const Matrix &amp;F)'],['../group__Biomechanics.html#ga27bb3f7c579ce8c21a69ea4d4d0169d7',1,'FunG::compressibleAdiposeTissue_SommerHolzapfel(double d0, double d1, const Matrix &amp;M, const Matrix &amp;F)']]],
   ['compressiblemooneyrivlin',['compressibleMooneyRivlin',['../group__Rubber.html#ga9a1894daa10a0bdcc620c6c41ecb6f19',1,'FunG']]],

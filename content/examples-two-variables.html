@@ -22,9 +22,11 @@ auto generateFunction()
 f.template update&lt;0&gt;(x);
 f.template update&lt;1&gt;(F);
 
-double value       = f(); // or f.d0()
+double value       = f();
 double df_dx       = f.template d1&lt;0&gt;(dx1);
 double df_dF       = f.template d1&lt;1&gt;(dF)
 double ddf_dFdx    = f.template d2&lt;1,0&gt;(dF,dx1);
 double dddf_dxdxdF = f.template d3&lt;0,0,1&gt;(dx1,dx2,dF);
 </pre> 
+
+<p>The function <code>finalize</code> at the end of <code>generateFunction</code> is necessary to generate the suitable update function for f.</p>

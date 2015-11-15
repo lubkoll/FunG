@@ -89,7 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_524b28c425207d1d52dc11752a1f3164.html">fung</a></li><li class="navelem"><a class="el" href="dir_c46b7b48ea6258ec8e9866167dcc77dd.html">cmath</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_11cbdf91b8ee8cc09aabfde7148319ec.html">fung</a></li><li class="navelem"><a class="el" href="dir_74627e6c4d430650681dc68acc614490.html">cmath</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -104,13 +104,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define FUNG_CMATH_ARCSINE_HH</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base_8hh.html">fung/util/base.hh</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chainer_8hh.html">fung/util/chainer.hh</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="exceptions_8hh.html">fung/util/exceptions.hh</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chainer_8hh.html">fung/util/chainer.hh</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="exceptions_8hh.html">fung/util/exceptions.hh</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="static__checks_8hh.html">fung/util/static_checks.hh</a>&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceFunG.html">FunG</a></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structFunG_1_1ASin.html">   22</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structFunG_1_1ASin.html">ASin</a> : <a class="code" href="structFunG_1_1Base.html">Base</a> , Chainer&lt;ASin&gt;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structFunG_1_1ASin.html">   22</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structFunG_1_1ASin.html">ASin</a> : Chainer&lt;ASin&gt;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  {</div>
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structFunG_1_1ASin.html#aea477c9658dc3cea15cd77aa637b5ce4">   25</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="structFunG_1_1ASin.html#aea477c9658dc3cea15cd77aa637b5ce4">ASin</a>(<span class="keywordtype">double</span> x=0.)</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div>
@@ -153,7 +153,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  };</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class </span>Function,</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keyword">class </span>= std::enable_if_t&lt;std::is_base_of&lt;Base,Function&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keyword">class </span>= std::enable_if_t&lt;Checks::isFunction&lt;Function&gt;()&gt; &gt;</div>
 <div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="group__CMathGroup.html#gad26443b289325876cffdaadfca770d51">   78</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__CMathGroup.html#gad26443b289325876cffdaadfca770d51">asin</a>(<span class="keyword">const</span> Function&amp; f)</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  {</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structFunG_1_1ASin.html">ASin</a>()(f);</div>
@@ -162,13 +162,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif // FUNG_CMATH_ARCSINE_HH</span></div>
 <div class="ttc" id="structFunG_1_1ASin_html_a3bf0627e743505d38f04e9d9132331df"><div class="ttname"><a href="structFunG_1_1ASin.html#a3bf0627e743505d38f04e9d9132331df">FunG::ASin::d2</a></div><div class="ttdeci">double d2(double dx=1, double dy=1) const </div><div class="ttdoc">Second (directional) derivative. </div><div class="ttdef"><b>Definition:</b> arcsine.hh:55</div></div>
-<div class="ttc" id="structFunG_1_1Base_html"><div class="ttname"><a href="structFunG_1_1Base.html">FunG::Base</a></div><div class="ttdoc">Base class for functions satisfying FunctionConcept. Required a.o. for enabling the operators in gene...</div><div class="ttdef"><b>Definition:</b> base.hh:10</div></div>
 <div class="ttc" id="structFunG_1_1ASin_html_aea477c9658dc3cea15cd77aa637b5ce4"><div class="ttname"><a href="structFunG_1_1ASin.html#aea477c9658dc3cea15cd77aa637b5ce4">FunG::ASin::ASin</a></div><div class="ttdeci">ASin(double x=0.)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> arcsine.hh:25</div></div>
 <div class="ttc" id="structFunG_1_1ASin_html_a0468608cbecdcc4d8d5eca641232ceba"><div class="ttname"><a href="structFunG_1_1ASin.html#a0468608cbecdcc4d8d5eca641232ceba">FunG::ASin::d1</a></div><div class="ttdeci">double d1(double dx=1) const </div><div class="ttdoc">First (directional) derivative. </div><div class="ttdef"><b>Definition:</b> arcsine.hh:49</div></div>
 <div class="ttc" id="structFunG_1_1ASin_html_a50f2fbd6e12b64492ef63c732f0f82f1"><div class="ttname"><a href="structFunG_1_1ASin.html#a50f2fbd6e12b64492ef63c732f0f82f1">FunG::ASin::d3</a></div><div class="ttdeci">double d3(double dx=1, double dy=1, double dz=1) const </div><div class="ttdoc">Third (directional) derivative. </div><div class="ttdef"><b>Definition:</b> arcsine.hh:61</div></div>
-<div class="ttc" id="base_8hh_html"><div class="ttname"><a href="base_8hh.html">base.hh</a></div></div>
 <div class="ttc" id="classFunG_1_1OutOfDomainException_html"><div class="ttname"><a href="classFunG_1_1OutOfDomainException.html">FunG::OutOfDomainException</a></div><div class="ttdoc">Exception for scalar function arguments that are outside the domain of the function. </div><div class="ttdef"><b>Definition:</b> exceptions.hh:23</div></div>
 <div class="ttc" id="exceptions_8hh_html"><div class="ttname"><a href="exceptions_8hh.html">exceptions.hh</a></div></div>
+<div class="ttc" id="static__checks_8hh_html"><div class="ttname"><a href="static__checks_8hh.html">static_checks.hh</a></div></div>
 <div class="ttc" id="structFunG_1_1ASin_html_a9c3b2d30afbd9d258b7bf30b425f5600"><div class="ttname"><a href="structFunG_1_1ASin.html#a9c3b2d30afbd9d258b7bf30b425f5600">FunG::ASin::d0</a></div><div class="ttdeci">double d0() const noexcept</div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> arcsine.hh:43</div></div>
 <div class="ttc" id="structFunG_1_1ASin_html_a0c7e3aa8b532914de2068b3bc74d57f1"><div class="ttname"><a href="structFunG_1_1ASin.html#a0c7e3aa8b532914de2068b3bc74d57f1">FunG::ASin::update</a></div><div class="ttdeci">void update(double x)</div><div class="ttdoc">Set point of evaluation. </div><div class="ttdef"><b>Definition:</b> arcsine.hh:31</div></div>
 <div class="ttc" id="namespaceFunG_html"><div class="ttname"><a href="namespaceFunG.html">FunG</a></div><div class="ttdoc">Main namespace of the FunG library. </div></div>
@@ -179,7 +178,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 9 2015 20:39:26 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 15 2015 15:04:18 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

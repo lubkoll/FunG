@@ -89,7 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_524b28c425207d1d52dc11752a1f3164.html">fung</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_11cbdf91b8ee8cc09aabfde7148319ec.html">fung</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -103,56 +103,53 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef FUNG_IDENTITY_HH</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define FUNG_IDENTITY_HH</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base_8hh.html">fung/util/base.hh</a>&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chainer_8hh.html">fung/util/chainer.hh</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceFunG.html">FunG</a></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span>&gt; <span class="keyword">struct </span>ArithmeticConceptCheck;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Arg, <span class="keyword">class</span> = ArithmeticConceptCheck&lt;Arg&gt; &gt;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structFunG_1_1Identity.html">   22</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structFunG_1_1Identity.html">Identity</a> : <a class="code" href="structFunG_1_1Base.html">Base</a> , Chainer&lt; Identity&lt;Arg,ArithmeticConceptCheck&lt;Arg&gt; &gt; &gt;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="structFunG_1_1Identity.html#a2480f818e33371734d328558f71248ec">Identity</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structFunG_1_1Identity.html#a080e9bf064c469a5141765f3ee0416b0">   31</a></span>&#160;    <a class="code" href="structFunG_1_1Identity.html#a080e9bf064c469a5141765f3ee0416b0">Identity</a>(<span class="keyword">const</span> Arg&amp; x) { <a class="code" href="structFunG_1_1Identity.html#acceedd6198948c7e1eb782f7a358a759">update</a>(x); }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="structFunG_1_1Identity.html#acceedd6198948c7e1eb782f7a358a759">   34</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structFunG_1_1Identity.html#acceedd6198948c7e1eb782f7a358a759">update</a>(<span class="keyword">const</span> Arg&amp; x)</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      x_ = x;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="structFunG_1_1Identity.html#ab1edf393c23ed1bef1d3d84c28289e36">   40</a></span>&#160;    <span class="keyword">const</span> Arg&amp; <a class="code" href="structFunG_1_1Identity.html#ab1edf393c23ed1bef1d3d84c28289e36">d0</a>() const noexcept { <span class="keywordflow">return</span> x_; }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">template</span> &lt;<span class="keywordtype">int</span>&gt;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="structFunG_1_1Identity.html#a9f22755ffd38fa5712446c0120deea21">   44</a></span>&#160;    <span class="keyword">const</span> Arg&amp; <a class="code" href="structFunG_1_1Identity.html#a9f22755ffd38fa5712446c0120deea21">d1</a>(<span class="keyword">const</span> Arg&amp; dx) <span class="keyword">const</span> noexcept { <span class="keywordflow">return</span> dx; }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    Arg x_;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  };</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Arg&gt;</div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="namespaceFunG.html#a165e879e76d3a2a8906938f3658445ce">   52</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="namespaceFunG.html#a165e879e76d3a2a8906938f3658445ce">identity</a>(<span class="keyword">const</span> Arg&amp; x)</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structFunG_1_1Identity.html">Identity&lt;Arg&gt;</a>(x);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif // FUNG_IDENTITY_HH</span></div>
-<div class="ttc" id="structFunG_1_1Base_html"><div class="ttname"><a href="structFunG_1_1Base.html">FunG::Base</a></div><div class="ttdoc">Base class for functions satisfying FunctionConcept. Required a.o. for enabling the operators in gene...</div><div class="ttdef"><b>Definition:</b> base.hh:10</div></div>
-<div class="ttc" id="structFunG_1_1Identity_html_a080e9bf064c469a5141765f3ee0416b0"><div class="ttname"><a href="structFunG_1_1Identity.html#a080e9bf064c469a5141765f3ee0416b0">FunG::Identity::Identity</a></div><div class="ttdeci">Identity(const Arg &amp;x)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> identity.hh:31</div></div>
-<div class="ttc" id="namespaceFunG_html_a165e879e76d3a2a8906938f3658445ce"><div class="ttname"><a href="namespaceFunG.html#a165e879e76d3a2a8906938f3658445ce">FunG::identity</a></div><div class="ttdeci">auto identity(const Arg &amp;x)</div><div class="ttdoc">Construct Identity<Arg>(x). </div><div class="ttdef"><b>Definition:</b> identity.hh:52</div></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chainer_8hh.html">fung/util/chainer.hh</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceFunG.html">FunG</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span>&gt; <span class="keyword">struct </span>ArithmeticConceptCheck;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Arg, <span class="keyword">class</span> = ArithmeticConceptCheck&lt;Arg&gt; &gt;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structFunG_1_1Identity.html">   21</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structFunG_1_1Identity.html">Identity</a> : Chainer&lt; Identity&lt;Arg,ArithmeticConceptCheck&lt;Arg&gt; &gt; &gt;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="structFunG_1_1Identity.html#a2480f818e33371734d328558f71248ec">Identity</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structFunG_1_1Identity.html#a080e9bf064c469a5141765f3ee0416b0">   30</a></span>&#160;    <a class="code" href="structFunG_1_1Identity.html#a080e9bf064c469a5141765f3ee0416b0">Identity</a>(<span class="keyword">const</span> Arg&amp; x) { <a class="code" href="structFunG_1_1Identity.html#acceedd6198948c7e1eb782f7a358a759">update</a>(x); }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="structFunG_1_1Identity.html#acceedd6198948c7e1eb782f7a358a759">   33</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structFunG_1_1Identity.html#acceedd6198948c7e1eb782f7a358a759">update</a>(<span class="keyword">const</span> Arg&amp; x)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      x_ = x;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="structFunG_1_1Identity.html#ab1edf393c23ed1bef1d3d84c28289e36">   39</a></span>&#160;    <span class="keyword">const</span> Arg&amp; <a class="code" href="structFunG_1_1Identity.html#ab1edf393c23ed1bef1d3d84c28289e36">d0</a>() const noexcept { <span class="keywordflow">return</span> x_; }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">template</span> &lt;<span class="keywordtype">int</span>&gt;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structFunG_1_1Identity.html#a9f22755ffd38fa5712446c0120deea21">   43</a></span>&#160;    <span class="keyword">const</span> Arg&amp; <a class="code" href="structFunG_1_1Identity.html#a9f22755ffd38fa5712446c0120deea21">d1</a>(<span class="keyword">const</span> Arg&amp; dx) <span class="keyword">const</span> noexcept { <span class="keywordflow">return</span> dx; }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    Arg x_;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  };</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Arg&gt;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="namespaceFunG.html#a165e879e76d3a2a8906938f3658445ce">   51</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="namespaceFunG.html#a165e879e76d3a2a8906938f3658445ce">identity</a>(<span class="keyword">const</span> Arg&amp; x)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structFunG_1_1Identity.html">Identity&lt;Arg&gt;</a>(x);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif // FUNG_IDENTITY_HH</span></div>
+<div class="ttc" id="structFunG_1_1Identity_html_a080e9bf064c469a5141765f3ee0416b0"><div class="ttname"><a href="structFunG_1_1Identity.html#a080e9bf064c469a5141765f3ee0416b0">FunG::Identity::Identity</a></div><div class="ttdeci">Identity(const Arg &amp;x)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> identity.hh:30</div></div>
+<div class="ttc" id="namespaceFunG_html_a165e879e76d3a2a8906938f3658445ce"><div class="ttname"><a href="namespaceFunG.html#a165e879e76d3a2a8906938f3658445ce">FunG::identity</a></div><div class="ttdeci">auto identity(const Arg &amp;x)</div><div class="ttdoc">Construct Identity<Arg>(x). </div><div class="ttdef"><b>Definition:</b> identity.hh:51</div></div>
 <div class="ttc" id="structFunG_1_1Identity_html_a2480f818e33371734d328558f71248ec"><div class="ttname"><a href="structFunG_1_1Identity.html#a2480f818e33371734d328558f71248ec">FunG::Identity::Identity</a></div><div class="ttdeci">Identity()=default</div><div class="ttdoc">Default constructor. </div></div>
-<div class="ttc" id="base_8hh_html"><div class="ttname"><a href="base_8hh.html">base.hh</a></div></div>
-<div class="ttc" id="structFunG_1_1Identity_html_ab1edf393c23ed1bef1d3d84c28289e36"><div class="ttname"><a href="structFunG_1_1Identity.html#ab1edf393c23ed1bef1d3d84c28289e36">FunG::Identity::d0</a></div><div class="ttdeci">const Arg &amp; d0() const noexcept</div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> identity.hh:40</div></div>
-<div class="ttc" id="structFunG_1_1Identity_html_a9f22755ffd38fa5712446c0120deea21"><div class="ttname"><a href="structFunG_1_1Identity.html#a9f22755ffd38fa5712446c0120deea21">FunG::Identity::d1</a></div><div class="ttdeci">const Arg &amp; d1(const Arg &amp;dx) const noexcept</div><div class="ttdoc">First directional derivative. </div><div class="ttdef"><b>Definition:</b> identity.hh:44</div></div>
+<div class="ttc" id="structFunG_1_1Identity_html_ab1edf393c23ed1bef1d3d84c28289e36"><div class="ttname"><a href="structFunG_1_1Identity.html#ab1edf393c23ed1bef1d3d84c28289e36">FunG::Identity::d0</a></div><div class="ttdeci">const Arg &amp; d0() const noexcept</div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> identity.hh:39</div></div>
+<div class="ttc" id="structFunG_1_1Identity_html_a9f22755ffd38fa5712446c0120deea21"><div class="ttname"><a href="structFunG_1_1Identity.html#a9f22755ffd38fa5712446c0120deea21">FunG::Identity::d1</a></div><div class="ttdeci">const Arg &amp; d1(const Arg &amp;dx) const noexcept</div><div class="ttdoc">First directional derivative. </div><div class="ttdef"><b>Definition:</b> identity.hh:43</div></div>
 <div class="ttc" id="namespaceFunG_html"><div class="ttname"><a href="namespaceFunG.html">FunG</a></div><div class="ttdoc">Main namespace of the FunG library. </div></div>
-<div class="ttc" id="structFunG_1_1Identity_html_acceedd6198948c7e1eb782f7a358a759"><div class="ttname"><a href="structFunG_1_1Identity.html#acceedd6198948c7e1eb782f7a358a759">FunG::Identity::update</a></div><div class="ttdeci">void update(const Arg &amp;x)</div><div class="ttdoc">Reset point of evaluation. </div><div class="ttdef"><b>Definition:</b> identity.hh:34</div></div>
-<div class="ttc" id="structFunG_1_1Identity_html"><div class="ttname"><a href="structFunG_1_1Identity.html">FunG::Identity</a></div><div class="ttdoc">Identity mapping . </div><div class="ttdef"><b>Definition:</b> identity.hh:22</div></div>
+<div class="ttc" id="structFunG_1_1Identity_html_acceedd6198948c7e1eb782f7a358a759"><div class="ttname"><a href="structFunG_1_1Identity.html#acceedd6198948c7e1eb782f7a358a759">FunG::Identity::update</a></div><div class="ttdeci">void update(const Arg &amp;x)</div><div class="ttdoc">Reset point of evaluation. </div><div class="ttdef"><b>Definition:</b> identity.hh:33</div></div>
+<div class="ttc" id="structFunG_1_1Identity_html"><div class="ttname"><a href="structFunG_1_1Identity.html">FunG::Identity</a></div><div class="ttdoc">Identity mapping . </div><div class="ttdef"><b>Definition:</b> identity.hh:21</div></div>
 <div class="ttc" id="chainer_8hh_html"><div class="ttname"><a href="chainer_8hh.html">chainer.hh</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 9 2015 20:39:26 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 15 2015 15:04:19 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
