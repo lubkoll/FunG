@@ -7,7 +7,6 @@
 #include <type_traits>
 #include <utility>
 
-#include "fung/util/base.hh"
 #include "fung/util/compute_sum.hh"
 #include "fung/util/compute_product.hh"
 #include "fung/util/derivative_wrappers.hh"
@@ -35,7 +34,7 @@ namespace FunG
       template <class F, class G,
               class = Concepts::FunctionConceptCheck<F> ,
               class = Concepts::FunctionConceptCheck<G> >
-    struct Product: Base , Chainer<Product<F,G,Concepts::FunctionConceptCheck<F>,Concepts::FunctionConceptCheck<G> > >
+    struct Product: Chainer<Product<F,G,Concepts::FunctionConceptCheck<F>,Concepts::FunctionConceptCheck<G> > >
     {
     private:
       template <class IndexedArg>
@@ -74,7 +73,7 @@ namespace FunG
        */
       template <class InitF, class InitG>
       Product(const InitF& f_, const InitG& g_)
-        : f(f_), g(g_), value(f.d0() * g.d0())
+        : f(f_), g(g_), value(f() * g())
       {}
 
       /// Update point of evaluation.
@@ -83,7 +82,7 @@ namespace FunG
       {
         update_if_present(f,x);
         update_if_present(g,x);
-        value = f.d0()*g.d0();
+        value = f()*g();
       }
 
       /// Update variable corresponding to index.
@@ -92,7 +91,7 @@ namespace FunG
       {
         update_if_present<index>(f,x);
         update_if_present<index>(g,x);
-        value = f.d0()*g.d0();
+        value = f()*g();
       }
 
       /// Function value.
@@ -159,7 +158,7 @@ namespace FunG
       F f;
       G g;
 
-      decay_t<decltype( std::declval<F>().d0() * std::declval<G>().d0() )> value;
+      decay_t<decltype( std::declval<F>()() * std::declval<G>()() )> value;
     };
   }
 }

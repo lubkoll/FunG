@@ -5,8 +5,8 @@
 #define FUNG_CMATH_EXP_HH
 
 #include <cmath>
-#include "fung/util/base.hh"
 #include "fung/util/chainer.hh"
+#include "fung/util/static_checks.hh"
 
 namespace FunG
 {
@@ -18,7 +18,7 @@ namespace FunG
     For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur
     during applications of the chain rule.
    */
-  struct Exp : Base , Chainer<Exp>
+  struct Exp : Chainer<Exp>
   {
     //! \copydoc Cos::d0()
     explicit Exp(double x=0.) { update(x); }
@@ -65,7 +65,7 @@ namespace FunG
     For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur
     during applications of the chain rule.
    */
-  struct Exp2 : Base , Chainer<Exp2>
+  struct Exp2 : Chainer<Exp2>
   {
     //! \copydoc Cos::Cos()
     explicit Exp2(double x=0.) { update(x); }
@@ -110,7 +110,7 @@ namespace FunG
     \param f function mapping into a scalar space
     \return object of type MathematicalOperations::Chain<Exp,Function>
    */
-  template <class Function, class = std::enable_if_t<std::is_base_of<Base,Function>::value> >
+  template <class Function, class = std::enable_if_t<Checks::isFunction<Function>()> >
   auto exp(const Function& f)
   {
     return Exp()(f);
@@ -122,7 +122,7 @@ namespace FunG
     \param f function mapping into a scalar space
     \return object of type MathematicalOperations::Chain<Exp2,Function>
    */
-  template <class Function, class = std::enable_if_t<std::is_base_of<Base,Function>::value> >
+  template <class Function, class = std::enable_if_t<Checks::isFunction<Function>()> >
   auto exp2(const Function& f)
   {
     return Exp2()(f);

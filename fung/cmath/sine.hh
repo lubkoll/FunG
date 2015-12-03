@@ -5,8 +5,8 @@
 #define FUNG_CMATH_SINE_HH
 
 #include <cmath>
-#include "fung/util/base.hh"
 #include "fung/util/chainer.hh"
+#include "fung/util/static_checks.hh"
 
 namespace FunG
 {
@@ -18,7 +18,7 @@ namespace FunG
     For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur
     during applications of the chain rule.
    */
-  struct Sin : Base , Chainer<Sin>
+  struct Sin : Chainer<Sin>
   {
     //! \copydoc Cos::Cos()
     explicit Sin(double x=0)
@@ -56,7 +56,7 @@ namespace FunG
     \return object of type MathematicalOperations::Chain<Sin,Function>
    */
   template <class Function,
-            class = std::enable_if_t<std::is_base_of<Base,Function>::value> >
+            class = std::enable_if_t<Checks::isFunction<Function>()> >
   auto sin(const Function& f)
   {
     return Sin()(f);

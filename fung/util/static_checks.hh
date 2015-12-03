@@ -7,7 +7,6 @@
 #include <type_traits>
 #include <utility>
 
-#include "base.hh"
 #include "extract_rows_and_cols.hh"
 #include "voider.hh"
 
@@ -18,6 +17,9 @@ namespace FunG
     /**
      * \cond DOCUMENT_IMPLEMENTATIONS_DETAILS
      */
+    template <class F>
+    using TryMemOp_callable                         =      decltype(std::declval<F>()());
+
     template <class F>
     using TryMemFn_d0                               =      decltype(std::declval<F>().d0());
 
@@ -85,6 +87,15 @@ namespace FunG
 
 
     template < class F , class = void >
+    struct HasMemOp_callable
+        : std::false_type {};
+
+    template <class F>
+    struct HasMemOp_callable< F , void_t< TryMemOp_callable<F> > >
+        : std::true_type
+    {};
+
+    template < class F , class = void >
     struct HasMemFn_d0
         : std::false_type {};
 
@@ -92,7 +103,6 @@ namespace FunG
     struct HasMemFn_d0< F , void_t< TryMemFn_d0<F> > >
         : std::true_type
     {};
-
 
     template < class F , class IndexedArg , class = void>
     struct HasMemFn_d1
@@ -168,7 +178,7 @@ namespace FunG
 
     template < class Arg1 , class Arg2 ,
                bool = !std::is_arithmetic<Arg1>::value && !std::is_arithmetic<Arg2>::value &&
-                      !std::is_base_of<Base,Arg1>::value && !std::is_base_of<Base,Arg2>::value ,
+                      !HasMemOp_callable<Arg1>::value && !HasMemOp_callable<Arg2>::value ,
                class = void >
     struct HasFree_Multiplication : std::false_type {};
 
@@ -253,59 +263,58 @@ namespace FunG
      * \endcond
      */
 
-
-    /**
-     * \ingroup Checks
-     * \brief Check if objects of typed Arg1 and Arg2 support multiplication (free operator*).
+    /** @addtogroup Checks
+     * @{
      */
+
+    template < class F >
+    constexpr bool isFunction()
+    {
+      return HasMemOp_callable<F>::value;
+    }
+
+    template < class F >
+    constexpr bool hasConsistentFirstDerivative()
+    {
+      return HasMemFn_d0<F>::value;
+    }
+
+    /// Check if objects of typed Arg1 and Arg2 support multiplication (free operator*).
     template < class Arg1 , class Arg2 >
     constexpr bool hasFree_Multiplication()
     {
       return HasFree_Multiplication<Arg1,Arg2>::value;
     }
 
-    /**
-     * \ingroup Checks
-     * \brief Check if objects of type Arg1 support in-place multiplication with objects of type Arg2.
-     */
+    /// Check if objects of type Arg1 support in-place multiplication with objects of type Arg2.
     template < class Arg1 , class Arg2 >
     constexpr bool hasMemFn_InPlaceMultiplication()
     {
-      return HasMemFn_InPlaceMultiplication<Arg1,Arg2,!std::is_base_of<Base,Arg1>() && !std::is_base_of<Base,Arg2>() && !std::is_arithmetic<Arg1>() >::value;
+      return HasMemFn_InPlaceMultiplication<Arg1,Arg2,!isFunction<Arg1>() && !isFunction<Arg2>() && !std::is_arithmetic<Arg1>() >::value;
     }
 
-    /**
-     * \ingroup Checks
-     * \brief Check if objects of type Arg1 support multiplication with objects of type Arg2 via call to rightmultiplyany(Arg2).
-     */
+    /// Check if objects of type Arg1 support multiplication with objects of type Arg2 via call to rightmultiplyany(Arg2).
     template < class Arg1 , class Arg2 >
     constexpr bool hasMemFn_rightmultiplyany()
     {
-      return HasMemFn_rightmultiplany<Arg1,Arg2,!std::is_base_of<Base,Arg1>() && !std::is_base_of<Base,Arg2>() && !std::is_arithmetic<Arg1>() && !std::is_arithmetic<Arg2>()>::value;
+      return HasMemFn_rightmultiplany<Arg1,Arg2,!isFunction<Arg1>() && !isFunction<Arg2>() && !std::is_arithmetic<Arg1>() && !std::is_arithmetic<Arg2>()>::value;
     }
 
-    /**
-     * \ingroup Checks
-     * \brief Check if objects of type Arg support summation.
-     */
+    /// Check if objects of type Arg support summation.
     template < class Arg >
     constexpr bool hasFree_Summation()
     {
-      return HasFree_Summation<Arg,!std::is_base_of<Base,Arg>() && !std::is_arithmetic<Arg>()>::value;
+      return HasFree_Summation<Arg,!isFunction<Arg>() && !std::is_arithmetic<Arg>()>::value;
     }
 
-    /**
-     * \ingroup Checks
-     * \brief Check if objects of type Arg support in-place summation.
-     */
+    /// Check if objects of type Arg support in-place summation.
     template < class Arg >
     constexpr bool hasMemFn_InPlaceSummation()
     {
-      return HasMemFn_InPlaceSummation<Arg,!std::is_base_of<Base,Arg>() && !std::is_arithmetic<Arg>()>::value;
+      return HasMemFn_InPlaceSummation<Arg,!isFunction<Arg>() && !std::is_arithmetic<Arg>()>::value;
     }
 
     /**
-     * \ingroup Checks
      * \brief Check if object is a static vector for some type satisfying Concepts::VectorConcept.
      *
      * Checks if number of rows is positive.
@@ -316,12 +325,6 @@ namespace FunG
       return ( LinearAlgebra::numberOfRows<Arg>() > 0 );
     }
 
-
-    template < class F >
-    constexpr bool hasConsistentFirstDerivative()
-    {
-      return HasMemFn_d0<F>::value;
-    }
 
     template < class F , class IndexedArgX , class IndexedArgY >
     constexpr bool hasConsistentSecondDerivative()
@@ -336,6 +339,7 @@ namespace FunG
       return hasConsistentSecondDerivative<F,IndexedArgX,IndexedArgY>() &&
           ( HasMemFn_d3<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value ? HasMemFn_d2<F,IndexedArgX,IndexedArgY>::value : true );
     }
+    /** @} */
   }
 }
 

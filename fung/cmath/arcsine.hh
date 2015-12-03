@@ -5,9 +5,9 @@
 #define FUNG_CMATH_ARCSINE_HH
 
 #include <cmath>
-#include "fung/util/base.hh"
 #include "fung/util/chainer.hh"
 #include "fung/util/exceptions.hh"
+#include "fung/util/static_checks.hh"
 
 namespace FunG
 {
@@ -19,7 +19,7 @@ namespace FunG
     For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur
     during applications of the chain rule.
    */
-  struct ASin : Base , Chainer<ASin>
+  struct ASin : Chainer<ASin>
   {
     //! \copydoc Cos::Cos()
     explicit ASin(double x=0.)
@@ -74,7 +74,7 @@ namespace FunG
     \return object of type MathematicalOperations::Chain<ASin,Function>
    */
   template <class Function,
-            class = std::enable_if_t<std::is_base_of<Base,Function>::value> >
+            class = std::enable_if_t<Checks::isFunction<Function>()> >
   auto asin(const Function& f)
   {
     return ASin()(f);

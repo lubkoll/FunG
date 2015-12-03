@@ -4,8 +4,6 @@
 #ifndef FUNG_CONCEPTS_HH
 #define FUNG_CONCEPTS_HH
 
-#include "fung/util/base.hh"
-
 /**
  * \file concepts.hh
  */
@@ -154,10 +152,10 @@ namespace FunG
      * \ingroup Concepts
      * \brief Minimal requirements for functions
      */
-    struct FunctionConcept : Base , CopyConcept
+    struct FunctionConcept : CopyConcept
     {
       /// Access to function value.
-      unspecified d0() const;
+      unspecified operator()() const;
     };
   }
 }

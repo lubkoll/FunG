@@ -5,9 +5,9 @@
 #define FUNG_CMATH_POW_HH
 
 #include <cmath>
-#include "fung/util/base.hh"
 #include "fung/util/chainer.hh"
 #include "fung/util/exceptions.hh"
+#include "fung/util/static_checks.hh"
 
 namespace FunG
 {
@@ -21,7 +21,7 @@ namespace FunG
     For the cases \f$k=-1\f$ and \f$k=2\f$ specializations are used that avoid the use of std::pow.
    */
   template <int dividend, int divisor=1>
-  struct Pow : Base , Chainer< Pow<dividend,divisor> >
+  struct Pow : Chainer< Pow<dividend,divisor> >
   {
     //! \copydoc Cos::Cos()
     explicit Pow(double x=1) { update(x); }
@@ -68,7 +68,7 @@ namespace FunG
    * \cond DOCUMENT_IMPLEMENTATION_DETAILS
    */
   template <>
-  struct Pow<2,1> : Base, Chainer< Pow<2,1> >
+  struct Pow<2,1> : Chainer< Pow<2,1> >
   {
     //! \copydoc Cos::Cos()
     explicit Pow(double x_=0) { update(x_); }
@@ -103,7 +103,7 @@ namespace FunG
   };
 
   template <>
-  struct Pow<3,1> : Base , Chainer< Pow<3,1> >
+  struct Pow<3,1> : Chainer< Pow<3,1> >
   {
     //! \copydoc Cos::Cos()
     explicit Pow(double x_=0) { update(x_); }
@@ -150,7 +150,7 @@ namespace FunG
    * during applications of the chain rule.
    */
   template <>
-  struct Pow<-1,1> : Base , Chainer< Pow<-1,1> >
+  struct Pow<-1,1> : Chainer< Pow<-1,1> >
   {
     //! \copydoc Cos::Cos()
     explicit Pow(double x=1.) { update(x); }
@@ -194,7 +194,7 @@ namespace FunG
   };
 
   template <>
-  struct Pow<1,2> : Base, Chainer< Pow<1,2> >
+  struct Pow<1,2> : Chainer< Pow<1,2> >
   {
     //! \copydoc Cos::Cos()
     explicit Pow(double x=0) { update(x); }
@@ -242,7 +242,7 @@ namespace FunG
    * @brief The function \f$ t\mapsto t^{-1/3} \f$ with first three derivatives.
    */
   template <>
-  struct Pow<-1,3> : Base , Chainer< Pow<-1,3> >
+  struct Pow<-1,3> : Chainer< Pow<-1,3> >
   {
     //! \copydoc Cos::Cos()
     explicit Pow(double t=1) { update(t); }
@@ -285,7 +285,7 @@ namespace FunG
    * @brief The function \f$ t\mapsto t^{2/3} \f$ with first three derivatives.
    */
   template <>
-  struct Pow<-2,3> : Base , Chainer< Pow<-2,3> >
+  struct Pow<-2,3> : Chainer< Pow<-2,3> >
   {
     //! \copydoc Cos::Cos()
     explicit Pow(double t=1.)  { update(t); }
@@ -350,7 +350,7 @@ namespace FunG
     \param f function mapping into a scalar space
     \return object of type MathematicalOperations::Chain<Sqrt,Function>
    */
-  template <class Function, class = std::enable_if_t<std::is_base_of<Base,Function>::value> >
+  template <class Function, class = std::enable_if_t<Checks::isFunction<Function>()> >
   auto sqrt(const Function& f)
   {
     return Sqrt()(f);
@@ -362,7 +362,7 @@ namespace FunG
     \param f function mapping into a scalar space
     \return object of type MathematicalOperations::Chain<Cbrt,Function>
    */
-  template <class Function, class = std::enable_if_t<std::is_base_of<Base,Function>::value> >
+  template <class Function, class = std::enable_if_t<Checks::isFunction<Function>()> >
   auto cbrt(const Function& f)
   {
     return Cbrt()(f);
@@ -374,7 +374,7 @@ namespace FunG
     \param f function mapping into a scalar space
     \return object of type MathematicalOperations::Chain<Cbrt2,Function>
    */
-  template <class Function, class = std::enable_if_t<std::is_base_of<Base,Function>::value> >
+  template <class Function, class = std::enable_if_t<Checks::isFunction<Function>()> >
   auto cbrt2(const Function& f)
   {
     return Cbrt2()(f);
@@ -390,7 +390,7 @@ namespace FunG
    */
   template <int k, int l,
             class Function,
-            class = std::enable_if_t<std::is_base_of<Base,Function>::value> >
+            class = std::enable_if_t<Checks::isFunction<Function>()> >
   auto pow(const Function& f)
   {
     return Pow<k,l>()(f);
@@ -405,7 +405,7 @@ namespace FunG
    */
   template <int k,
             class Function,
-            class = std::enable_if_t<std::is_base_of<Base,Function>::value> >
+            class = std::enable_if_t<Checks::isFunction<Function>()> >
   auto pow(const Function& f)
   {
     return Pow<k>()(f);

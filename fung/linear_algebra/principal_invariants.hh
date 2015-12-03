@@ -11,7 +11,6 @@
 #include "trace.hh"
 #include "cofactor.hh"
 #include "determinant.hh"
-#include "fung/util/base.hh"
 #include "fung/util/chainer.hh"
 #include "fung/util/type_traits.hh"
 
@@ -102,7 +101,6 @@ namespace FunG
        */
       template <class Matrix, class = Concepts::MatrixConceptCheck<Matrix> >
       class SecondPrincipalInvariant :
-          public Base ,
           public Chainer<SecondPrincipalInvariant< Matrix , Concepts::MatrixConceptCheck<Matrix> > >
       {
       public:
@@ -184,7 +182,7 @@ namespace FunG
      * \return SecondPrincipalInvariant<Matrix>(A)
      */
     template <class Matrix,
-              std::enable_if_t< !std::is_base_of<Base,Matrix>::value >* = nullptr >
+              std::enable_if_t< !Checks::isFunction<Matrix>() >* = nullptr >
     auto i2(const Matrix& A)
     {
       return Detail::SecondPrincipalInvariant<Matrix>(A);
@@ -196,7 +194,7 @@ namespace FunG
      * \return SecondPrincipalInvariant<Matrix>(A)
      */
     template <class F,
-              std::enable_if_t<std::is_base_of<Base,F>::value >* = nullptr>
+              std::enable_if_t<Checks::isFunction<F>() >* = nullptr>
     auto i2(const F& f)
     {
       return Detail::SecondPrincipalInvariant< decay_t<decltype(f.d0())> >( f.d0() )( f );

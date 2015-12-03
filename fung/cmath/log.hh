@@ -5,9 +5,9 @@
 #define FUNG_CMATH_LOG_HH
 
 #include <cmath>
-#include "fung/util/base.hh"
 #include "fung/util/chainer.hh"
 #include "fung/util/exceptions.hh"
+#include "fung/util/static_checks.hh"
 
 namespace FunG
 {
@@ -19,7 +19,7 @@ namespace FunG
    * For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur
    * during applications of the chain rule.
    */
-  struct LN : Base , Chainer<LN>
+  struct LN : Chainer<LN>
   {
     //! \copydoc Cos::Cos()
     explicit LN(double x=1.) { update(x); }
@@ -70,7 +70,7 @@ namespace FunG
    * For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur
    * during applications of the chain rule.
    */
-  struct Log10 : Base , Chainer<Log10>
+  struct Log10 : Chainer<Log10>
   {
     //! \copydoc Cos::Cos()
     explicit Log10(double x=1.) { update(x); }
@@ -121,7 +121,7 @@ namespace FunG
    * For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur
    * during applications of the chain rule.
    */
-  struct Log2 : Base , Chainer<Log2>
+  struct Log2 : Chainer<Log2>
   {
     //! \copydoc Cos::Cos()
     explicit Log2(double x=1.) { update(x); }
@@ -171,7 +171,7 @@ namespace FunG
     \return object of type MathematicalOperations::Chain<Log,Function>
    */
   template <class Function,
-            class = std::enable_if_t<std::is_base_of<Base,Function>::value> >
+            class = std::enable_if_t<Checks::isFunction<Function>()> >
   auto ln(const Function& f)
   {
     return LN()(f);
@@ -184,7 +184,7 @@ namespace FunG
     \return object of type MathematicalOperations::Chain<Log10,Function>
    */
   template <class Function,
-            class = std::enable_if_t<std::is_base_of<Base,Function>::value> >
+            class = std::enable_if_t<Checks::isFunction<Function>()> >
   auto log10(const Function& f)
   {
     return Log10()(f);
@@ -197,7 +197,7 @@ namespace FunG
     \return object of type MathematicalOperations::Chain<Log2,Function>
    */
   template <class Function,
-            class = std::enable_if_t<std::is_base_of<Base,Function>::value> >
+            class = std::enable_if_t<Checks::isFunction<Function>()> >
   auto log2(const Function& f)
   {
     return Log2()(f);

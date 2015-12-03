@@ -4,7 +4,6 @@
 #ifndef FUNG_CONSTANT_HH
 #define FUNG_CONSTANT_HH
 
-#include "fung/util/base.hh"
 #include "fung/util/chainer.hh"
 
 namespace FunG
@@ -21,7 +20,7 @@ namespace FunG
    * \brief Wrap a constant.
    */
   template <class Type, class = ArithmeticConceptCheck<Type> >
-  struct Constant : Base , Chainer< Constant<Type , ArithmeticConceptCheck<Type> > >
+  struct Constant : Chainer< Constant<Type , ArithmeticConceptCheck<Type> > >
   {
     Constant() = default;
 

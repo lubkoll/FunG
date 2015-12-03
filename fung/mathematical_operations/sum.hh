@@ -7,7 +7,6 @@
 #include <type_traits>
 #include <utility>
 
-#include "fung/util/base.hh"
 #include "fung/util/compute_sum.hh"
 #include "fung/util/derivative_wrappers.hh"
 #include "fung/util/evaluate_if_present.hh"
@@ -34,7 +33,7 @@ namespace FunG
     template <class F, class G,
               class CheckF = Concepts::FunctionConceptCheck<F> ,
               class CheckG = Concepts::FunctionConceptCheck<G> >
-    struct Sum : Base , Chainer< Sum<F,G,CheckF,CheckG> >
+    struct Sum : Chainer< Sum<F,G,CheckF,CheckG> >
     {
       /**
        * @brief Constructor passing arguments to function constructors.
@@ -43,7 +42,7 @@ namespace FunG
        */
       template <class InitF, class InitG>
       Sum(const InitF& f_, const InitG& g_)
-        : f(f_), g(g_), value(f.d0()+g.d0())
+        : f(f_), g(g_), value(f()+g())
       {}
 
       /// Update point of evaluation.
@@ -52,7 +51,7 @@ namespace FunG
       {
         update_if_present(f,x);
         update_if_present(g,x);
-        value = f.d0() + g.d0();
+        value = f() + g();
       }
 
       /// Update variable corresponding to index.
@@ -61,7 +60,7 @@ namespace FunG
       {
         update_if_present<index>(f,x);
         update_if_present<index>(g,x);
-        value = f.d0() + g.d0();
+        value = f() + g();
       }
 
       /// Function value.
@@ -115,7 +114,7 @@ namespace FunG
     private:
       F f;
       G g;
-      decay_t<decltype( std::declval<F>().d0() + std::declval<G>().d0() )> value;
+      decay_t<decltype( std::declval<F>()() + std::declval<G>()() )> value;
     };
   }
 }

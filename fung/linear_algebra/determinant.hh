@@ -10,9 +10,9 @@
 #include "dimension.hh"
 #include "rows_and_cols.hh"
 #include "fung/util/at.hh"
-#include "fung/util/base.hh"
 #include "fung/util/chainer.hh"
 #include "fung/util/exceptions.hh"
+#include "fung/util/static_checks.hh"
 #include "fung/util/type_traits.hh"
 #include "fung/util/zero.hh"
 
@@ -60,7 +60,7 @@ namespace FunG
 
       template<class Matrix>
       class DeterminantImpl< Matrix , 2 , Concepts::SquareMatrixConceptCheck<Matrix> >
-          : public Base , public Chainer< DeterminantImpl<Matrix,2,Concepts::SquareMatrixConceptCheck<Matrix> > >
+          : public Chainer< DeterminantImpl<Matrix,2,Concepts::SquareMatrixConceptCheck<Matrix> > >
       {
       public:
         DeterminantImpl() = default;
@@ -101,7 +101,7 @@ namespace FunG
 
       template <class Matrix>
       class DeterminantImpl<Matrix,3,Concepts::SquareMatrixConceptCheck<Matrix> >
-          : public Base , public Chainer< DeterminantImpl<Matrix,3,Concepts::SquareMatrixConceptCheck<Matrix> > >
+          : public Chainer< DeterminantImpl<Matrix,3,Concepts::SquareMatrixConceptCheck<Matrix> > >
       {
       public:
         DeterminantImpl() = default;
@@ -156,7 +156,7 @@ namespace FunG
      */
     template <class Matrix>
     class DynamicSizeDeterminant :
-        public Base , public Chainer< DynamicSizeDeterminant<Matrix> >
+        public Chainer< DynamicSizeDeterminant<Matrix> >
     {
     public:
       DynamicSizeDeterminant() = default;
@@ -222,7 +222,7 @@ namespace FunG
      * \return Determinant<Matrix>(A)
      */
     template<class Matrix,
-             std::enable_if_t<!std::is_base_of<Base,Matrix>::value>* = nullptr>
+             std::enable_if_t<!Checks::isFunction<Matrix>()>* = nullptr>
     auto det(Matrix const& A)
     {
       return Determinant<Matrix>(A);
@@ -235,7 +235,7 @@ namespace FunG
      * \return Determinant< std::decay_t<decltype(f.d0())> >(f.d0())(f)
      */
     template<class F,
-             std::enable_if_t<std::is_base_of<Base,F>::value >* = nullptr>
+             std::enable_if_t<Checks::isFunction<F>() >* = nullptr>
     auto det(F const& f)
     {
       return Determinant< decay_t<decltype(f.d0())> >(f.d0())(f);

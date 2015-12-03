@@ -7,7 +7,6 @@
 #include <type_traits>
 #include <utility>
 
-#include "fung/util/base.hh"
 #include "fung/util/compute_sum.hh"
 #include "fung/util/compute_product.hh"
 #include "fung/util/derivative_wrappers.hh"
@@ -34,7 +33,7 @@ namespace FunG
      * \brief %Squared function (F must satisfy the requirements of Concepts::FunctionConcept).
      */
     template <class F, class = Concepts::FunctionConceptCheck<F> >
-    struct Squared : Base , Chainer< Squared< F , Concepts::FunctionConceptCheck<F> > >
+    struct Squared : Chainer< Squared< F , Concepts::FunctionConceptCheck<F> > >
     {
     private:
       template < class IndexedArgX , class IndexedArgY >
@@ -51,7 +50,7 @@ namespace FunG
       ComputeProduct< D1<F,IndexedArgY> , D2<F,IndexedArgX,IndexedArgZ> > ,
       ComputeProduct< D2<F,IndexedArgY,IndexedArgZ> , D1<F,IndexedArgX> > >;
 
-      using ReturnType = std::decay_t<decltype( std::declval<F>().d0() )>;
+      using ReturnType = std::decay_t<decltype( std::declval<F>()() )>;
 
     public:
       /**
@@ -60,7 +59,7 @@ namespace FunG
        */
       template <class InitF>
       Squared(const InitF& f_)
-        : f(f_), value(f.d0()*f.d0())
+        : f(f_), value(f()*f())
       {}
 
       /// Update point of evaluation.
@@ -68,7 +67,7 @@ namespace FunG
       void update(Arg const& x)
       {
         update_if_present(f,x);
-        value = f.d0()*f.d0();
+        value = f()*f();
       }
 
       /// Update variable corresponding to index.
@@ -76,7 +75,7 @@ namespace FunG
       void update(const Arg& x)
       {
         update_if_present<index>(f,x);
-        value = f.d0()*f.d0();
+        value = f()*f();
       }
 
       /// Function value.
@@ -92,7 +91,7 @@ namespace FunG
       template < int id , class Arg , class IndexedArg = IndexedType<Arg,id> , class = std::enable_if_t< ComputeProduct< D0<F> , D1<F,IndexedArg> >::present > >
       ReturnType d1(Arg const& dx) const
       {
-        return 2 * f.d0() * D1_<F,IndexedArg>::apply(f,dx);
+        return 2 * f() * D1_<F,IndexedArg>::apply(f,dx);
       }
 
       /**
@@ -131,7 +130,7 @@ namespace FunG
 
     private:
       F f;
-      decay_t<decltype(std::declval<F>().d0()*std::declval<F>().d0())> value;
+      decay_t<decltype(std::declval<F>()()*std::declval<F>()())> value;
     };
   }
 }

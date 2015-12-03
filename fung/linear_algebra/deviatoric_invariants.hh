@@ -7,7 +7,7 @@
 #include "deviator.hh"
 #include "frobenius_norm.hh"
 #include "fung/mathematical_operations/chain.hh"
-#include "fung/util/base.hh"
+#include "fung/util/static_checks.hh"
 
 namespace FunG
 {
@@ -19,7 +19,7 @@ namespace FunG
      * \f$\bar\sigma = \sigma - \frac{\mathrm{tr}(\sigma)}{n}I\f$ and \f$\sigma\in\mathbb{R}^{n,n}\f$.
      */
     template <class Matrix,
-              std::enable_if_t<!std::is_base_of<Base,Matrix>::value>* = nullptr>
+              std::enable_if_t<!Checks::isFunction<Matrix>()>* = nullptr>
     auto j2(const Matrix& A)
     {
       return frobeniusNorm(A)( deviator(A) );

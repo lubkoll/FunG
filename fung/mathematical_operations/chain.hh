@@ -7,7 +7,6 @@
 #include <type_traits>
 #include <utility>
 
-#include "fung/util/base.hh"
 #include "fung/util/compute_sum.hh"
 #include "fung/util/compute_chain.hh"
 #include "fung/util/derivative_wrappers.hh"
@@ -35,10 +34,10 @@ namespace FunG
     template < class F , class G ,
                class = Concepts::FunctionConceptCheck<F>,
                class = Concepts::FunctionConceptCheck<G> >
-    struct Chain : Base , Chainer< Chain<F,G,Concepts::FunctionConceptCheck<F>,Concepts::FunctionConceptCheck<G> > >
+    struct Chain : Chainer< Chain<F,G,Concepts::FunctionConceptCheck<F>,Concepts::FunctionConceptCheck<G> > >
     {
     private:
-      using FArg = decltype(std::declval<G>().d0());
+      using FArg = decltype(std::declval<G>()());
 
       template < class IndexedArgX , class IndexedArgY , class IndexedFArgX , class IndexedFArgY >
       using D2LazyType =
@@ -64,7 +63,7 @@ namespace FunG
        */
       template <class... InitFunction>
       Chain(const InitFunction&... init)
-        : g(init...), f(g.d0())
+        : g(init...), f(g())
       {}
 
       /**
@@ -75,7 +74,7 @@ namespace FunG
       Chain(const F& f_, const G& g_)
         : g(g_), f(f_)
       {
-        update_if_present(f,g.d0());
+        update_if_present(f,g());
       }
 
       /// Update point of evaluation.
@@ -83,7 +82,7 @@ namespace FunG
       void update(const Arg& x)
       {
         update_if_present(g,x);
-        update_if_present(f,g.d0());
+        update_if_present(f,g());
       }
 
       /// Update variable corresponding to index.
@@ -91,13 +90,13 @@ namespace FunG
       void update(const Arg & x)
       {
         update_if_present<index>(g,x);
-        update_if_present(f,g.d0());
+        update_if_present(f,g());
       }
 
       /// Function value.
       decltype(auto) d0() const noexcept
       {
-        return f.d0();
+        return f();
       }
 
       /**

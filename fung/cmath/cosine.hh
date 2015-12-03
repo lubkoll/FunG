@@ -5,8 +5,8 @@
 #define FUNG_CMATH_COSINE_HH
 
 #include <cmath>
-#include "fung/util/base.hh"
 #include "fung/util/chainer.hh"
+#include "fung/util/static_checks.hh"
 
 namespace FunG
 {
@@ -20,7 +20,7 @@ namespace FunG
 
     \see cosine
    */
-  struct Cos : Base , Chainer<Cos>
+  struct Cos : Chainer<Cos>
   {
     /**
      * @brief Constructor.
@@ -61,7 +61,7 @@ namespace FunG
     \return object of type MathematicalOperations::Chain<Cos,Function>
    */
   template < class Function ,
-             class = std::enable_if_t< std::is_base_of<Base,Function>::value > >
+             class = std::enable_if_t< Checks::isFunction<Function>() > >
   auto cos(const Function& f)
   {
     return Cos()(f);

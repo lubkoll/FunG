@@ -7,7 +7,6 @@
 #include <type_traits>
 #include <utility>
 
-#include "fung/util/base.hh"
 #include "fung/util/derivative_wrappers.hh"
 #include "fung/util/evaluate_if_present.hh"
 #include "fung/util/indexed_type.hh"
@@ -31,9 +30,9 @@ namespace FunG
      * \brief Scaling \f$ af \f$ of some function \f$ f \f$ with a double \f$ a \f$ (F must satisfy the requirements of Concepts::FunctionConcept).
      */
     template <class F, class = Concepts::FunctionConceptCheck<F> >
-    struct Scale : Base , Chainer< Scale< F , Concepts::FunctionConceptCheck<F> > >
+    struct Scale : Chainer< Scale< F , Concepts::FunctionConceptCheck<F> > >
     {
-      using ReturnType = std::decay_t<decltype(std::declval<F>().d0())>;
+      using ReturnType = std::decay_t<decltype(std::declval<F>()())>;
       /**
        * \brief Constructor passing arguments to function constructor.
        * \param a_ scaling
@@ -41,7 +40,7 @@ namespace FunG
        */
       template <class InitF>
       Scale(double a_, const InitF& f_)
-        : a(a_), f(f_), value(a*f.d0())
+        : a(a_), f(f_), value(a*f())
       {}
 
       /// Update point of evaluation.
@@ -49,7 +48,7 @@ namespace FunG
       void update(Arg const& x)
       {
         update_if_present(f,x);
-        value = a*f.d0();
+        value = a*f();
       }
 
       /// Update variable corresponding to index.
@@ -57,7 +56,7 @@ namespace FunG
       void update(const Arg& x)
       {
         update_if_present<index>(f,x);
-        value = a*f.d0();
+        value = a*f();
       }
 
       /// Function value.
@@ -111,7 +110,7 @@ namespace FunG
     private:
       double a = 1.;
       F f;
-      std::decay_t<decltype(std::declval<F>().d0())> value;
+      std::decay_t<decltype(std::declval<F>()())> value;
     };
   }
 }

@@ -11,7 +11,7 @@
 #include "fung/constant.hh"
 #include "fung/operations.hh"
 #include "fung/util/add_missing_operators.hh"
-#include "fung/util/base.hh"
+#include "fung/util/static_checks.hh"
 #include "fung/variable.hh"
 
 namespace FunG
@@ -22,8 +22,8 @@ namespace FunG
   namespace GenerateDetail
   {
     template <class F, class G,
-              bool = std::is_base_of<Base,F>::value,
-              bool = std::is_base_of<Base,G>::value>
+              bool = Checks::isFunction<F>(),
+              bool = Checks::isFunction<G>()>
     struct SumGenerator;
 
     template <class F, class G>
@@ -54,8 +54,8 @@ namespace FunG
     };
 
     template <class F, class G,
-              bool = std::is_base_of<Base,F>::value,
-              bool = std::is_base_of<Base,G>::value,
+              bool = Checks::isFunction<F>(),
+              bool = Checks::isFunction<G>(),
               bool = std::is_arithmetic<F>::value,
               bool = std::is_arithmetic<G>::value>
     struct ProductGenerator;
@@ -116,8 +116,8 @@ namespace FunG
    * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
    */
   template <class F, class G,
-            class = std::enable_if_t< std::is_base_of<Base,F>::value ||
-                                      std::is_base_of<Base,G>::value > >
+            class = std::enable_if_t< Checks::isFunction<F>() ||
+                                      Checks::isFunction<G>() > >
   auto operator+ (const F& f, const G& g)
   {
     return GenerateDetail::SumGenerator<F,G>::apply(f,g);
@@ -130,7 +130,7 @@ namespace FunG
    * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
    */
   template <class F, class G,
-            class = std::enable_if_t< std::is_base_of<Base,F>::value || std::is_base_of<Base,G>::value > >
+            class = std::enable_if_t< Checks::isFunction<F>() || Checks::isFunction<G>() > >
   auto operator*(const F& f, const G& g)
   {
     return GenerateDetail::ProductGenerator<F,G>::apply(f,g);
@@ -144,7 +144,7 @@ namespace FunG
    * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
    */
   template <class F,
-            class = std::enable_if_t< std::is_base_of<Base,F>::value > >
+            class = std::enable_if_t< Checks::isFunction<F>() > >
   auto operator^ (const F& f, int k)
   {
     assert(k==2);
@@ -164,8 +164,8 @@ namespace FunG
    */
 
   template <class F, class G,
-            class = std::enable_if_t<std::is_base_of<Base,F>::value &&
-                                     std::is_base_of<Base,G>::value> >
+            class = std::enable_if_t<Checks::isFunction<F>() &&
+                                     Checks::isFunction<G>()> >
   auto operator<< (const F& f, const G& g)
   {
     static_assert(!Checks::hasVariable<F>(),"Independent variables can not be on the left side of the chain operator.");
@@ -179,8 +179,8 @@ namespace FunG
    * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
    */
   template <class F, class T,
-            std::enable_if_t<std::is_base_of<Base,F>::value && !std::is_base_of<Base,T>::value>* = nullptr>
-//            std::enable_if_t<std::is_convertible<T,decltype(std::declval<F>().d0())>::value && std::is_base_of<Base,F>::value>* = nullptr >
+            std::enable_if_t<Checks::isFunction<F>() && !Checks::isFunction<T>()>* = nullptr>
+//            std::enable_if_t<std::is_convertible<T,decltype(std::declval<F>()())>::value && Checks::isFunction<F>()>* = nullptr >
   auto operator-(const F& f, const T& t)
   {
     return f + ( -1 * t );
@@ -193,7 +193,7 @@ namespace FunG
    * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
    */
   template <class F, class T,
-            std::enable_if_t<std::is_convertible<T,decltype(std::declval<F>().d0())>::value && std::is_base_of<Base,F>::value>* = nullptr >
+            std::enable_if_t<std::is_convertible<T,decltype(std::declval<F>()())>::value && Checks::isFunction<F>()>* = nullptr >
   auto operator-(const T& t, const F& f)
   {
     return t + ( -1 * f );

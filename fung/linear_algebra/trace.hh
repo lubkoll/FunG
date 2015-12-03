@@ -8,7 +8,6 @@
 #include <utility>
 
 #include "fung/util/at.hh"
-#include "fung/util/base.hh"
 #include "fung/util/exceptions.hh"
 #include "fung/util/type_traits.hh"
 #include "dimension.hh"
@@ -76,7 +75,7 @@ namespace FunG
      * \brief %Trace of a matrix, i.e. sum of diagonal elements.
      */
     template <class Matrix, class = Concepts::SquareMatrixConceptCheck<Matrix> >
-    struct ConstantSizeTrace : Base , Chainer< ConstantSizeTrace< Matrix , Concepts::SquareMatrixConceptCheck<Matrix> > >
+    struct ConstantSizeTrace : Chainer< ConstantSizeTrace< Matrix , Concepts::SquareMatrixConceptCheck<Matrix> > >
     {
       /// Default constructor.
       ConstantSizeTrace() = default;
@@ -114,7 +113,7 @@ namespace FunG
      * \brief %Trace of a matrix, i.e. sum of diagonal elements.
      */
     template <class Matrix>
-    struct DynamicSizeTrace : Base , Chainer< DynamicSizeTrace<Matrix> >
+    struct DynamicSizeTrace : Chainer< DynamicSizeTrace<Matrix> >
     {
       /// Default constructor.
       DynamicSizeTrace() = default;
@@ -201,7 +200,7 @@ namespace FunG
      * \return Trace<Matrix>(A)
      */
     template <class Matrix,
-              std::enable_if_t<!std::is_base_of<Base,Matrix>::value>* = nullptr>
+              std::enable_if_t<!Checks::isFunction<Matrix>()>* = nullptr>
     auto trace(const Matrix& A)
     {
       return Trace<Matrix>(A);
@@ -214,7 +213,7 @@ namespace FunG
      * \return Trace< std::decay_t<decltype(f.d0())> >(f.d0())( f )
      */
     template <class F,
-              std::enable_if_t<std::is_base_of<Base,F>::value >* = nullptr>
+              std::enable_if_t<Checks::isFunction<F>() >* = nullptr>
     auto trace(const F& f)
     {
       return Trace< decay_t<decltype(f.d0())> >( f.d0() )( f );

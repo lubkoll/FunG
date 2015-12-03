@@ -205,7 +205,7 @@ namespace FunG
 
     D0() = delete;
 
-    D0(const F& f) : value(f.d0()) {}
+    D0(const F& f) : value(f()) {}
 
     decltype(auto) operator()() const
     {
@@ -216,7 +216,7 @@ namespace FunG
     D0& operator=(const D0&) = delete;
 
   private:
-    decltype(std::declval<F>().d0()) value;
+    decltype(std::declval<F>()()) value;
   };
 
   /// Evaluates f.d1(dx) if not vanishing.

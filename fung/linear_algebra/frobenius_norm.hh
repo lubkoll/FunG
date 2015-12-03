@@ -7,9 +7,10 @@
 #include <type_traits>
 
 #include "fung/cmath/pow.hh"
-#include "rows_and_cols.hh"
 #include "fung/util/at.hh"
 #include "fung/util/chainer.hh"
+#include "fung/util/static_checks.hh"
+#include "rows_and_cols.hh"
 
 namespace FunG
 {
@@ -62,7 +63,7 @@ namespace FunG
      */
     template <class Matrix,
               class = Concepts::MatrixConceptCheck<Matrix> >
-    struct SquaredFrobeniusNorm : Base , Chainer< SquaredFrobeniusNorm<Matrix> >
+    struct SquaredFrobeniusNorm : Chainer< SquaredFrobeniusNorm<Matrix> >
     {
       /// Default constructor.
       SquaredFrobeniusNorm() = default;
@@ -121,7 +122,7 @@ namespace FunG
      * \brief Generate Frobenius norm \f$ \|A\| = \sqrt{A\negthinspace : \negthinspace A }= \sqrt{\mathrm{tr}(A^TA)} = \sqrt{\sum_{i,j} A_{ij}^2}. \f$
      */
     template <class Matrix,
-              std::enable_if_t<!std::is_base_of<Base,Matrix>::value>* = nullptr>
+              std::enable_if_t<!Checks::isFunction<Matrix>()>* = nullptr>
     auto frobeniusNorm(const Matrix& A)
     {
       return FrobeniusNorm<Matrix>(A);
@@ -132,7 +133,7 @@ namespace FunG
      * \brief Generate Frobenius norm \f$ \|A\| = \sqrt{A\negthinspace : \negthinspace A }= \sqrt{\mathrm{tr}(A^TA)} = \sqrt{\sum_{i,j} A_{ij}^2}. \f$
      */
     template <class F,
-              std::enable_if_t<std::is_base_of<Base,F>::value>* = nullptr>
+              std::enable_if_t<Checks::isFunction<F>()>* = nullptr>
     auto frobeniusNorm(const F& f)
     {
       return FrobeniusNorm< std::decay_t<decltype(f.d0())> >(f.d0())(f);

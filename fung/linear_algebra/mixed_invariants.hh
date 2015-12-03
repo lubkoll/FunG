@@ -24,7 +24,7 @@ namespace FunG
      * \param M structural tensor describing principal (fiber) direction
      */
     template <class Matrix,
-              std::enable_if_t<!std::is_base_of<Base,Matrix>::value>* = nullptr>
+              std::enable_if_t<!Checks::isFunction<Matrix>()>* = nullptr>
     auto i4(const Matrix& A, const Matrix& M)
     {
       return i1( identity(A)*M );
@@ -37,7 +37,7 @@ namespace FunG
      * \param M structural tensor describing principal (fiber) direction
      */
     template <class F, class Matrix,
-              std::enable_if_t<std::is_base_of<Base,F>::value>* = nullptr>
+              std::enable_if_t<Checks::isFunction<F>()>* = nullptr>
     auto i4(const F& f, const Matrix& M)
     {
       return i1( f*M );
@@ -51,7 +51,7 @@ namespace FunG
      * \param M structural tensor describing principal (fiber) direction
      */
     template <class Matrix,
-              std::enable_if_t<!std::is_base_of<Base,Matrix>::value>* = nullptr>
+              std::enable_if_t<!Checks::isFunction<Matrix>()>* = nullptr>
     auto i5(const Matrix& A, const Matrix& M)
     {
       return i1( (identity(A)^2)*M );
@@ -64,7 +64,7 @@ namespace FunG
      * \param M structural tensor describing principal (fiber) direction
      */
     template <class F, class Matrix,
-              std::enable_if_t<std::is_base_of<Base,F>::value>* = nullptr>
+              std::enable_if_t<Checks::isFunction<F>()>* = nullptr>
     auto i5(const F& f, const Matrix& M)
     {
       return i1( (f^2)*M );
@@ -77,7 +77,7 @@ namespace FunG
      * \param M structural tensor describing principal (fiber) direction
      */
     template <class Matrix,
-              std::enable_if_t<!std::is_base_of<Base,Matrix>::value>* = nullptr>
+              std::enable_if_t<!Checks::isFunction<Matrix>()>* = nullptr>
     auto i6(const Matrix& A, const Matrix& M)
     {
       return i1( (constant(M)^2) * identity(A) );
@@ -90,7 +90,7 @@ namespace FunG
      * \param M structural tensor describing principal (fiber) direction
      */
     template <class F, class Matrix,
-              std::enable_if_t<std::is_base_of<Base,F>::value>* = nullptr>
+              std::enable_if_t<Checks::isFunction<F>()>* = nullptr>
     auto i6(const F& f, const Matrix& M)
     {
       return i1( (constant(M)^2) * f );

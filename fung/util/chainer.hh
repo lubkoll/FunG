@@ -5,7 +5,7 @@
 #define FUNG_UTIL_CHAINER_HH
 
 #include <type_traits>
-#include "base.hh"
+#include "static_checks.hh"
 #include "fung/mathematical_operations/chain.hh"
 
 namespace FunG
@@ -22,7 +22,7 @@ namespace FunG
     }
 
     template < class Arg ,
-               class = std::enable_if_t< !std::is_base_of<Base,Arg>::value > >
+               class = std::enable_if_t< !Checks::isFunction<Arg>() > >
     decltype(auto) operator()(const Arg& x)
     {
       static_cast<Function*>(this)->update(x);
@@ -30,7 +30,7 @@ namespace FunG
     }
 
     template < class OtherFunction ,
-               class = std::enable_if_t< std::is_base_of<Base,OtherFunction>::value > >
+               class = std::enable_if_t< Checks::isFunction<OtherFunction>() > >
     auto operator()(const OtherFunction& g)
     {
       return MathematicalOperations::Chain<Function,OtherFunction>(*static_cast<const Function*>(this),g);

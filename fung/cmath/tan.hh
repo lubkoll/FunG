@@ -5,8 +5,8 @@
 #define FUNG_CMATH_TAN_HH
 
 #include <cmath>
-#include "fung/util/base.hh"
 #include "fung/util/chainer.hh"
+#include "fung/util/static_checks.hh"
 
 namespace FunG
 {
@@ -18,7 +18,7 @@ namespace FunG
     For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur
     during applications of the chain rule.
    */
-  struct Tan : Base , Chainer<Tan>
+  struct Tan : Chainer<Tan>
   {
     //! \copydoc Cos::Cos()
     explicit Tan(double x=0.) { update(x); }
@@ -65,7 +65,7 @@ namespace FunG
     \return object of type MathematicalOperations::Chain<Tan,Function>
    */
   template <class Function,
-            class = std::enable_if_t<std::is_base_of<Base,Function>::value> >
+            class = std::enable_if_t<Checks::isFunction<Function>()> >
   auto tan(const Function& f)
   {
     return Tan()(f);

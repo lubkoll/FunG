@@ -4,7 +4,6 @@
 #ifndef FUNG_IDENTITY_HH
 #define FUNG_IDENTITY_HH
 
-#include "fung/util/base.hh"
 #include "fung/util/chainer.hh"
 
 namespace FunG
@@ -19,7 +18,7 @@ namespace FunG
 
   /// %Identity mapping \f$ f(x)=x \f$.
   template <class Arg, class = ArithmeticConceptCheck<Arg> >
-  struct Identity : Base , Chainer< Identity<Arg,ArithmeticConceptCheck<Arg> > >
+  struct Identity : Chainer< Identity<Arg,ArithmeticConceptCheck<Arg> > >
   {
     /// Default constructor.
     Identity() = default;

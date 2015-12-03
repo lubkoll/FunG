@@ -8,7 +8,6 @@
 #include <tuple>
 #include <type_traits>
 
-#include "fung/util/base.hh"
 #include "fung/util/chainer.hh"
 
 namespace FunG
@@ -119,7 +118,7 @@ namespace FunG
    * \brief Independent variable. Can be uniquely identified by its id.
    */
   template <class T, int id>
-  struct Variable : Base , Chainer< Variable<T,id> >
+  struct Variable : Chainer< Variable<T,id> >
   {
     Variable() = default;
 

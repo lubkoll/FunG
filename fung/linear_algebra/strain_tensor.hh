@@ -6,7 +6,6 @@
 
 #include "transpose.hh"
 #include "fung/mathematical_operations/sum.hh"
-#include "fung/util/base.hh"
 #include "fung/util/chainer.hh"
 #include "fung/util/add_transposed_matrix.hh"
 
@@ -31,7 +30,6 @@ namespace FunG
      */
     template <class Matrix, class = Concepts::SquareMatrixConceptCheck<Matrix> >
     class LeftCauchyGreenStrainTensor :
-        public Base ,
         public Chainer< LeftCauchyGreenStrainTensor<Matrix , Concepts::SquareMatrixConceptCheck<Matrix> > >
     {
     public:
