@@ -10,9 +10,9 @@
 
 namespace FunG
 {
-  /*!
-    \ingroup CMathGroup
+  /** @addtogroup CMathGroup @{ */
 
+  /*!
     \brief Tangent function including first three derivatives.
 
     For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur
@@ -59,7 +59,6 @@ namespace FunG
   };
 
   /*!
-    \ingroup CMathGroup
     \brief Generate \f$ \tan\circ f \f$.
     \param f function mapping into a scalar space
     \return object of type MathematicalOperations::Chain<Tan,Function>
@@ -70,6 +69,7 @@ namespace FunG
   {
     return Tan()(f);
   }
+  /** @} */
 }
 
 #endif // FUNG_CMATH_TAN_HH
