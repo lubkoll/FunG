@@ -20,10 +20,8 @@ script:
   - cd build
   - cmake -DCMAKE_BUILD_TYPE=Debug ..
   - make
-  - lcov --capture --initial --no-external --directory . --base-directory ../fung --output-file initial.info
   - ./unit_tests
-  - lcov --capture --no-external --directory . --base-directory ../fung --output-file final.info
-  - lcov --add-tracefile initial.info --add-tracefile final.info --output-file coverage.info
+  - lcov --capture --no-external --directory . --base-directory ../fung --output-file coverage.info
   - cd ..
 after_success:
   - cd build
