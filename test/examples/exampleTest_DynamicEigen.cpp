@@ -20,6 +20,7 @@
 
 #include <tuple>
 
+#include <Eigen/Dense>
 #include <gtest/gtest.h>
 
 #define FUNG_ENABLE_EXCEPTIONS
@@ -28,7 +29,6 @@
 #include "fung/examples/biomechanics/skin_tissue_hendriks.hh"
 #include "fung/examples/biomechanics/adipose_tissue_sommer_holzapfel.hh"
 #include "fung/examples/biomechanics/muscle_tissue_martins.hh"
-#include <Eigen/Dense>
 
 namespace
 {

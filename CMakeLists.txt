@@ -10,6 +10,8 @@ set(CMAKE_MODULE_PATH
     ${CMAKE_CURRENT_SOURCE_DIR}/cmake
     )
 
+option(IGNORE_EIGEN OFF)
+
 include(ConfigSafeGuards)
 
 #set(CMAKE_CXX_COMPILER "/usr/bin/clang++-3.5")
@@ -45,11 +47,13 @@ add_dependencies(gtest git_update)
 set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest-all.cc  PROPERTIES GENERATED 1)
 set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest_main.cc PROPERTIES GENERATED 1)
 
-find_package(Eigen3)
-if(EIGEN3_FOUND)
-  include_directories(${EIGEN3_INCLUDE_DIR})
-  aux_source_directory(test/examples SRC_LIST)
-  aux_source_directory(test/linear_algebra SRC_LIST)
+if( !IGNORE_EIGEN )
+  find_package(Eigen3)
+  if(EIGEN3_FOUND)
+    include_directories(${EIGEN3_INCLUDE_DIR})
+    aux_source_directory(test/examples SRC_LIST)
+    aux_source_directory(test/linear_algebra SRC_LIST)
+  endif()
 endif()
 
 aux_source_directory(test/cmath SRC_LIST)
