@@ -15,25 +15,18 @@
 
 namespace FunG
 {
-  /**
-   * \cond DOCUMENT_FORWARD_DECLARATIONS
-   */
+  /// @cond
   template <class> struct Chainer;
   namespace Concepts { template <class> struct SquareMatrixConceptCheck; }
-  /**
-   * \endcond
-   */
+  /// @endcond
 
+  /** @addtogroup LinearAlgebraGroup @{ */
   namespace LinearAlgebra
   {
-    /**
-     * \cond DOCUMENT_IMPLEMENTATION_DETAILS
-     */
+    /// @cond
     namespace Detail
     {
-      /**
-       * \brief Computes the trace of \f$A\f$, i.e. the sum of diagonal elements.
-       */
+      /// f Computes the trace of \f$A\f$, i.e. the sum of diagonal elements.
       template <int>
       struct ComputeTrace
       {
@@ -70,14 +63,10 @@ namespace FunG
     }
 
 
-    /**
-     * \ingroup LinearAlgebraGroup
-     * \brief %Trace of a matrix, i.e. sum of diagonal elements.
-     */
+    /// %Trace of a matrix, i.e. sum of diagonal elements.
     template <class Matrix, class = Concepts::SquareMatrixConceptCheck<Matrix> >
     struct ConstantSizeTrace : Chainer< ConstantSizeTrace< Matrix , Concepts::SquareMatrixConceptCheck<Matrix> > >
     {
-      /// Default constructor.
       ConstantSizeTrace() = default;
 
       /**
@@ -108,14 +97,10 @@ namespace FunG
       std::decay_t< decltype( Detail::ComputeTrace<dim<Matrix>()>::apply(std::declval<Matrix>()) ) > trace = 0;
     };
 
-    /**
-     * \ingroup LinearAlgebraGroup
-     * \brief %Trace of a matrix, i.e. sum of diagonal elements.
-     */
+    /// %Trace of a matrix, i.e. sum of diagonal elements.
     template <class Matrix>
     struct DynamicSizeTrace : Chainer< DynamicSizeTrace<Matrix> >
     {
-      /// Default constructor.
       DynamicSizeTrace() = default;
 
       /**
@@ -154,48 +139,14 @@ namespace FunG
     private:
       std::decay_t< decltype(at(std::declval<Matrix>(),0,0)) > trace = 0;
     };
-    /**
-     * \endcond
-     */
+    /// @endcond
 
-    /**
-     * \ingroup LinearAlgebraGroup
-     * \brief Trace of a matrix (sum of diagonal elements).
-     */
+
+    /// %Trace of a matrix (sum of diagonal elements).
     template< class Matrix >
     using Trace = std::conditional_t< Checks::isConstantSize<Matrix>() , ConstantSizeTrace<Matrix> , DynamicSizeTrace<Matrix> >;
 
     /**
-     * \cond DOCUMENT_IMPLEMENATION_DETAILS
-     */
-    namespace Detail
-    {
-      template <bool>
-      struct TraceImpl
-      {
-        template <class Matrix>
-        static auto apply(const Matrix& A)
-        {
-          return Trace<Matrix>(A);
-        }
-      };
-
-      template <>
-      struct TraceImpl<true>
-      {
-        template <class Function>
-        static auto apply(const Function& f)
-        {
-          return Trace< std::decay_t<decltype(f.d0())> >( f.d0() )( f );
-        }
-      };
-    }
-    /**
-     * \endcond
-     */
-
-    /**
-     * \ingroup LinearAlgebraGroup
      * \brief Generate \f$\mathrm{tr}(A)\f$.
      * \return Trace<Matrix>(A)
      */
@@ -208,7 +159,6 @@ namespace FunG
 
 
     /**
-     * \ingroup LinearAlgebraGroup
      * \brief Generate \f$\mathrm{tr}\circ f\f$, where \f$f:\cdot\mapsto\mathbb{R}^{n,n} \f$.
      * \return Trace< std::decay_t<decltype(f.d0())> >(f.d0())( f )
      */
@@ -219,6 +169,7 @@ namespace FunG
       return Trace< decay_t<decltype(f.d0())> >( f.d0() )( f );
     }
   }
+  /** @} */
 }
 
 #endif // FUNG_LINEAR_ALGEBRA_TRACE_HH

@@ -14,8 +14,8 @@ namespace FunG
   namespace LinearAlgebra
   {
     /**
-     * \ingroup InvariantGroup
-     * \brief Second deviatoric invariant \f$ j_2(\sigma)=\sqrt{\bar\sigma\negthinspace:\negthinspace\bar\sigma} \f$ with
+     * @ingroup InvariantGroup
+     * @brief Second deviatoric invariant \f$ j_2(\sigma)=\sqrt{\bar\sigma\negthinspace:\negthinspace\bar\sigma} \f$ with
      * \f$\bar\sigma = \sigma - \frac{\mathrm{tr}(\sigma)}{n}I\f$ and \f$\sigma\in\mathbb{R}^{n,n}\f$.
      */
     template <class Matrix,

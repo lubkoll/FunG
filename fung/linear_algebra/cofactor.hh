@@ -12,11 +12,10 @@
 
 namespace FunG
 {
+  /** @addtogroup LinearAlgebraGroup @{ */
   namespace LinearAlgebra
   {
-    /**
-     * \cond DOCUMENT_IMPLEMENTATION_DETAILS
-     */
+    /// @cond
     namespace Detail
     {
       constexpr int getFirst(int row)
@@ -57,14 +56,10 @@ namespace FunG
         return sign(row,col) * (at(A,Id::firstRow,Id::firstCol)*at(B,Id::lastRow,Id::lastCol) - at(A,Id::firstRow,Id::lastCol)*at(B,Id::lastRow,Id::firstCol));
       }
     }
-    /**
-     * \endcond
-     */
-
+    /// @endcond
 
     /**
-     * \ingroup LinearAlgebraGroup
-     * \brief Compute the \f$(row,col)\f$-cofactor of \f$ A \f$. Implemented for \f$ A\in \mathbb{R}^{n,n} \f$ with \f$ n=2,3 \f$.
+     * @brief Compute the \f$(row,col)\f$-cofactor of \f$ A \f$. Implemented for \f$ A\in \mathbb{R}^{n,n} \f$ with \f$ n=2,3 \f$.
      *
      * The \f$(i,j)\f$-cofactor of a matrix \f$ A \f$ is \f$ (-1)^{i+j} \det(A^\#_{ij}) \f$, where
      * \f$ A^\#_ij \f$ is obtained from \f$ A \f$ by deleting the \f$i\f$-th row and \f$ j \f$-th column.
@@ -80,8 +75,7 @@ namespace FunG
     }
 
     /**
-     * \ingroup LinearAlgebraGroup
-     * \brief Compute the \f$(row,col)\f$-cofactor of \f$ A \f$. Implemented for \f$ A\in \mathbb{R}^{n,n} \f$ with \f$ n=2,3 \f$.
+     * @brief Compute the \f$(row,col)\f$-cofactor of \f$ A \f$. Implemented for \f$ A\in \mathbb{R}^{n,n} \f$ with \f$ n=2,3 \f$.
      *
      * The \f$(i,j)\f$-cofactor of a matrix \f$ A \f$ is \f$ (-1)^{i+j} \det(A^\#_{ij}) \f$, where
      * \f$ A^\#_ij \f$ is obtained from \f$ A \f$ by deleting the \f$i\f$-th row and \f$ j \f$-th column.
@@ -97,8 +91,7 @@ namespace FunG
     }
 
     /**
-     * \ingroup LinearAlgebraGroup
-     * \brief Compute the first directional derivative in direction \f$ B \f$ of the \f$(row,col)\f$-cofactor of \f$ A \f$. Implemented for \f$ A\in \mathbb{R}^{n,n} \f$ with \f$ n=2,3 \f$.
+     * @brief Compute the first directional derivative in direction \f$ B \f$ of the \f$(row,col)\f$-cofactor of \f$ A \f$. Implemented for \f$ A\in \mathbb{R}^{n,n} \f$ with \f$ n=2,3 \f$.
      *
      * The \f$(i,j)\f$-cofactor of a matrix \f$ A \f$ is \f$ (-1)^{i+j} \det(A^\#_{ij}) \f$, where
      * \f$ A^\#_{ij} \f$ is obtained from \f$ A \f$ by deleting the \f$i\f$-th row and \f$ j \f$-th column.
@@ -116,8 +109,7 @@ namespace FunG
     }
 
     /**
-     * \ingroup LinearAlgebraGroup
-     * \brief Compute the first directional derivative in direction \f$ B \f$ of the \f$(row,col)\f$-cofactor of \f$ A \f$. Implemented for \f$ A\in \mathbb{R}^{n,n} \f$ with \f$ n=2,3 \f$.
+     * @brief Compute the first directional derivative in direction \f$ B \f$ of the \f$(row,col)\f$-cofactor of \f$ A \f$. Implemented for \f$ A\in \mathbb{R}^{n,n} \f$ with \f$ n=2,3 \f$.
      *
      * The \f$(i,j)\f$-cofactor of a matrix \f$ A \f$ is \f$ (-1)^{i+j} \det(A^\#_{ij}) \f$, where
      * \f$ A^\#_{ij} \f$ is obtained from \f$ A \f$ by deleting the \f$i\f$-th row and \f$ j \f$-th column.
@@ -134,6 +126,7 @@ namespace FunG
       /*if ( rows(A)==3 )*/ return Detail::computeCofactorImpl<row,col>(A, B, std::integral_constant<int,3>());
     }
   }
+  /** @} */
 }
 
 #endif // FUNG_LINEAR_ALGEBRA_COFACTOR_HH

@@ -14,19 +14,14 @@
 
 namespace FunG
 {
-  /**
-   * \cond DOCUMENT_FORWARD_DECLARATIONS
-   */
+  /// @cond
   namespace Concepts { template <class> struct MatrixConceptCheck; }
-  /**
-   * \endcond
-   */
+  /// @endcond
 
+  /** @addtogroup @{ */
   namespace LinearAlgebra
   {
-    /**
-     * \cond DOCUMENT_IMPLEMENTATION_DETAILS
-     */
+    /// @cond
     namespace FrobeniusDetail
     {
       template <class Matrix,
@@ -53,14 +48,9 @@ namespace FunG
         return result;
       }
     }
-    /**
-     * \endcond
-     */
+    /// @endcond
 
-    /**
-     * \ingroup LinearAlgebraGroup
-     * \brief Compute squared Frobenius norm \f$ \|A\|^2 = A\negthinspace : \negthinspace A = \mathrm{tr}(A^TA) = \sum_{i,j} A_{ij}^2. \f$
-     */
+    /// Compute squared Frobenius norm \f$ \|A\|^2 = A\negthinspace : \negthinspace A = \mathrm{tr}(A^TA) = \sum_{i,j} A_{ij}^2. \f$
     template <class Matrix,
               class = Concepts::MatrixConceptCheck<Matrix> >
     struct SquaredFrobeniusNorm : Chainer< SquaredFrobeniusNorm<Matrix> >
@@ -110,17 +100,12 @@ namespace FunG
       bool initialized = false;
     };
 
-    /**
-     * \ingroup LinearAlgebraGroup
-     * \brief Frobenius norm \f$ \|A\| = \sqrt{A\negthinspace : \negthinspace A }= \sqrt{\mathrm{tr}(A^TA)} = \sqrt{\sum_{i,j} A_{ij}^2}. \f$
-     */
+
+    /// Frobenius norm \f$ \|A\| = \sqrt{A\negthinspace : \negthinspace A }= \sqrt{\mathrm{tr}(A^TA)} = \sqrt{\sum_{i,j} A_{ij}^2}. \f$
     template <class Matrix>
     using FrobeniusNorm = MathematicalOperations::Chain< Sqrt , SquaredFrobeniusNorm<Matrix> >;
 
-    /**
-     * \ingroup LinearAlgebraGroup
-     * \brief Generate Frobenius norm \f$ \|A\| = \sqrt{A\negthinspace : \negthinspace A }= \sqrt{\mathrm{tr}(A^TA)} = \sqrt{\sum_{i,j} A_{ij}^2}. \f$
-     */
+    /// Generate Frobenius norm \f$ \|A\| = \sqrt{A\negthinspace : \negthinspace A }= \sqrt{\mathrm{tr}(A^TA)} = \sqrt{\sum_{i,j} A_{ij}^2}. \f$
     template <class Matrix,
               std::enable_if_t<!Checks::isFunction<Matrix>()>* = nullptr>
     auto frobeniusNorm(const Matrix& A)
@@ -128,10 +113,7 @@ namespace FunG
       return FrobeniusNorm<Matrix>(A);
     }
 
-    /**
-     * \ingroup LinearAlgebraGroup
-     * \brief Generate Frobenius norm \f$ \|A\| = \sqrt{A\negthinspace : \negthinspace A }= \sqrt{\mathrm{tr}(A^TA)} = \sqrt{\sum_{i,j} A_{ij}^2}. \f$
-     */
+    /// Generate Frobenius norm \f$ \|A\| = \sqrt{A\negthinspace : \negthinspace A }= \sqrt{\mathrm{tr}(A^TA)} = \sqrt{\sum_{i,j} A_{ij}^2}. \f$
     template <class F,
               std::enable_if_t<Checks::isFunction<F>()>* = nullptr>
     auto frobeniusNorm(const F& f)

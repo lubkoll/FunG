@@ -12,8 +12,8 @@
 namespace FunG
 {
   /**
-   * \brief Overwrites \f$A\f$ with \f$A+A^T\f$.
-   * \return \f$A+A^T\f$
+   * @brief Overwrites \f$A\f$ with \f$A+A^T\f$.
+   * @return \f$A+A^T\f$
    */
   template <class Matrix ,
             std::enable_if_t<Checks::isConstantSize<Matrix>()>* = nullptr >
@@ -29,8 +29,8 @@ namespace FunG
   }
 
   /**
-   * \brief Overwrites \f$A\f$ with \f$A+A^T\f$.
-   * \return \f$A+A^T\f$
+   * @brief Overwrites \f$A\f$ with \f$A+A^T\f$.
+   * @return \f$A+A^T\f$
    */
   template <class Matrix ,
             std::enable_if_t<!Checks::isConstantSize<Matrix>()>* = nullptr >

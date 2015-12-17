@@ -14,11 +14,10 @@
 
 namespace FunG
 {
-
+  /** \addtogroup InvariantGroup @{ */
   namespace LinearAlgebra
   {
     /**
-     * \ingroup InvariantGroup
      * \brief Generate first mixed invariant \f$ \iota_4=\iota_1(AM) \f$ of a matrix \f$A\in\mathbb{R}^{n,n}\f$ with respect to the structural tensor \f$M\in\mathbb{R}^{n,n}\f$.
      * \param A square matrix
      * \param M structural tensor describing principal (fiber) direction
@@ -31,7 +30,6 @@ namespace FunG
     }
 
     /**
-     * \ingroup InvariantGroup
      * \brief Generate first mixed invariant \f$ \iota_4\circ f \f$ with \f$f\mapsto\mathbb{R}^{n,n}\f$ and structural tensor \f$M\in\mathbb{R}^{n,n}\f$.
      * \param f function returning a square matrix
      * \param M structural tensor describing principal (fiber) direction
@@ -43,9 +41,7 @@ namespace FunG
       return i1( f*M );
     }
 
-
     /**
-     * \ingroup InvariantGroup
      * \brief Generate second mixed invariant \f$ \iota_5=\iota_1(A^2M) \f$ of a matrix \f$A\in\mathbb{R}^{n,n}\f$ with respect to the structural tensor \f$M\in\mathbb{R}^{n,n}\f$.
      * \param A square matrix
      * \param M structural tensor describing principal (fiber) direction
@@ -58,7 +54,6 @@ namespace FunG
     }
 
     /**
-     * \ingroup InvariantGroup
      * \brief Generate second mixed invariant \f$ \iota_5\circ f \f$ with \f$f\mapsto\mathbb{R}^{n,n}\f$ and structural tensor \f$M\in\mathbb{R}^{n,n}\f$.
      * \param f function returning a square matrix
      * \param M structural tensor describing principal (fiber) direction
@@ -71,7 +66,6 @@ namespace FunG
     }
 
     /**
-     * \ingroup InvariantGroup
      * \brief Generate third mixed invariant \f$ \iota_6=\iota_1(AM^2) \f$ of a matrix \f$A\in\mathbb{R}^{n,n}\f$ with respect to the structural tensor \f$M\in\mathbb{R}^{n,n}\f$.
      * \param A square matrix
      * \param M structural tensor describing principal (fiber) direction
@@ -84,7 +78,6 @@ namespace FunG
     }
 
     /**
-     * \ingroup InvariantGroup
      * \brief Generate third mixed invariant \f$ \iota_6\circ f \f$ with \f$f\mapsto\mathbb{R}^{n,n}\f$ and structural tensor \f$M\in\mathbb{R}^{n,n}\f$.
      * \param f function returning a square matrix
      * \param M structural tensor describing principal (fiber) direction
@@ -96,8 +89,8 @@ namespace FunG
       return i1( (constant(M)^2) * f );
     }
 
+
     /**
-     * \ingroup InvariantGroup
      * \brief Isochoric (volume-preserving), first modified mixed invariant \f$ \bar\iota_4(A)=\iota_4\iota_3^{-1/3} \f$, where \f$\iota_4\f$ is the first mixed
      * and \f$\iota_3\f$ is the third principal invariant.
      * \param x either a square matrix or a function returning a square matrix
@@ -111,7 +104,6 @@ namespace FunG
     }
 
     /**
-     * \ingroup InvariantGroup
      * \brief Isochoric (volume-preserving), second modified principal invariant \f$ \bar\iota_5(A)=\iota_5\iota_3^{-2/3} \f$, where \f$\iota_5\f$ is the
      * second mixed and \f$\iota_3\f$ is the third principal invariant.
      *
@@ -126,7 +118,6 @@ namespace FunG
     }
 
     /**
-     * \ingroup InvariantGroup
      * \brief Isochoric (volume-preserving), second modified principal invariant \f$ \bar\iota_6(A)=\iota_6\iota_3^{-1/3} \f$, where \f$\iota_6\f$ is the
      * third mixed and \f$\iota_3\f$ is the third principal invariant.
      * \param x either a square matrix or a function returning a square matrix.
@@ -139,6 +130,7 @@ namespace FunG
       return i6(x,M) * ( Pow<-1,n>()( det(x) ) );
     }
   }
+  /** @} */
 }
 
 #endif // FUNG_LINEAR_ALGEBRA_MIXED_INVARIANTS_HH

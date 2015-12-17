@@ -14,20 +14,15 @@
 
 namespace FunG
 {
-  /**
-   * \cond DOCUMENT_FORWARD_DECLARATIONS
-   */
+  /// @cond
   template <class> struct Chainer;
   namespace Concepts { template <class> struct FunctionConceptCheck; }
-  /**
-   * \endcond
-   */
+  /// @endcond
 
   namespace MathematicalOperations
   {
     /**
      * \ingroup MathematicalOperationsGroup
-     *
      * \brief %Sum of functions of type F and G (F and G must satisfy the requirements of Concepts::FunctionConcept).
      */
     template <class F, class G,
@@ -69,10 +64,7 @@ namespace FunG
         return value;
       }
 
-      /**
-       * \brief First directional derivative.
-       * \param dx direction for which the derivative is computed
-       */
+      /// First directional derivative.
       template < int id , class Arg ,
                  class IndexedArg = IndexedType<Arg,id> ,
                  class = std::enable_if_t< ComputeSum< D1<F,IndexedArg>, D1<G,IndexedArg> >::present > >
@@ -81,11 +73,7 @@ namespace FunG
         return ComputeSum< D1<F,IndexedArg>, D1<G,IndexedArg> >( f,g,dx )();
       }
 
-      /**
-       * \brief Second directional derivative.
-       * \param dx direction for which the derivative is computed
-       * \param dy direction for which the derivative is computed
-       */
+      /// Second directional derivative.
       template < int idx , int idy , class ArgX , class ArgY ,
                  class IndexedArgX = IndexedType<ArgX,idx> ,
                  class IndexedArgY = IndexedType<ArgY,idy> ,
@@ -95,12 +83,7 @@ namespace FunG
         return ComputeSum< D2<F,IndexedArgX,IndexedArgY>, D2<G,IndexedArgX,IndexedArgY> >( f,g,dx,dy )();
       }
 
-      /**
-       * \brief Third directional derivative.
-       * \param dx direction for which the derivative is computed
-       * \param dy direction for which the derivative is computed
-       * \param dz direction for which the derivative is computed
-       */
+      /// Third directional derivative.
       template < int idx , int idy , int idz , class ArgX, class ArgY, class ArgZ ,
                  class IndexedArgX = IndexedType<ArgX,idx> ,
                  class IndexedArgY = IndexedType<ArgY,idy> ,

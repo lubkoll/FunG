@@ -20,9 +20,7 @@
 
 namespace FunG
 {
-  /**
-   * \cond DOCUMENT_IMPLEMENTATION_DETAILS
-   */
+  /// @cond
   namespace Detail
   {
     template < class Matrix , int n = LinearAlgebra::dim<Matrix>() >
@@ -36,13 +34,13 @@ namespace FunG
       return f(S);
     }
   }
-  /**
-   * \endcond
-   */
+  /// @endcond
+
+
+  /** @addtogroup Biomechanics @{ */
 
   /**
-   * \ingroup Biomechanics
-   * \brief Model for adipose tissue of \cite Sommer2013.
+   * @brief Model for adipose tissue of \cite Sommer2013.
    *
    * Implementation of the stored energy function
    * \f$ W(F)= c_\mathrm{Cells}(\iota_1-3) + \frac{k_1}{k_2}\exp(k_2(\kappa\iota_1+(1-3\kappa)*\iota_4)^2-1) \f$, where \f$ \iota_1,\iota_4 \f$ are the first and first mixed invariant of the
@@ -54,6 +52,7 @@ namespace FunG
    * @param kappa fiber dispersion parameter \f$(0\le\kappa\le\frac{1}{3})\f$.
    * @param M structural tensor describing the fiber direction of the interlobular septa, i.e. \f$M=v\otimesv\f$ for a fiber direction \f$v\f$
    * @param F initial deformation gradient
+   * @tparam offset number of rows/columns of F, this is only required to adjust the offset of the energy functional such that \f$W(F)=0\f$ for \f$F=I\f$.
    */
   template < class Matrix , int offset = LinearAlgebra::dim<Matrix>()>
   auto incompressibleAdiposeTissue_SommerHolzapfel(double cCells, double k1, double k2, double kappa, const Matrix& M, const Matrix& F)
@@ -62,8 +61,7 @@ namespace FunG
   }
 
   /**
-   * \ingroup Biomechanics
-   * \brief Model for adipose tissue of \cite Sommer2013.
+   * @brief Model for adipose tissue of \cite Sommer2013.
    *
    * Implementation of the stored energy function
    * \f$ W(F)= c_\mathrm{Cells}(\iota_1-3) + \frac{k_1}{k_2}\exp(k_2(\kappa\iota_1+(1-3\kappa)*\iota_4)^2-1) \f$, where \f$ \iota_1,\iota_4 \f$ are the first and first mixed invariant of the
@@ -82,8 +80,7 @@ namespace FunG
 
 
   /**
-   * \ingroup Biomechanics
-   * \brief Compressible version of the model for adipose tissue of \cite Sommer2013.
+   * @brief Compressible version of the model for adipose tissue of \cite Sommer2013.
    *
    * Implementation of the stored energy function
    * \f$ W(F)= c_\mathrm{Cells}(\iota_1-3) + \frac{k_1}{k_2}\exp(k_2(\kappa\iota_1+(1-3\kappa)*\iota_4)^2-1) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression}  \f$, where \f$ \iota_1,\iota_4 \f$ are the first and first mixed invariant of the
@@ -105,7 +102,6 @@ namespace FunG
   }
 
   /**
-   * \ingroup Biomechanics
    * \brief Compressible version of the model for adipose tissue of \cite Sommer2013.
    * Material parameters are taken from the same publication, Table 2, i.e. \f$c_\mathrm{Cells}=0.15 (\,\mathrm{kPa})\f$, \f$k_1=0.8 (\,\mathrm{kPa})\f$, \f$k_2=47.3\f$ and \f$\kappa=0.09\f$.
    *
@@ -123,6 +119,7 @@ namespace FunG
   {
     return compressibleAdiposeTissue_SommerHolzapfel<Inflation,Compression,Matrix,offset>(0.15,0.8,47.3,0.09,d0,d1,M,F);
   }
+  /** @} */
 }
 
 #endif // FUNG_ADIPOSE_TISSUE_SOMMER_HOLZAPFEL_HH

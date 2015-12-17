@@ -11,14 +11,12 @@
 namespace FunG
 {
   /*!
-    \ingroup CMathGroup
+    @ingroup CMathGroup
 
-    \brief Cosine function including first three derivatives (based on cos(double) in \<cmath\>).
+    @brief Cosine function including first three derivatives (based on cos(double) in \<cmath\>).
 
     For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur
     during applications of the chain rule.
-
-    \see cosine
    */
   struct Cos : Chainer<Cos>
   {
@@ -55,10 +53,10 @@ namespace FunG
   };
 
   /*!
-    \ingroup CMathGroup
-    \brief Generate \f$ \cos\circ f \f$.
-    \param f function mapping into a scalar space
-    \return object of type MathematicalOperations::Chain<Cos,Function>
+    @ingroup CMathGroup
+    @brief Generate \f$ \cos\circ f \f$.
+    @param f function mapping into a scalar space
+    @return object of type MathematicalOperations::Chain<Cos,Function>
    */
   template < class Function ,
              class = std::enable_if_t< Checks::isFunction<Function>() > >

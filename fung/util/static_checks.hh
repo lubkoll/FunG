@@ -12,11 +12,10 @@
 
 namespace FunG
 {
+  /** @addtogroup Checks @{ */
   namespace Checks
   {
-    /**
-     * \cond DOCUMENT_IMPLEMENTATIONS_DETAILS
-     */
+    /// @cond
     template <class F>
     using TryMemOp_callable                         =      decltype(std::declval<F>()());
 
@@ -259,13 +258,8 @@ namespace FunG
     template <class EigenArg>
     struct HasNestedType_PlainObject< EigenArg , void_t< TryNestedType_PlainObject<EigenArg> > >
         : std::true_type  {};
-    /**
-     * \endcond
-     */
+    /// @endcond
 
-    /** @addtogroup Checks
-     * @{
-     */
 
     template < class F >
     constexpr bool isFunction()
@@ -276,7 +270,7 @@ namespace FunG
     template < class F >
     constexpr bool hasConsistentFirstDerivative()
     {
-      return HasMemFn_d0<F>::value;
+      return HasMemOp_callable<F>::value;
     }
 
     /// Check if objects of typed Arg1 and Arg2 support multiplication (free operator*).
@@ -315,7 +309,7 @@ namespace FunG
     }
 
     /**
-     * \brief Check if object is a static vector for some type satisfying Concepts::VectorConcept.
+     * @brief Check if object is a static vector for some type satisfying Concepts::VectorConcept.
      *
      * Checks if number of rows is positive.
      */
@@ -339,8 +333,8 @@ namespace FunG
       return hasConsistentSecondDerivative<F,IndexedArgX,IndexedArgY>() &&
           ( HasMemFn_d3<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value ? HasMemFn_d2<F,IndexedArgX,IndexedArgY>::value : true );
     }
-    /** @} */
   }
+  /** @} */
 }
 
 #endif // FUNG_STATIC_CHECKS_HH

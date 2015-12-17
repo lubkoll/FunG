@@ -16,10 +16,7 @@ namespace FunG
 {
   namespace LinearAlgebra
   {
-    /**
-     * \ingroup LinearAlgebraGroup
-     * \brief Compute transpose of square matrix.
-     */
+    /** @addtogroup LinearAlgebraGroup @{ */
     template <class Matrix, class TransposedMatrix = Matrix ,
               std::enable_if_t<std::is_same<Matrix,TransposedMatrix>::value && Checks::isConstantSize<Matrix>()>* = nullptr>
     TransposedMatrix transpose(Matrix A)
@@ -36,10 +33,7 @@ namespace FunG
       return A;
     }
 
-    /**
-     * \ingroup LinearAlgebraGroup
-     * \brief Compute transpose of non-square matrix.
-     */
+    /// Compute transpose of non-square matrix.
     template <class TransposedMatrix, class Matrix ,
               std::enable_if_t<!std::is_same<Matrix,TransposedMatrix>::value && Checks::isConstantSize<Matrix>() && Checks::isConstantSize<TransposedMatrix>()>* = nullptr >
     TransposedMatrix transpose(const Matrix& A)
@@ -52,10 +46,7 @@ namespace FunG
     }
 
 
-    /**
-     * \ingroup LinearAlgebraGroup
-     * \brief Compute transpose of square matrix.
-     */
+    /// Compute transpose of square matrix.
     template <class Matrix ,
               std::enable_if_t<!Checks::isConstantSize<Matrix>()>* = nullptr >
     Matrix transpose(Matrix A)
@@ -73,6 +64,7 @@ namespace FunG
 
       return A;
     }
+    /** @} */
   }
 }
 

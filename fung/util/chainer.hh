@@ -10,9 +10,7 @@
 
 namespace FunG
 {
-  /**
-   * \cond DOCUMENT_IMPLEMENTATION_DETAILS
-   */
+  /// @cond
   template <class Function>
   struct Chainer
   {
@@ -36,8 +34,6 @@ namespace FunG
       return MathematicalOperations::Chain<Function,OtherFunction>(*static_cast<const Function*>(this),g);
     }
   };
-  /**
-   * \endcond
-   */
+  /// @endcond
 }
 #endif // FUNG_UTIL_CHAINER_HH

@@ -9,11 +9,10 @@
 
 namespace FunG
 {
+  /** @addtogroup Checks @{ */
   namespace Checks
   {
-    /**
-     * \cond DOCUMENT_IMPLEMENTATION_DETAILS
-     */
+    /// @cond
     template < class Matrix >
     using TryMemFn_nrows = decltype(std::declval<Matrix>().rows());
 
@@ -59,71 +58,38 @@ namespace FunG
     template < class Matrix >
     struct HasMem_n_cols< Matrix , void_t < TryMem_n_cols<Matrix> > >
         : std::true_type {};
-    /**
-     * \endcond
-     */
+    /// @endcond
 
-    /**
-     * \ingroup Checks
-     * \brief Check if object of type Matrix has a member function rows().
-     */
+
+    /// Check if object of type Matrix has a member function rows().
     template < class Matrix >
     constexpr bool hasMemFn_rows()
     {
       return HasMemFn_nrows<Matrix>::value;
     }
 
-    /**
-     * \ingroup Checks
-     * \brief Check if object of type Matrix has a member n_rows.
-     */
+    /// Check if object of type Matrix has a member n_rows.
     template < class Matrix >
     constexpr bool hasMem_n_rows()
     {
       return HasMem_n_rows<Matrix>::value;
     }
 
-    /**
-     * \ingroup Checks
-     * \brief Check if object of type Matrix has a member function cols().
-     */
+    /// Check if object of type Matrix has a member function cols().
     template < class Matrix >
     constexpr bool hasMemFn_cols()
     {
       return HasMemFn_cols<Matrix>::value;
     }
 
-    /**
-     * \ingroup Checks
-     * \brief Check if object of type Matrix has a member n_cols.
-     */
+    /// Check if object of type Matrix has a member n_cols.
     template < class Matrix >
     constexpr bool hasMem_n_cols()
     {
       return HasMem_n_cols<Matrix>::value;
     }
-
-//    /**
-//     * \ingroup Checks
-//     * \brief Check if object is a dynamic matrix for some type satisfying Concepts::MatrixConcept.
-//     */
-//    template < class Arg >
-//    constexpr bool isDynamicMatrix()
-//    {
-//      return ( hasRowsFunction<Arg>() && hasColsFunction<Arg>() ) ||
-//           ( hasMember_n_rows<Arg>() && hasMember_n_cols<Arg>() );
-//    }
-
-//    /**
-//     * \ingroup Checks
-//     * \brief Check if object is a dynamic vector for some type satisfying Concepts::VectorConcept.
-//     */
-//    template < class Arg >
-//    constexpr bool isDynamicVector()
-//    {
-//      return hasRowsFunction<Arg>() || hasMember_n_rows<Arg>();
-//    }
   }
+  /** @} */
 }
 
 #endif // FUNG_UTIL_STATIC_CHECKS_NROWS_NCOLS_HH

@@ -6,17 +6,14 @@
 
 namespace FunG
 {
-  /**
-   * \cond DOCUMENT_IMPLEMENTATION_DETAILS
-   */
+  /// @cond
   namespace Detail
   {
     /// helper to make gcc happy
     template <class...> struct voider { using type = void; };
   }
-  /**
-   * \endcond
-   */
+  /// @endcond
+
 
   /// Most fascinating type ever. Is void for all input types.
   template <class... Types>

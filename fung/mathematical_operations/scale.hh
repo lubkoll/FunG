@@ -13,39 +13,33 @@
 
 namespace FunG
 {
-  /**
-   * \cond DOCUMENT_FORWARD_DECLARATIONS
-   */
+  /// @cond
   template <class> struct Chainer;
   namespace Concepts{ template <class> struct FunctionConceptCheck; }
-  /**
-   * \endcond
-   */
+  /// @endcond
 
   namespace MathematicalOperations
   {
     /**
-     * \ingroup MathematicalOperationsGroup
-     *
-     * \brief Scaling \f$ af \f$ of some function \f$ f \f$ with a double \f$ a \f$ (F must satisfy the requirements of Concepts::FunctionConcept).
+     * @ingroup MathematicalOperationsGroup
+     * @brief Scaling \f$ af \f$ of some function \f$ f \f$ with a double \f$ a \f$ (F must satisfy the requirements of Concepts::FunctionConcept).
      */
     template <class F, class = Concepts::FunctionConceptCheck<F> >
     struct Scale : Chainer< Scale< F , Concepts::FunctionConceptCheck<F> > >
     {
-      using ReturnType = std::decay_t<decltype(std::declval<F>()())>;
       /**
-       * \brief Constructor passing arguments to function constructor.
-       * \param a_ scaling
-       * \param f_ input for constructor of outer function
+       * @brief Constructor passing arguments to function constructor.
+       * @param a_ scaling
+       * @param f_ input for constructor of outer function
        */
-      template <class InitF>
-      Scale(double a_, const InitF& f_)
-        : a(a_), f(f_), value(a*f())
+      template <class... InitF>
+      Scale(double a_, InitF&&... f_)
+        : a(a_), f(std::forward<InitF>(f_)...), value(a*f())
       {}
 
       /// Update point of evaluation.
       template <class Arg>
-      void update(Arg const& x)
+      void update(const Arg& x)
       {
         update_if_present(f,x);
         value = a*f();
@@ -65,44 +59,32 @@ namespace FunG
         return value;
       }
 
-      /**
-       * \brief First directional derivative.
-       * \param dx direction for which the derivative is computed
-       */
+      /// First directional derivative.
         template < int idx , class Arg ,
                  class IndexedArg = IndexedType<Arg,idx> ,
                  class = std::enable_if_t< D1<F,IndexedArg>::present> >
-      ReturnType d1(Arg const& dx) const
+      auto d1(const Arg& dx) const
       {
         return a * D1_<F,IndexedArg>::apply(f,dx);
       }
 
-      /**
-       * \brief Second directional derivative.
-       * \param dx direction for which the derivative is computed
-       * \param dy direction for which the derivative is computed
-       */
-        template < int idx , int idy , class ArgX , class ArgY ,
+      /// Second directional derivative.
+      template < int idx , int idy , class ArgX , class ArgY ,
                  class IndexedArgX = IndexedType<ArgX,idx> ,
                  class IndexedArgY = IndexedType<ArgY,idy> ,
                  class = std::enable_if_t< D2<F,IndexedArgX,IndexedArgY>::present> >
-      ReturnType d2(ArgX const& dx, ArgY const& dy) const
+      auto d2(const ArgX& dx, const ArgY& dy) const
       {
         return a * D2_<F,IndexedArgX,IndexedArgY>::apply(f,dx,dy);
       }
 
-      /**
-       * \brief Third directional derivative.
-       * \param dx direction for which the derivative is computed
-       * \param dy direction for which the derivative is computed
-       * \param dz direction for which the derivative is computed
-       */
+      /// Third directional derivative.
       template < int idx , int idy , int idz , class ArgX , class ArgY , class ArgZ ,
                  class IndexedArgX = IndexedType<ArgX,idx> ,
                  class IndexedArgY = IndexedType<ArgY,idy> ,
                  class IndexedArgZ = IndexedType<ArgZ,idz> ,
                  class = std::enable_if_t< D3<F,IndexedArgX,IndexedArgY,IndexedArgZ>::present > >
-      ReturnType d3(ArgX const& dx, ArgY const& dy, ArgZ const& dz) const
+      auto d3(const ArgX& dx, const ArgY& dy, const ArgZ& dz) const
       {
         return a * D3_<F,IndexedArgX,IndexedArgY,IndexedArgZ>::apply(f,dx,dy,dz);
       }

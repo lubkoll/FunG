@@ -21,9 +21,7 @@
 
 namespace FunG
 {
-  /**
-   * \cond DOCUMENT_IMPLEMENTATION_DETAILS
-   */
+  /// @cond
   namespace MuscleTissueDetail
   {
     template < class Matrix , int n = LinearAlgebra::dim<Matrix>() >
@@ -38,9 +36,7 @@ namespace FunG
       return f(S);
     }
   }
-  /**
-   * \endcond
-   */
+  /// @endcond
 
   /**
    * \ingroup Biomechanics
@@ -56,6 +52,7 @@ namespace FunG
    * \param a second material parameter for the anisotropic part
    * \param M structural (rank-one) tensor describing the initial orientation of muscle fibers for \f$F=I\f$, where \f$I\f$ is the unit matrix.
    * \param F deformation gradient
+   * \tparam offset number of rows/columns of F, this is only required to adjust the offset of the energy functional such that \f$W(F)=0\f$ for \f$F=I\f$.
    */
   template < class Matrix , int offset = LinearAlgebra::dim<Matrix>()>
   auto incompressibleMuscleTissue_Martins(double c, double b, double A, double a, const Matrix& M, const Matrix& F)

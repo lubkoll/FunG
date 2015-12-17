@@ -11,9 +11,7 @@
 
 namespace FunG
 {
-  /**
-   * \cond DOCUMENT_IMPLEMENTATION_DETAILS
-   */
+  /// @cond
   namespace AtDetail
   {
     template <class Matrix, class = void>
@@ -102,9 +100,7 @@ namespace FunG
   {
     return AtDetail::At_v<Vector>::apply(v,i);
   }
-  /**
-   * \endcond
-   */
+  /// @endcond
 }
 
 #if defined(__GNUC__) || defined(__GNUG__)

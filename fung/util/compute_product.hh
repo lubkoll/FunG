@@ -9,9 +9,7 @@
 
 namespace FunG
 {
-  /**
-   * \cond DOCUMENT_IMPLEMENTATION_DETAILS
-   */
+  /// @cond
   namespace Detail
   {
     template <class X, class Y, bool bothPresent>
@@ -50,11 +48,7 @@ namespace FunG
   {
     return ComputeProduct<F,G>(f,g);
   }
-
-  /**
-   * \endcond
-   */
-
+  /// @endcond
 }
 
 #endif // FUNG_UTIL_COMPUTE_PRODUCT_HH

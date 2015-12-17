@@ -11,20 +11,20 @@
 
 namespace FunG
 {
+  /** @addtogroup CMathGroup @{ */
+
   /**
-   * \ingroup CMathGroup
-   *
-   * \brief Natural logarithm including first three derivatives.
+   * @brief Natural logarithm including first three derivatives.
    *
    * For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur
    * during applications of the chain rule.
    */
   struct LN : Chainer<LN>
   {
-    //! \copydoc Cos::Cos()
+    //! @copydoc Cos::Cos()
     explicit LN(double x=1.) { update(x); }
 
-    //! \copydoc Cos::update()
+    //! @copydoc Cos::update()
     void update(double x)
     {
 #ifdef FUNG_ENABLE_EXCEPTIONS
@@ -34,25 +34,25 @@ namespace FunG
       value = ::log(x);
     }
 
-    //! \copydoc Cos::d0()
+    //! @copydoc Cos::d0()
     double d0() const noexcept
     {
       return value;
     }
 
-    //! \copydoc Cos::d1()
+    //! @copydoc Cos::d1()
     double d1(double dx = 1.) const
     {
       return x_inv * dx;
     }
 
-    //! \copydoc Cos::d2()
+    //! @copydoc Cos::d2()
     double d2(double dx = 1., double dy = 1.) const
     {
       return - x_inv * x_inv * dx * dy;
     }
 
-    //! \copydoc Cos::d3()
+    //! @copydoc Cos::d3()
     double d3(double dx = 1., double dy = 1., double dz = 1.) const
     {
       return 2 * x_inv * x_inv * x_inv * dx * dy * dz;
@@ -63,19 +63,17 @@ namespace FunG
   };
 
   /**
-   * \ingroup CMathGroup
-   *
-   * \brief Common (base 10) logarithm including first three derivatives.
+   * @brief Common (base 10) logarithm including first three derivatives.
    *
    * For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur
    * during applications of the chain rule.
    */
   struct Log10 : Chainer<Log10>
   {
-    //! \copydoc Cos::Cos()
+    //! @copydoc Cos::Cos()
     explicit Log10(double x=1.) { update(x); }
 
-    //! \copydoc Cos::update()
+    //! @copydoc Cos::update()
     void update(double x)
     {
 #ifdef FUNG_ENABLE_EXCEPTIONS
@@ -85,25 +83,25 @@ namespace FunG
       value = ::log10(x);
     }
 
-    //! \copydoc Cos::d0()
+    //! @copydoc Cos::d0()
     double d0() const noexcept
     {
       return value;
     }
 
-    //! \copydoc Cos::d1()
+    //! @copydoc Cos::d1()
     double d1(double dx = 1.) const
     {
       return ln10inv * x_inv * dx;
     }
 
-    //! \copydoc Cos::d2()
+    //! @copydoc Cos::d2()
     double d2(double dx = 1., double dy = 1.) const
     {
       return - ln10inv * x_inv * x_inv * dx * dy;
     }
 
-    //! \copydoc Cos::d3()
+    //! @copydoc Cos::d3()
     double d3(double dx = 1., double dy = 1., double dz = 1.) const
     {
       return 2 * ln10inv * x_inv * x_inv * x_inv * dx * dy * dz;
@@ -114,19 +112,17 @@ namespace FunG
   };
 
   /**
-   * \ingroup CMathGroup
-   *
-   * \brief %Base 2 logarithm including first three derivatives.
+   * @brief %Base 2 logarithm including first three derivatives.
    *
    * For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur
    * during applications of the chain rule.
    */
   struct Log2 : Chainer<Log2>
   {
-    //! \copydoc Cos::Cos()
+    //! @copydoc Cos::Cos()
     explicit Log2(double x=1.) { update(x); }
 
-    //! \copydoc Cos::update()
+    //! @copydoc Cos::update()
     void update(double x)
     {
 #ifdef FUNG_ENABLE_EXCEPTIONS
@@ -136,25 +132,25 @@ namespace FunG
       value = ::log2(x);
     }
 
-    //! \copydoc Cos::d0()
+    //! @copydoc Cos::d0()
     double d0() const noexcept
     {
       return value;
     }
 
-    //! \copydoc Cos::d1()
+    //! @copydoc Cos::d1()
     double d1(double dx = 1.) const
     {
       return ln2inv * x_inv * dx;
     }
 
-    //! \copydoc Cos::d2()
+    //! @copydoc Cos::d2()
     double d2(double dx = 1., double dy = 1.) const
     {
       return - ln2inv * x_inv * x_inv * dx * dy;
     }
 
-    //! \copydoc Cos::d3()
+    //! @copydoc Cos::d3()
     double d3(double dx = 1., double dy = 1., double dz = 1.) const
     {
       return 2 * ln2inv * x_inv * x_inv * x_inv * dx * dy * dz;
@@ -165,10 +161,9 @@ namespace FunG
   };
 
   /*!
-    \ingroup CMathGroup
-    \brief Generate \f$ \mathrm{ln}\circ f \f$.
-    \param f function mapping into a scalar space
-    \return object of type MathematicalOperations::Chain<Log,Function>
+    @brief Generate \f$ \mathrm{ln}\circ f \f$.
+    @param f function mapping into a scalar space
+    @return object of type MathematicalOperations::Chain<Log,Function>
    */
   template <class Function,
             class = std::enable_if_t<Checks::isFunction<Function>()> >
@@ -178,10 +173,9 @@ namespace FunG
   }
 
   /*!
-    \ingroup CMathGroup
-    \brief Generate \f$ \mathrm{log}_{10}\circ f \f$.
-    \param f function mapping into a scalar space
-    \return object of type MathematicalOperations::Chain<Log10,Function>
+    @brief Generate \f$ \mathrm{log}_{10}\circ f \f$.
+    @param f function mapping into a scalar space
+    @return object of type MathematicalOperations::Chain<Log10,Function>
    */
   template <class Function,
             class = std::enable_if_t<Checks::isFunction<Function>()> >
@@ -191,10 +185,9 @@ namespace FunG
   }
 
   /*!
-    \ingroup CMathGroup
-    \brief Generate \f$ \mathrm{log}_{2}\circ f \f$.
-    \param f function mapping into a scalar space
-    \return object of type MathematicalOperations::Chain<Log2,Function>
+    @brief Generate \f$ \mathrm{log}_{2}\circ f \f$.
+    @param f function mapping into a scalar space
+    @return object of type MathematicalOperations::Chain<Log2,Function>
    */
   template <class Function,
             class = std::enable_if_t<Checks::isFunction<Function>()> >
@@ -202,6 +195,7 @@ namespace FunG
   {
     return Log2()(f);
   }
+  /** @} */
 }
 
 #endif // FUNG_CMATH_LOG_HH

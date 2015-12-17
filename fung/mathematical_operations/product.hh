@@ -55,13 +55,13 @@ namespace FunG
       template <class IndexedArgX, class IndexedArgY, class IndexedArgZ>
       using D3Type =
       ComputeSum<
-      ComputeProduct< D3<F,IndexedArgX,IndexedArgY,IndexedArgZ> , D0<G> > ,
+      ComputeProduct< D3<F,IndexedArgX,IndexedArgY,IndexedArgZ> , D0<G> >,
       ComputeProduct< D2<F,IndexedArgX,IndexedArgY> , D1<G,IndexedArgZ> >,
-      ComputeProduct< D2<F,IndexedArgX,IndexedArgZ> , D1<G,IndexedArgY> > ,
+      ComputeProduct< D2<F,IndexedArgX,IndexedArgZ> , D1<G,IndexedArgY> >,
       ComputeProduct< D1<F,IndexedArgX> , D2<G,IndexedArgY,IndexedArgZ> >,
-      ComputeProduct< D2<F,IndexedArgY,IndexedArgZ> , D1<G,IndexedArgX> > ,
+      ComputeProduct< D2<F,IndexedArgY,IndexedArgZ> , D1<G,IndexedArgX> >,
       ComputeProduct< D1<F,IndexedArgY> , D2<G,IndexedArgX,IndexedArgZ> >,
-      ComputeProduct< D1<F,IndexedArgZ> , D2<G,IndexedArgX,IndexedArgY> > ,
+      ComputeProduct< D1<F,IndexedArgZ> , D2<G,IndexedArgX,IndexedArgY> >,
       ComputeProduct< D0<F> , D3<G,IndexedArgX,IndexedArgY,IndexedArgZ> >
       >;
 

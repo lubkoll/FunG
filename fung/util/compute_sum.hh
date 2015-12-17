@@ -9,12 +9,10 @@
 
 namespace FunG
 {
-  /**
-   * \cond DOCUMENT_IMPLEMENTATION_DETAILS
-   */
+  /// @cond
   namespace Detail
   {
-    template <class X, class Y, bool Xpresent, bool Ypresent>
+    template <class X, class Y, bool = X::present, bool = Y::present>
     struct ComputeSumImpl
     {
       static constexpr bool present = false;
@@ -73,7 +71,7 @@ namespace FunG
   template <class...> struct ComputeSum;
 
   template <class X, class Y>
-  struct ComputeSum<X,Y> : public Detail::ComputeSumImpl<X,Y,X::present,Y::present>
+  struct ComputeSum<X,Y> : public Detail::ComputeSumImpl<X,Y>
   {
     ComputeSum(const X& x, const Y& y)
       : Detail::ComputeSumImpl<X,Y,X::present,Y::present>(x,y)
@@ -96,9 +94,7 @@ namespace FunG
   {
     return ComputeSum<std::decay_t<F>,std::decay_t<G>...>(std::forward<F>(f),std::forward<G>(g)...);
   }
-  /**
-   * \endcond
-   */
+  /// @endcond
 }
 
 #endif // FUNG_UTIL_COMPUTE_SUM_HH

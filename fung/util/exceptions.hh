@@ -10,27 +10,28 @@
 
 namespace FunG
 {
+  /** @addtogroup Exceptions @{ */
+
   /**
-   * \ingroup exceptions
-   * \brief Exception for scalar function arguments that are outside the domain of the function.
+   * @brief Exception for scalar function arguments that are outside the domain of the function.
    *
    * Example:
-   * \code
+   * @code
    * if( x < 0 )
    *   throw OutOfDomainException("[0,inf[","Sqrt" x,__FILE__,__LINE__);
-   * \endcode
+   * @endcode
    */
   class OutOfDomainException : public std::runtime_error
   {
   public:
     /**
-     * \brief Constructor.
+     * @brief Constructor.
      *
-     * \param range std::string that contains the mathematical expression for the valid range
-     * \param function name of the function throwing this exception
-     * \param value value outside range
-     * \param file file containing the throwing code
-     * \param line line containing the throwing code
+     * @param range std::string that contains the mathematical expression for the valid range
+     * @param function name of the function throwing this exception
+     * @param value value outside range
+     * @param file file containing the throwing code
+     * @param line line containing the throwing code
      */
     template <class Value, class = std::enable_if_t<std::is_arithmetic<Value>::value> >
     OutOfDomainException(const std::string& function, const std::string& range, const Value& value, const std::string& file, const int line) :
@@ -38,20 +39,17 @@ namespace FunG
     {}
   };
 
-  /**
-   * \ingroup exceptions
-   * \brief Exception for non-symmetric matrices if symmetric matrices are required
-   */
+  /// Exception for non-symmetric matrices if symmetric matrices are required
   class NonSymmetricMatrixException : public std::runtime_error{
   public:
     /**
-     * \brief Constructor.
+     * @brief Constructor.
      *
-     * \param function name of the function throwing this exception
-     * \param rows number of rows of matrix
-     * \param cols number of columns of matrix
-     * \param file file containing the throwing code
-     * \param line line containing the throwing code
+     * @param function name of the function throwing this exception
+     * @param rows number of rows of matrix
+     * @param cols number of columns of matrix
+     * @param file file containing the throwing code
+     * @param line line containing the throwing code
      */
     template <class Value, class = std::enable_if_t<std::is_arithmetic<Value>::value> >
     NonSymmetricMatrixException(const std::string& function, const Value& rows, const Value& cols, const std::string& file, const int line) :
@@ -59,6 +57,7 @@ namespace FunG
                          "x" + std::to_string(cols) + " is not symmetric.\n")
     {}
   };
+  /** @} */
 }
 
 #endif // FUNG_UTIL_EXCEPTIONS_HH
