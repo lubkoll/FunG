@@ -16,9 +16,7 @@
 
 namespace FunG
 {
-  /**
-   * \cond DOCUMENT_IMPLEMENATION_DETAILS
-   */
+  /// @cond
   namespace GenerateDetail
   {
     template <class F, class G,
@@ -105,9 +103,7 @@ namespace FunG
       }
     };
   }
-  /**
-   * \endcond
-   */
+  /// @endcond
 
   /**
    * \brief overload of "+"-operator for the generation of functions.
