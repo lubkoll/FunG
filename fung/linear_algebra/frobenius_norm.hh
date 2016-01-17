@@ -95,6 +95,7 @@ namespace FunG
       bool initialized = false;
     };
 
+
     /// Frobenius norm \f$ \|A\| = \sqrt{A\negthinspace : \negthinspace A }= \sqrt{\mathrm{tr}(A^TA)} = \sqrt{\sum_{i,j} A_{ij}^2}. \f$
     template <class Matrix>
     using FrobeniusNorm = MathematicalOperations::Chain< Sqrt , SquaredFrobeniusNorm<Matrix> >;

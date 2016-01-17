@@ -12,22 +12,22 @@
 namespace FunG
 {
   /*!
-    \ingroup CMathGroup
+    @ingroup CMathGroup
 
-    \brief Arcsine function including first three derivatives (based on asin(double) in \<cmath\>).
+    @brief Arcsine function including first three derivatives (based on asin(double) in \<cmath\>).
 
     For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur
     during applications of the chain rule.
    */
   struct ASin : Chainer<ASin>
   {
-    //! \copydoc Cos::Cos()
+    //! @copydoc Cos::Cos()
     explicit ASin(double x=0.)
     {
       update(x);
     }
 
-    //! \copydoc Cos::update()
+    //! @copydoc Cos::update()
     void update(double x)
     {
 #ifdef FUNG_ENABLE_EXCEPTIONS
@@ -39,25 +39,25 @@ namespace FunG
       x_ = x;
     }
 
-    //! \copydoc Cos::d0()
+    //! @copydoc Cos::d0()
     double d0() const noexcept
     {
       return value;
     }
 
-    //! \copydoc Cos::d1()
+    //! @copydoc Cos::d1()
     double d1(double dx=1) const
     {
       return firstDerivative * dx;
     }
 
-    //! \copydoc Cos::d2()
+    //! @copydoc Cos::d2()
     double d2(double dx=1, double dy=1) const
     {
       return x_ * firstDerivative3 * dx * dy;
     }
 
-    //! \copydoc Cos::d3()
+    //! @copydoc Cos::d3()
     double d3(double dx=1, double dy=1, double dz=1) const
     {
       return firstDerivative3 * ( 1 + ( 3 * x_ * x_ /(firstDerivative*firstDerivative) ) ) * dx * dy * dz;
@@ -68,10 +68,10 @@ namespace FunG
   };
 
   /*!
-    \ingroup CMathGroup
-    \brief Generate \f$ \arcsin\circ f \f$.
-    \param f function mapping into a scalar space
-    \return object of type MathematicalOperations::Chain<ASin,Function>
+    @ingroup CMathGroup
+    @brief Generate \f$ \arcsin\circ f \f$.
+    @param f function mapping into a scalar space
+    @return object of type MathematicalOperations::Chain<ASin,Function>
    */
   template <class Function,
             class = std::enable_if_t<Checks::isFunction<Function>()> >

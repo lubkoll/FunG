@@ -10,9 +10,7 @@
 
 namespace FunG
 {
-  /**
-   * \cond DOCUMENT_IMPLEMENTATION_DETAILS
-   */
+  /// @cond
   namespace Detail
   {
     template <class F, class IndexedX, bool allPresent, bool hasIndex,
@@ -201,9 +199,7 @@ namespace FunG
   {
     return ComputeChainD3<F,X,Y,Z,IndexedArgX,IndexedArgY,IndexedArgZ>(f,x,y,z);
   }
-  /**
-   * \endcond
-   */
+  /// @endcond
 }
 
 #endif // FUNG_UTIL_COMPUTE_CHAIN_HH

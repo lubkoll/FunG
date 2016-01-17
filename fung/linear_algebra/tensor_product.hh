@@ -11,12 +11,10 @@
 
 namespace FunG
 {
+  /** @addtogroup LinearAlgebraGroup @{ */
   namespace LinearAlgebra
   {
-    /**
-     * \ingroup LinearAlgebraGroup
-     * \brief Compute tensor product \f$ M = v \otimes w \f$.
-     */
+    /// Compute tensor product \f$ M = v \otimes w \f$.
     template <class Matrix, class Vector1, class Vector2,
               std::enable_if_t<Checks::isConstantSize<Matrix>()>* = nullptr>
     Matrix tensorProduct(const Vector1& v, const Vector2& w)
@@ -30,16 +28,14 @@ namespace FunG
       return result;
     }
 
-    /**
-     * \ingroup LinearAlgebraGroup
-     * \brief Compute tensor product \f$ M = v \otimes v \f$.
-     */
+    /// Compute tensor product \f$ M = v \otimes v \f$.
     template <class Matrix, class Vector>
     Matrix tensorProduct(const Vector& v)
     {
       return tensorProduct<Matrix>(v,v);
     }
   }
+  /** @} */
 }
 
 #endif // FUNG_LINEAR_ALGEBRA_TENSOR_PRODUCT_HH

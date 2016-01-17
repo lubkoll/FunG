@@ -18,19 +18,14 @@
 
 namespace FunG
 {
-  /**
-   * \cond DOCUMENT_FORWARD_DECLARATIONS
-   */
+  /// @cond
   namespace Concepts {  template <class> struct SquareMatrixConceptCheck; }
-  /**
-   * \endcond
-   */
+  /// @endcond
 
+  /** @addtogroup LinearAlgebraGroup @{ */
   namespace LinearAlgebra
   {
-    /**
-     * \cond DOCUMENT_IMPLEMENTATION_DETAILS
-     */
+    /// @cond
     namespace Detail
     {
       template < class Matrix >
@@ -143,17 +138,11 @@ namespace FunG
       };
     }
 
-    /**
-     * \ingroup LinearAlgebraGroup
-     * \brief Determinant of constant size matrix with first three derivatives.
-     */
+    /// Determinant of constant size matrix with first three derivatives.
     template <class Matrix>
     using ConstantSizeDeterminant = Detail::DeterminantImpl<Matrix,dim<Matrix>()>;
 
-    /**
-     * \ingroup LinearAlgebraGroup
-     * \brief Determinant of dynamic size matrix with first three derivatives.
-     */
+    /// Determinant of dynamic size matrix with first three derivatives.
     template <class Matrix>
     class DynamicSizeDeterminant :
         public Chainer< DynamicSizeDeterminant<Matrix> >
@@ -205,21 +194,16 @@ namespace FunG
       Detail::DeterminantImpl<Matrix,3> det3D;
     };
 
-    /**
-     * \ingroup LinearAlgebraGroup
-     * \brief Determinant with first three derivatives.
-     */
+    /// Determinant with first three derivatives.
     template < class Matrix >
     using Determinant = std::conditional_t< Checks::isConstantSize<Matrix>() , ConstantSizeDeterminant<Matrix> , DynamicSizeDeterminant<Matrix> >;
-    /**
-     * \endcond
-     */
+    /// @endcond
+
 
     /**
-     * \ingroup LinearAlgebraGroup
-     * \brief Generate \f$\det(A)\f$.
-     * \param A square matrix
-     * \return Determinant<Matrix>(A)
+     * @brief Generate \f$\det(A)\f$.
+     * @param A square matrix
+     * @return Determinant<Matrix>(A)
      */
     template<class Matrix,
              std::enable_if_t<!Checks::isFunction<Matrix>()>* = nullptr>
@@ -229,10 +213,9 @@ namespace FunG
     }
 
     /**
-     * \ingroup LinearAlgebraGroup
-     * \brief Generate \f$\det\circ f\f$.
-     * \param f function mapping into a space of square matrices
-     * \return Determinant< std::decay_t<decltype(f.d0())> >(f.d0())(f)
+     * @brief Generate \f$\det\circ f\f$.
+     * @param f function mapping into a space of square matrices
+     * @return Determinant< std::decay_t<decltype(f.d0())> >(f.d0())(f)
      */
     template<class F,
              std::enable_if_t<Checks::isFunction<F>() >* = nullptr>
@@ -241,6 +224,7 @@ namespace FunG
       return Determinant< decay_t<decltype(f.d0())> >(f.d0())(f);
     }
   }
+  /** @} */
 }
 
 #endif // FUNG_LINEAR_ALGEBRA_DETERMINANT_HH

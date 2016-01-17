@@ -10,9 +10,7 @@
 #include <boost/math/constants/constants.hpp>
 #endif
 
-/**
- * \cond DOCUMENT_IMPLEMENTATION_DETAILS
- */
+/// @cond
 namespace FunG
 {
 #ifdef HAVE_BOOST
@@ -23,8 +21,6 @@ namespace FunG
   constexpr double twothirds() noexcept { return 2*third(); }
 #endif
 }
-/**
- * \endcond
- */
+/// @endcond
 
 #endif // FUNG_THIRD_HH

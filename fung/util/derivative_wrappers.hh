@@ -11,12 +11,10 @@
 
 namespace FunG
 {
-  /**
-   * \cond DOCUMENT_IMPLEMENTATION_DETAILS
-   */
+  /// @cond
   namespace Detail
   {
-    /// Do not call f.d1(dx).
+    /// Don't call f.d1(dx).
     template <class F, class IndexedArg, bool IsPresent, bool hasIndex,
               class Arg = typename IndexedArg::type,
               int id = IndexedArg::index>
@@ -89,7 +87,7 @@ namespace FunG
       D2Impl& operator=(const D2Impl&) = delete;
     };
 
-    /// Call f.d2(dx,dy).
+    /// Call f.d2<idx,idy>(dx,dy).
     template < class F , class IndexedArgX , class IndexedArgY , class ArgX , class ArgY , int idx  , int idy >
     struct D2Impl<F,IndexedArgX,IndexedArgY,true,true,ArgX,ArgY,idx,idy>
     {
@@ -151,7 +149,7 @@ namespace FunG
       D3Impl& operator=(const D3Impl&) = delete;
     };
 
-    /// Call f.d3(dx,dy,dz).
+    /// Call f.d3<idx,idy,idz>(dx,dy,dz).
     template <class F, class IndexedArgX, class IndexedArgY, class IndexedArgZ, class ArgX, class ArgY, class ArgZ, int idx, int idy, int idz>
     struct D3Impl<F,IndexedArgX,IndexedArgY,IndexedArgZ,true,true,ArgX,ArgY,ArgZ,idx,idy,idz>
     {
@@ -197,7 +195,7 @@ namespace FunG
     };
   }
 
-  /// Evaluate f.d0().
+  /// Evaluate f().
   template <class F>
   struct D0
   {
@@ -219,15 +217,15 @@ namespace FunG
     decltype(std::declval<F>()()) value;
   };
 
-  /// Evaluates f.d1(dx) if not vanishing.
+  /// Evaluates f.d1(dx) if present.
   template < class F, class IndexedArg >
   using D1 = Detail::D1Impl<F,IndexedArg,Checks::HasMemFn_d1<F,IndexedArg>::value,Checks::HasMemFn_d1_with_index<F,IndexedArg>::value>;
 
-  /// Evaluates f.d2(dx,dy) if not vanishing.
+  /// Evaluates f.d2(dx,dy) if present.
   template < class F , class IndexedArgX , class IndexedArgY >
   using D2 = Detail::D2Impl<F,IndexedArgX,IndexedArgY,Checks::HasMemFn_d2<F,IndexedArgX,IndexedArgY>::value,Checks::HasMemFn_d2_with_index<F,IndexedArgX,IndexedArgY>::value>;
 
-  /// Evaluates f.d3(dx,dy,dz) if not vanishing.
+  /// Evaluates f.d3(dx,dy,dz) if present.
   template < class F , class IndexedArgX , class IndexedArgY , class IndexedArgZ >
   using D3 = Detail::D3Impl<F,IndexedArgX,IndexedArgY,IndexedArgZ,Checks::HasMemFn_d3<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value,Checks::HasMemFn_d3_with_index<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value>;
 
@@ -346,9 +344,7 @@ namespace FunG
       return f.d3(std::forward<Args>(dx)...);
     }
   };
-  /**
-   * \endcond
-   */
+  /// @endcond
 }
 
 #endif // FUNG_UTIL_DERIVATIVE_WRAPPERS_HH

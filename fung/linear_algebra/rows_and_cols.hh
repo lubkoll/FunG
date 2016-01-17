@@ -58,6 +58,7 @@ namespace FunG
     }
     /// @endcond
 
+
     /// Number of rows of a dynamic size matrix.
     template < class Matrix ,
                std::enable_if_t<!Checks::isConstantSize<Matrix>()>* = nullptr >

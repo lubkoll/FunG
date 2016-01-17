@@ -9,34 +9,26 @@
 
 namespace FunG
 {
-  /*!
-    \brief Identity, i.e. Decay<F>::type == F
-   */
+  /// Identity, i.e. Decay<F>::type == F
   template <class F, class = void>
   struct Decay
   {
     using type = F;
   };
 
-  /*!
-    \brief Underlying type for expression templates of the Eigen library.
-   */
+  /// Underlying type for expression templates of the Eigen library.
   template <class F>
   struct Decay<F,void_t<Checks::TryNestedType_PlainObject<F> > >
   {
     using type = typename F::PlainObject;
   };
 
-  /*!
-    \brief Specialize this template class to register arithmetic types that are not built-in.
-   */
+  /// Specialize this template class to register arithmetic types that are not built-in.
   template <class F>
   struct IsArithmetic : std::false_type
   {};
 
-  /*!
-    \brief Access underlying type (if it is hidden by expression templates).
-   */
+  /// Access underlying type (if it is hidden by expression templates).
   template <class F>
   using decay_t = typename Decay< std::decay_t<F> >::type;
 

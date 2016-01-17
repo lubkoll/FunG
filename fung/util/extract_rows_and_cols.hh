@@ -8,13 +8,9 @@
 
 namespace FunG
 {
-  /**
-   * \cond DOCUMENT_FORWARD_DECLARATIONS
-   */
+  /// @cond
   namespace Concepts { template <class> struct MatrixConceptCheck; }
-  /**
-   * \endcond
-   */
+  /// @endcond
 
   namespace LinearAlgebra
   {

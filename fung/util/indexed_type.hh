@@ -6,18 +6,14 @@
 
 namespace FunG
 {
-  /**
-   * \cond DOCUMENT_IMPLEMENTATION_DETAILS
-   */
+  /// @cond
   template <class Type, int id>
   struct IndexedType
   {
     using type = Type;
     static constexpr int index = id;
   };
-  /**
-   * \endcond
-   */
+  /// @endcond
 }
 
 #endif // FUNG_UTIL_INDEXEDTYPE_HH
