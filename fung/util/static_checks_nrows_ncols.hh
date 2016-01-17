@@ -60,7 +60,8 @@ namespace FunG
     /// @endcond
 
 
-    /** @addtogroup ConceptCheck @{ */
+    /** @addtogroup ConceptCheck
+     *  @{ */
     /// Check if object of type Matrix has a member function rows().
     template < class Matrix >
     constexpr bool hasMemFn_rows()

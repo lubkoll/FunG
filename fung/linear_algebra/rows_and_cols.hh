@@ -72,7 +72,7 @@ namespace FunG
                std::enable_if_t<Checks::isConstantSize<Matrix>()>* = nullptr >
     constexpr auto rows()
     {
-      return numberOfRows<Matrix>();
+      return NumberOfRows<Matrix>::value;
     }
 
     /// Number of columns of a dynamic size matrix.
@@ -88,7 +88,7 @@ namespace FunG
                std::enable_if_t<Checks::isConstantSize<Matrix>()>* = nullptr >
     constexpr auto cols()
     {
-      return numberOfColumns<Matrix>();
+      return NumberOfColumns<Matrix>::value;
     }
   }
 }

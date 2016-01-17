@@ -37,7 +37,9 @@ namespace FunG
   }
   /// @endcond
 
-  /** @addtogroup Biomechanics @{ */
+  /** @addtogroup Biomechanics
+   *  @{ */
+
   /**
    * @brief Model for adipose tissue of \cite Sommer2013.
    *

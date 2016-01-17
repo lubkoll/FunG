@@ -12,9 +12,11 @@
 
 namespace FunG
 {
-  /** @addtogroup LinearAlgebraGroup @{ */
   namespace LinearAlgebra
   {
+    /** @addtogroup LinearAlgebraGroup
+     *  @{ */
+
     /// @cond
     namespace Detail
     {
@@ -125,8 +127,9 @@ namespace FunG
       if ( rows(A)==2 ) return Detail::computeCofactorImpl<row,col>(A, B, std::integral_constant<int,2>());
       /*if ( rows(A)==3 )*/ return Detail::computeCofactorImpl<row,col>(A, B, std::integral_constant<int,3>());
     }
+
+    /** @} */
   }
-  /** @} */
 }
 
 #endif // FUNG_LINEAR_ALGEBRA_COFACTOR_HH

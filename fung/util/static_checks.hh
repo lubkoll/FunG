@@ -12,9 +12,11 @@
 
 namespace FunG
 {
-  /** @addtogroup Checks @{ */
   namespace Checks
   {
+    /** @addtogroup ConceptGroup
+     *  @{ */
+
     /// @cond
     template <class F>
     using TryMemOp_callable                         =      decltype(std::declval<F>()());
@@ -259,9 +261,8 @@ namespace FunG
     struct HasNestedType_PlainObject< EigenArg , void_t< TryNestedType_PlainObject<EigenArg> > >
         : std::true_type  {};
     /// @endcond
-    ///
 
-    /** @addtogroup ConceptCheck @{ */
+
     template < class F >
     constexpr bool isFunction()
     {
@@ -317,7 +318,7 @@ namespace FunG
     template < class Arg >
     constexpr bool isConstantSize()
     {
-      return ( LinearAlgebra::numberOfRows<Arg>() > 0 );
+      return LinearAlgebra::NumberOfRows<Arg>::value > 0;
     }
 
 
@@ -334,8 +335,9 @@ namespace FunG
       return hasConsistentSecondDerivative<F,IndexedArgX,IndexedArgY>() &&
           ( HasMemFn_d3<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value ? HasMemFn_d2<F,IndexedArgX,IndexedArgY>::value : true );
     }
+
+    /** @} */
   }
-  /** @} */
 }
 
 #endif // FUNG_STATIC_CHECKS_HH

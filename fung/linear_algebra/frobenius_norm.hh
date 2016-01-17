@@ -18,9 +18,11 @@ namespace FunG
   namespace Concepts { template <class> struct MatrixConceptCheck; }
   /// @endcond
 
-  /** @addtogroup LinearAlgebraGroup @{ */
   namespace LinearAlgebra
   {
+    /** @addtogroup LinearAlgebraGroup
+     *   @{ */
+
     /// @cond
     namespace FrobeniusDetail
     {
@@ -115,8 +117,8 @@ namespace FunG
     {
       return FrobeniusNorm< std::decay_t<decltype(f.d0())> >(f.d0())(f);
     }
+    /** @} */
   }
-  /** @} */
 }
 
 #endif // FUNG_LINEAR_ALGEBRA_FROBENIUS_NORM_HH

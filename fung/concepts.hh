@@ -6,12 +6,14 @@
 
 namespace FunG
 {
-  /** @addtogroup ConceptGroup @{ */
   namespace Concepts
   {
     /// @cond
     struct unspecified;
     /// @endcond
+
+    /** @addtogroup ConceptGroup
+     *  @{ */
 
     /// Requires copy-constructibility and copy-assignability.
     struct CopyConcept
@@ -123,8 +125,9 @@ namespace FunG
       /// Access to function value.
       unspecified operator()() const;
     };
+
+    /** @} */
   }
-  /** @} */
 }
 
 #endif // FUNG_CONCEPTS_HH

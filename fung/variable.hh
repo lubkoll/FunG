@@ -260,9 +260,11 @@ namespace FunG
   template <class F, int id>
   using Variable_t = typename VariableDetail::VariableType<F,id>::type;
 
-  /** @addtogroup Checks @{ */
   namespace Checks
   {
+    /** @addtogroup ConceptCheck
+     *  @{ */
+
     /// Check if T is of type Variable<Type,n>.
     template <class T>
     constexpr bool isVariable() { return VariableDetail::IsVariable<T>::value; }
@@ -288,8 +290,9 @@ namespace FunG
     {
       return ContainsType<typename VariableDetail::VariableType<F,id>::type, Type>::value;
     }
+
+    /** @} */
   }
-  /** @} */
 }
 
 #endif // FUNG_VARIABLE_HH

@@ -29,9 +29,9 @@
 #include <fadiff.h>
 #include <badiff.h>
 
-//#include <Sacado.hpp>
+#include "Sacado.hpp"
 
-#include <adept.h>
+//#include <adept.h>
 
 #include "fung/fung.hh"
 
@@ -161,56 +161,56 @@ void ADComparison_Example_1()
   cout << "computation time: " << duration_cast<milliseconds>(high_resolution_clock::now()-startTime).count()/1000. << "s\n";
   cout << "function value: " << f << endl;
   cout << "first derivative: " << dfdx << endl << endl;
-//  x=5;
-//  cout << "SACADO (FAD)" << endl;
-//  int num_deriv = 1;
-//  Sacado::Fad::SFad<double,1> rfad;
-//  startTime = high_resolution_clock::now();
-//  for(auto i=0u; i<iter; ++i){
-//    x*=1.00000001;
-//    Sacado::Fad::SFad<double,1> xfad(num_deriv,0,x);
-//    rfad = Example_1::func(xfad);
-//  }
-//  cout << "computation time: " << duration_cast<milliseconds>(high_resolution_clock::now()-startTime).count()/1000. << "s\n";
-//  cout << "function value: " << rfad.val() << endl;
-//  cout << "first derivative: " << rfad.dx(0) << endl << endl;
-
-//  cout << "SACADO (ELRFAD)" << endl;
-//  Sacado::ELRFad::DFad<double> relrfad, xelrfad;
-//  x=5;
-//  startTime = high_resolution_clock::now();
-//  for(auto i=0u; i<iter; ++i)
-//  {
-//    x*=1.00000001;
-//    xelrfad = Sacado::ELRFad::DFad<double> (num_deriv,0,x);
-//    relrfad = Example_1::func(xelrfad);
-//  }
-//  cout << "computation time: " << duration_cast<milliseconds>(high_resolution_clock::now()-startTime).count()/1000. << "s\n";
-//  cout << "function value: " << relrfad.val() << endl;
-//  cout << "first derivative: " << relrfad.dx(0) << endl << endl;
-
   x=5;
+  cout << "SACADO (FAD)" << endl;
+  int num_deriv = 1;
+  Sacado::Fad::SFad<double,1> rfad;
+  startTime = high_resolution_clock::now();
+  for(auto i=0u; i<iter; ++i){
+    x*=1.00000001;
+    Sacado::Fad::SFad<double,1> xfad(num_deriv,0,x);
+    rfad = Example_1::func(xfad);
+  }
+  cout << "computation time: " << duration_cast<milliseconds>(high_resolution_clock::now()-startTime).count()/1000. << "s\n";
+  cout << "function value: " << rfad.val() << endl;
+  cout << "first derivative: " << rfad.dx(0) << endl << endl;
 
-  cout << "ADEPT" << endl;
-  adept::Stack stack;
-  using adept::adouble;
-  adouble ax = x;
-  adouble y;
+  cout << "SACADO (ELRFAD)" << endl;
+  Sacado::ELRFad::DFad<double> relrfad, xelrfad;
+  x=5;
   startTime = high_resolution_clock::now();
   for(auto i=0u; i<iter; ++i)
   {
     x*=1.00000001;
-    ax = x;
-    stack.new_recording();
-    y = Example_1::adeptFunc(ax);
-    y.set_gradient(1.);
-    stack.compute_adjoint();
-    f = y.value();
-    dfdx = ax.get_gradient();
+    xelrfad = Sacado::ELRFad::DFad<double> (num_deriv,0,x);
+    relrfad = Example_1::func(xelrfad);
   }
   cout << "computation time: " << duration_cast<milliseconds>(high_resolution_clock::now()-startTime).count()/1000. << "s\n";
-  cout << "function value: " << f << endl;
-  cout << "first derivative: " << dfdx << endl << endl;
+  cout << "function value: " << relrfad.val() << endl;
+  cout << "first derivative: " << relrfad.dx(0) << endl << endl;
+
+//  x=5;
+
+//  cout << "ADEPT" << endl;
+//  adept::Stack stack;
+//  using adept::adouble;
+//  adouble ax = x;
+//  adouble y;
+//  startTime = high_resolution_clock::now();
+//  for(auto i=0u; i<iter; ++i)
+//  {
+//    x*=1.00000001;
+//    ax = x;
+//    stack.new_recording();
+//    y = Example_1::adeptFunc(ax);
+//    y.set_gradient(1.);
+//    stack.compute_adjoint();
+//    f = y.value();
+//    dfdx = ax.get_gradient();
+//  }
+//  cout << "computation time: " << duration_cast<milliseconds>(high_resolution_clock::now()-startTime).count()/1000. << "s\n";
+//  cout << "function value: " << f << endl;
+//  cout << "first derivative: " << dfdx << endl << endl;
 
   x=5;
   cout << "FunG" << endl;

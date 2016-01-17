@@ -14,9 +14,12 @@
 
 namespace FunG
 {
-  /** \addtogroup InvariantGroup @{ */
+
   namespace LinearAlgebra
   {
+   /** @addtogroup InvariantGroup, LinearAlgebraGroup
+    *  @{ */
+
     /**
      * \brief Generate first mixed invariant \f$ \iota_4=\iota_1(AM) \f$ of a matrix \f$A\in\mathbb{R}^{n,n}\f$ with respect to the structural tensor \f$M\in\mathbb{R}^{n,n}\f$.
      * \param A square matrix
@@ -129,8 +132,8 @@ namespace FunG
     {
       return i6(x,M) * ( Pow<-1,n>()( det(x) ) );
     }
+    /** @} */
   }
-  /** @} */
 }
 
 #endif // FUNG_LINEAR_ALGEBRA_MIXED_INVARIANTS_HH

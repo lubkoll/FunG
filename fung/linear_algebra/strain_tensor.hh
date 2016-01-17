@@ -11,19 +11,15 @@
 
 namespace FunG
 {
-  /**
-   * \cond DOCUMENT_FORWARD_DECLARATIONS
-   */
+  /// @cond
   namespace Concepts { template <class> struct SquareMatrixConceptCheck; }
-  /**
-   * \endcond
-   */
+  ///@endcond
 
   namespace LinearAlgebra
   {
     /**
-     * \ingroup LinearAlgebraGroup
-     * \brief Left Cauchy-Green strain tensor \f$ F^T F \f$ for a symmetric matrix \f$ F \f$.
+     * @ingroup LinearAlgebraGroup
+     * @brief Left Cauchy-Green strain tensor \f$ F^T F \f$ for a symmetric matrix \f$ F \f$.
      *
      * This class is used for nonlinear material models based on the deformation gradient \f$\nabla\varphi\f$, which takes the role of \f$F\f$.
      * Caches both \f$ F^T \f$ and \f$ F^T F \f$.

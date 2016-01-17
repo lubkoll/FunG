@@ -20,10 +20,9 @@ namespace FunG
   namespace Concepts { template <class> struct MatrixConceptCheck; }
   /// @endcond
 
-  /** @addtogroup InvariantGroup */
   namespace LinearAlgebra
   {
-  /// @cond
+    /// @cond
     namespace Detail
     {
 
@@ -90,6 +89,8 @@ namespace FunG
     }
     /// @endcond
 
+    /** @addtogroup InvariantGroup, LinearAlgebraGroup
+     * @{ */
     /// Second principal invariant \f$ \iota_2(A)=\mathrm{tr}(\mathrm{cof}(A)) \f$ for \f$A\in\mathbb{R}^{n,n}\f$.
     template <class Matrix, class = Concepts::MatrixConceptCheck<Matrix> >
     class SecondPrincipalInvariant :
@@ -153,7 +154,7 @@ namespace FunG
      * Depending on the argument either generates \f$\mathrm{tr}(A)\f$ or \f$\mathrm{tr}\circ f\f$.
      *
      * @return if x is a matrix then the this functions returns Trace<Arg>(x), if x is a function, then it returns
-     * Trace< std::decay_t<decltype(x.d0())> >( x.d0() )( x );
+     * Trace< std::decay_t<decltype(x())> >( x() )( x );
      */
     template <class Arg>
     auto i1(const Arg& x)
@@ -162,8 +163,8 @@ namespace FunG
     }
 
     /**
-     * \brief Convenient generation of second principal invariant \f$ \iota_2(A)=\mathrm{tr}(\mathrm{cof}(A)) \f$ for \f$A\in\mathbb{R}^{n,n}\f$.
-     * \return SecondPrincipalInvariant<Matrix>(A)
+     * @brief Convenient generation of second principal invariant \f$ \iota_2(A)=\mathrm{tr}(\mathrm{cof}(A)) \f$ for \f$A\in\mathbb{R}^{n,n}\f$.
+     * @return SecondPrincipalInvariant<Matrix>(A)
      */
     template <class Matrix,
               std::enable_if_t< !Checks::isFunction<Matrix>() >* = nullptr >
@@ -180,7 +181,7 @@ namespace FunG
               std::enable_if_t<Checks::isFunction<F>() >* = nullptr>
     auto i2(const F& f)
     {
-      return SecondPrincipalInvariant< decay_t<decltype(f.d0())> >( f.d0() )( f );
+      return SecondPrincipalInvariant< decay_t<decltype(f())> >( f() )( f );
     }
 
     /**
@@ -189,7 +190,7 @@ namespace FunG
      * Depending on the argument either generates \f$\det(A)\f$ or \f$\det\circ f\f$.
      *
      * @return if x is a matrix then the this functions returns Determinant<Arg>(x), if x is a function, then it returns
-     * Determinant< std::decay_t<decltype(x.d0())> >( x.d0() )( x );
+     * Determinant< std::decay_t<decltype(x())> >( x() )( x );
      */
     template <class Arg>
     auto i3(const Arg& x)
@@ -209,7 +210,7 @@ namespace FunG
     }
 
     /**
-     * @brief Isochoric (volume-preserving), second modified principal invariant \f$ \bar\iota_2(A)=\iota_2\iota_3^{-1/3} \f$, where \f$\iota_2\f$ is the second
+     * @brief Isochoric (volume-preserving), second modified principal invariant \f$ \bar\iota_2(A)=\iota_2\iota_3^{-2/3} \f$, where \f$\iota_2\f$ is the second
      * and \f$\iota_3\f$ is the third principal invariant.
      * @param x either a square matrix or a function returning a square matrix
      */
@@ -218,8 +219,8 @@ namespace FunG
     {
       return i2(x) * pow<-2,n>( det(x) );
     }
+    /** @} */
   }
-  /** @} */
 }
 
 #endif // FUNG_LINEAR_ALGEBRA_PRINCIPAL_INVARIANTS_HH

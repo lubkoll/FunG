@@ -11,7 +11,8 @@
 
 namespace FunG
 {
-  /** @addtogroup CMathGroup @{ */
+  /** @addtogroup CMathGroup
+   *  @{ */
 
   /**
    * @brief Natural logarithm including first three derivatives.

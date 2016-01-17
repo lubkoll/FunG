@@ -7,23 +7,23 @@
 #include <type_traits>
 
 #include "fung/util/at.hh"
-#include "fung/util/extract_rows_and_cols.hh"
 #include "fung/util/static_checks.hh"
-#include "fung/util/static_checks_nrows_ncols.hh"
 #include "fung/util/zero.hh"
+#include "rows_and_cols.hh"
 
 namespace FunG
 {
   namespace LinearAlgebra
   {
-    /** @addtogroup LinearAlgebraGroup @{ */
+    /** @addtogroup LinearAlgebraGroup
+     *  @{ */
     template <class Matrix, class TransposedMatrix = Matrix ,
               std::enable_if_t<std::is_same<Matrix,TransposedMatrix>::value && Checks::isConstantSize<Matrix>()>* = nullptr>
     TransposedMatrix transpose(Matrix A)
     {
       auto a = at(A,0,0);
-      for(int i=0; i<numberOfRows<Matrix>(); ++i)
-        for(int j=i+1; j<numberOfColumns<Matrix>(); ++j)
+      for(int i=0; i<rows<Matrix>(); ++i)
+        for(int j=i+1; j<cols<Matrix>(); ++j)
         {
           a = at(A,i,j);
           at(A,i,j) = at(A,j,i);
@@ -39,8 +39,8 @@ namespace FunG
     TransposedMatrix transpose(const Matrix& A)
     {
       TransposedMatrix B = zero<TransposedMatrix>();
-      for(int i=0; i<numberOfRows<Matrix>(); ++i)
-        for(int j=0; j<numberOfColumns<Matrix>(); ++j)
+      for(int i=0; i<rows<Matrix>(); ++i)
+        for(int j=0; j<cols<Matrix>(); ++j)
           at(B,j,i) = A(i,j);
       return B;
     }

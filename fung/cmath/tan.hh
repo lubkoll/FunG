@@ -10,7 +10,8 @@
 
 namespace FunG
 {
-  /** @addtogroup CMathGroup @{ */
+  /** @addtogroup CMathGroup
+   *  @{ */
 
   /*!
     @brief Tangent function including first three derivatives.

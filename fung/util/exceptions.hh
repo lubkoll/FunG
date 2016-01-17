@@ -10,7 +10,8 @@
 
 namespace FunG
 {
-  /** @addtogroup Exceptions @{ */
+  /** @addtogroup Exceptions
+   *   @{ */
 
   /**
    * @brief Exception for scalar function arguments that are outside the domain of the function.

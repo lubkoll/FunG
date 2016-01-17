@@ -9,9 +9,10 @@
 
 namespace FunG
 {
-  /** @addtogroup ConceptCheck @{ */
   namespace Concepts
   {
+    /** @addtogroup ConceptCheck
+     *  @{ */
     /// Static check if the requirements of CopyConcept are satisfied.
     template < class Arg >
     struct CopyConceptCheck
@@ -88,7 +89,7 @@ namespace FunG
     struct SquareMatrixConceptCheck : MatrixConceptCheck<Matrix>, MultiplicationConceptCheck<Matrix,Matrix>
     {
       /// Require symmetric matrix
-      static_assert( LinearAlgebra::numberOfRows<Matrix>() == LinearAlgebra::numberOfColumns<Matrix>(),
+      static_assert( LinearAlgebra::NumberOfRows<Matrix>::value == LinearAlgebra::NumberOfColumns<Matrix>::value,
                      "SquareMatrixConcept: Input matrix must be symmetric.");
     };
 
@@ -100,8 +101,8 @@ namespace FunG
       static_assert( Checks::isFunction<F>() ,
                      "FunctionConcept: Functions must provide a member function d0() to access its value." );
     };
+    /** @} */
   }
-  /** @} */
 }
 
 #endif // FUNG_CONCEPT_CHECK_HH

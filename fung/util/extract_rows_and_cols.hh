@@ -20,9 +20,7 @@ namespace FunG
     /// Specialize this for your matrix class. Number of columns must be provided by a static member variable called value.
     template < class Matrix , class = Concepts::MatrixConceptCheck<Matrix> > struct NumberOfColumns : std::integral_constant<int,-1> {};
 
-    /// Specialization for vectors.
-
-
+    /// @cond
     /// Specialization for matrices.
     template < template <class,int,int...> class Matrix, class T, int n, class MatrixConceptCheck, int... m>
     struct NumberOfRows< Matrix<T,n,m...> , MatrixConceptCheck > : std::integral_constant<int,n> {};
@@ -77,21 +75,7 @@ namespace FunG
     /// Specialization for matrices.
     template < template <unsigned,unsigned> class Matrix, unsigned n, unsigned m, class MatrixConceptCheck>
     struct NumberOfColumns< Matrix<n,m> , MatrixConceptCheck > : std::integral_constant<unsigned,m> {};
-
-
-    /// Number of rows \f$n\f$ of a fixed size matrix in \f$\mathbb{R}^{n,m}\f$ or a fixed size vector in \f$\mathbb{R}^n\f$.
-    template <class Matrix>
-    constexpr int numberOfRows()
-    {
-      return NumberOfRows<Matrix>::value;
-    }
-
-    /// Number of columns \f$m\f$ of a fixed size matrix in \f$\mathbb{R}^{n,m}\f$.
-    template <class Matrix>
-    constexpr int numberOfColumns()
-    {
-      return NumberOfColumns<Matrix>::value;
-    }
+    /// @endcond
   }
 }
 

@@ -11,7 +11,8 @@
 
 namespace FunG
 {
-  /** @addtogroup CMathGroup @{ */
+  /** @addtogroup CMathGroup
+   *  @{ */
 
   /*!
     @brief Power function with rational exponent \f$ k = \frac{dividend}{divisor} \f$ including first three derivatives.
@@ -26,7 +27,7 @@ namespace FunG
     //! @copydoc Cos::Cos()
     explicit Pow(double x=1) { update(x); }
 
-      //! @copydoc Cos::update()
+    //! @copydoc Cos::update()
     void update(double x)
     {
 #ifdef FUNG_ENABLE_EXCEPTIONS
@@ -386,6 +387,7 @@ namespace FunG
   {
     return Pow<k>()(f);
   }
+  /** @} */
 }
 
 #endif // FUNG_CMATH_POW_HH

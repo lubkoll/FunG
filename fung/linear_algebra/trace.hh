@@ -20,9 +20,11 @@ namespace FunG
   namespace Concepts { template <class> struct SquareMatrixConceptCheck; }
   /// @endcond
 
-  /** @addtogroup LinearAlgebraGroup @{ */
   namespace LinearAlgebra
   {
+    /** @addtogroup LinearAlgebraGroup
+     *  @{ */
+
     /// @cond
     namespace Detail
     {
@@ -168,8 +170,8 @@ namespace FunG
     {
       return Trace< decay_t<decltype(f.d0())> >( f.d0() )( f );
     }
+    /** @} */
   }
-  /** @} */
 }
 
 #endif // FUNG_LINEAR_ALGEBRA_TRACE_HH

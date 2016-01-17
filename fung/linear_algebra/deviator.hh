@@ -17,9 +17,11 @@ namespace FunG
   namespace Concepts { template <class> struct SquareMatrixConceptChecks; }
   /// @endcond
 
-  /** @addtogroup LinearAlgebraGroup @{ */
   namespace LinearAlgebra
   {
+    /** @addtogroup LinearAlgebraGroup
+     *  @{ */
+
     /// Generate %deviator \f$ \mathrm{dev}(A) = A - \frac{\mathrm{tr}(A)}{n}I \f$ of a matrix \f$ A\in\mathbb{R}^{n,n} \f$.
     template <class Matrix,
               int n = dim<Matrix>(),
@@ -47,8 +49,9 @@ namespace FunG
     {
       return deviator(f())( f );
     }
+
+    /** @} */
   }
-  /** @} */
 }
 
 #endif // FUNG_LINEAR_ALGEBRA_DEVIATOR_HH
