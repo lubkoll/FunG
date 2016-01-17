@@ -9,13 +9,10 @@
 
 namespace FunG
 {
+  /** @addtogroup ConceptCheck @{ */
   namespace Concepts
   {
-    /**
-     * \ingroup ConceptCheck
-     * \brief Static check if the requirements of CopyConcept are satisfied.
-     * \tparam Arg type to check
-     */
+    /// Static check if the requirements of CopyConcept are satisfied.
     template < class Arg >
     struct CopyConceptCheck
     {
@@ -24,11 +21,7 @@ namespace FunG
     };
 
 
-    /**
-     * \ingroup ConceptCheck
-     * \brief Static check if the requirements of MultiplyWithArithmeticFromLeftConcept are satisfied.
-     * \tparam Arg type to check
-     */
+    /// Static check if the requirements of MultiplyWithArithmeticFromLeftConcept are satisfied.
     template < class Arg >
     struct MultiplyWithArithmeticFromLeftConceptCheck
     {
@@ -41,11 +34,7 @@ namespace FunG
     };
 
 
-    /**
-     * \ingroup ConceptCheck
-     * \brief Static check if the requirements of SummationConcept are satisfied.
-     * \tparam Arg type to check
-     */
+    /// Static check if the requirements of SummationConcept are satisfied.
     template < class Arg >
     struct SummationConceptCheck
     {
@@ -55,10 +44,7 @@ namespace FunG
     };
 
 
-    /**
-     * \ingroup ConceptCheck
-     * \brief Static check if the requirements of MultiplicationConcept are satisfied.
-     */
+    /// Static check if the requirements of MultiplicationConcept are satisfied.
     template < class Arg1 , class Arg2 >
     struct MultiplicationConceptCheck
     {
@@ -69,10 +55,7 @@ namespace FunG
     };
 
 
-    /**
-     * \ingroup ConceptCheck
-     * \brief Static check if the requirements of ArithmeticConcept are satisfied.
-     */
+    /// Static check if the requirements of ArithmeticConcept are satisfied.
     template <class Arg>
     struct ArithmeticConceptCheck
         : CopyConceptCheck<Arg> ,
@@ -81,10 +64,7 @@ namespace FunG
     {};
 
 
-    /**
-     * \ingroup ConceptCheck
-     * \brief Static check if the requirements of MatrixConcept are satisfied.
-     */
+    /// Static check if the requirements of MatrixConcept are satisfied.
     template < class Matrix >
     struct MatrixConceptCheck : ArithmeticConceptCheck<Matrix>
     {
@@ -94,10 +74,7 @@ namespace FunG
     };
 
 
-    /**
-     * \ingroup ConceptCheck
-     * \brief Static check if the requirements of VectorConcept are satisfied.
-     */
+    /// Static check if the requirements of VectorConcept are satisfied.
     template < class Vector >
     struct VectorConceptCheck : ArithmeticConceptCheck<Vector>
     {
@@ -106,10 +83,7 @@ namespace FunG
                     "VectorConcept: Currently only vectors that allow access to their elements via v[i] or v(i) are supported.\nYou may contact the developer to ask for further access or provide your own patch.");
     };
 
-    /**
-     * \ingroup ConceptCheck
-     * \brief Static check if the requirements of SquareMatrixConcept are satisfied.
-     */
+    /// Static check if the requirements of SquareMatrixConcept are satisfied.
     template < class Matrix >
     struct SquareMatrixConceptCheck : MatrixConceptCheck<Matrix>, MultiplicationConceptCheck<Matrix,Matrix>
     {
@@ -119,10 +93,7 @@ namespace FunG
     };
 
 
-    /**
-     * \ingroup ConceptCheck
-     * \brief Static check if the requirements of FunctionConcept are satisfied.
-     */
+    /// Static check if the requirements of FunctionConcept are satisfied.
     template <class F>
     struct FunctionConceptCheck : CopyConceptCheck<F>
     {
@@ -130,6 +101,7 @@ namespace FunG
                      "FunctionConcept: Functions must provide a member function d0() to access its value." );
     };
   }
+  /** @} */
 }
 
 #endif // FUNG_CONCEPT_CHECK_HH
