@@ -7,13 +7,13 @@
 #include <type_traits>
 #include "static_checks.hh"
 
-/** @cond */
+/// @cond
 namespace Dune
 {
   template <class,int> class FieldVector;
   template <class,int,int> class FieldMatrix;
 }
-/** @endcond */
+/// @endcond
 
 namespace FunG
 {

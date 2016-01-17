@@ -11,6 +11,7 @@
 #include "fung/linear_algebra/mixed_invariants.hh"
 #include "fung/linear_algebra/strain_tensor.hh"
 #include "fung/linear_algebra/tensor_product.hh"
+#include "fung/examples/volumetric_penalty_functions.hh"
 
 /**
  * \ingroup Biomechanics
@@ -20,9 +21,7 @@
 
 namespace FunG
 {
-  /**
-   * \cond DOCUMENT_IMPLEMENTATION_DETAILS
-   */
+  /// @cond
   namespace Detail
   {
     template < class Matrix , int n = LinearAlgebra::dim<Matrix>() >
@@ -36,9 +35,7 @@ namespace FunG
       return f(S);
     }
   }
-  /**
-   * \endcond
-   */
+  /// @endcond
 
   /**
    * \ingroup Biomechanics

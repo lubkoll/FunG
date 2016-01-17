@@ -11,20 +11,20 @@
 
 namespace FunG
 {
-  /**
-   * \cond DOCUMENT_IMPLEMENTATION_DETAILS
-   */
+  /// @cond
   namespace AtDetail
   {
     template <class Matrix, class = void>
     struct At
     {
-      static decltype(auto) apply(Matrix& A, int i, int j)
+      template <class Index, class = std::enable_if_t< std::is_integral<Index>::value > >
+      static decltype(auto) apply(Matrix& A, Index i, Index j)
       {
         return A(i,j);
       }
 
-      static decltype(auto) apply(const Matrix& A, int i, int j)
+      template <class Index, class = std::enable_if_t< std::is_integral<Index>::value > >
+      static decltype(auto) apply(const Matrix& A, Index i, Index j)
       {
         return A(i,j);
       }
@@ -33,12 +33,14 @@ namespace FunG
     template <class Matrix>
     struct At< Matrix , void_t< Checks::TryMemFn_SquareBracketAccessForMatrix<Matrix> > >
     {
-      static decltype(auto) apply(Matrix& A, int i, int j)
+      template <class Index, class = std::enable_if_t< std::is_integral<Index>::value > >
+      static decltype(auto) apply(Matrix& A, Index i, Index j)
       {
         return A[i][j];
       }
 
-      static decltype(auto) apply(const Matrix& A, int i, int j)
+      template <class Index, class = std::enable_if_t< std::is_integral<Index>::value > >
+      static decltype(auto) apply(const Matrix& A, Index i, Index j)
       {
         return A[i][j];
       }
@@ -47,12 +49,14 @@ namespace FunG
     template <class Vector, class = void>
     struct At_v
     {
-      static decltype(auto) apply(Vector& v, int i)
+      template <class Index, class = std::enable_if_t< std::is_integral<Index>::value > >
+      static decltype(auto) apply(Vector& v, Index i)
       {
         return v(i);
       }
 
-      static decltype(auto) apply(const Vector& v, int i)
+      template <class Index, class = std::enable_if_t< std::is_integral<Index>::value > >
+      static decltype(auto) apply(const Vector& v, Index i)
       {
         return v(i);
       }
@@ -61,12 +65,14 @@ namespace FunG
     template <class Vector>
     struct At_v< Vector , void_t< Checks::TryMemFn_SquareBracketAccessForVector<Vector> > >
     {
-      static decltype(auto) apply(Vector& v, int i)
+      template <class Index, class = std::enable_if_t< std::is_integral<Index>::value > >
+      static decltype(auto) apply(Vector& v, Index i)
       {
         return v[i];
       }
 
-      static decltype(auto) apply(const Vector& v, int i)
+      template <class Index, class = std::enable_if_t< std::is_integral<Index>::value > >
+      static decltype(auto) apply(const Vector& v, Index i)
       {
         return v[i];
       }
@@ -79,32 +85,20 @@ namespace FunG
     #pragma GCC diagnostic ignored "-Wattributes"
   #endif
 
-  template <class Matrix>
-  __attribute__((always_inline)) decltype(auto) at(Matrix& A, int i, int j)
+  template <class Matrix, class Index,
+            class = std::enable_if_t< std::is_integral<Index>::value > >
+  __attribute__((always_inline)) decltype(auto) at(Matrix&& A, Index i, Index j)
   {
-    return AtDetail::At<Matrix>::apply(A,i,j);
+    return AtDetail::At< std::decay_t<Matrix> >::apply(std::forward<Matrix>(A),i,j);
   }
 
-  template <class Matrix>
-  __attribute__((always_inline)) decltype(auto) at(const Matrix& A, int i, int j)
+  template <class Vector, class Index,
+            class = std::enable_if_t< std::is_integral<Index>::value > >
+  __attribute__((always_inline)) decltype(auto) at(Vector& v, Index i)
   {
-    return AtDetail::At<Matrix>::apply(A,i,j);
+    return AtDetail::At_v< std::decay_t<Vector> >::apply(std::forward<Vector>(v),i);
   }
-
-  template <class Vector>
-  __attribute__((always_inline)) decltype(auto) at(Vector& v, int i)
-  {
-    return AtDetail::At_v<Vector>::apply(v,i);
-  }
-
-  template <class Vector>
-  __attribute__((always_inline)) decltype(auto) at(const Vector& v, int i)
-  {
-    return AtDetail::At_v<Vector>::apply(v,i);
-  }
-  /**
-   * \endcond
-   */
+  /// @endcond
 }
 
 #if defined(__GNUC__) || defined(__GNUG__)

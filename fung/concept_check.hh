@@ -126,7 +126,7 @@ namespace FunG
     template <class F>
     struct FunctionConceptCheck : CopyConceptCheck<F>
     {
-      static_assert( Checks::HasMemFn_d0<F>() ,
+      static_assert( Checks::isFunction<F>() ,
                      "FunctionConcept: Functions must provide a member function d0() to access its value." );
     };
   }

@@ -8,13 +8,9 @@
 #include <tuple>
 #include <type_traits>
 
-#include "fung/util/chainer.hh"
-
 namespace FunG
 {
-  /**
-   * \cond DOCUMENT_IMPLEMENTATIONS_DETAILS
-   */
+  /// @cond
   template <class,int> struct Variable;
   namespace Concepts { template <class> class FunctionConceptCheck; }
 
@@ -110,22 +106,19 @@ namespace FunG
       static void apply(const T&, const Arg&) {}
     };
   }
-  /**
-   * \endcond
-   */
+  /// @endcond
 
-  /**
-   * \brief Independent variable. Can be uniquely identified by its id.
-   */
+  /// Independent variable. Can be uniquely identified by its id.
   template <class T, int id>
-  struct Variable : Chainer< Variable<T,id> >
+  struct Variable
   {
     Variable() = default;
 
-    /// Construct variable with meaningful default value.
     explicit Variable(const T& t_) : t(t_) {}
 
-    /// Update variable.
+    explicit Variable(T&& t_) : t(std::move(t_)) {}
+
+    /// Update variable if index==id.
     template <int index, class Arg>
     void update(const Arg& t_)
     {
@@ -133,16 +126,12 @@ namespace FunG
     }
 
     /// Value of the variable.
-    const T& d0() const noexcept
+    const T& operator()() const noexcept
     {
       return t;
     }
 
-    /**
-     * \brief First directional derivative.
-     *
-     * Only available if id==index.
-     */
+    /// First directional derivative. Only available if id==index.
     template < int index , class Arg ,
                class = std::enable_if_t< id == index > >
     const T& d1(const Arg& dt) const noexcept
@@ -162,13 +151,9 @@ namespace FunG
   }
 
 
-  /**
-   * @cond DOCUMENT_IMPLEMENATION_DETAILS
-   */
+  /// @cond
   namespace VariableDetail
   {
-
-
     /// Check if Type is variable.
     template <class> struct IsVariable : std::false_type {};
 
@@ -269,59 +254,42 @@ namespace FunG
     template <class T, int id>
     struct VariableType< Variable<T,id>, id > { using type = T; };
   }
-  /**
-   * @endcond
-   */
+  /// @endcond
 
-  /**
-   * \brief Get underlying type of variable with index id.
-   */
+  /// Get underlying type of variable with index id.
   template <class F, int id>
   using Variable_t = typename VariableDetail::VariableType<F,id>::type;
 
+  /** @addtogroup Checks @{ */
   namespace Checks
   {
-    /**
-     * \ingroup Checks
-     * \brief Check if T is of type Variable<Type,n>.
-     */
+    /// Check if T is of type Variable<Type,n>.
     template <class T>
     constexpr bool isVariable() { return VariableDetail::IsVariable<T>::value; }
 
-    /**
-     * \ingroup Checks
-     * \brief Check if T contains a type Variable<Type,n>.
-     */
+    /// Check if T contains a type Variable<Type,n>.
     template <class T>
     constexpr bool hasVariable() { return VariableDetail::HasVariable<T>::value; }
 
-    /**
-     * \ingroup Checks
-     * \brief Check if T contains a type Variable<Type,id>.
-     */
+    /// Check if T contains a type Variable<Type,id>.
     template <class T, int id>
     constexpr bool hasVariableId() { return VariableDetail::HasVariableId<T,id>::value; }
 
-    /**
-     * \ingroup Checks
-     * \brief Check if T contains at least two variables.
-     */
+    /// Check if T contains at least two variables.
     template <class Type>
     constexpr bool hasMoreThanOneVariable()
     {
       return VariableDetail::MinVariableId<Type>::value < VariableDetail::MaxVariableId<Type>::value;
     }
 
-    /**
-     * \ingroup Checks
-     * \brief Check if variable with index id has type Type.
-     */
+    /// Check if variable with index id has type Type.
     template <class F, class Type, int id>
     constexpr bool checkArgument()
     {
       return ContainsType<typename VariableDetail::VariableType<F,id>::type, Type>::value;
     }
   }
+  /** @} */
 }
 
 #endif // FUNG_VARIABLE_HH

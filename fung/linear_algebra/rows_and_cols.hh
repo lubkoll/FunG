@@ -13,9 +13,7 @@ namespace FunG
 {
   namespace LinearAlgebra
   {
-    /**
-     * \cond DOCUMENT_IMPLEMENTATION_DETAILS
-     */
+    /// @cond
     namespace Detail
     {
       template <class Matrix, bool accessViaRows, bool accessVia_n_rows> struct Rows;
@@ -58,13 +56,9 @@ namespace FunG
         }
       };
     }
-    /**
-     * \endcond
-     */
+    /// @endcond
 
-    /**
-     * \brief Number of rows of a dynamic size matrix.
-     */
+    /// Number of rows of a dynamic size matrix.
     template < class Matrix ,
                std::enable_if_t<!Checks::isConstantSize<Matrix>()>* = nullptr >
     auto rows(const Matrix& A)
@@ -72,9 +66,7 @@ namespace FunG
       return Detail::Rows<Matrix,Checks::hasMemFn_rows<Matrix>(),Checks::hasMem_n_rows<Matrix>()>()(A);
     }
 
-    /**
-     * \brief Number of rows of a constant size matrix.
-     */
+    /// Number of rows of a constant size matrix.
     template < class Matrix ,
                std::enable_if_t<Checks::isConstantSize<Matrix>()>* = nullptr >
     constexpr auto rows()
@@ -82,9 +74,7 @@ namespace FunG
       return numberOfRows<Matrix>();
     }
 
-    /**
-     * \brief Number of columns of a dynamic size matrix.
-     */
+    /// Number of columns of a dynamic size matrix.
     template < class Matrix ,
                std::enable_if_t<!Checks::isConstantSize<Matrix>()>* = nullptr>
     auto cols(const Matrix& A)
@@ -92,9 +82,7 @@ namespace FunG
       return Detail::Cols<Matrix,Checks::hasMemFn_cols<Matrix>(),Checks::hasMem_n_cols<Matrix>()>()(A);
     }
 
-    /**
-     * \brief Number of columns of a constant size matrix.
-     */
+    /// Number of columns of a constant size matrix.
     template < class Matrix ,
                std::enable_if_t<Checks::isConstantSize<Matrix>()>* = nullptr >
     constexpr auto cols()

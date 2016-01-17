@@ -14,9 +14,7 @@ namespace FunG
 {
   namespace Checks
   {
-    /**
-     * \cond DOCUMENT_IMPLEMENTATIONS_DETAILS
-     */
+    /// @cond
     template <class F>
     using TryMemOp_callable                         =      decltype(std::declval<F>()());
 
@@ -259,14 +257,9 @@ namespace FunG
     template <class EigenArg>
     struct HasNestedType_PlainObject< EigenArg , void_t< TryNestedType_PlainObject<EigenArg> > >
         : std::true_type  {};
-    /**
-     * \endcond
-     */
+    /// @endcond
 
-    /** @addtogroup Checks
-     * @{
-     */
-
+    /** @addtogroup ConceptCheck @{ */
     template < class F >
     constexpr bool isFunction()
     {
