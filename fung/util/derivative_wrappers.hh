@@ -199,7 +199,7 @@ namespace FunG
   template <class F>
   struct D0
   {
-    static constexpr bool present = Checks::HasMemFn_d0<F>();
+    static constexpr bool present = Checks::isFunction<F>();
 
     D0() = delete;
 

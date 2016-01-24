@@ -6,6 +6,7 @@
 
 #include <type_traits>
 
+#include "fung/util/derivative_wrappers.hh"
 #include "fung/util/indexed_type.hh"
 #include "fung/util/static_checks.hh"
 #include "fung/util/type_traits.hh"
@@ -14,9 +15,7 @@
 
 namespace FunG
 {
-  /**
-   * \cond DOCUMENT_IMPLEMENTATION_DETAILS
-   */
+  /// @cond
   namespace Detail
   {
     template <class ReturnType>
@@ -39,7 +38,7 @@ namespace FunG
       template <class F, class Arg>
       __attribute__((always_inline)) ReturnType operator()(const F& f, const Arg& dx) const
       {
-        return f.template d1<id>(dx);
+        return D1_< F , IndexedType<Arg,id> >::apply(f,dx);
       }
     };
 
@@ -53,7 +52,7 @@ namespace FunG
       template <class F, class ArgX, class ArgY>
       __attribute__((always_inline)) ReturnType operator()(const F& f, const ArgX& dx, const ArgY& dy) const
       {
-        return f.template d2<idx,idy>(dx,dy);
+        return D2_< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> >::apply(f,dx,dy);
       }
     };
 
@@ -64,25 +63,27 @@ namespace FunG
     template <int idx, int idy, int idz, class ReturnType>
     struct FinalizeD3<idx,idy,idz,ReturnType,true>
     {
-      template <class F, class Arg>
-      __attribute__((always_inline)) ReturnType operator()(const F& f, const Arg& dx, const Arg& dy, const Arg& dz) const { return f.template d3<idx,idy,idz>(dx,dy,dz); }
+      template <class F, class ArgX, class ArgY, class ArgZ>
+      __attribute__((always_inline)) ReturnType operator()(const F& f, const ArgX& dx, const ArgY& dy, const ArgZ& dz) const
+      {
+        return D3_< F , IndexedType<ArgX,idx> , IndexedType<ArgY,idy> , IndexedType<ArgZ,idz> >::apply(f,dx,dy,dz);
+      }
     };
 
-    /**
-   * Finish function definition. The task of this class is to add undefined higher order derivatives if undefined.
-   */
+
+    /// Finish function definition. The task of this class is to add undefined higher order derivatives if undefined.
     template <class F, bool hasVariables>
     struct FinalizeImpl : F
     {
       using ReturnType = std::decay_t<decltype(std::declval<F>().d0())>;
 
       template <class... Args>
-      FinalizeImpl(const Args&... args) : F(args...)
+      FinalizeImpl(Args&&... args) : F(std::forward<Args>(args)...)
       {}
 
       decltype(auto) operator()() const
       {
-        return F::d0();
+        return F::operator()();
       }
 
       template < int id , class Arg >
@@ -172,12 +173,12 @@ namespace FunG
       using ReturnType = std::decay_t<decltype(std::declval<F>().d0())>;
 
       template <class... Args>
-      FinalizeImpl(const Args&... args) : F(args...)
+      FinalizeImpl(Args&&... args) : F(std::forward<Args>(args)...)
       {}
 
       decltype(auto) operator()() const
       {
-        return F::d0();
+        return F::operator()();
       }
 
       template < class Arg >
@@ -203,19 +204,18 @@ namespace FunG
       }
     };
   }
-  /**
-   * \endcond
-   */
+  /// @endcond
 
   /**
    * \brief Finish function definition.
    *
    * Adds the definition of possibly undefined vanishing higher order derivatives.
+   * If the template class Variable is not used, then no ids must be provided for the update-function and derivatives.
    */
   template <class F>
-  auto finalize(const F& f)
+  auto finalize(F&& f)
   {
-    return Detail::FinalizeImpl< F , Checks::hasVariable<F>() >(f);
+    return Detail::FinalizeImpl< std::decay_t<F> , Checks::hasVariable< std::decay_t<F> >() >( std::forward<F>(f) );
   }
 }
 
