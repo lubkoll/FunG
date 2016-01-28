@@ -12,6 +12,7 @@
 #include "fung/operations.hh"
 #include "fung/util/add_missing_operators.hh"
 #include "fung/util/static_checks.hh"
+#include "fung/util/type_traits.hh"
 #include "fung/variable.hh"
 
 namespace FunG
@@ -54,8 +55,8 @@ namespace FunG
     template <class F, class G,
               bool = Checks::isFunction<F>(),
               bool = Checks::isFunction<G>(),
-              bool = std::is_arithmetic<F>::value,
-              bool = std::is_arithmetic<G>::value>
+              bool = is_arithmetic<F>::value,
+              bool = is_arithmetic<G>::value>
     struct ProductGenerator;
 
     template <class F, class G>
@@ -112,8 +113,7 @@ namespace FunG
    * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
    */
   template <class F, class G,
-            class = std::enable_if_t< Checks::isFunction<F>() ||
-                                      Checks::isFunction<G>() > >
+            std::enable_if_t< Checks::isFunction<F>() || Checks::isFunction<G>() >* = nullptr >
   auto operator+ (const F& f, const G& g)
   {
     return GenerateDetail::SumGenerator<F,G>::apply(f,g);
@@ -126,7 +126,7 @@ namespace FunG
    * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
    */
   template <class F, class G,
-            class = std::enable_if_t< Checks::isFunction<F>() || Checks::isFunction<G>() > >
+            std::enable_if_t< Checks::isFunction<F>() || Checks::isFunction<G>() >* = nullptr >
   auto operator*(const F& f, const G& g)
   {
     return GenerateDetail::ProductGenerator<F,G>::apply(f,g);
@@ -140,7 +140,7 @@ namespace FunG
    * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
    */
   template <class F,
-            class = std::enable_if_t< Checks::isFunction<F>() > >
+            std::enable_if_t< Checks::isFunction<F>() >* = nullptr >
   auto operator^ (const F& f, int k)
   {
     assert(k==2);
@@ -160,8 +160,7 @@ namespace FunG
    */
 
   template <class F, class G,
-            class = std::enable_if_t<Checks::isFunction<F>() &&
-                                     Checks::isFunction<G>()> >
+            std::enable_if_t<Checks::isFunction<F>() && Checks::isFunction<G>()>* = nullptr >
   auto operator<< (const F& f, const G& g)
   {
     static_assert(!Checks::hasVariable<F>(),"Independent variables can not be on the left side of the chain operator.");

@@ -4,10 +4,10 @@
 #ifndef FUNG_UTIL_ZERO_HH
 #define FUNG_UTIL_ZERO_HH
 
-#include <type_traits>
 #include <utility>
 
 #include "static_checks.hh"
+#include "type_traits.hh"
 
 namespace FunG
 {
@@ -58,7 +58,7 @@ namespace FunG
    * @return constant size zero matrix
    */
   template <class Matrix,
-            class = std::enable_if_t<Checks::isConstantSize<Matrix>() || std::is_arithmetic<Matrix>::value> >
+            class = std::enable_if_t<Checks::isConstantSize<Matrix>() || is_arithmetic<Matrix>::value> >
   Matrix zero()
   {
     return Zero<Matrix>::generate();
@@ -69,7 +69,7 @@ namespace FunG
    * @return dynamic size zero matrix
    */
   template <class Matrix,
-            class = std::enable_if_t<!Checks::isConstantSize<Matrix>() && !std::is_arithmetic<Matrix>::value> >
+            class = std::enable_if_t<!Checks::isConstantSize<Matrix>() && !is_arithmetic<Matrix>::value> >
   constexpr Matrix zero(int rows, int cols)
   {
     Matrix m(rows,cols);

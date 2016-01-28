@@ -5,10 +5,20 @@
 #define FUNG_UTIL_TYPE_TRAITS_HH
 
 #include <type_traits>
-#include "static_checks.hh"
+
+#include "voider.hh"
 
 namespace FunG
 {
+  /// @cond
+  namespace Checks
+  {
+    // access underlying type of the expression templates of the Eigen library
+    template <class EigenArg>
+    using TryNestedType_PlainObject                  =     typename EigenArg::PlainObject;
+    /// @endcond
+  }
+
   /// Identity, i.e. Decay<F>::type == F
   template <class F, class = void>
   struct Decay
@@ -18,22 +28,19 @@ namespace FunG
 
   /// Underlying type for expression templates of the Eigen library.
   template <class F>
-  struct Decay<F,void_t<Checks::TryNestedType_PlainObject<F> > >
+  struct Decay< F , void_t< Checks::TryNestedType_PlainObject<F> > >
   {
     using type = typename F::PlainObject;
   };
 
   /// Specialize this template class to register arithmetic types that are not built-in.
   template <class F>
-  struct IsArithmetic : std::false_type
+  struct is_arithmetic : std::is_arithmetic<F>
   {};
 
   /// Access underlying type (if it is hidden by expression templates).
   template <class F>
   using decay_t = typename Decay< std::decay_t<F> >::type;
-
-  template <class F>
-  using is_arithmetic = std::integral_constant< bool , std::is_arithmetic<F>::value || IsArithmetic<F>::value >;
 }
 
 #endif // FUNG_UTIL_TYPE_TRAITS_HH

@@ -8,6 +8,7 @@
 #include <utility>
 
 #include "extract_rows_and_cols.hh"
+#include "type_traits.hh"
 #include "voider.hh"
 
 namespace FunG
@@ -81,10 +82,6 @@ namespace FunG
     using TryMemFn_SquareBracketAccessForVector      =     decltype( std::declval<Vector>()[0] );
     template <class Vector>
     using TryMemFn_RoundBracketAccessForVector       =     decltype( std::declval<Vector>()(0) );
-
-    // access underlying type of the expression templates of the Eigen library
-    template <class EigenArg>
-    using TryNestedType_PlainObject                  =     typename EigenArg::PlainObject;
 
 
     template < class F , class = void >
@@ -178,7 +175,7 @@ namespace FunG
 
 
     template < class Arg1 , class Arg2 ,
-               bool = !std::is_arithmetic<Arg1>::value && !std::is_arithmetic<Arg2>::value &&
+               bool = !is_arithmetic<Arg1>::value && !is_arithmetic<Arg2>::value &&
                       !HasMemOp_callable<Arg1>::value && !HasMemOp_callable<Arg2>::value ,
                class = void >
     struct HasFree_Multiplication : std::false_type {};
@@ -286,28 +283,28 @@ namespace FunG
     template < class Arg1 , class Arg2 >
     constexpr bool hasMemFn_InPlaceMultiplication()
     {
-      return HasMemFn_InPlaceMultiplication<Arg1,Arg2,!isFunction<Arg1>() && !isFunction<Arg2>() && !std::is_arithmetic<Arg1>() >::value;
+      return HasMemFn_InPlaceMultiplication<Arg1,Arg2,!isFunction<Arg1>() && !isFunction<Arg2>() && !is_arithmetic<Arg1>() >::value;
     }
 
     /// Check if objects of type Arg1 support multiplication with objects of type Arg2 via call to rightmultiplyany(Arg2).
     template < class Arg1 , class Arg2 >
     constexpr bool hasMemFn_rightmultiplyany()
     {
-      return HasMemFn_rightmultiplany<Arg1,Arg2,!isFunction<Arg1>() && !isFunction<Arg2>() && !std::is_arithmetic<Arg1>() && !std::is_arithmetic<Arg2>()>::value;
+      return HasMemFn_rightmultiplany<Arg1,Arg2,!isFunction<Arg1>() && !isFunction<Arg2>() && !is_arithmetic<Arg1>() && !is_arithmetic<Arg2>()>::value;
     }
 
     /// Check if objects of type Arg support summation.
     template < class Arg >
     constexpr bool hasFree_Summation()
     {
-      return HasFree_Summation<Arg,!isFunction<Arg>() && !std::is_arithmetic<Arg>()>::value;
+      return HasFree_Summation<Arg,!isFunction<Arg>() && !is_arithmetic<Arg>()>::value;
     }
 
     /// Check if objects of type Arg support in-place summation.
     template < class Arg >
     constexpr bool hasMemFn_InPlaceSummation()
     {
-      return HasMemFn_InPlaceSummation<Arg,!isFunction<Arg>() && !std::is_arithmetic<Arg>()>::value;
+      return HasMemFn_InPlaceSummation<Arg,!isFunction<Arg>() && !is_arithmetic<Arg>()>::value;
     }
 
     /**
