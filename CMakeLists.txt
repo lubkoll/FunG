@@ -10,16 +10,11 @@ set(CMAKE_MODULE_PATH
     ${CMAKE_CURRENT_SOURCE_DIR}/cmake
     )
 
-option(IGNORE_EIGEN OFF)
-
 include(ConfigSafeGuards)
 
-#set(CMAKE_CXX_COMPILER "/usr/bin/clang++-3.5")
-
 if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
+    set(CMAKE_BUILD_TYPE Debug)
     set(CMAKE_CXX_FLAGS         "-Wpedantic -Wall -Wno-unknown-pragmas -Wno-sign-compare -Woverloaded-virtual -Wwrite-strings -Wno-unused")
-    set(CMAKE_CXX_FLAGS_DEBUG   "-O0 -g")
-    set(CMAKE_CXX_FLAGS_RELEASE "-O0 -g")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage -std=c++1y")
 endif()
 
@@ -47,13 +42,11 @@ add_dependencies(gtest git_update)
 set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest-all.cc  PROPERTIES GENERATED 1)
 set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest_main.cc PROPERTIES GENERATED 1)
 
-if( !IGNORE_EIGEN )
-  find_package(Eigen3)
-  if(EIGEN3_FOUND)
-    include_directories(${EIGEN3_INCLUDE_DIR})
-    aux_source_directory(test/examples SRC_LIST)
-    aux_source_directory(test/linear_algebra SRC_LIST)
-  endif()
+find_package(Eigen3)
+if(EIGEN3_FOUND)
+  include_directories(${EIGEN3_INCLUDE_DIR})
+#  aux_source_directory(test/examples SRC_LIST)
+  aux_source_directory(test/linear_algebra SRC_LIST)
 endif()
 
 aux_source_directory(test/cmath SRC_LIST)
