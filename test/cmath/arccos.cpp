@@ -19,7 +19,7 @@ namespace
 
   auto generateTestACos()
   {
-    return FunG::ACos(x0());
+    return FunG::ACos( x0() );
   }
 }
 
@@ -42,8 +42,12 @@ TEST(ArccosTest,D1)
   double dx = 2.;
   EXPECT_DOUBLE_EQ( fun.d1()   , -1/sqrt(0.75)    );
   EXPECT_DOUBLE_EQ( fun.d1(dx) , -1/sqrt(0.75)*dx );
+}
 
-  dx = 1e-8;
+TEST(ArccosTest, D1DifferentialQuotient)
+{
+  auto fun = generateTestACos();
+  auto dx = 1e-8;
   auto f0 = fun();
   fun.update(x0() + dx);
   EXPECT_NEAR( fun.d1() , ( fun() - f0 )/dx , dx*condition() );

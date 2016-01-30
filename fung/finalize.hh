@@ -172,12 +172,19 @@ namespace FunG
     {
       using ReturnType = std::decay_t<decltype(std::declval<F>().d0())>;
 
-      template <class... Args>
+      template < class... Args >
       FinalizeImpl(Args&&... args) : F(std::forward<Args>(args)...)
       {}
 
       decltype(auto) operator()() const
       {
+        return F::operator()();
+      }
+
+      template < class Arg >
+      decltype(auto) operator()(Arg&& x) const
+      {
+        F::update(std::forward<Arg>(x));
         return F::operator()();
       }
 

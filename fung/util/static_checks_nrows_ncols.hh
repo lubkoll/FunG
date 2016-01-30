@@ -13,7 +13,7 @@ namespace FunG
   {
     /// @cond
     template < class Matrix >
-    using TryMemFn_nrows = decltype(std::declval<Matrix>().rows());
+    using TryMemFn_rows = decltype(std::declval<Matrix>().rows());
 
     template < class Matrix >
     using TryMemFn_cols = decltype(std::declval<Matrix>().cols());
@@ -30,7 +30,7 @@ namespace FunG
         : std::false_type {};
 
     template < class Matrix >
-    struct HasMemFn_nrows< Matrix , void_t< TryMemFn_nrows< Matrix > > >
+    struct HasMemFn_nrows< Matrix , void_t< TryMemFn_rows< Matrix > > >
         : std::true_type {};
 
 

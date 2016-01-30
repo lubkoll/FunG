@@ -4,7 +4,6 @@
 #ifndef FUNG_GENERATE_HH
 #define FUNG_GENERATE_HH
 
-#include <cassert>
 #include <iostream>
 #include <type_traits>
 
@@ -20,78 +19,79 @@ namespace FunG
   /// @cond
   namespace GenerateDetail
   {
-    template <class F, class G,
-              bool = Checks::isFunction<F>(),
-              bool = Checks::isFunction<G>()>
+    template < class F, class G,
+               bool = Checks::isFunction< std::decay_t<F> >(),
+               bool = Checks::isFunction< std::decay_t<G> >() >
     struct SumGenerator;
 
-    template <class F, class G>
-    struct SumGenerator<F,G,true,true>
+    template < class F, class G >
+    struct SumGenerator< F, G, true, true >
     {
-      static auto apply(const F& f, const G& g)
+      static auto apply( F&& f, G&& g )
       {
-        return MathematicalOperations::Sum<F,G>(f,g);
+        return MathematicalOperations::Sum< std::decay_t<F>, std::decay_t<G> >( std::forward<F>(f), std::forward<G>(g) );
       }
     };
 
-    template <class F, class G>
-    struct SumGenerator<F,G,true,false>
+    template < class F, class G >
+    struct SumGenerator< F, G, true, false >
     {
-      static auto apply(const F& f, const G& g)
+      static auto apply( F&& f, G&& g )
       {
-        return MathematicalOperations::Sum< F , Constant<G> >( f , constant(g) );
+        return MathematicalOperations::Sum< std::decay_t<F> , Constant< std::decay_t<G> > >( std::forward<F>(f) , constant( std::forward<G>(g) ) );
       }
     };
 
-    template <class F, class G>
-    struct SumGenerator<F,G,false,true>
+    template < class F, class G >
+    struct SumGenerator< F, G, false, true >
     {
-      static auto apply(const F& f, const G& g)
+      static auto apply( F&& f, G&& g )
       {
-        return MathematicalOperations::Sum< Constant<F> , G >( constant(f) , g );
+        return MathematicalOperations::Sum< Constant< std::decay_t<F> > , std::decay_t<G> >( constant( std::forward<F>(f) ) , std::forward<G>(g) );
       }
     };
 
-    template <class F, class G,
-              bool = Checks::isFunction<F>(),
-              bool = Checks::isFunction<G>(),
-              bool = is_arithmetic<F>::value,
-              bool = is_arithmetic<G>::value>
+    template < class F, class G,
+               bool = Checks::isFunction< std::decay_t<F> >(),
+               bool = Checks::isFunction< std::decay_t<G> >(),
+               bool = is_arithmetic< std::decay_t<F> >::value,
+               bool = is_arithmetic< std::decay_t<G> >::value >
     struct ProductGenerator;
 
-    template <class F, class G>
-    struct ProductGenerator<F,G,true,true,false,false>
+    template < class F, class G >
+    struct ProductGenerator< F, G, true, true, false, false >
     {
-      static auto apply(const F& f, const G& g)
+      static auto apply( F&& f, G&& g )
       {
-        return MathematicalOperations::Product<F,G>(f,g);
+        return MathematicalOperations::Product< std::decay_t<F>, std::decay_t<G> >( std::forward<F>(f), std::forward<G>(g) );
       }
     };
 
-    template <class F, class G>
-    struct ProductGenerator<F,G,false,true,true,false>
+    template < class F, class G >
+    struct ProductGenerator< F, G, false, true, true, false >
     {
-      static auto apply(F f, const G& g)
+      static auto apply( F f, G&& g )
       {
-        return MathematicalOperations::Scale<G>(f,g);
+        return MathematicalOperations::Scale< std::decay_t<G> >( f , std::forward<G>(g) );
       }
     };
 
-    template <class F, class G>
-    struct ProductGenerator<F,G,true,false,false,true>
+    template < class F, class G >
+    struct ProductGenerator< F, G, true, false, false, true >
     {
-      static auto apply(const F& f, G g)
+      static auto apply( F&& f, G g )
       {
-        return ProductGenerator<G,F,false,true,true,false>(g,f);
+        return ProductGenerator< G, F, false, true, true, false >( g , std::forward<F>(f) );
       }
     };
 
-    template <class F, class G>
-    struct ProductGenerator<F,G,false,true,false,false>
+    template < class F, class G >
+    struct ProductGenerator< F, G, false, true, false, false >
     {
-      static auto apply(const F& f, const G& g)
+      static auto apply( F&& f, G&& g)
       {
-        return MathematicalOperations::Product<Constant<F>,G>(Constant<F>(f),g);
+        using Const = Constant< std::decay_t<F> >;
+        return MathematicalOperations::Product< Const, std::decay_t<G> >( Const( std::forward<F>(f) ), std::forward<G>(g) );
       }
     };
 
@@ -100,7 +100,8 @@ namespace FunG
     {
       static auto apply(const F& f, const G& g)
       {
-        return MathematicalOperations::Product< F,Constant<G> >( f , Constant<G>(g) );
+        using Const = Constant< std::decay_t<G> >;
+        return MathematicalOperations::Product< std::decay_t<F>, Const >( std::forward<F>(f) , Const( std::forward<G>(g) ) );
       }
     };
   }
@@ -112,11 +113,12 @@ namespace FunG
    * This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions.
    * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
    */
-  template <class F, class G,
-            std::enable_if_t< Checks::isFunction<F>() || Checks::isFunction<G>() >* = nullptr >
-  auto operator+ (const F& f, const G& g)
+  template < class F, class G,
+             std::enable_if_t< Checks::isFunction< std::decay_t<F> >() ||
+                               Checks::isFunction< std::decay_t<G> >() >* = nullptr >
+  auto operator+ ( F&& f, G&& g )
   {
-    return GenerateDetail::SumGenerator<F,G>::apply(f,g);
+    return GenerateDetail::SumGenerator< F, G >::apply( std::forward<F>(f), std::forward<G>(g) );
   }
 
   /**
@@ -125,11 +127,12 @@ namespace FunG
    * This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions.
    * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
    */
-  template <class F, class G,
-            std::enable_if_t< Checks::isFunction<F>() || Checks::isFunction<G>() >* = nullptr >
-  auto operator*(const F& f, const G& g)
+  template < class F, class G,
+             std::enable_if_t< Checks::isFunction< std::decay_t<F> >() ||
+                               Checks::isFunction< std::decay_t<G> >() >* = nullptr >
+  auto operator*( F&& f, G&& g )
   {
-    return GenerateDetail::ProductGenerator<F,G>::apply(f,g);
+    return GenerateDetail::ProductGenerator< F, G >::apply( std::forward<F>(f), std::forward<G>(g) );
   }
 
 
@@ -139,17 +142,16 @@ namespace FunG
    * This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions.
    * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
    */
-  template <class F,
-            std::enable_if_t< Checks::isFunction<F>() >* = nullptr >
-  auto operator^ (const F& f, int k)
+  template < class F,
+             std::enable_if_t< Checks::isFunction< std::decay_t<F> >() >* = nullptr >
+  auto operator^( F&& f, int k )
   {
-    assert(k==2);
     if(k!=2)
     {
       std::cerr << "operator^ only defined for k=2. Terminating." << std::endl;
       exit(1);
     }
-    return MathematicalOperations::Squared<F>(f);
+    return MathematicalOperations::Squared< std::decay_t<F> >( std::forward<F>(f) );
   }
 
   /**
@@ -159,12 +161,13 @@ namespace FunG
    * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
    */
 
-  template <class F, class G,
-            std::enable_if_t<Checks::isFunction<F>() && Checks::isFunction<G>()>* = nullptr >
-  auto operator<< (const F& f, const G& g)
+  template < class F, class G,
+             std::enable_if_t< Checks::isFunction< std::decay_t<F> >() &&
+                               Checks::isFunction< std::decay_t<G> >() >* = nullptr >
+  auto operator<<( F&& f, G&& g )
   {
-    static_assert(!Checks::hasVariable<F>(),"Independent variables can not be on the left side of the chain operator.");
-    return MathematicalOperations::Chain<F,G>(f,g);
+    static_assert( !Checks::hasVariable< std::decay_t<F> >(), "Independent variables can not be on the left side of the chain operator." );
+    return MathematicalOperations::Chain< std::decay_t<F>, std::decay_t<G> >( std::forward<F>(f), std::forward<G>(g) );
   }
 
   /**
@@ -173,12 +176,12 @@ namespace FunG
    * This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions.
    * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
    */
-  template <class F, class T,
-            std::enable_if_t<Checks::isFunction<F>() && !Checks::isFunction<T>()>* = nullptr>
-//            std::enable_if_t<std::is_convertible<T,decltype(std::declval<F>()())>::value && Checks::isFunction<F>()>* = nullptr >
-  auto operator-(const F& f, const T& t)
+  template < class F, class T,
+             std::enable_if_t< Checks::isFunction< std::decay_t<F> >() &&
+                               !Checks::isFunction< std::decay_t<T> >()>* = nullptr >
+  auto operator-( F&& f, T&& t )
   {
-    return f + ( -1 * t );
+    return std::forward<F>(f) + ( -1 * std::forward<T>(t) );
   }
 
   /**
@@ -187,11 +190,12 @@ namespace FunG
    * This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions.
    * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
    */
-  template <class F, class T,
-            std::enable_if_t<std::is_convertible<T,decltype(std::declval<F>()())>::value && Checks::isFunction<F>()>* = nullptr >
-  auto operator-(const T& t, const F& f)
+  template < class F, class T,
+             std::enable_if_t< Checks::isFunction< std::decay_t<F> >() &&
+                               !Checks::isFunction< std::decay_t<T> >()>* = nullptr >
+  auto operator-( T&& t, F&& f )
   {
-    return t + ( -1 * f );
+    return std::forward<T>(t) + ( -1 * std::forward<F>(f) );
   }
 }
 

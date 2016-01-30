@@ -2,19 +2,32 @@
 #define FUNG_ENABLE_EXCEPTIONS
 #include "fung/cmath/log.hh"
 
-auto generateTestLN()
+namespace
 {
-  return FunG::LN(1.);
-}
+  auto x0()
+  {
+    return 1.0;
+  }
 
-auto generateTestLog2()
-{
-  return FunG::Log2(1.);
-}
+  auto condition()
+  {
+    return 1e1;
+  }
 
-auto generateTestLog10()
-{
-  return FunG::Log10(1.);
+  auto generateTestLN()
+  {
+    return FunG::LN( x0() );
+  }
+
+  auto generateTestLog2()
+  {
+    return FunG::Log2( x0() );
+  }
+
+  auto generateTestLog10()
+  {
+    return FunG::Log10( x0() );
+  }
 }
 
 
@@ -27,7 +40,7 @@ TEST(LNTest,Update)
 TEST(LNTest,D0)
 {
   auto fun = generateTestLN();
-  EXPECT_DOUBLE_EQ( fun.d0() ,  log(1.) );
+  EXPECT_DOUBLE_EQ( fun.d0() ,  log( x0() ) );
 }
 
 TEST(LNTest,D1)
@@ -36,6 +49,15 @@ TEST(LNTest,D1)
   const double dx = 2.;
   EXPECT_DOUBLE_EQ( fun.d1()   , 1. );
   EXPECT_DOUBLE_EQ( fun.d1(dx) , dx );
+}
+
+TEST(LNTest, D1DifferentialQuotient)
+{
+  auto fun = generateTestLN();
+  auto dx = 1e-8;
+  auto f0 = fun();
+  fun.update(x0() + dx);
+  EXPECT_NEAR( fun.d1() , ( fun() - f0 )/dx , dx*condition() );
 }
 
 TEST(LNTest,D2)
@@ -65,7 +87,7 @@ TEST(Log2Test,Update)
 TEST(Log2Test,D0)
 {
   auto fun = generateTestLog2();
-  EXPECT_DOUBLE_EQ( fun.d0() ,  log2(1.) );
+  EXPECT_DOUBLE_EQ( fun.d0() ,  log2( x0() ) );
 }
 
 TEST(Log2Test,D1)
@@ -75,6 +97,15 @@ TEST(Log2Test,D1)
   const double ln2 = log(2);
   EXPECT_DOUBLE_EQ( fun.d1()   , 1/ln2  );
   EXPECT_DOUBLE_EQ( fun.d1(dx) , dx/ln2 );
+}
+
+TEST(Log2Test, D1DifferentialQuotient)
+{
+  auto fun = generateTestLog2();
+  auto dx = 1e-8;
+  auto f0 = fun();
+  fun.update(x0() + dx);
+  EXPECT_NEAR( fun.d1() , ( fun() - f0 )/dx , dx*condition() );
 }
 
 TEST(Log2Test,D2)
@@ -106,7 +137,7 @@ TEST(Log10Test,Update)
 TEST(Log10Test,D0)
 {
   auto fun = generateTestLog10();
-  EXPECT_DOUBLE_EQ( fun.d0() ,  log10(1.) );
+  EXPECT_DOUBLE_EQ( fun.d0() ,  log10( x0() ) );
 }
 
 TEST(Log10Test,D1)
@@ -116,6 +147,15 @@ TEST(Log10Test,D1)
   const double ln10 = log(10);
   EXPECT_DOUBLE_EQ( fun.d1()   , 1/ln10  );
   EXPECT_DOUBLE_EQ( fun.d1(dx) , dx/ln10 );
+}
+
+TEST(Log10Test, D1DifferentialQuotient)
+{
+  auto fun = generateTestLog10();
+  auto dx = 1e-8;
+  auto f0 = fun();
+  fun.update(x0() + dx);
+  EXPECT_NEAR( fun.d1() , ( fun() - f0 )/dx , dx*condition() );
 }
 
 TEST(Log10Test,D2)

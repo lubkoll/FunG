@@ -19,7 +19,7 @@ namespace
 
   auto generateTestASin()
   {
-    return FunG::ASin(x0());
+    return FunG::ASin( x0() );
   }
 }
 
@@ -43,7 +43,12 @@ TEST(ArcsineTest,D1)
   EXPECT_DOUBLE_EQ( fun.d1()   , 1/sqrt(0.75)    );
   EXPECT_DOUBLE_EQ( fun.d1(dx) , 1/sqrt(0.75)*dx );
 
-  dx = 1e-8;
+}
+
+TEST(ArcsineTest, D1DifferentialQuotient)
+{
+  auto fun = generateTestASin();
+  auto dx = 1e-8;
   auto f0 = fun();
   fun.update(x0() + dx);
   EXPECT_NEAR( fun.d1() , ( fun() - f0 )/dx , dx*condition() );

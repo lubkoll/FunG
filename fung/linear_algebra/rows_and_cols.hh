@@ -14,48 +14,46 @@ namespace FunG
   namespace LinearAlgebra
   {
     /// @cond
-    namespace Detail
+    template <class Matrix, class = void> struct DynamicNumberOfRows;
+
+    template < class Matrix >
+    struct DynamicNumberOfRows< Matrix , void_t< Checks::TryMemFn_rows<Matrix> > >
     {
-      template <class Matrix, bool accessViaRows, bool accessVia_n_rows> struct Rows;
-
-      template < class Matrix , bool accessVia_n_rows >
-      struct Rows<Matrix,true,accessVia_n_rows>
+      static auto apply(const Matrix& A)
       {
-        auto operator()(const Matrix& A) const
-        {
-          return A.rows();
-        }
-      };
+        return A.rows();
+      }
+    };
 
-      template < class Matrix  >
-      struct Rows<Matrix,false,true>
+    template < class Matrix  >
+    struct DynamicNumberOfRows< Matrix , void_t< Checks::TryMem_n_rows<Matrix> > >
+    {
+      static const auto& apply(const Matrix& A) noexcept
       {
-        const auto& operator()(const Matrix& A) const noexcept
-        {
-          return A.n_rows;
-        }
-      };
+        return A.n_rows;
+      }
+    };
 
-      template <class Matrix, bool accessViaCols, bool accessVia_n_cols> struct Cols;
 
-      template < class Matrix , bool accessVia_n_cols >
-      struct Cols<Matrix,true,accessVia_n_cols>
+    template <class Matrix, class = void> struct DynamicNumberOfColumns;
+
+    template < class Matrix >
+    struct DynamicNumberOfColumns< Matrix , void_t< Checks::TryMemFn_cols<Matrix> > >
+    {
+      static auto apply(const Matrix& A)
       {
-        auto operator()(const Matrix& A) const
-        {
-          return A.cols();
-        }
-      };
+        return A.cols();
+      }
+    };
 
-      template < class Matrix >
-      struct Cols<Matrix,false,true>
+    template < class Matrix  >
+    struct DynamicNumberOfColumns< Matrix , void_t< Checks::TryMem_n_cols<Matrix> > >
+    {
+      static const auto& apply(const Matrix& A) noexcept
       {
-        const auto& operator()(const Matrix& A) const noexcept
-        {
-          return A.n_cols;
-        }
-      };
-    }
+        return A.n_cols;
+      }
+    };
     /// @endcond
 
 
@@ -64,7 +62,7 @@ namespace FunG
                std::enable_if_t<!Checks::isConstantSize<Matrix>()>* = nullptr >
     auto rows(const Matrix& A)
     {
-      return Detail::Rows<Matrix,Checks::hasMemFn_rows<Matrix>(),Checks::hasMem_n_rows<Matrix>()>()(A);
+      return DynamicNumberOfRows< Matrix >::apply( A );
     }
 
     /// Number of rows of a constant size matrix.
@@ -72,7 +70,7 @@ namespace FunG
                std::enable_if_t<Checks::isConstantSize<Matrix>()>* = nullptr >
     constexpr auto rows()
     {
-      return NumberOfRows<Matrix>::value;
+      return NumberOfRows< Matrix >::value;
     }
 
     /// Number of columns of a dynamic size matrix.
@@ -80,7 +78,8 @@ namespace FunG
                std::enable_if_t<!Checks::isConstantSize<Matrix>()>* = nullptr>
     auto cols(const Matrix& A)
     {
-      return Detail::Cols<Matrix,Checks::hasMemFn_cols<Matrix>(),Checks::hasMem_n_cols<Matrix>()>()(A);
+      return DynamicNumberOfColumns< Matrix >::apply( A );
+//      return Detail::Cols<Matrix,Checks::hasMemFn_cols<Matrix>(),Checks::hasMem_n_cols<Matrix>()>()(A);
     }
 
     /// Number of columns of a constant size matrix.
@@ -88,7 +87,7 @@ namespace FunG
                std::enable_if_t<Checks::isConstantSize<Matrix>()>* = nullptr >
     constexpr auto cols()
     {
-      return NumberOfColumns<Matrix>::value;
+      return NumberOfColumns< Matrix >::value;
     }
   }
 }
