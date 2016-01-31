@@ -21,7 +21,7 @@ script:
   - cmake ..
   - make
   - lcov --capture --initial --no-external --directory . --base-directory ../fung--output-file initial.info --rc lcov_branch_coverage=1
-  - Test/unit_tests
+  - ./unit_tests
   - lcov --capture --no-external --directory . --base-directory ../fung --output-file final.info --rc lcov_branch_coverage=1
   - lcov --add-tracefile initial.info --add-tracefile final.info --output-file coverage.info --rc lcov_branch_coverage=1
   - cd ..
