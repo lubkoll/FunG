@@ -27,7 +27,7 @@ namespace FunG
 
     /// Specialization for matrices.
     template < template <class,unsigned,unsigned> class Matrix, class T, unsigned n, unsigned m, class MatrixConceptCheck>
-    struct NumberOfRows< Matrix<T,n,m> , MatrixConceptCheck > : std::integral_constant<unsigned,n> {};    
+    struct NumberOfRows< Matrix<T,n,m> , MatrixConceptCheck > : std::integral_constant<unsigned,n> {};
 
     /// Specialization for matrices.
     template < template <int,int> class Matrix, int n, int m, class MatrixConceptCheck>
@@ -39,20 +39,20 @@ namespace FunG
 
 
     /// Specialization for vectors.
-    template < template <class,int> class Vector, class T, int n, class MatrixConceptCheck>
-    struct NumberOfRows< Vector<T,n> , MatrixConceptCheck > : std::integral_constant<int,n> {};
+    template < template <class,int> class Vector, class T, int n, class VectorConceptCheck>
+    struct NumberOfRows< Vector<T,n> , VectorConceptCheck > : std::integral_constant<int,n> {};
 
     /// Specialization for vectors.
-    template < template <class,unsigned> class Vector, class T, unsigned n, class MatrixConceptCheck>
-    struct NumberOfRows< Vector<T,n> , MatrixConceptCheck > : std::integral_constant<unsigned,n> {};
+    template < template <class,unsigned> class Vector, class T, unsigned n, class VectorConceptCheck>
+    struct NumberOfRows< Vector<T,n> , VectorConceptCheck > : std::integral_constant<unsigned,n> {};
 
     /// Specialization for vectors.
-    template < template <int> class Vector, int n, class MatrixConceptCheck>
-    struct NumberOfRows< Vector<n> , MatrixConceptCheck > : std::integral_constant<int,n> {};
+    template < template <int> class Vector, int n, class VectorConceptCheck>
+    struct NumberOfRows< Vector<n> , VectorConceptCheck > : std::integral_constant<int,n> {};
 
     /// Specialization for vectors.
-    template < template <unsigned> class Vector, unsigned n, class MatrixConceptCheck>
-    struct NumberOfRows< Vector<n> , MatrixConceptCheck > : std::integral_constant<unsigned,n> {};
+    template < template <unsigned> class Vector, unsigned n, class VectorConceptCheck>
+    struct NumberOfRows< Vector<n> , VectorConceptCheck > : std::integral_constant<unsigned,n> {};
 
 
     /// Specialization for matrices.
@@ -66,7 +66,6 @@ namespace FunG
     /// Specialization for matrices.
     template < template <class,unsigned,unsigned> class Matrix, class T, unsigned n, unsigned m, class MatrixConceptCheck>
     struct NumberOfColumns< Matrix<T,n,m> , MatrixConceptCheck > : std::integral_constant<unsigned,m> {};
-
 
     /// Specialization for matrices.
     template < template <int,int> class Matrix, int n, int m, class MatrixConceptCheck>

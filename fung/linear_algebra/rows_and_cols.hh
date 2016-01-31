@@ -79,7 +79,6 @@ namespace FunG
     auto cols(const Matrix& A)
     {
       return DynamicNumberOfColumns< Matrix >::apply( A );
-//      return Detail::Cols<Matrix,Checks::hasMemFn_cols<Matrix>(),Checks::hasMem_n_cols<Matrix>()>()(A);
     }
 
     /// Number of columns of a constant size matrix.
