@@ -314,3 +314,12 @@ ol li{
     left: 50%;
     transform: translateX(-50%);
 }
+
+.badges {
+    position:relative;
+    text-align:center;
+}
+
+.badge {
+    padding-left: 10px;
+}
