@@ -3,12 +3,12 @@ different types but are associated to the same variable.</p>
 
 <pre class="code-style boxshadow">#include "fung.hh"
 
-template &lt;class Vec,class Mat&gt;
-auto heatModel(double c, double d, const Vec&amp; u0, const Mat&amp; du0)
+template &lt; class Vec,class Mat &gt;
+auto heatModel( double c, double d, const Vec&amp; u0, const Mat&amp; du0 )
 {
-  using namespace Fung;
-  auto u = variable&lt;0&gt;(u0);
-  auto du = variable&lt;0&gt;(du0);
+  using namespace FunG;
+  auto u = variable&lt;0&gt;( u0 );
+  auto du = variable&lt;0&gt;( du0 );
   auto f = ( c + d*(u^2) ) * du;
   return finalize( f );
 }
@@ -18,9 +18,9 @@ auto heatModel(double c, double d, const Vec&amp; u0, const Mat&amp; du0)
 
 <pre class="code-style boxshadow">auto f = heatModel(1,1,u,du);
 
-f.template update&lt;0&gt;(std::make_tuple(u,du));
+f.template update&lt;0&gt;( std::make_tuple(u,du) );
 
 double value       = f();
-double df_dx       = f.template d1&lt;0&gt;(std::make_tuple(v,dv));
+double df_dx       = f.template d1&lt;0&gt;( std::make_tuple(v,dv) );
 ...
 </pre> 

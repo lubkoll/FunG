@@ -2,21 +2,22 @@
 
 <pre class="code-style boxshadow">#include "fung.hh"
 
-template &lt;class Variable&gt;
-auto generateFunction(const Variable&amp; x)
+template &lt; class Variable &gt;
+auto generateFunction( const Variable&amp; x )
 {
-  return pow&lt;3&gt;(sqrt(x)) + sin(sqrt(x)); 
+  using namespace FunG;
+  return pow&lt;3&gt;( sqrt(x) ) + sin( sqrt(x) ); 
 }
 </pre>
 
 <p>Usage is as follows:</p>
 
-<pre class="code-style boxshadow">auto f = generateFunction(variable&lt;0&gt;(1.));
+<pre class="code-style boxshadow">auto f = generateFunction( FunG::variable&lt;0&gt;( 1. ) );
 
-f.template update&lt;0&gt;(1.) //  change function argument
+f.template update&lt;0&gt;( 1. ) //  change function argument
 
 auto value = f();
-auto firstDerivative  = f.template d1&lt;0&gt;(1);
-auto secondDerivative = f.template d2&lt;0,0&gt;(1,1);
-auto thirdDerivative  = f.template d3&lt;0,0,0&gt;(1,1,1);
+auto firstDerivative  = f.template d1&lt;0&gt;( 1 );
+auto secondDerivative = f.template d2&lt;0,0&gt;( 1, 1 );
+auto thirdDerivative  = f.template d3&lt;0,0,0&gt;( 1, 1, 1 );
 </pre>

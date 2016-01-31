@@ -2,9 +2,9 @@
 
 <pre class="code-style boxshadow">#include "fung.hh"
 
-template &lt;class Matrix&gt;
-auto generateAdiposeTissue(double cCells, double k1, double k2,
-             double kappa, const Matrix&amp; M, const Matrix&amp; F, int n = dim<Mat>())
+template &lt; class Matrix &gt;
+auto generateAdiposeTissue( double cCells, double k1, double k2,
+             double kappa, const Matrix&amp; M, const Matrix&amp; F, int n = dim<Mat>() )
 {
   using namespace FunG;
   using namespace FunG::LinearAlgebra;
@@ -18,14 +18,14 @@ auto generateAdiposeTissue(double cCells, double k1, double k2,
 
 <p>For constant size matrices usage is as follows (assuming that the material parameters, the structural tensor M, the deformation gradient F and perturbations dF0, dF1, dF2 of the latter are given):</p>
 
-<pre class="code-style boxshadow">auto f = generateAdiposeTissue(cCells,k1,k2,kappa,M,F);
+<pre class="code-style boxshadow">auto f = generateAdiposeTissue( cCells, k1, k2, kappa, M, F );
 
 f.update(F) //  change function argument
 
 double value = f();
-double firstDerivative  = f.d1(dF0);
-double secondDerivative = f.d2(dF0,dF1);
-double thirdDerivative  = f.d3(dF0,dF1,dF2);
+double firstDerivative  = f.d1( dF0 );
+double secondDerivative = f.d2( dF0, dF1 );
+double thirdDerivative  = f.d3( dF0, dF1, dF2 );
 </pre>
 
 <p>Observe that the derivatives are DIRECTIONAL derivatives. This approach admits to work with any (reasonable) input types.
