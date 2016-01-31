@@ -45,7 +45,7 @@ set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest_
 find_package(Eigen3)
 if(EIGEN3_FOUND)
   include_directories(${EIGEN3_INCLUDE_DIR})
-#  aux_source_directory(test/examples SRC_LIST)
+  aux_source_directory(test/examples SRC_LIST)
   aux_source_directory(test/linear_algebra SRC_LIST)
 endif()
 
