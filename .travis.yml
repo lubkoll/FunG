@@ -25,7 +25,7 @@ after_success:
   - cd build
   - ctest
   - lcov --capture --no-external --directory . --base-directory ../fung --output-file coverage.info
-  - sed -i 's@/home/travis/build/lubkoll/FunG/@/@g' coverage.info
+  - sed -i 's@/home/travis/build/lubkoll/@/@g' coverage.info
   - coveralls-lcov --repo-token fPyYknPYYq6DiXlBDUOXzHGq8RUI6o8QO coverage.info
 
 
