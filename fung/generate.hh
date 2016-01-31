@@ -98,7 +98,7 @@ namespace FunG
     template <class F, class G>
     struct ProductGenerator<F,G,true,false,false,false>
     {
-      static auto apply(const F& f, const G& g)
+      static auto apply( F&& f, G&& g)
       {
         using Const = Constant< std::decay_t<G> >;
         return MathematicalOperations::Product< std::decay_t<F>, Const >( std::forward<F>(f) , Const( std::forward<G>(g) ) );

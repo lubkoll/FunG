@@ -1,3 +1,6 @@
+// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
+// Released under the terms of the GNU General Public License version 3 or later.
+
 #define FUNG_ENABLE_EXCEPTIONS
 #include <gtest/gtest.h>
 #include "fung/cmath/pow.hh"

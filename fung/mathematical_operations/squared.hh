@@ -16,14 +16,10 @@
 
 namespace FunG
 {
-  /**
-   * \cond DOCUMENT_FORWARD_DECLARATIONS
-   */
+  /// @cond
   template <class> struct Chainer;
   namespace Concepts { template <class> struct FunctionConceptCheck; }
-  /**
-   * \endcond
-   */
+  /// @endcond
 
   namespace MathematicalOperations
   {
@@ -49,8 +45,6 @@ namespace FunG
       ComputeProduct< D1<F,IndexedArgZ> , D2<F,IndexedArgX,IndexedArgY> > ,
       ComputeProduct< D1<F,IndexedArgY> , D2<F,IndexedArgX,IndexedArgZ> > ,
       ComputeProduct< D2<F,IndexedArgY,IndexedArgZ> , D1<F,IndexedArgX> > >;
-
-      using ReturnType = std::decay_t<decltype( std::declval<F>()() )>;
 
     public:
       /**
@@ -89,7 +83,7 @@ namespace FunG
        * \param dx direction for which the derivative is computed
        */
       template < int id , class Arg , class IndexedArg = IndexedType<Arg,id> , class = std::enable_if_t< ComputeProduct< D0<F> , D1<F,IndexedArg> >::present > >
-      ReturnType d1(Arg const& dx) const
+      auto d1(Arg const& dx) const
       {
         return 2 * f() * D1_<F,IndexedArg>::apply(f,dx);
       }
@@ -103,7 +97,7 @@ namespace FunG
                  class IndexedArgX = IndexedType<ArgX,idx> ,
                  class IndexedArgY = IndexedType<ArgY,idy> ,
                  class = std::enable_if_t< D2Sum<IndexedArgX,IndexedArgY>::present > >
-      ReturnType d2(ArgX const& dx, ArgY const& dy) const
+      auto d2(ArgX const& dx, ArgY const& dy) const
       {
         return 2 * sum( product( D0<F>(f) , D2<F,IndexedArgX,IndexedArgY>(f,dx,dy) ),
                         product( D1<F,IndexedArgY>(f,dy) , D1<F,IndexedArgX>(f,dx) ) )();
@@ -120,7 +114,7 @@ namespace FunG
                  class IndexedArgY = IndexedType<ArgY,idy> ,
                  class IndexedArgZ = IndexedType<ArgZ,idz> ,
                  class = std::enable_if_t< D3Sum<IndexedArgX,IndexedArgY,IndexedArgZ>::present > >
-      ReturnType d3(ArgX const& dx, ArgY const& dy, ArgZ const& dz) const
+      auto d3(ArgX const& dx, ArgY const& dy, ArgZ const& dz) const
       {
         return 2 * sum( product( D0<F>(f) , D3<F,IndexedArgX,IndexedArgY,IndexedArgZ>(f,dx,dy,dz) ),
                         product( D1<F,IndexedArgZ>(f,dz) , D2<F,IndexedArgX,IndexedArgY>(f,dx,dy) ),
