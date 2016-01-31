@@ -18,29 +18,17 @@ namespace FunG
     struct At
     {
       template <class Index, class = std::enable_if_t< std::is_integral<Index>::value > >
-      static decltype(auto) apply(Matrix& A, Index i, Index j)
-      {
-        return A(i,j);
-      }
-
-      template <class Index, class = std::enable_if_t< std::is_integral<Index>::value > >
-      static decltype(auto) apply(const Matrix& A, Index i, Index j)
+      static decltype(auto) apply(Matrix&& A, Index i, Index j)
       {
         return A(i,j);
       }
     };
 
     template <class Matrix>
-    struct At< Matrix , void_t< Checks::TryMemFn_SquareBracketAccessForMatrix<Matrix> > >
+    struct At< Matrix , void_t< Checks::TryMemFn_SquareBracketAccessForMatrix< std::decay_t<Matrix> > > >
     {
       template <class Index, class = std::enable_if_t< std::is_integral<Index>::value > >
-      static decltype(auto) apply(Matrix& A, Index i, Index j)
-      {
-        return A[i][j];
-      }
-
-      template <class Index, class = std::enable_if_t< std::is_integral<Index>::value > >
-      static decltype(auto) apply(const Matrix& A, Index i, Index j)
+      static decltype(auto) apply(Matrix&& A, Index i, Index j)
       {
         return A[i][j];
       }
@@ -50,29 +38,17 @@ namespace FunG
     struct At_v
     {
       template <class Index, class = std::enable_if_t< std::is_integral<Index>::value > >
-      static decltype(auto) apply(Vector& v, Index i)
-      {
-        return v(i);
-      }
-
-      template <class Index, class = std::enable_if_t< std::is_integral<Index>::value > >
-      static decltype(auto) apply(const Vector& v, Index i)
+      static decltype(auto) apply(Vector&& v, Index i)
       {
         return v(i);
       }
     };
 
     template <class Vector>
-    struct At_v< Vector , void_t< Checks::TryMemFn_SquareBracketAccessForVector<Vector> > >
+    struct At_v< Vector , void_t< Checks::TryMemFn_SquareBracketAccessForVector< std::decay_t<Vector> > > >
     {
       template <class Index, class = std::enable_if_t< std::is_integral<Index>::value > >
-      static decltype(auto) apply(Vector& v, Index i)
-      {
-        return v[i];
-      }
-
-      template <class Index, class = std::enable_if_t< std::is_integral<Index>::value > >
-      static decltype(auto) apply(const Vector& v, Index i)
+      static decltype(auto) apply(Vector&& v, Index i)
       {
         return v[i];
       }
@@ -89,14 +65,14 @@ namespace FunG
             class = std::enable_if_t< std::is_integral<Index>::value > >
   __attribute__((always_inline)) decltype(auto) at(Matrix&& A, Index i, Index j)
   {
-    return AtDetail::At< std::decay_t<Matrix> >::apply(std::forward<Matrix>(A),i,j);
+    return AtDetail::At<Matrix>::apply( std::forward<Matrix>(A), i, j );
   }
 
   template <class Vector, class Index,
             class = std::enable_if_t< std::is_integral<Index>::value > >
-  __attribute__((always_inline)) decltype(auto) at(Vector& v, Index i)
+  __attribute__((always_inline)) decltype(auto) at(Vector&& v, Index i)
   {
-    return AtDetail::At_v< std::decay_t<Vector> >::apply(std::forward<Vector>(v),i);
+    return AtDetail::At_v<Vector>::apply(std::forward<Vector>(v),i);
   }
   /// @endcond
 }

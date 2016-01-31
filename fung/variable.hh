@@ -93,9 +93,7 @@ namespace FunG
       template <class T, class Arg>
       static void apply(T& t, const Arg& x)
       {
-//        static_assert(std::is_same<T,Arg>::value,"Updating variable with incompatible argument. Please check your input for the update-function.");
         Assign<T,Arg>::apply(t,x);
-        //        t = x;
       }
     };
 
