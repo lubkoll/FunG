@@ -107,7 +107,8 @@ namespace FunG
     };
 
     /**
-     * \brief Generate \f$A^T\f$.
+     * \brief Generate \f$A^T\in\mathbb{R}^{n,n}\f$.
+     * \param A square matrix
      * \return Transpose<Matrix>(A)
      */
     template <class Matrix,
@@ -120,6 +121,7 @@ namespace FunG
 
     /**
      * \brief Generate \f$f^T\f$, where \f$f:\cdot\mapsto\mathbb{R}^{n,n} \f$.
+     * \param f function object mapping into a space of square matrices
      * \return Transpose< decay_t<decltype(f())> >(f())( f )
      */
     template <class F,

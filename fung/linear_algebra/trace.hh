@@ -149,7 +149,8 @@ namespace FunG
     using Trace = std::conditional_t< Checks::isConstantSize<Matrix>() , ConstantSizeTrace<Matrix> , DynamicSizeTrace<Matrix> >;
 
     /**
-     * \brief Generate \f$\mathrm{tr}(A)\f$.
+     * \brief Generate \f$\mathrm{tr}(A)\in\mathbb{R}^{n,n}\f$.
+     * \param A matrix
      * \return Trace<Matrix>(A)
      */
     template <class Matrix,
@@ -162,6 +163,7 @@ namespace FunG
 
     /**
      * \brief Generate \f$\mathrm{tr}\circ f\f$, where \f$f:\cdot\mapsto\mathbb{R}^{n,n} \f$.
+     * \param f function object mapping into a space of square matrices
      * \return Trace< std::decay_t<decltype(f())> >(f())( f )
      */
     template <class F,

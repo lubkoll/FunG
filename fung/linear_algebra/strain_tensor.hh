@@ -78,6 +78,11 @@ namespace FunG
     };
 
 
+    /**
+     * \brief Generate the left Cauchy-Green strain tensor \f$A^T*A\f$.
+     * \param A matrix
+     * \return LeftCauchyGreenStrainTensor<Matrix>(A)
+     */
     template <class Matrix,
               std::enable_if_t<!Checks::isFunction<Matrix>()>* = nullptr>
     auto strainTensor(const Matrix& A)
@@ -86,6 +91,11 @@ namespace FunG
     }
 
 
+    /**
+     * \brief Generate the left Cauchy-Green strain tensor \f$f^Tf\f$, where \f$f:\cdot\mapsto\mathbb{R}^{n,n} \f$.
+     * \param f function object mapping into a space of square matrices
+     * \return LeftCauchyGreenStrainTensor< std::decay_t<decltype(f())> >(f())( f )
+     */
     template <class F,
               std::enable_if_t<Checks::isFunction<F>()>* = nullptr>
     auto strainTensor(const F& f)
