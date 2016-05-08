@@ -75,7 +75,7 @@ namespace FunG
     template <class F, bool hasVariables>
     struct FinalizeImpl : F
     {
-      using ReturnType = std::decay_t<decltype(std::declval<F>().d0())>;
+      using ReturnType = std::decay_t<decltype(std::declval<F>()())>;
 
       template <class... Args>
       FinalizeImpl(Args&&... args) : F(std::forward<Args>(args)...)
@@ -170,7 +170,7 @@ namespace FunG
     template <class F>
     struct FinalizeImpl<F,false> : F
     {
-      using ReturnType = std::decay_t<decltype(std::declval<F>().d0())>;
+      using ReturnType = std::decay_t<decltype(std::declval<F>()())>;
 
       template < class... Args >
       FinalizeImpl(Args&&... args) : F(std::forward<Args>(args)...)

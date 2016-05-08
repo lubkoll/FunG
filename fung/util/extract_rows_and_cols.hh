@@ -74,6 +74,44 @@ namespace FunG
     /// Specialization for matrices.
     template < template <unsigned,unsigned> class Matrix, unsigned n, unsigned m, class MatrixConceptCheck>
     struct NumberOfColumns< Matrix<n,m> , MatrixConceptCheck > : std::integral_constant<unsigned,m> {};
+
+    template < class > struct GetTransposed;
+
+    template < template <int,int> class Matrix, int n, int m>
+    struct GetTransposed< Matrix<n,m> >
+    {
+      using type = Matrix<m,n>;
+    };
+
+    template < template <unsigned,unsigned> class Matrix, unsigned n, unsigned m>
+    struct GetTransposed< Matrix<n,m> >
+    {
+      using type = Matrix<m,n>;
+    };
+
+    template < template <class,int,int> class Matrix, class Scalar, int n, int m>
+    struct GetTransposed< Matrix<Scalar,n,m> >
+    {
+      using type = Matrix<Scalar,m,n>;
+    };
+
+    /// For Eigen.
+    template < template <class,int,int,int,int,int> class Matrix,
+               class Scalar, int n, int m, int option, int maxRows, int maxCols>
+    struct GetTransposed< Matrix<Scalar,n,m,option,maxRows,maxCols> >
+    {
+      using type = Matrix<Scalar,m,n,option,maxCols,maxRows>;
+    };
+
+    /// For DUNE.
+    template < template <class,unsigned,unsigned> class Matrix, class Scalar, unsigned n, unsigned m>
+    struct GetTransposed< Matrix<Scalar,n,m> >
+    {
+      using type = Matrix<Scalar,m,n>;
+    };
+
+    template <class Matrix>
+    using Transposed_t = typename GetTransposed< Matrix >::type;
     /// @endcond
   }
 }

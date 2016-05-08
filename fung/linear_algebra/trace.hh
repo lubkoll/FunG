@@ -162,13 +162,13 @@ namespace FunG
 
     /**
      * \brief Generate \f$\mathrm{tr}\circ f\f$, where \f$f:\cdot\mapsto\mathbb{R}^{n,n} \f$.
-     * \return Trace< std::decay_t<decltype(f.d0())> >(f.d0())( f )
+     * \return Trace< std::decay_t<decltype(f())> >(f())( f )
      */
     template <class F,
               std::enable_if_t<Checks::isFunction<F>() >* = nullptr>
     auto trace(const F& f)
     {
-      return Trace< decay_t<decltype(f.d0())> >( f.d0() )( f );
+      return Trace< decay_t<decltype(f())> >( f() )( f );
     }
     /** @} */
   }

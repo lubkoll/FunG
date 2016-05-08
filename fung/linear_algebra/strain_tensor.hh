@@ -41,13 +41,13 @@ namespace FunG
       {
         if( !initialized )
         {
-          new(&FT) Matrix{transpose(F)};
+          new(&FT) Matrix{Detail::transpose(F)};
           new(&FTF) Matrix{FT*F};
           initialized = true;
         }
         else
         {
-          FT = transpose(F);
+          FT = Detail::transpose(F);
           FTF = FT * F;
         }
       }
@@ -68,7 +68,7 @@ namespace FunG
       /// Second directional derivative \f$ dF_2^T dF_1 + dF_1^T dF_2 \f$.
       Matrix d2(Matrix const& dF1, Matrix const& dF2) const
       {
-        Matrix dF2TdF1 = transpose(dF2) * dF1;
+        Matrix dF2TdF1 = Detail::transpose(dF2) * dF1;
         return addTransposed(dF2TdF1);
       }
 
@@ -77,10 +77,20 @@ namespace FunG
       bool initialized = false;
     };
 
-    template <class Matrix>
-    auto strainTensor(const Matrix& F)
+
+    template <class Matrix,
+              std::enable_if_t<!Checks::isFunction<Matrix>()>* = nullptr>
+    auto strainTensor(const Matrix& A)
     {
-      return LeftCauchyGreenStrainTensor<Matrix>{F};
+      return LeftCauchyGreenStrainTensor<Matrix>{A};
+    }
+
+
+    template <class F,
+              std::enable_if_t<Checks::isFunction<F>()>* = nullptr>
+    auto strainTensor(const F& f)
+    {
+      return LeftCauchyGreenStrainTensor< decay_t<decltype(f())> >{ f() }( f );
     }
 
 //    /**
@@ -105,7 +115,7 @@ namespace FunG
 //      /// Reset point of evaluation.
 //      void update(Matrix const& F)
 //      {
-//        d0Result = F + transpose(F);
+//        d0Result = F + Detail::transpose(F);
 //        d0Result *= 0.5;
 //      }
 
@@ -119,7 +129,7 @@ namespace FunG
 //      template <int>
 //      Matrix d1(const Matrix& dF) const
 //      {
-//        return 0.5*(dF + transpose(dF));
+//        return 0.5*(dF + Detail::transpose(dF));
 //      }
 
 //    private:

@@ -66,12 +66,7 @@ namespace FunG
 
         void update(Matrix const& A_)
         {
-          if( !initialized )
-          {
-            new(&A) Matrix(A_);
-            initialized = true;
-          }
-          else A = A_;
+          A = A_;
           value = at(A,0,0) * at(A,1,1) - at(A,0,1) * at(A,1,0);
         }
 
@@ -93,7 +88,6 @@ namespace FunG
       private:
         Matrix A;
         std::decay_t< decltype(at(std::declval<Matrix>(),0,0)) > value = 0.;
-        bool initialized = false;
       };
 
       template <class Matrix>
@@ -107,12 +101,7 @@ namespace FunG
 
         void update(Matrix const& A_)
         {
-          if( !initialized )
-          {
-            new(&A) Matrix(A_);
-            initialized = true;
-          }
-          else A = A_;
+          A = A_;
           value = composeResult(A,A,A);
         }
 
@@ -136,7 +125,6 @@ namespace FunG
       private:
         Matrix A;
         std::decay_t< decltype(at(std::declval<Matrix>(),0,0)) > value = 0.;
-        bool initialized = false;
       };
     }
 
