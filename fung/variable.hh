@@ -12,7 +12,7 @@ namespace FunG
 {
   /// @cond
   template <class,int> struct Variable;
-  namespace Concepts { template <class> class FunctionConceptCheck; }
+  namespace Concepts { template <class> struct FunctionConceptCheck; }
 
   template <class T, class Other>
   struct ContainsType : std::false_type {};
