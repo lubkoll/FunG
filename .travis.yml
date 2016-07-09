@@ -16,7 +16,7 @@ before_install:
   # install lcov to coveralls conversion + upload tool
   - gem install coveralls-lcov
   - git clone https://github.com/google/googletest.git
-  - cd googletest && mkdir build && cd build && cmake .. && make
+  - cd googletest && mkdir build && cd build && cmake .. && make && cd ../..
   - export GTEST_ROOT=~/googletest/build
 script:
   - mkdir build
