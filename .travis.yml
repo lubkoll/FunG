@@ -15,12 +15,14 @@ before_install:
   - sudo make -C lcov-1.11/ install
   # install lcov to coveralls conversion + upload tool
   - gem install coveralls-lcov
-  - git clone https://github.com/google/googletest.git
-  - cd googletest && mkdir build && cd build && cmake .. && make && cd ../..
-  - export CPLUS_INCLUDE_PATH=$TRAVIS_BUILD_DIR/googletest/googletest/include:$CPLUS_INCLUDE_PATH
-  - export LIBRARY_PATH=$TRAVIS_BUILD_DIR/googletest/build/googlemock/gtest:$LIBRARY_PATH
-  - export LD_LIBRARY_PATH=$TRAVIS_BUILD_DIR/googletest/build/googlemock/gtest:$LD_LIBRARY_PATH
-script:
+  - sudo apt-get install libgtest-dev
+  - cd /usr/src/gtest
+  - sudo cmake CMakeLists.txt
+  - sudo make 
+  # copy or symlink libgtest.a and libgtest_main.a to your /usr/lib folder
+  - sudo cp *.a /usr/lib
+  - cd ~
+  script:
   - mkdir build
   - cd build
   - cmake ..
