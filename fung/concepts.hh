@@ -114,8 +114,7 @@ namespace FunG
      *
      * The requirements of MatrixConcept must be satisfied and the number of rows and columns must be equal.
      */
-    struct SquareMatrixConcept
-        : ArithmeticConcept
+    struct SquareMatrixConcept : ArithmeticConcept
     {};
 
 

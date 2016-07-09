@@ -219,15 +219,15 @@ namespace FunG
 
   /// Evaluates f.d1(dx) if present.
   template < class F, class IndexedArg >
-  using D1 = Detail::D1Impl<F,IndexedArg,Checks::HasMemFn_d1<F,IndexedArg>::value,Checks::HasMemFn_d1_with_index<F,IndexedArg>::value>;
+  using D1 = Detail::D1Impl<F,IndexedArg,Checks::Has::MemFn::d1<F,IndexedArg>::value,Checks::Has::MemFn::d1_with_index<F,IndexedArg>::value>;
 
   /// Evaluates f.d2(dx,dy) if present.
   template < class F , class IndexedArgX , class IndexedArgY >
-  using D2 = Detail::D2Impl<F,IndexedArgX,IndexedArgY,Checks::HasMemFn_d2<F,IndexedArgX,IndexedArgY>::value,Checks::HasMemFn_d2_with_index<F,IndexedArgX,IndexedArgY>::value>;
+  using D2 = Detail::D2Impl<F,IndexedArgX,IndexedArgY,Checks::Has::MemFn::d2<F,IndexedArgX,IndexedArgY>::value,Checks::Has::MemFn::d2_with_index<F,IndexedArgX,IndexedArgY>::value>;
 
   /// Evaluates f.d3(dx,dy,dz) if present.
   template < class F , class IndexedArgX , class IndexedArgY , class IndexedArgZ >
-  using D3 = Detail::D3Impl<F,IndexedArgX,IndexedArgY,IndexedArgZ,Checks::HasMemFn_d3<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value,Checks::HasMemFn_d3_with_index<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value>;
+  using D3 = Detail::D3Impl<F,IndexedArgX,IndexedArgY,IndexedArgZ,Checks::Has::MemFn::d3<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value,Checks::Has::MemFn::d3_with_index<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value>;
 
   template <class F, class = void>
   struct D0_
@@ -237,7 +237,7 @@ namespace FunG
   };
 
   template <class F>
-  struct D0_<F,std::enable_if_t<Checks::HasMemFn_d0<F>::value> >
+  struct D0_<F,std::enable_if_t<Checks::Has::MemFn::d0<F>::value> >
   {
     static constexpr bool present = true;
     static decltype(auto) apply(const F& f)
@@ -248,8 +248,8 @@ namespace FunG
 
 
   template <class F, class IndexedArg,
-            bool hasMemberFunction = Checks::HasMemFn_d1<F,IndexedArg>::value,
-            bool withIndex = Checks::HasMemFn_d1_with_index<F,IndexedArg>::value>
+            bool hasMemberFunction = Checks::Has::MemFn::d1<F,IndexedArg>::value,
+            bool withIndex = Checks::Has::MemFn::d1_with_index<F,IndexedArg>::value>
   struct D1_
   {
     static constexpr bool present = false;
@@ -281,8 +281,8 @@ namespace FunG
 
 
   template <class F, class IndexedArgX, class IndexedArgY,
-            bool hasMemberFunction = Checks::HasMemFn_d2<F,IndexedArgX,IndexedArgY>::value,
-            bool withIndex = Checks::HasMemFn_d2_with_index<F,IndexedArgX,IndexedArgY>::value>
+            bool hasMemberFunction = Checks::Has::MemFn::d2<F,IndexedArgX,IndexedArgY>::value,
+            bool withIndex = Checks::Has::MemFn::d2_with_index<F,IndexedArgX,IndexedArgY>::value>
   struct D2_
   {
     static constexpr bool present = false;
@@ -314,8 +314,8 @@ namespace FunG
 
 
   template <class F, class IndexedArgX, class IndexedArgY, class IndexedArgZ,
-            bool hasMemberFunction = Checks::HasMemFn_d3<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value,
-            bool withIndex = Checks::HasMemFn_d3_with_index<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value>
+            bool hasMemberFunction = Checks::Has::MemFn::d3<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value,
+            bool withIndex = Checks::Has::MemFn::d3_with_index<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value>
   struct D3_
   {
     static constexpr bool present = false;

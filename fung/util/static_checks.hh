@@ -13,328 +13,390 @@
 
 namespace FunG
 {
-  namespace Checks
-  {
-    /** @addtogroup ConceptGroup
+    namespace Checks
+    {
+        /** @addtogroup ConceptGroup
      *  @{ */
+        
+        /// @cond
+
+        template < class F >
+        constexpr bool isFunction();
+
+
+        namespace Try
+        {
+            namespace MemOp
+            {
+                template <class F>
+                using callable                         =      decltype(std::declval<F>()());
+
+
+                template < class Arg >
+                using InPlaceSummation                  =     decltype( std::declval<Arg>() += std::declval<Arg>() );
+
+                template < class Arg1, class Arg2 >
+                using InPlaceMultiplication             =     decltype( std::declval<Arg1>() *= std::declval<Arg2>() );
 
-    /// @cond
-    template <class F>
-    using TryMemOp_callable                         =      decltype(std::declval<F>()());
-
-    template <class F>
-    using TryMemFn_d0                               =      decltype(std::declval<F>().d0());
-
-    template < class F , class IndexedArg ,
-               class Arg = typename IndexedArg::type ,
-               int id = IndexedArg::index >
-    using TryMemFn_d1                               =      decltype(std::declval<F>().template d1<id>(std::declval<Arg>()));
-
-    template < class F , class IndexedArg ,
-               class Arg = typename IndexedArg::type >
-    using TryMemFn_d1_without_index                 =      decltype(std::declval<F>().d1(std::declval<Arg>()));
-
-    template < class F , class IndexedArgX , class IndexedArgY ,
-               class ArgX = typename IndexedArgX::type ,
-               class ArgY = typename IndexedArgY::type ,
-               int idx = IndexedArgX::index ,
-               int idy = IndexedArgY::index >
-    using TryMemFn_d2                               =      decltype(std::declval<F>().template d2<idx,idy>(std::declval<ArgX>(),std::declval<ArgY>()));
-
-    template < class F , class IndexedArgX , class IndexedArgY ,
-               class ArgX = typename IndexedArgX::type ,
-               class ArgY = typename IndexedArgY::type >
-    using TryMemFn_d2_without_index                 =      decltype(std::declval<F>().d2(std::declval<ArgX>(),std::declval<ArgY>()));
-
-    template < class F , class IndexedArgX , class IndexedArgY , class IndexedArgZ ,
-               class ArgX = typename IndexedArgX::type ,
-               class ArgY = typename IndexedArgY::type ,
-               class ArgZ = typename IndexedArgZ::type ,
-               int idx = IndexedArgX::index ,
-               int idy = IndexedArgY::index ,
-               int idz = IndexedArgZ::index >
-    using TryMemFn_d3                                =     decltype(std::declval<F>().template d3<idx,idy,idz>(std::declval<ArgX>(),std::declval<ArgY>(),std::declval<ArgZ>()));
-
-    template < class F , class IndexedArgX , class IndexedArgY , class IndexedArgZ ,
-               class ArgX = typename IndexedArgX::type ,
-               class ArgY = typename IndexedArgY::type ,
-               class ArgZ = typename IndexedArgZ::type >
-    using TryMemFn_d3_without_index                  =     decltype( std::declval<F>().d3(std::declval<ArgX>(),std::declval<ArgY>(),std::declval<ArgZ>()) );
-
-
-    template < class Arg1 , class Arg2 >
-    using TryFree_Multiplication                     =     decltype( std::declval<Arg1>() * std::declval<Arg2>() );
-    template < class Arg1 , class Arg2 >
-    using TryMemFn_InPlaceMultiplication             =     decltype( std::declval<Arg1>() *= std::declval<Arg2>() );
-    template < class Arg1 , class Arg2 >
-    using TryMemFn_rightmultiplyany                  =     decltype( std::declval<Arg1>().rightmultiplyany(std::declval<Arg2>()) );
-
-    template < class Arg >
-    using TryFree_Summation                          =     decltype( std::declval<Arg>() + std::declval<Arg>() );
-    template < class Arg >
-    using TryMemFn_InPlaceSummation                  =     decltype( std::declval<Arg>() += std::declval<Arg>() );
-
-    template <class Matrix>
-    using TryMemFn_SquareBracketAccessForMatrix      =     decltype( std::declval<Matrix>()[0][0] );
-    template <class Matrix>
-    using TryMemFn_RoundBracketAccessForMatrix       =     decltype( std::declval<Matrix>()(0,0) );
-    template <class Vector>
-    using TryMemFn_SquareBracketAccessForVector      =     decltype( std::declval<Vector>()[0] );
-    template <class Vector>
-    using TryMemFn_RoundBracketAccessForVector       =     decltype( std::declval<Vector>()(0) );
-
-
-    template < class F , class = void >
-    struct HasMemOp_callable
-        : std::false_type {};
+
+                template <class Matrix>
+                using SquareBracketAccessForMatrix      =     decltype( std::declval<Matrix>()[0][0] );
 
-    template <class F>
-    struct HasMemOp_callable< F , void_t< TryMemOp_callable<F> > >
-        : std::true_type
-    {};
+                template <class Matrix>
+                using RoundBracketAccessForMatrix       =     decltype( std::declval<Matrix>()(0,0) );
 
-    template < class F , class = void >
-    struct HasMemFn_d0
-        : std::false_type {};
+                template <class Vector>
+                using SquareBracketAccessForVector      =     decltype( std::declval<Vector>()[0] );
 
-    template <class F>
-    struct HasMemFn_d0< F , void_t< TryMemFn_d0<F> > >
-        : std::true_type
-    {};
+                template <class Vector>
+                using RoundBracketAccessForVector       =     decltype( std::declval<Vector>()(0) );
+            } // MemOp
 
-    template < class F , class IndexedArg , class = void>
-    struct HasMemFn_d1
-        : std::false_type {};
+            namespace MemFn
+            {
+                template <class F>
+                using d0                               =      decltype(std::declval<F>().d0());
 
-    template < class F , class IndexedArg >
-    struct HasMemFn_d1< F , IndexedArg , void_t< TryMemFn_d1<F,IndexedArg> > >
-        : std::true_type
-    {};
+                template < class F, class IndexedArg ,
+                           class Arg = typename IndexedArg::type ,
+                           int id = IndexedArg::index >
+                using d1                               =      decltype(std::declval<F>().template d1<id>(std::declval<Arg>()));
 
-    template < class F , class IndexedArg >
-    struct HasMemFn_d1< F , IndexedArg , void_t< TryMemFn_d1_without_index<F,IndexedArg> > >
-        : std::true_type
-    {};
+                template < class F, class IndexedArg ,
+                           class Arg = typename IndexedArg::type >
+                using d1_without_index                 =      decltype(std::declval<F>().d1(std::declval<Arg>()));
 
+                template < class F, class IndexedArgX, class IndexedArgY ,
+                           class ArgX = typename IndexedArgX::type ,
+                           class ArgY = typename IndexedArgY::type ,
+                           int idx = IndexedArgX::index ,
+                           int idy = IndexedArgY::index >
+                using d2                               =      decltype(std::declval<F>().template d2<idx,idy>(std::declval<ArgX>(),std::declval<ArgY>()));
 
-    template < class F , class IndexedArgX , class IndexedArgY , class = void >
-    struct HasMemFn_d2
-        : std::false_type {};
+                template < class F, class IndexedArgX, class IndexedArgY ,
+                           class ArgX = typename IndexedArgX::type ,
+                           class ArgY = typename IndexedArgY::type >
+                using d2_without_index                 =      decltype(std::declval<F>().d2(std::declval<ArgX>(),std::declval<ArgY>()));
 
-    template < class F , class IndexedArgX , class IndexedArgY >
-    struct HasMemFn_d2< F , IndexedArgX , IndexedArgY , void_t< TryMemFn_d2<F,IndexedArgX,IndexedArgY> > >
-        : std::true_type
-    {};
+                template < class F, class IndexedArgX, class IndexedArgY, class IndexedArgZ ,
+                           class ArgX = typename IndexedArgX::type ,
+                           class ArgY = typename IndexedArgY::type ,
+                           class ArgZ = typename IndexedArgZ::type ,
+                           int idx = IndexedArgX::index ,
+                           int idy = IndexedArgY::index ,
+                           int idz = IndexedArgZ::index >
+                using d3                                =     decltype(std::declval<F>().template d3<idx,idy,idz>(std::declval<ArgX>(),std::declval<ArgY>(),std::declval<ArgZ>()));
 
-    template < class F , class IndexedArgX , class IndexedArgY >
-    struct HasMemFn_d2< F , IndexedArgX , IndexedArgY , void_t< TryMemFn_d2_without_index<F,IndexedArgX,IndexedArgY> > >
-        : std::true_type
-    {};
+                template < class F, class IndexedArgX, class IndexedArgY, class IndexedArgZ ,
+                           class ArgX = typename IndexedArgX::type ,
+                           class ArgY = typename IndexedArgY::type ,
+                           class ArgZ = typename IndexedArgZ::type >
+                using d3_without_index                  =     decltype( std::declval<F>().d3(std::declval<ArgX>(),std::declval<ArgY>(),std::declval<ArgZ>()) );
 
 
-    template < class F , class IndexedArgX , class IndexedArgY , class IndexedArgZ , class = void>
-    struct HasMemFn_d3
-        : std::false_type {};
+                template < class Arg1, class Arg2 >
+                using rightmultiplyany                  =     decltype( std::declval<Arg1>().rightmultiplyany(std::declval<Arg2>()) );
 
-    template <class F, class IndexedArgX, class IndexedArgY, class IndexedArgZ>
-    struct HasMemFn_d3< F , IndexedArgX , IndexedArgY , IndexedArgZ , void_t< TryMemFn_d3<F,IndexedArgX,IndexedArgY,IndexedArgZ> > >
-        : std::true_type
-    {};
+            } // MemFn
 
-    template <class F, class IndexedArgX, class IndexedArgY, class IndexedArgZ>
-    struct HasMemFn_d3< F , IndexedArgX , IndexedArgY , IndexedArgZ , void_t< TryMemFn_d3_without_index<F,IndexedArgX,IndexedArgY,IndexedArgZ> > >
-        : std::true_type
-    {};
+            namespace Free
+            {
+                template < class Arg1, class Arg2 >
+                using Multiplication                    =     decltype( std::declval<Arg1>() * std::declval<Arg2>() );
 
+                template < class Arg >
+                using Summation                         =     decltype( std::declval<Arg>() + std::declval<Arg>() );
+            } // Free
+        } // Try
+        /// @endcond
+        
+
+        namespace Has
+        {
+            namespace MemOp
+            {
+                /// @cond
+                template < class F, class = void >
+                struct callable
+                        : std::false_type {};
 
-    template < class F , class IndexedArg , class = void >
-    struct HasMemFn_d1_with_index
-        : std::false_type {};
+                template <class F>
+                struct callable< F, void_t< Try::MemOp::callable<F> > >
+                        : std::true_type
+                {};
 
-    template < class F , class IndexedArg >
-    struct HasMemFn_d1_with_index< F , IndexedArg , void_t< TryMemFn_d1<F,IndexedArg> > >
-        : std::true_type {};
 
+                template < class Matrix, class = void >
+                struct SquareBracketAccessForMatrix
+                        : std::false_type {};
 
-    template < class F , class IndexedArgX , class IndexedArgY , class = void >
-    struct HasMemFn_d2_with_index
-        : std::false_type {};
+                template <class Matrix>
+                struct SquareBracketAccessForMatrix< Matrix, void_t<Try::MemOp::SquareBracketAccessForMatrix<Matrix> > >
+                        : std::true_type  {};
 
-    template < class F , class IndexedArgX , class IndexedArgY >
-    struct HasMemFn_d2_with_index< F , IndexedArgX , IndexedArgY , void_t< TryMemFn_d2<F,IndexedArgX,IndexedArgY> > >
-        : std::true_type {};
 
+                template < class Matrix, class = void >
+                struct RoundBracketAccessForMatrix
+                        : std::false_type {};
 
-    template < class F , class IndexedArgX , class IndexedArgY , class IndexedArgZ , class = void >
-    struct HasMemFn_d3_with_index : std::false_type {};
+                template <class Matrix>
+                struct RoundBracketAccessForMatrix< Matrix, void_t<Try::MemOp::RoundBracketAccessForMatrix<Matrix> > >
+                        : std::true_type  {};
 
-    template < class F , class IndexedArgX , class IndexedArgY , class IndexedArgZ >
-    struct HasMemFn_d3_with_index< F , IndexedArgX , IndexedArgY , IndexedArgZ ,
-        void_t< TryMemFn_d3<F,IndexedArgX,IndexedArgY,IndexedArgZ> > >
-        : std::true_type {};
 
+                template < class Vector, class = void >
+                struct SquareBracketAccessForVector
+                        : std::false_type {};
 
-    template < class Arg1 , class Arg2 ,
-               bool = !is_arithmetic<Arg1>::value && !is_arithmetic<Arg2>::value &&
-                      !HasMemOp_callable<Arg1>::value && !HasMemOp_callable<Arg2>::value ,
-               class = void >
-    struct HasFree_Multiplication : std::false_type {};
+                template <class Vector>
+                struct SquareBracketAccessForVector< Vector, void_t<Try::MemOp::SquareBracketAccessForVector<Vector> > >
+                        : std::true_type  {};
 
-    template < class Arg1 , class Arg2 >
-    struct HasFree_Multiplication< Arg1 , Arg2 , false , void > : std::true_type {};
 
-    template < class Arg1 , class Arg2 >
-    struct HasFree_Multiplication< Arg1 , Arg2 , true , void_t< TryFree_Multiplication<Arg1,Arg2> > > : std::true_type {};
+                template < class Vector, class = void >
+                struct RoundBracketAccessForVector
+                        : std::false_type {};
 
+                template <class Vector>
+                struct RoundBracketAccessForVector< Vector, void_t<Try::MemOp::RoundBracketAccessForVector<Vector> > >
+                        : std::true_type  {};
 
-    template < class Arg1 , class Arg2 , bool , class = void >
-    struct HasMemFn_InPlaceMultiplication
-        : std::false_type {};
-
-    template < class Arg1 , class Arg2 >
-    struct HasMemFn_InPlaceMultiplication< Arg1 , Arg2 , true , void_t< TryMemFn_InPlaceMultiplication<Arg1,Arg2> > >
-        : std::true_type {};
-
-
-    template < class Arg1 , class Arg2 , bool , class = void >
-    struct HasMemFn_rightmultiplany
-        : std::false_type {};
-
-    template < class Arg1 , class Arg2 >
-    struct HasMemFn_rightmultiplany< Arg1 , Arg2 , true , void_t< TryMemFn_rightmultiplyany<Arg1,Arg2> > >
-        : std::true_type {};
-
-
-    template < class Arg ,  bool , class = void >
-    struct HasFree_Summation
-        : std::false_type {};
-
-    template < class Arg >
-    struct HasFree_Summation< Arg , true , void_t< TryFree_Summation<Arg> > >
-        : std::true_type {};
-
-    template < class Arg ,  bool , class = void >
-    struct HasMemFn_InPlaceSummation
-        : std::false_type {};
-
-    template < class Arg >
-    struct HasMemFn_InPlaceSummation< Arg , true , void_t< TryMemFn_InPlaceSummation<Arg> > >
-        : std::true_type {};
-
-
-    template < class Matrix, class = void >
-    struct HasMemFn_SquareBracketAccessForMatrix
-        : std::false_type {};
-    template <class Matrix>
-    struct HasMemFn_SquareBracketAccessForMatrix< Matrix , void_t<TryMemFn_SquareBracketAccessForMatrix<Matrix> > >
-        : std::true_type  {};
-
-    template < class Matrix, class = void >
-    struct HasMemFn_RoundBracketAccessForMatrix
-        : std::false_type {};
-    template <class Matrix>
-    struct HasMemFn_RoundBracketAccessForMatrix< Matrix , void_t<TryMemFn_RoundBracketAccessForMatrix<Matrix> > >
-        : std::true_type  {};
-
-    template < class Vector, class = void >
-    struct HasMemFn_SquareBracketAccessForVector
-        : std::false_type {};
-    template <class Vector>
-    struct HasMemFn_SquareBracketAccessForVector< Vector , void_t<TryMemFn_SquareBracketAccessForVector<Vector> > >
-        : std::true_type  {};
-
-    template < class Vector, class = void >
-    struct HasMemFn_RoundBracketAccessForVector
-        : std::false_type {};
-    template <class Vector>
-    struct HasMemFn_RoundBracketAccessForVector< Vector , void_t<TryMemFn_RoundBracketAccessForVector<Vector> > >
-        : std::true_type  {};
-
-
-    template <class EigenArg, class = void>
-    struct HasNestedType_PlainObject
-        : std::false_type {};
-    template <class EigenArg>
-    struct HasNestedType_PlainObject< EigenArg , void_t< TryNestedType_PlainObject<EigenArg> > >
-        : std::true_type  {};
-    /// @endcond
-
-
-    template < class F >
-    constexpr bool isFunction()
-    {
-      return HasMemOp_callable<F>::value;
-    }
-
-    template < class F >
-    constexpr bool hasConsistentFirstDerivative()
-    {
-      return HasMemOp_callable<F>::value;
-    }
-
-    /// Check if objects of typed Arg1 and Arg2 support multiplication (free operator*).
-    template < class Arg1 , class Arg2 >
-    constexpr bool hasFree_Multiplication()
-    {
-      return HasFree_Multiplication<Arg1,Arg2>::value;
-    }
-
-    /// Check if objects of type Arg1 support in-place multiplication with objects of type Arg2.
-    template < class Arg1 , class Arg2 >
-    constexpr bool hasMemFn_InPlaceMultiplication()
-    {
-      return HasMemFn_InPlaceMultiplication<Arg1,Arg2,!isFunction<Arg1>() && !isFunction<Arg2>() && !is_arithmetic<Arg1>() >::value;
-    }
-
-    /// Check if objects of type Arg1 support multiplication with objects of type Arg2 via call to rightmultiplyany(Arg2).
-    template < class Arg1 , class Arg2 >
-    constexpr bool hasMemFn_rightmultiplyany()
-    {
-      return HasMemFn_rightmultiplany<Arg1,Arg2,!isFunction<Arg1>() && !isFunction<Arg2>() && !is_arithmetic<Arg1>() && !is_arithmetic<Arg2>()>::value;
-    }
-
-    /// Check if objects of type Arg support summation.
-    template < class Arg >
-    constexpr bool hasFree_Summation()
-    {
-      return HasFree_Summation<Arg,!isFunction<Arg>() && !is_arithmetic<Arg>()>::value;
-    }
-
-    /// Check if objects of type Arg support in-place summation.
-    template < class Arg >
-    constexpr bool hasMemFn_InPlaceSummation()
-    {
-      return HasMemFn_InPlaceSummation<Arg,!isFunction<Arg>() && !is_arithmetic<Arg>()>::value;
-    }
-
-    /**
+
+                template < class Arg,  bool, class = void >
+                struct InPlaceSummation
+                        : std::false_type {};
+
+                template < class Arg >
+                struct InPlaceSummation< Arg, true, void_t< Try::MemOp::InPlaceSummation<Arg> > >
+                        : std::true_type {};
+
+
+                template < class Arg1, class Arg2, bool, class = void >
+                struct InPlaceMultiplication
+                        : std::false_type {};
+
+                template < class Arg1, class Arg2 >
+                struct InPlaceMultiplication< Arg1, Arg2, true, void_t< Try::MemOp::InPlaceMultiplication<Arg1,Arg2> > >
+                        : std::true_type {};
+                /// @endcond
+
+                template <class F>
+                constexpr bool is_callable()
+                {
+                    return callable<F>::value;
+                }
+
+                /// Check if objects of type Arg1 support in-place multiplication with objects of type Arg2.
+                template < class Arg1, class Arg2 >
+                constexpr bool inPlaceMultiplication()
+                {
+                    return InPlaceMultiplication<Arg1,Arg2,!isFunction<Arg1>() && !isFunction<Arg2>() && !is_arithmetic<Arg1>() >::value;
+                }
+
+                /// Check if objects of type Arg support in-place summation.
+                template < class Arg >
+                constexpr bool inPlaceSummation()
+                {
+                    return InPlaceSummation<Arg,!isFunction<Arg>() && !is_arithmetic<Arg>()>::value;
+                }
+            }
+
+            namespace MemFn
+            {
+                /// @cond
+                template < class F, class = void >
+                struct d0
+                        : std::false_type {};
+
+                template <class F>
+                struct d0< F, void_t< Try::MemFn::d0<F> > >
+                        : std::true_type
+                {};
+
+                template < class F, class IndexedArg, class = void>
+                struct d1
+                        : std::false_type {};
+
+                template < class F, class IndexedArg >
+                struct d1< F, IndexedArg, void_t< Try::MemFn::d1<F,IndexedArg> > >
+                        : std::true_type
+                {};
+
+                template < class F, class IndexedArg >
+                struct d1< F, IndexedArg, void_t< Try::MemFn::d1_without_index<F,IndexedArg> > >
+                        : std::true_type
+                {};
+
+
+                template < class F, class IndexedArgX, class IndexedArgY, class = void >
+                struct d2
+                        : std::false_type {};
+
+                template < class F, class IndexedArgX, class IndexedArgY >
+                struct d2< F, IndexedArgX, IndexedArgY, void_t< Try::MemFn::d2<F,IndexedArgX,IndexedArgY> > >
+                        : std::true_type
+                {};
+
+                template < class F, class IndexedArgX, class IndexedArgY >
+                struct d2< F, IndexedArgX, IndexedArgY, void_t< Try::MemFn::d2_without_index<F,IndexedArgX,IndexedArgY> > >
+                        : std::true_type
+                {};
+
+
+                template < class F, class IndexedArgX, class IndexedArgY, class IndexedArgZ, class = void>
+                struct d3
+                        : std::false_type {};
+
+                template <class F, class IndexedArgX, class IndexedArgY, class IndexedArgZ>
+                struct d3< F, IndexedArgX, IndexedArgY, IndexedArgZ, void_t< Try::MemFn::d3<F,IndexedArgX,IndexedArgY,IndexedArgZ> > >
+                        : std::true_type
+                {};
+
+                template <class F, class IndexedArgX, class IndexedArgY, class IndexedArgZ>
+                struct d3< F, IndexedArgX, IndexedArgY, IndexedArgZ, void_t< Try::MemFn::d3_without_index<F,IndexedArgX,IndexedArgY,IndexedArgZ> > >
+                        : std::true_type
+                {};
+
+
+                template < class F, class IndexedArg, class = void >
+                struct d1_with_index
+                        : std::false_type {};
+
+                template < class F, class IndexedArg >
+                struct d1_with_index< F, IndexedArg, void_t< Try::MemFn::d1<F,IndexedArg> > >
+                        : std::true_type {};
+
+
+                template < class F, class IndexedArgX, class IndexedArgY, class = void >
+                struct d2_with_index
+                        : std::false_type {};
+
+                template < class F, class IndexedArgX, class IndexedArgY >
+                struct d2_with_index< F, IndexedArgX, IndexedArgY, void_t< Try::MemFn::d2<F,IndexedArgX,IndexedArgY> > >
+                        : std::true_type {};
+
+
+                template < class F, class IndexedArgX, class IndexedArgY, class IndexedArgZ, class = void >
+                struct d3_with_index : std::false_type {};
+
+                template < class F, class IndexedArgX, class IndexedArgY, class IndexedArgZ >
+                struct d3_with_index< F, IndexedArgX, IndexedArgY, IndexedArgZ ,
+                        void_t< Try::MemFn::d3<F,IndexedArgX,IndexedArgY,IndexedArgZ> > >
+                        : std::true_type {};
+
+
+                template < class Arg1, class Arg2, bool, class = void >
+                struct Rightmultiplany
+                        : std::false_type {};
+
+                template < class Arg1, class Arg2 >
+                struct Rightmultiplany< Arg1, Arg2, true, void_t< Try::MemFn::rightmultiplyany<Arg1,Arg2> > >
+                        : std::true_type {};
+                /// @endcond
+
+                /// Check if objects of type Arg1 support multiplication with objects of type Arg2 via call to rightmultiplyany(Arg2).
+                template < class Arg1, class Arg2 >
+                constexpr bool rightmultiplyany()
+                {
+                    return Rightmultiplany<Arg1,Arg2,!isFunction<Arg1>() && !isFunction<Arg2>() && !is_arithmetic<Arg1>() && !is_arithmetic<Arg2>()>::value;
+                }
+            }
+
+            namespace Free
+            {
+                /// @cond
+                template < class Arg1, class Arg2 ,
+                           bool = !is_arithmetic<Arg1>::value && !is_arithmetic<Arg2>::value &&
+                           !MemOp::callable<Arg1>::value && !MemOp::callable<Arg2>::value ,
+                           class = void >
+                struct Multiplication : std::false_type {};
+
+                template < class Arg1, class Arg2 >
+                struct Multiplication< Arg1, Arg2, false, void > : std::true_type {};
+
+                template < class Arg1, class Arg2 >
+                struct Multiplication< Arg1, Arg2, true, void_t< Try::Free::Multiplication<Arg1,Arg2> > > : std::true_type {};
+
+
+                template < class Arg,  bool, class = void >
+                struct Summation
+                        : std::false_type {};
+
+                template < class Arg >
+                struct Summation< Arg, true, void_t< Try::Free::Summation<Arg> > >
+                        : std::true_type {};
+                /// @endcond
+
+                /// Check if objects of typed Arg1 and Arg2 support multiplication (free operator*).
+                template < class Arg1, class Arg2 >
+                constexpr bool multiplication()
+                {
+                    return Multiplication<Arg1,Arg2>::value;
+                }
+
+                /// Check if objects of type Arg support summation.
+                template < class Arg >
+                constexpr bool summation()
+                {
+                    return Summation<Arg,!isFunction<Arg>() && !is_arithmetic<Arg>()>::value;
+                }
+            }
+
+            namespace NestedType
+            {
+                /// @cond
+                template <class EigenArg, class = void>
+                struct PlainObject
+                        : std::false_type {};
+                template <class EigenArg>
+                struct PlainObject< EigenArg, void_t< Try::NestedType::PlainObject<EigenArg> > >
+                        : std::true_type  {};
+                /// @endcond
+            }
+
+
+            template < class F >
+            constexpr bool consistentFirstDerivative()
+            {
+                return MemOp::callable<F>::value;
+            }
+
+
+            template < class F, class IndexedArgX, class IndexedArgY >
+            constexpr bool consistentSecondDerivative()
+            {
+                return consistentFirstDerivative<F>() &&
+                        ( Has::MemFn::d2<F,IndexedArgX,IndexedArgY>::value ?  Has::MemFn::d1<F,IndexedArgX>::value : true );
+            }
+
+            template < class F, class IndexedArgX, class IndexedArgY, class IndexedArgZ >
+            constexpr bool consistentThirdDerivative()
+            {
+                return consistentSecondDerivative<F,IndexedArgX,IndexedArgY>() &&
+                        ( Has::MemFn::d3<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value ? Has::MemFn::d2<F,IndexedArgX,IndexedArgY>::value : true );
+            }
+        }
+
+
+        template < class F >
+        constexpr bool isFunction()
+        {
+            return Has::MemOp::callable<F>::value;
+        }
+
+
+        /**
      * @brief Check if object is a static vector for some type satisfying Concepts::VectorConcept.
      *
      * Checks if number of rows is positive.
      */
-    template < class Arg >
-    constexpr bool isConstantSize()
-    {
-      return LinearAlgebra::NumberOfRows<Arg>::value > 0;
+        template < class Arg >
+        constexpr bool isConstantSize()
+        {
+            return LinearAlgebra::NumberOfRows<Arg>::value > 0;
+        }
+        /** @} */
     }
-
-
-    template < class F , class IndexedArgX , class IndexedArgY >
-    constexpr bool hasConsistentSecondDerivative()
-    {
-      return hasConsistentFirstDerivative<F>() &&
-          ( HasMemFn_d2<F,IndexedArgX,IndexedArgY>::value ?  HasMemFn_d1<F,IndexedArgX>::value : true );
-    }
-
-    template < class F, class IndexedArgX , class IndexedArgY , class IndexedArgZ >
-    constexpr bool hasConsistentThirdDerivative()
-    {
-      return hasConsistentSecondDerivative<F,IndexedArgX,IndexedArgY>() &&
-          ( HasMemFn_d3<F,IndexedArgX,IndexedArgY,IndexedArgZ>::value ? HasMemFn_d2<F,IndexedArgX,IndexedArgY>::value : true );
-    }
-
-    /** @} */
-  }
 }
 
 #endif // FUNG_STATIC_CHECKS_HH

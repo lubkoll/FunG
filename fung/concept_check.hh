@@ -26,11 +26,11 @@ namespace FunG
     template < class Arg >
     struct MultiplyWithArithmeticFromLeftConceptCheck
     {
-      static_assert(Checks::hasFree_Multiplication< Arg , double > () ||
-                    Checks::hasMemFn_InPlaceMultiplication< Arg , double >(),
+      static_assert(Checks::Has::Free::multiplication< Arg , double > () ||
+                    Checks::Has::MemOp::inPlaceMultiplication< Arg , double >(),
                     "MultiplyWithArithmeticFromLeftConcept: Input types must support multiplication with double from the left (operator*(double,const Arg&))");
-      static_assert(Checks::hasFree_Multiplication< Arg , int > () ||
-                    Checks::hasMemFn_InPlaceMultiplication< Arg , int >(),
+      static_assert(Checks::Has::Free::multiplication< Arg , int > () ||
+                    Checks::Has::MemOp::inPlaceMultiplication< Arg , int >(),
                     "MultiplyWithArithmeticFromLeftConcept: Input types must support multiplication with int from the left (operator*(int,const Arg&))");
     };
 
@@ -39,8 +39,8 @@ namespace FunG
     template < class Arg >
     struct SummationConceptCheck
     {
-      static_assert(Checks::hasFree_Summation< Arg >() ||
-                    Checks::hasMemFn_InPlaceSummation< Arg >(),
+      static_assert(Checks::Has::Free::summation< Arg >() ||
+                    Checks::Has::MemOp::inPlaceSummation< Arg >(),
                     "SummationConcept: Input types must support summation (operator+(const Arg&, const Arg&)");
     };
 
@@ -49,17 +49,17 @@ namespace FunG
     template < class Arg1 , class Arg2 >
     struct MultiplicationConceptCheck
     {
-      static_assert(Checks::hasFree_Multiplication< Arg1 , Arg2 >() ||
-                    Checks::hasMemFn_rightmultiplyany< Arg1 , Arg2 >() ||
-                    Checks::hasMemFn_InPlaceMultiplication< Arg1 , Arg2 >(),
+      static_assert(Checks::Has::Free::multiplication< Arg1 , Arg2 >() ||
+                    Checks::Has::MemFn::rightmultiplyany< Arg1 , Arg2 >() ||
+                    Checks::Has::MemOp::inPlaceMultiplication< Arg1 , Arg2 >(),
                     "MultiplicationConcept: Input types must support multiplication (operator*(const Arg&, const Arg&");
     };
 
 
     /// Static check if the requirements of ArithmeticConcept are satisfied.
     template <class Arg>
-    struct ArithmeticConceptCheck
-        : CopyConceptCheck<Arg> ,
+    struct ArithmeticConceptCheck :
+        CopyConceptCheck<Arg> ,
         MultiplyWithArithmeticFromLeftConceptCheck<Arg> ,
         SummationConceptCheck<Arg>
     {};
@@ -69,8 +69,8 @@ namespace FunG
     template < class Matrix >
     struct MatrixConceptCheck : ArithmeticConceptCheck<Matrix>
     {
-      static_assert(Checks::HasMemFn_SquareBracketAccessForMatrix<Matrix>::value ||
-                    Checks::HasMemFn_RoundBracketAccessForMatrix<Matrix>::value,
+      static_assert(Checks::Has::MemOp::SquareBracketAccessForMatrix<Matrix>::value ||
+                    Checks::Has::MemOp::RoundBracketAccessForMatrix<Matrix>::value,
                     "MatrixConcept: Currently only matrices that allow access to their elements via A[i][j] or A(i,j) are supported.\nYou may contact the developer to ask for further access or provide your own patch.");
     };
 
@@ -79,8 +79,8 @@ namespace FunG
     template < class Vector >
     struct VectorConceptCheck : ArithmeticConceptCheck<Vector>
     {
-      static_assert(Checks::HasMemFn_SquareBracketAccessForVector<Vector>::value ||
-                    Checks::HasMemFn_RoundBracketAccessForVector<Vector>::value,
+      static_assert(Checks::Has::MemOp::SquareBracketAccessForVector<Vector>::value ||
+                    Checks::Has::MemOp::RoundBracketAccessForVector<Vector>::value,
                     "VectorConcept: Currently only vectors that allow access to their elements via v[i] or v(i) are supported.\nYou may contact the developer to ask for further access or provide your own patch.");
     };
 

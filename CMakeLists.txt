@@ -16,29 +16,9 @@ set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_CXX_FLAGS         "-Wpedantic -Wall -Wno-unknown-pragmas -Wno-sign-compare -Woverloaded-virtual -Wwrite-strings -Wno-unused")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage -std=c++1y")
 
-include_directories(
-    ${PROJECT_SOURCE_DIR}
-    ${PROJECT_SOURCE_DIR}/external/googletest
-    ${PROJECT_SOURCE_DIR}/external/googletest/include
-    )
-
-add_custom_target(
-    git_update
-    COMMAND git submodule init
-    COMMAND git submodule update
-    WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
-    )
-
-add_library(
-    gtest
-    ${PROJECT_SOURCE_DIR}/external/googletest/src/gtest-all.cc
-    ${PROJECT_SOURCE_DIR}/external/googletest/src/gtest_main.cc
-    )
-
-add_dependencies(gtest git_update)
-
-set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest-all.cc  PROPERTIES GENERATED 1)
-set_source_files_properties(${PROJECT_SOURCE_DIR}/external/googletest/src/gtest_main.cc PROPERTIES GENERATED 1)
+enable_testing()
+find_package(GTest REQUIRED)
+include_directories( ${GTEST_INCLUDE_DIRS} ${PROJECT_SOURCE_DIR} )
 
 find_package(Eigen3)
 if(EIGEN3_FOUND)
@@ -59,11 +39,9 @@ add_executable(
     ${SRC_LIST}
     )
     
-add_dependencies(unit_tests gtest)
-
 target_link_libraries(
     unit_tests
-    gtest
+    ${GTEST_BOTH_LIBRARIES}
     pthread
     )
  

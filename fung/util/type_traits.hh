@@ -13,11 +13,18 @@ namespace FunG
   /// @cond
   namespace Checks
   {
-    // access underlying type of the expression templates of the Eigen library
-    template <class EigenArg>
-    using TryNestedType_PlainObject                  =     typename EigenArg::PlainObject;
-    /// @endcond
+      namespace Try
+      {
+          namespace NestedType
+          {
+              // access underlying type of the expression templates of the Eigen library
+              template <class EigenArg>
+              using PlainObject                  =     typename EigenArg::PlainObject;
+
+          }
+      }
   }
+  /// @endcond
 
   /// Identity, i.e. Decay<F>::type == F
   template <class F, class = void>
@@ -28,7 +35,7 @@ namespace FunG
 
   /// Underlying type for expression templates of the Eigen library.
   template <class F>
-  struct Decay< F , void_t< Checks::TryNestedType_PlainObject<F> > >
+  struct Decay< F , void_t< Checks::Try::NestedType::PlainObject<F> > >
   {
     using type = typename F::PlainObject;
   };

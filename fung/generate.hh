@@ -166,7 +166,7 @@ namespace FunG
                                Checks::isFunction< std::decay_t<G> >() >* = nullptr >
   auto operator<<( F&& f, G&& g )
   {
-    static_assert( !Checks::hasVariable< std::decay_t<F> >(), "Independent variables can not be on the left side of the chain operator." );
+    static_assert( !Checks::Has::variable< std::decay_t<F> >(), "Independent variables can not be on the left side of the chain operator." );
     return MathematicalOperations::Chain< std::decay_t<F>, std::decay_t<G> >( std::forward<F>(f), std::forward<G>(g) );
   }
 
