@@ -21,7 +21,7 @@ before_install:
   - sudo make 
   # copy or symlink libgtest.a and libgtest_main.a to your /usr/lib folder
   - sudo cp *.a /usr/lib
-  - cd ~
+  - cd $TRAVIS_BUILD_DIR
   script:
   - mkdir build
   - cd build

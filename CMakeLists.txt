@@ -41,7 +41,7 @@ add_executable(
     
 target_link_libraries(
     unit_tests
-    ${GTEST_BOTH_LIBRARIES}
+    ${GTEST_LIBRARIES}
     pthread
     )
  
