@@ -18,7 +18,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage -std=c++1
 
 enable_testing()
 find_package(GTest REQUIRED)
-include_directories( ${GTEST_INCLUDE_DIRS} ${PROJECT_SOURCE_DIR} )
+#include_directories( ${GTEST_INCLUDE_DIRS} ${PROJECT_SOURCE_DIR} )
 
 find_package(Eigen3)
 if(EIGEN3_FOUND)
@@ -41,7 +41,8 @@ add_executable(
     
 target_link_libraries(
     unit_tests
-    ${GTEST_LIBRARIES}
+    gtest
+#    ${GTEST_LIBRARIES}
     pthread
     )
  
