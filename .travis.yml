@@ -50,6 +50,11 @@ matrix:
       env: LLVM_VERSION=3.8.0 COMPILER=clang++-3.8
       compiler: clang
       
+    # OSX
+   - os: osx
+     env: COMPILER=g++-5
+     compiler: gcc
+     
 install:
   ############################################################################
   # Setup default versions and override compiler if needed
