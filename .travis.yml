@@ -45,7 +45,7 @@ install:
   ############################################################################
   # Setup default versions and override compiler if needed
   ############################################################################
-  - if [[ "${COMPILER}" != "" ]]; then export CXX=${COMPILER}; export CC=${CCOMPILER} fi
+  - if [[ "${COMPILER}" != "" ]]; then export CXX=${COMPILER}; export CC=${CCOMPILER}; fi
   - if [[ "${LLVM_VERSION}" == "default" ]]; then LLVM_VERSION=3.8.0; fi
   
     ############################################################################
