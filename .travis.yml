@@ -4,11 +4,17 @@ addons:
   apt:
     sources:
     - ubuntu-toolchain-r-test
+    - llvm-toolchain-precise-3.6
+    - llvm-toolchain-precise-3.7
+    - llvm-toolchain-precise-3.8
     packages:
     - g++-5
     - gcc-5
     - g++-6
     - gcc-6
+    - clang-3.6
+    - clang-3.7
+    - clang-3.8
 
 env:
   # Workaround for https://github.com/travis-ci/travis-ci/issues/4681
