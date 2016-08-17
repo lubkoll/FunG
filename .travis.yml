@@ -44,16 +44,6 @@ matrix:
     - os: linux
       env: COMPILER=g++-6
       compiler: gcc
-      
-    # Clang
-    - os: linux
-      env: LLVM_VERSION=3.8.0 COMPILER=clang++-3.8
-      compiler: clang
-      
-    # OSX
-   - os: osx
-     env: COMPILER=g++-5
-     compiler: gcc
      
 install:
   ############################################################################
