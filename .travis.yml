@@ -35,6 +35,11 @@ matrix:
     - os: linux
       env: COMPILER=g++-6
       compiler: gcc
+      
+    # Clang 3.6
+    - os: linux
+      env: COMPILER=clang++-3.6
+      compiler: clang
      
 install:
   ############################################################################
