@@ -40,13 +40,22 @@ matrix:
     - os: linux
       env: COMPILER=clang++-3.6 CCOMPILER=clang-3.6
       compiler: clang
+      
+    # Clang 3.7
+    - os: linux
+      env: COMPILER=clang++-3.7 CCOMPILER=clang-3.7
+      compiler: clang
+      
+    # Clang 3.8
+    - os: linux
+      env: COMPILER=clang++-3.8 CCOMPILER=clang-3.8
+      compiler: clang
      
 install:
   ############################################################################
-  # Setup default versions and override compiler if needed
+  # Override compiler if needed
   ############################################################################
   - if [[ "${COMPILER}" != "" ]]; then export CXX=${COMPILER}; export CC=${CCOMPILER}; fi
-  - if [[ "${LLVM_VERSION}" == "default" ]]; then LLVM_VERSION=3.8.0; fi
   
     ############################################################################
   # Install a recent CMake (unless already installed on OS X)
