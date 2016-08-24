@@ -50,6 +50,12 @@ matrix:
     - os: linux
       env: COMPILER=clang++-3.8 CCOMPILER=clang-3.8 COMPUTE_COVERAGE=false
       compiler: clang
+      
+    # OSX
+    # Xcode 6.4
+    - os: osx
+      env: COMPILER=g++-5 COMPUTE_COVERAGE=false
+      osx_image: xcode6.4
      
 install:
   ############################################################################
@@ -86,6 +92,14 @@ install:
         # install lcov to coveralls conversion + upload tool
         gem install coveralls-lcov
       fi
+    fi
+  - |
+    if [[ "${TRAVIS_OS_NAME}" == "osx" ]]; then
+      brew install cmake
+      git clone https://github.com/google/googletest.git
+      cd googletest && mkdir build && cd build && cmake .. && make
+      sudo cp -r ../include/gtest /usr/local/include/
+      sudo cp lib*.a /usr/local/lib
     fi
 script:
   - cd $TRAVIS_BUILD_DIR
