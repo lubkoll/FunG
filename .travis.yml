@@ -54,7 +54,7 @@ matrix:
     # OSX
     # Xcode 6.4
     - os: osx
-      env: COMPILER=g++-5 COMPUTE_COVERAGE=false
+      env: COMPUTE_COVERAGE=false
       osx_image: xcode6.4
      
 install:
