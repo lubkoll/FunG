@@ -98,6 +98,8 @@ install:
       brew install cmake
       git clone https://github.com/google/googletest.git
       cd googletest && mkdir build && cd build && cmake .. && make
+      ls ..
+      ls
       sudo cp -r ../include/gtest /usr/local/include/
       sudo cp lib*.a /usr/local/lib
     fi
