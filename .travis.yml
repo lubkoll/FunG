@@ -105,7 +105,6 @@ install:
     fi
   - |
     if [[ "${TRAVIS_OS_NAME}" == "osx" ]]; then
-      brew install cmake
       git clone https://github.com/google/googletest.git
       cd googletest && mkdir build && cd build && cmake .. && make
       sudo cp -r ../googletest/include/gtest /usr/local/include/
