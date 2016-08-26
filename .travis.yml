@@ -56,6 +56,16 @@ matrix:
     - os: osx
       env: COMPUTE_COVERAGE=false
       osx_image: xcode6.4
+      
+    # Xcode 7.3
+    - os: osx
+      env: COMPUTE_COVERAGE=false
+      osx_image: xcode7.3
+      
+    # Xcode 8
+    - os: osx
+      env: COMPUTE_COVERAGE=false
+      osx_image: xcode8
      
 install:
   ############################################################################
@@ -98,8 +108,6 @@ install:
       brew install cmake
       git clone https://github.com/google/googletest.git
       cd googletest && mkdir build && cd build && cmake .. && make
-      ls ../googletest
-      ls googlemock/gtest
       sudo cp -r ../googletest/include/gtest /usr/local/include/
       sudo cp googlemock/gtest/lib*.a /usr/local/lib
     fi
