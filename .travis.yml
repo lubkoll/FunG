@@ -8,6 +8,7 @@ addons:
     - llvm-toolchain-precise-3.7
     - llvm-toolchain-precise-3.8
     packages:
+    - libeigen3-dev
     - g++-5
     - gcc-5
     - g++-6
