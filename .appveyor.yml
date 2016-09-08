@@ -3,9 +3,19 @@ shallow_clone: true
 os:
   - Visual Studio 2015 Update 2
   
-matrix:
+configuration:
+  - debug
+  - release
+
+environment:
   - platform: x64
-    configuration: Release
-  
+
 build:
   verbosity: detailed
+
+build_script:
+  - mkdir build
+  - cd build
+  - cmake ..
+  - make
+  - ctest -R --output-on-failure
