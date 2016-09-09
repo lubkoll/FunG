@@ -17,8 +17,16 @@ set(CMAKE_CXX_FLAGS         "-Wpedantic -Wall -Wno-unknown-pragmas -Wno-sign-com
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage -std=c++1y")
 
 enable_testing()
-find_package(GTest REQUIRED)
-include_directories( ${GTEST_INCLUDE_DIRS} ${PROJECT_SOURCE_DIR} )
+if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+  find_package(GTest REQUIRED)
+  include_directories( ${GTEST_INCLUDE_DIRS} ${PROJECT_SOURCE_DIR} )
+  set(GTEST_LIBS ${GTEST_LIBRARIES})
+else(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+  include(conanbuildinfo.cmake)
+  conan_basic_setup()
+  set(GTEST_LIBS ${CONAN_LIBS})
+endif(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+
 
 find_package(Eigen3)
 if(EIGEN3_FOUND)
@@ -41,7 +49,7 @@ add_executable(
     
 target_link_libraries(
     unit_tests
-    ${GTEST_LIBRARIES}
+    ${GTEST_LIBS}
     pthread
     )
  
