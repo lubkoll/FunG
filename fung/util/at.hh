@@ -6,6 +6,7 @@
 
 #include <type_traits>
 #include <utility>
+#include "macros.hh"
 #include "static_checks.hh"
 
 
@@ -69,7 +70,7 @@ namespace FunG
     /// Access matrix entry \f$A_{ij}\f$.
     template <class Matrix, class Index,
               class = std::enable_if_t< std::is_integral<Index>::value > >
-    __attribute__((always_inline)) decltype(auto) at( Matrix&& A, Index i, Index j )
+    FUNG_ALWAYS_INLINE decltype(auto) at( Matrix&& A, Index i, Index j )
     {
         return Access::EntryOfMatrix<Matrix>::apply( A, i, j );
     }
@@ -77,7 +78,7 @@ namespace FunG
     /// Access vector entry \f$\v_if$.
     template <class Vector, class Index,
               class = std::enable_if_t< std::is_integral<Index>::value > >
-    __attribute__((always_inline)) decltype(auto) at( Vector&& v, Index i )
+    FUNG_ALWAYS_INLINE decltype(auto) at( Vector&& v, Index i )
     {
         return Access::EntryOfVector<Vector>::apply( v, i );
     }

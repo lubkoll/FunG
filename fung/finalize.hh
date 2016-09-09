@@ -6,12 +6,13 @@
 
 #include <type_traits>
 
-#include "fung/util/derivative_wrappers.hh"
-#include "fung/util/indexed_type.hh"
-#include "fung/util/static_checks.hh"
-#include "fung/util/type_traits.hh"
-#include "fung/util/zero.hh"
-#include "fung/variable.hh"
+#include <fung/util/derivative_wrappers.hh>
+#include <fung/util/indexed_type.hh>
+#include <fung/util/macros.hh>
+#include <fung/util/static_checks.hh>
+#include <fung/util/type_traits.hh>
+#include <fung/util/zero.hh>
+#include <fung/variable.hh>
 
 namespace FunG
 {
@@ -22,7 +23,7 @@ namespace FunG
     struct FillDefault
     {
       template <class... Args>
-      __attribute__((always_inline)) ReturnType operator()(const Args&...) const
+      FUNG_ALWAYS_INLINE ReturnType operator()(const Args&...) const
       {
         return zero<ReturnType>();
       }
@@ -36,7 +37,7 @@ namespace FunG
     struct FinalizeD1<id,ReturnType,true>
     {
       template <class F, class Arg>
-      __attribute__((always_inline)) ReturnType operator()(const F& f, const Arg& dx) const
+      FUNG_ALWAYS_INLINE ReturnType operator()(const F& f, const Arg& dx) const
       {
         return D1_< F, IndexedType<Arg,id> >::apply(f,dx);
       }
@@ -50,7 +51,7 @@ namespace FunG
     struct FinalizeD2<idx,idy,ReturnType,true>
     {
       template <class F, class ArgX, class ArgY>
-      __attribute__((always_inline)) ReturnType operator()(const F& f, const ArgX& dx, const ArgY& dy) const
+      FUNG_ALWAYS_INLINE ReturnType operator()(const F& f, const ArgX& dx, const ArgY& dy) const
       {
         return D2_< F, IndexedType<ArgX,idx>, IndexedType<ArgY,idy> >::apply(f,dx,dy);
       }
@@ -64,7 +65,7 @@ namespace FunG
     struct FinalizeD3<idx,idy,idz,ReturnType,true>
     {
       template <class F, class ArgX, class ArgY, class ArgZ>
-      __attribute__((always_inline)) ReturnType operator()(const F& f, const ArgX& dx, const ArgY& dy, const ArgZ& dz) const
+      FUNG_ALWAYS_INLINE ReturnType operator()(const F& f, const ArgX& dx, const ArgY& dy, const ArgZ& dz) const
       {
         return D3_< F, IndexedType<ArgX,idx>, IndexedType<ArgY,idy>, IndexedType<ArgZ,idz> >::apply(f,dx,dy,dz);
       }
