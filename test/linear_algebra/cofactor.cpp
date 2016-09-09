@@ -7,7 +7,7 @@
 #include <gtest/gtest.h>
 
 #define FUNG_ENABLE_EXCEPTIONS
-#include "fung/linear_algebra.hh"
+#include <fung/linear_algebra.hh>
 
 namespace
 {
