@@ -2,7 +2,7 @@
 // Released under the terms of the GNU General Public License version 3 or later.
 
 #include <gtest/gtest.h>
-#include "fung/cmath/exp.hh"
+#include <fung/cmath/exp.hh>
 
 namespace
 {
