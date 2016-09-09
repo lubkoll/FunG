@@ -14,6 +14,7 @@ include(ConfigSafeGuards)
 
 set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_CXX_STANDARD 14)
+
 enable_testing()
 if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
   include(conanbuildinfo.cmake)
@@ -38,6 +39,7 @@ if(EIGEN3_FOUND)
   aux_source_directory(test/linear_algebra SRC_LIST)
 endif()
 
+include_directories(.)
 aux_source_directory(test/cmath SRC_LIST)
 aux_source_directory(test/fung SRC_LIST)
 aux_source_directory(test/mathematical_operations SRC_LIST)
