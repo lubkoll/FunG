@@ -1,5 +1,5 @@
 
-cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.1 FATAL_ERROR)
 
 project(fung)
 
@@ -13,8 +13,7 @@ set(CMAKE_MODULE_PATH
 include(ConfigSafeGuards)
 
 set(CMAKE_BUILD_TYPE Debug)
-set(CMAKE_CXX_FLAGS "-std=c++14")
-
+set(CMAKE_CXX_STANDARD 14)
 enable_testing()
 if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
   include(conanbuildinfo.cmake)
