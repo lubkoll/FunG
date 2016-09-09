@@ -1,20 +1,28 @@
 shallow_clone: true
 
-os: Visual Studio 2015
-
-  
 configuration:
   - debug
   - release
 
-platform: x64
+platform:
+  - x64
+
+install:
+  - cmd: echo "Downloading conan..."
+  - ps: wget http://downloads.conan.io/latest_windows -OutFile conan_installer.exe
+  - cmd: conan_installer.exe /VERYSILENT
+  - cmd: set PATH=%PATH%;C:\Program Files (x86)\Conan\conan
+  - cmd: conan --version
 
 build:
   verbosity: detailed
 
 build_script:
-  - mkdir build
-  - cd build
-  - cmake ..
-  - make
-  - ctest -R --output-on-failure
+  - cmd: mkdir build
+  - cmd: conan install -o gtest:shared=True
+  - cmd: cd build
+  - cmd: cmake ..  -G "Visual Studio 14 2015 Win64"
+  - cmd: cmake --build . --config Release
+
+test_script:
+  - cmd: unit_tests.exe
