@@ -3,7 +3,7 @@
 
 #define FUNG_ENABLE_EXCEPTIONS
 #include <gtest/gtest.h>
-#include "fung/cmath/arcsine.hh"
+#include <fung/cmath/arcsine.hh>
 
 namespace
 {
