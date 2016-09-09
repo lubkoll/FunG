@@ -3,7 +3,7 @@
 
 #define FUNG_ENABLE_EXCEPTIONS
 #include <gtest/gtest.h>
-#include "fung/cmath/arccos.hh"
+#include <fung/cmath/arccos.hh>
 
 namespace
 {
