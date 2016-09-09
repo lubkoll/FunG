@@ -3,7 +3,7 @@
 
 #define FUNG_ENABLE_EXCEPTIONS
 #include <gtest/gtest.h>
-#include "fung/cmath/pow.hh"
+#include <fung/cmath/pow.hh>
 
 #include <limits>
 
