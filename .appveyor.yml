@@ -30,8 +30,8 @@ install:
   - 7z x ninja.zip -oC:\projects\deps\ninja > nul
   - set PATH=C:\projects\deps\ninja;%PATH%
   - ninja --version
-
-  ############################################################################
+  
+    ############################################################################
   # Install a recent CMake
   ############################################################################
   - set CMAKE_URL="https://cmake.org/files/v3.4/cmake-3.4.0-win32-x86.zip"
@@ -41,11 +41,13 @@ install:
   - cmake --version
 
   ############################################################################
-  # Setup the path to Clang-cl
+  # Install gtest through conan
   ############################################################################
-  - set PATH="C:\Program Files\LLVM\bin";%PATH%
-  - clang-cl -v
-
+  - cmd: echo "Downloading conan..."
+  - ps: wget https://s3-eu-west-1.amazonaws.com/conanio/downloads/conan-win_0_3_0.exe -OutFile conan_installer.exe
+  - cmd: conan_installer.exe /VERYSILENT
+  - cmd: set PATH=%PATH%;C:\Program Files (x86)\Conan\conan
+  - cmd: conan --version
 
 before_build:
   - call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" amd64
