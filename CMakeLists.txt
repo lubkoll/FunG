@@ -13,7 +13,7 @@ set(CMAKE_MODULE_PATH
 include(ConfigSafeGuards)
 
 set(CMAKE_BUILD_TYPE Debug)
-set(CMAKE_CXX_FLAGS         "-Wall -Wno-sign-compare -Woverloaded-virtual -Wwrite-strings -Wno-unused")
+set(CMAKE_CXX_FLAGS         "-Wall -Woverloaded-virtual -Wwrite-strings")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage -std=c++1y")
 
 enable_testing()
@@ -22,7 +22,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
   conan_basic_setup()
   set(GTEST_LIBS ${CONAN_LIBS})
 else(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
-set(CMAKE_CXX_FLAGS         "-Wpedantic -Wno-unknown-pragmas ${CMAKE_CXX_FLAGS}")
+set(CMAKE_CXX_FLAGS         "-Wpedantic -Wno-unknown-pragmas -Wno-sign-compare -Wno-unused ${CMAKE_CXX_FLAGS}")
   find_package(GTest REQUIRED)
   include_directories( ${GTEST_INCLUDE_DIRS} ${PROJECT_SOURCE_DIR} )
   set(GTEST_LIBS ${GTEST_LIBRARIES})
