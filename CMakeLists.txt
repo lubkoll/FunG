@@ -18,13 +18,13 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage -std=c++1
 
 enable_testing()
 if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
-  find_package(GTest REQUIRED)
-  include_directories( ${GTEST_INCLUDE_DIRS} ${PROJECT_SOURCE_DIR} )
-  set(GTEST_LIBS ${GTEST_LIBRARIES})
-else(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
   include(conanbuildinfo.cmake)
   conan_basic_setup()
   set(GTEST_LIBS ${CONAN_LIBS})
+else(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+  find_package(GTest REQUIRED)
+  include_directories( ${GTEST_INCLUDE_DIRS} ${PROJECT_SOURCE_DIR} )
+  set(GTEST_LIBS ${GTEST_LIBRARIES})
 endif(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
 
 
