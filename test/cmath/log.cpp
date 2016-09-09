@@ -3,7 +3,7 @@
 
 #include <gtest/gtest.h>
 #define FUNG_ENABLE_EXCEPTIONS
-#include "fung/cmath/log.hh"
+#include <fung/cmath/log.hh>
 
 namespace
 {
