@@ -2,7 +2,7 @@
 shallow_clone: true
 
 os:
-  - Visual Studio 2015 Update 2
+  - Visual Studio 2015 Update
 
 build:
   verbosity: detailed
@@ -49,6 +49,12 @@ install:
   - cmd: set PATH=%PATH%;C:\Program Files (x86)\Conan\conan
   - cmd: conan --version
 
+  ############################################################################
+  # Setup the path to Clang-cl
+  ############################################################################
+  - set PATH="C:\Program Files\LLVM\bin";%PATH%
+  - clang-cl -v
+  
 before_build:
   - call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" amd64
   - cd C:\projects\fung
@@ -59,5 +65,5 @@ build_script:
   - mkdir build 
   - conan install -o gtest:shared=True
   - cd build
-  - cmake .. -GNinja -DCMAKE_CXX_FLAGS="-fms-compatibility-version=19"
+  - cmake .. -GNinja -DCMAKE_CXX_COMPILER=clang-cl -DCMAKE_CXX_FLAGS="-fms-compatibility-version=19"
   - ninja && ctest -R --output-on-failure
