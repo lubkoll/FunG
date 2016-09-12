@@ -87,7 +87,7 @@ install:
     if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
       CMAKE_URL="http://www.cmake.org/files/v3.5/cmake-3.5.2-Linux-x86_64.tar.gz"
       mkdir cmake && travis_retry wget --no-check-certificate --quiet -O - ${CMAKE_URL} | tar --strip-components=1 -xz -C cmake
-      export PATH=${DEPS_DIR}/cmake/bin:${PATH}
+      sudo update-alternatives --install /usr/bin/cmake cmake ${DEPS_DIR}/cmake/bin/cmake 100
     else
       if ! brew ls --version cmake &>/dev/null; then brew install cmake; fi
     fi
@@ -119,7 +119,7 @@ install:
     fi
 script:
   - cd $TRAVIS_BUILD_DIR
-  - mkdir build && cd build && ${DEPS_DIR}/cmake/bin/cmake .. && make && ctest
+  - mkdir build && cd build && cmake .. && make && ctest
 after_success:
   - |
     if [[ ${COMPUTE_COVERAGE} ]]; then
