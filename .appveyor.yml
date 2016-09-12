@@ -41,25 +41,26 @@ install:
   - cmake --version
 
   ############################################################################
-  # Install gtest through conan
-  ############################################################################
-  - cmd: echo "Downloading conan..."
-  - ps: wget http://downloads.conan.io/latest_windows -OutFile conan_installer.exe
-  - cmd: conan_installer.exe /VERYSILENT
-  - cmd: set PATH=%PATH%;C:\Program Files (x86)\Conan\conan
-  - cmd: conan --version
-
-  ############################################################################
   # Setup the path to Clang-cl
   ############################################################################
   - set PATH="C:\Program Files\LLVM\bin";%PATH%
   - clang-cl -v
+
+  ############################################################################
+  # Install gtest
+  ############################################################################
+  - set GTEST_URL="https://github.com/google/googletest/archive/release-1.8.0.zip"
+  - appveyor DownloadFile %GTEST_URL% -FileName gtest.zip
+  - 7z x gtest.zip -oC:\projects\deps\gtest > nul
+  - cd C:\projects\deps\gtest
+  - mkdir build && cd build
+  - cmake .. -GNinja -DCMAKE_CXX_COMPILER=clang-cl -DCMAKE_CXX_FLAGS="-fms-compatibility-version=19" 
+  - cmake --build .
+  - cmd: set PATH=%PATH%;C:\projects\deps\gtest;C:\projects\deps\gtest\include\gtest
   
 before_build:
   - call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" amd64
   - cd C:\projects\fung
-
-
 
 build_script:
   - mkdir build 
