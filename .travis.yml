@@ -119,7 +119,7 @@ install:
     fi
 script:
   - cd $TRAVIS_BUILD_DIR
-  - mkdir build && cd build && cmake .. && make && ctest
+  - mkdir build && cd build && ${DEPS_DIR}/cmake/bin/cmake .. && make && ctest
 after_success:
   - |
     if [[ ${COMPUTE_COVERAGE} ]]; then
