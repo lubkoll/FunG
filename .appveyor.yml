@@ -59,6 +59,7 @@ install:
   - cmake .. -GNinja -DCMAKE_CXX_COMPILER=clang-cl -DCMAKE_CXX_FLAGS="-fms-compatibility-version=19 -Wno-deprecated-declarations" 
   - cmake --build .
   - cmd: set PATH=%PATH%;C:\projects\deps\gtest\googletest-release-1.8.0\googlemock\gtest;C:\projects\deps\gtest\googletest-release-1.8.0\googletest\include\gtest
+  - set GTEST_DIR=C:\projects\deps\gtest\googletest-release-1.8.0
   
 before_build:
   - cd C:\projects\fung
