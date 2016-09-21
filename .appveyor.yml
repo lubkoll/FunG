@@ -53,6 +53,7 @@ install:
   - appveyor DownloadFile %GTEST_URL% -FileName gtest.zip
   - 7z x gtest.zip -oC:\projects\deps\gtest > nul
   - cd C:\projects\deps\gtest
+  - ls
   - mkdir build && cd build
   - cmake .. -GNinja -DCMAKE_CXX_COMPILER=clang-cl -DCMAKE_CXX_FLAGS="-fms-compatibility-version=19" 
   - cmake --build .
