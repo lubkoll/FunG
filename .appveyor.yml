@@ -52,12 +52,12 @@ install:
   - set GTEST_URL="https://github.com/google/googletest/archive/release-1.8.0.zip"
   - appveyor DownloadFile %GTEST_URL% -FileName gtest.zip
   - 7z x gtest.zip -oC:\projects\deps\gtest > nul
-  - cd C:\projects\deps\gtest
+  - cd C:\projects\deps\gtest\googletest-release-1.8.0
   - ls
   - mkdir build && cd build
   - cmake .. -GNinja -DCMAKE_CXX_COMPILER=clang-cl -DCMAKE_CXX_FLAGS="-fms-compatibility-version=19" 
   - cmake --build .
-  - cmd: set PATH=%PATH%;C:\projects\deps\gtest;C:\projects\deps\gtest\include\gtest
+  - cmd: set PATH=%PATH%;C:\projects\deps\gtest\googletest-release-1.8.0\googlemock\gtest;C:\projects\deps\gtest\googletest-release-1.8.0\googletest\include\gtest
   
 before_build:
   - call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" amd64
