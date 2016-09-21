@@ -64,8 +64,7 @@ before_build:
   - cd C:\projects\fung
 
 build_script:
-  - mkdir build 
-  - conan install -o gtest:shared=True
+  - mkdir build
   - cd build
   - cmake .. -GNinja -DCMAKE_CXX_COMPILER=clang-cl -DCMAKE_CXX_FLAGS="-fms-compatibility-version=19"
   - ninja && ctest -R --output-on-failure
