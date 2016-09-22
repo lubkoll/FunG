@@ -60,9 +60,8 @@ install:
   - cmake --build .
   - ls
   - ls C:\projects\deps\gtest\googletest-release-1.8.0\googletest\include\gtest
-  - cmd: set PATH=%PATH%;C:\projects\deps\gtest\googletest-release-1.8.0\build\googlemock\gtest;C:\projects\deps\gtest\googletest-release-1.8.0\build\googletest\include\gtest
-  - set GTEST_DIR=C:\projects\deps\gtest\build\googletest-release-1.8.0
-  
+  - cmd: set PATH=%PATH%;C:\projects\deps\gtest\googletest-release-1.8.0\build\googlemock\gtest;C:\projects\deps\gtest\googletest-release-1.8.0\googletest\include\gtest
+
 before_build:
   - cd C:\projects\fung
 
