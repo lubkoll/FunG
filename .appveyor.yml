@@ -58,6 +58,7 @@ install:
   - mkdir build && cd build
   - cmake .. -GNinja -DCMAKE_CXX_COMPILER=clang-cl -DCMAKE_CXX_FLAGS="-fms-compatibility-version=19 -Wno-deprecated-declarations" 
   - cmake --build .
+  - cmake --install .
   - ls
   - ls googlemock
   - ls googlemock\gtest
