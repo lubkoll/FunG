@@ -67,5 +67,5 @@ before_build:
 build_script:
   - mkdir build
   - cd build
-  - cmake .. -GNinja -DCMAKE_CXX_COMPILER=clang-cl -DCMAKE_CXX_FLAGS="-fms-compatibility-version=19"
+  - cmake .. -GNinja -DGTEST_ROOT=C:\projects\deps\gtest\googletest-release-1.8.0 -DCMAKE_CXX_COMPILER=clang-cl -DCMAKE_CXX_FLAGS="-fms-compatibility-version=19"
   - ninja && ctest -R --output-on-failure
