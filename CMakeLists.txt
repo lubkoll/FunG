@@ -30,6 +30,7 @@ else(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
   include_directories( ${GTEST_INCLUDE_DIRS} ${PROJECT_SOURCE_DIR} )
   set(CMAKE_CXX_FLAGS "-Wall -Wwrite-strings -Wpedantic -Woverloaded-virtual -Wno-unknown-pragmas -Wno-sign-compare -Wno-unused ${CMAKE_CXX_FLAGS}")
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
+  set(GTEST_LIBRARIES "${GTEST_LIBRARIES} pthread")
 endif(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
 
 
@@ -53,11 +54,7 @@ add_executable(
     ${SRC_LIST}
     )
     
-target_link_libraries(
-    unit_tests
-    ${GTEST_LIBRARIES}
-    pthread
-    )
+target_link_libraries(unit_tests ${GTEST_LIBRARIES})
  
 include(CTest)
 enable_testing()
