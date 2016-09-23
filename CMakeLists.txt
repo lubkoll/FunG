@@ -16,9 +16,6 @@ set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_CXX_STANDARD 14)
 
 enable_testing()
-find_package(GTest REQUIRED)
-include_directories( ${GTEST_INCLUDE_DIRS} ${PROJECT_SOURCE_DIR} )
-
 if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
   add_subdirectory(gtest)
   include_directories(${gtest_SOURCE_DIR}/include)
