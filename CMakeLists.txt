@@ -18,7 +18,7 @@ enable_testing()
 if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
   add_subdirectory(googletest-release-1.8.0)
   include_directories(${gtest_SOURCE_DIR}/include)
-  link_directories(${PROJECT_SOURCE_DIR}/build/googlemock/gtest
+  link_directories(${PROJECT_SOURCE_DIR}/build/googlemock/gtest)
   set(GTEST_LIBRARIES gtest_main.lib gtest.lib)
 #  find_package(GTest REQUIRED 
 #               HINTS $ENV{GTEST_DIR})
