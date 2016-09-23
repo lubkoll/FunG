@@ -54,7 +54,7 @@ add_executable(
     ${SRC_LIST}
     )
     
-target_link_libraries(unit_tests STATIC ${GTEST_LIBRARIES})
+target_link_libraries(unit_tests ${GTEST_LIBRARIES})
  
 include(CTest)
 enable_testing()
