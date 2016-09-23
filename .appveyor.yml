@@ -49,27 +49,27 @@ install:
   ############################################################################
   # Install gtest
   ############################################################################
-  - call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" amd64
   - set GTEST_URL="https://github.com/google/googletest/archive/release-1.8.0.zip"
   - appveyor DownloadFile %GTEST_URL% -FileName gtest.zip
-  - 7z x gtest.zip -oC:\projects\deps\gtest > nul
-  - cd C:\projects\deps\gtest\googletest-release-1.8.0
-  - ls
-  - mkdir build && cd build
-  - cmake .. -GNinja -DCMAKE_CXX_COMPILER=clang-cl -DCMAKE_CXX_FLAGS="-fms-compatibility-version=19 -Wno-deprecated-declarations" 
-  - cmake --build .
-  - cmake --install .
-  - ls
-  - ls googlemock
-  - ls googlemock\gtest
-  - ls C:\projects\deps\gtest\googletest-release-1.8.0\googletest\include\gtest
-  - set PATH=%PATH%;C:\projects\deps\gtest\googletest-release-1.8.0\build\googlemock\gtest;C:\projects\deps\gtest\googletest-release-1.8.0\googletest\include\gtest
+  - 7z x gtest.zip -oC:\projects\fung\gtest > nul
+#  - cd C:\projects\deps\gtest\googletest-release-1.8.0
+#  - ls
+#  - mkdir build && cd build
+#  - cmake .. -GNinja -DCMAKE_CXX_COMPILER=clang-cl -DCMAKE_CXX_FLAGS="-fms-compatibility-version=19 -Wno-deprecated-declarations" 
+#  - cmake --build .
+#  - cmake --install .
+#  - ls
+##  - ls googlemock
+#  - ls googlemock\gtest
+#  - ls C:\projects\deps\gtest\googletest-release-1.8.0\googletest\include\gtest
+#  - set PATH=%PATH%;C:\projects\deps\gtest\googletest-release-1.8.0\build\googlemock\gtest;C:\projects\deps\gtest\googletest-release-1.8.0\googletest\include\gtest
 
 before_build:
+  - call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" amd64
   - cd C:\projects\fung
 
 build_script:
   - mkdir build
   - cd build
-  - cmake .. -GNinja -DGTEST_INCLUDE_DIR="C:\projects\deps\gtest\googletest-release-1.8.0\googletest\include\gtest" -DCMAKE_PREFIX_PATH="C:\projects\deps\gtest\googletest-release-1.8.0\build" -DCMAKE_CXX_COMPILER=clang-cl -DCMAKE_CXX_FLAGS="-fms-compatibility-version=19"
+  - cmake .. -GNinja -DCMAKE_CXX_COMPILER=clang-cl -DCMAKE_CXX_FLAGS="-fms-compatibility-version=19"
   - ninja && ctest -R --output-on-failure
