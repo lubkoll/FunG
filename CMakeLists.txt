@@ -17,7 +17,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 enable_testing()
 if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
-  add_subdirectory(gtest)
+  add_subdirectory(googletest-release-1.8.0)
   include_directories(${gtest_SOURCE_DIR}/include)
   set(GTEST_LIBRARIES gtest_main gtest)
 #  find_package(GTest REQUIRED 

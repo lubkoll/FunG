@@ -51,7 +51,7 @@ install:
   ############################################################################
   - set GTEST_URL="https://github.com/google/googletest/archive/release-1.8.0.zip"
   - appveyor DownloadFile %GTEST_URL% -FileName gtest.zip
-  - 7z x gtest.zip -oC:\projects\fung\gtest > nul
+  - 7z x gtest.zip -oC:\projects\fung > nul
 #  - cd C:\projects\deps\gtest\googletest-release-1.8.0
 #  - ls
 #  - mkdir build && cd build
