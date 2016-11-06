@@ -80,7 +80,7 @@ namespace FunG
        * \param dx direction for which the derivative is computed
        */
       template < int id , class Arg , class IndexedArg = IndexedType<Arg,id> , class = std::enable_if_t< ComputeProduct< D0<F> , D1<F,IndexedArg> >::present > >
-      auto d1(Arg const& dx) const -> std::decay_t<decltype(this->d0())>
+      auto d1(Arg const& dx) const -> decay_t<decltype(std::declval<F>()()*std::declval<F>()())>
       {
         return 2 * f() * D1_<F,IndexedArg>::apply(f,dx);
       }
@@ -94,7 +94,7 @@ namespace FunG
                  class IndexedArgX = IndexedType<ArgX,idx> ,
                  class IndexedArgY = IndexedType<ArgY,idy> ,
                  class = std::enable_if_t< D2Sum<IndexedArgX,IndexedArgY>::present > >
-      auto d2(ArgX const& dx, ArgY const& dy) const -> std::decay_t<decltype(this->d0())>
+      auto d2(ArgX const& dx, ArgY const& dy) const -> decay_t<decltype(std::declval<F>()()*std::declval<F>()())>
       {
         return 2 * sum( product( D0<F>(f) , D2<F,IndexedArgX,IndexedArgY>(f,dx,dy) ),
                         product( D1<F,IndexedArgY>(f,dy) , D1<F,IndexedArgX>(f,dx) ) )();
@@ -111,7 +111,7 @@ namespace FunG
                  class IndexedArgY = IndexedType<ArgY,idy> ,
                  class IndexedArgZ = IndexedType<ArgZ,idz> ,
                  class = std::enable_if_t< D3Sum<IndexedArgX,IndexedArgY,IndexedArgZ>::present > >
-      auto d3(ArgX const& dx, ArgY const& dy, ArgZ const& dz) const -> std::decay_t<decltype(this->d0())>
+      auto d3(ArgX const& dx, ArgY const& dy, ArgZ const& dz) const -> decay_t<decltype(std::declval<F>()()*std::declval<F>()())>
       {
         return 2 * sum( product( D0<F>(f) , D3<F,IndexedArgX,IndexedArgY,IndexedArgZ>(f,dx,dy,dz) ),
                         product( D1<F,IndexedArgZ>(f,dz) , D2<F,IndexedArgX,IndexedArgY>(f,dx,dy) ),
