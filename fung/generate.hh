@@ -185,31 +185,16 @@ namespace FunG
   }
 
   /**
-   * \brief overload of "-"-operator for the generation of functions. Here the second argument is a constant that is wrapped in to an object of type Constant.
+   * \brief overload of "-"-operator for the generation of functions.
    *
    * This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions.
    * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
    */
   template < class F, class T,
-             std::enable_if_t< Checks::isFunction< std::decay_t<F> >() &&
-                               !Checks::isFunction< std::decay_t<T> >()>* = nullptr >
+             std::enable_if_t< Checks::isFunction< std::decay_t<F> >() || Checks::isFunction< std::decay_t<T> >()>* = nullptr >
   auto operator-( F&& f, T&& t )
   {
     return std::forward<F>(f) + ( -1 * std::forward<T>(t) );
-  }
-
-  /**
-   * \brief overload of "-"-operator for the generation of functions. Here the first argument is a constant that is wrapped in to an object of type Constant.
-   *
-   * This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions.
-   * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
-   */
-  template < class F, class T,
-             std::enable_if_t< Checks::isFunction< std::decay_t<F> >() &&
-                               !Checks::isFunction< std::decay_t<T> >()>* = nullptr >
-  auto operator-( T&& t, F&& f )
-  {
-    return std::forward<T>(t) + ( -1 * std::forward<F>(f) );
   }
 }
 
