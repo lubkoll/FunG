@@ -1,7 +1,8 @@
 #include <gtest/gtest.h>
-#include "fung/cmath/pow.hh"
-#include "fung/finalize.hh"
-#include "fung/generate.hh"
+
+#include <fung/cmath/pow.hh>
+#include <fung/finalize.hh>
+#include <fung/generate.hh>
 
 inline auto functionInterfaceValue()
 {

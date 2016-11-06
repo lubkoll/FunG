@@ -18,7 +18,6 @@ namespace FunG
     struct CopyConceptCheck
     {
       static_assert(std::is_copy_constructible<Arg>(), "CopyConcept: Input types must be copy-constructible.");
-      static_assert(std::is_copy_assignable<Arg>(), "CopyConcept: Input types must be copy-assignable.");
     };
 
 
@@ -99,7 +98,7 @@ namespace FunG
     struct FunctionConceptCheck : CopyConceptCheck<F>
     {
       static_assert( Checks::isFunction<F>() ,
-                     "FunctionConcept: Functions must provide a member function d0() to access its value." );
+                     "FunctionConcept: Functions must provide the function call operator to access its value." );
     };
     /** @} */
   }

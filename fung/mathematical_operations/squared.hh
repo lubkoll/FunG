@@ -50,7 +50,7 @@ namespace FunG
 
      /// Constructor that takes ownership of f_.
      Squared(F&& f_)
-        : f(std::move(f_))
+        : f(std::move(f_)), value(f()*f())
      {}
 
       /// Update point of evaluation.
