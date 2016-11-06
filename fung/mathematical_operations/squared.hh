@@ -1,32 +1,28 @@
 // Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
 // Released under the terms of the GNU General Public License version 3 or later.
 
-#ifndef FUNG_MATHEMATICAL_OPERATIONS_SQUARED_HH
-#define FUNG_MATHEMATICAL_OPERATIONS_SQUARED_HH
+#pragma once
 
 #include <type_traits>
 #include <utility>
 
-#include "fung/util/compute_sum.hh"
-#include "fung/util/compute_product.hh"
-#include "fung/util/derivative_wrappers.hh"
-#include "fung/util/evaluate_if_present.hh"
-#include "fung/util/indexed_type.hh"
-#include "fung/util/type_traits.hh"
+#include <fung/concept_check.hh>
+#include <fung/util/chainer.hh>
+#include <fung/util/compute_sum.hh>
+#include <fung/util/compute_product.hh>
+#include <fung/util/derivative_wrappers.hh>
+#include <fung/util/evaluate_if_present.hh>
+#include <fung/util/indexed_type.hh>
+#include <fung/util/type_traits.hh>
 
 namespace FunG
 {
-  /// @cond
-  template <class> struct Chainer;
-  namespace Concepts { template <class> struct FunctionConceptCheck; }
-  /// @endcond
-
   namespace MathematicalOperations
   {
     /**
      * \ingroup MathematicalOperationsGroup
      *
-     * \brief %Squared function (F must satisfy the requirements of Concepts::FunctionConcept).
+     * \brief %Squared function \f$f^2\f$.
      */
     template <class F, class = Concepts::FunctionConceptCheck<F> >
     struct Squared : Chainer< Squared< F , Concepts::FunctionConceptCheck<F> > >
@@ -47,14 +43,15 @@ namespace FunG
       ComputeProduct< D2<F,IndexedArgY,IndexedArgZ> , D1<F,IndexedArgX> > >;
 
     public:
-      /**
-       * @brief Constructor passing arguments to function constructor.
-       * @param f_ input for constructor of outer function
-       */
-      template <class InitF>
-      Squared(const InitF& f_)
+     /// Constructor that copies f_.
+      Squared(const F& f_)
         : f(f_), value(f()*f())
       {}
+
+     /// Constructor that takes ownership of f_.
+     Squared(F&& f_)
+        : f(std::move(f_))
+     {}
 
       /// Update point of evaluation.
       template <class Arg>
@@ -83,7 +80,7 @@ namespace FunG
        * \param dx direction for which the derivative is computed
        */
       template < int id , class Arg , class IndexedArg = IndexedType<Arg,id> , class = std::enable_if_t< ComputeProduct< D0<F> , D1<F,IndexedArg> >::present > >
-      auto d1(Arg const& dx) const
+      auto d1(Arg const& dx) const -> std::decay_t<decltype(this->d0())>
       {
         return 2 * f() * D1_<F,IndexedArg>::apply(f,dx);
       }
@@ -97,7 +94,7 @@ namespace FunG
                  class IndexedArgX = IndexedType<ArgX,idx> ,
                  class IndexedArgY = IndexedType<ArgY,idy> ,
                  class = std::enable_if_t< D2Sum<IndexedArgX,IndexedArgY>::present > >
-      auto d2(ArgX const& dx, ArgY const& dy) const
+      auto d2(ArgX const& dx, ArgY const& dy) const -> std::decay_t<decltype(this->d0())>
       {
         return 2 * sum( product( D0<F>(f) , D2<F,IndexedArgX,IndexedArgY>(f,dx,dy) ),
                         product( D1<F,IndexedArgY>(f,dy) , D1<F,IndexedArgX>(f,dx) ) )();
@@ -109,12 +106,12 @@ namespace FunG
        * \param dy direction for which the derivative is computed
        * \param dz direction for which the derivative is computed
        */
-        template < int idx , int idy , int idz , class ArgX , class ArgY , class ArgZ ,
+      template < int idx , int idy , int idz , class ArgX , class ArgY , class ArgZ ,
                  class IndexedArgX = IndexedType<ArgX,idx> ,
                  class IndexedArgY = IndexedType<ArgY,idy> ,
                  class IndexedArgZ = IndexedType<ArgZ,idz> ,
                  class = std::enable_if_t< D3Sum<IndexedArgX,IndexedArgY,IndexedArgZ>::present > >
-      auto d3(ArgX const& dx, ArgY const& dy, ArgZ const& dz) const
+      auto d3(ArgX const& dx, ArgY const& dy, ArgZ const& dz) const -> std::decay_t<decltype(this->d0())>
       {
         return 2 * sum( product( D0<F>(f) , D3<F,IndexedArgX,IndexedArgY,IndexedArgZ>(f,dx,dy,dz) ),
                         product( D1<F,IndexedArgZ>(f,dz) , D2<F,IndexedArgX,IndexedArgY>(f,dx,dy) ),
@@ -128,5 +125,3 @@ namespace FunG
     };
   }
 }
-
-#endif // FUNG_MATHEMATICAL_OPERATIONS_SQUARED_HH

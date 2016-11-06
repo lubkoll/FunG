@@ -1,25 +1,21 @@
 // Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
 // Released under the terms of the GNU General Public License version 3 or later.
 
-#ifndef FUNG_MATHEMATICAL_OPERATIONS_SUM_HH
-#define FUNG_MATHEMATICAL_OPERATIONS_SUM_HH
+#pragma once
 
 #include <type_traits>
 #include <utility>
 
-#include "fung/util/compute_sum.hh"
-#include "fung/util/derivative_wrappers.hh"
-#include "fung/util/evaluate_if_present.hh"
-#include "fung/util/indexed_type.hh"
+#include <fung/concept_check.hh>
+#include <fung/util/chainer.hh>
+#include <fung/util/compute_sum.hh>
+#include <fung/util/derivative_wrappers.hh>
+#include <fung/util/evaluate_if_present.hh>
+#include <fung/util/indexed_type.hh>
 
 namespace FunG
 {
-  /// @cond
-  template <class> struct Chainer;
-  namespace Concepts { template <class> struct FunctionConceptCheck; }
-  /// @endcond
-
-  namespace MathematicalOperations
+   namespace MathematicalOperations
   {
     /**
      * \ingroup MathematicalOperationsGroup
@@ -30,15 +26,17 @@ namespace FunG
                class CheckG = Concepts::FunctionConceptCheck<G> >
     struct Sum : Chainer< Sum< F, G, CheckF, CheckG > >
     {
-      /**
-       * @brief Constructor passing arguments to function constructors.
-       * @param f_ input for constructor of first summand
-       * @param g_ input for constructor of second summand
-       */
-      template < class InitF, class InitG >
-      Sum( InitF&& f_, InitG&& g_ )
-        : f( std::forward<InitF>(f_) ),
-          g( std::forward<InitG>(g_) ),
+      /// Constructor that copies its arguments.
+      Sum( const F& f_, const G& g_ )
+        : f( f_ ),
+          g( g_ ),
+          value( f() + g() )
+      {}
+
+      /// Constructor that moves its arguments.
+      Sum( F&& f_, G&& g_ )
+        : f( std::move(f_) ),
+          g( std::move(g_) ),
           value( f() + g() )
       {}
 
@@ -111,4 +109,3 @@ namespace FunG
   }
 }
 
-#endif // FUNG_MATHEMATICAL_OPERATIONS_SUM_HH

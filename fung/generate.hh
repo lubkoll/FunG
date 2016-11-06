@@ -154,6 +154,20 @@ namespace FunG
     return MathematicalOperations::Squared< std::decay_t<F> >( std::forward<F>(f) );
   }
 
+
+  /**
+   * \brief Generate squared function
+   *
+   * This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions.
+   * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
+   */
+  template < class F,
+             std::enable_if_t< Checks::isFunction< std::decay_t<F> >() >* = nullptr >
+  auto squared( F&& f )
+  {
+    return MathematicalOperations::Squared< std::decay_t<F> >( std::forward<F>(f) );
+  }
+
   /**
    * \brief overload of "<<"-operator for chaining functions \f$f\f$ and \f$g\f$ to \f$ f \circ g \f$.
    *
