@@ -1,18 +1,13 @@
-// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
-// Released under the terms of the GNU General Public License version 3 or later.
+#pragma once
 
-#ifndef FUNG_GENERATE_HH
-#define FUNG_GENERATE_HH
+#include <fung/constant.hh>
+#include <fung/operations.hh>
+#include <fung/util/add_missing_operators.hh>
+#include <fung/util/static_checks.hh>
+#include <fung/util/type_traits.hh>
+#include <fung/variable.hh>
 
-#include <iostream>
 #include <type_traits>
-
-#include "fung/constant.hh"
-#include "fung/operations.hh"
-#include "fung/util/add_missing_operators.hh"
-#include "fung/util/static_checks.hh"
-#include "fung/util/type_traits.hh"
-#include "fung/variable.hh"
 
 namespace FunG
 {
@@ -110,7 +105,6 @@ namespace FunG
   /**
    * \brief overload of "+"-operator for the generation of functions.
    *
-   * This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions.
    * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
    */
   template < class F, class G,
@@ -124,7 +118,6 @@ namespace FunG
   /**
    * \brief overload of "*"-operator for the generation of functions.
    *
-   * This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions.
    * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
    */
   template < class F, class G,
@@ -139,7 +132,6 @@ namespace FunG
   /**
    * \brief overload of "^"-operator for the generation of functions.
    *
-   * This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions.
    * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
    */
   template < class F,
@@ -158,7 +150,6 @@ namespace FunG
   /**
    * \brief Generate squared function
    *
-   * This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions.
    * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
    */
   template < class F,
@@ -171,7 +162,6 @@ namespace FunG
   /**
    * \brief overload of "<<"-operator for chaining functions \f$f\f$ and \f$g\f$ to \f$ f \circ g \f$.
    *
-   * This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions.
    * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
    */
 
@@ -187,15 +177,13 @@ namespace FunG
   /**
    * \brief overload of "-"-operator for the generation of functions.
    *
-   * This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions.
    * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
    */
-  template < class F, class T,
-             std::enable_if_t< Checks::isFunction< std::decay_t<F> >() || Checks::isFunction< std::decay_t<T> >()>* = nullptr >
-  auto operator-( F&& f, T&& t )
+  template < class F, class G,
+             std::enable_if_t< Checks::isFunction< std::decay_t<F> >() ||
+                               Checks::isFunction< std::decay_t<G> >()>* = nullptr >
+  auto operator-( F&& f, G&& g )
   {
-    return std::forward<F>(f) + ( -1 * std::forward<T>(t) );
+    return std::forward<F>(f) + ( -1 * std::forward<G>(g) );
   }
 }
-
-#endif // FUNG_GENERATE_HH
