@@ -2,9 +2,30 @@
 \label{at_8hh}\index{fung/util/at.\+hh@{fung/util/at.\+hh}}
 {\ttfamily \#include $<$type\+\_\+traits$>$}\\*
 {\ttfamily \#include $<$utility$>$}\\*
+{\ttfamily \#include \char`\"{}macros.\+hh\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}static\+\_\+checks.\+hh\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structFunG_1_1Access_1_1EntryOfMatrix}{Fun\+G\+::\+Access\+::\+Entry\+Of\+Matrix$<$ Matrix, class $>$}
+\begin{DoxyCompactList}\small\item\em Traits class for accessing the entries of a matrix. Default\+: A(i,j). \end{DoxyCompactList}\item 
+struct \hyperlink{structFunG_1_1Access_1_1EntryOfMatrix_3_01Matrix_00_01void__t_3_01Checks_1_1Try_1_1MemOp_1_1Squa64f8314119f1d5e2cd3b3016365cec8d}{Fun\+G\+::\+Access\+::\+Entry\+Of\+Matrix$<$ Matrix, void\+\_\+t$<$ Checks\+::\+Try\+::\+Mem\+Op\+::\+Square\+Bracket\+Access\+For\+Matrix$<$ std\+::decay\+\_\+t$<$ Matrix $>$ $>$ $>$ $>$}
+\begin{DoxyCompactList}\small\item\em Specialization for the case that matrix entries can be accessed via square brackets\+: A\mbox{[}i\mbox{]}\mbox{[}j\mbox{]}. \end{DoxyCompactList}\item 
+struct \hyperlink{structFunG_1_1Access_1_1EntryOfVector}{Fun\+G\+::\+Access\+::\+Entry\+Of\+Vector$<$ Vector, class $>$}
+\begin{DoxyCompactList}\small\item\em Traits class for accessing the entries of a vector. Default\+: v(i). \end{DoxyCompactList}\item 
+struct \hyperlink{structFunG_1_1Access_1_1EntryOfVector_3_01Vector_00_01void__t_3_01Checks_1_1Try_1_1MemOp_1_1Squaa9733f1e90025a89b1e2cfa7d151d247}{Fun\+G\+::\+Access\+::\+Entry\+Of\+Vector$<$ Vector, void\+\_\+t$<$ Checks\+::\+Try\+::\+Mem\+Op\+::\+Square\+Bracket\+Access\+For\+Vector$<$ std\+::decay\+\_\+t$<$ Vector $>$ $>$ $>$ $>$}
+\begin{DoxyCompactList}\small\item\em Specialization for the case that vector entries can be accessed via square brackets\+: v\mbox{[}i\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
- \hyperlink{namespaceFunG}{Fun\+G}
-\begin{DoxyCompactList}\small\item\em Main namespace of the Fun\+G library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+ \hyperlink{namespaceFunG}{FunG}
+\begin{DoxyCompactList}\small\item\em Main namespace of the FunG library. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceFunG_1_1Access}{Fun\+G\+::\+Access}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Matrix , class Index , class  = std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+integral$<$\+Index$>$\+::value $>$$>$ }\\decltype(auto) \hyperlink{macros_8hh_a03b9da186125795e5afa49d0ef1cc32f}{F\+U\+N\+G\+\_\+\+A\+L\+W\+A\+Y\+S\+\_\+\+I\+N\+L\+I\+NE} \hyperlink{namespaceFunG_aae631e6149505bdfc0b1c6162b370c7f}{Fun\+G\+::at} (Matrix \&\&A, Index i, Index j)
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespaceFunG_1_1Access}{Access} matrix entry $A_{ij}$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Vector , class Index , class  = std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+integral$<$\+Index$>$\+::value $>$$>$ }\\decltype(auto) \hyperlink{macros_8hh_a03b9da186125795e5afa49d0ef1cc32f}{F\+U\+N\+G\+\_\+\+A\+L\+W\+A\+Y\+S\+\_\+\+I\+N\+L\+I\+NE} \hyperlink{namespaceFunG_aa40271c9228c5ccee8a4973f27918630}{Fun\+G\+::at} (Vector \&\&v, Index i)
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespaceFunG_1_1Access}{Access} vector entry. \end{DoxyCompactList}\end{DoxyCompactItemize}

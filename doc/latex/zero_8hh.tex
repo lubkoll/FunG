@@ -1,8 +1,8 @@
 \hypertarget{zero_8hh}{}\section{fung/util/zero.hh File Reference}
 \label{zero_8hh}\index{fung/util/zero.\+hh@{fung/util/zero.\+hh}}
-{\ttfamily \#include $<$type\+\_\+traits$>$}\\*
 {\ttfamily \#include $<$utility$>$}\\*
 {\ttfamily \#include \char`\"{}static\+\_\+checks.\+hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}type\+\_\+traits.\+hh\char`\"{}}\\*
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -13,12 +13,12 @@ struct \hyperlink{structFunG_1_1Zero_3_01Matrix_00_01void__t_3_01Checks_1_1TryCa
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
- \hyperlink{namespaceFunG}{Fun\+G}
-\begin{DoxyCompactList}\small\item\em Main namespace of the Fun\+G library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+ \hyperlink{namespaceFunG}{FunG}
+\begin{DoxyCompactList}\small\item\em Main namespace of the FunG library. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$class Matrix , class  = std\+::enable\+\_\+if\+\_\+t$<$\+Checks\+::is\+Constant\+Size$<$\+Matrix$>$() $\vert$$\vert$ std\+::is\+\_\+arithmetic$<$\+Matrix$>$\+::value$>$$>$ }\\Matrix \hyperlink{namespaceFunG_a649b4470d6def401959bfea3a368c48c}{Fun\+G\+::zero} ()
-\item 
-{\footnotesize template$<$class Matrix , class  = std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Constant\+Size$<$\+Matrix$>$() \&\& !std\+::is\+\_\+arithmetic$<$\+Matrix$>$\+::value$>$$>$ }\\constexpr Matrix \hyperlink{namespaceFunG_ae633433339ba30207aa526e54e3924b4}{Fun\+G\+::zero} (int rows, int cols)
-\end{DoxyCompactItemize}
+{\footnotesize template$<$class Matrix , class  = std\+::enable\+\_\+if\+\_\+t$<$\+Checks\+::is\+Constant\+Size$<$\+Matrix$>$() $\vert$$\vert$ is\+\_\+arithmetic$<$\+Matrix$>$\+::value$>$$>$ }\\Matrix \hyperlink{namespaceFunG_a649b4470d6def401959bfea3a368c48c}{Fun\+G\+::zero} ()
+\begin{DoxyCompactList}\small\item\em Requires that a specialization of struct \hyperlink{structFunG_1_1Zero}{Zero} exists for Matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Matrix , class  = std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Constant\+Size$<$\+Matrix$>$() \&\& !is\+\_\+arithmetic$<$\+Matrix$>$\+::value$>$$>$ }\\constexpr Matrix \hyperlink{namespaceFunG_ae633433339ba30207aa526e54e3924b4}{Fun\+G\+::zero} (int rows, int cols)
+\begin{DoxyCompactList}\small\item\em Requires that a specialization of struct \hyperlink{structFunG_1_1Zero}{Zero} exists for Matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}

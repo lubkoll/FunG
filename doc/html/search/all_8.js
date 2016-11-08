@@ -15,10 +15,12 @@ var searchData=
   ['incompressibleneohooke',['incompressibleNeoHooke',['../group__Rubber.html#ga5bb28aef7006413775791998936d6b81',1,'FunG']]],
   ['incompressibleskin_5fhendriks',['incompressibleSkin_Hendriks',['../group__Biomechanics.html#gaa20bf15ef6976d64d89490429035b2c4',1,'FunG::incompressibleSkin_Hendriks(double c0, double c1, const Matrix &amp;F)'],['../group__Biomechanics.html#gad8653218bd2afb4e3cfd601a5142956c',1,'FunG::incompressibleSkin_Hendriks(const Matrix &amp;F)']]],
   ['indexed_5ftype_2ehh',['indexed_type.hh',['../indexed__type_8hh.html',1,'']]],
+  ['inplacemultiplication',['inPlaceMultiplication',['../namespaceFunG_1_1Checks_1_1Has_1_1MemOp.html#ae8e502928ebc6342cab98ebbb62b8802',1,'FunG::Checks::Has::MemOp']]],
+  ['inplacesummation',['inPlaceSummation',['../namespaceFunG_1_1Checks_1_1Has_1_1MemOp.html#a23052f7d8da399943f6354a7d477c825',1,'FunG::Checks::Has::MemOp']]],
   ['invariants',['Invariants',['../group__InvariantGroup.html',1,'']]],
-  ['is_5farithmetic',['is_arithmetic',['../namespaceFunG.html#a6dd0f05fb05ea031b7b9678fe3730c73',1,'FunG']]],
-  ['isarithmetic',['IsArithmetic',['../structFunG_1_1IsArithmetic.html',1,'FunG']]],
-  ['isconstantsize',['isConstantSize',['../group__Checks.html#gadcc3e179af2ed0384a3773ea086045b9',1,'FunG::Checks']]],
-  ['isfunction',['isFunction',['../group__Checks.html#gac6e6c5574a8497cc0749e5a613e4d57c',1,'FunG::Checks']]],
-  ['isvariable',['isVariable',['../group__Checks.html#gac2a1a8aedf54c42cb6d47b3b64bbc761',1,'FunG::Checks']]]
+  ['is_5farithmetic',['is_arithmetic',['../structFunG_1_1is__arithmetic.html',1,'FunG']]],
+  ['is_5fcallable',['is_callable',['../namespaceFunG_1_1Checks_1_1Has_1_1MemOp.html#a5810c07eff37faaf76b881548a6722bd',1,'FunG::Checks::Has::MemOp']]],
+  ['isconstantsize',['isConstantSize',['../group__ConceptGroup.html#gadcc3e179af2ed0384a3773ea086045b9',1,'FunG::Checks']]],
+  ['isfunction',['isFunction',['../group__ConceptGroup.html#gac6e6c5574a8497cc0749e5a613e4d57c',1,'FunG::Checks']]],
+  ['isvariable',['isVariable',['../group__ConceptCheck.html#gac2a1a8aedf54c42cb6d47b3b64bbc761',1,'FunG::Checks']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['is_5farithmetic',['is_arithmetic',['../namespaceFunG.html#a6dd0f05fb05ea031b7b9678fe3730c73',1,'FunG']]]
+  ['sqrt',['Sqrt',['../group__CMathGroup.html#gaca80e773d5886f47cd49dc19b130263f',1,'FunG']]]
 ];

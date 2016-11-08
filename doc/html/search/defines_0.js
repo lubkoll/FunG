@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['have_5fboost',['HAVE_BOOST',['../third_8hh.html#a1644f282a4f84575a270f96b98d4f3c6',1,'third.hh']]]
+  ['fung_5falways_5finline',['FUNG_ALWAYS_INLINE',['../macros_8hh.html#a03b9da186125795e5afa49d0ef1cc32f',1,'macros.hh']]]
 ];

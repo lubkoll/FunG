@@ -1,6 +1,7 @@
 var searchData=
 [
   ['scale',['Scale',['../structFunG_1_1MathematicalOperations_1_1Scale.html',1,'FunG::MathematicalOperations']]],
+  ['secondprincipalinvariant',['SecondPrincipalInvariant',['../classFunG_1_1LinearAlgebra_1_1SecondPrincipalInvariant.html',1,'FunG::LinearAlgebra']]],
   ['sin',['Sin',['../structFunG_1_1Sin.html',1,'FunG']]],
   ['squared',['Squared',['../structFunG_1_1MathematicalOperations_1_1Squared.html',1,'FunG::MathematicalOperations']]],
   ['squaredfrobeniusnorm',['SquaredFrobeniusNorm',['../structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm.html',1,'FunG::LinearAlgebra']]],

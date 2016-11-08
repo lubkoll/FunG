@@ -12,7 +12,10 @@ var searchData=
   ['incompressiblemuscletissue_5fmartins',['incompressibleMuscleTissue_Martins',['../group__Biomechanics.html#gafcc36a1958899ca9246c4c1b3c9bfd85',1,'FunG::incompressibleMuscleTissue_Martins(double c, double b, double A, double a, const Matrix &amp;M, const Matrix &amp;F)'],['../group__Biomechanics.html#ga9e414585a90b1988e9fa88d17d875055',1,'FunG::incompressibleMuscleTissue_Martins(const Matrix &amp;M, const Matrix &amp;F)']]],
   ['incompressibleneohooke',['incompressibleNeoHooke',['../group__Rubber.html#ga5bb28aef7006413775791998936d6b81',1,'FunG']]],
   ['incompressibleskin_5fhendriks',['incompressibleSkin_Hendriks',['../group__Biomechanics.html#gaa20bf15ef6976d64d89490429035b2c4',1,'FunG::incompressibleSkin_Hendriks(double c0, double c1, const Matrix &amp;F)'],['../group__Biomechanics.html#gad8653218bd2afb4e3cfd601a5142956c',1,'FunG::incompressibleSkin_Hendriks(const Matrix &amp;F)']]],
-  ['isconstantsize',['isConstantSize',['../group__Checks.html#gadcc3e179af2ed0384a3773ea086045b9',1,'FunG::Checks']]],
-  ['isfunction',['isFunction',['../group__Checks.html#gac6e6c5574a8497cc0749e5a613e4d57c',1,'FunG::Checks']]],
-  ['isvariable',['isVariable',['../group__Checks.html#gac2a1a8aedf54c42cb6d47b3b64bbc761',1,'FunG::Checks']]]
+  ['inplacemultiplication',['inPlaceMultiplication',['../namespaceFunG_1_1Checks_1_1Has_1_1MemOp.html#ae8e502928ebc6342cab98ebbb62b8802',1,'FunG::Checks::Has::MemOp']]],
+  ['inplacesummation',['inPlaceSummation',['../namespaceFunG_1_1Checks_1_1Has_1_1MemOp.html#a23052f7d8da399943f6354a7d477c825',1,'FunG::Checks::Has::MemOp']]],
+  ['is_5fcallable',['is_callable',['../namespaceFunG_1_1Checks_1_1Has_1_1MemOp.html#a5810c07eff37faaf76b881548a6722bd',1,'FunG::Checks::Has::MemOp']]],
+  ['isconstantsize',['isConstantSize',['../group__ConceptGroup.html#gadcc3e179af2ed0384a3773ea086045b9',1,'FunG::Checks']]],
+  ['isfunction',['isFunction',['../group__ConceptGroup.html#gac6e6c5574a8497cc0749e5a613e4d57c',1,'FunG::Checks']]],
+  ['isvariable',['isVariable',['../group__ConceptCheck.html#gac2a1a8aedf54c42cb6d47b3b64bbc761',1,'FunG::Checks']]]
 ];

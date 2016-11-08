@@ -1,30 +1,29 @@
 \hypertarget{generate_8hh}{}\section{fung/generate.hh File Reference}
 \label{generate_8hh}\index{fung/generate.\+hh@{fung/generate.\+hh}}
-{\ttfamily \#include $<$cassert$>$}\\*
-{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$fung/constant.\+hh$>$}\\*
+{\ttfamily \#include $<$fung/operations.\+hh$>$}\\*
+{\ttfamily \#include $<$fung/util/add\+\_\+missing\+\_\+operators.\+hh$>$}\\*
+{\ttfamily \#include $<$fung/util/static\+\_\+checks.\+hh$>$}\\*
+{\ttfamily \#include $<$fung/util/type\+\_\+traits.\+hh$>$}\\*
+{\ttfamily \#include $<$fung/variable.\+hh$>$}\\*
 {\ttfamily \#include $<$type\+\_\+traits$>$}\\*
-{\ttfamily \#include \char`\"{}fung/constant.\+hh\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}fung/operations.\+hh\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}fung/util/add\+\_\+missing\+\_\+operators.\+hh\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}fung/util/static\+\_\+checks.\+hh\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}fung/variable.\+hh\char`\"{}}\\*
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
- \hyperlink{namespaceFunG}{Fun\+G}
-\begin{DoxyCompactList}\small\item\em Main namespace of the Fun\+G library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+ \hyperlink{namespaceFunG}{FunG}
+\begin{DoxyCompactList}\small\item\em Main namespace of the FunG library. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$class F , class G , class  = std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$\+F$>$() $\vert$$\vert$                                      Checks\+::is\+Function$<$\+G$>$() $>$$>$ }\\auto \hyperlink{namespaceFunG_ac7f61d48ff610ec4be8ee6994d165077}{Fun\+G\+::operator+} (const F \&f, const G \&g)
+{\footnotesize template$<$class F , class G , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ F $>$ $>$()$\vert$$\vert$\+Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ G $>$ $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a24bb5d609b022030afda2d8589cf5509}{Fun\+G\+::operator+} (F \&\&f, G \&\&g)
 \begin{DoxyCompactList}\small\item\em overload of \char`\"{}+\char`\"{}-\/operator for the generation of functions. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , class G , class  = std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$\+F$>$() $\vert$$\vert$ Checks\+::is\+Function$<$\+G$>$() $>$$>$ }\\auto \hyperlink{namespaceFunG_a014be932d3b4eb377d8e60271e864438}{Fun\+G\+::operator$\ast$} (const F \&f, const G \&g)
+{\footnotesize template$<$class F , class G , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ F $>$ $>$()$\vert$$\vert$\+Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ G $>$ $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a267562e725c73ece1c1d057b5f29511f}{Fun\+G\+::operator$\ast$} (F \&\&f, G \&\&g)
 \begin{DoxyCompactList}\small\item\em overload of \char`\"{}$\ast$\char`\"{}-\/operator for the generation of functions. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , class  = std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$\+F$>$() $>$$>$ }\\auto \hyperlink{namespaceFunG_aeb22ff63cd78cb63d81b601c656da2c1}{Fun\+G\+::operator$^\wedge$} (const F \&f, int k)
+{\footnotesize template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ F $>$ $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a94273e3ea80324e591bb98ae3c051221}{Fun\+G\+::operator$^\wedge$} (F \&\&f, int k)
 \begin{DoxyCompactList}\small\item\em overload of \char`\"{}$^\wedge$\char`\"{}-\/operator for the generation of functions. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , class G , class  = std\+::enable\+\_\+if\+\_\+t$<$\+Checks\+::is\+Function$<$\+F$>$() \&\&                                     Checks\+::is\+Function$<$\+G$>$()$>$$>$ }\\auto \hyperlink{namespaceFunG_a56701b5e83b96d2d6cc5c482e36caa39}{Fun\+G\+::operator$<$$<$} (const F \&f, const G \&g)
+{\footnotesize template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ F $>$ $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_ac4ffc0754104af6ddf114e154251db78}{Fun\+G\+::squared} (F \&\&f)
+\begin{DoxyCompactList}\small\item\em Generate squared function. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class F , class G , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ F $>$ $>$()\&\&\+Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ G $>$ $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a65436d4494e99629b0177d0df7634a6b}{Fun\+G\+::operator$<$$<$} (F \&\&f, G \&\&g)
 \begin{DoxyCompactList}\small\item\em overload of \char`\"{}$<$$<$\char`\"{}-\/operator for chaining functions $f$ and $g$ to $ f \circ g $. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , class T , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ F $>$()\&\&!\+Checks\+::is\+Function$<$ T $>$()$>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_aa0c4552dee9179fb50b57ece863d835a}{Fun\+G\+::operator-\/} (const F \&f, const T \&t)
-\begin{DoxyCompactList}\small\item\em overload of \char`\"{}-\/\char`\"{}-\/operator for the generation of functions. Here the second argument is a constant that is wrapped in to an object of type \hyperlink{structFunG_1_1Constant}{Constant}. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , class T , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+convertible$<$ T, decltype(std\+::declval$<$ F $>$()())$>$\+::value \&\&\+Checks\+::is\+Function$<$ F $>$()$>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a7f522d98a8d5bc8c3b11599d3136ded4}{Fun\+G\+::operator-\/} (const T \&t, const F \&f)
-\begin{DoxyCompactList}\small\item\em overload of \char`\"{}-\/\char`\"{}-\/operator for the generation of functions. Here the first argument is a constant that is wrapped in to an object of type \hyperlink{structFunG_1_1Constant}{Constant}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+{\footnotesize template$<$class F , class G , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ F $>$ $>$()$\vert$$\vert$\+Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ G $>$ $>$()$>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a3af04c2ef5c1b206feb75fffd298cbbf}{Fun\+G\+::operator-\/} (F \&\&f, G \&\&g)
+\begin{DoxyCompactList}\small\item\em overload of \char`\"{}-\/\char`\"{}-\/operator for the generation of functions. \end{DoxyCompactList}\end{DoxyCompactItemize}

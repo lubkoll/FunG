@@ -1,12 +1,14 @@
-\hypertarget{namespaceFunG}{}\section{Fun\+G Namespace Reference}
-\label{namespaceFunG}\index{Fun\+G@{Fun\+G}}
+\hypertarget{namespaceFunG}{}\section{FunG Namespace Reference}
+\label{namespaceFunG}\index{FunG@{FunG}}
 
 
-Main namespace of the Fun\+G library.  
+Main namespace of the FunG library.  
 
 
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceFunG_1_1Access}{Access}
 \item 
  \hyperlink{namespaceFunG_1_1Checks}{Checks}
 \begin{DoxyCompactList}\small\item\em Static checks for the presence of different operators and functions. \end{DoxyCompactList}\item 
@@ -19,15 +21,17 @@ Main namespace of the Fun\+G library.
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+struct \hyperlink{structFunG_1_1ACos}{A\+Cos}
+\begin{DoxyCompactList}\small\item\em Arc cosine function including first three derivatives (based on acos(double) in $<$cmath$>$). \end{DoxyCompactList}\item 
 struct \hyperlink{structFunG_1_1ASin}{A\+Sin}
-\begin{DoxyCompactList}\small\item\em Arcsine function including first three derivatives (based on asin(double) in $<$cmath$>$). \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Arc sine function including first three derivatives (based on asin(double) in $<$cmath$>$). \end{DoxyCompactList}\item 
 struct \hyperlink{structFunG_1_1Constant}{Constant}
 \begin{DoxyCompactList}\small\item\em Wrap a constant. \end{DoxyCompactList}\item 
 struct \hyperlink{structFunG_1_1Cos}{Cos}
 \begin{DoxyCompactList}\small\item\em Cosine function including first three derivatives (based on cos(double) in $<$cmath$>$). \end{DoxyCompactList}\item 
 struct \hyperlink{structFunG_1_1Decay}{Decay}
-\begin{DoxyCompactList}\small\item\em \hyperlink{structFunG_1_1Identity}{Identity}, i.\+e. \hyperlink{structFunG_1_1Decay_a4b2916cbb7c8587ab3fccc9b896b9df4}{Decay$<$\+F$>$\+::type} == F. \end{DoxyCompactList}\item 
-struct \hyperlink{structFunG_1_1Decay_3_01F_00_01void__t_3_01Checks_1_1TryNestedType__PlainObject_3_01F_01_4_01_4_01_4}{Decay$<$ F, void\+\_\+t$<$ Checks\+::\+Try\+Nested\+Type\+\_\+\+Plain\+Object$<$ F $>$ $>$ $>$}
+\begin{DoxyCompactList}\small\item\em Identity, i.\+e. \hyperlink{structFunG_1_1Decay_a4b2916cbb7c8587ab3fccc9b896b9df4}{Decay$<$\+F$>$\+::type} == F \end{DoxyCompactList}\item 
+struct \hyperlink{structFunG_1_1Decay_3_01F_00_01void__t_3_01Checks_1_1Try_1_1NestedType_1_1PlainObject_3_01F_01_4_01_4_01_4}{Decay$<$ F, void\+\_\+t$<$ Checks\+::\+Try\+::\+Nested\+Type\+::\+Plain\+Object$<$ F $>$ $>$ $>$}
 \begin{DoxyCompactList}\small\item\em Underlying type for expression templates of the Eigen library. \end{DoxyCompactList}\item 
 struct \hyperlink{structFunG_1_1Exp}{Exp}
 \begin{DoxyCompactList}\small\item\em Exponential function including first three derivatives. \end{DoxyCompactList}\item 
@@ -35,9 +39,9 @@ struct \hyperlink{structFunG_1_1Exp2}{Exp2}
 \begin{DoxyCompactList}\small\item\em Function $2^x$ including first three derivatives. \end{DoxyCompactList}\item 
 struct \hyperlink{structFunG_1_1Identity}{Identity}
 \begin{DoxyCompactList}\small\item\em Identity mapping $ f(x)=x $. \end{DoxyCompactList}\item 
-struct \hyperlink{structFunG_1_1IsArithmetic}{Is\+Arithmetic}
+struct \hyperlink{structFunG_1_1is__arithmetic}{is\+\_\+arithmetic}
 \begin{DoxyCompactList}\small\item\em Specialize this template class to register arithmetic types that are not built-\/in. \end{DoxyCompactList}\item 
-struct \hyperlink{structFunG_1_1LN}{L\+N}
+struct \hyperlink{structFunG_1_1LN}{LN}
 \begin{DoxyCompactList}\small\item\em Natural logarithm including first three derivatives. \end{DoxyCompactList}\item 
 struct \hyperlink{structFunG_1_1Log10}{Log10}
 \begin{DoxyCompactList}\small\item\em Common (base 10) logarithm including first three derivatives. \end{DoxyCompactList}\item 
@@ -69,16 +73,16 @@ using \hyperlink{group__CMathGroup_ga2e4363ad8400e1c8431c10de2152ec2b}{Cbrt} = \
 using \hyperlink{group__CMathGroup_ga9bcbef859d7ffd0d6570d69e1bd8503a}{Cbrt2} = \hyperlink{structFunG_1_1Pow}{Pow}$<$ 2, 3 $>$
 \begin{DoxyCompactList}\small\item\em Third root squared including first three derivatives (based on sqrt(double) in $<$cmath$>$). \end{DoxyCompactList}\item 
 {\footnotesize template$<$class F $>$ }\\using \hyperlink{namespaceFunG_a195ac37d8696970c89b112c81a1e4d6e}{decay\+\_\+t} = typename \hyperlink{structFunG_1_1Decay}{Decay}$<$ std\+::decay\+\_\+t$<$ F $>$ $>$\+::type
-\begin{DoxyCompactList}\small\item\em Access underlying type (if it is hidden by expression templates). \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F $>$ }\\using \hyperlink{namespaceFunG_a6dd0f05fb05ea031b7b9678fe3730c73}{is\+\_\+arithmetic} = std\+::integral\+\_\+constant$<$ bool, std\+::is\+\_\+arithmetic$<$ F $>$\+::value$\vert$$\vert$\hyperlink{structFunG_1_1IsArithmetic}{Is\+Arithmetic}$<$ F $>$\+::value $>$
-\item 
-{\footnotesize template$<$class... Types$>$ }\\using \hyperlink{namespaceFunG_a0cde667596590eb8d32e4a5ee76ddbb9}{void\+\_\+t} = typename Detail\+::voider$<$ Types...$>$\+::type
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespaceFunG_1_1Access}{Access} underlying type (if it is hidden by expression templates). \end{DoxyCompactList}\item 
+{\footnotesize template$<$class... Types$>$ }\\using \hyperlink{namespaceFunG_a0cde667596590eb8d32e4a5ee76ddbb9}{void\+\_\+t} = typename Detail\+::voider$<$ Types... $>$\+::type
 \begin{DoxyCompactList}\small\item\em Most fascinating type ever. Is void for all input types. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class F , int id$>$ }\\using \hyperlink{namespaceFunG_a3d589ef7d011a46a72847eabcbbb4532}{Variable\+\_\+t} = typename Variable\+Detail\+::\+Variable\+Type$<$ F, id $>$\+::type
 \begin{DoxyCompactList}\small\item\em Get underlying type of variable with index id. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+{\footnotesize template$<$class Function , class  = std\+::enable\+\_\+if\+\_\+t$<$\+Checks\+::is\+Function$<$\+Function$>$()$>$$>$ }\\auto \hyperlink{group__CMathGroup_gae9b7d3a479bcd8d48cf25f1c29edefb9}{acos} (const Function \&f)
+\begin{DoxyCompactList}\small\item\em Generate $ \arccos\circ f $. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Function , class  = std\+::enable\+\_\+if\+\_\+t$<$\+Checks\+::is\+Function$<$\+Function$>$()$>$$>$ }\\auto \hyperlink{group__CMathGroup_gad26443b289325876cffdaadfca770d51}{asin} (const Function \&f)
 \begin{DoxyCompactList}\small\item\em Generate $ \arcsin\circ f $. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Function , class  = std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$\+Function$>$() $>$$>$ }\\auto \hyperlink{group__CMathGroup_ga7e9b2ac717cd2350663293cb66ba6cbd}{cos} (const Function \&f)
@@ -134,7 +138,7 @@ using \hyperlink{group__CMathGroup_ga9bcbef859d7ffd0d6570d69e1bd8503a}{Cbrt2} = 
 {\footnotesize template$<$class Inflation\+Penalty , class Compression\+Penalty , class Matrix , int n = Linear\+Algebra\+::dim$<$\+Matrix$>$()$>$ }\\auto \hyperlink{group__Biomechanics_ga42721e772b7eada1b0bca98247ad440f}{compressible\+Skin\+\_\+\+Hendriks} (double d0, double d1, const Matrix \&F)
 \begin{DoxyCompactList}\small\item\em Compressible version of the model for skin tissue of \cite{Hendriks2005}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Scalar , class Vector $>$ }\\auto \hyperlink{namespaceFunG_aab17a1468e61f58564333b3fcd7900d6}{heat\+Model} (double c, double d, Scalar u, const Vector \&du)
-\begin{DoxyCompactList}\small\item\em Yield surface $ \frac{\beta}{3}\iota_1(\sigma) + J_2(\sigma)-offset $, where $\iota_1$ is the first principal and $J_2$ is the second deviatoric invariant. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Weak model for nonlinear heat transfer $ (c+du^2)\nabla u $. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Matrix , int n = Linear\+Algebra\+::dim$<$\+Matrix$>$()$>$ }\\auto \hyperlink{group__Rubber_gace19173e33490aadd36ae3a03fd1d85c}{incompressible\+Mooney\+Rivlin} (double c0, double c1, const Matrix \&F)
 \begin{DoxyCompactList}\small\item\em Generate an \char`\"{}incompressible\char`\"{} Mooney-\/\+Rivlin material law $ W(F)=c_0\iota_1(F^T F) + c_1\iota_2(F^T F) $, where $\iota_1$ is the first and $\iota_2$ the second principal matrix invariant. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Inflation\+Penalty , class Compression\+Penalty , class Matrix , int n = Linear\+Algebra\+::dim$<$\+Matrix$>$()$>$ }\\auto \hyperlink{group__Rubber_ga9a1894daa10a0bdcc620c6c41ecb6f19}{compressible\+Mooney\+Rivlin} (double c0, double c1, double d0, double d1, const Matrix \&F)
@@ -155,50 +159,56 @@ using \hyperlink{group__CMathGroup_ga9bcbef859d7ffd0d6570d69e1bd8503a}{Cbrt2} = 
 \begin{DoxyCompactList}\small\item\em Create the volumetric penalty function $ d_0 j^5 + d_1 j^{-5},\ j=\det(A) $. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Matrix $>$ }\\auto \hyperlink{namespaceFunG_a4784211358c877f05ad9426850303273}{yield\+Surface} (double beta, double offset, Matrix sigma=\hyperlink{group__LinearAlgebraGroup_ga88a596b8526c0ed98ce241244fb85948}{Linear\+Algebra\+::unit\+Matrix}$<$ Matrix $>$())
 \begin{DoxyCompactList}\small\item\em Yield surface $ \frac{\beta}{3}\iota_1(\sigma) + J_2(\sigma)-offset $, where $\iota_1$ is the first principal and $J_2$ is the second deviatoric invariant. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F $>$ }\\auto \hyperlink{namespaceFunG_a3a2af76439713dc7635e0c538ac34f15}{finalize} (const F \&f)
+{\footnotesize template$<$class F $>$ }\\auto \hyperlink{namespaceFunG_ac59f2ececc3cd451860776320a4a93d5}{finalize} (F \&\&f)
 \begin{DoxyCompactList}\small\item\em Finish function definition. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , class G , class  = std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$\+F$>$() $\vert$$\vert$                                      Checks\+::is\+Function$<$\+G$>$() $>$$>$ }\\auto \hyperlink{namespaceFunG_ac7f61d48ff610ec4be8ee6994d165077}{operator+} (const F \&f, const G \&g)
+{\footnotesize template$<$class F , class G , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ F $>$ $>$()$\vert$$\vert$\+Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ G $>$ $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a24bb5d609b022030afda2d8589cf5509}{operator+} (F \&\&f, G \&\&g)
 \begin{DoxyCompactList}\small\item\em overload of \char`\"{}+\char`\"{}-\/operator for the generation of functions. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , class G , class  = std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$\+F$>$() $\vert$$\vert$ Checks\+::is\+Function$<$\+G$>$() $>$$>$ }\\auto \hyperlink{namespaceFunG_a014be932d3b4eb377d8e60271e864438}{operator$\ast$} (const F \&f, const G \&g)
+{\footnotesize template$<$class F , class G , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ F $>$ $>$()$\vert$$\vert$\+Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ G $>$ $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a267562e725c73ece1c1d057b5f29511f}{operator$\ast$} (F \&\&f, G \&\&g)
 \begin{DoxyCompactList}\small\item\em overload of \char`\"{}$\ast$\char`\"{}-\/operator for the generation of functions. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , class  = std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$\+F$>$() $>$$>$ }\\auto \hyperlink{namespaceFunG_aeb22ff63cd78cb63d81b601c656da2c1}{operator$^\wedge$} (const F \&f, int k)
+{\footnotesize template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ F $>$ $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a94273e3ea80324e591bb98ae3c051221}{operator$^\wedge$} (F \&\&f, int k)
 \begin{DoxyCompactList}\small\item\em overload of \char`\"{}$^\wedge$\char`\"{}-\/operator for the generation of functions. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , class G , class  = std\+::enable\+\_\+if\+\_\+t$<$\+Checks\+::is\+Function$<$\+F$>$() \&\&                                     Checks\+::is\+Function$<$\+G$>$()$>$$>$ }\\auto \hyperlink{namespaceFunG_a56701b5e83b96d2d6cc5c482e36caa39}{operator$<$$<$} (const F \&f, const G \&g)
+{\footnotesize template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ F $>$ $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_ac4ffc0754104af6ddf114e154251db78}{squared} (F \&\&f)
+\begin{DoxyCompactList}\small\item\em Generate squared function. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class F , class G , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ F $>$ $>$()\&\&\+Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ G $>$ $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a65436d4494e99629b0177d0df7634a6b}{operator$<$$<$} (F \&\&f, G \&\&g)
 \begin{DoxyCompactList}\small\item\em overload of \char`\"{}$<$$<$\char`\"{}-\/operator for chaining functions $f$ and $g$ to $ f \circ g $. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , class T , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ F $>$()\&\&!\+Checks\+::is\+Function$<$ T $>$()$>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_aa0c4552dee9179fb50b57ece863d835a}{operator-\/} (const F \&f, const T \&t)
-\begin{DoxyCompactList}\small\item\em overload of \char`\"{}-\/\char`\"{}-\/operator for the generation of functions. Here the second argument is a constant that is wrapped in to an object of type \hyperlink{structFunG_1_1Constant}{Constant}. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , class T , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+convertible$<$ T, decltype(std\+::declval$<$ F $>$()())$>$\+::value \&\&\+Checks\+::is\+Function$<$ F $>$()$>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a7f522d98a8d5bc8c3b11599d3136ded4}{operator-\/} (const T \&t, const F \&f)
-\begin{DoxyCompactList}\small\item\em overload of \char`\"{}-\/\char`\"{}-\/operator for the generation of functions. Here the first argument is a constant that is wrapped in to an object of type \hyperlink{structFunG_1_1Constant}{Constant}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class F , class G , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ F $>$ $>$()$\vert$$\vert$\+Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ G $>$ $>$()$>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a3af04c2ef5c1b206feb75fffd298cbbf}{operator-\/} (F \&\&f, G \&\&g)
+\begin{DoxyCompactList}\small\item\em overload of \char`\"{}-\/\char`\"{}-\/operator for the generation of functions. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Arg $>$ }\\auto \hyperlink{namespaceFunG_a165e879e76d3a2a8906938f3658445ce}{identity} (const Arg \&x)
 \begin{DoxyCompactList}\small\item\em Construct Identity$<$\+Arg$>$(x). \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Scalar , class Other\+Scalar , int n, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::has\+Free\+\_\+\+Multiplication$<$ Dune\+::\+Field\+Vector$<$ Scalar, n $>$, Dune\+::\+Field\+Vector$<$ Other\+Scalar, n $>$ $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a5e258023361844926f485229c62a733b}{operator$\ast$} (const Dune\+::\+Field\+Vector$<$ Scalar, n $>$ \&a, const Dune\+::\+Field\+Vector$<$ Other\+Scalar, n $>$ \&b)
+{\footnotesize template$<$class Scalar , class Other\+Scalar , int n, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::\+Has\+::\+Free\+::multiplication$<$ Dune\+::\+Field\+Vector$<$ Scalar, n $>$, Dune\+::\+Field\+Vector$<$ Other\+Scalar, n $>$ $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a5e258023361844926f485229c62a733b}{operator$\ast$} (const Dune\+::\+Field\+Vector$<$ Scalar, n $>$ \&a, const Dune\+::\+Field\+Vector$<$ Other\+Scalar, n $>$ \&b)
 \begin{DoxyCompactList}\small\item\em Computation of the l2 scalar product for Dune\+::\+Field\+Vector. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Scalar , class Other\+Scalar , int n, int m, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::has\+Free\+\_\+\+Multiplication$<$ Dune\+::\+Field\+Matrix$<$ Scalar, n, m $>$, Dune\+::\+Field\+Vector$<$ Other\+Scalar, m $>$ $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_abadb8da34a5abc3dde0107231ab91c6f}{operator$\ast$} (const Dune\+::\+Field\+Matrix$<$ Scalar, n, m $>$ \&A, const Dune\+::\+Field\+Vector$<$ Other\+Scalar, m $>$ \&x)
+{\footnotesize template$<$class Scalar , class Other\+Scalar , int n, int m, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::\+Has\+::\+Free\+::multiplication$<$ Dune\+::\+Field\+Matrix$<$ Scalar, n, m $>$, Dune\+::\+Field\+Vector$<$ Other\+Scalar, m $>$ $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_abadb8da34a5abc3dde0107231ab91c6f}{operator$\ast$} (const Dune\+::\+Field\+Matrix$<$ Scalar, n, m $>$ \&A, const Dune\+::\+Field\+Vector$<$ Other\+Scalar, m $>$ \&x)
 \begin{DoxyCompactList}\small\item\em Define matrix-\/vector multiplication for Dune\+::\+Field\+Matrix and Dune\+::\+Field\+Vector, i.\+e. compute $y=Ax$. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Scalar , class Other\+Scalar , int n, int m, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::has\+Free\+\_\+\+Multiplication$<$ Dune\+::\+Field\+Vector$<$ Other\+Scalar, n $>$, Dune\+::\+Field\+Matrix$<$ Scalar, n, m $>$ $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a19a9d7b55b56f5101560034413a1dbfe}{operator$\ast$} (const Dune\+::\+Field\+Vector$<$ Other\+Scalar, n $>$ \&x, const Dune\+::\+Field\+Matrix$<$ Scalar, n, m $>$ \&A)
+{\footnotesize template$<$class Scalar , class Other\+Scalar , int n, int m, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::\+Has\+::\+Free\+::multiplication$<$ Dune\+::\+Field\+Vector$<$ Other\+Scalar, n $>$, Dune\+::\+Field\+Matrix$<$ Scalar, n, m $>$ $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a19a9d7b55b56f5101560034413a1dbfe}{operator$\ast$} (const Dune\+::\+Field\+Vector$<$ Other\+Scalar, n $>$ \&x, const Dune\+::\+Field\+Matrix$<$ Scalar, n, m $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Define vector-\/matrix multiplication for Dune\+::\+Field\+Matrix and Dune\+::\+Field\+Vector, i.\+e. compute $x^T A = y^T$ resp. $y=A^T x$. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Arg , class Scalar\+Arg , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic$<$ Scalar\+Arg $>$\+::value $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::is\+Function$<$ Arg $>$()\&\&!std\+::is\+\_\+arithmetic$<$ Arg $>$() $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::has\+Free\+\_\+\+Multiplication$<$ Arg, Scalar\+Arg $>$()\&\&\+Checks\+::has\+Mem\+Fn\+\_\+\+In\+Place\+Multiplication$<$ Arg, Scalar\+Arg $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a9b303ce8718a6f64b035e7e782370734}{operator$\ast$} (Scalar\+Arg a, Arg x)
-\begin{DoxyCompactList}\small\item\em Defines operator$\ast$ for multiplication with built-\/in arithmetic types from the left if undefined and in-\/place multiplication (operator$\ast$=()) is supported. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Arg , class Scalar\+Arg , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic$<$ Scalar\+Arg $>$\+::value $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::is\+Function$<$ Arg $>$()\&\&!std\+::is\+\_\+arithmetic$<$ Arg $>$\+::value $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::has\+Free\+\_\+\+Multiplication$<$ Arg, Scalar\+Arg $>$()\&\&\+Checks\+::has\+Mem\+Fn\+\_\+\+In\+Place\+Multiplication$<$ Arg, Scalar\+Arg $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a3cd5a2cb1abba842154691bb84aab896}{operator$\ast$} (Arg x, Scalar\+Arg a)
-\begin{DoxyCompactList}\small\item\em Defines operator$\ast$ for multiplication with built-\/in arithmetic types from the right if undefined and in-\/place multiplication (operator$\ast$=()) is supported. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Arg1 , class Arg2 , std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::is\+Function$<$ Arg1 $>$()\&\&!\+Checks\+::is\+Function$<$ Arg2 $>$() $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !std\+::is\+\_\+arithmetic$<$ Arg1 $>$()\&\&!std\+::is\+\_\+arithmetic$<$ Arg2 $>$() $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::has\+Free\+\_\+\+Multiplication$<$ Arg1, Arg2 $>$()\&\&\+Checks\+::has\+Mem\+Fn\+\_\+\+In\+Place\+Multiplication$<$ Arg1, Arg2 $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_ad023f2d2273af693f2b4ebceeb296dc8}{operator$\ast$} (Arg1 x, const Arg2 \&y)
+{\footnotesize template$<$class Arg , class Scalar\+Arg , std\+::enable\+\_\+if\+\_\+t$<$ is\+\_\+arithmetic$<$ Scalar\+Arg $>$\+::value $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::is\+Function$<$ Arg $>$()\&\&!is\+\_\+arithmetic$<$ Arg $>$() $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::\+Has\+::\+Free\+::multiplication$<$ Arg, Scalar\+Arg $>$()\&\&\+Checks\+::\+Has\+::\+Mem\+Op\+::in\+Place\+Multiplication$<$ Arg, Scalar\+Arg $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a9b303ce8718a6f64b035e7e782370734}{operator$\ast$} (Scalar\+Arg a, Arg x)
+\begin{DoxyCompactList}\small\item\em Defines operator$\ast$ for multiplication with arithmetic types from the left if undefined and in-\/place multiplication (operator$\ast$=()) is supported. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Arg , class Scalar\+Arg , std\+::enable\+\_\+if\+\_\+t$<$ is\+\_\+arithmetic$<$ Scalar\+Arg $>$\+::value $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::is\+Function$<$ Arg $>$()\&\&!is\+\_\+arithmetic$<$ Arg $>$\+::value $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::\+Has\+::\+Free\+::multiplication$<$ Arg, Scalar\+Arg $>$()\&\&\+Checks\+::\+Has\+::\+Mem\+Op\+::in\+Place\+Multiplication$<$ Arg, Scalar\+Arg $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a3cd5a2cb1abba842154691bb84aab896}{operator$\ast$} (Arg x, Scalar\+Arg a)
+\begin{DoxyCompactList}\small\item\em Defines operator$\ast$ for multiplication with arithmetic types from the right if undefined and in-\/place multiplication (operator$\ast$=()) is supported. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Arg1 , class Arg2 , std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::is\+Function$<$ Arg1 $>$()\&\&!\+Checks\+::is\+Function$<$ Arg2 $>$() $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !is\+\_\+arithmetic$<$ Arg1 $>$()\&\&!is\+\_\+arithmetic$<$ Arg2 $>$() $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::\+Has\+::\+Free\+::multiplication$<$ Arg1, Arg2 $>$()\&\&\+Checks\+::\+Has\+::\+Mem\+Op\+::in\+Place\+Multiplication$<$ Arg1, Arg2 $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_ad023f2d2273af693f2b4ebceeb296dc8}{operator$\ast$} (Arg1 x, const Arg2 \&y)
 \begin{DoxyCompactList}\small\item\em Defines operator$\ast$ for multiplication of non-\/arithmetic types if undefined and in-\/place multiplication (operator$\ast$=()) is supported. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Arg1 , class Arg2 , std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::is\+Function$<$ Arg1 $>$()\&\&!\+Checks\+::is\+Function$<$ Arg2 $>$() $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !std\+::is\+\_\+arithmetic$<$ Arg1 $>$()\&\&!std\+::is\+\_\+arithmetic$<$ Arg2 $>$() $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::has\+Free\+\_\+\+Multiplication$<$ Arg1, Arg2 $>$()\&\&!\+Checks\+::has\+Mem\+Fn\+\_\+\+In\+Place\+Multiplication$<$ Arg1, Arg2 $>$() $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::has\+Mem\+Fn\+\_\+rightmultiplyany$<$ Arg1, Arg2 $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a6e4d3266e119cd102800bf5c091e57fd}{operator$\ast$} (Arg1 x, const Arg2 \&y)
-\begin{DoxyCompactList}\small\item\em Defines operator$\ast$ for multiplication of non-\/arithmetic types if undefined and in-\/place multiplication is provided in terms of the member function rightmultiplyany() (such as for Dune\+::\+Field\+Matrix). \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Arg , std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::is\+Function$<$ Arg $>$()\&\&!std\+::is\+\_\+arithmetic$<$ Arg $>$() $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::has\+Free\+\_\+\+Summation$<$ Arg $>$()\&\&\+Checks\+::has\+Mem\+Fn\+\_\+\+In\+Place\+Summation$<$ Arg $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a063d3e8c19dbea3ee1396736fecb64e1}{operator+} (Arg x, const Arg \&y)
+{\footnotesize template$<$class Arg , std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::is\+Function$<$ Arg $>$()\&\&!is\+\_\+arithmetic$<$ Arg $>$() $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::\+Has\+::\+Free\+::summation$<$ Arg $>$()\&\&\+Checks\+::\+Has\+::\+Mem\+Op\+::in\+Place\+Summation$<$ Arg $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a063d3e8c19dbea3ee1396736fecb64e1}{operator+} (Arg x, const Arg \&y)
 \begin{DoxyCompactList}\small\item\em Defines operator+ if not yet defined and in-\/place summation (operator+=()) is supported. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Constant\+Size$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ }\\Matrix \hyperlink{namespaceFunG_a0211d0d26c669d56b5113fd2292902e5}{add\+Transposed} (Matrix \&A)
 \begin{DoxyCompactList}\small\item\em Overwrites $A$ with $A+A^T$. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Matrix , class  = std\+::enable\+\_\+if\+\_\+t$<$\+Checks\+::is\+Constant\+Size$<$\+Matrix$>$() $\vert$$\vert$ std\+::is\+\_\+arithmetic$<$\+Matrix$>$\+::value$>$$>$ }\\Matrix \hyperlink{namespaceFunG_a649b4470d6def401959bfea3a368c48c}{zero} ()
+{\footnotesize template$<$class Matrix , class Index , class  = std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+integral$<$\+Index$>$\+::value $>$$>$ }\\decltype(auto) \hyperlink{macros_8hh_a03b9da186125795e5afa49d0ef1cc32f}{F\+U\+N\+G\+\_\+\+A\+L\+W\+A\+Y\+S\+\_\+\+I\+N\+L\+I\+NE} \hyperlink{namespaceFunG_aae631e6149505bdfc0b1c6162b370c7f}{at} (Matrix \&\&A, Index i, Index j)
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespaceFunG_1_1Access}{Access} matrix entry $A_{ij}$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Vector , class Index , class  = std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+integral$<$\+Index$>$\+::value $>$$>$ }\\decltype(auto) \hyperlink{macros_8hh_a03b9da186125795e5afa49d0ef1cc32f}{F\+U\+N\+G\+\_\+\+A\+L\+W\+A\+Y\+S\+\_\+\+I\+N\+L\+I\+NE} \hyperlink{namespaceFunG_aa40271c9228c5ccee8a4973f27918630}{at} (Vector \&\&v, Index i)
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespaceFunG_1_1Access}{Access} vector entry. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class F , class Arg , std\+::enable\+\_\+if\+\_\+t$<$!\+Detail\+::\+Has\+Update\+Without\+Index$<$ F, Arg $>$\+::value $>$ $\ast$  = nullptr$>$ }\\void \hyperlink{namespaceFunG_a3b9d2e5d07b30c2ee26703b33e9adb9e}{update\+\_\+if\+\_\+present} (F \&\&, Arg \&\&)
 \item 
-{\footnotesize template$<$class Matrix , class  = std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Constant\+Size$<$\+Matrix$>$() \&\& !std\+::is\+\_\+arithmetic$<$\+Matrix$>$\+::value$>$$>$ }\\constexpr Matrix \hyperlink{namespaceFunG_ae633433339ba30207aa526e54e3924b4}{zero} (int rows, int cols)
+{\footnotesize template$<$int id, class F , class Arg , std\+::enable\+\_\+if\+\_\+t$<$!\+Detail\+::\+Has\+Update\+With\+Index$<$ F, Arg, id $>$\+::value $>$ $\ast$  = nullptr$>$ }\\void \hyperlink{namespaceFunG_aed5ddbef97c98202e818bca2b74c75d2}{update\+\_\+if\+\_\+present} (F \&\&, Arg \&\&)
 \item 
+{\footnotesize template$<$class Matrix , class  = std\+::enable\+\_\+if\+\_\+t$<$\+Checks\+::is\+Constant\+Size$<$\+Matrix$>$() $\vert$$\vert$ is\+\_\+arithmetic$<$\+Matrix$>$\+::value$>$$>$ }\\Matrix \hyperlink{namespaceFunG_a649b4470d6def401959bfea3a368c48c}{zero} ()
+\begin{DoxyCompactList}\small\item\em Requires that a specialization of struct \hyperlink{structFunG_1_1Zero}{Zero} exists for Matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Matrix , class  = std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Constant\+Size$<$\+Matrix$>$() \&\& !is\+\_\+arithmetic$<$\+Matrix$>$\+::value$>$$>$ }\\constexpr Matrix \hyperlink{namespaceFunG_ae633433339ba30207aa526e54e3924b4}{zero} (int rows, int cols)
+\begin{DoxyCompactList}\small\item\em Requires that a specialization of struct \hyperlink{structFunG_1_1Zero}{Zero} exists for Matrix. \end{DoxyCompactList}\item 
 {\footnotesize template$<$int id, class T $>$ }\\\hyperlink{structFunG_1_1Variable}{Variable}$<$ T, id $>$ \hyperlink{namespaceFunG_a1c474456411f028e14eab67ff6eebe0c}{variable} (const T \&t)
 \begin{DoxyCompactList}\small\item\em Generate variable from input type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Main namespace of the Fun\+G library. 
+Main namespace of the FunG library. 
 
 \begin{DoxySeeAlso}{See also}
 \hyperlink{group__MathematicalOperationsGroup}{Mathematical Operations} 
@@ -210,26 +220,23 @@ Main namespace of the Fun\+G library.
 
 
 \subsection{Typedef Documentation}
-\hypertarget{namespaceFunG_a195ac37d8696970c89b112c81a1e4d6e}{}\index{Fun\+G@{Fun\+G}!decay\+\_\+t@{decay\+\_\+t}}
-\index{decay\+\_\+t@{decay\+\_\+t}!Fun\+G@{Fun\+G}}
-\subsubsection[{decay\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F $>$ using {\bf Fun\+G\+::decay\+\_\+t} = typedef typename {\bf Decay}$<$ std\+::decay\+\_\+t$<$F$>$ $>$\+::type}\label{namespaceFunG_a195ac37d8696970c89b112c81a1e4d6e}
+\index{FunG@{FunG}!decay\+\_\+t@{decay\+\_\+t}}
+\index{decay\+\_\+t@{decay\+\_\+t}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{decay\+\_\+t}{decay_t}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F $>$ using {\bf Fun\+G\+::decay\+\_\+t} = typedef typename {\bf Decay}$<$ std\+::decay\+\_\+t$<$F$>$ $>$\+::type}\hypertarget{namespaceFunG_a195ac37d8696970c89b112c81a1e4d6e}{}\label{namespaceFunG_a195ac37d8696970c89b112c81a1e4d6e}
 
 
-Access underlying type (if it is hidden by expression templates). 
+\hyperlink{namespaceFunG_1_1Access}{Access} underlying type (if it is hidden by expression templates). 
 
-\hypertarget{namespaceFunG_a6dd0f05fb05ea031b7b9678fe3730c73}{}\index{Fun\+G@{Fun\+G}!is\+\_\+arithmetic@{is\+\_\+arithmetic}}
-\index{is\+\_\+arithmetic@{is\+\_\+arithmetic}!Fun\+G@{Fun\+G}}
-\subsubsection[{is\+\_\+arithmetic}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F $>$ using {\bf Fun\+G\+::is\+\_\+arithmetic} = typedef std\+::integral\+\_\+constant$<$ bool , std\+::is\+\_\+arithmetic$<$F$>$\+::value $\vert$$\vert$ {\bf Is\+Arithmetic}$<$F$>$\+::value $>$}\label{namespaceFunG_a6dd0f05fb05ea031b7b9678fe3730c73}
-\hypertarget{namespaceFunG_a3d589ef7d011a46a72847eabcbbb4532}{}\index{Fun\+G@{Fun\+G}!Variable\+\_\+t@{Variable\+\_\+t}}
-\index{Variable\+\_\+t@{Variable\+\_\+t}!Fun\+G@{Fun\+G}}
-\subsubsection[{Variable\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , int id$>$ using {\bf Fun\+G\+::\+Variable\+\_\+t} = typedef typename Variable\+Detail\+::\+Variable\+Type$<$F,id$>$\+::type}\label{namespaceFunG_a3d589ef7d011a46a72847eabcbbb4532}
+\index{FunG@{FunG}!Variable\+\_\+t@{Variable\+\_\+t}}
+\index{Variable\+\_\+t@{Variable\+\_\+t}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{Variable\+\_\+t}{Variable_t}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , int id$>$ using {\bf Fun\+G\+::\+Variable\+\_\+t} = typedef typename Variable\+Detail\+::\+Variable\+Type$<$F,id$>$\+::type}\hypertarget{namespaceFunG_a3d589ef7d011a46a72847eabcbbb4532}{}\label{namespaceFunG_a3d589ef7d011a46a72847eabcbbb4532}
 
 
 Get underlying type of variable with index id. 
 
-\hypertarget{namespaceFunG_a0cde667596590eb8d32e4a5ee76ddbb9}{}\index{Fun\+G@{Fun\+G}!void\+\_\+t@{void\+\_\+t}}
-\index{void\+\_\+t@{void\+\_\+t}!Fun\+G@{Fun\+G}}
-\subsubsection[{void\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class... Types$>$ using {\bf Fun\+G\+::void\+\_\+t} = typedef typename Detail\+::voider$<$Types...$>$\+::type}\label{namespaceFunG_a0cde667596590eb8d32e4a5ee76ddbb9}
+\index{FunG@{FunG}!void\+\_\+t@{void\+\_\+t}}
+\index{void\+\_\+t@{void\+\_\+t}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{void\+\_\+t}{void_t}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class... Types$>$ using {\bf Fun\+G\+::void\+\_\+t} = typedef typename Detail\+::voider$<$Types...$>$\+::type}\hypertarget{namespaceFunG_a0cde667596590eb8d32e4a5ee76ddbb9}{}\label{namespaceFunG_a0cde667596590eb8d32e4a5ee76ddbb9}
 
 
 Most fascinating type ever. Is void for all input types. 
@@ -237,13 +244,13 @@ Most fascinating type ever. Is void for all input types.
 
 
 \subsection{Function Documentation}
-\hypertarget{namespaceFunG_a0211d0d26c669d56b5113fd2292902e5}{}\index{Fun\+G@{Fun\+G}!add\+Transposed@{add\+Transposed}}
-\index{add\+Transposed@{add\+Transposed}!Fun\+G@{Fun\+G}}
-\subsubsection[{add\+Transposed}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Constant\+Size$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ Matrix Fun\+G\+::add\+Transposed (
+\index{FunG@{FunG}!add\+Transposed@{add\+Transposed}}
+\index{add\+Transposed@{add\+Transposed}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{add\+Transposed(\+Matrix \&\+A)}{addTransposed(Matrix &A)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Constant\+Size$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ Matrix Fun\+G\+::add\+Transposed (
 \begin{DoxyParamCaption}
 \item[{Matrix \&}]{A}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_a0211d0d26c669d56b5113fd2292902e5}
+)}\hypertarget{namespaceFunG_a0211d0d26c669d56b5113fd2292902e5}{}\label{namespaceFunG_a0211d0d26c669d56b5113fd2292902e5}
 
 
 Overwrites $A$ with $A+A^T$. 
@@ -251,13 +258,38 @@ Overwrites $A$ with $A+A^T$.
 \begin{DoxyReturn}{Returns}
 $A+A^T$ 
 \end{DoxyReturn}
-\hypertarget{namespaceFunG_a65c509062b62b3303268cabc97b75a65}{}\index{Fun\+G@{Fun\+G}!constant@{constant}}
-\index{constant@{constant}!Fun\+G@{Fun\+G}}
-\subsubsection[{constant}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg $>$ auto Fun\+G\+::constant (
+\index{FunG@{FunG}!at@{at}}
+\index{at@{at}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{at(\+Matrix \&\&\+A, Index i, Index j)}{at(Matrix &&A, Index i, Index j)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , class Index , class  = std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+integral$<$\+Index$>$\+::value $>$$>$ decltype(auto) {\bf F\+U\+N\+G\+\_\+\+A\+L\+W\+A\+Y\+S\+\_\+\+I\+N\+L\+I\+NE} Fun\+G\+::at (
+\begin{DoxyParamCaption}
+\item[{Matrix \&\&}]{A, }
+\item[{Index}]{i, }
+\item[{Index}]{j}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceFunG_aae631e6149505bdfc0b1c6162b370c7f}{}\label{namespaceFunG_aae631e6149505bdfc0b1c6162b370c7f}
+
+
+\hyperlink{namespaceFunG_1_1Access}{Access} matrix entry $A_{ij}$. 
+
+\index{FunG@{FunG}!at@{at}}
+\index{at@{at}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{at(\+Vector \&\&v, Index i)}{at(Vector &&v, Index i)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Vector , class Index , class  = std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+integral$<$\+Index$>$\+::value $>$$>$ decltype(auto) {\bf F\+U\+N\+G\+\_\+\+A\+L\+W\+A\+Y\+S\+\_\+\+I\+N\+L\+I\+NE} Fun\+G\+::at (
+\begin{DoxyParamCaption}
+\item[{Vector \&\&}]{v, }
+\item[{Index}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceFunG_aa40271c9228c5ccee8a4973f27918630}{}\label{namespaceFunG_aa40271c9228c5ccee8a4973f27918630}
+
+
+\hyperlink{namespaceFunG_1_1Access}{Access} vector entry. 
+
+\index{FunG@{FunG}!constant@{constant}}
+\index{constant@{constant}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{constant(const Arg \&x)}{constant(const Arg &x)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg $>$ auto Fun\+G\+::constant (
 \begin{DoxyParamCaption}
 \item[{const Arg \&}]{x}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_a65c509062b62b3303268cabc97b75a65}
+)}\hypertarget{namespaceFunG_a65c509062b62b3303268cabc97b75a65}{}\label{namespaceFunG_a65c509062b62b3303268cabc97b75a65}
 
 
 Generate a constant function that stores its argument as constant reference. 
@@ -265,32 +297,32 @@ Generate a constant function that stores its argument as constant reference.
 This admits to use variable constant arguments, i.\+e. parameters that we want to study. Wrap a constant. \begin{DoxyReturn}{Returns}
 Constant$<$\+Arg$>$(x) 
 \end{DoxyReturn}
-\hypertarget{namespaceFunG_a3a2af76439713dc7635e0c538ac34f15}{}\index{Fun\+G@{Fun\+G}!finalize@{finalize}}
-\index{finalize@{finalize}!Fun\+G@{Fun\+G}}
-\subsubsection[{finalize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F $>$ auto Fun\+G\+::finalize (
+\index{FunG@{FunG}!finalize@{finalize}}
+\index{finalize@{finalize}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{finalize(\+F \&\&f)}{finalize(F &&f)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F $>$ auto Fun\+G\+::finalize (
 \begin{DoxyParamCaption}
-\item[{const F \&}]{f}
+\item[{F \&\&}]{f}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_a3a2af76439713dc7635e0c538ac34f15}
+)}\hypertarget{namespaceFunG_ac59f2ececc3cd451860776320a4a93d5}{}\label{namespaceFunG_ac59f2ececc3cd451860776320a4a93d5}
 
 
 Finish function definition. 
 
-Adds the definition of possibly undefined vanishing higher order derivatives. \hypertarget{namespaceFunG_aab17a1468e61f58564333b3fcd7900d6}{}\index{Fun\+G@{Fun\+G}!heat\+Model@{heat\+Model}}
-\index{heat\+Model@{heat\+Model}!Fun\+G@{Fun\+G}}
-\subsubsection[{heat\+Model}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Scalar , class Vector $>$ auto Fun\+G\+::heat\+Model (
+Adds the definition of possibly undefined vanishing higher order derivatives. If the template class \hyperlink{structFunG_1_1Variable}{Variable} is not used, then no ids must be provided for the update-\/function and derivatives. \index{FunG@{FunG}!heat\+Model@{heat\+Model}}
+\index{heat\+Model@{heat\+Model}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{heat\+Model(double c, double d, Scalar u, const Vector \&du)}{heatModel(double c, double d, Scalar u, const Vector &du)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Scalar , class Vector $>$ auto Fun\+G\+::heat\+Model (
 \begin{DoxyParamCaption}
 \item[{double}]{c, }
 \item[{double}]{d, }
 \item[{Scalar}]{u, }
 \item[{const Vector \&}]{du}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_aab17a1468e61f58564333b3fcd7900d6}
+)}\hypertarget{namespaceFunG_aab17a1468e61f58564333b3fcd7900d6}{}\label{namespaceFunG_aab17a1468e61f58564333b3fcd7900d6}
 
-
-Yield surface $ \frac{\beta}{3}\iota_1(\sigma) + J_2(\sigma)-offset $, where $\iota_1$ is the first principal and $J_2$ is the second deviatoric invariant. 
 
 Weak model for nonlinear heat transfer $ (c+du^2)\nabla u $. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em c} & weighing of linearity \\
 \hline
@@ -301,266 +333,277 @@ Weak model for nonlinear heat transfer $ (c+du^2)\nabla u $.
 {\em du} & heat gradient \\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceFunG_a165e879e76d3a2a8906938f3658445ce}{}\index{Fun\+G@{Fun\+G}!identity@{identity}}
-\index{identity@{identity}!Fun\+G@{Fun\+G}}
-\subsubsection[{identity}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg $>$ auto Fun\+G\+::identity (
+\index{FunG@{FunG}!identity@{identity}}
+\index{identity@{identity}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{identity(const Arg \&x)}{identity(const Arg &x)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg $>$ auto Fun\+G\+::identity (
 \begin{DoxyParamCaption}
 \item[{const Arg \&}]{x}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_a165e879e76d3a2a8906938f3658445ce}
+)}\hypertarget{namespaceFunG_a165e879e76d3a2a8906938f3658445ce}{}\label{namespaceFunG_a165e879e76d3a2a8906938f3658445ce}
 
 
 Construct Identity$<$\+Arg$>$(x). 
 
-\hypertarget{namespaceFunG_a5e258023361844926f485229c62a733b}{}\index{Fun\+G@{Fun\+G}!operator$\ast$@{operator$\ast$}}
-\index{operator$\ast$@{operator$\ast$}!Fun\+G@{Fun\+G}}
-\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Scalar , class Other\+Scalar , int n, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::has\+Free\+\_\+\+Multiplication$<$ Dune\+::\+Field\+Vector$<$ Scalar, n $>$, Dune\+::\+Field\+Vector$<$ Other\+Scalar, n $>$ $>$() $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::operator$\ast$ (
+\index{FunG@{FunG}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{operator$\ast$(const Dune\+::\+Field\+Vector$<$ Scalar, n $>$ \&a, const Dune\+::\+Field\+Vector$<$ Other\+Scalar, n $>$ \&b)}{operator*(const Dune::FieldVector< Scalar, n > &a, const Dune::FieldVector< OtherScalar, n > &b)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Scalar , class Other\+Scalar , int n, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::\+Has\+::\+Free\+::multiplication$<$ Dune\+::\+Field\+Vector$<$ Scalar, n $>$, Dune\+::\+Field\+Vector$<$ Other\+Scalar, n $>$ $>$() $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::operator$\ast$ (
 \begin{DoxyParamCaption}
 \item[{const Dune\+::\+Field\+Vector$<$ Scalar, n $>$ \&}]{a, }
 \item[{const Dune\+::\+Field\+Vector$<$ Other\+Scalar, n $>$ \&}]{b}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_a5e258023361844926f485229c62a733b}
+)}\hypertarget{namespaceFunG_a5e258023361844926f485229c62a733b}{}\label{namespaceFunG_a5e258023361844926f485229c62a733b}
 
 
 Computation of the l2 scalar product for Dune\+::\+Field\+Vector. 
 
-\hypertarget{namespaceFunG_abadb8da34a5abc3dde0107231ab91c6f}{}\index{Fun\+G@{Fun\+G}!operator$\ast$@{operator$\ast$}}
-\index{operator$\ast$@{operator$\ast$}!Fun\+G@{Fun\+G}}
-\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Scalar , class Other\+Scalar , int n, int m, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::has\+Free\+\_\+\+Multiplication$<$ Dune\+::\+Field\+Matrix$<$ Scalar, n, m $>$, Dune\+::\+Field\+Vector$<$ Other\+Scalar, m $>$ $>$() $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::operator$\ast$ (
+\index{FunG@{FunG}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{operator$\ast$(const Dune\+::\+Field\+Matrix$<$ Scalar, n, m $>$ \&\+A, const Dune\+::\+Field\+Vector$<$ Other\+Scalar, m $>$ \&x)}{operator*(const Dune::FieldMatrix< Scalar, n, m > &A, const Dune::FieldVector< OtherScalar, m > &x)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Scalar , class Other\+Scalar , int n, int m, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::\+Has\+::\+Free\+::multiplication$<$ Dune\+::\+Field\+Matrix$<$ Scalar, n, m $>$, Dune\+::\+Field\+Vector$<$ Other\+Scalar, m $>$ $>$() $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::operator$\ast$ (
 \begin{DoxyParamCaption}
 \item[{const Dune\+::\+Field\+Matrix$<$ Scalar, n, m $>$ \&}]{A, }
 \item[{const Dune\+::\+Field\+Vector$<$ Other\+Scalar, m $>$ \&}]{x}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_abadb8da34a5abc3dde0107231ab91c6f}
+)}\hypertarget{namespaceFunG_abadb8da34a5abc3dde0107231ab91c6f}{}\label{namespaceFunG_abadb8da34a5abc3dde0107231ab91c6f}
 
 
 Define matrix-\/vector multiplication for Dune\+::\+Field\+Matrix and Dune\+::\+Field\+Vector, i.\+e. compute $y=Ax$. 
 
-\hypertarget{namespaceFunG_a19a9d7b55b56f5101560034413a1dbfe}{}\index{Fun\+G@{Fun\+G}!operator$\ast$@{operator$\ast$}}
-\index{operator$\ast$@{operator$\ast$}!Fun\+G@{Fun\+G}}
-\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Scalar , class Other\+Scalar , int n, int m, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::has\+Free\+\_\+\+Multiplication$<$ Dune\+::\+Field\+Vector$<$ Other\+Scalar, n $>$, Dune\+::\+Field\+Matrix$<$ Scalar, n, m $>$ $>$() $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::operator$\ast$ (
+\index{FunG@{FunG}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{operator$\ast$(const Dune\+::\+Field\+Vector$<$ Other\+Scalar, n $>$ \&x, const Dune\+::\+Field\+Matrix$<$ Scalar, n, m $>$ \&\+A)}{operator*(const Dune::FieldVector< OtherScalar, n > &x, const Dune::FieldMatrix< Scalar, n, m > &A)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Scalar , class Other\+Scalar , int n, int m, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::\+Has\+::\+Free\+::multiplication$<$ Dune\+::\+Field\+Vector$<$ Other\+Scalar, n $>$, Dune\+::\+Field\+Matrix$<$ Scalar, n, m $>$ $>$() $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::operator$\ast$ (
 \begin{DoxyParamCaption}
 \item[{const Dune\+::\+Field\+Vector$<$ Other\+Scalar, n $>$ \&}]{x, }
 \item[{const Dune\+::\+Field\+Matrix$<$ Scalar, n, m $>$ \&}]{A}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_a19a9d7b55b56f5101560034413a1dbfe}
+)}\hypertarget{namespaceFunG_a19a9d7b55b56f5101560034413a1dbfe}{}\label{namespaceFunG_a19a9d7b55b56f5101560034413a1dbfe}
 
 
 Define vector-\/matrix multiplication for Dune\+::\+Field\+Matrix and Dune\+::\+Field\+Vector, i.\+e. compute $x^T A = y^T$ resp. $y=A^T x$. 
 
-\hypertarget{namespaceFunG_a9b303ce8718a6f64b035e7e782370734}{}\index{Fun\+G@{Fun\+G}!operator$\ast$@{operator$\ast$}}
-\index{operator$\ast$@{operator$\ast$}!Fun\+G@{Fun\+G}}
-\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg , class Scalar\+Arg , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic$<$ Scalar\+Arg $>$\+::value $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::is\+Function$<$ Arg $>$()\&\&!std\+::is\+\_\+arithmetic$<$ Arg $>$() $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::has\+Free\+\_\+\+Multiplication$<$ Arg, Scalar\+Arg $>$()\&\&\+Checks\+::has\+Mem\+Fn\+\_\+\+In\+Place\+Multiplication$<$ Arg, Scalar\+Arg $>$() $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::operator$\ast$ (
+\index{FunG@{FunG}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{operator$\ast$(\+Scalar\+Arg a, Arg x)}{operator*(ScalarArg a, Arg x)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg , class Scalar\+Arg , std\+::enable\+\_\+if\+\_\+t$<$ is\+\_\+arithmetic$<$ Scalar\+Arg $>$\+::value $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::is\+Function$<$ Arg $>$()\&\&!is\+\_\+arithmetic$<$ Arg $>$() $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::\+Has\+::\+Free\+::multiplication$<$ Arg, Scalar\+Arg $>$()\&\&\+Checks\+::\+Has\+::\+Mem\+Op\+::in\+Place\+Multiplication$<$ Arg, Scalar\+Arg $>$() $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::operator$\ast$ (
 \begin{DoxyParamCaption}
 \item[{Scalar\+Arg}]{a, }
 \item[{Arg}]{x}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_a9b303ce8718a6f64b035e7e782370734}
+)}\hypertarget{namespaceFunG_a9b303ce8718a6f64b035e7e782370734}{}\label{namespaceFunG_a9b303ce8718a6f64b035e7e782370734}
 
 
-Defines operator$\ast$ for multiplication with built-\/in arithmetic types from the left if undefined and in-\/place multiplication (operator$\ast$=()) is supported. 
+Defines operator$\ast$ for multiplication with arithmetic types from the left if undefined and in-\/place multiplication (operator$\ast$=()) is supported. 
 
-\hypertarget{namespaceFunG_a3cd5a2cb1abba842154691bb84aab896}{}\index{Fun\+G@{Fun\+G}!operator$\ast$@{operator$\ast$}}
-\index{operator$\ast$@{operator$\ast$}!Fun\+G@{Fun\+G}}
-\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg , class Scalar\+Arg , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic$<$ Scalar\+Arg $>$\+::value $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::is\+Function$<$ Arg $>$()\&\&!std\+::is\+\_\+arithmetic$<$ Arg $>$\+::value $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::has\+Free\+\_\+\+Multiplication$<$ Arg, Scalar\+Arg $>$()\&\&\+Checks\+::has\+Mem\+Fn\+\_\+\+In\+Place\+Multiplication$<$ Arg, Scalar\+Arg $>$() $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::operator$\ast$ (
+\index{FunG@{FunG}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{operator$\ast$(\+Arg x, Scalar\+Arg a)}{operator*(Arg x, ScalarArg a)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg , class Scalar\+Arg , std\+::enable\+\_\+if\+\_\+t$<$ is\+\_\+arithmetic$<$ Scalar\+Arg $>$\+::value $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::is\+Function$<$ Arg $>$()\&\&!is\+\_\+arithmetic$<$ Arg $>$\+::value $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::\+Has\+::\+Free\+::multiplication$<$ Arg, Scalar\+Arg $>$()\&\&\+Checks\+::\+Has\+::\+Mem\+Op\+::in\+Place\+Multiplication$<$ Arg, Scalar\+Arg $>$() $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::operator$\ast$ (
 \begin{DoxyParamCaption}
 \item[{Arg}]{x, }
 \item[{Scalar\+Arg}]{a}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_a3cd5a2cb1abba842154691bb84aab896}
+)}\hypertarget{namespaceFunG_a3cd5a2cb1abba842154691bb84aab896}{}\label{namespaceFunG_a3cd5a2cb1abba842154691bb84aab896}
 
 
-Defines operator$\ast$ for multiplication with built-\/in arithmetic types from the right if undefined and in-\/place multiplication (operator$\ast$=()) is supported. 
+Defines operator$\ast$ for multiplication with arithmetic types from the right if undefined and in-\/place multiplication (operator$\ast$=()) is supported. 
 
-\hypertarget{namespaceFunG_ad023f2d2273af693f2b4ebceeb296dc8}{}\index{Fun\+G@{Fun\+G}!operator$\ast$@{operator$\ast$}}
-\index{operator$\ast$@{operator$\ast$}!Fun\+G@{Fun\+G}}
-\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg1 , class Arg2 , std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::is\+Function$<$ Arg1 $>$()\&\&!\+Checks\+::is\+Function$<$ Arg2 $>$() $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !std\+::is\+\_\+arithmetic$<$ Arg1 $>$()\&\&!std\+::is\+\_\+arithmetic$<$ Arg2 $>$() $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::has\+Free\+\_\+\+Multiplication$<$ Arg1, Arg2 $>$()\&\&\+Checks\+::has\+Mem\+Fn\+\_\+\+In\+Place\+Multiplication$<$ Arg1, Arg2 $>$() $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::operator$\ast$ (
+\index{FunG@{FunG}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{operator$\ast$(\+Arg1 x, const Arg2 \&y)}{operator*(Arg1 x, const Arg2 &y)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg1 , class Arg2 , std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::is\+Function$<$ Arg1 $>$()\&\&!\+Checks\+::is\+Function$<$ Arg2 $>$() $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !is\+\_\+arithmetic$<$ Arg1 $>$()\&\&!is\+\_\+arithmetic$<$ Arg2 $>$() $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::\+Has\+::\+Free\+::multiplication$<$ Arg1, Arg2 $>$()\&\&\+Checks\+::\+Has\+::\+Mem\+Op\+::in\+Place\+Multiplication$<$ Arg1, Arg2 $>$() $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::operator$\ast$ (
 \begin{DoxyParamCaption}
 \item[{Arg1}]{x, }
 \item[{const Arg2 \&}]{y}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_ad023f2d2273af693f2b4ebceeb296dc8}
+)}\hypertarget{namespaceFunG_ad023f2d2273af693f2b4ebceeb296dc8}{}\label{namespaceFunG_ad023f2d2273af693f2b4ebceeb296dc8}
 
 
 Defines operator$\ast$ for multiplication of non-\/arithmetic types if undefined and in-\/place multiplication (operator$\ast$=()) is supported. 
 
-\hypertarget{namespaceFunG_a6e4d3266e119cd102800bf5c091e57fd}{}\index{Fun\+G@{Fun\+G}!operator$\ast$@{operator$\ast$}}
-\index{operator$\ast$@{operator$\ast$}!Fun\+G@{Fun\+G}}
-\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg1 , class Arg2 , std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::is\+Function$<$ Arg1 $>$()\&\&!\+Checks\+::is\+Function$<$ Arg2 $>$() $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !std\+::is\+\_\+arithmetic$<$ Arg1 $>$()\&\&!std\+::is\+\_\+arithmetic$<$ Arg2 $>$() $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::has\+Free\+\_\+\+Multiplication$<$ Arg1, Arg2 $>$()\&\&!\+Checks\+::has\+Mem\+Fn\+\_\+\+In\+Place\+Multiplication$<$ Arg1, Arg2 $>$() $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::has\+Mem\+Fn\+\_\+rightmultiplyany$<$ Arg1, Arg2 $>$() $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::operator$\ast$ (
+Defines operator$\ast$ for multiplication of non-\/arithmetic types if undefined and in-\/place multiplication is provided in terms of the member function \hyperlink{namespaceFunG_1_1Checks_1_1Has_1_1MemFn_adeb3d401c6464514644930596c3a4ccc}{rightmultiplyany()} (such as for Dune\+::\+Field\+Matrix). \index{FunG@{FunG}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{operator$\ast$(\+F \&\&f, G \&\&g)}{operator*(F &&f, G &&g)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class G , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ F $>$ $>$()$\vert$$\vert$\+Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ G $>$ $>$() $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::operator$\ast$ (
 \begin{DoxyParamCaption}
-\item[{Arg1}]{x, }
-\item[{const Arg2 \&}]{y}
+\item[{F \&\&}]{f, }
+\item[{G \&\&}]{g}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_a6e4d3266e119cd102800bf5c091e57fd}
-
-
-Defines operator$\ast$ for multiplication of non-\/arithmetic types if undefined and in-\/place multiplication is provided in terms of the member function rightmultiplyany() (such as for Dune\+::\+Field\+Matrix). 
-
-\hypertarget{namespaceFunG_a014be932d3b4eb377d8e60271e864438}{}\index{Fun\+G@{Fun\+G}!operator$\ast$@{operator$\ast$}}
-\index{operator$\ast$@{operator$\ast$}!Fun\+G@{Fun\+G}}
-\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class G , class  = std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$\+F$>$() $\vert$$\vert$ Checks\+::is\+Function$<$\+G$>$() $>$$>$ auto Fun\+G\+::operator$\ast$ (
-\begin{DoxyParamCaption}
-\item[{const F \&}]{f, }
-\item[{const G \&}]{g}
-\end{DoxyParamCaption}
-)}\label{namespaceFunG_a014be932d3b4eb377d8e60271e864438}
+)}\hypertarget{namespaceFunG_a267562e725c73ece1c1d057b5f29511f}{}\label{namespaceFunG_a267562e725c73ece1c1d057b5f29511f}
 
 
 overload of \char`\"{}$\ast$\char`\"{}-\/operator for the generation of functions. 
 
-This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions. If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. \hypertarget{namespaceFunG_a063d3e8c19dbea3ee1396736fecb64e1}{}\index{Fun\+G@{Fun\+G}!operator+@{operator+}}
-\index{operator+@{operator+}!Fun\+G@{Fun\+G}}
-\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg , std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::is\+Function$<$ Arg $>$()\&\&!std\+::is\+\_\+arithmetic$<$ Arg $>$() $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::has\+Free\+\_\+\+Summation$<$ Arg $>$()\&\&\+Checks\+::has\+Mem\+Fn\+\_\+\+In\+Place\+Summation$<$ Arg $>$() $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::operator+ (
+If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. \index{FunG@{FunG}!operator+@{operator+}}
+\index{operator+@{operator+}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{operator+(\+Arg x, const Arg \&y)}{operator+(Arg x, const Arg &y)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg , std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::is\+Function$<$ Arg $>$()\&\&!is\+\_\+arithmetic$<$ Arg $>$() $>$ $\ast$  = nullptr, std\+::enable\+\_\+if\+\_\+t$<$ !\+Checks\+::\+Has\+::\+Free\+::summation$<$ Arg $>$()\&\&\+Checks\+::\+Has\+::\+Mem\+Op\+::in\+Place\+Summation$<$ Arg $>$() $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::operator+ (
 \begin{DoxyParamCaption}
 \item[{Arg}]{x, }
 \item[{const Arg \&}]{y}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_a063d3e8c19dbea3ee1396736fecb64e1}
+)}\hypertarget{namespaceFunG_a063d3e8c19dbea3ee1396736fecb64e1}{}\label{namespaceFunG_a063d3e8c19dbea3ee1396736fecb64e1}
 
 
 Defines operator+ if not yet defined and in-\/place summation (operator+=()) is supported. 
 
-\hypertarget{namespaceFunG_ac7f61d48ff610ec4be8ee6994d165077}{}\index{Fun\+G@{Fun\+G}!operator+@{operator+}}
-\index{operator+@{operator+}!Fun\+G@{Fun\+G}}
-\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class G , class  = std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$\+F$>$() $\vert$$\vert$                                      Checks\+::is\+Function$<$\+G$>$() $>$$>$ auto Fun\+G\+::operator+ (
+\index{FunG@{FunG}!operator+@{operator+}}
+\index{operator+@{operator+}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{operator+(\+F \&\&f, G \&\&g)}{operator+(F &&f, G &&g)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class G , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ F $>$ $>$()$\vert$$\vert$\+Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ G $>$ $>$() $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::operator+ (
 \begin{DoxyParamCaption}
-\item[{const F \&}]{f, }
-\item[{const G \&}]{g}
+\item[{F \&\&}]{f, }
+\item[{G \&\&}]{g}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_ac7f61d48ff610ec4be8ee6994d165077}
+)}\hypertarget{namespaceFunG_a24bb5d609b022030afda2d8589cf5509}{}\label{namespaceFunG_a24bb5d609b022030afda2d8589cf5509}
 
 
 overload of \char`\"{}+\char`\"{}-\/operator for the generation of functions. 
 
-This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions. If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. \hypertarget{namespaceFunG_aa0c4552dee9179fb50b57ece863d835a}{}\index{Fun\+G@{Fun\+G}!operator-\/@{operator-\/}}
-\index{operator-\/@{operator-\/}!Fun\+G@{Fun\+G}}
-\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class T , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ F $>$()\&\&!\+Checks\+::is\+Function$<$ T $>$()$>$ $\ast$  = nullptr$>$ auto Fun\+G\+::operator-\/ (
+If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. \index{FunG@{FunG}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{operator-\/(\+F \&\&f, G \&\&g)}{operator-(F &&f, G &&g)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class G , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ F $>$ $>$()$\vert$$\vert$\+Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ G $>$ $>$()$>$ $\ast$  = nullptr$>$ auto Fun\+G\+::operator-\/ (
 \begin{DoxyParamCaption}
-\item[{const F \&}]{f, }
-\item[{const T \&}]{t}
+\item[{F \&\&}]{f, }
+\item[{G \&\&}]{g}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_aa0c4552dee9179fb50b57ece863d835a}
+)}\hypertarget{namespaceFunG_a3af04c2ef5c1b206feb75fffd298cbbf}{}\label{namespaceFunG_a3af04c2ef5c1b206feb75fffd298cbbf}
 
 
-overload of \char`\"{}-\/\char`\"{}-\/operator for the generation of functions. Here the second argument is a constant that is wrapped in to an object of type \hyperlink{structFunG_1_1Constant}{Constant}. 
+overload of \char`\"{}-\/\char`\"{}-\/operator for the generation of functions. 
 
-This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions. If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. \hypertarget{namespaceFunG_a7f522d98a8d5bc8c3b11599d3136ded4}{}\index{Fun\+G@{Fun\+G}!operator-\/@{operator-\/}}
-\index{operator-\/@{operator-\/}!Fun\+G@{Fun\+G}}
-\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class T , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+convertible$<$ T, decltype(std\+::declval$<$ F $>$()())$>$\+::value \&\&\+Checks\+::is\+Function$<$ F $>$()$>$ $\ast$  = nullptr$>$ auto Fun\+G\+::operator-\/ (
+If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. \index{FunG@{FunG}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(\+F \&\&f, G \&\&g)}{operator<<(F &&f, G &&g)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class G , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ F $>$ $>$()\&\&\+Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ G $>$ $>$() $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::operator$<$$<$ (
 \begin{DoxyParamCaption}
-\item[{const T \&}]{t, }
-\item[{const F \&}]{f}
+\item[{F \&\&}]{f, }
+\item[{G \&\&}]{g}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_a7f522d98a8d5bc8c3b11599d3136ded4}
-
-
-overload of \char`\"{}-\/\char`\"{}-\/operator for the generation of functions. Here the first argument is a constant that is wrapped in to an object of type \hyperlink{structFunG_1_1Constant}{Constant}. 
-
-This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions. If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. \hypertarget{namespaceFunG_a56701b5e83b96d2d6cc5c482e36caa39}{}\index{Fun\+G@{Fun\+G}!operator$<$$<$@{operator$<$$<$}}
-\index{operator$<$$<$@{operator$<$$<$}!Fun\+G@{Fun\+G}}
-\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class G , class  = std\+::enable\+\_\+if\+\_\+t$<$\+Checks\+::is\+Function$<$\+F$>$() \&\&                                     Checks\+::is\+Function$<$\+G$>$()$>$$>$ auto Fun\+G\+::operator$<$$<$ (
-\begin{DoxyParamCaption}
-\item[{const F \&}]{f, }
-\item[{const G \&}]{g}
-\end{DoxyParamCaption}
-)}\label{namespaceFunG_a56701b5e83b96d2d6cc5c482e36caa39}
+)}\hypertarget{namespaceFunG_a65436d4494e99629b0177d0df7634a6b}{}\label{namespaceFunG_a65436d4494e99629b0177d0df7634a6b}
 
 
 overload of \char`\"{}$<$$<$\char`\"{}-\/operator for chaining functions $f$ and $g$ to $ f \circ g $. 
 
-This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions. If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. \hypertarget{namespaceFunG_aeb22ff63cd78cb63d81b601c656da2c1}{}\index{Fun\+G@{Fun\+G}!operator$^\wedge$@{operator$^\wedge$}}
-\index{operator$^\wedge$@{operator$^\wedge$}!Fun\+G@{Fun\+G}}
-\subsubsection[{operator$^\wedge$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class  = std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$\+F$>$() $>$$>$ auto Fun\+G\+::operator$^\wedge$ (
+If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. \index{FunG@{FunG}!operator$^\wedge$@{operator$^\wedge$}}
+\index{operator$^\wedge$@{operator$^\wedge$}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{operator$^\wedge$(\+F \&\&f, int k)}{operator^(F &&f, int k)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ F $>$ $>$() $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::operator$^\wedge$ (
 \begin{DoxyParamCaption}
-\item[{const F \&}]{f, }
+\item[{F \&\&}]{f, }
 \item[{int}]{k}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_aeb22ff63cd78cb63d81b601c656da2c1}
+)}\hypertarget{namespaceFunG_a94273e3ea80324e591bb98ae3c051221}{}\label{namespaceFunG_a94273e3ea80324e591bb98ae3c051221}
 
 
 overload of \char`\"{}$^\wedge$\char`\"{}-\/operator for the generation of functions. 
 
-This is not to be confused with delayed computations with expression templates. This operator is only used to admit intuitive definition of functions. If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. \hypertarget{namespaceFunG_a1c474456411f028e14eab67ff6eebe0c}{}\index{Fun\+G@{Fun\+G}!variable@{variable}}
-\index{variable@{variable}!Fun\+G@{Fun\+G}}
-\subsubsection[{variable}]{\setlength{\rightskip}{0pt plus 5cm}template$<$int id, class T $>$ {\bf Variable}$<$T,id$>$ Fun\+G\+::variable (
+If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. \index{FunG@{FunG}!squared@{squared}}
+\index{squared@{squared}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{squared(\+F \&\&f)}{squared(F &&f)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ F $>$ $>$() $>$ $\ast$  = nullptr$>$ auto Fun\+G\+::squared (
+\begin{DoxyParamCaption}
+\item[{F \&\&}]{f}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceFunG_ac4ffc0754104af6ddf114e154251db78}{}\label{namespaceFunG_ac4ffc0754104af6ddf114e154251db78}
+
+
+Generate squared function. 
+
+If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. \index{FunG@{FunG}!update\+\_\+if\+\_\+present@{update\+\_\+if\+\_\+present}}
+\index{update\+\_\+if\+\_\+present@{update\+\_\+if\+\_\+present}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{update\+\_\+if\+\_\+present(\+F \&\&, Arg \&\&)}{update_if_present(F &&, Arg &&)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class Arg , std\+::enable\+\_\+if\+\_\+t$<$!\+Detail\+::\+Has\+Update\+Without\+Index$<$ F, Arg $>$\+::value $>$ $\ast$  = nullptr$>$ void Fun\+G\+::update\+\_\+if\+\_\+present (
+\begin{DoxyParamCaption}
+\item[{F \&\&}]{f, }
+\item[{Arg \&\&}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceFunG_a3b9d2e5d07b30c2ee26703b33e9adb9e}{}\label{namespaceFunG_a3b9d2e5d07b30c2ee26703b33e9adb9e}
+\index{FunG@{FunG}!update\+\_\+if\+\_\+present@{update\+\_\+if\+\_\+present}}
+\index{update\+\_\+if\+\_\+present@{update\+\_\+if\+\_\+present}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{update\+\_\+if\+\_\+present(\+F \&\&, Arg \&\&)}{update_if_present(F &&, Arg &&)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$int id, class F , class Arg , std\+::enable\+\_\+if\+\_\+t$<$!\+Detail\+::\+Has\+Update\+With\+Index$<$ F, Arg, id $>$\+::value $>$ $\ast$  = nullptr$>$ void Fun\+G\+::update\+\_\+if\+\_\+present (
+\begin{DoxyParamCaption}
+\item[{F \&\&}]{f, }
+\item[{Arg \&\&}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceFunG_aed5ddbef97c98202e818bca2b74c75d2}{}\label{namespaceFunG_aed5ddbef97c98202e818bca2b74c75d2}
+\index{FunG@{FunG}!variable@{variable}}
+\index{variable@{variable}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{variable(const T \&t)}{variable(const T &t)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$int id, class T $>$ {\bf Variable}$<$T,id$>$ Fun\+G\+::variable (
 \begin{DoxyParamCaption}
 \item[{const T \&}]{t}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_a1c474456411f028e14eab67ff6eebe0c}
+)}\hypertarget{namespaceFunG_a1c474456411f028e14eab67ff6eebe0c}{}\label{namespaceFunG_a1c474456411f028e14eab67ff6eebe0c}
 
 
 Generate variable from input type. 
 
-\hypertarget{namespaceFunG_adf4be5df85ea9df10cc9e11c11aaeb7b}{}\index{Fun\+G@{Fun\+G}!volumetric\+Hartmann\+Neff@{volumetric\+Hartmann\+Neff}}
-\index{volumetric\+Hartmann\+Neff@{volumetric\+Hartmann\+Neff}!Fun\+G@{Fun\+G}}
-\subsubsection[{volumetric\+Hartmann\+Neff}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix $>$ auto Fun\+G\+::volumetric\+Hartmann\+Neff (
+\index{FunG@{FunG}!volumetric\+Hartmann\+Neff@{volumetric\+Hartmann\+Neff}}
+\index{volumetric\+Hartmann\+Neff@{volumetric\+Hartmann\+Neff}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{volumetric\+Hartmann\+Neff(double d0, double d1, const Matrix \&\+A)}{volumetricHartmannNeff(double d0, double d1, const Matrix &A)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix $>$ auto Fun\+G\+::volumetric\+Hartmann\+Neff (
 \begin{DoxyParamCaption}
 \item[{double}]{d0, }
 \item[{double}]{d1, }
 \item[{const Matrix \&}]{A}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_adf4be5df85ea9df10cc9e11c11aaeb7b}
+)}\hypertarget{namespaceFunG_adf4be5df85ea9df10cc9e11c11aaeb7b}{}\label{namespaceFunG_adf4be5df85ea9df10cc9e11c11aaeb7b}
 
 
 Create the volumetric penalty function $ d_0 j^5 + d_1 j^{-5},\ j=\det(A) $. 
 
-\hypertarget{namespaceFunG_ad26faeb264bb4b1cd7e70f3811c366c8}{}\index{Fun\+G@{Fun\+G}!volumetric\+Penalty@{volumetric\+Penalty}}
-\index{volumetric\+Penalty@{volumetric\+Penalty}!Fun\+G@{Fun\+G}}
-\subsubsection[{volumetric\+Penalty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Inflation , class Compression , class Matrix $>$ auto Fun\+G\+::volumetric\+Penalty (
+\index{FunG@{FunG}!volumetric\+Penalty@{volumetric\+Penalty}}
+\index{volumetric\+Penalty@{volumetric\+Penalty}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{volumetric\+Penalty(double d0, double d1, const Matrix \&\+A)}{volumetricPenalty(double d0, double d1, const Matrix &A)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Inflation , class Compression , class Matrix $>$ auto Fun\+G\+::volumetric\+Penalty (
 \begin{DoxyParamCaption}
 \item[{double}]{d0, }
 \item[{double}]{d1, }
 \item[{const Matrix \&}]{A}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_ad26faeb264bb4b1cd7e70f3811c366c8}
+)}\hypertarget{namespaceFunG_ad26faeb264bb4b1cd7e70f3811c366c8}{}\label{namespaceFunG_ad26faeb264bb4b1cd7e70f3811c366c8}
 
 
 Create volumetric penalty function composed of a penalty for inflation and one for compression. 
 
-\hypertarget{namespaceFunG_aaf30b9c36ed86e01b94f6b7c1d95cae8}{}\index{Fun\+G@{Fun\+G}!volumetric\+Quad\+And\+Log@{volumetric\+Quad\+And\+Log}}
-\index{volumetric\+Quad\+And\+Log@{volumetric\+Quad\+And\+Log}!Fun\+G@{Fun\+G}}
-\subsubsection[{volumetric\+Quad\+And\+Log}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix $>$ auto Fun\+G\+::volumetric\+Quad\+And\+Log (
+\index{FunG@{FunG}!volumetric\+Quad\+And\+Log@{volumetric\+Quad\+And\+Log}}
+\index{volumetric\+Quad\+And\+Log@{volumetric\+Quad\+And\+Log}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{volumetric\+Quad\+And\+Log(double d0, double d1, const Matrix \&\+A)}{volumetricQuadAndLog(double d0, double d1, const Matrix &A)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix $>$ auto Fun\+G\+::volumetric\+Quad\+And\+Log (
 \begin{DoxyParamCaption}
 \item[{double}]{d0, }
 \item[{double}]{d1, }
 \item[{const Matrix \&}]{A}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_aaf30b9c36ed86e01b94f6b7c1d95cae8}
+)}\hypertarget{namespaceFunG_aaf30b9c36ed86e01b94f6b7c1d95cae8}{}\label{namespaceFunG_aaf30b9c36ed86e01b94f6b7c1d95cae8}
 
 
 Create the volumetric penalty function $ d_0 j^2 + d_1 \log(j),\ j=\det(A) $. 
 
-\hypertarget{namespaceFunG_a4784211358c877f05ad9426850303273}{}\index{Fun\+G@{Fun\+G}!yield\+Surface@{yield\+Surface}}
-\index{yield\+Surface@{yield\+Surface}!Fun\+G@{Fun\+G}}
-\subsubsection[{yield\+Surface}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix $>$ auto Fun\+G\+::yield\+Surface (
+\index{FunG@{FunG}!yield\+Surface@{yield\+Surface}}
+\index{yield\+Surface@{yield\+Surface}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{yield\+Surface(double beta, double offset, Matrix sigma=\+Linear\+Algebra\+::unit\+Matrix$<$ Matrix $>$())}{yieldSurface(double beta, double offset, Matrix sigma=LinearAlgebra::unitMatrix< Matrix >())}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix $>$ auto Fun\+G\+::yield\+Surface (
 \begin{DoxyParamCaption}
 \item[{double}]{beta, }
 \item[{double}]{offset, }
 \item[{Matrix}]{sigma = {\ttfamily {\bf Linear\+Algebra\+::unit\+Matrix}$<$Matrix$>$()}}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_a4784211358c877f05ad9426850303273}
+)}\hypertarget{namespaceFunG_a4784211358c877f05ad9426850303273}{}\label{namespaceFunG_a4784211358c877f05ad9426850303273}
 
 
 Yield surface $ \frac{\beta}{3}\iota_1(\sigma) + J_2(\sigma)-offset $, where $\iota_1$ is the first principal and $J_2$ is the second deviatoric invariant. 
 
-\hypertarget{namespaceFunG_a649b4470d6def401959bfea3a368c48c}{}\index{Fun\+G@{Fun\+G}!zero@{zero}}
-\index{zero@{zero}!Fun\+G@{Fun\+G}}
-\subsubsection[{zero}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , class  = std\+::enable\+\_\+if\+\_\+t$<$\+Checks\+::is\+Constant\+Size$<$\+Matrix$>$() $\vert$$\vert$ std\+::is\+\_\+arithmetic$<$\+Matrix$>$\+::value$>$$>$ Matrix Fun\+G\+::zero (
+\index{FunG@{FunG}!zero@{zero}}
+\index{zero@{zero}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{zero()}{zero()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , class  = std\+::enable\+\_\+if\+\_\+t$<$\+Checks\+::is\+Constant\+Size$<$\+Matrix$>$() $\vert$$\vert$ is\+\_\+arithmetic$<$\+Matrix$>$\+::value$>$$>$ Matrix Fun\+G\+::zero (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_a649b4470d6def401959bfea3a368c48c}
-Requires that a specialization of struct \hyperlink{structFunG_1_1Zero}{Zero} exists for Matrix. \begin{DoxyReturn}{Returns}
+)}\hypertarget{namespaceFunG_a649b4470d6def401959bfea3a368c48c}{}\label{namespaceFunG_a649b4470d6def401959bfea3a368c48c}
+
+
+Requires that a specialization of struct \hyperlink{structFunG_1_1Zero}{Zero} exists for Matrix. 
+
+\begin{DoxyReturn}{Returns}
 constant size zero matrix 
 \end{DoxyReturn}
-\hypertarget{namespaceFunG_ae633433339ba30207aa526e54e3924b4}{}\index{Fun\+G@{Fun\+G}!zero@{zero}}
-\index{zero@{zero}!Fun\+G@{Fun\+G}}
-\subsubsection[{zero}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , class  = std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Constant\+Size$<$\+Matrix$>$() \&\& !std\+::is\+\_\+arithmetic$<$\+Matrix$>$\+::value$>$$>$ constexpr Matrix Fun\+G\+::zero (
+\index{FunG@{FunG}!zero@{zero}}
+\index{zero@{zero}!FunG@{FunG}}
+\subsubsection[{\texorpdfstring{zero(int rows, int cols)}{zero(int rows, int cols)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , class  = std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Constant\+Size$<$\+Matrix$>$() \&\& !is\+\_\+arithmetic$<$\+Matrix$>$\+::value$>$$>$ constexpr Matrix Fun\+G\+::zero (
 \begin{DoxyParamCaption}
 \item[{int}]{rows, }
 \item[{int}]{cols}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_ae633433339ba30207aa526e54e3924b4}
-Requires that a specialization of struct \hyperlink{structFunG_1_1Zero}{Zero} exists for Matrix. \begin{DoxyReturn}{Returns}
+)}\hypertarget{namespaceFunG_ae633433339ba30207aa526e54e3924b4}{}\label{namespaceFunG_ae633433339ba30207aa526e54e3924b4}
+
+
+Requires that a specialization of struct \hyperlink{structFunG_1_1Zero}{Zero} exists for Matrix. 
+
+\begin{DoxyReturn}{Returns}
 dynamic size zero matrix 
 \end{DoxyReturn}

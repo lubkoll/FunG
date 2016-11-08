@@ -1,4 +1,4 @@
-\hypertarget{namespaceFunG_1_1LinearAlgebra}{}\section{Fun\+G\+:\+:Linear\+Algebra Namespace Reference}
+\hypertarget{namespaceFunG_1_1LinearAlgebra}{}\section{FunG\+:\+:Linear\+Algebra Namespace Reference}
 \label{namespaceFunG_1_1LinearAlgebra}\index{Fun\+G\+::\+Linear\+Algebra@{Fun\+G\+::\+Linear\+Algebra}}
 
 
@@ -8,36 +8,28 @@ Functionality from linear algebra such as (modified) principal and mixed matrix 
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+struct \hyperlink{structFunG_1_1LinearAlgebra_1_1ExtractDimension}{Extract\+Dimension}
+\begin{DoxyCompactList}\small\item\em Specialize this for your matrix class. Dimension (number of rows/columns for square matrices) must be provided by a static member variable called value. \end{DoxyCompactList}\item 
 class \hyperlink{classFunG_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor}{Left\+Cauchy\+Green\+Strain\+Tensor}
 \begin{DoxyCompactList}\small\item\em Left Cauchy-\/\+Green strain tensor $ F^T F $ for a symmetric matrix $ F $. \end{DoxyCompactList}\item 
 struct \hyperlink{structFunG_1_1LinearAlgebra_1_1NumberOfColumns}{Number\+Of\+Columns}
 \begin{DoxyCompactList}\small\item\em Specialize this for your matrix class. Number of columns must be provided by a static member variable called value. \end{DoxyCompactList}\item 
-struct \hyperlink{structFunG_1_1LinearAlgebra_1_1NumberOfColumns_3_01Matrix_3_01n_00_01m_01_4_00_01MatrixConceptCheck_01_4}{Number\+Of\+Columns$<$ Matrix$<$ n, m $>$, Matrix\+Concept\+Check $>$}
-\begin{DoxyCompactList}\small\item\em Specialization for matrices. \end{DoxyCompactList}\item 
-struct \hyperlink{structFunG_1_1LinearAlgebra_1_1NumberOfColumns_3_01Matrix_3_01T_00_01n_00_01m_01_4_00_01MatrixConceptCheck_01_4}{Number\+Of\+Columns$<$ Matrix$<$ T, n, m $>$, Matrix\+Concept\+Check $>$}
-\begin{DoxyCompactList}\small\item\em Specialization for matrices. \end{DoxyCompactList}\item 
-struct \hyperlink{structFunG_1_1LinearAlgebra_1_1NumberOfColumns_3_01Matrix_3_01T_00_01n_00_01m_00_01other_8_8_8_4_00_01MatrixConceptCheck_01_4}{Number\+Of\+Columns$<$ Matrix$<$ T, n, m, other...$>$, Matrix\+Concept\+Check $>$}
-\begin{DoxyCompactList}\small\item\em Specialization for matrices. \end{DoxyCompactList}\item 
 struct \hyperlink{structFunG_1_1LinearAlgebra_1_1NumberOfRows}{Number\+Of\+Rows}
 \begin{DoxyCompactList}\small\item\em Specialize this for your matrix class. Number of rows must be provided by a static member variable called value. \end{DoxyCompactList}\item 
-struct \hyperlink{structFunG_1_1LinearAlgebra_1_1NumberOfRows_3_01Matrix_3_01n_00_01m_01_4_00_01MatrixConceptCheck_01_4}{Number\+Of\+Rows$<$ Matrix$<$ n, m $>$, Matrix\+Concept\+Check $>$}
-\begin{DoxyCompactList}\small\item\em Specialization for matrices. \end{DoxyCompactList}\item 
-struct \hyperlink{structFunG_1_1LinearAlgebra_1_1NumberOfRows_3_01Matrix_3_01T_00_01n_00_01m_01_4_00_01MatrixConceptCheck_01_4}{Number\+Of\+Rows$<$ Matrix$<$ T, n, m $>$, Matrix\+Concept\+Check $>$}
-\begin{DoxyCompactList}\small\item\em Specialization for matrices. \end{DoxyCompactList}\item 
-struct \hyperlink{structFunG_1_1LinearAlgebra_1_1NumberOfRows_3_01Matrix_3_01T_00_01n_00_01m_8_8_8_4_00_01MatrixConceptCheck_01_4}{Number\+Of\+Rows$<$ Matrix$<$ T, n, m...$>$, Matrix\+Concept\+Check $>$}
-\begin{DoxyCompactList}\small\item\em Specialization for vectors. \end{DoxyCompactList}\item 
-struct \hyperlink{structFunG_1_1LinearAlgebra_1_1NumberOfRows_3_01Vector_3_01n_01_4_00_01MatrixConceptCheck_01_4}{Number\+Of\+Rows$<$ Vector$<$ n $>$, Matrix\+Concept\+Check $>$}
-\begin{DoxyCompactList}\small\item\em Specialization for vectors. \end{DoxyCompactList}\item 
-struct \hyperlink{structFunG_1_1LinearAlgebra_1_1NumberOfRows_3_01Vector_3_01T_00_01n_01_4_00_01MatrixConceptCheck_01_4}{Number\+Of\+Rows$<$ Vector$<$ T, n $>$, Matrix\+Concept\+Check $>$}
-\begin{DoxyCompactList}\small\item\em Specialization for vectors. \end{DoxyCompactList}\item 
+class \hyperlink{classFunG_1_1LinearAlgebra_1_1SecondPrincipalInvariant}{Second\+Principal\+Invariant}
+\begin{DoxyCompactList}\small\item\em Second principal invariant $ \iota_2(A)=\mathrm{tr}(\mathrm{cof}(A)) $ for $A\in\mathbb{R}^{n,n}$. \end{DoxyCompactList}\item 
 struct \hyperlink{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm}{Squared\+Frobenius\+Norm}
-\begin{DoxyCompactList}\small\item\em Compute squared Frobenius norm $ \|A\|^2 = A\negthinspace : \negthinspace A = \mathrm{tr}(A^TA) = \sum_{i,j} A_{ij}^2. $. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Compute squared Frobenius norm $ \|A\|^2 = A\negthinspace : \negthinspace A = \mathrm{tr}(A^TA) = \sum_{i,j} A_{ij}^2. $. \end{DoxyCompactList}\item 
+class \hyperlink{classFunG_1_1LinearAlgebra_1_1Transpose}{Transpose}
+\item 
+class \hyperlink{classFunG_1_1LinearAlgebra_1_1Transpose_3_01Matrix_00_01Concepts_1_1MatrixConceptCheck_3_01Matrix_01_4_01_4}{Transpose$<$ Matrix, Concepts\+::\+Matrix\+Concept\+Check$<$ Matrix $>$ $>$}
+\begin{DoxyCompactList}\small\item\em Represents transposition of constant-\/size matrices. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$class Matrix $>$ }\\using \hyperlink{group__LinearAlgebraGroup_gad209833e37a25e863fe72868d37795b8}{Frobenius\+Norm} = \hyperlink{structFunG_1_1MathematicalOperations_1_1Chain}{Mathematical\+Operations\+::\+Chain}$<$ \hyperlink{group__CMathGroup_gaca80e773d5886f47cd49dc19b130263f}{Sqrt}, \hyperlink{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm}{Squared\+Frobenius\+Norm}$<$ Matrix $>$ $>$
 \begin{DoxyCompactList}\small\item\em Frobenius norm $ \|A\| = \sqrt{A\negthinspace : \negthinspace A }= \sqrt{\mathrm{tr}(A^TA)} = \sqrt{\sum_{i,j} A_{ij}^2}. $. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Matrix $>$ }\\using \hyperlink{group__LinearAlgebraGroup_ga43e327309edc349c75ceecd29b7abde2}{Trace} = std\+::conditional\+\_\+t$<$ \hyperlink{group__Checks_gadcc3e179af2ed0384a3773ea086045b9}{Checks\+::is\+Constant\+Size}$<$ Matrix $>$(), Constant\+Size\+Trace$<$ Matrix $>$, Dynamic\+Size\+Trace$<$ Matrix $>$ $>$
+{\footnotesize template$<$class Matrix $>$ }\\using \hyperlink{group__LinearAlgebraGroup_ga43e327309edc349c75ceecd29b7abde2}{Trace} = std\+::conditional\+\_\+t$<$ \hyperlink{group__ConceptGroup_gadcc3e179af2ed0384a3773ea086045b9}{Checks\+::is\+Constant\+Size}$<$ Matrix $>$(), Constant\+Size\+Trace$<$ Matrix $>$, Dynamic\+Size\+Trace$<$ Matrix $>$ $>$
 \begin{DoxyCompactList}\small\item\em Trace of a matrix (sum of diagonal elements). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -93,7 +85,7 @@ struct \hyperlink{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm}{Squared\+
 {\footnotesize template$<$class Arg , int n = dim$<$\+Arg$>$()$>$ }\\auto \hyperlink{group__InvariantGroup_ga7eed5e2661171d81e192ac1db791244c}{mi1} (const Arg \&x)
 \begin{DoxyCompactList}\small\item\em Isochoric (volume-\/preserving), first modified principal invariant $ \bar\iota_1(A)=\iota_1\iota_3^{-1/3} $, where $\iota_1$ is the first and $\iota_3$ is the third principal invariant. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Arg , int n = dim$<$\+Arg$>$()$>$ }\\auto \hyperlink{group__InvariantGroup_ga9d219c5c48cce1d3af60345916963524}{mi2} (const Arg \&x)
-\begin{DoxyCompactList}\small\item\em Isochoric (volume-\/preserving), second modified principal invariant $ \bar\iota_2(A)=\iota_2\iota_3^{-1/3} $, where $\iota_2$ is the second and $\iota_3$ is the third principal invariant. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Isochoric (volume-\/preserving), second modified principal invariant $ \bar\iota_2(A)=\iota_2\iota_3^{-2/3} $, where $\iota_2$ is the second and $\iota_3$ is the third principal invariant. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Constant\+Size$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_1_1LinearAlgebra_abd3afa2fcd2194787342b2662cfa9f5a}{rows} (const Matrix \&A)
 \begin{DoxyCompactList}\small\item\em Number of rows of a dynamic size matrix. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Constant\+Size$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ }\\constexpr auto \hyperlink{namespaceFunG_1_1LinearAlgebra_ab401cccb1259e724bf37d2e198e2ca3d}{rows} ()
@@ -102,30 +94,26 @@ struct \hyperlink{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm}{Squared\+
 \begin{DoxyCompactList}\small\item\em Number of columns of a dynamic size matrix. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Constant\+Size$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ }\\constexpr auto \hyperlink{namespaceFunG_1_1LinearAlgebra_a9eb685419fe4c5f91619d5aa0f973320}{cols} ()
 \begin{DoxyCompactList}\small\item\em Number of columns of a constant size matrix. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Matrix $>$ }\\auto \hyperlink{namespaceFunG_1_1LinearAlgebra_aca163950a2c0cb159fb83629b08337ba}{strain\+Tensor} (const Matrix \&F)
-\item 
+{\footnotesize template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Function$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_1_1LinearAlgebra_a0e10030a723fad88f5f4f0b6612c393a}{strain\+Tensor} (const Matrix \&A)
+\begin{DoxyCompactList}\small\item\em Generate the left Cauchy-\/\+Green strain tensor $A^T*A$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ F $>$()$>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_1_1LinearAlgebra_ab4371788da401ca62a3a29a13cf8d4ce}{strain\+Tensor} (const F \&f)
+\begin{DoxyCompactList}\small\item\em Generate the left Cauchy-\/\+Green strain tensor $f^Tf$, where $f:\cdot\mapsto\mathbb{R}^{n,n} $. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Matrix , class Vector1 , class Vector2 , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Constant\+Size$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ }\\Matrix \hyperlink{group__LinearAlgebraGroup_ga5d0e066e6184fb3324d96d20087b5578}{tensor\+Product} (const Vector1 \&v, const Vector2 \&w)
 \begin{DoxyCompactList}\small\item\em Compute tensor product $ M = v \otimes w $. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Matrix , class Vector $>$ }\\Matrix \hyperlink{group__LinearAlgebraGroup_gae5e82b9e66319511dae5ff0d9304a6b7}{tensor\+Product} (const Vector \&v)
 \begin{DoxyCompactList}\small\item\em Compute tensor product $ M = v \otimes v $. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Function$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_ga4d73eb4d46dd9196a31e2d6d557d509e}{trace} (const Matrix \&A)
-\begin{DoxyCompactList}\small\item\em Generate $\mathrm{tr}(A)$. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Generate $\mathrm{tr}(A)\in\mathbb{R}^{n,n}$. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ F $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_ga950717870525c43be79245413717673c}{trace} (const F \&f)
 \begin{DoxyCompactList}\small\item\em Generate $\mathrm{tr}\circ f$, where $f:\cdot\mapsto\mathbb{R}^{n,n} $. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Matrix , class Transposed\+Matrix  = Matrix, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+same$<$ Matrix, Transposed\+Matrix $>$\+::value \&\&\+Checks\+::is\+Constant\+Size$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ }\\Transposed\+Matrix \hyperlink{group__LinearAlgebraGroup_gaf299ac9490ae23da0a3a3d784e379d1f}{transpose} (Matrix A)
-\begin{DoxyCompactList}\small\item\em Compute transpose of square matrix. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Transposed\+Matrix , class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!std\+::is\+\_\+same$<$ Matrix, Transposed\+Matrix $>$\+::value \&\&\+Checks\+::is\+Constant\+Size$<$ Matrix $>$()\&\&\+Checks\+::is\+Constant\+Size$<$ Transposed\+Matrix $>$()$>$ $\ast$  = nullptr$>$ }\\Transposed\+Matrix \hyperlink{group__LinearAlgebraGroup_gaffe414459cb85a455a3c5a2099cfc6ee}{transpose} (const Matrix \&A)
-\begin{DoxyCompactList}\small\item\em Compute transpose of non-\/square matrix. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Constant\+Size$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ }\\Matrix \hyperlink{group__LinearAlgebraGroup_gac3427d39b75727a255e5ea387c50ff10}{transpose} (Matrix A)
-\begin{DoxyCompactList}\small\item\em Compute transpose of square matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Function$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_ga6110875ecb3c2559f8f4b42a3627a65b}{transpose} (const Matrix \&A)
+\begin{DoxyCompactList}\small\item\em Generate $A^T\in\mathbb{R}^{n,n}$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ F $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_ga410ef1b161789c0c9f01ae5f5caf058f}{transpose} (const F \&f)
+\begin{DoxyCompactList}\small\item\em Generate $f^T$, where $f:\cdot\mapsto\mathbb{R}^{n,n} $. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Matrix , class  = std\+::enable\+\_\+if\+\_\+t$<$\+Checks\+::is\+Constant\+Size$<$\+Matrix$>$()$>$$>$ }\\Matrix \hyperlink{group__LinearAlgebraGroup_ga88a596b8526c0ed98ce241244fb85948}{unit\+Matrix} ()
 \begin{DoxyCompactList}\small\item\em Compute unit matrix for the specified constant size matrix type. This requires that a corresponding specialization of \hyperlink{structFunG_1_1Zero}{Zero} is provided. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Matrix , class  = std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Constant\+Size$<$\+Matrix$>$()$>$$>$ }\\Matrix \hyperlink{group__LinearAlgebraGroup_gae50c49f62ed072019079a7563688e5de}{unit\+Matrix} (int \hyperlink{namespaceFunG_1_1LinearAlgebra_abd3afa2fcd2194787342b2662cfa9f5a}{rows})
-\begin{DoxyCompactList}\small\item\em Compute unit matrix for the specified dynamic size matrix type. This requires that a corresponding specialization of \hyperlink{structFunG_1_1Zero}{Zero} is provided. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Matrix $>$ }\\constexpr int \hyperlink{namespaceFunG_1_1LinearAlgebra_ac1ff54cc5554748b5a9585c09745f139}{number\+Of\+Rows} ()
-\begin{DoxyCompactList}\small\item\em Number of rows $n$ of a fixed size matrix in $\mathbb{R}^{n,m}$ or a fixed size vector in $\mathbb{R}^n$. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Matrix $>$ }\\constexpr int \hyperlink{namespaceFunG_1_1LinearAlgebra_a4ed2c140b262ec0c33c93af62d65d1b1}{number\+Of\+Columns} ()
-\begin{DoxyCompactList}\small\item\em Number of columns $m$ of a fixed size matrix in $\mathbb{R}^{n,m}$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Compute unit matrix for the specified dynamic size matrix type. This requires that a corresponding specialization of \hyperlink{structFunG_1_1Zero}{Zero} is provided. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -137,87 +125,96 @@ Functionality from linear algebra such as (modified) principal and mixed matrix 
 
 
 \subsection{Function Documentation}
-\hypertarget{namespaceFunG_1_1LinearAlgebra_ae981b8bee32eea3ce87f41874835c9c1}{}\index{Fun\+G\+::\+Linear\+Algebra@{Fun\+G\+::\+Linear\+Algebra}!cols@{cols}}
+\index{Fun\+G\+::\+Linear\+Algebra@{Fun\+G\+::\+Linear\+Algebra}!cols@{cols}}
 \index{cols@{cols}!Fun\+G\+::\+Linear\+Algebra@{Fun\+G\+::\+Linear\+Algebra}}
-\subsubsection[{cols}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Constant\+Size$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ auto Fun\+G\+::\+Linear\+Algebra\+::cols (
+\subsubsection[{\texorpdfstring{cols(const Matrix \&\+A)}{cols(const Matrix &A)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Constant\+Size$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ auto Fun\+G\+::\+Linear\+Algebra\+::cols (
 \begin{DoxyParamCaption}
 \item[{const Matrix \&}]{A}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_1_1LinearAlgebra_ae981b8bee32eea3ce87f41874835c9c1}
+)}\hypertarget{namespaceFunG_1_1LinearAlgebra_ae981b8bee32eea3ce87f41874835c9c1}{}\label{namespaceFunG_1_1LinearAlgebra_ae981b8bee32eea3ce87f41874835c9c1}
 
 
 Number of columns of a dynamic size matrix. 
 
-\hypertarget{namespaceFunG_1_1LinearAlgebra_a9eb685419fe4c5f91619d5aa0f973320}{}\index{Fun\+G\+::\+Linear\+Algebra@{Fun\+G\+::\+Linear\+Algebra}!cols@{cols}}
+\index{Fun\+G\+::\+Linear\+Algebra@{Fun\+G\+::\+Linear\+Algebra}!cols@{cols}}
 \index{cols@{cols}!Fun\+G\+::\+Linear\+Algebra@{Fun\+G\+::\+Linear\+Algebra}}
-\subsubsection[{cols}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Constant\+Size$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ constexpr auto Fun\+G\+::\+Linear\+Algebra\+::cols (
+\subsubsection[{\texorpdfstring{cols()}{cols()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Constant\+Size$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ constexpr auto Fun\+G\+::\+Linear\+Algebra\+::cols (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_1_1LinearAlgebra_a9eb685419fe4c5f91619d5aa0f973320}
+)}\hypertarget{namespaceFunG_1_1LinearAlgebra_a9eb685419fe4c5f91619d5aa0f973320}{}\label{namespaceFunG_1_1LinearAlgebra_a9eb685419fe4c5f91619d5aa0f973320}
 
 
 Number of columns of a constant size matrix. 
 
-\hypertarget{namespaceFunG_1_1LinearAlgebra_a13a029820c29d530274ae94968d642d4}{}\index{Fun\+G\+::\+Linear\+Algebra@{Fun\+G\+::\+Linear\+Algebra}!dim@{dim}}
+\index{Fun\+G\+::\+Linear\+Algebra@{Fun\+G\+::\+Linear\+Algebra}!dim@{dim}}
 \index{dim@{dim}!Fun\+G\+::\+Linear\+Algebra@{Fun\+G\+::\+Linear\+Algebra}}
-\subsubsection[{dim}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix $>$ constexpr int Fun\+G\+::\+Linear\+Algebra\+::dim (
+\subsubsection[{\texorpdfstring{dim()}{dim()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix $>$ constexpr int Fun\+G\+::\+Linear\+Algebra\+::dim (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_1_1LinearAlgebra_a13a029820c29d530274ae94968d642d4}
+)}\hypertarget{namespaceFunG_1_1LinearAlgebra_a13a029820c29d530274ae94968d642d4}{}\label{namespaceFunG_1_1LinearAlgebra_a13a029820c29d530274ae94968d642d4}
 
 
 Dimension $n$ of a fixed size matrix in $\mathbb{R}^{n,n}$. 
 
-\hypertarget{namespaceFunG_1_1LinearAlgebra_a4ed2c140b262ec0c33c93af62d65d1b1}{}\index{Fun\+G\+::\+Linear\+Algebra@{Fun\+G\+::\+Linear\+Algebra}!number\+Of\+Columns@{number\+Of\+Columns}}
-\index{number\+Of\+Columns@{number\+Of\+Columns}!Fun\+G\+::\+Linear\+Algebra@{Fun\+G\+::\+Linear\+Algebra}}
-\subsubsection[{number\+Of\+Columns}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix $>$ constexpr int Fun\+G\+::\+Linear\+Algebra\+::number\+Of\+Columns (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\label{namespaceFunG_1_1LinearAlgebra_a4ed2c140b262ec0c33c93af62d65d1b1}
-
-
-Number of columns $m$ of a fixed size matrix in $\mathbb{R}^{n,m}$. 
-
-\hypertarget{namespaceFunG_1_1LinearAlgebra_ac1ff54cc5554748b5a9585c09745f139}{}\index{Fun\+G\+::\+Linear\+Algebra@{Fun\+G\+::\+Linear\+Algebra}!number\+Of\+Rows@{number\+Of\+Rows}}
-\index{number\+Of\+Rows@{number\+Of\+Rows}!Fun\+G\+::\+Linear\+Algebra@{Fun\+G\+::\+Linear\+Algebra}}
-\subsubsection[{number\+Of\+Rows}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix $>$ constexpr int Fun\+G\+::\+Linear\+Algebra\+::number\+Of\+Rows (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\label{namespaceFunG_1_1LinearAlgebra_ac1ff54cc5554748b5a9585c09745f139}
-
-
-Number of rows $n$ of a fixed size matrix in $\mathbb{R}^{n,m}$ or a fixed size vector in $\mathbb{R}^n$. 
-
-\hypertarget{namespaceFunG_1_1LinearAlgebra_abd3afa2fcd2194787342b2662cfa9f5a}{}\index{Fun\+G\+::\+Linear\+Algebra@{Fun\+G\+::\+Linear\+Algebra}!rows@{rows}}
+\index{Fun\+G\+::\+Linear\+Algebra@{Fun\+G\+::\+Linear\+Algebra}!rows@{rows}}
 \index{rows@{rows}!Fun\+G\+::\+Linear\+Algebra@{Fun\+G\+::\+Linear\+Algebra}}
-\subsubsection[{rows}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Constant\+Size$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ auto Fun\+G\+::\+Linear\+Algebra\+::rows (
+\subsubsection[{\texorpdfstring{rows(const Matrix \&\+A)}{rows(const Matrix &A)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Constant\+Size$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ auto Fun\+G\+::\+Linear\+Algebra\+::rows (
 \begin{DoxyParamCaption}
 \item[{const Matrix \&}]{A}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_1_1LinearAlgebra_abd3afa2fcd2194787342b2662cfa9f5a}
+)}\hypertarget{namespaceFunG_1_1LinearAlgebra_abd3afa2fcd2194787342b2662cfa9f5a}{}\label{namespaceFunG_1_1LinearAlgebra_abd3afa2fcd2194787342b2662cfa9f5a}
 
 
 Number of rows of a dynamic size matrix. 
 
-\hypertarget{namespaceFunG_1_1LinearAlgebra_ab401cccb1259e724bf37d2e198e2ca3d}{}\index{Fun\+G\+::\+Linear\+Algebra@{Fun\+G\+::\+Linear\+Algebra}!rows@{rows}}
+\index{Fun\+G\+::\+Linear\+Algebra@{Fun\+G\+::\+Linear\+Algebra}!rows@{rows}}
 \index{rows@{rows}!Fun\+G\+::\+Linear\+Algebra@{Fun\+G\+::\+Linear\+Algebra}}
-\subsubsection[{rows}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Constant\+Size$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ constexpr auto Fun\+G\+::\+Linear\+Algebra\+::rows (
+\subsubsection[{\texorpdfstring{rows()}{rows()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Constant\+Size$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ constexpr auto Fun\+G\+::\+Linear\+Algebra\+::rows (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_1_1LinearAlgebra_ab401cccb1259e724bf37d2e198e2ca3d}
+)}\hypertarget{namespaceFunG_1_1LinearAlgebra_ab401cccb1259e724bf37d2e198e2ca3d}{}\label{namespaceFunG_1_1LinearAlgebra_ab401cccb1259e724bf37d2e198e2ca3d}
 
 
 Number of rows of a constant size matrix. 
 
-\hypertarget{namespaceFunG_1_1LinearAlgebra_aca163950a2c0cb159fb83629b08337ba}{}\index{Fun\+G\+::\+Linear\+Algebra@{Fun\+G\+::\+Linear\+Algebra}!strain\+Tensor@{strain\+Tensor}}
+\index{Fun\+G\+::\+Linear\+Algebra@{Fun\+G\+::\+Linear\+Algebra}!strain\+Tensor@{strain\+Tensor}}
 \index{strain\+Tensor@{strain\+Tensor}!Fun\+G\+::\+Linear\+Algebra@{Fun\+G\+::\+Linear\+Algebra}}
-\subsubsection[{strain\+Tensor}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix $>$ auto Fun\+G\+::\+Linear\+Algebra\+::strain\+Tensor (
+\subsubsection[{\texorpdfstring{strain\+Tensor(const Matrix \&\+A)}{strainTensor(const Matrix &A)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , std\+::enable\+\_\+if\+\_\+t$<$!\+Checks\+::is\+Function$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ auto Fun\+G\+::\+Linear\+Algebra\+::strain\+Tensor (
 \begin{DoxyParamCaption}
-\item[{const Matrix \&}]{F}
+\item[{const Matrix \&}]{A}
 \end{DoxyParamCaption}
-)}\label{namespaceFunG_1_1LinearAlgebra_aca163950a2c0cb159fb83629b08337ba}
+)}\hypertarget{namespaceFunG_1_1LinearAlgebra_a0e10030a723fad88f5f4f0b6612c393a}{}\label{namespaceFunG_1_1LinearAlgebra_a0e10030a723fad88f5f4f0b6612c393a}
+
+
+Generate the left Cauchy-\/\+Green strain tensor $A^T*A$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Left\+Cauchy\+Green\+Strain\+Tensor$<$\+Matrix$>$(\+A) 
+\end{DoxyReturn}
+\index{Fun\+G\+::\+Linear\+Algebra@{Fun\+G\+::\+Linear\+Algebra}!strain\+Tensor@{strain\+Tensor}}
+\index{strain\+Tensor@{strain\+Tensor}!Fun\+G\+::\+Linear\+Algebra@{Fun\+G\+::\+Linear\+Algebra}}
+\subsubsection[{\texorpdfstring{strain\+Tensor(const F \&f)}{strainTensor(const F &f)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ F $>$()$>$ $\ast$  = nullptr$>$ auto Fun\+G\+::\+Linear\+Algebra\+::strain\+Tensor (
+\begin{DoxyParamCaption}
+\item[{const F \&}]{f}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceFunG_1_1LinearAlgebra_ab4371788da401ca62a3a29a13cf8d4ce}{}\label{namespaceFunG_1_1LinearAlgebra_ab4371788da401ca62a3a29a13cf8d4ce}
+
+
+Generate the left Cauchy-\/\+Green strain tensor $f^Tf$, where $f:\cdot\mapsto\mathbb{R}^{n,n} $. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & function object mapping into a space of square matrices \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classFunG_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor}{Left\+Cauchy\+Green\+Strain\+Tensor}$<$ std\+::decay\+\_\+t$<$decltype(f())$>$ $>$(f())( f ) 
+\end{DoxyReturn}
