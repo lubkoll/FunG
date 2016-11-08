@@ -1,35 +1,27 @@
-// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
-// Released under the terms of the GNU General Public License version 3 or later.
-
-#ifndef FUNG_MATHEMATICAL_OPERATION_CHAIN_HH
-#define FUNG_MATHEMATICAL_OPERATION_CHAIN_HH
+#pragma once
 
 #include <type_traits>
 #include <utility>
 
-#include "fung/util/compute_sum.hh"
-#include "fung/util/compute_chain.hh"
-#include "fung/util/derivative_wrappers.hh"
-#include "fung/util/evaluate_if_present.hh"
-#include "fung/util/indexed_type.hh"
+#include <fung/concept_check.hh>
+#include <fung/util/compute_sum.hh>
+#include <fung/util/compute_chain.hh>
+#include <fung/util/derivative_wrappers.hh>
+#include <fung/util/evaluate_if_present.hh>
+#include <fung/util/indexed_type.hh>
 
 namespace FunG
 {
-  /**
-   * \cond DOCUMENT_FORWARD_DECLARATIONS
-   */
+  /// @cond
   template <class> struct Chainer;
-  namespace Concepts { template <class> struct FunctionConceptCheck; }
-  /**
-   * \endcond
-   */
+  /// @endcond
 
   namespace MathematicalOperations
   {
     /**
-     * \ingroup MathematicalOperationsGroup
+     * @ingroup MathematicalOperationsGroup
      *
-     * \brief %Chain \f$ f\circ g \f$ of functions \f$f\f$ and \f$g\f$ of type F resp. G (F and G must satisfy the requirements of Concepts::FunctionConcept).
+     * @brief %Chain \f$ f\circ g \f$ of functions \f$f\f$ and \f$g\f$ of type F resp. G (F and G must satisfy the requirements of Concepts::FunctionConcept).
      */
     template < class F , class G ,
                class = Concepts::FunctionConceptCheck<F>,
@@ -57,25 +49,28 @@ namespace FunG
       ComputeChainD1<  F , D3<G,IndexedArgX,IndexedArgY,IndexedArgZ> , IndexedFArgX > >;
 
     public:
-      /**
-       * \brief Constructor.
-       * \param init input for a constructor of G
-       */
-      template <class... InitFunction>
-      Chain(const InitFunction&... init)
-        : g(init...), f(g())
-      {}
+        /**
+         * @brief Constructor taking copies of the functions to be chained.
+         * @param f_ outer function
+         * @param g_ inner function
+         */
+        Chain(const F& f_, const G& g_)
+          : g(g_), f(f_)
+        {
+          update_if_present(f,g());
+        }
 
-      /**
-       * @brief Constructor taking copies of the functions to be chained.
-       * @param f_ outer function
-       * @param g_ inner function
-       */
-      Chain(const F& f_, const G& g_)
-        : g(g_), f(f_)
-      {
-        update_if_present(f,g());
-      }
+        /**
+         * @brief Constructor taking moving the functions to be chained.
+         * @param f_ outer function
+         * @param g_ inner function
+         */
+        Chain(F&& f_, G&& g_)
+          : g(std::move(g_)),
+            f(std::move(f_))
+        {
+          update_if_present(f,g());
+        }
 
       /// Update point of evaluation.
       template <class Arg>
@@ -100,8 +95,8 @@ namespace FunG
       }
 
       /**
-       * \brief First directional derivative.
-       * \param dx direction for which the derivative is computed
+       * @brief First directional derivative.
+       * @param dx direction for which the derivative is computed
        */
       template < int id , class Arg ,
                  class IndexedArg = IndexedType<Arg,id> ,
@@ -113,9 +108,9 @@ namespace FunG
       }
 
       /**
-       * \brief Second directional derivative.
-       * \param dx direction for which the derivative is computed
-       * \param dy direction for which the derivative is computed
+       * @brief Second directional derivative.
+       * @param dx direction for which the derivative is computed
+       * @param dy direction for which the derivative is computed
        */
       template < int idx , int idy , class ArgX , class ArgY ,
                  class IndexedArgX = IndexedType<ArgX,idx> ,
@@ -130,10 +125,10 @@ namespace FunG
       }
 
       /**
-       * \brief Third directional derivative.
-       * \param dx direction for which the derivative is computed
-       * \param dy direction for which the derivative is computed
-       * \param dz direction for which the derivative is computed
+       * @brief Third directional derivative.
+       * @param dx direction for which the derivative is computed
+       * @param dy direction for which the derivative is computed
+       * @param dz direction for which the derivative is computed
        */
       template < int idx , int idy , int idz , class ArgX , class ArgY , class ArgZ ,
                  class IndexedArgX = IndexedType<ArgX,idx> ,
@@ -161,5 +156,3 @@ namespace FunG
     };
   }
 }
-
-#endif // FUNG_MATHEMATICAL_OPERATION_CHAIN_HH

@@ -1,6 +1,3 @@
-// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
-// Released under the terms of the GNU General Public License version 3 or later.
-
 #pragma once
 
 #include <type_traits>
@@ -26,17 +23,15 @@ namespace FunG
                class CheckG = Concepts::FunctionConceptCheck<G> >
     struct Sum : Chainer< Sum< F, G, CheckF, CheckG > >
     {
-      /// Constructor that copies its arguments.
-      Sum( const F& f_, const G& g_ )
-        : f( f_ ),
-          g( g_ ),
-          value( f() + g() )
-      {}
-
-      /// Constructor that moves its arguments.
-      Sum( F&& f_, G&& g_ )
-        : f( std::move(f_) ),
-          g( std::move(g_) ),
+      /**
+       * @brief Constructor
+       * @param f_ initializer for F
+       * @param g_ initializer for G
+       */
+      template <class InitF, class InitG>
+      Sum( InitF&& f_, InitG&& g_ )
+        : f( std::forward<InitF>(f_) ),
+          g( std::forward<InitG>(g_) ),
           value( f() + g() )
       {}
 
@@ -108,4 +103,3 @@ namespace FunG
     };
   }
 }
-

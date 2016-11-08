@@ -1,23 +1,16 @@
-// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
-// Released under the terms of the GNU General Public License version 3 or later.
-
-#ifndef FUNG_MATHEMATICAL_OPERATIONS_SCALE_HH
-#define FUNG_MATHEMATICAL_OPERATIONS_SCALE_HH
+#pragma once
 
 #include <type_traits>
 #include <utility>
 
-#include "fung/util/derivative_wrappers.hh"
-#include "fung/util/evaluate_if_present.hh"
-#include "fung/util/indexed_type.hh"
+#include <fung/concept_check.hh>
+#include <fung/util/chainer.hh>
+#include <fung/util/derivative_wrappers.hh>
+#include <fung/util/evaluate_if_present.hh>
+#include <fung/util/indexed_type.hh>
 
 namespace FunG
 {
-  /// @cond
-  template <class> struct Chainer;
-  namespace Concepts{ template <class> struct FunctionConceptCheck; }
-  /// @endcond
-
   namespace MathematicalOperations
   {
     /**
@@ -96,5 +89,3 @@ namespace FunG
     };
   }
 }
-
-#endif // FUNG_MATHEMATICAL_OPERATIONS_SCALE_HH
