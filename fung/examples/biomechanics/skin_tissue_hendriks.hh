@@ -35,7 +35,8 @@ namespace FunG
    * @brief Model for skin tissue of \cite Hendriks2005.
    *
    * Implementation of the stored energy function
-   * \f$W(F)=c_0(\iota_1-3) + c_1(\iota_1-3)(\iota_2-3)\f$, where \f$\iota_1,\iota_2\f$ are the first and second principal invariants of the strain tensor \f$F^T F\f$.
+   * \f$W(F)=c_0(\iota_1-3) + c_1(\iota_1-3)(\iota_2-3)\f$, where \f$\iota_1,\iota_2\f$ are the first and second principal invariants of
+   * the strain tensor \f$F^T F\f$.
    *
    * @param c0 scaling of the shifted first principal invariant
    * @param c1 scaling of the product of shifted first and second principal invariant
@@ -52,7 +53,8 @@ namespace FunG
    * @brief Model for skin tissue of \cite Hendriks2005.
    *
    * Implementation of the stored energy function
-   * \f$W(F)=c_0(\iota_1-3) + c_1(\iota_1-3)(\iota_2-3)\f$, where \f$\iota_1,\iota_2\f$ are the first and second principal invariants of the strain tensor \f$F^T F\f$.
+   * \f$W(F)=c_0(\iota_1-3) + c_1(\iota_1-3)(\iota_2-3)\f$, where \f$\iota_1,\iota_2\f$ are the first and second principal invariants of
+   * the strain tensor \f$F^T F\f$.
    *
    * Material parameters are taken from \cite Xu2011,
    * i.e \f$c_0=9.4 (\,\mathrm{kPa})\f$ and \f$ c_1 = 82 (\,\mathrm{kPa}) \f$.
@@ -71,7 +73,8 @@ namespace FunG
    * @brief Compressible version of the model for skin tissue of \cite Hendriks2005.
    *
    * Implementation of the stored energy function
-   * \f$W(F)=c_0(\iota_1-3) + c_1(\iota_1-3)(\iota_2-3) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression}\f$, where \f$\iota_1,\iota_2\f$ are the first and second principal invariants of the strain tensor \f$F^T F\f$.
+   * \f$W(F)=c_0(\iota_1-3) + c_1(\iota_1-3)(\iota_2-3) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression}\f$,
+   * where \f$\iota_1,\iota_2\f$ are the first and second principal invariants of the strain tensor \f$F^T F\f$.
    *
    * @param c0 scaling of the shifted first principal invariant
    * @param c1 scaling of the product of shifted first and second principal invariant
@@ -90,7 +93,8 @@ namespace FunG
    * @brief Compressible version of the model for skin tissue of \cite Hendriks2005.
    *
    * Implementation of the stored energy function
-   * \f$W(F)=c_0(\iota_1-3) + c_1(\iota_1-3)(\iota_2-3) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression}\f$, where \f$\iota_1,\iota_2\f$ are the first and second principal invariants of the strain tensor \f$F^T F\f$.
+   * \f$W(F)=c_0(\iota_1-3) + c_1(\iota_1-3)(\iota_2-3) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression}\f$,
+   * where \f$\iota_1,\iota_2\f$ are the first and second principal invariants of the strain tensor \f$F^T F\f$.
    *
    * Material parameters are taken from \cite Xu2011,
    * i.e \f$c_0=9.4 (\,\mathrm{kPa})\f$ and \f$ c_1 = 82 (\,\mathrm{kPa}) \f$.

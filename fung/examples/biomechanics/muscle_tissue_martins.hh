@@ -39,8 +39,8 @@ namespace FunG
    * @brief Incompressible version of the model for muscle tissue of \cite Martins1998.
    *
    * Implementation of the stored energy function
-   * \f$ W(F)=c(\exp(b(\bar\iota_1-3))-1) + A(\exp(a(\bar\iota_6-1)^2)-1) \f$, where \f$\bar\iota_1,\bar\iota_6=\bar\iota_4\f$ are the first modified principal and the third modified mixed
-   * invariant of the strain tensor \f$F^T F\f$.
+   * \f$ W(F)=c(\exp(b(\bar\iota_1-3))-1) + A(\exp(a(\bar\iota_6-1)^2)-1) \f$, where \f$\bar\iota_1,\bar\iota_6=\bar\iota_4\f$ are the
+   * first modified principal and the third modified mixed invariant of the strain tensor \f$F^T F\f$.
    *
    * @param c first material parameter for the isotropic part
    * @param b second material parameter for the isotropic part
@@ -61,8 +61,8 @@ namespace FunG
    * @brief Incompressible version of the model for muscle tissue of \cite Martins1998.
    *
    * Implementation of the stored energy function
-   * \f$ W(F)=c(\exp(b(\bar\iota_1-3))-1) + A(\exp(a(\bar\iota_6-1)^2)-1) \f$, where \f$\bar\iota_1,\bar\iota_6=\bar\iota_4\f$ are the first modified principal and the third modified mixed
-   * invariant of the strain tensor \f$F^T F\f$.
+   * \f$ W(F)=c(\exp(b(\bar\iota_1-3))-1) + A(\exp(a(\bar\iota_6-1)^2)-1) \f$, where \f$\bar\iota_1,\bar\iota_6=\bar\iota_4\f$ are the
+   * first modified principal and the third modified mixed invariant of the strain tensor \f$F^T F\f$.
    *
    * Material parameters taken from the same above mentioned publication, i.e. \f$a=0.387 (\,\mathrm{kPa})\f$, \f$ b = 23.46 \f$, \f$ A = 0.584 (\,\mathrm{kPa}) \f$
    * and \f$ a = 12.43\f$.
@@ -81,7 +81,8 @@ namespace FunG
    * @brief Compressible version of the model for muscle tissue of \cite Martins1998.
    *
    * Implementation of the stored energy function
-   * \f$ W(F)=c(\exp(b(\bar\iota_1-3))-1) + A(\exp(a(\bar\iota_6-1)^2)-1) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression} \f$, where \f$\bar\iota_1,\bar\iota_6=\bar\iota_4\f$ are the first modified principal and the third modified mixed
+   * \f$ W(F)=c(\exp(b(\bar\iota_1-3))-1) + A(\exp(a(\bar\iota_6-1)^2)-1) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression} \f$,
+   * where \f$\bar\iota_1,\bar\iota_6=\bar\iota_4\f$ are the first modified principal and the third modified mixed
    * invariant of the strain tensor \f$F^T F\f$.
    *
    * @param c first material parameter for the isotropic part
@@ -104,7 +105,8 @@ namespace FunG
    * @brief Compressible version of the model for muscle tissue of \cite Martins1998.
    *
    * Implementation of the stored energy function
-   * \f$ W(F)=c(\exp(b(\bar\iota_1-3))-1) + A(\exp(a(\bar\iota_6-1)^2)-1) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression}(\det(F))\f$, where \f$\bar\iota_1,\bar\iota_6=\bar\iota_4\f$ are the first modified principal and the third modified mixed
+   * \f$ W(F)=c(\exp(b(\bar\iota_1-3))-1) + A(\exp(a(\bar\iota_6-1)^2)-1) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression}(\det(F))\f$,
+   * where \f$\bar\iota_1,\bar\iota_6=\bar\iota_4\f$ are the first modified principal and the third modified mixed
    * invariant of the strain tensor \f$F^T F\f$.
    *
    * Material parameters taken from the above mentioned publication, i.e. \f$a=0.387 (\,\mathrm{kPa})\f$, \f$ b = 23.46 \f$, \f$ A = 0.584 (\,\mathrm{kPa}) \f$

@@ -40,8 +40,8 @@ namespace FunG
    * @brief Model for adipose tissue of \cite Sommer2013.
    *
    * Implementation of the stored energy function
-   * \f$ W(F)= c_\mathrm{Cells}(\iota_1-3) + \frac{k_1}{k_2}\exp(k_2(\kappa\iota_1+(1-3\kappa)*\iota_4)^2-1) \f$, where \f$ \iota_1,\iota_4 \f$ are the first and first mixed invariant of the
-   * strain tensor \f$F^T F\f$.
+   * \f$ W(F)= c_\mathrm{Cells}(\iota_1-3) + \frac{k_1}{k_2}\exp(k_2(\kappa\iota_1+(1-3\kappa)*\iota_4)^2-1) \f$,
+   * where \f$ \iota_1,\iota_4 \f$ are the first and first mixed invariant of the strain tensor \f$F^T F\f$.
    *
    * @param cCells scaling of the neo-Hookean model for the description of the adipocytes as cell foam.
    * @param k1 stress-like parameter of the model for the interlobular septa
@@ -61,8 +61,8 @@ namespace FunG
    * @brief Model for adipose tissue of \cite Sommer2013.
    *
    * Implementation of the stored energy function
-   * \f$ W(F)= c_\mathrm{Cells}(\iota_1-3) + \frac{k_1}{k_2}\exp(k_2(\kappa\iota_1+(1-3\kappa)*\iota_4)^2-1) \f$, where \f$ \iota_1,\iota_4 \f$ are the first and first mixed invariant of the
-   * strain tensor \f$F^T F\f$.
+   * \f$ W(F)= c_\mathrm{Cells}(\iota_1-3) + \frac{k_1}{k_2}\exp(k_2(\kappa\iota_1+(1-3\kappa)*\iota_4)^2-1) \f$,
+   * where \f$ \iota_1,\iota_4 \f$ are the first and first mixed invariant of the strain tensor \f$F^T F\f$.
    *
    * Material parameters are taken from the above mentioned publication, Table 2, i.e. \f$c_\mathrm{Cells}=0.15 (\,\mathrm{kPa})\f$, \f$k_1=0.8 (\,\mathrm{kPa})\f$, \f$k_2=47.3\f$ and \f$\kappa=0.09\f$.
    *
@@ -80,7 +80,8 @@ namespace FunG
    * @brief Compressible version of the model for adipose tissue of \cite Sommer2013.
    *
    * Implementation of the stored energy function
-   * \f$ W(F)= c_\mathrm{Cells}(\iota_1-3) + \frac{k_1}{k_2}\exp(k_2(\kappa\iota_1+(1-3\kappa)*\iota_4)^2-1) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression}  \f$, where \f$ \iota_1,\iota_4 \f$ are the first and first mixed invariant of the
+   * \f$ W(F)= c_\mathrm{Cells}(\iota_1-3) + \frac{k_1}{k_2}\exp(k_2(\kappa\iota_1+(1-3\kappa)*\iota_4)^2-1) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression}  \f$,
+   * where \f$ \iota_1,\iota_4 \f$ are the first and first mixed invariant of the
    * strain tensor \f$F^T F\f$.
    *
    * @param cCells scaling of the neo-Hookean model for the description of the adipocytes as cell foam.
@@ -100,10 +101,12 @@ namespace FunG
 
   /**
    * \brief Compressible version of the model for adipose tissue of \cite Sommer2013.
-   * Material parameters are taken from the same publication, Table 2, i.e. \f$c_\mathrm{Cells}=0.15 (\,\mathrm{kPa})\f$, \f$k_1=0.8 (\,\mathrm{kPa})\f$, \f$k_2=47.3\f$ and \f$\kappa=0.09\f$.
+   * Material parameters are taken from the same publication, Table 2, i.e.
+   * \f$c_\mathrm{Cells}=0.15 (\,\mathrm{kPa})\f$, \f$k_1=0.8 (\,\mathrm{kPa})\f$, \f$k_2=47.3\f$ and \f$\kappa=0.09\f$.
    *
    * Implementation of the stored energy function
-   * \f$ W(F)= c_\mathrm{Cells}(\iota_1-3) + \frac{k_1}{k_2}\exp(k_2(\kappa\iota_1+(1-3\kappa)*\iota_4)^2-1) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression}  \f$, where \f$ \iota_1,\iota_4 \f$ are the first and first mixed invariant of the
+   * \f$ W(F)= c_\mathrm{Cells}(\iota_1-3) + \frac{k_1}{k_2}\exp(k_2(\kappa\iota_1+(1-3\kappa)*\iota_4)^2-1) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression}  \f$,
+   * where \f$ \iota_1,\iota_4 \f$ are the first and first mixed invariant of the
    * strain tensor \f$F^T F\f$.
    *
    * @param d0 scaling of the penalty function for inflation
