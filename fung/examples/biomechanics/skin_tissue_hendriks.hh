@@ -1,14 +1,10 @@
-// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
-// Released under the terms of the GNU General Public License version 3 or later.
+#pragma once
 
-#ifndef FUNG_EXAMPLES_SKIN_HENDRIKS_HH
-#define FUNG_EXAMPLES_SKIN_HENDRIKS_HH
-
-#include "fung/finalize.hh"
-#include "fung/generate.hh"
-#include "fung/linear_algebra/strain_tensor.hh"
-#include "fung/linear_algebra/unit_matrix.hh"
-#include "fung/linear_algebra/principal_invariants.hh"
+#include <fung/finalize.hh>
+#include <fung/generate.hh>
+#include <fung/linear_algebra/strain_tensor.hh>
+#include <fung/linear_algebra/unit_matrix.hh>
+#include <fung/linear_algebra/principal_invariants.hh>
 
 /**
  * \ingroup Biomechanics
@@ -35,8 +31,8 @@ namespace FunG
   /** @endcond */
 
   /**
-   * \ingroup Biomechanics
-   * \brief Model for skin tissue of \cite Hendriks2005.
+   * @ingroup Biomechanics
+   * @brief Model for skin tissue of \cite Hendriks2005.
    *
    * Implementation of the stored energy function
    * \f$W(F)=c_0(\iota_1-3) + c_1(\iota_1-3)(\iota_2-3)\f$, where \f$\iota_1,\iota_2\f$ are the first and second principal invariants of the strain tensor \f$F^T F\f$.
@@ -52,8 +48,8 @@ namespace FunG
   }
 
   /**
-   * \ingroup Biomechanics
-   * \brief Model for skin tissue of \cite Hendriks2005.
+   * @ingroup Biomechanics
+   * @brief Model for skin tissue of \cite Hendriks2005.
    *
    * Implementation of the stored energy function
    * \f$W(F)=c_0(\iota_1-3) + c_1(\iota_1-3)(\iota_2-3)\f$, where \f$\iota_1,\iota_2\f$ are the first and second principal invariants of the strain tensor \f$F^T F\f$.
@@ -71,8 +67,8 @@ namespace FunG
 
 
   /**
-   * \ingroup Biomechanics
-   * \brief Compressible version of the model for skin tissue of \cite Hendriks2005.
+   * @ingroup Biomechanics
+   * @brief Compressible version of the model for skin tissue of \cite Hendriks2005.
    *
    * Implementation of the stored energy function
    * \f$W(F)=c_0(\iota_1-3) + c_1(\iota_1-3)(\iota_2-3) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression}\f$, where \f$\iota_1,\iota_2\f$ are the first and second principal invariants of the strain tensor \f$F^T F\f$.
@@ -90,8 +86,8 @@ namespace FunG
   }
 
   /**
-   * \ingroup Biomechanics
-   * \brief Compressible version of the model for skin tissue of \cite Hendriks2005.
+   * @ingroup Biomechanics
+   * @brief Compressible version of the model for skin tissue of \cite Hendriks2005.
    *
    * Implementation of the stored energy function
    * \f$W(F)=c_0(\iota_1-3) + c_1(\iota_1-3)(\iota_2-3) + d_0\Gamma_\mathrm{Inflation}(\det(F)) + d_1\Gamma_\mathrm{Compression}\f$, where \f$\iota_1,\iota_2\f$ are the first and second principal invariants of the strain tensor \f$F^T F\f$.
@@ -109,5 +105,3 @@ namespace FunG
     return compressibleSkin_Hendriks<InflationPenalty,CompressionPenalty,Matrix,n>(9.4,82.,d0,d1,F);
   }
 }
-
-#endif // FUNG_EXAMPLES_SKIN_HENDRIKS_HH

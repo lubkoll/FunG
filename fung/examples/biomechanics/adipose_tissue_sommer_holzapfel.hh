@@ -1,22 +1,18 @@
-// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
-// Released under the terms of the GNU General Public License version 3 or later.
+#pragma once
 
-#ifndef FUNG_ADIPOSE_TISSUE_SOMMER_HOLZAPFEL_HH
-#define FUNG_ADIPOSE_TISSUE_SOMMER_HOLZAPFEL_HH
-
-#include "fung/finalize.hh"
-#include "fung/generate.hh"
-#include "fung/cmath/exp.hh"
-#include "fung/linear_algebra/principal_invariants.hh"
-#include "fung/linear_algebra/mixed_invariants.hh"
-#include "fung/linear_algebra/strain_tensor.hh"
-#include "fung/linear_algebra/tensor_product.hh"
-#include "fung/examples/volumetric_penalty_functions.hh"
+#include <fung/finalize.hh>
+#include <fung/generate.hh>
+#include <fung/cmath/exp.hh>
+#include <fung/linear_algebra/principal_invariants.hh>
+#include <fung/linear_algebra/mixed_invariants.hh>
+#include <fung/linear_algebra/strain_tensor.hh>
+#include <fung/linear_algebra/tensor_product.hh>
+#include <fung/examples/volumetric_penalty_functions.hh>
 
 /**
- * \ingroup Biomechanics
- * \file adipose_tissue_sommer_holzapfel.hh
- * \brief Model for adipose tissue of \cite Sommer2013.
+ * @ingroup Biomechanics
+ * @file adipose_tissue_sommer_holzapfel.hh
+ * @brief Model for adipose tissue of \cite Sommer2013.
  */
 
 namespace FunG
@@ -122,5 +118,3 @@ namespace FunG
   }
   /** @} */
 }
-
-#endif // FUNG_ADIPOSE_TISSUE_SOMMER_HOLZAPFEL_HH
