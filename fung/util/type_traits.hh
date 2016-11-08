@@ -1,8 +1,4 @@
-// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
-// Released under the terms of the GNU General Public License version 3 or later.
-
-#ifndef FUNG_UTIL_TYPE_TRAITS_HH
-#define FUNG_UTIL_TYPE_TRAITS_HH
+#pragma once
 
 #include <type_traits>
 
@@ -26,7 +22,7 @@ namespace FunG
   }
   /// @endcond
 
-  /// Identity, i.e. Decay<F>::type == F
+  /// %Identity, i.e. Decay<F>::type == F
   template <class F, class = void>
   struct Decay
   {
@@ -49,5 +45,3 @@ namespace FunG
   template <class F>
   using decay_t = typename Decay< std::decay_t<F> >::type;
 }
-
-#endif // FUNG_UTIL_TYPE_TRAITS_HH
