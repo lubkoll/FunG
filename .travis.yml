@@ -100,16 +100,14 @@ install:
       sudo make 
       # copy or symlink libgtest.a and libgtest_main.a to your /usr/lib folder
       sudo cp *.a /usr/lib
+      cd ${DEPS_DIR}
       if [[ "${COMPUTE_COVERAGE}" == "true" ]]; then
-        wget --version
         travis_retry wget --no-check-certificate --quiet -S http://mirrors.us.kernel.org/ubuntu//pool/universe/l/lcov/lcov_1.12-3_all.deb
         sudo dpkg -i lcov_1.12-3_all.deb
         # install lcov to coveralls conversion + upload tool
         gem install coveralls-lcov
       fi
-    fi
-  - |
-    if [[ "${TRAVIS_OS_NAME}" == "osx" ]]; then
+    else
       git clone https://github.com/google/googletest.git
       cd googletest && mkdir build && cd build && cmake .. && make
       sudo cp -r ../googletest/include/gtest /usr/local/include/
