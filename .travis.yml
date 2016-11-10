@@ -34,7 +34,7 @@ matrix:
 
     # GCC 6
     - os: linux
-      env: COMPILER=g++-6 COMPUTE_COVERAGE=true
+      env: COMPILER=g++-6 COMPUTE_COVERAGE=true GCOV=gcov-6
       compiler: gcc
       
     # Clang 3.6
