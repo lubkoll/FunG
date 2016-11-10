@@ -101,11 +101,8 @@ install:
       # copy or symlink libgtest.a and libgtest_main.a to your /usr/lib folder
       sudo cp *.a /usr/lib
       if [[ "${COMPUTE_COVERAGE}" == "true" ]]; then
-        sudo apt-add-repository "deb http://archive.ubuntu.com/ubuntu/ trusty main restricted" -y
-        sudo apt-get update -qq
-        wget http://ftp.de.debian.org/debian/pool/main/l/lcov/lcov_1.11.orig.tar.gz
-        tar xf lcov_1.11.orig.tar.gz
-        sudo make -C lcov-1.11/ install
+        travis_retry wget --no-check-certificate --quiet http://mirrors.us.kernel.org/ubuntu//pool/universe/l/lcov/lcov_1.12-3_all.deb
+        sudo dpkg -i lcov_1.12-3_all.deb
         # install lcov to coveralls conversion + upload tool
         gem install coveralls-lcov
       fi
@@ -124,5 +121,5 @@ after_success:
   - |
     if [[ "${COMPUTE_COVERAGE}" == "true" ]]; then
       lcov --gcov-tool ${GCOV} --capture --no-external --directory . --base-directory ../fung --output-file coverage.info
-      coveralls-lcov --repo-token coverage.info
+      coveralls-lcov --repo-token ${COVERALLS_TOKEN} coverage.info
     fi
