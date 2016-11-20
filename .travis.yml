@@ -142,6 +142,7 @@ after_success:
     if [[ "${TRAVIS_OS_NAME}" == "linux" && "${MAKE_DOC}" == "true" ]]; then
       cd $TRAVIS_BUILD_DIR
       doxygen
+      cd build
       ../deploy_doc.sh
     fi
 
