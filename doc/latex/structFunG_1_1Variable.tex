@@ -1,97 +1,92 @@
-\hypertarget{structFunG_1_1Variable}{}\section{FunG\+:\+:Variable$<$ T, id $>$ Struct Template Reference}
-\label{structFunG_1_1Variable}\index{Fun\+G\+::\+Variable$<$ T, id $>$@{Fun\+G\+::\+Variable$<$ T, id $>$}}
+\hypertarget{structFunG_1_1Variable}{\section{\-Fun\-G\-:\-:\-Variable$<$ \-T, id $>$ \-Struct \-Template \-Reference}
+\label{structFunG_1_1Variable}\index{\-Fun\-G\-::\-Variable$<$ T, id $>$@{\-Fun\-G\-::\-Variable$<$ T, id $>$}}
+}
 
 
-Independent variable. Can be uniquely identified by its id.  
+{\ttfamily \#include $<$variable.\-hh$>$}
 
-
-
-
-{\ttfamily \#include $<$variable.\+hh$>$}
-
-\subsection*{Public Member Functions}
+\subsection*{\-Public \-Member \-Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{structFunG_1_1Variable_a20d207e651ee9e93c86dfa4ea1053f56}{Variable} ()=default
+\hyperlink{structFunG_1_1Variable_a371877d545fcd45e7470819b4ece8918}{\-Variable} ()
 \item 
-\hyperlink{structFunG_1_1Variable_a10238450dac2ec4c98400b106543ff8f}{Variable} (const T \&t\+\_\+)
+\hyperlink{structFunG_1_1Variable_a10238450dac2ec4c98400b106543ff8f}{\-Variable} (const \-T \&t\-\_\-)
 \item 
-\hyperlink{structFunG_1_1Variable_a9abfae2c2ab06cbe2556600bae7c7ccb}{Variable} (T \&\&t\+\_\+)
+\hyperlink{structFunG_1_1Variable_a9abfae2c2ab06cbe2556600bae7c7ccb}{\-Variable} (\-T \&\&t\-\_\-)
 \item 
-{\footnotesize template$<$int index, class Arg $>$ }\\void \hyperlink{structFunG_1_1Variable_a50f4d34586aa6a89df604503e0a3c2a9}{update} (const Arg \&t\+\_\+)
-\begin{DoxyCompactList}\small\item\em Update variable if index==id. \end{DoxyCompactList}\item 
-const T \& \hyperlink{structFunG_1_1Variable_a84333150762e0e5472ab508ca3f26e4f}{operator()} () const noexcept
-\begin{DoxyCompactList}\small\item\em Value of the variable. \end{DoxyCompactList}\item 
-{\footnotesize template$<$int index, class Arg , class  = std\+::enable\+\_\+if\+\_\+t$<$ id == index $>$$>$ }\\const T \& \hyperlink{structFunG_1_1Variable_a9384160b4015767ffe6a058583fef10a}{d1} (const Arg \&dt) const noexcept
-\begin{DoxyCompactList}\small\item\em First directional derivative. Only available if id==index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+{\footnotesize template$<$int index, class Arg $>$ }\\void \hyperlink{structFunG_1_1Variable_a50f4d34586aa6a89df604503e0a3c2a9}{update} (const \-Arg \&t\-\_\-)
+\begin{DoxyCompactList}\small\item\em \-Update variable if index==id. \end{DoxyCompactList}\item 
+const \-T \& \hyperlink{structFunG_1_1Variable_a84333150762e0e5472ab508ca3f26e4f}{operator()} () const noexcept
+\begin{DoxyCompactList}\small\item\em \-Value of the variable. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int index, class Arg , class  = std\-::enable\-\_\-if\-\_\-t$<$ id == index $>$$>$ }\\const \-T \& \hyperlink{structFunG_1_1Variable_a9384160b4015767ffe6a058583fef10a}{d1} (const \-Arg \&dt) const noexcept
+\begin{DoxyCompactList}\small\item\em \-First directional derivative. \-Only available if id==index. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-\subsubsection*{template$<$class T, int id$>$\\*
-struct Fun\+G\+::\+Variable$<$ T, id $>$}
+\subsection{\-Detailed \-Description}
+\subsubsection*{template$<$class T, int id$>$struct Fun\-G\-::\-Variable$<$ T, id $>$}
 
-Independent variable. Can be uniquely identified by its id. 
+\-Independent variable. \-Can be uniquely identified by its id. 
 
-\subsection{Constructor \& Destructor Documentation}
-\index{Fun\+G\+::\+Variable@{Fun\+G\+::\+Variable}!Variable@{Variable}}
-\index{Variable@{Variable}!Fun\+G\+::\+Variable@{Fun\+G\+::\+Variable}}
-\subsubsection[{\texorpdfstring{Variable()=default}{Variable()=default}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , int id$>$ {\bf Fun\+G\+::\+Variable}$<$ T, id $>$\+::{\bf Variable} (
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{structFunG_1_1Variable_a371877d545fcd45e7470819b4ece8918}{\index{\-Fun\-G\-::\-Variable@{\-Fun\-G\-::\-Variable}!\-Variable@{\-Variable}}
+\index{\-Variable@{\-Variable}!FunG::Variable@{\-Fun\-G\-::\-Variable}}
+\subsubsection[{\-Variable}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , int id$>$ {\bf \-Fun\-G\-::\-Variable}$<$ \-T, id $>$\-::{\bf \-Variable} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [default]}}\hypertarget{structFunG_1_1Variable_a20d207e651ee9e93c86dfa4ea1053f56}{}\label{structFunG_1_1Variable_a20d207e651ee9e93c86dfa4ea1053f56}
-\index{Fun\+G\+::\+Variable@{Fun\+G\+::\+Variable}!Variable@{Variable}}
-\index{Variable@{Variable}!Fun\+G\+::\+Variable@{Fun\+G\+::\+Variable}}
-\subsubsection[{\texorpdfstring{Variable(const T \&t\+\_\+)}{Variable(const T &t_)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , int id$>$ {\bf Fun\+G\+::\+Variable}$<$ T, id $>$\+::{\bf Variable} (
+)}}\label{structFunG_1_1Variable_a371877d545fcd45e7470819b4ece8918}
+\hypertarget{structFunG_1_1Variable_a10238450dac2ec4c98400b106543ff8f}{\index{\-Fun\-G\-::\-Variable@{\-Fun\-G\-::\-Variable}!\-Variable@{\-Variable}}
+\index{\-Variable@{\-Variable}!FunG::Variable@{\-Fun\-G\-::\-Variable}}
+\subsubsection[{\-Variable}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , int id$>$ {\bf \-Fun\-G\-::\-Variable}$<$ \-T, id $>$\-::{\bf \-Variable} (
 \begin{DoxyParamCaption}
-\item[{const T \&}]{t\+\_\+}
+\item[{const \-T \&}]{t\-\_\-}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\hypertarget{structFunG_1_1Variable_a10238450dac2ec4c98400b106543ff8f}{}\label{structFunG_1_1Variable_a10238450dac2ec4c98400b106543ff8f}
-\index{Fun\+G\+::\+Variable@{Fun\+G\+::\+Variable}!Variable@{Variable}}
-\index{Variable@{Variable}!Fun\+G\+::\+Variable@{Fun\+G\+::\+Variable}}
-\subsubsection[{\texorpdfstring{Variable(\+T \&\&t\+\_\+)}{Variable(T &&t_)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , int id$>$ {\bf Fun\+G\+::\+Variable}$<$ T, id $>$\+::{\bf Variable} (
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, explicit\mbox{]}}}}\label{structFunG_1_1Variable_a10238450dac2ec4c98400b106543ff8f}
+\hypertarget{structFunG_1_1Variable_a9abfae2c2ab06cbe2556600bae7c7ccb}{\index{\-Fun\-G\-::\-Variable@{\-Fun\-G\-::\-Variable}!\-Variable@{\-Variable}}
+\index{\-Variable@{\-Variable}!FunG::Variable@{\-Fun\-G\-::\-Variable}}
+\subsubsection[{\-Variable}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , int id$>$ {\bf \-Fun\-G\-::\-Variable}$<$ \-T, id $>$\-::{\bf \-Variable} (
 \begin{DoxyParamCaption}
-\item[{T \&\&}]{t\+\_\+}
+\item[{\-T \&\&}]{t\-\_\-}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\hypertarget{structFunG_1_1Variable_a9abfae2c2ab06cbe2556600bae7c7ccb}{}\label{structFunG_1_1Variable_a9abfae2c2ab06cbe2556600bae7c7ccb}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, explicit\mbox{]}}}}\label{structFunG_1_1Variable_a9abfae2c2ab06cbe2556600bae7c7ccb}
 
 
-\subsection{Member Function Documentation}
-\index{Fun\+G\+::\+Variable@{Fun\+G\+::\+Variable}!d1@{d1}}
-\index{d1@{d1}!Fun\+G\+::\+Variable@{Fun\+G\+::\+Variable}}
-\subsubsection[{\texorpdfstring{d1(const Arg \&dt) const noexcept}{d1(const Arg &dt) const noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , int id$>$ template$<$int index, class Arg , class  = std\+::enable\+\_\+if\+\_\+t$<$ id == index $>$$>$ const T\& {\bf Fun\+G\+::\+Variable}$<$ T, id $>$\+::d1 (
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{structFunG_1_1Variable_a9384160b4015767ffe6a058583fef10a}{\index{\-Fun\-G\-::\-Variable@{\-Fun\-G\-::\-Variable}!d1@{d1}}
+\index{d1@{d1}!FunG::Variable@{\-Fun\-G\-::\-Variable}}
+\subsubsection[{d1}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , int id$>$ template$<$int index, class Arg , class  = std\-::enable\-\_\-if\-\_\-t$<$ id == index $>$$>$ const \-T\& {\bf \-Fun\-G\-::\-Variable}$<$ \-T, id $>$\-::{\bf d1} (
 \begin{DoxyParamCaption}
-\item[{const Arg \&}]{dt}
+\item[{const \-Arg \&}]{dt}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}\hypertarget{structFunG_1_1Variable_a9384160b4015767ffe6a058583fef10a}{}\label{structFunG_1_1Variable_a9384160b4015767ffe6a058583fef10a}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{structFunG_1_1Variable_a9384160b4015767ffe6a058583fef10a}
 
 
-First directional derivative. Only available if id==index. 
+\-First directional derivative. \-Only available if id==index. 
 
-\index{Fun\+G\+::\+Variable@{Fun\+G\+::\+Variable}!operator()@{operator()}}
-\index{operator()@{operator()}!Fun\+G\+::\+Variable@{Fun\+G\+::\+Variable}}
-\subsubsection[{\texorpdfstring{operator()() const noexcept}{operator()() const noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , int id$>$ const T\& {\bf Fun\+G\+::\+Variable}$<$ T, id $>$\+::operator() (
+\hypertarget{structFunG_1_1Variable_a84333150762e0e5472ab508ca3f26e4f}{\index{\-Fun\-G\-::\-Variable@{\-Fun\-G\-::\-Variable}!operator()@{operator()}}
+\index{operator()@{operator()}!FunG::Variable@{\-Fun\-G\-::\-Variable}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , int id$>$ const \-T\& {\bf \-Fun\-G\-::\-Variable}$<$ \-T, id $>$\-::operator() (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}\hypertarget{structFunG_1_1Variable_a84333150762e0e5472ab508ca3f26e4f}{}\label{structFunG_1_1Variable_a84333150762e0e5472ab508ca3f26e4f}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{structFunG_1_1Variable_a84333150762e0e5472ab508ca3f26e4f}
 
 
-Value of the variable. 
+\-Value of the variable. 
 
-\index{Fun\+G\+::\+Variable@{Fun\+G\+::\+Variable}!update@{update}}
-\index{update@{update}!Fun\+G\+::\+Variable@{Fun\+G\+::\+Variable}}
-\subsubsection[{\texorpdfstring{update(const Arg \&t\+\_\+)}{update(const Arg &t_)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , int id$>$ template$<$int index, class Arg $>$ void {\bf Fun\+G\+::\+Variable}$<$ T, id $>$\+::update (
+\hypertarget{structFunG_1_1Variable_a50f4d34586aa6a89df604503e0a3c2a9}{\index{\-Fun\-G\-::\-Variable@{\-Fun\-G\-::\-Variable}!update@{update}}
+\index{update@{update}!FunG::Variable@{\-Fun\-G\-::\-Variable}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , int id$>$ template$<$int index, class Arg $>$ void {\bf \-Fun\-G\-::\-Variable}$<$ \-T, id $>$\-::{\bf update} (
 \begin{DoxyParamCaption}
-\item[{const Arg \&}]{t\+\_\+}
+\item[{const \-Arg \&}]{t\-\_\-}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structFunG_1_1Variable_a50f4d34586aa6a89df604503e0a3c2a9}{}\label{structFunG_1_1Variable_a50f4d34586aa6a89df604503e0a3c2a9}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{structFunG_1_1Variable_a50f4d34586aa6a89df604503e0a3c2a9}
 
 
-Update variable if index==id. 
+\-Update variable if index==id. 
 
 
 
-The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-fung/\hyperlink{variable_8hh}{variable.\+hh}\end{DoxyCompactItemize}
+fung/\hyperlink{variable_8hh}{variable.\-hh}\end{DoxyCompactItemize}
