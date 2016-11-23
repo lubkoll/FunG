@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00021"></a>00021     <span class="keyword">auto</span> incompressibleSkin_HendriksImpl(<span class="keywordtype">double</span> c0, <span class="keywordtype">double</span> c1, <span class="keyword">const</span> Matrix&amp; F)
 <a name="l00022"></a>00022     {
 <a name="l00023"></a>00023       <span class="keyword">using namespace </span>LinearAlgebra;
-<a name="l00024"></a>00024       <span class="keyword">auto</span> S = <a class="code" href="namespaceFunG_1_1LinearAlgebra.html#a0e10030a723fad88f5f4f0b6612c393a" title="Generate the left Cauchy-Green strain tensor .">strainTensor</a>(F);
+<a name="l00024"></a>00024       <span class="keyword">auto</span> S = <a class="code" href="namespaceFunG_1_1LinearAlgebra.html#a0e10030a723fad88f5f4f0b6612c393a" title="Generate the right Cauchy-Green strain tensor .">strainTensor</a>(F);
 <a name="l00025"></a>00025       <span class="keyword">auto</span> si1 = <a class="code" href="group__InvariantGroup.html#gafaead59b618d87239270f8eca2bf75c8" title="Generate first principal invariant.">i1</a>(S()) - n;
 <a name="l00026"></a>00026       <span class="keyword">auto</span> si2 = <a class="code" href="group__InvariantGroup.html#ga9e442bab8f203bcd5634a3d0e65bf802" title="Convenient generation of second principal invariant  for .">i2</a>(S()) - n;
 <a name="l00027"></a>00027       <span class="keyword">auto</span> f = c0*si1 + c1*si1*si2;
@@ -154,7 +154,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 20 2016 18:01:07 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Nov 23 2016 17:53:55 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

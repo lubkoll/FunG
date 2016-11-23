@@ -1,0 +1,113 @@
+\hypertarget{classFunG_1_1LinearAlgebra_1_1RightCauchyGreenStrainTensor}{\section{\-Fun\-G\-:\-:\-Linear\-Algebra\-:\-:\-Right\-Cauchy\-Green\-Strain\-Tensor$<$ \-Matrix, class $>$ \-Class \-Template \-Reference}
+\label{classFunG_1_1LinearAlgebra_1_1RightCauchyGreenStrainTensor}\index{\-Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor$<$ Matrix, class $>$@{\-Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor$<$ Matrix, class $>$}}
+}
+
+
+\-Right \-Cauchy-\/\-Green strain tensor $ F^T F $ for a symmetric matrix $ F $.  
+
+
+
+
+{\ttfamily \#include $<$strain\-\_\-tensor.\-hh$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFunG_1_1LinearAlgebra_1_1RightCauchyGreenStrainTensor_abac64f090e70aeb191089696253d4c67}{\-Right\-Cauchy\-Green\-Strain\-Tensor} ()
+\item 
+\hyperlink{classFunG_1_1LinearAlgebra_1_1RightCauchyGreenStrainTensor_af6085878319f95c8dbe40a6b0de17eb1}{\-Right\-Cauchy\-Green\-Strain\-Tensor} (const \-Matrix \&\-F)
+\begin{DoxyCompactList}\small\item\em \-Constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classFunG_1_1LinearAlgebra_1_1RightCauchyGreenStrainTensor_a4517ded8eaf56f040f415b8776dd64a8}{update} (const \-Matrix \&\-F)
+\begin{DoxyCompactList}\small\item\em \-Reset point of evaluation. \end{DoxyCompactList}\item 
+const \-Matrix \& \hyperlink{classFunG_1_1LinearAlgebra_1_1RightCauchyGreenStrainTensor_a237357e50d543196ed0228588e911665}{d0} () const noexcept
+\begin{DoxyCompactList}\small\item\em \-Function value $ F^T * F $. \end{DoxyCompactList}\item 
+\-Matrix \hyperlink{classFunG_1_1LinearAlgebra_1_1RightCauchyGreenStrainTensor_ae8746d06ba0d2a127f7775b03d0890a7}{d1} (const \-Matrix \&d\-F1) const 
+\begin{DoxyCompactList}\small\item\em \-First directional derivative $ F^T dF_1 + dF_1^T F $. \end{DoxyCompactList}\item 
+\-Matrix \hyperlink{classFunG_1_1LinearAlgebra_1_1RightCauchyGreenStrainTensor_a9244629a9ae616c0938e95fbdf68a7d5}{d2} (const \-Matrix \&d\-F1, const \-Matrix \&d\-F2) const 
+\begin{DoxyCompactList}\small\item\em \-Second directional derivative $ dF_2^T dF_1 + dF_1^T dF_2 $. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\subsubsection*{template$<$class Matrix, class = \-Concepts\-::\-Square\-Matrix\-Concept\-Check$<$\-Matrix$>$$>$class Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor$<$ Matrix, class $>$}
+
+\-Right \-Cauchy-\/\-Green strain tensor $ F^T F $ for a symmetric matrix $ F $. 
+
+\-Used in nonlinear material models based on the deformation gradient $\nabla\varphi$, which takes the role of $F$. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classFunG_1_1LinearAlgebra_1_1RightCauchyGreenStrainTensor_abac64f090e70aeb191089696253d4c67}{\index{\-Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor@{\-Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor}!\-Right\-Cauchy\-Green\-Strain\-Tensor@{\-Right\-Cauchy\-Green\-Strain\-Tensor}}
+\index{\-Right\-Cauchy\-Green\-Strain\-Tensor@{\-Right\-Cauchy\-Green\-Strain\-Tensor}!FunG::LinearAlgebra::RightCauchyGreenStrainTensor@{\-Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor}}
+\subsubsection[{\-Right\-Cauchy\-Green\-Strain\-Tensor}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , class  = \-Concepts\-::\-Square\-Matrix\-Concept\-Check$<$\-Matrix$>$$>$ {\bf \-Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor}$<$ \-Matrix, class $>$\-::{\bf \-Right\-Cauchy\-Green\-Strain\-Tensor} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classFunG_1_1LinearAlgebra_1_1RightCauchyGreenStrainTensor_abac64f090e70aeb191089696253d4c67}
+\hypertarget{classFunG_1_1LinearAlgebra_1_1RightCauchyGreenStrainTensor_af6085878319f95c8dbe40a6b0de17eb1}{\index{\-Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor@{\-Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor}!\-Right\-Cauchy\-Green\-Strain\-Tensor@{\-Right\-Cauchy\-Green\-Strain\-Tensor}}
+\index{\-Right\-Cauchy\-Green\-Strain\-Tensor@{\-Right\-Cauchy\-Green\-Strain\-Tensor}!FunG::LinearAlgebra::RightCauchyGreenStrainTensor@{\-Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor}}
+\subsubsection[{\-Right\-Cauchy\-Green\-Strain\-Tensor}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , class  = \-Concepts\-::\-Square\-Matrix\-Concept\-Check$<$\-Matrix$>$$>$ {\bf \-Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor}$<$ \-Matrix, class $>$\-::{\bf \-Right\-Cauchy\-Green\-Strain\-Tensor} (
+\begin{DoxyParamCaption}
+\item[{const \-Matrix \&}]{\-F}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, explicit\mbox{]}}}}\label{classFunG_1_1LinearAlgebra_1_1RightCauchyGreenStrainTensor_af6085878319f95c8dbe40a6b0de17eb1}
+
+
+\-Constructor. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-F} & point of evaluation. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classFunG_1_1LinearAlgebra_1_1RightCauchyGreenStrainTensor_a237357e50d543196ed0228588e911665}{\index{\-Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor@{\-Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor}!d0@{d0}}
+\index{d0@{d0}!FunG::LinearAlgebra::RightCauchyGreenStrainTensor@{\-Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor}}
+\subsubsection[{d0}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , class  = \-Concepts\-::\-Square\-Matrix\-Concept\-Check$<$\-Matrix$>$$>$ const \-Matrix\& {\bf \-Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor}$<$ \-Matrix, class $>$\-::{\bf d0} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classFunG_1_1LinearAlgebra_1_1RightCauchyGreenStrainTensor_a237357e50d543196ed0228588e911665}
+
+
+\-Function value $ F^T * F $. 
+
+\hypertarget{classFunG_1_1LinearAlgebra_1_1RightCauchyGreenStrainTensor_ae8746d06ba0d2a127f7775b03d0890a7}{\index{\-Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor@{\-Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor}!d1@{d1}}
+\index{d1@{d1}!FunG::LinearAlgebra::RightCauchyGreenStrainTensor@{\-Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor}}
+\subsubsection[{d1}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , class  = \-Concepts\-::\-Square\-Matrix\-Concept\-Check$<$\-Matrix$>$$>$ \-Matrix {\bf \-Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor}$<$ \-Matrix, class $>$\-::{\bf d1} (
+\begin{DoxyParamCaption}
+\item[{const \-Matrix \&}]{d\-F1}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classFunG_1_1LinearAlgebra_1_1RightCauchyGreenStrainTensor_ae8746d06ba0d2a127f7775b03d0890a7}
+
+
+\-First directional derivative $ F^T dF_1 + dF_1^T F $. 
+
+\hypertarget{classFunG_1_1LinearAlgebra_1_1RightCauchyGreenStrainTensor_a9244629a9ae616c0938e95fbdf68a7d5}{\index{\-Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor@{\-Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor}!d2@{d2}}
+\index{d2@{d2}!FunG::LinearAlgebra::RightCauchyGreenStrainTensor@{\-Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor}}
+\subsubsection[{d2}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , class  = \-Concepts\-::\-Square\-Matrix\-Concept\-Check$<$\-Matrix$>$$>$ \-Matrix {\bf \-Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor}$<$ \-Matrix, class $>$\-::{\bf d2} (
+\begin{DoxyParamCaption}
+\item[{const \-Matrix \&}]{d\-F1, }
+\item[{const \-Matrix \&}]{d\-F2}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classFunG_1_1LinearAlgebra_1_1RightCauchyGreenStrainTensor_a9244629a9ae616c0938e95fbdf68a7d5}
+
+
+\-Second directional derivative $ dF_2^T dF_1 + dF_1^T dF_2 $. 
+
+\hypertarget{classFunG_1_1LinearAlgebra_1_1RightCauchyGreenStrainTensor_a4517ded8eaf56f040f415b8776dd64a8}{\index{\-Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor@{\-Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor}!update@{update}}
+\index{update@{update}!FunG::LinearAlgebra::RightCauchyGreenStrainTensor@{\-Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , class  = \-Concepts\-::\-Square\-Matrix\-Concept\-Check$<$\-Matrix$>$$>$ void {\bf \-Fun\-G\-::\-Linear\-Algebra\-::\-Right\-Cauchy\-Green\-Strain\-Tensor}$<$ \-Matrix, class $>$\-::{\bf update} (
+\begin{DoxyParamCaption}
+\item[{const \-Matrix \&}]{\-F}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classFunG_1_1LinearAlgebra_1_1RightCauchyGreenStrainTensor_a4517ded8eaf56f040f415b8776dd64a8}
+
+
+\-Reset point of evaluation. 
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+fung/linear\-\_\-algebra/\hyperlink{strain__tensor_8hh}{strain\-\_\-tensor.\-hh}\end{DoxyCompactItemize}

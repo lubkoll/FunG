@@ -15,6 +15,8 @@ struct \hyperlink{structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm}{\-Squared
 \item 
 class \hyperlink{classFunG_1_1LinearAlgebra_1_1SecondPrincipalInvariant}{\-Second\-Principal\-Invariant}
 \begin{DoxyCompactList}\small\item\em \-Second principal invariant $ \iota_2(A)=\mathrm{tr}(\mathrm{cof}(A)) $ for $A\in\mathbb{R}^{n,n}$. \end{DoxyCompactList}\item 
+class \hyperlink{classFunG_1_1LinearAlgebra_1_1RightCauchyGreenStrainTensor}{\-Right\-Cauchy\-Green\-Strain\-Tensor}
+\begin{DoxyCompactList}\small\item\em \-Right \-Cauchy-\/\-Green strain tensor $ F^T F $ for a symmetric matrix $ F $. \end{DoxyCompactList}\item 
 class \hyperlink{classFunG_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor}{\-Left\-Cauchy\-Green\-Strain\-Tensor}
 \begin{DoxyCompactList}\small\item\em \-Left \-Cauchy-\/\-Green strain tensor $ F^T F $ for a symmetric matrix $ F $. \end{DoxyCompactList}\item 
 class \hyperlink{classFunG_1_1LinearAlgebra_1_1Transpose_3_01Matrix_00_01Concepts_1_1MatrixConceptCheck_3_01Matrix_01_4_01_4}{\-Transpose$<$ Matrix, Concepts\-::\-Matrix\-Concept\-Check$<$ Matrix $>$ $>$}
@@ -109,9 +111,13 @@ struct \hyperlink{structFunG_1_1LinearAlgebra_1_1GetTransposed_3_01Matrix_3_01Sc
 {\footnotesize template$<$class Matrix , std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Constant\-Size$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ }\\constexpr auto \hyperlink{namespaceFunG_1_1LinearAlgebra_a9eb685419fe4c5f91619d5aa0f973320}{cols} ()
 \begin{DoxyCompactList}\small\item\em \-Number of columns of a constant size matrix. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Matrix , std\-::enable\-\_\-if\-\_\-t$<$!\-Checks\-::is\-Function$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_1_1LinearAlgebra_a0e10030a723fad88f5f4f0b6612c393a}{strain\-Tensor} (const \-Matrix \&\-A)
-\begin{DoxyCompactList}\small\item\em \-Generate the left \-Cauchy-\/\-Green strain tensor $A^T*A$. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \-Generate the right \-Cauchy-\/\-Green strain tensor $A*A^T$. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class F , std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ F $>$()$>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_1_1LinearAlgebra_ab4371788da401ca62a3a29a13cf8d4ce}{strain\-Tensor} (const \-F \&f)
-\begin{DoxyCompactList}\small\item\em \-Generate the left \-Cauchy-\/\-Green strain tensor $f^Tf$, where $f:\cdot\mapsto\mathbb{R}^{n,n} $. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \-Generate the right \-Cauchy-\/\-Green strain tensor $f*f^T$, where $f:\cdot\mapsto\mathbb{R}^{n,n} $. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Matrix , std\-::enable\-\_\-if\-\_\-t$<$!\-Checks\-::is\-Function$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_1_1LinearAlgebra_a5876e082c6e15e8e9a985a855dc698d5}{left\-Strain\-Tensor} (const \-Matrix \&\-A)
+\begin{DoxyCompactList}\small\item\em \-Generate the left \-Cauchy-\/\-Green strain tensor $A^T*A$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class F , std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ F $>$()$>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_1_1LinearAlgebra_a4ed7509f976a86c83048609da5e8bac7}{left\-Strain\-Tensor} (const \-F \&f)
+\begin{DoxyCompactList}\small\item\em \-Generate the left \-Cauchy-\/\-Green strain tensor $f^T*f$, where $f:\cdot\mapsto\mathbb{R}^{n,n} $. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Matrix , class Vector1 , class Vector2 , std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Constant\-Size$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ }\\\-Matrix \hyperlink{group__LinearAlgebraGroup_ga5d0e066e6184fb3324d96d20087b5578}{tensor\-Product} (const \-Vector1 \&v, const \-Vector2 \&w)
 \begin{DoxyCompactList}\small\item\em \-Compute tensor product $ M = v \otimes w $. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Matrix , class Vector $>$ }\\\-Matrix \hyperlink{group__LinearAlgebraGroup_gae5e82b9e66319511dae5ff0d9304a6b7}{tensor\-Product} (const \-Vector \&v)
@@ -170,6 +176,44 @@ struct \hyperlink{structFunG_1_1LinearAlgebra_1_1GetTransposed_3_01Matrix_3_01Sc
 
 \-Dimension $n$ of a fixed size matrix in $\mathbb{R}^{n,n}$. 
 
+\hypertarget{namespaceFunG_1_1LinearAlgebra_a5876e082c6e15e8e9a985a855dc698d5}{\index{\-Fun\-G\-::\-Linear\-Algebra@{\-Fun\-G\-::\-Linear\-Algebra}!left\-Strain\-Tensor@{left\-Strain\-Tensor}}
+\index{left\-Strain\-Tensor@{left\-Strain\-Tensor}!FunG::LinearAlgebra@{\-Fun\-G\-::\-Linear\-Algebra}}
+\subsubsection[{left\-Strain\-Tensor}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , std\-::enable\-\_\-if\-\_\-t$<$!\-Checks\-::is\-Function$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ auto {\bf \-Fun\-G\-::\-Linear\-Algebra\-::left\-Strain\-Tensor} (
+\begin{DoxyParamCaption}
+\item[{const \-Matrix \&}]{\-A}
+\end{DoxyParamCaption}
+)}}\label{namespaceFunG_1_1LinearAlgebra_a5876e082c6e15e8e9a985a855dc698d5}
+
+
+\-Generate the left \-Cauchy-\/\-Green strain tensor $A^T*A$. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-A} & matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Left\-Cauchy\-Green\-Strain\-Tensor$<$\-Matrix$>$(\-A) 
+\end{DoxyReturn}
+\hypertarget{namespaceFunG_1_1LinearAlgebra_a4ed7509f976a86c83048609da5e8bac7}{\index{\-Fun\-G\-::\-Linear\-Algebra@{\-Fun\-G\-::\-Linear\-Algebra}!left\-Strain\-Tensor@{left\-Strain\-Tensor}}
+\index{left\-Strain\-Tensor@{left\-Strain\-Tensor}!FunG::LinearAlgebra@{\-Fun\-G\-::\-Linear\-Algebra}}
+\subsubsection[{left\-Strain\-Tensor}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ F $>$()$>$ $\ast$  = nullptr$>$ auto {\bf \-Fun\-G\-::\-Linear\-Algebra\-::left\-Strain\-Tensor} (
+\begin{DoxyParamCaption}
+\item[{const \-F \&}]{f}
+\end{DoxyParamCaption}
+)}}\label{namespaceFunG_1_1LinearAlgebra_a4ed7509f976a86c83048609da5e8bac7}
+
+
+\-Generate the left \-Cauchy-\/\-Green strain tensor $f^T*f$, where $f:\cdot\mapsto\mathbb{R}^{n,n} $. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em f} & function object mapping into a space of square matrices \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{classFunG_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor}{\-Left\-Cauchy\-Green\-Strain\-Tensor}$<$ decay\-\_\-t$<$decltype(f())$>$ $>$(f())( f ) 
+\end{DoxyReturn}
 \hypertarget{namespaceFunG_1_1LinearAlgebra_abd3afa2fcd2194787342b2662cfa9f5a}{\index{\-Fun\-G\-::\-Linear\-Algebra@{\-Fun\-G\-::\-Linear\-Algebra}!rows@{rows}}
 \index{rows@{rows}!FunG::LinearAlgebra@{\-Fun\-G\-::\-Linear\-Algebra}}
 \subsubsection[{rows}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , std\-::enable\-\_\-if\-\_\-t$<$!\-Checks\-::is\-Constant\-Size$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ auto {\bf \-Fun\-G\-::\-Linear\-Algebra\-::rows} (
@@ -197,7 +241,7 @@ struct \hyperlink{structFunG_1_1LinearAlgebra_1_1GetTransposed_3_01Matrix_3_01Sc
 )}}\label{namespaceFunG_1_1LinearAlgebra_a0e10030a723fad88f5f4f0b6612c393a}
 
 
-\-Generate the left \-Cauchy-\/\-Green strain tensor $A^T*A$. 
+\-Generate the right \-Cauchy-\/\-Green strain tensor $A*A^T$. 
 
 
 \begin{DoxyParams}{\-Parameters}
@@ -205,7 +249,7 @@ struct \hyperlink{structFunG_1_1LinearAlgebra_1_1GetTransposed_3_01Matrix_3_01Sc
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{\-Returns}
-\-Left\-Cauchy\-Green\-Strain\-Tensor$<$\-Matrix$>$(\-A) 
+\-Right\-Cauchy\-Green\-Strain\-Tensor$<$\-Matrix$>$(\-A) 
 \end{DoxyReturn}
 \hypertarget{namespaceFunG_1_1LinearAlgebra_ab4371788da401ca62a3a29a13cf8d4ce}{\index{\-Fun\-G\-::\-Linear\-Algebra@{\-Fun\-G\-::\-Linear\-Algebra}!strain\-Tensor@{strain\-Tensor}}
 \index{strain\-Tensor@{strain\-Tensor}!FunG::LinearAlgebra@{\-Fun\-G\-::\-Linear\-Algebra}}
@@ -216,7 +260,7 @@ struct \hyperlink{structFunG_1_1LinearAlgebra_1_1GetTransposed_3_01Matrix_3_01Sc
 )}}\label{namespaceFunG_1_1LinearAlgebra_ab4371788da401ca62a3a29a13cf8d4ce}
 
 
-\-Generate the left \-Cauchy-\/\-Green strain tensor $f^Tf$, where $f:\cdot\mapsto\mathbb{R}^{n,n} $. 
+\-Generate the right \-Cauchy-\/\-Green strain tensor $f*f^T$, where $f:\cdot\mapsto\mathbb{R}^{n,n} $. 
 
 
 \begin{DoxyParams}{\-Parameters}
@@ -224,5 +268,5 @@ struct \hyperlink{structFunG_1_1LinearAlgebra_1_1GetTransposed_3_01Matrix_3_01Sc
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{\-Returns}
-\hyperlink{classFunG_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor}{\-Left\-Cauchy\-Green\-Strain\-Tensor}$<$ std\-::decay\-\_\-t$<$decltype(f())$>$ $>$(f())( f ) 
+\hyperlink{classFunG_1_1LinearAlgebra_1_1RightCauchyGreenStrainTensor}{\-Right\-Cauchy\-Green\-Strain\-Tensor}$<$ decay\-\_\-t$<$decltype(f())$>$ $>$(f())( f ) 
 \end{DoxyReturn}

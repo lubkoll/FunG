@@ -122,6 +122,8 @@ Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm.html">SquaredFrobeniusNorm</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunG_1_1LinearAlgebra_1_1SecondPrincipalInvariant.html">SecondPrincipalInvariant</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Second principal invariant \( \iota_2(A)=\mathrm{tr}(\mathrm{cof}(A)) \) for \(A\in\mathbb{R}^{n,n}\).  <a href="classFunG_1_1LinearAlgebra_1_1SecondPrincipalInvariant.html#details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunG_1_1LinearAlgebra_1_1RightCauchyGreenStrainTensor.html">RightCauchyGreenStrainTensor</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Right Cauchy-Green strain tensor \( F^T F \) for a symmetric matrix \( F \).  <a href="classFunG_1_1LinearAlgebra_1_1RightCauchyGreenStrainTensor.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunG_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html">LeftCauchyGreenStrainTensor</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Left Cauchy-Green strain tensor \( F^T F \) for a symmetric matrix \( F \).  <a href="classFunG_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunG_1_1LinearAlgebra_1_1Transpose_3_01Matrix_00_01Concepts_1_1MatrixConceptCheck_3_01Matrix_01_4_01_4.html">Transpose&lt; Matrix, Concepts::MatrixConceptCheck&lt; Matrix &gt; &gt;</a></td></tr>
@@ -243,10 +245,16 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of columns of a constant size matrix.  <a href="#a9eb685419fe4c5f91619d5aa0f973320"></a><br/></td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;class Matrix , std::enable_if_t&lt;!Checks::isFunction&lt; Matrix &gt;()&gt; *  = nullptr&gt; </td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG_1_1LinearAlgebra.html#a0e10030a723fad88f5f4f0b6612c393a">strainTensor</a> (const Matrix &amp;A)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate the left Cauchy-Green strain tensor \(A^T*A\).  <a href="#a0e10030a723fad88f5f4f0b6612c393a"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate the right Cauchy-Green strain tensor \(A*A^T\).  <a href="#a0e10030a723fad88f5f4f0b6612c393a"></a><br/></td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;class F , std::enable_if_t&lt; Checks::isFunction&lt; F &gt;()&gt; *  = nullptr&gt; </td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG_1_1LinearAlgebra.html#ab4371788da401ca62a3a29a13cf8d4ce">strainTensor</a> (const F &amp;f)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate the left Cauchy-Green strain tensor \(f^Tf\), where \(f:\cdot\mapsto\mathbb{R}^{n,n} \).  <a href="#ab4371788da401ca62a3a29a13cf8d4ce"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate the right Cauchy-Green strain tensor \(f*f^T\), where \(f:\cdot\mapsto\mathbb{R}^{n,n} \).  <a href="#ab4371788da401ca62a3a29a13cf8d4ce"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;class Matrix , std::enable_if_t&lt;!Checks::isFunction&lt; Matrix &gt;()&gt; *  = nullptr&gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG_1_1LinearAlgebra.html#a5876e082c6e15e8e9a985a855dc698d5">leftStrainTensor</a> (const Matrix &amp;A)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate the left Cauchy-Green strain tensor \(A^T*A\).  <a href="#a5876e082c6e15e8e9a985a855dc698d5"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;class F , std::enable_if_t&lt; Checks::isFunction&lt; F &gt;()&gt; *  = nullptr&gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG_1_1LinearAlgebra.html#a4ed7509f976a86c83048609da5e8bac7">leftStrainTensor</a> (const F &amp;f)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate the left Cauchy-Green strain tensor \(f^T*f\), where \(f:\cdot\mapsto\mathbb{R}^{n,n} \).  <a href="#a4ed7509f976a86c83048609da5e8bac7"></a><br/></td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;class Matrix , class Vector1 , class Vector2 , std::enable_if_t&lt; Checks::isConstantSize&lt; Matrix &gt;()&gt; *  = nullptr&gt; </td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">Matrix&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__LinearAlgebraGroup.html#ga5d0e066e6184fb3324d96d20087b5578">tensorProduct</a> (const Vector1 &amp;v, const Vector2 &amp;w)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute tensor product \( M = v \otimes w \).  <a href="group__LinearAlgebraGroup.html#ga5d0e066e6184fb3324d96d20087b5578"></a><br/></td></tr>
@@ -337,6 +345,62 @@ template&lt;class Matrix &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a5876e082c6e15e8e9a985a855dc698d5"></a><!-- doxytag: member="FunG::LinearAlgebra::leftStrainTensor" ref="a5876e082c6e15e8e9a985a855dc698d5" args="(const Matrix &amp;A)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Matrix , std::enable_if_t&lt;!Checks::isFunction&lt; Matrix &gt;()&gt; *  = nullptr&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="namespaceFunG_1_1LinearAlgebra.html#a5876e082c6e15e8e9a985a855dc698d5">FunG::LinearAlgebra::leftStrainTensor</a> </td>
+          <td>(</td>
+          <td class="paramtype">const Matrix &amp;&#160;</td>
+          <td class="paramname"><em>A</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Generate the left Cauchy-Green strain tensor \(A^T*A\). </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">A</td><td>matrix </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>LeftCauchyGreenStrainTensor&lt;Matrix&gt;(A) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4ed7509f976a86c83048609da5e8bac7"></a><!-- doxytag: member="FunG::LinearAlgebra::leftStrainTensor" ref="a4ed7509f976a86c83048609da5e8bac7" args="(const F &amp;f)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F , std::enable_if_t&lt; Checks::isFunction&lt; F &gt;()&gt; *  = nullptr&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="namespaceFunG_1_1LinearAlgebra.html#a5876e082c6e15e8e9a985a855dc698d5">FunG::LinearAlgebra::leftStrainTensor</a> </td>
+          <td>(</td>
+          <td class="paramtype">const F &amp;&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Generate the left Cauchy-Green strain tensor \(f^T*f\), where \(f:\cdot\mapsto\mathbb{R}^{n,n} \). </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>function object mapping into a space of square matrices </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classFunG_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html" title="Left Cauchy-Green strain tensor  for a symmetric matrix .">LeftCauchyGreenStrainTensor</a>&lt; decay_t&lt;decltype(f())&gt; &gt;(f())( f ) </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="abd3afa2fcd2194787342b2662cfa9f5a"></a><!-- doxytag: member="FunG::LinearAlgebra::rows" ref="abd3afa2fcd2194787342b2662cfa9f5a" args="(const Matrix &amp;A)" -->
 <div class="memitem">
 <div class="memproto">
@@ -394,14 +458,14 @@ template&lt;class Matrix , std::enable_if_t&lt;!Checks::isFunction&lt; Matrix &g
 </div>
 <div class="memdoc">
 
-<p>Generate the left Cauchy-Green strain tensor \(A^T*A\). </p>
+<p>Generate the right Cauchy-Green strain tensor \(A*A^T\). </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">A</td><td>matrix </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>LeftCauchyGreenStrainTensor&lt;Matrix&gt;(A) </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>RightCauchyGreenStrainTensor&lt;Matrix&gt;(A) </dd></dl>
 
 </div>
 </div>
@@ -422,14 +486,14 @@ template&lt;class F , std::enable_if_t&lt; Checks::isFunction&lt; F &gt;()&gt; *
 </div>
 <div class="memdoc">
 
-<p>Generate the left Cauchy-Green strain tensor \(f^Tf\), where \(f:\cdot\mapsto\mathbb{R}^{n,n} \). </p>
+<p>Generate the right Cauchy-Green strain tensor \(f*f^T\), where \(f:\cdot\mapsto\mathbb{R}^{n,n} \). </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">f</td><td>function object mapping into a space of square matrices </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classFunG_1_1LinearAlgebra_1_1LeftCauchyGreenStrainTensor.html" title="Left Cauchy-Green strain tensor  for a symmetric matrix .">LeftCauchyGreenStrainTensor</a>&lt; std::decay_t&lt;decltype(f())&gt; &gt;(f())( f ) </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classFunG_1_1LinearAlgebra_1_1RightCauchyGreenStrainTensor.html" title="Right Cauchy-Green strain tensor  for a symmetric matrix .">RightCauchyGreenStrainTensor</a>&lt; decay_t&lt;decltype(f())&gt; &gt;(f())( f ) </dd></dl>
 
 </div>
 </div>
@@ -451,7 +515,7 @@ template&lt;class F , std::enable_if_t&lt; Checks::isFunction&lt; F &gt;()&gt; *
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 20 2016 18:01:10 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Nov 23 2016 17:53:58 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

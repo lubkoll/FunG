@@ -107,7 +107,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00027"></a><a class="code" href="group__Rubber.html#ga5bb28aef7006413775791998936d6b81">00027</a>   <span class="keyword">auto</span> <a class="code" href="group__Rubber.html#ga5bb28aef7006413775791998936d6b81" title="Generate an &quot;incompressible&quot; neo-Hookean material law , where  is the first principal matrix invarian...">incompressibleNeoHooke</a>(<span class="keywordtype">double</span> c, <span class="keyword">const</span> Matrix&amp; F)
 <a name="l00028"></a>00028   {
 <a name="l00029"></a>00029     <span class="keyword">using namespace </span>LinearAlgebra;
-<a name="l00030"></a>00030     <span class="keywordflow">return</span> <a class="code" href="namespaceFunG.html#ac59f2ececc3cd451860776320a4a93d5" title="Finish function definition.">finalize</a>( c*(<a class="code" href="group__InvariantGroup.html#gafaead59b618d87239270f8eca2bf75c8" title="Generate first principal invariant.">i1</a>(<a class="code" href="namespaceFunG_1_1LinearAlgebra.html#a0e10030a723fad88f5f4f0b6612c393a" title="Generate the left Cauchy-Green strain tensor .">strainTensor</a>(F)) - n) );
+<a name="l00030"></a>00030     <span class="keywordflow">return</span> <a class="code" href="namespaceFunG.html#ac59f2ececc3cd451860776320a4a93d5" title="Finish function definition.">finalize</a>( c*(<a class="code" href="group__InvariantGroup.html#gafaead59b618d87239270f8eca2bf75c8" title="Generate first principal invariant.">i1</a>(<a class="code" href="namespaceFunG_1_1LinearAlgebra.html#a0e10030a723fad88f5f4f0b6612c393a" title="Generate the right Cauchy-Green strain tensor .">strainTensor</a>(F)) - n) );
 <a name="l00031"></a>00031   }
 <a name="l00032"></a>00032 
 <a name="l00037"></a>00037   <span class="keyword">template</span> &lt; <span class="keyword">class</span> Matrix , <span class="keywordtype">int</span> n = LinearAlgebra::dim&lt;Matrix&gt;() &gt;
@@ -122,7 +122,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00051"></a><a class="code" href="group__Rubber.html#gac5c39cd9de55f4f0220a806cf28a7b30">00051</a>   <span class="keyword">auto</span> <a class="code" href="group__Rubber.html#gac5c39cd9de55f4f0220a806cf28a7b30" title="Generate a compressible neo-Hookean material law , where  is the first principal matrix invariant...">compressibleNeoHooke</a>(<span class="keywordtype">double</span> c, <span class="keywordtype">double</span> d0, <span class="keywordtype">double</span> d1, <span class="keyword">const</span> Matrix&amp; F)
 <a name="l00052"></a>00052   {
 <a name="l00053"></a>00053     <span class="keyword">using namespace </span>LinearAlgebra;
-<a name="l00054"></a>00054     <span class="keywordflow">return</span> <a class="code" href="namespaceFunG.html#ac59f2ececc3cd451860776320a4a93d5" title="Finish function definition.">finalize</a>( c*(<a class="code" href="group__InvariantGroup.html#gafaead59b618d87239270f8eca2bf75c8" title="Generate first principal invariant.">i1</a>(<a class="code" href="namespaceFunG_1_1LinearAlgebra.html#a0e10030a723fad88f5f4f0b6612c393a" title="Generate the left Cauchy-Green strain tensor .">strainTensor</a>(F)) - n) + volumetricPenalty&lt;InflationPenalty,CompressionPenalty&gt;(d0,d1,F) );
+<a name="l00054"></a>00054     <span class="keywordflow">return</span> <a class="code" href="namespaceFunG.html#ac59f2ececc3cd451860776320a4a93d5" title="Finish function definition.">finalize</a>( c*(<a class="code" href="group__InvariantGroup.html#gafaead59b618d87239270f8eca2bf75c8" title="Generate first principal invariant.">i1</a>(<a class="code" href="namespaceFunG_1_1LinearAlgebra.html#a0e10030a723fad88f5f4f0b6612c393a" title="Generate the right Cauchy-Green strain tensor .">strainTensor</a>(F)) - n) + volumetricPenalty&lt;InflationPenalty,CompressionPenalty&gt;(d0,d1,F) );
 <a name="l00055"></a>00055   }
 <a name="l00056"></a>00056 
 <a name="l00062"></a>00062   <span class="keyword">template</span> &lt;<span class="keyword">class</span> InflationPenalty, <span class="keyword">class</span> CompressionPenalty, <span class="keyword">class</span> Matrix , <span class="keywordtype">int</span> n = LinearAlgebra::dim&lt;Matrix&gt;() &gt;
@@ -153,7 +153,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 20 2016 18:01:07 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Nov 23 2016 17:53:55 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
