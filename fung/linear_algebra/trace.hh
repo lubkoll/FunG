@@ -1,25 +1,18 @@
-// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
-// Released under the terms of the GNU General Public License version 3 or later./
-
-#ifndef FUNG_LINEAR_ALGEBRA_TRACE_HH
-#define FUNG_LINEAR_ALGEBRA_TRACE_HH
+#pragma once
 
 #include <type_traits>
 #include <utility>
 
-#include "fung/util/at.hh"
-#include "fung/util/exceptions.hh"
-#include "fung/util/type_traits.hh"
+#include <fung/concept_check.hh>
+#include <fung/util/at.hh>
+#include <fung/util/chainer.hh>
+#include <fung/util/exceptions.hh>
+#include <fung/util/type_traits.hh>
 #include "dimension.hh"
 #include "rows_and_cols.hh"
 
 namespace FunG
 {
-  /// @cond
-  template <class> struct Chainer;
-  namespace Concepts { template <class> struct SquareMatrixConceptCheck; }
-  /// @endcond
-
   namespace LinearAlgebra
   {
     /** @addtogroup LinearAlgebraGroup
@@ -175,5 +168,3 @@ namespace FunG
     /** @} */
   }
 }
-
-#endif // FUNG_LINEAR_ALGEBRA_TRACE_HH
