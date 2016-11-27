@@ -2,7 +2,7 @@
 
 #include <type_traits>
 
-#include <fung/concept_check>
+#include <fung/concept_check.hh>
 #include <fung/cmath/pow.hh>
 #include <fung/util/at.hh>
 #include <fung/util/chainer.hh>
@@ -57,12 +57,7 @@ namespace FunG
             /// Reset matrix to compute squared norm from.
             void update(const Matrix& A)
             {
-                if( !initialized )
-                {
-                    new(A_) Matrix(A);
-                    initialized = true;
-                }
-                else A_ = A;
+                A_ = A;
                 value = FrobeniusDetail::computeScalarProduct(A_,A_);
             }
 
@@ -87,7 +82,6 @@ namespace FunG
         private:
             Matrix A_;
             std::decay_t<decltype(at(std::declval<Matrix>(),0,0))> value;
-            bool initialized = false;
         };
 
 

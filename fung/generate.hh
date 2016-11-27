@@ -99,6 +99,41 @@ namespace FunG
         return MathematicalOperations::Product< std::decay_t<F>, Const >( std::forward<F>(f) , Const( std::forward<G>(g) ) );
       }
     };
+
+
+    template < class F, class G,
+               bool = Checks::isFunction< std::decay_t<F> >(),
+               bool = Checks::isFunction< std::decay_t<G> >() >
+    struct DotGenerator;
+
+    template < class F, class G >
+    struct DotGenerator<F, G, true, true>
+    {
+      static auto apply( F&& f, G&& g )
+      {
+        return MathematicalOperations::Dot< std::decay_t<F>, std::decay_t<G> >( std::forward<F>(f), std::forward<G>(g) );
+      }
+    };
+
+    template < class F, class G >
+    struct DotGenerator<F, G, false, true>
+    {
+      static auto apply( F&& f, G&& g)
+      {
+        using Const = Constant< std::decay_t<F> >;
+        return MathematicalOperations::Dot< Const, std::decay_t<G> >( Const( std::forward<F>(f) ), std::forward<G>(g) );
+      }
+    };
+
+    template <class F, class G>
+    struct DotGenerator<F, G, true, false>
+    {
+      static auto apply( F&& f, G&& g)
+      {
+        using Const = Constant< std::decay_t<G> >;
+        return MathematicalOperations::Dot< std::decay_t<F>, Const >( std::forward<F>(f) , Const( std::forward<G>(g) ) );
+      }
+    };
   }
   /// @endcond
 
@@ -126,6 +161,19 @@ namespace FunG
   auto operator*( F&& f, G&& g )
   {
     return GenerateDetail::ProductGenerator< F, G >::apply( std::forward<F>(f), std::forward<G>(g) );
+  }
+
+  /**
+   * \brief overload of "dot"-function for the generation of functions.
+   *
+   * If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives.
+   */
+  template < class F, class G,
+             std::enable_if_t< Checks::isFunction< std::decay_t<F> >() ||
+                               Checks::isFunction< std::decay_t<G> >() >* = nullptr >
+  auto dot( F&& f, G&& g )
+  {
+    return GenerateDetail::DotGenerator< F, G >::apply( std::forward<F>(f), std::forward<G>(g) );
   }
 
 
