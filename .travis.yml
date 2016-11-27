@@ -8,7 +8,6 @@ addons:
     - llvm-toolchain-precise-3.7
     - llvm-toolchain-precise-3.8
     packages:
-    - libeigen3-dev
     - g++-5
     - gcc-5
     - g++-6
@@ -74,6 +73,12 @@ install:
   ############################################################################
   - DEPS_DIR="${TRAVIS_BUILD_DIR}/deps"
   - mkdir -p ${DEPS_DIR} && cd ${DEPS_DIR}
+  
+  ############################################################################
+  # Get Eigen library
+  ############################################################################
+  - hg clone https://bitbucket.org/eigen/eigen/ eigen
+  - sudo cp -r eigen/Eigen /usr/local/include
   
   ############################################################################
   # Override compiler if needed
