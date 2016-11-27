@@ -2,8 +2,8 @@ var searchData=
 [
   ['cbrt',['cbrt',['../group__CMathGroup.html#gaa7f2552adfb8ec41aeb685adddd8bf98',1,'FunG']]],
   ['cbrt2',['cbrt2',['../group__CMathGroup.html#gafd27322fb64c6df3366f384c93819a06',1,'FunG']]],
-  ['chain',['Chain',['../structFunG_1_1MathematicalOperations_1_1Chain.html',1,'FunG::MathematicalOperations']]],
   ['chain',['Chain',['../structFunG_1_1MathematicalOperations_1_1Chain.html#a3167b6304026eb0bd92e57d0dd0087e0',1,'FunG::MathematicalOperations::Chain::Chain(const F &amp;f_, const G &amp;g_)'],['../structFunG_1_1MathematicalOperations_1_1Chain.html#a0c5cc51c17c31db3754edc016a745201',1,'FunG::MathematicalOperations::Chain::Chain(F &amp;&amp;f_, G &amp;&amp;g_)']]],
+  ['chain',['Chain',['../structFunG_1_1MathematicalOperations_1_1Chain.html',1,'FunG::MathematicalOperations']]],
   ['chain_2ehh',['chain.hh',['../chain_8hh.html',1,'']]],
   ['chainer_2ehh',['chainer.hh',['../chainer_8hh.html',1,'']]],
   ['checkargument',['checkArgument',['../group__ConceptCheck.html#ga31790e5d021a40ac34b7469323c658f9',1,'FunG::Checks']]],
@@ -15,6 +15,7 @@ var searchData=
   ['compressibleneohooke',['compressibleNeoHooke',['../group__Rubber.html#gac5c39cd9de55f4f0220a806cf28a7b30',1,'FunG']]],
   ['compressibleskin_5fhendriks',['compressibleSkin_Hendriks',['../group__Biomechanics.html#ga07b4c52c6ecf7e72f73ab5832fb262cd',1,'FunG::compressibleSkin_Hendriks(double c0, double c1, double d0, double d1, const Matrix &amp;F)'],['../group__Biomechanics.html#ga42721e772b7eada1b0bca98247ad440f',1,'FunG::compressibleSkin_Hendriks(double d0, double d1, const Matrix &amp;F)']]],
   ['compute_5fchain_2ehh',['compute_chain.hh',['../compute__chain_8hh.html',1,'']]],
+  ['compute_5fdot_2ehh',['compute_dot.hh',['../compute__dot_8hh.html',1,'']]],
   ['compute_5fproduct_2ehh',['compute_product.hh',['../compute__product_8hh.html',1,'']]],
   ['compute_5fsum_2ehh',['compute_sum.hh',['../compute__sum_8hh.html',1,'']]],
   ['computecofactor',['computeCofactor',['../group__LinearAlgebraGroup.html#gace32a0876d4a8333f3bfc564316085ed',1,'FunG::LinearAlgebra']]],
@@ -33,7 +34,7 @@ var searchData=
   ['copyconceptcheck_3c_20f_20_3e',['CopyConceptCheck< F >',['../structFunG_1_1Concepts_1_1CopyConceptCheck.html',1,'FunG::Concepts']]],
   ['copyconceptcheck_3c_20matrix_20_3e',['CopyConceptCheck< Matrix >',['../structFunG_1_1Concepts_1_1CopyConceptCheck.html',1,'FunG::Concepts']]],
   ['copyconceptcheck_3c_20vector_20_3e',['CopyConceptCheck< Vector >',['../structFunG_1_1Concepts_1_1CopyConceptCheck.html',1,'FunG::Concepts']]],
-  ['cos',['Cos',['../structFunG_1_1Cos.html',1,'FunG']]],
   ['cos',['Cos',['../structFunG_1_1Cos.html#a1c3c7f2efe426de2dab5bb4a307442ce',1,'FunG::Cos::Cos()'],['../group__CMathGroup.html#ga7e9b2ac717cd2350663293cb66ba6cbd',1,'FunG::cos()']]],
+  ['cos',['Cos',['../structFunG_1_1Cos.html',1,'FunG']]],
   ['cosine_2ehh',['cosine.hh',['../cosine_8hh.html',1,'']]]
 ];

@@ -188,62 +188,105 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00099"></a>00099         <span class="keywordflow">return</span> MathematicalOperations::Product&lt; std::decay_t&lt;F&gt;, Const &gt;( std::forward&lt;F&gt;(f) , Const( std::forward&lt;G&gt;(g) ) );
 <a name="l00100"></a>00100       }
 <a name="l00101"></a>00101     };
-<a name="l00102"></a>00102   }
-<a name="l00104"></a>00104 
-<a name="l00110"></a>00110   <span class="keyword">template</span> &lt; <span class="keyword">class </span>F, <span class="keyword">class </span>G,
-<a name="l00111"></a>00111              std::enable_if_t&lt; Checks::isFunction&lt; std::decay_t&lt;F&gt; &gt;() ||
-<a name="l00112"></a>00112                                <a class="code" href="group__ConceptGroup.html#gac6e6c5574a8497cc0749e5a613e4d57c">Checks::isFunction</a>&lt; std::decay_t&lt;G&gt; &gt;() &gt;* = <span class="keyword">nullptr</span> &gt;
-<a name="l00113"></a><a class="code" href="namespaceFunG.html#a24bb5d609b022030afda2d8589cf5509">00113</a>   <span class="keyword">auto</span> <a class="code" href="namespaceFunG.html#a24bb5d609b022030afda2d8589cf5509" title="overload of &quot;+&quot;-operator for the generation of functions.">operator+ </a>( F&amp;&amp; f, G&amp;&amp; g )
-<a name="l00114"></a>00114   {
-<a name="l00115"></a>00115     <span class="keywordflow">return</span> GenerateDetail::SumGenerator&lt; F, G &gt;::apply( std::forward&lt;F&gt;(f), std::forward&lt;G&gt;(g) );
-<a name="l00116"></a>00116   }
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103 
+<a name="l00104"></a>00104     <span class="keyword">template</span> &lt; <span class="keyword">class </span>F, <span class="keyword">class </span>G,
+<a name="l00105"></a>00105                <span class="keywordtype">bool</span> = Checks::isFunction&lt; std::decay_t&lt;F&gt; &gt;(),
+<a name="l00106"></a>00106                <span class="keywordtype">bool</span> = <a class="code" href="group__ConceptGroup.html#gac6e6c5574a8497cc0749e5a613e4d57c">Checks::isFunction</a>&lt; std::decay_t&lt;G&gt; &gt;() &gt;
+<a name="l00107"></a>00107     <span class="keyword">struct </span>DotGenerator;
+<a name="l00108"></a>00108 
+<a name="l00109"></a>00109     <span class="keyword">template</span> &lt; <span class="keyword">class</span> F, <span class="keyword">class</span> G &gt;
+<a name="l00110"></a>00110     <span class="keyword">struct </span>DotGenerator&lt;F, G, true, true&gt;
+<a name="l00111"></a>00111     {
+<a name="l00112"></a>00112       <span class="keyword">static</span> <span class="keyword">auto</span> apply( F&amp;&amp; f, G&amp;&amp; g )
+<a name="l00113"></a>00113       {
+<a name="l00114"></a>00114         <span class="keywordflow">return</span> MathematicalOperations::Dot&lt; std::decay_t&lt;F&gt;, std::decay_t&lt;G&gt; &gt;( std::forward&lt;F&gt;(f), std::forward&lt;G&gt;(g) );
+<a name="l00115"></a>00115       }
+<a name="l00116"></a>00116     };
 <a name="l00117"></a>00117 
-<a name="l00123"></a>00123   <span class="keyword">template</span> &lt; <span class="keyword">class </span>F, <span class="keyword">class </span>G,
-<a name="l00124"></a>00124              std::enable_if_t&lt; Checks::isFunction&lt; std::decay_t&lt;F&gt; &gt;() ||
-<a name="l00125"></a>00125                                <a class="code" href="group__ConceptGroup.html#gac6e6c5574a8497cc0749e5a613e4d57c">Checks::isFunction</a>&lt; std::decay_t&lt;G&gt; &gt;() &gt;* = <span class="keyword">nullptr</span> &gt;
-<a name="l00126"></a><a class="code" href="namespaceFunG.html#a267562e725c73ece1c1d057b5f29511f">00126</a>   <span class="keyword">auto</span> <a class="code" href="namespaceFunG.html#a267562e725c73ece1c1d057b5f29511f" title="overload of &quot;*&quot;-operator for the generation of functions.">operator*</a>( F&amp;&amp; f, G&amp;&amp; g )
-<a name="l00127"></a>00127   {
-<a name="l00128"></a>00128     <span class="keywordflow">return</span> GenerateDetail::ProductGenerator&lt; F, G &gt;::apply( std::forward&lt;F&gt;(f), std::forward&lt;G&gt;(g) );
-<a name="l00129"></a>00129   }
-<a name="l00130"></a>00130 
-<a name="l00131"></a>00131 
-<a name="l00137"></a>00137   <span class="keyword">template</span> &lt; <span class="keyword">class </span>F,
-<a name="l00138"></a>00138              std::enable_if_t&lt; Checks::isFunction&lt; std::decay_t&lt;F&gt; &gt;() &gt;* = <span class="keyword">nullptr</span> &gt;
-<a name="l00139"></a><a class="code" href="namespaceFunG.html#a94273e3ea80324e591bb98ae3c051221">00139</a>   <span class="keyword">auto</span> <span class="keyword">operator</span>^( F&amp;&amp; f, <span class="keywordtype">int</span> k )
-<a name="l00140"></a>00140   {
-<a name="l00141"></a>00141     <span class="keywordflow">if</span>(k!=2)
-<a name="l00142"></a>00142     {
-<a name="l00143"></a>00143       std::cerr &lt;&lt; <span class="stringliteral">&quot;operator^ only defined for k=2. Terminating.&quot;</span> &lt;&lt; std::endl;
-<a name="l00144"></a>00144       exit(1);
-<a name="l00145"></a>00145     }
-<a name="l00146"></a>00146     <span class="keywordflow">return</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Squared.html" title="Squared function .">MathematicalOperations::Squared&lt; std::decay_t&lt;F&gt;</a> &gt;( std::forward&lt;F&gt;(f) );
-<a name="l00147"></a>00147   }
-<a name="l00148"></a>00148 
-<a name="l00149"></a>00149 
-<a name="l00155"></a>00155   <span class="keyword">template</span> &lt; <span class="keyword">class </span>F,
-<a name="l00156"></a>00156              std::enable_if_t&lt; Checks::isFunction&lt; std::decay_t&lt;F&gt; &gt;() &gt;* = <span class="keyword">nullptr</span> &gt;
-<a name="l00157"></a><a class="code" href="namespaceFunG.html#ac4ffc0754104af6ddf114e154251db78">00157</a>   <span class="keyword">auto</span> <a class="code" href="namespaceFunG.html#ac4ffc0754104af6ddf114e154251db78" title="Generate squared function.">squared</a>( F&amp;&amp; f )
-<a name="l00158"></a>00158   {
-<a name="l00159"></a>00159     <span class="keywordflow">return</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Squared.html" title="Squared function .">MathematicalOperations::Squared&lt; std::decay_t&lt;F&gt;</a> &gt;( std::forward&lt;F&gt;(f) );
-<a name="l00160"></a>00160   }
-<a name="l00161"></a>00161 
-<a name="l00168"></a>00168   <span class="keyword">template</span> &lt; <span class="keyword">class </span>F, <span class="keyword">class </span>G,
-<a name="l00169"></a>00169              std::enable_if_t&lt; Checks::isFunction&lt; std::decay_t&lt;F&gt; &gt;() &amp;&amp;
-<a name="l00170"></a>00170                                <a class="code" href="group__ConceptGroup.html#gac6e6c5574a8497cc0749e5a613e4d57c">Checks::isFunction</a>&lt; std::decay_t&lt;G&gt; &gt;() &gt;* = <span class="keyword">nullptr</span> &gt;
-<a name="l00171"></a><a class="code" href="namespaceFunG.html#a65436d4494e99629b0177d0df7634a6b">00171</a>   <span class="keyword">auto</span> <a class="code" href="namespaceFunG.html#a65436d4494e99629b0177d0df7634a6b" title="overload of &quot;&lt;&lt;&quot;-operator for chaining functions  and  to .">operator&lt;&lt;</a>( F&amp;&amp; f, G&amp;&amp; g )
-<a name="l00172"></a>00172   {
-<a name="l00173"></a>00173     static_assert( !<a class="code" href="namespaceFunG_1_1Checks_1_1Has.html#ae0ea4bc2bfd6f8d85158529ef4f2be0f" title="Check if T contains a type Variable&lt;Type,n&gt;.">Checks::Has::variable</a>&lt; std::decay_t&lt;F&gt; &gt;(), <span class="stringliteral">&quot;Independent variables can not be on the left side of the chain operator.&quot;</span> );
-<a name="l00174"></a>00174     <span class="keywordflow">return</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Chain.html" title="Chain  of functions  and  of type F resp. G (F and G must satisfy the requirements of Concepts::Funct...">MathematicalOperations::Chain&lt; std::decay_t&lt;F&gt;</a>, std::decay_t&lt;G&gt; &gt;( std::forward&lt;F&gt;(f), std::forward&lt;G&gt;(g) );
-<a name="l00175"></a>00175   }
-<a name="l00176"></a>00176 
-<a name="l00182"></a>00182   <span class="keyword">template</span> &lt; <span class="keyword">class </span>F, <span class="keyword">class </span>G,
-<a name="l00183"></a>00183              std::enable_if_t&lt; Checks::isFunction&lt; std::decay_t&lt;F&gt; &gt;() ||
-<a name="l00184"></a>00184                                <a class="code" href="group__ConceptGroup.html#gac6e6c5574a8497cc0749e5a613e4d57c">Checks::isFunction</a>&lt; std::decay_t&lt;G&gt; &gt;()&gt;* = <span class="keyword">nullptr</span> &gt;
-<a name="l00185"></a><a class="code" href="namespaceFunG.html#a3af04c2ef5c1b206feb75fffd298cbbf">00185</a>   <span class="keyword">auto</span> <a class="code" href="namespaceFunG.html#a3af04c2ef5c1b206feb75fffd298cbbf" title="overload of &quot;-&quot;-operator for the generation of functions.">operator-</a>( F&amp;&amp; f, G&amp;&amp; g )
-<a name="l00186"></a>00186   {
-<a name="l00187"></a>00187     <span class="keywordflow">return</span> std::forward&lt;F&gt;(f) + ( -1 * std::forward&lt;G&gt;(g) );
-<a name="l00188"></a>00188   }
-<a name="l00189"></a>00189 }
+<a name="l00118"></a>00118     <span class="keyword">template</span> &lt; <span class="keyword">class</span> F, <span class="keyword">class</span> G &gt;
+<a name="l00119"></a>00119     <span class="keyword">struct </span>DotGenerator&lt;F, G, false, true&gt;
+<a name="l00120"></a>00120     {
+<a name="l00121"></a>00121       <span class="keyword">static</span> <span class="keyword">auto</span> apply( F&amp;&amp; f, G&amp;&amp; g)
+<a name="l00122"></a>00122       {
+<a name="l00123"></a>00123         <span class="keyword">using</span> Const = Constant&lt; std::decay_t&lt;F&gt; &gt;;
+<a name="l00124"></a>00124         <span class="keywordflow">return</span> MathematicalOperations::Dot&lt; Const, std::decay_t&lt;G&gt; &gt;( Const( std::forward&lt;F&gt;(f) ), std::forward&lt;G&gt;(g) );
+<a name="l00125"></a>00125       }
+<a name="l00126"></a>00126     };
+<a name="l00127"></a>00127 
+<a name="l00128"></a>00128     <span class="keyword">template</span> &lt;<span class="keyword">class</span> F, <span class="keyword">class</span> G&gt;
+<a name="l00129"></a>00129     <span class="keyword">struct </span>DotGenerator&lt;F, G, true, false&gt;
+<a name="l00130"></a>00130     {
+<a name="l00131"></a>00131       <span class="keyword">static</span> <span class="keyword">auto</span> apply( F&amp;&amp; f, G&amp;&amp; g)
+<a name="l00132"></a>00132       {
+<a name="l00133"></a>00133         <span class="keyword">using</span> Const = Constant&lt; std::decay_t&lt;G&gt; &gt;;
+<a name="l00134"></a>00134         <span class="keywordflow">return</span> MathematicalOperations::Dot&lt; std::decay_t&lt;F&gt;, Const &gt;( std::forward&lt;F&gt;(f) , Const( std::forward&lt;G&gt;(g) ) );
+<a name="l00135"></a>00135       }
+<a name="l00136"></a>00136     };
+<a name="l00137"></a>00137   }
+<a name="l00139"></a>00139 
+<a name="l00145"></a>00145   <span class="keyword">template</span> &lt; <span class="keyword">class </span>F, <span class="keyword">class </span>G,
+<a name="l00146"></a>00146              std::enable_if_t&lt; Checks::isFunction&lt; std::decay_t&lt;F&gt; &gt;() ||
+<a name="l00147"></a>00147                                <a class="code" href="group__ConceptGroup.html#gac6e6c5574a8497cc0749e5a613e4d57c">Checks::isFunction</a>&lt; std::decay_t&lt;G&gt; &gt;() &gt;* = <span class="keyword">nullptr</span> &gt;
+<a name="l00148"></a><a class="code" href="namespaceFunG.html#a24bb5d609b022030afda2d8589cf5509">00148</a>   <span class="keyword">auto</span> <a class="code" href="namespaceFunG.html#a24bb5d609b022030afda2d8589cf5509" title="overload of &quot;+&quot;-operator for the generation of functions.">operator+ </a>( F&amp;&amp; f, G&amp;&amp; g )
+<a name="l00149"></a>00149   {
+<a name="l00150"></a>00150     <span class="keywordflow">return</span> GenerateDetail::SumGenerator&lt; F, G &gt;::apply( std::forward&lt;F&gt;(f), std::forward&lt;G&gt;(g) );
+<a name="l00151"></a>00151   }
+<a name="l00152"></a>00152 
+<a name="l00158"></a>00158   <span class="keyword">template</span> &lt; <span class="keyword">class </span>F, <span class="keyword">class </span>G,
+<a name="l00159"></a>00159              std::enable_if_t&lt; Checks::isFunction&lt; std::decay_t&lt;F&gt; &gt;() ||
+<a name="l00160"></a>00160                                <a class="code" href="group__ConceptGroup.html#gac6e6c5574a8497cc0749e5a613e4d57c">Checks::isFunction</a>&lt; std::decay_t&lt;G&gt; &gt;() &gt;* = <span class="keyword">nullptr</span> &gt;
+<a name="l00161"></a><a class="code" href="namespaceFunG.html#a267562e725c73ece1c1d057b5f29511f">00161</a>   <span class="keyword">auto</span> <a class="code" href="namespaceFunG.html#a267562e725c73ece1c1d057b5f29511f" title="overload of &quot;*&quot;-operator for the generation of functions.">operator*</a>( F&amp;&amp; f, G&amp;&amp; g )
+<a name="l00162"></a>00162   {
+<a name="l00163"></a>00163     <span class="keywordflow">return</span> GenerateDetail::ProductGenerator&lt; F, G &gt;::apply( std::forward&lt;F&gt;(f), std::forward&lt;G&gt;(g) );
+<a name="l00164"></a>00164   }
+<a name="l00165"></a>00165 
+<a name="l00171"></a>00171   <span class="keyword">template</span> &lt; <span class="keyword">class </span>F, <span class="keyword">class </span>G,
+<a name="l00172"></a>00172              std::enable_if_t&lt; Checks::isFunction&lt; std::decay_t&lt;F&gt; &gt;() ||
+<a name="l00173"></a>00173                                <a class="code" href="group__ConceptGroup.html#gac6e6c5574a8497cc0749e5a613e4d57c">Checks::isFunction</a>&lt; std::decay_t&lt;G&gt; &gt;() &gt;* = <span class="keyword">nullptr</span> &gt;
+<a name="l00174"></a><a class="code" href="namespaceFunG.html#ac73eb907f3d29a9ea60513a43c658270">00174</a>   <span class="keyword">auto</span> <a class="code" href="namespaceFunG.html#ac73eb907f3d29a9ea60513a43c658270" title="overload of &quot;dot&quot;-function for the generation of functions.">dot</a>( F&amp;&amp; f, G&amp;&amp; g )
+<a name="l00175"></a>00175   {
+<a name="l00176"></a>00176     <span class="keywordflow">return</span> GenerateDetail::DotGenerator&lt; F, G &gt;::apply( std::forward&lt;F&gt;(f), std::forward&lt;G&gt;(g) );
+<a name="l00177"></a>00177   }
+<a name="l00178"></a>00178 
+<a name="l00179"></a>00179 
+<a name="l00185"></a>00185   <span class="keyword">template</span> &lt; <span class="keyword">class </span>F,
+<a name="l00186"></a>00186              std::enable_if_t&lt; Checks::isFunction&lt; std::decay_t&lt;F&gt; &gt;() &gt;* = <span class="keyword">nullptr</span> &gt;
+<a name="l00187"></a><a class="code" href="namespaceFunG.html#a94273e3ea80324e591bb98ae3c051221">00187</a>   <span class="keyword">auto</span> <span class="keyword">operator</span>^( F&amp;&amp; f, <span class="keywordtype">int</span> k )
+<a name="l00188"></a>00188   {
+<a name="l00189"></a>00189     <span class="keywordflow">if</span>(k!=2)
+<a name="l00190"></a>00190     {
+<a name="l00191"></a>00191       std::cerr &lt;&lt; <span class="stringliteral">&quot;operator^ only defined for k=2. Terminating.&quot;</span> &lt;&lt; std::endl;
+<a name="l00192"></a>00192       exit(1);
+<a name="l00193"></a>00193     }
+<a name="l00194"></a>00194     <span class="keywordflow">return</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Squared.html" title="Squared function .">MathematicalOperations::Squared&lt; std::decay_t&lt;F&gt;</a> &gt;( std::forward&lt;F&gt;(f) );
+<a name="l00195"></a>00195   }
+<a name="l00196"></a>00196 
+<a name="l00197"></a>00197 
+<a name="l00203"></a>00203   <span class="keyword">template</span> &lt; <span class="keyword">class </span>F,
+<a name="l00204"></a>00204              std::enable_if_t&lt; Checks::isFunction&lt; std::decay_t&lt;F&gt; &gt;() &gt;* = <span class="keyword">nullptr</span> &gt;
+<a name="l00205"></a><a class="code" href="namespaceFunG.html#ac4ffc0754104af6ddf114e154251db78">00205</a>   <span class="keyword">auto</span> <a class="code" href="namespaceFunG.html#ac4ffc0754104af6ddf114e154251db78" title="Generate squared function.">squared</a>( F&amp;&amp; f )
+<a name="l00206"></a>00206   {
+<a name="l00207"></a>00207     <span class="keywordflow">return</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Squared.html" title="Squared function .">MathematicalOperations::Squared&lt; std::decay_t&lt;F&gt;</a> &gt;( std::forward&lt;F&gt;(f) );
+<a name="l00208"></a>00208   }
+<a name="l00209"></a>00209 
+<a name="l00216"></a>00216   <span class="keyword">template</span> &lt; <span class="keyword">class </span>F, <span class="keyword">class </span>G,
+<a name="l00217"></a>00217              std::enable_if_t&lt; Checks::isFunction&lt; std::decay_t&lt;F&gt; &gt;() &amp;&amp;
+<a name="l00218"></a>00218                                <a class="code" href="group__ConceptGroup.html#gac6e6c5574a8497cc0749e5a613e4d57c">Checks::isFunction</a>&lt; std::decay_t&lt;G&gt; &gt;() &gt;* = <span class="keyword">nullptr</span> &gt;
+<a name="l00219"></a><a class="code" href="namespaceFunG.html#a65436d4494e99629b0177d0df7634a6b">00219</a>   <span class="keyword">auto</span> <a class="code" href="namespaceFunG.html#a65436d4494e99629b0177d0df7634a6b" title="overload of &quot;&lt;&lt;&quot;-operator for chaining functions  and  to .">operator&lt;&lt;</a>( F&amp;&amp; f, G&amp;&amp; g )
+<a name="l00220"></a>00220   {
+<a name="l00221"></a>00221     static_assert( !<a class="code" href="namespaceFunG_1_1Checks_1_1Has.html#ae0ea4bc2bfd6f8d85158529ef4f2be0f" title="Check if T contains a type Variable&lt;Type,n&gt;.">Checks::Has::variable</a>&lt; std::decay_t&lt;F&gt; &gt;(), <span class="stringliteral">&quot;Independent variables can not be on the left side of the chain operator.&quot;</span> );
+<a name="l00222"></a>00222     <span class="keywordflow">return</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Chain.html" title="Chain  of functions  and  of type F resp. G (F and G must satisfy the requirements of Concepts::Funct...">MathematicalOperations::Chain&lt; std::decay_t&lt;F&gt;</a>, std::decay_t&lt;G&gt; &gt;( std::forward&lt;F&gt;(f), std::forward&lt;G&gt;(g) );
+<a name="l00223"></a>00223   }
+<a name="l00224"></a>00224 
+<a name="l00230"></a>00230   <span class="keyword">template</span> &lt; <span class="keyword">class </span>F, <span class="keyword">class </span>G,
+<a name="l00231"></a>00231              std::enable_if_t&lt; Checks::isFunction&lt; std::decay_t&lt;F&gt; &gt;() ||
+<a name="l00232"></a>00232                                <a class="code" href="group__ConceptGroup.html#gac6e6c5574a8497cc0749e5a613e4d57c">Checks::isFunction</a>&lt; std::decay_t&lt;G&gt; &gt;()&gt;* = <span class="keyword">nullptr</span> &gt;
+<a name="l00233"></a><a class="code" href="namespaceFunG.html#a3af04c2ef5c1b206feb75fffd298cbbf">00233</a>   <span class="keyword">auto</span> <a class="code" href="namespaceFunG.html#a3af04c2ef5c1b206feb75fffd298cbbf" title="overload of &quot;-&quot;-operator for the generation of functions.">operator-</a>( F&amp;&amp; f, G&amp;&amp; g )
+<a name="l00234"></a>00234   {
+<a name="l00235"></a>00235     <span class="keywordflow">return</span> std::forward&lt;F&gt;(f) + ( -1 * std::forward&lt;G&gt;(g) );
+<a name="l00236"></a>00236   }
+<a name="l00237"></a>00237 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -262,7 +305,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Nov 23 2016 17:53:55 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 27 2016 10:37:41 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

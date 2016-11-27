@@ -281,6 +281,9 @@ Functions</h2></td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;class F , class G , std::enable_if_t&lt; Checks::isFunction&lt; std::decay_t&lt; F &gt; &gt;()||Checks::isFunction&lt; std::decay_t&lt; G &gt; &gt;() &gt; *  = nullptr&gt; </td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a267562e725c73ece1c1d057b5f29511f">operator*</a> (F &amp;&amp;f, G &amp;&amp;g)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "*"-operator for the generation of functions.  <a href="#a267562e725c73ece1c1d057b5f29511f"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;class F , class G , std::enable_if_t&lt; Checks::isFunction&lt; std::decay_t&lt; F &gt; &gt;()||Checks::isFunction&lt; std::decay_t&lt; G &gt; &gt;() &gt; *  = nullptr&gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#ac73eb907f3d29a9ea60513a43c658270">dot</a> (F &amp;&amp;f, G &amp;&amp;g)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "dot"-function for the generation of functions.  <a href="#ac73eb907f3d29a9ea60513a43c658270"></a><br/></td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;class F , std::enable_if_t&lt; Checks::isFunction&lt; std::decay_t&lt; F &gt; &gt;() &gt; *  = nullptr&gt; </td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a94273e3ea80324e591bb98ae3c051221">operator^</a> (F &amp;&amp;f, int k)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "^"-operator for the generation of functions.  <a href="#a94273e3ea80324e591bb98ae3c051221"></a><br/></td></tr>
@@ -411,6 +414,38 @@ template&lt;class Matrix , class Index , class  = std::enable_if_t&lt; std::is_i
 <div class="memdoc">
 
 <p><a class="el" href="namespaceFunG_1_1Access.html">Access</a> matrix entry \(A_{ij}\). </p>
+
+</div>
+</div>
+<a class="anchor" id="ac73eb907f3d29a9ea60513a43c658270"></a><!-- doxytag: member="FunG::dot" ref="ac73eb907f3d29a9ea60513a43c658270" args="(F &amp;&amp;f, G &amp;&amp;g)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F , class G , std::enable_if_t&lt; Checks::isFunction&lt; std::decay_t&lt; F &gt; &gt;()||Checks::isFunction&lt; std::decay_t&lt; G &gt; &gt;() &gt; *  = nullptr&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="namespaceFunG.html#ac73eb907f3d29a9ea60513a43c658270">FunG::dot</a> </td>
+          <td>(</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">G &amp;&amp;&#160;</td>
+          <td class="paramname"><em>g</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>overload of "dot"-function for the generation of functions. </p>
+<p>If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. </p>
 
 </div>
 </div>
@@ -1221,7 +1256,7 @@ template&lt;class Matrix , class  = std::enable_if_t&lt;!Checks::isConstantSize&
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Nov 23 2016 17:53:56 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 27 2016 10:37:42 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

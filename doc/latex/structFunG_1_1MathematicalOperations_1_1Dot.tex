@@ -1,0 +1,154 @@
+\hypertarget{structFunG_1_1MathematicalOperations_1_1Dot}{\section{\-Fun\-G\-:\-:\-Mathematical\-Operations\-:\-:\-Dot$<$ \-F, \-G, class, class $>$ \-Struct \-Template \-Reference}
+\label{structFunG_1_1MathematicalOperations_1_1Dot}\index{\-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot$<$ F, G, class, class $>$@{\-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot$<$ F, G, class, class $>$}}
+}
+
+
+\-Dot $f \cdot g$ of functions of type \-F and \-G (\-F and \-G must satisfy the requirements of \hyperlink{structFunG_1_1Concepts_1_1FunctionConcept}{\-Concepts\-::\-Function\-Concept}).  
+
+
+
+
+{\ttfamily \#include $<$dot.\-hh$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Init\-F , class Init\-G $>$ }\\\hyperlink{structFunG_1_1MathematicalOperations_1_1Dot_a00296551bc83a77626503ef10e509de7}{\-Dot} (\-Init\-F \&\&f\-\_\-, \-Init\-G \&\&g\-\_\-)
+\begin{DoxyCompactList}\small\item\em \-Constructor passing arguments to function constructors. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Arg $>$ }\\void \hyperlink{structFunG_1_1MathematicalOperations_1_1Dot_a76ef6519450242a03fea26fe0671c8af}{update} (\-Arg const \&x)
+\begin{DoxyCompactList}\small\item\em \-Update point of evaluation. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int index, class Arg $>$ }\\void \hyperlink{structFunG_1_1MathematicalOperations_1_1Dot_a9b75f8b451473b48f2a35ba2319d5287}{update} (const \-Arg \&x)
+\begin{DoxyCompactList}\small\item\em \-Update variable corresponding to index. \end{DoxyCompactList}\item 
+\hyperlink{structFunG_1_1MathematicalOperations_1_1Dot_abbc25cba6b3a4407379911c6987c3410}{decltype} (auto) d0() const noexcept
+\begin{DoxyCompactList}\small\item\em \-Function value. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int id, class Arg , class Indexed\-Arg  = \-Indexed\-Type$<$\-Arg,id$>$, class  = std\-::enable\-\_\-if\-\_\-t$<$ D1\-Type$<$\-Indexed\-Arg$>$\-::present $>$$>$ }\\\-Return\-Type \hyperlink{structFunG_1_1MathematicalOperations_1_1Dot_a5539a338fdd0ab52307bdca4bc5c0906}{d1} (\-Arg const \&dx) const 
+\begin{DoxyCompactList}\small\item\em \-First directional derivative. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int idx, int idy, class Arg\-X , class Arg\-Y , class Indexed\-Arg\-X  = \-Indexed\-Type$<$\-Arg\-X,idx$>$, class Indexed\-Arg\-Y  = \-Indexed\-Type$<$\-Arg\-Y,idy$>$, class  = std\-::enable\-\_\-if\-\_\-t$<$ D2\-Type$<$\-Indexed\-Arg\-X,\-Indexed\-Arg\-Y$>$\-::present $>$$>$ }\\\-Return\-Type \hyperlink{structFunG_1_1MathematicalOperations_1_1Dot_a1f6635249552959c216f3f15f5fc0037}{d2} (\-Arg\-X const \&dx, \-Arg\-Y const \&dy) const 
+\begin{DoxyCompactList}\small\item\em \-Second directional derivative. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int idx, int idy, int idz, class Arg\-X , class Arg\-Y , class Arg\-Z , class Indexed\-Arg\-X  = \-Indexed\-Type$<$\-Arg\-X,idx$>$, class Indexed\-Arg\-Y  = \-Indexed\-Type$<$\-Arg\-Y,idy$>$, class Indexed\-Arg\-Z  = \-Indexed\-Type$<$\-Arg\-Z,idz$>$, class  = std\-::enable\-\_\-if\-\_\-t$<$ D3\-Type$<$\-Indexed\-Arg\-X,\-Indexed\-Arg\-Y,\-Indexed\-Arg\-Z$>$\-::present $>$$>$ }\\\-Return\-Type \hyperlink{structFunG_1_1MathematicalOperations_1_1Dot_a1fe7dc4596f532e9568e48945c07d00b}{d3} (\-Arg\-X const \&dx, \-Arg\-Y const \&dy, \-Arg\-Z const \&dz) const 
+\begin{DoxyCompactList}\small\item\em \-Third directional derivative. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\subsubsection*{template$<$class F, class G, class = \-Concepts\-::\-Function\-Concept\-Check$<$\-F$>$, class = \-Concepts\-::\-Function\-Concept\-Check$<$\-G$>$$>$struct Fun\-G\-::\-Mathematical\-Operations\-::\-Dot$<$ F, G, class, class $>$}
+
+\-Dot $f \cdot g$ of functions of type \-F and \-G (\-F and \-G must satisfy the requirements of \hyperlink{structFunG_1_1Concepts_1_1FunctionConcept}{\-Concepts\-::\-Function\-Concept}). 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{structFunG_1_1MathematicalOperations_1_1Dot_a00296551bc83a77626503ef10e509de7}{\index{\-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot@{\-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot}!\-Dot@{\-Dot}}
+\index{\-Dot@{\-Dot}!FunG::MathematicalOperations::Dot@{\-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot}}
+\subsubsection[{\-Dot}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class G , class  = \-Concepts\-::\-Function\-Concept\-Check$<$\-F$>$, class  = \-Concepts\-::\-Function\-Concept\-Check$<$\-G$>$$>$ template$<$class Init\-F , class Init\-G $>$ {\bf \-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot}$<$ \-F, \-G, class, class $>$\-::{\bf \-Dot} (
+\begin{DoxyParamCaption}
+\item[{\-Init\-F \&\&}]{f\-\_\-, }
+\item[{\-Init\-G \&\&}]{g\-\_\-}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{structFunG_1_1MathematicalOperations_1_1Dot_a00296551bc83a77626503ef10e509de7}
+
+
+\-Constructor passing arguments to function constructors. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em f\-\_\-} & input for constructor of left side of product \\
+\hline
+{\em g\-\_\-} & input for constructor of right side of product \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{structFunG_1_1MathematicalOperations_1_1Dot_a5539a338fdd0ab52307bdca4bc5c0906}{\index{\-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot@{\-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot}!d1@{d1}}
+\index{d1@{d1}!FunG::MathematicalOperations::Dot@{\-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot}}
+\subsubsection[{d1}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class G , class  = \-Concepts\-::\-Function\-Concept\-Check$<$\-F$>$, class  = \-Concepts\-::\-Function\-Concept\-Check$<$\-G$>$$>$ template$<$int id, class Arg , class Indexed\-Arg  = \-Indexed\-Type$<$\-Arg,id$>$, class  = std\-::enable\-\_\-if\-\_\-t$<$ D1\-Type$<$\-Indexed\-Arg$>$\-::present $>$$>$ \-Return\-Type {\bf \-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot}$<$ \-F, \-G, class, class $>$\-::{\bf d1} (
+\begin{DoxyParamCaption}
+\item[{\-Arg const \&}]{dx}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{structFunG_1_1MathematicalOperations_1_1Dot_a5539a338fdd0ab52307bdca4bc5c0906}
+
+
+\-First directional derivative. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em dx} & direction for which the derivative is computed \\
+\hline
+\end{DoxyParams}
+\hypertarget{structFunG_1_1MathematicalOperations_1_1Dot_a1f6635249552959c216f3f15f5fc0037}{\index{\-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot@{\-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot}!d2@{d2}}
+\index{d2@{d2}!FunG::MathematicalOperations::Dot@{\-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot}}
+\subsubsection[{d2}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class G , class  = \-Concepts\-::\-Function\-Concept\-Check$<$\-F$>$, class  = \-Concepts\-::\-Function\-Concept\-Check$<$\-G$>$$>$ template$<$int idx, int idy, class Arg\-X , class Arg\-Y , class Indexed\-Arg\-X  = \-Indexed\-Type$<$\-Arg\-X,idx$>$, class Indexed\-Arg\-Y  = \-Indexed\-Type$<$\-Arg\-Y,idy$>$, class  = std\-::enable\-\_\-if\-\_\-t$<$ D2\-Type$<$\-Indexed\-Arg\-X,\-Indexed\-Arg\-Y$>$\-::present $>$$>$ \-Return\-Type {\bf \-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot}$<$ \-F, \-G, class, class $>$\-::{\bf d2} (
+\begin{DoxyParamCaption}
+\item[{\-Arg\-X const \&}]{dx, }
+\item[{\-Arg\-Y const \&}]{dy}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{structFunG_1_1MathematicalOperations_1_1Dot_a1f6635249552959c216f3f15f5fc0037}
+
+
+\-Second directional derivative. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em dx} & direction for which the derivative is computed \\
+\hline
+{\em dy} & direction for which the derivative is computed \\
+\hline
+\end{DoxyParams}
+\hypertarget{structFunG_1_1MathematicalOperations_1_1Dot_a1fe7dc4596f532e9568e48945c07d00b}{\index{\-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot@{\-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot}!d3@{d3}}
+\index{d3@{d3}!FunG::MathematicalOperations::Dot@{\-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot}}
+\subsubsection[{d3}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class G , class  = \-Concepts\-::\-Function\-Concept\-Check$<$\-F$>$, class  = \-Concepts\-::\-Function\-Concept\-Check$<$\-G$>$$>$ template$<$int idx, int idy, int idz, class Arg\-X , class Arg\-Y , class Arg\-Z , class Indexed\-Arg\-X  = \-Indexed\-Type$<$\-Arg\-X,idx$>$, class Indexed\-Arg\-Y  = \-Indexed\-Type$<$\-Arg\-Y,idy$>$, class Indexed\-Arg\-Z  = \-Indexed\-Type$<$\-Arg\-Z,idz$>$, class  = std\-::enable\-\_\-if\-\_\-t$<$ D3\-Type$<$\-Indexed\-Arg\-X,\-Indexed\-Arg\-Y,\-Indexed\-Arg\-Z$>$\-::present $>$$>$ \-Return\-Type {\bf \-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot}$<$ \-F, \-G, class, class $>$\-::{\bf d3} (
+\begin{DoxyParamCaption}
+\item[{\-Arg\-X const \&}]{dx, }
+\item[{\-Arg\-Y const \&}]{dy, }
+\item[{\-Arg\-Z const \&}]{dz}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{structFunG_1_1MathematicalOperations_1_1Dot_a1fe7dc4596f532e9568e48945c07d00b}
+
+
+\-Third directional derivative. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em dx} & direction for which the derivative is computed \\
+\hline
+{\em dy} & direction for which the derivative is computed \\
+\hline
+{\em dz} & direction for which the derivative is computed \\
+\hline
+\end{DoxyParams}
+\hypertarget{structFunG_1_1MathematicalOperations_1_1Dot_abbc25cba6b3a4407379911c6987c3410}{\index{\-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot@{\-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot}!decltype@{decltype}}
+\index{decltype@{decltype}!FunG::MathematicalOperations::Dot@{\-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot}}
+\subsubsection[{decltype}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class G , class  = \-Concepts\-::\-Function\-Concept\-Check$<$\-F$>$, class  = \-Concepts\-::\-Function\-Concept\-Check$<$\-G$>$$>$ {\bf \-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot}$<$ \-F, \-G, class, class $>$\-::{\bf decltype} (
+\begin{DoxyParamCaption}
+\item[{auto}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{structFunG_1_1MathematicalOperations_1_1Dot_abbc25cba6b3a4407379911c6987c3410}
+
+
+\-Function value. 
+
+\hypertarget{structFunG_1_1MathematicalOperations_1_1Dot_a76ef6519450242a03fea26fe0671c8af}{\index{\-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot@{\-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot}!update@{update}}
+\index{update@{update}!FunG::MathematicalOperations::Dot@{\-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class G , class  = \-Concepts\-::\-Function\-Concept\-Check$<$\-F$>$, class  = \-Concepts\-::\-Function\-Concept\-Check$<$\-G$>$$>$ template$<$class Arg $>$ void {\bf \-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot}$<$ \-F, \-G, class, class $>$\-::{\bf update} (
+\begin{DoxyParamCaption}
+\item[{\-Arg const \&}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{structFunG_1_1MathematicalOperations_1_1Dot_a76ef6519450242a03fea26fe0671c8af}
+
+
+\-Update point of evaluation. 
+
+\hypertarget{structFunG_1_1MathematicalOperations_1_1Dot_a9b75f8b451473b48f2a35ba2319d5287}{\index{\-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot@{\-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot}!update@{update}}
+\index{update@{update}!FunG::MathematicalOperations::Dot@{\-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class G , class  = \-Concepts\-::\-Function\-Concept\-Check$<$\-F$>$, class  = \-Concepts\-::\-Function\-Concept\-Check$<$\-G$>$$>$ template$<$int index, class Arg $>$ void {\bf \-Fun\-G\-::\-Mathematical\-Operations\-::\-Dot}$<$ \-F, \-G, class, class $>$\-::{\bf update} (
+\begin{DoxyParamCaption}
+\item[{const \-Arg \&}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{structFunG_1_1MathematicalOperations_1_1Dot_a9b75f8b451473b48f2a35ba2319d5287}
+
+
+\-Update variable corresponding to index. 
+
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+fung/mathematical\-\_\-operations/\hyperlink{dot_8hh}{dot.\-hh}\end{DoxyCompactItemize}

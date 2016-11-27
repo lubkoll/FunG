@@ -151,6 +151,8 @@ struct \hyperlink{structFunG_1_1Variable}{\-Variable}
 \begin{DoxyCompactList}\small\item\em overload of \char`\"{}+\char`\"{}-\/operator for the generation of functions. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class F , class G , std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ std\-::decay\-\_\-t$<$ F $>$ $>$()$|$$|$\-Checks\-::is\-Function$<$ std\-::decay\-\_\-t$<$ G $>$ $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a267562e725c73ece1c1d057b5f29511f}{operator$\ast$} (\-F \&\&f, \-G \&\&g)
 \begin{DoxyCompactList}\small\item\em overload of \char`\"{}$\ast$\char`\"{}-\/operator for the generation of functions. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class F , class G , std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ std\-::decay\-\_\-t$<$ F $>$ $>$()$|$$|$\-Checks\-::is\-Function$<$ std\-::decay\-\_\-t$<$ G $>$ $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_ac73eb907f3d29a9ea60513a43c658270}{dot} (\-F \&\&f, \-G \&\&g)
+\begin{DoxyCompactList}\small\item\em overload of \char`\"{}dot\char`\"{}-\/function for the generation of functions. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class F , std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ std\-::decay\-\_\-t$<$ F $>$ $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a94273e3ea80324e591bb98ae3c051221}{operator$^\wedge$} (\-F \&\&f, int k)
 \begin{DoxyCompactList}\small\item\em overload of \char`\"{}$^\wedge$\char`\"{}-\/operator for the generation of functions. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class F , std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ std\-::decay\-\_\-t$<$ F $>$ $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_ac4ffc0754104af6ddf114e154251db78}{squared} (\-F \&\&f)
@@ -246,7 +248,19 @@ $A+A^T$
 
 \hyperlink{namespaceFunG_1_1Access}{\-Access} matrix entry $A_{ij}$. 
 
-\hypertarget{namespaceFunG_ac59f2ececc3cd451860776320a4a93d5}{\index{\-Fun\-G@{\-Fun\-G}!finalize@{finalize}}
+\hypertarget{namespaceFunG_ac73eb907f3d29a9ea60513a43c658270}{\index{\-Fun\-G@{\-Fun\-G}!dot@{dot}}
+\index{dot@{dot}!FunG@{\-Fun\-G}}
+\subsubsection[{dot}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class G , std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ std\-::decay\-\_\-t$<$ F $>$ $>$()$|$$|$\-Checks\-::is\-Function$<$ std\-::decay\-\_\-t$<$ G $>$ $>$() $>$ $\ast$  = nullptr$>$ auto {\bf \-Fun\-G\-::dot} (
+\begin{DoxyParamCaption}
+\item[{\-F \&\&}]{f, }
+\item[{\-G \&\&}]{g}
+\end{DoxyParamCaption}
+)}}\label{namespaceFunG_ac73eb907f3d29a9ea60513a43c658270}
+
+
+overload of \char`\"{}dot\char`\"{}-\/function for the generation of functions. 
+
+\-If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into \-Finalize to generate missing derivatives. \hypertarget{namespaceFunG_ac59f2ececc3cd451860776320a4a93d5}{\index{\-Fun\-G@{\-Fun\-G}!finalize@{finalize}}
 \index{finalize@{finalize}!FunG@{\-Fun\-G}}
 \subsubsection[{finalize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F $>$ auto {\bf \-Fun\-G\-::finalize} (
 \begin{DoxyParamCaption}
