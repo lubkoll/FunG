@@ -1,13 +1,9 @@
-// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
-// Released under the terms of the GNU General Public License version 3 or later.
-
-#ifndef FUNG_LINEAR_ALGEBRA_ROWS_AND_COLS_HH
-#define FUNG_LINEAR_ALGEBRA_ROWS_AND_COLS_HH
+#pragma once
 
 #include <utility>
-#include "fung/util/extract_rows_and_cols.hh"
-#include "fung/util/static_checks_nrows_ncols.hh"
-#include "fung/util/static_checks.hh"
+#include <fung/util/extract_rows_and_cols.hh>
+#include <fung/util/static_checks_nrows_ncols.hh>
+#include <fung/util/static_checks.hh>
 
 namespace FunG
 {
@@ -33,6 +29,15 @@ namespace FunG
         return A.n_rows;
       }
     };
+
+    template <class Vector>
+    struct DynamicNumberOfRows< Vector, void_t<Checks::TryMemFn_size<Vector> > >
+    {
+        static decltype(auto) apply(const Vector& v) noexcept
+        {
+            return v.size();
+        }
+    }
 
 
     template <class Matrix, class = void> struct DynamicNumberOfColumns;
@@ -90,5 +95,3 @@ namespace FunG
     }
   }
 }
-
-#endif // FUNG_LINEAR_ALGEBRA_ROWS_AND_COLS_HH
