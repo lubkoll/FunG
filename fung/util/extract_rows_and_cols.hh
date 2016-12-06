@@ -30,6 +30,14 @@ namespace FunG
     struct NumberOfRows< Matrix<T,n,m> , MatrixConceptCheck > : std::integral_constant<unsigned,n> {};
 
     /// Specialization for matrices.
+    template < template <class,unsigned,unsigned> class Matrix, class T, unsigned n, unsigned m, class MatrixConceptCheck>
+    struct NumberOfRows< Matrix<n,m,T> , MatrixConceptCheck > : std::integral_constant<unsigned,n> {};
+
+    /// Specialization for matrices.
+    template < template <class,unsigned,unsigned> class Matrix, class T, unsigned n, unsigned m, class MatrixConceptCheck>
+    struct NumberOfRows< Matrix<n,m,T> , MatrixConceptCheck > : std::integral_constant<unsigned,n> {};
+
+    /// Specialization for matrices.
     template < template <int,int> class Matrix, int n, int m, class MatrixConceptCheck>
     struct NumberOfRows< Matrix<n,m> , MatrixConceptCheck > : std::integral_constant<int,n> {};
 
@@ -56,16 +64,24 @@ namespace FunG
 
 
     /// Specialization for matrices.
-    template < template <class,int,int> class Matrix, class T, int n, int m, class MatrixConceptCheck>
-    struct NumberOfColumns< Matrix<T,n,m> , MatrixConceptCheck > : std::integral_constant<int,m> {};
-
-    /// Specialization for matrices.
     template < template <class,int,int,int...> class Matrix, class T, int n, int m, class MatrixConceptCheck, int... other>
     struct NumberOfColumns< Matrix<T,n,m,other...> , MatrixConceptCheck > : std::integral_constant<int,m> {};
 
     /// Specialization for matrices.
+    template < template <class,int,int> class Matrix, class T, int n, int m, class MatrixConceptCheck>
+    struct NumberOfColumns< Matrix<T,n,m> , MatrixConceptCheck > : std::integral_constant<int,m> {};
+
+    /// Specialization for matrices.
     template < template <class,unsigned,unsigned> class Matrix, class T, unsigned n, unsigned m, class MatrixConceptCheck>
     struct NumberOfColumns< Matrix<T,n,m> , MatrixConceptCheck > : std::integral_constant<unsigned,m> {};
+
+    /// Specialization for matrices.
+    template < template <class,int,int> class Matrix, class T, int n, int m, class MatrixConceptCheck>
+    struct NumberOfColumns< Matrix<n,m,T> , MatrixConceptCheck > : std::integral_constant<int,m> {};
+
+    /// Specialization for matrices.
+    template < template <class,unsigned,unsigned> class Matrix, class T, unsigned n, unsigned m, class MatrixConceptCheck>
+    struct NumberOfColumns< Matrix<n,m,T> , MatrixConceptCheck > : std::integral_constant<unsigned,m> {};
 
     /// Specialization for matrices.
     template < template <int,int> class Matrix, int n, int m, class MatrixConceptCheck>
@@ -108,6 +124,13 @@ namespace FunG
     struct GetTransposed< Matrix<Scalar,n,m> >
     {
       using type = Matrix<Scalar,m,n>;
+    };
+
+    /// For deal.II.
+    template < template <unsigned,unsigned,class> class Matrix, class Scalar, unsigned n, unsigned m>
+    struct GetTransposed< Matrix<n,m,Scalar> >
+    {
+      using type = Matrix<m,n,Scalar>;
     };
 
     template <class Matrix>
