@@ -1,8 +1,4 @@
-// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
-// Released under the terms of the GNU General Public License version 3 or later.
-
-#ifndef FUNG_LINEAR_ALGEBRA_EXTRACTROWSANDCOLS_HH
-#define FUNG_LINEAR_ALGEBRA_EXTRACTROWSANDCOLS_HH
+#pragma once
 
 #include <type_traits>
 
@@ -30,11 +26,11 @@ namespace FunG
     struct NumberOfRows< Matrix<T,n,m> , MatrixConceptCheck > : std::integral_constant<unsigned,n> {};
 
     /// Specialization for matrices.
-    template < template <class,unsigned,unsigned> class Matrix, class T, unsigned n, unsigned m, class MatrixConceptCheck>
+    template < template <int,int,class> class Matrix, class T, int n, int m, class MatrixConceptCheck>
     struct NumberOfRows< Matrix<n,m,T> , MatrixConceptCheck > : std::integral_constant<unsigned,n> {};
 
     /// Specialization for matrices.
-    template < template <class,unsigned,unsigned> class Matrix, class T, unsigned n, unsigned m, class MatrixConceptCheck>
+    template < template <unsigned,unsigned,class> class Matrix, class T, unsigned n, unsigned m, class MatrixConceptCheck>
     struct NumberOfRows< Matrix<n,m,T> , MatrixConceptCheck > : std::integral_constant<unsigned,n> {};
 
     /// Specialization for matrices.
@@ -76,11 +72,11 @@ namespace FunG
     struct NumberOfColumns< Matrix<T,n,m> , MatrixConceptCheck > : std::integral_constant<unsigned,m> {};
 
     /// Specialization for matrices.
-    template < template <class,int,int> class Matrix, class T, int n, int m, class MatrixConceptCheck>
+    template < template <int,int,class> class Matrix, class T, int n, int m, class MatrixConceptCheck>
     struct NumberOfColumns< Matrix<n,m,T> , MatrixConceptCheck > : std::integral_constant<int,m> {};
 
     /// Specialization for matrices.
-    template < template <class,unsigned,unsigned> class Matrix, class T, unsigned n, unsigned m, class MatrixConceptCheck>
+    template < template <unsigned,unsigned,class> class Matrix, class T, unsigned n, unsigned m, class MatrixConceptCheck>
     struct NumberOfColumns< Matrix<n,m,T> , MatrixConceptCheck > : std::integral_constant<unsigned,m> {};
 
     /// Specialization for matrices.
@@ -138,5 +134,3 @@ namespace FunG
     /// @endcond
   }
 }
-
-#endif // FUNG_LINEAR_ALGEBRA_EXTRACTROWSANDCOLS_HH
