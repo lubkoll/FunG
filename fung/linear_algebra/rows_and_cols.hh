@@ -37,7 +37,7 @@ namespace FunG
         {
             return v.size();
         }
-    }
+    };
 
 
     template <class Matrix, class = void> struct DynamicNumberOfColumns;
