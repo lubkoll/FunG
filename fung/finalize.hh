@@ -1,8 +1,4 @@
-// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
-// Released under the terms of the GNU General Public License version 3 or later./
-
-#ifndef FUNG_FINALIZE_HH
-#define FUNG_FINALIZE_HH
+#pragma once
 
 #include <type_traits>
 
@@ -226,5 +222,3 @@ namespace FunG
     return Detail::FinalizeImpl< std::decay_t<F>, Checks::Has::variable< std::decay_t<F> >() >( std::forward<F>(f) );
   }
 }
-
-#endif // FUNG_FINALIZE_HH

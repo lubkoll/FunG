@@ -51,11 +51,11 @@ namespace FunG
 
 
   /// Defines operator* for multiplication with arithmetic types from the left if undefined and in-place multiplication (operator*=()) is supported.
-  template < class Arg , class ScalarArg ,
-             std::enable_if_t< is_arithmetic<ScalarArg>::value >* = nullptr ,
-             std::enable_if_t< !Checks::isFunction<Arg>() && !is_arithmetic<Arg>() >* = nullptr ,
-             std::enable_if_t< !Checks::Has::Free::multiplication<Arg,ScalarArg>() &&
-                                Checks::Has::MemOp::inPlaceMultiplication<Arg,ScalarArg>() >* = nullptr >
+  template < class Arg, class ScalarArg,
+             std::enable_if_t< is_arithmetic<ScalarArg>::value >* = nullptr,
+             std::enable_if_t< !Checks::isFunction<Arg>() && !is_arithmetic<Arg>() >* = nullptr,
+             std::enable_if_t< !Checks::Has::Free::multiplication<ScalarArg,Arg>() >* = nullptr,
+             std::enable_if_t< Checks::Has::MemOp::inPlaceMultiplication<Arg,ScalarArg>() >* = nullptr >
   auto operator*( ScalarArg a , Arg x )
   {
     x *= a;
@@ -63,11 +63,11 @@ namespace FunG
   }
 
   /// Defines operator* for multiplication with arithmetic types from the right if undefined and in-place multiplication (operator*=()) is supported.
-  template < class Arg , class ScalarArg ,
-             std::enable_if_t< is_arithmetic<ScalarArg>::value >* = nullptr ,
-             std::enable_if_t< !Checks::isFunction<Arg>() && !is_arithmetic<Arg>::value>* = nullptr ,
-             std::enable_if_t< !Checks::Has::Free::multiplication<Arg,ScalarArg>() &&
-                                Checks::Has::MemOp::inPlaceMultiplication<Arg,ScalarArg>() >* = nullptr >
+  template < class Arg, class ScalarArg,
+             std::enable_if_t< is_arithmetic<ScalarArg>::value >* = nullptr,
+             std::enable_if_t< !Checks::isFunction<Arg>() && !is_arithmetic<Arg>::value>* = nullptr,
+             std::enable_if_t< !Checks::Has::Free::multiplication<ScalarArg,Arg>() >* = nullptr,
+             std::enable_if_t< Checks::Has::MemOp::inPlaceMultiplication<Arg,ScalarArg>() >* = nullptr >
   auto operator*( Arg x , ScalarArg a )
   {
     x *= a;
@@ -75,9 +75,9 @@ namespace FunG
   }
 
   /// Defines operator* for multiplication of non-arithmetic types if undefined and in-place multiplication (operator*=()) is supported.
-  template < class Arg1 , class Arg2 ,
-             std::enable_if_t< !Checks::isFunction<Arg1>() && !Checks::isFunction<Arg2>() >* = nullptr ,
-             std::enable_if_t< !is_arithmetic<Arg1>() && !is_arithmetic<Arg2>() >* = nullptr ,
+  template < class Arg1, class Arg2,
+             std::enable_if_t< !Checks::isFunction<Arg1>() && !Checks::isFunction<Arg2>() >* = nullptr,
+             std::enable_if_t< !is_arithmetic<Arg1>() && !is_arithmetic<Arg2>() >* = nullptr,
              std::enable_if_t< !Checks::Has::Free::multiplication<Arg1,Arg2>() &&
                                 Checks::Has::MemOp::inPlaceMultiplication<Arg1,Arg2>() >* = nullptr >
   auto operator*( Arg1 x, const Arg2& y)
@@ -87,9 +87,9 @@ namespace FunG
   }
 
   /// Defines operator* for multiplication of non-arithmetic types if undefined and in-place multiplication is provided in terms of the member function rightmultiplyany() (such as for Dune::FieldMatrix).
-  template < class Arg1 , class Arg2 ,
-             std::enable_if_t< !Checks::isFunction<Arg1>() && !Checks::isFunction<Arg2>() >* = nullptr ,
-             std::enable_if_t< !is_arithmetic<Arg1>() && !is_arithmetic<Arg2>() >* = nullptr ,
+  template < class Arg1, class Arg2,
+             std::enable_if_t< !Checks::isFunction<Arg1>() && !Checks::isFunction<Arg2>() >* = nullptr,
+             std::enable_if_t< !is_arithmetic<Arg1>() && !is_arithmetic<Arg2>() >* = nullptr,
              std::enable_if_t< !Checks::Has::Free::multiplication<Arg1,Arg2>() &&
                                !Checks::Has::MemOp::inPlaceMultiplication<Arg1,Arg2>() &&
                                Checks::Has::MemFn::rightmultiplyany<Arg1,Arg2>() >* = nullptr >
@@ -100,7 +100,7 @@ namespace FunG
 
   /// Defines operator+ if not yet defined and in-place summation (operator+=()) is supported.
   template < class Arg ,
-             std::enable_if_t< !Checks::isFunction<Arg>() && !is_arithmetic<Arg>() >* = nullptr ,
+             std::enable_if_t< !Checks::isFunction<Arg>() && !is_arithmetic<Arg>() >* = nullptr,
              std::enable_if_t< !Checks::Has::Free::summation<Arg>() &&
                                 Checks::Has::MemOp::inPlaceSummation<Arg>() >* = nullptr >
   auto operator+(Arg x, const Arg& y)

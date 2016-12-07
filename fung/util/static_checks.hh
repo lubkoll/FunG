@@ -1,8 +1,4 @@
-// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
-// Released under the terms of the GNU General Public License version 3 or later.
-
-#ifndef FUNG_STATIC_CHECKS_HH
-#define FUNG_STATIC_CHECKS_HH
+#pragma once
 
 #include <type_traits>
 #include <utility>
@@ -35,7 +31,7 @@ namespace FunG
                 template < class Arg >
                 using InPlaceSummation                  =     decltype( std::declval<Arg>() += std::declval<Arg>() );
 
-                template < class Arg1, class Arg2 >
+                template <class Arg1, class Arg2>
                 using InPlaceMultiplication             =     decltype( std::declval<Arg1>() *= std::declval<Arg2>() );
 
 
@@ -94,14 +90,14 @@ namespace FunG
                 using d3_without_index                  =     decltype( std::declval<F>().d3(std::declval<ArgX>(),std::declval<ArgY>(),std::declval<ArgZ>()) );
 
 
-                template < class Arg1, class Arg2 >
+                template <class Arg1, class Arg2>
                 using rightmultiplyany                  =     decltype( std::declval<Arg1>().rightmultiplyany(std::declval<Arg2>()) );
 
             } // MemFn
 
             namespace Free
             {
-                template < class Arg1, class Arg2 >
+                template <class Arg1, class Arg2>
                 using Multiplication                    =     decltype( std::declval<Arg1>() * std::declval<Arg2>() );
 
                 template < class Arg >
@@ -175,7 +171,7 @@ namespace FunG
                 struct InPlaceMultiplication
                         : std::false_type {};
 
-                template < class Arg1, class Arg2 >
+                template <class Arg1, class Arg2>
                 struct InPlaceMultiplication< Arg1, Arg2, true, void_t< Try::MemOp::InPlaceMultiplication<Arg1,Arg2> > >
                         : std::true_type {};
                 /// @endcond
@@ -187,7 +183,7 @@ namespace FunG
                 }
 
                 /// Check if objects of type Arg1 support in-place multiplication with objects of type Arg2.
-                template < class Arg1, class Arg2 >
+                template <class Arg1, class Arg2>
                 constexpr bool inPlaceMultiplication()
                 {
                     return InPlaceMultiplication<Arg1,Arg2,!isFunction<Arg1>() && !isFunction<Arg2>() && !is_arithmetic<Arg1>() >::value;
@@ -289,13 +285,13 @@ namespace FunG
                 struct Rightmultiplany
                         : std::false_type {};
 
-                template < class Arg1, class Arg2 >
+                template <class Arg1, class Arg2>
                 struct Rightmultiplany< Arg1, Arg2, true, void_t< Try::MemFn::rightmultiplyany<Arg1,Arg2> > >
                         : std::true_type {};
                 /// @endcond
 
                 /// Check if objects of type Arg1 support multiplication with objects of type Arg2 via call to rightmultiplyany(Arg2).
-                template < class Arg1, class Arg2 >
+                template <class Arg1, class Arg2>
                 constexpr bool rightmultiplyany()
                 {
                     return Rightmultiplany<Arg1,Arg2,!isFunction<Arg1>() && !isFunction<Arg2>() && !is_arithmetic<Arg1>() && !is_arithmetic<Arg2>()>::value;
@@ -305,16 +301,16 @@ namespace FunG
             namespace Free
             {
                 /// @cond
-                template < class Arg1, class Arg2 ,
-                           bool = !is_arithmetic<Arg1>::value && !is_arithmetic<Arg2>::value &&
-                           !MemOp::callable<Arg1>::value && !MemOp::callable<Arg2>::value ,
+                template <class Arg1, class Arg2,
+                           bool = !(is_arithmetic<Arg1>::value && is_arithmetic<Arg2>::value) &&
+                           !(MemOp::callable<Arg1>::value || MemOp::callable<Arg2>::value),
                            class = void >
                 struct Multiplication : std::false_type {};
 
-                template < class Arg1, class Arg2 >
+                template <class Arg1, class Arg2>
                 struct Multiplication< Arg1, Arg2, false, void > : std::true_type {};
 
-                template < class Arg1, class Arg2 >
+                template <class Arg1, class Arg2>
                 struct Multiplication< Arg1, Arg2, true, void_t< Try::Free::Multiplication<Arg1,Arg2> > > : std::true_type {};
 
 
@@ -328,7 +324,7 @@ namespace FunG
                 /// @endcond
 
                 /// Check if objects of typed Arg1 and Arg2 support multiplication (free operator*).
-                template < class Arg1, class Arg2 >
+                template <class Arg1, class Arg2>
                 constexpr bool multiplication()
                 {
                     return Multiplication<Arg1,Arg2>::value;
@@ -398,5 +394,3 @@ namespace FunG
         /** @} */
     }
 }
-
-#endif // FUNG_STATIC_CHECKS_HH

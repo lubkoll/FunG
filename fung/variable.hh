@@ -1,8 +1,4 @@
-// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
-// Released under the terms of the GNU General Public License version 3 or later.
-
-#ifndef FUNG_VARIABLE_HH
-#define FUNG_VARIABLE_HH
+#pragma once
 
 #include <limits>
 #include <tuple>
@@ -300,5 +296,3 @@ namespace FunG
         /** @} */
     }
 }
-
-#endif // FUNG_VARIABLE_HH

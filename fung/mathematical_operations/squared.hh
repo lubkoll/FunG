@@ -43,9 +43,11 @@ namespace FunG
              * @brief Constructor
              * @param f_ initializer for F
              */
-            template <class InitF>
+            template <class InitF,
+                      std::enable_if_t<!std::is_same<std::decay_t<InitF>,Squared>::value>* = nullptr>
             Squared(InitF&& f_)
-                : f(std::forward<InitF>(f_)), value(f()*f())
+                : f(std::forward<InitF>(f_)),
+                  value(f()*f())
             {}
 
             /// Update point of evaluation.
