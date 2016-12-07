@@ -135,31 +135,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00050"></a>00050   }
 <a name="l00051"></a>00051 
 <a name="l00052"></a>00052 
-<a name="l00054"></a>00054   <span class="keyword">template</span> &lt; <span class="keyword">class </span>Arg , <span class="keyword">class </span>ScalarArg ,
-<a name="l00055"></a>00055              std::enable_if_t&lt; is_arithmetic&lt;ScalarArg&gt;::value &gt;* = nullptr ,
-<a name="l00056"></a>00056              std::enable_if_t&lt; !Checks::isFunction&lt;Arg&gt;() &amp;&amp; !is_arithmetic&lt;Arg&gt;() &gt;* = nullptr ,
-<a name="l00057"></a>00057              std::enable_if_t&lt; !Checks::Has::Free::multiplication&lt;Arg,ScalarArg&gt;() &amp;&amp;
-<a name="l00058"></a>00058                                 Checks::Has::MemOp::inPlaceMultiplication&lt;Arg,ScalarArg&gt;() &gt;* = <span class="keyword">nullptr</span> &gt;
-<a name="l00059"></a><a class="code" href="namespaceFunG.html#a9b303ce8718a6f64b035e7e782370734">00059</a>   <span class="keyword">auto</span> <a class="code" href="namespaceFunG.html#a267562e725c73ece1c1d057b5f29511f" title="overload of &quot;*&quot;-operator for the generation of functions.">operator*</a>( ScalarArg a , Arg x )
+<a name="l00054"></a>00054   <span class="keyword">template</span> &lt; <span class="keyword">class </span>Arg, <span class="keyword">class </span>ScalarArg,
+<a name="l00055"></a>00055              std::enable_if_t&lt; is_arithmetic&lt;ScalarArg&gt;::value &gt;* = <span class="keyword">nullptr</span>,
+<a name="l00056"></a>00056              std::enable_if_t&lt; !Checks::isFunction&lt;Arg&gt;() &amp;&amp; !is_arithmetic&lt;Arg&gt;() &gt;* = <span class="keyword">nullptr</span>,
+<a name="l00057"></a>00057              std::enable_if_t&lt; !Checks::Has::Free::multiplication&lt;ScalarArg,Arg&gt;() &gt;* = <span class="keyword">nullptr</span>,
+<a name="l00058"></a>00058              std::enable_if_t&lt; Checks::Has::MemOp::inPlaceMultiplication&lt;Arg,ScalarArg&gt;() &gt;* = <span class="keyword">nullptr</span> &gt;
+<a name="l00059"></a><a class="code" href="namespaceFunG.html#ac71b238827eda3b6518c39e49447bdeb">00059</a>   <span class="keyword">auto</span> <a class="code" href="namespaceFunG.html#a267562e725c73ece1c1d057b5f29511f" title="overload of &quot;*&quot;-operator for the generation of functions.">operator*</a>( ScalarArg a , Arg x )
 <a name="l00060"></a>00060   {
 <a name="l00061"></a>00061     x *= a;
 <a name="l00062"></a>00062     <span class="keywordflow">return</span> x;
 <a name="l00063"></a>00063   }
 <a name="l00064"></a>00064 
-<a name="l00066"></a>00066   <span class="keyword">template</span> &lt; <span class="keyword">class </span>Arg , <span class="keyword">class </span>ScalarArg ,
-<a name="l00067"></a>00067              std::enable_if_t&lt; is_arithmetic&lt;ScalarArg&gt;::value &gt;* = nullptr ,
-<a name="l00068"></a>00068              std::enable_if_t&lt; !Checks::isFunction&lt;Arg&gt;() &amp;&amp; !is_arithmetic&lt;Arg&gt;::value&gt;* = <span class="keyword">nullptr</span> ,
-<a name="l00069"></a>00069              std::enable_if_t&lt; !Checks::Has::Free::multiplication&lt;Arg,ScalarArg&gt;() &amp;&amp;
-<a name="l00070"></a>00070                                 Checks::Has::MemOp::inPlaceMultiplication&lt;Arg,ScalarArg&gt;() &gt;* = <span class="keyword">nullptr</span> &gt;
-<a name="l00071"></a><a class="code" href="namespaceFunG.html#a3cd5a2cb1abba842154691bb84aab896">00071</a>   <span class="keyword">auto</span> <span class="keyword">operator</span>*( Arg x , ScalarArg a )
+<a name="l00066"></a>00066   <span class="keyword">template</span> &lt; <span class="keyword">class </span>Arg, <span class="keyword">class </span>ScalarArg,
+<a name="l00067"></a>00067              std::enable_if_t&lt; is_arithmetic&lt;ScalarArg&gt;::value &gt;* = <span class="keyword">nullptr</span>,
+<a name="l00068"></a>00068              std::enable_if_t&lt; !Checks::isFunction&lt;Arg&gt;() &amp;&amp; !is_arithmetic&lt;Arg&gt;::value&gt;* = <span class="keyword">nullptr</span>,
+<a name="l00069"></a>00069              std::enable_if_t&lt; !Checks::Has::Free::multiplication&lt;ScalarArg,Arg&gt;() &gt;* = <span class="keyword">nullptr</span>,
+<a name="l00070"></a>00070              std::enable_if_t&lt; Checks::Has::MemOp::inPlaceMultiplication&lt;Arg,ScalarArg&gt;() &gt;* = <span class="keyword">nullptr</span> &gt;
+<a name="l00071"></a><a class="code" href="namespaceFunG.html#a49623beb215912a02388a11cc18f15fe">00071</a>   <span class="keyword">auto</span> <span class="keyword">operator</span>*( Arg x , ScalarArg a )
 <a name="l00072"></a>00072   {
 <a name="l00073"></a>00073     x *= a;
 <a name="l00074"></a>00074     <span class="keywordflow">return</span> x;
 <a name="l00075"></a>00075   }
 <a name="l00076"></a>00076 
-<a name="l00078"></a>00078   <span class="keyword">template</span> &lt; <span class="keyword">class </span>Arg1 , <span class="keyword">class </span>Arg2 ,
-<a name="l00079"></a>00079              std::enable_if_t&lt; !Checks::isFunction&lt;Arg1&gt;() &amp;&amp; !Checks::isFunction&lt;Arg2&gt;() &gt;* = nullptr ,
-<a name="l00080"></a>00080              std::enable_if_t&lt; !is_arithmetic&lt;Arg1&gt;() &amp;&amp; !is_arithmetic&lt;Arg2&gt;() &gt;* = nullptr ,
+<a name="l00078"></a>00078   <span class="keyword">template</span> &lt; <span class="keyword">class </span>Arg1, <span class="keyword">class </span>Arg2,
+<a name="l00079"></a>00079              std::enable_if_t&lt; !Checks::isFunction&lt;Arg1&gt;() &amp;&amp; !Checks::isFunction&lt;Arg2&gt;() &gt;* = <span class="keyword">nullptr</span>,
+<a name="l00080"></a>00080              std::enable_if_t&lt; !is_arithmetic&lt;Arg1&gt;() &amp;&amp; !is_arithmetic&lt;Arg2&gt;() &gt;* = <span class="keyword">nullptr</span>,
 <a name="l00081"></a>00081              std::enable_if_t&lt; !Checks::Has::Free::multiplication&lt;Arg1,Arg2&gt;() &amp;&amp;
 <a name="l00082"></a>00082                                 Checks::Has::MemOp::inPlaceMultiplication&lt;Arg1,Arg2&gt;() &gt;* = <span class="keyword">nullptr</span> &gt;
 <a name="l00083"></a><a class="code" href="namespaceFunG.html#ad023f2d2273af693f2b4ebceeb296dc8">00083</a>   <span class="keyword">auto</span> <a class="code" href="namespaceFunG.html#a267562e725c73ece1c1d057b5f29511f" title="overload of &quot;*&quot;-operator for the generation of functions.">operator*</a>( Arg1 x, <span class="keyword">const</span> Arg2&amp; y)
@@ -168,9 +168,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00086"></a>00086     <span class="keywordflow">return</span> x;
 <a name="l00087"></a>00087   }
 <a name="l00088"></a>00088 
-<a name="l00090"></a>00090   <span class="keyword">template</span> &lt; <span class="keyword">class </span>Arg1 , <span class="keyword">class </span>Arg2 ,
-<a name="l00091"></a>00091              std::enable_if_t&lt; !Checks::isFunction&lt;Arg1&gt;() &amp;&amp; !Checks::isFunction&lt;Arg2&gt;() &gt;* = nullptr ,
-<a name="l00092"></a>00092              std::enable_if_t&lt; !is_arithmetic&lt;Arg1&gt;() &amp;&amp; !is_arithmetic&lt;Arg2&gt;() &gt;* = nullptr ,
+<a name="l00090"></a>00090   <span class="keyword">template</span> &lt; <span class="keyword">class </span>Arg1, <span class="keyword">class </span>Arg2,
+<a name="l00091"></a>00091              std::enable_if_t&lt; !Checks::isFunction&lt;Arg1&gt;() &amp;&amp; !Checks::isFunction&lt;Arg2&gt;() &gt;* = <span class="keyword">nullptr</span>,
+<a name="l00092"></a>00092              std::enable_if_t&lt; !is_arithmetic&lt;Arg1&gt;() &amp;&amp; !is_arithmetic&lt;Arg2&gt;() &gt;* = <span class="keyword">nullptr</span>,
 <a name="l00093"></a>00093              std::enable_if_t&lt; !Checks::Has::Free::multiplication&lt;Arg1,Arg2&gt;() &amp;&amp;
 <a name="l00094"></a>00094                                !Checks::Has::MemOp::inPlaceMultiplication&lt;Arg1,Arg2&gt;() &amp;&amp;
 <a name="l00095"></a>00095                                Checks::Has::MemFn::rightmultiplyany&lt;Arg1,Arg2&gt;() &gt;* = <span class="keyword">nullptr</span> &gt;
@@ -180,7 +180,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00099"></a>00099   }
 <a name="l00100"></a>00100 
 <a name="l00102"></a>00102   <span class="keyword">template</span> &lt; <span class="keyword">class </span>Arg ,
-<a name="l00103"></a>00103              std::enable_if_t&lt; !Checks::isFunction&lt;Arg&gt;() &amp;&amp; !is_arithmetic&lt;Arg&gt;() &gt;* = nullptr ,
+<a name="l00103"></a>00103              std::enable_if_t&lt; !Checks::isFunction&lt;Arg&gt;() &amp;&amp; !is_arithmetic&lt;Arg&gt;() &gt;* = <span class="keyword">nullptr</span>,
 <a name="l00104"></a>00104              std::enable_if_t&lt; !Checks::Has::Free::summation&lt;Arg&gt;() &amp;&amp;
 <a name="l00105"></a>00105                                 Checks::Has::MemOp::inPlaceSummation&lt;Arg&gt;() &gt;* = <span class="keyword">nullptr</span> &gt;
 <a name="l00106"></a><a class="code" href="namespaceFunG.html#a063d3e8c19dbea3ee1396736fecb64e1">00106</a>   <span class="keyword">auto</span> <a class="code" href="namespaceFunG.html#a24bb5d609b022030afda2d8589cf5509" title="overload of &quot;+&quot;-operator for the generation of functions.">operator+</a>(Arg x, <span class="keyword">const</span> Arg&amp; y)
@@ -209,7 +209,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 6 2016 22:14:32 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 7 2016 22:43:57 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

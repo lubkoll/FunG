@@ -123,9 +123,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memTemplParams" colspan="2">template&lt;class InitF &gt; </td></tr>
-<tr><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Squared.html#accc8f4efa8c54b43c29d71890e8b8bdf">Squared</a> (InitF &amp;&amp;f_)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#accc8f4efa8c54b43c29d71890e8b8bdf"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;class InitF , std::enable_if_t&lt;!std::is_same&lt; std::decay_t&lt; InitF &gt;, Squared &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Squared.html#af786c2153ef17b5d0ddf8e0b51d060d6">Squared</a> (InitF &amp;&amp;f_)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#af786c2153ef17b5d0ddf8e0b51d060d6"></a><br/></td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;class Arg &gt; </td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Squared.html#abea95d90dc29ac105c43f4eadde84cab">update</a> (Arg const &amp;x)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Update point of evaluation.  <a href="#abea95d90dc29ac105c43f4eadde84cab"></a><br/></td></tr>
@@ -150,13 +150,13 @@ struct FunG::MathematicalOperations::Squared&lt; F, class &gt;</h3>
 
 <p>Squared function \(f^2\). </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="accc8f4efa8c54b43c29d71890e8b8bdf"></a><!-- doxytag: member="FunG::MathematicalOperations::Squared::Squared" ref="accc8f4efa8c54b43c29d71890e8b8bdf" args="(InitF &amp;&amp;f_)" -->
+<a class="anchor" id="af786c2153ef17b5d0ddf8e0b51d060d6"></a><!-- doxytag: member="FunG::MathematicalOperations::Squared::Squared" ref="af786c2153ef17b5d0ddf8e0b51d060d6" args="(InitF &amp;&amp;f_)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class F , class  = Concepts::FunctionConceptCheck&lt;F&gt;&gt; </div>
 <div class="memtemplate">
-template&lt;class InitF &gt; </div>
+template&lt;class InitF , std::enable_if_t&lt;!std::is_same&lt; std::decay_t&lt; InitF &gt;, Squared &gt;::value &gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Squared.html">FunG::MathematicalOperations::Squared</a>&lt; F, class &gt;::<a class="el" href="structFunG_1_1MathematicalOperations_1_1Squared.html">Squared</a> </td>
@@ -384,7 +384,7 @@ template&lt;int index, class Arg &gt; </div>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 6 2016 22:14:37 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 7 2016 22:44:01 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

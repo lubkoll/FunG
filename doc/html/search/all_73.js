@@ -11,7 +11,7 @@ var searchData=
   ['skin_5ftissue_5fhendriks_2ehh',['skin_tissue_hendriks.hh',['../skin__tissue__hendriks_8hh.html',1,'']]],
   ['sqrt',['sqrt',['../group__CMathGroup.html#ga136c890475e48f88469a737d95368d05',1,'FunG']]],
   ['squared',['Squared',['../structFunG_1_1MathematicalOperations_1_1Squared.html',1,'FunG::MathematicalOperations']]],
-  ['squared',['Squared',['../structFunG_1_1MathematicalOperations_1_1Squared.html#accc8f4efa8c54b43c29d71890e8b8bdf',1,'FunG::MathematicalOperations::Squared::Squared()'],['../namespaceFunG.html#ac4ffc0754104af6ddf114e154251db78',1,'FunG::squared()']]],
+  ['squared',['Squared',['../structFunG_1_1MathematicalOperations_1_1Squared.html#af786c2153ef17b5d0ddf8e0b51d060d6',1,'FunG::MathematicalOperations::Squared::Squared()'],['../namespaceFunG.html#ac4ffc0754104af6ddf114e154251db78',1,'FunG::squared()']]],
   ['squared_2ehh',['squared.hh',['../squared_8hh.html',1,'']]],
   ['squaredfrobeniusnorm',['SquaredFrobeniusNorm',['../structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm.html',1,'FunG::LinearAlgebra']]],
   ['squaredfrobeniusnorm',['SquaredFrobeniusNorm',['../structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm.html#a63abdec877dcac61101a85e5ee4a28cb',1,'FunG::LinearAlgebra::SquaredFrobeniusNorm::SquaredFrobeniusNorm()'],['../structFunG_1_1LinearAlgebra_1_1SquaredFrobeniusNorm.html#af33cdb4a7282ceb03b707ff7fa85ebe4',1,'FunG::LinearAlgebra::SquaredFrobeniusNorm::SquaredFrobeniusNorm(const Matrix &amp;A)']]],

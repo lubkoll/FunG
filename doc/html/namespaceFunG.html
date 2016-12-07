@@ -308,12 +308,12 @@ Functions</h2></td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;class Scalar , class OtherScalar , int n, int m, std::enable_if_t&lt; !Checks::Has::Free::multiplication&lt; Dune::FieldVector&lt; OtherScalar, n &gt;, Dune::FieldMatrix&lt; Scalar, n, m &gt; &gt;() &gt; *  = nullptr&gt; </td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a19a9d7b55b56f5101560034413a1dbfe">operator*</a> (const Dune::FieldVector&lt; OtherScalar, n &gt; &amp;x, const Dune::FieldMatrix&lt; Scalar, n, m &gt; &amp;A)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Define vector-matrix multiplication for Dune::FieldMatrix and Dune::FieldVector, i.e. compute \(x^T A = y^T\) resp. \(y=A^T x\).  <a href="#a19a9d7b55b56f5101560034413a1dbfe"></a><br/></td></tr>
-<tr><td class="memTemplParams" colspan="2">template&lt;class Arg , class ScalarArg , std::enable_if_t&lt; is_arithmetic&lt; ScalarArg &gt;::value &gt; *  = nullptr, std::enable_if_t&lt; !Checks::isFunction&lt; Arg &gt;()&amp;&amp;!is_arithmetic&lt; Arg &gt;() &gt; *  = nullptr, std::enable_if_t&lt; !Checks::Has::Free::multiplication&lt; Arg, ScalarArg &gt;()&amp;&amp;Checks::Has::MemOp::inPlaceMultiplication&lt; Arg, ScalarArg &gt;() &gt; *  = nullptr&gt; </td></tr>
-<tr><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a9b303ce8718a6f64b035e7e782370734">operator*</a> (ScalarArg a, Arg x)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines operator* for multiplication with arithmetic types from the left if undefined and in-place multiplication (operator*=()) is supported.  <a href="#a9b303ce8718a6f64b035e7e782370734"></a><br/></td></tr>
-<tr><td class="memTemplParams" colspan="2">template&lt;class Arg , class ScalarArg , std::enable_if_t&lt; is_arithmetic&lt; ScalarArg &gt;::value &gt; *  = nullptr, std::enable_if_t&lt; !Checks::isFunction&lt; Arg &gt;()&amp;&amp;!is_arithmetic&lt; Arg &gt;::value &gt; *  = nullptr, std::enable_if_t&lt; !Checks::Has::Free::multiplication&lt; Arg, ScalarArg &gt;()&amp;&amp;Checks::Has::MemOp::inPlaceMultiplication&lt; Arg, ScalarArg &gt;() &gt; *  = nullptr&gt; </td></tr>
-<tr><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a3cd5a2cb1abba842154691bb84aab896">operator*</a> (Arg x, ScalarArg a)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines operator* for multiplication with arithmetic types from the right if undefined and in-place multiplication (operator*=()) is supported.  <a href="#a3cd5a2cb1abba842154691bb84aab896"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;class Arg , class ScalarArg , std::enable_if_t&lt; is_arithmetic&lt; ScalarArg &gt;::value &gt; *  = nullptr, std::enable_if_t&lt; !Checks::isFunction&lt; Arg &gt;()&amp;&amp;!is_arithmetic&lt; Arg &gt;() &gt; *  = nullptr, std::enable_if_t&lt; !Checks::Has::Free::multiplication&lt; ScalarArg, Arg &gt;() &gt; *  = nullptr, std::enable_if_t&lt; Checks::Has::MemOp::inPlaceMultiplication&lt; Arg, ScalarArg &gt;() &gt; *  = nullptr&gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#ac71b238827eda3b6518c39e49447bdeb">operator*</a> (ScalarArg a, Arg x)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines operator* for multiplication with arithmetic types from the left if undefined and in-place multiplication (operator*=()) is supported.  <a href="#ac71b238827eda3b6518c39e49447bdeb"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;class Arg , class ScalarArg , std::enable_if_t&lt; is_arithmetic&lt; ScalarArg &gt;::value &gt; *  = nullptr, std::enable_if_t&lt; !Checks::isFunction&lt; Arg &gt;()&amp;&amp;!is_arithmetic&lt; Arg &gt;::value &gt; *  = nullptr, std::enable_if_t&lt; !Checks::Has::Free::multiplication&lt; ScalarArg, Arg &gt;() &gt; *  = nullptr, std::enable_if_t&lt; Checks::Has::MemOp::inPlaceMultiplication&lt; Arg, ScalarArg &gt;() &gt; *  = nullptr&gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a49623beb215912a02388a11cc18f15fe">operator*</a> (Arg x, ScalarArg a)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines operator* for multiplication with arithmetic types from the right if undefined and in-place multiplication (operator*=()) is supported.  <a href="#a49623beb215912a02388a11cc18f15fe"></a><br/></td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;class Arg1 , class Arg2 , std::enable_if_t&lt; !Checks::isFunction&lt; Arg1 &gt;()&amp;&amp;!Checks::isFunction&lt; Arg2 &gt;() &gt; *  = nullptr, std::enable_if_t&lt; !is_arithmetic&lt; Arg1 &gt;()&amp;&amp;!is_arithmetic&lt; Arg2 &gt;() &gt; *  = nullptr, std::enable_if_t&lt; !Checks::Has::Free::multiplication&lt; Arg1, Arg2 &gt;()&amp;&amp;Checks::Has::MemOp::inPlaceMultiplication&lt; Arg1, Arg2 &gt;() &gt; *  = nullptr&gt; </td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#ad023f2d2273af693f2b4ebceeb296dc8">operator*</a> (Arg1 x, const Arg2 &amp;y)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines operator* for multiplication of non-arithmetic types if undefined and in-place multiplication (operator*=()) is supported.  <a href="#ad023f2d2273af693f2b4ebceeb296dc8"></a><br/></td></tr>
@@ -637,11 +637,11 @@ template&lt;class Scalar , class OtherScalar , int n, int m, std::enable_if_t&lt
 
 </div>
 </div>
-<a class="anchor" id="a9b303ce8718a6f64b035e7e782370734"></a><!-- doxytag: member="FunG::operator*" ref="a9b303ce8718a6f64b035e7e782370734" args="(ScalarArg a, Arg x)" -->
+<a class="anchor" id="ac71b238827eda3b6518c39e49447bdeb"></a><!-- doxytag: member="FunG::operator*" ref="ac71b238827eda3b6518c39e49447bdeb" args="(ScalarArg a, Arg x)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Arg , class ScalarArg , std::enable_if_t&lt; is_arithmetic&lt; ScalarArg &gt;::value &gt; *  = nullptr, std::enable_if_t&lt; !Checks::isFunction&lt; Arg &gt;()&amp;&amp;!is_arithmetic&lt; Arg &gt;() &gt; *  = nullptr, std::enable_if_t&lt; !Checks::Has::Free::multiplication&lt; Arg, ScalarArg &gt;()&amp;&amp;Checks::Has::MemOp::inPlaceMultiplication&lt; Arg, ScalarArg &gt;() &gt; *  = nullptr&gt; </div>
+template&lt;class Arg , class ScalarArg , std::enable_if_t&lt; is_arithmetic&lt; ScalarArg &gt;::value &gt; *  = nullptr, std::enable_if_t&lt; !Checks::isFunction&lt; Arg &gt;()&amp;&amp;!is_arithmetic&lt; Arg &gt;() &gt; *  = nullptr, std::enable_if_t&lt; !Checks::Has::Free::multiplication&lt; ScalarArg, Arg &gt;() &gt; *  = nullptr, std::enable_if_t&lt; Checks::Has::MemOp::inPlaceMultiplication&lt; Arg, ScalarArg &gt;() &gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::operator* </td>
@@ -668,11 +668,11 @@ template&lt;class Arg , class ScalarArg , std::enable_if_t&lt; is_arithmetic&lt;
 
 </div>
 </div>
-<a class="anchor" id="a3cd5a2cb1abba842154691bb84aab896"></a><!-- doxytag: member="FunG::operator*" ref="a3cd5a2cb1abba842154691bb84aab896" args="(Arg x, ScalarArg a)" -->
+<a class="anchor" id="a49623beb215912a02388a11cc18f15fe"></a><!-- doxytag: member="FunG::operator*" ref="a49623beb215912a02388a11cc18f15fe" args="(Arg x, ScalarArg a)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Arg , class ScalarArg , std::enable_if_t&lt; is_arithmetic&lt; ScalarArg &gt;::value &gt; *  = nullptr, std::enable_if_t&lt; !Checks::isFunction&lt; Arg &gt;()&amp;&amp;!is_arithmetic&lt; Arg &gt;::value &gt; *  = nullptr, std::enable_if_t&lt; !Checks::Has::Free::multiplication&lt; Arg, ScalarArg &gt;()&amp;&amp;Checks::Has::MemOp::inPlaceMultiplication&lt; Arg, ScalarArg &gt;() &gt; *  = nullptr&gt; </div>
+template&lt;class Arg , class ScalarArg , std::enable_if_t&lt; is_arithmetic&lt; ScalarArg &gt;::value &gt; *  = nullptr, std::enable_if_t&lt; !Checks::isFunction&lt; Arg &gt;()&amp;&amp;!is_arithmetic&lt; Arg &gt;::value &gt; *  = nullptr, std::enable_if_t&lt; !Checks::Has::Free::multiplication&lt; ScalarArg, Arg &gt;() &gt; *  = nullptr, std::enable_if_t&lt; Checks::Has::MemOp::inPlaceMultiplication&lt; Arg, ScalarArg &gt;() &gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::operator* </td>
@@ -1256,7 +1256,7 @@ template&lt;class Matrix , class  = std::enable_if_t&lt;!Checks::isConstantSize&
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 6 2016 22:14:33 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 7 2016 22:43:57 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
