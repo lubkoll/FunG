@@ -53,7 +53,7 @@ install(
     Devel
 )
 
-option(BuildTest "Test" OFF)
+option(BuildTest "BuildTest" OFF)
 
 if(BuildTest)
   set(CMAKE_BUILD_TYPE Debug)
