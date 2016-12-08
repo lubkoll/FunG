@@ -7,6 +7,7 @@
 #include <fung/util/type_traits.hh>
 #include <fung/variable.hh>
 
+#include <iostream>
 #include <type_traits>
 
 namespace FunG
