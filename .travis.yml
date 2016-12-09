@@ -129,7 +129,7 @@ install:
 
 script:
   - cd $TRAVIS_BUILD_DIR
-  - mkdir build && cd build && cmake .. && make -DBuildTest=ON && ctest
+  - mkdir build && cd build && cmake .. -DBuildTest=ON && make && ctest
 after_success:
   ############################################################################
   # Upload coverage information to coveralls.io
