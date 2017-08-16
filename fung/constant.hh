@@ -1,31 +1,21 @@
-// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
-// Released under the terms of the GNU General Public License version 3 or later.
+#pragma once
 
-#ifndef FUNG_CONSTANT_HH
-#define FUNG_CONSTANT_HH
-
-#include "fung/util/chainer.hh"
+#include <fung/util/chainer.hh>
 
 namespace FunG
 {
-  /**
-   * \cond DOCUMENT_FORWARD_DECLARATIONS
-   */
+  /// @cond
   template <class> struct ArithmeticConceptCheck;
-  /**
-   * \endcond
-   */
+  /// @endcond
 
-  /**
-   * \brief Wrap a constant.
-   */
+  /// Wrap a constant.
   template <class Type, class = ArithmeticConceptCheck<Type> >
   struct Constant : Chainer< Constant<Type , ArithmeticConceptCheck<Type> > >
   {
     Constant() = default;
 
    /// Construct constant from copy.
-   Constant(Type const& t_) : t(t_)
+   Constant(Type t_) : t(std::move(t_))
    {}
 
    /// Function value.
@@ -59,6 +49,3 @@ namespace FunG
     return Constant<Arg>(x);
   }
 }
-
-#endif // FUNG_CONSTANT_HH
-
