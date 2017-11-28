@@ -1,123 +1,123 @@
-\hypertarget{group__ConceptGroup}{\section{\-Concepts}
-\label{group__ConceptGroup}\index{\-Concepts@{\-Concepts}}
+\hypertarget{group__ConceptGroup}{\section{Concepts}
+\label{group__ConceptGroup}\index{Concepts@{Concepts}}
 }
 
 
-\-Requirements on input types.  
+Requirements on input types.  
 
 
-\subsection*{\-Classes}
+\subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{structFunG_1_1Concepts_1_1CopyConcept}{\-Fun\-G\-::\-Concepts\-::\-Copy\-Concept}
-\begin{DoxyCompactList}\small\item\em \-Requires copy-\/constructibility and copy-\/assignability. \end{DoxyCompactList}\item 
-struct \hyperlink{structFunG_1_1Concepts_1_1MultiplyWithArithmeticFromLeftConcept}{\-Fun\-G\-::\-Concepts\-::\-Multiply\-With\-Arithmetic\-From\-Left\-Concept}
-\begin{DoxyCompactList}\small\item\em \-Requires that multiplication with double and int can be performed either by in-\/place multiplication or by multiplication from the left. \end{DoxyCompactList}\item 
-struct \hyperlink{structFunG_1_1Concepts_1_1SummationConcept}{\-Fun\-G\-::\-Concepts\-::\-Summation\-Concept}
-\begin{DoxyCompactList}\small\item\em \-Requires that summation can be performed either by in-\/place summation or free summation. \end{DoxyCompactList}\item 
-struct \hyperlink{structFunG_1_1Concepts_1_1MultiplicationConcept}{\-Fun\-G\-::\-Concepts\-::\-Multiplication\-Concept}
-\begin{DoxyCompactList}\small\item\em \-Requires that multiplication can be performed. \end{DoxyCompactList}\item 
-struct \hyperlink{structFunG_1_1Concepts_1_1ArithmeticConcept}{\-Fun\-G\-::\-Concepts\-::\-Arithmetic\-Concept}
-\begin{DoxyCompactList}\small\item\em \-Requirements on input types. \end{DoxyCompactList}\item 
-struct \hyperlink{structFunG_1_1Concepts_1_1MatrixConcept}{\-Fun\-G\-::\-Concepts\-::\-Matrix\-Concept}
-\begin{DoxyCompactList}\small\item\em \-Requirements for matrices. \end{DoxyCompactList}\item 
-struct \hyperlink{structFunG_1_1Concepts_1_1VectorConcept}{\-Fun\-G\-::\-Concepts\-::\-Vector\-Concept}
-\begin{DoxyCompactList}\small\item\em \-Requirements for vectors. \end{DoxyCompactList}\item 
-struct \hyperlink{structFunG_1_1Concepts_1_1SquareMatrixConcept}{\-Fun\-G\-::\-Concepts\-::\-Square\-Matrix\-Concept}
-\begin{DoxyCompactList}\small\item\em \-Requirements for symmetric matrices. \end{DoxyCompactList}\item 
-struct \hyperlink{structFunG_1_1Concepts_1_1FunctionConcept}{\-Fun\-G\-::\-Concepts\-::\-Function\-Concept}
-\begin{DoxyCompactList}\small\item\em \-Minimal requirements for functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{\-Namespaces}
-\begin{DoxyCompactItemize}
-\item 
-namespace \hyperlink{namespaceFunG_1_1Concepts}{\-Fun\-G\-::\-Concepts}
-\begin{DoxyCompactList}\small\item\em \-Requirements on input types. \end{DoxyCompactList}\item 
-namespace \hyperlink{namespaceFunG_1_1Checks_1_1Has}{\-Fun\-G\-::\-Checks\-::\-Has}
+\hyperlink{namespaceFunG_1_1Concepts}{Fun\-G\-::\-Concepts}
+\begin{DoxyCompactList}\small\item\em Requirements on input types. \end{DoxyCompactList}\item 
+\hyperlink{namespaceFunG_1_1Checks_1_1Has}{Fun\-G\-::\-Checks\-::\-Has}
 \end{DoxyCompactItemize}
-\subsection*{\-Functions}
+\subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-unspecified \hyperlink{group__ConceptGroup_ga10d0693d96a9ea69e9de1d10b0e4da1f}{\-Fun\-G\-::\-Concepts\-::operator$\ast$} (double, \-Multiply\-With\-Arithmetic\-From\-Left\-Concept)
-\begin{DoxyCompactList}\small\item\em \-Multiplication from the left. \-Return type is not checked to support lazy evaluation. \end{DoxyCompactList}\item 
-unspecified \hyperlink{group__ConceptGroup_ga593fb8c43bd98b8eae6459f77874c7c7}{\-Fun\-G\-::\-Concepts\-::operator$\ast$} (int, \-Multiply\-With\-Arithmetic\-From\-Left\-Concept)
-\begin{DoxyCompactList}\small\item\em \-Multiplication from the left. \-Return type is not checked to support lazy evaluation. \end{DoxyCompactList}\item 
-unspecified \hyperlink{group__ConceptGroup_gab9d1639ea6ed1088ec5bfbee24625f89}{\-Fun\-G\-::\-Concepts\-::operator+} (\-Summation\-Concept, \-Summation\-Concept)
-\begin{DoxyCompactList}\small\item\em \-Summation. \-Return type is not checked to support lazy evaluation. \end{DoxyCompactList}\item 
-unspecified \hyperlink{group__ConceptGroup_ga02a0c88d20771819afda900e6bbf16f5}{\-Fun\-G\-::\-Concepts\-::operator$\ast$} (\-Multiplication\-Concept\-::\-Arg1, \-Multiplication\-Concept\-::\-Arg2)
-\begin{DoxyCompactList}\small\item\em \-Multiplication. \-Return type is not checked to support lazy evaluation. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F $>$ }\\constexpr bool \hyperlink{group__ConceptGroup_gac6e6c5574a8497cc0749e5a613e4d57c}{\-Fun\-G\-::\-Checks\-::is\-Function} ()
+struct \hyperlink{structFunG_1_1Concepts_1_1CopyConcept}{Fun\-G\-::\-Concepts\-::\-Copy\-Concept}
+\begin{DoxyCompactList}\small\item\em Requires copy-\/constructibility and copy-\/assignability. \end{DoxyCompactList}\item 
+struct \hyperlink{structFunG_1_1Concepts_1_1MultiplyWithArithmeticFromLeftConcept}{Fun\-G\-::\-Concepts\-::\-Multiply\-With\-Arithmetic\-From\-Left\-Concept}
+\begin{DoxyCompactList}\small\item\em Requires that multiplication with double and int can be performed either by in-\/place multiplication or by multiplication from the left. \end{DoxyCompactList}\item 
+struct \hyperlink{structFunG_1_1Concepts_1_1SummationConcept}{Fun\-G\-::\-Concepts\-::\-Summation\-Concept}
+\begin{DoxyCompactList}\small\item\em Requires that summation can be performed either by in-\/place summation or free summation. \end{DoxyCompactList}\item 
+struct \hyperlink{structFunG_1_1Concepts_1_1MultiplicationConcept}{Fun\-G\-::\-Concepts\-::\-Multiplication\-Concept}
+\begin{DoxyCompactList}\small\item\em Requires that multiplication can be performed. \end{DoxyCompactList}\item 
+struct \hyperlink{structFunG_1_1Concepts_1_1ArithmeticConcept}{Fun\-G\-::\-Concepts\-::\-Arithmetic\-Concept}
+\begin{DoxyCompactList}\small\item\em Requirements on input types. \end{DoxyCompactList}\item 
+struct \hyperlink{structFunG_1_1Concepts_1_1MatrixConcept}{Fun\-G\-::\-Concepts\-::\-Matrix\-Concept}
+\begin{DoxyCompactList}\small\item\em Requirements for matrices. \end{DoxyCompactList}\item 
+struct \hyperlink{structFunG_1_1Concepts_1_1VectorConcept}{Fun\-G\-::\-Concepts\-::\-Vector\-Concept}
+\begin{DoxyCompactList}\small\item\em Requirements for vectors. \end{DoxyCompactList}\item 
+struct \hyperlink{structFunG_1_1Concepts_1_1SquareMatrixConcept}{Fun\-G\-::\-Concepts\-::\-Square\-Matrix\-Concept}
+\begin{DoxyCompactList}\small\item\em Requirements for symmetric matrices. \end{DoxyCompactList}\item 
+struct \hyperlink{structFunG_1_1Concepts_1_1FunctionConcept}{Fun\-G\-::\-Concepts\-::\-Function\-Concept}
+\begin{DoxyCompactList}\small\item\em Minimal requirements for functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$class Arg $>$ }\\constexpr bool \hyperlink{group__ConceptGroup_gadcc3e179af2ed0384a3773ea086045b9}{\-Fun\-G\-::\-Checks\-::is\-Constant\-Size} ()
-\begin{DoxyCompactList}\small\item\em \-Check if object is a static vector for some type satisfying \hyperlink{structFunG_1_1Concepts_1_1VectorConcept}{\-Concepts\-::\-Vector\-Concept}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+unspecified \hyperlink{group__ConceptGroup_ga10d0693d96a9ea69e9de1d10b0e4da1f}{Fun\-G\-::\-Concepts\-::operator$\ast$} (double, Multiply\-With\-Arithmetic\-From\-Left\-Concept)
+\begin{DoxyCompactList}\small\item\em Multiplication from the left. Return type is not checked to support lazy evaluation. \end{DoxyCompactList}\item 
+unspecified \hyperlink{group__ConceptGroup_ga593fb8c43bd98b8eae6459f77874c7c7}{Fun\-G\-::\-Concepts\-::operator$\ast$} (int, Multiply\-With\-Arithmetic\-From\-Left\-Concept)
+\begin{DoxyCompactList}\small\item\em Multiplication from the left. Return type is not checked to support lazy evaluation. \end{DoxyCompactList}\item 
+unspecified \hyperlink{group__ConceptGroup_gab9d1639ea6ed1088ec5bfbee24625f89}{Fun\-G\-::\-Concepts\-::operator+} (Summation\-Concept, Summation\-Concept)
+\begin{DoxyCompactList}\small\item\em Summation. Return type is not checked to support lazy evaluation. \end{DoxyCompactList}\item 
+unspecified \hyperlink{group__ConceptGroup_ga02a0c88d20771819afda900e6bbf16f5}{Fun\-G\-::\-Concepts\-::operator$\ast$} (Multiplication\-Concept\-::\-Arg1, Multiplication\-Concept\-::\-Arg2)
+\begin{DoxyCompactList}\small\item\em Multiplication. Return type is not checked to support lazy evaluation. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class F $>$ }\\constexpr bool \hyperlink{group__ConceptGroup_gac6e6c5574a8497cc0749e5a613e4d57c}{Fun\-G\-::\-Checks\-::is\-Function} ()
+\item 
+{\footnotesize template$<$class Arg $>$ }\\constexpr bool \hyperlink{group__ConceptGroup_gadcc3e179af2ed0384a3773ea086045b9}{Fun\-G\-::\-Checks\-::is\-Constant\-Size} ()
+\begin{DoxyCompactList}\small\item\em Check if object is a static vector for some type satisfying \hyperlink{structFunG_1_1Concepts_1_1VectorConcept}{Concepts\-::\-Vector\-Concept}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{\-Detailed \-Description}
-\-Requirements on input types. \-For purpose of documentation free functions are declared as friends in \hyperlink{concepts_8hh}{concepts.\-hh}. \-Thus to determine exactly the requirements on input types you may have inspect the module page of the elementary concepts. \-Or just compile your code and wait for the static assertions to tell you if some functionality is missing. 
+\subsection{Detailed Description}
+Requirements on input types. For purpose of documentation free functions are declared as friends in \hyperlink{concepts_8hh}{concepts.\-hh}. Thus to determine exactly the requirements on input types you may have inspect the module page of the elementary concepts. Or just compile your code and wait for the static assertions to tell you if some functionality is missing. 
 
-\subsection{\-Function \-Documentation}
-\hypertarget{group__ConceptGroup_gadcc3e179af2ed0384a3773ea086045b9}{\index{\-Concepts@{\-Concepts}!is\-Constant\-Size@{is\-Constant\-Size}}
-\index{is\-Constant\-Size@{is\-Constant\-Size}!Concepts@{\-Concepts}}
-\subsubsection[{is\-Constant\-Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg $>$ constexpr bool {\bf \-Fun\-G\-::\-Checks\-::is\-Constant\-Size} (
+\subsection{Function Documentation}
+\hypertarget{group__ConceptGroup_gadcc3e179af2ed0384a3773ea086045b9}{\index{Concepts@{Concepts}!is\-Constant\-Size@{is\-Constant\-Size}}
+\index{is\-Constant\-Size@{is\-Constant\-Size}!Concepts@{Concepts}}
+\subsubsection[{is\-Constant\-Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg $>$ constexpr bool Fun\-G\-::\-Checks\-::is\-Constant\-Size (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}\label{group__ConceptGroup_gadcc3e179af2ed0384a3773ea086045b9}
 
 
-\-Check if object is a static vector for some type satisfying \hyperlink{structFunG_1_1Concepts_1_1VectorConcept}{\-Concepts\-::\-Vector\-Concept}. 
+Check if object is a static vector for some type satisfying \hyperlink{structFunG_1_1Concepts_1_1VectorConcept}{Concepts\-::\-Vector\-Concept}. 
 
-\hyperlink{namespaceFunG_1_1Checks}{\-Checks} if number of rows is positive. \hypertarget{group__ConceptGroup_gac6e6c5574a8497cc0749e5a613e4d57c}{\index{\-Concepts@{\-Concepts}!is\-Function@{is\-Function}}
-\index{is\-Function@{is\-Function}!Concepts@{\-Concepts}}
-\subsubsection[{is\-Function}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F $>$ constexpr bool {\bf \-Fun\-G\-::\-Checks\-::is\-Function} (
+\hyperlink{namespaceFunG_1_1Checks}{Checks} if number of rows is positive. \hypertarget{group__ConceptGroup_gac6e6c5574a8497cc0749e5a613e4d57c}{\index{Concepts@{Concepts}!is\-Function@{is\-Function}}
+\index{is\-Function@{is\-Function}!Concepts@{Concepts}}
+\subsubsection[{is\-Function}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F $>$ constexpr bool Fun\-G\-::\-Checks\-::is\-Function (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}\label{group__ConceptGroup_gac6e6c5574a8497cc0749e5a613e4d57c}
-\hypertarget{group__ConceptGroup_ga10d0693d96a9ea69e9de1d10b0e4da1f}{\index{\-Concepts@{\-Concepts}!operator$\ast$@{operator$\ast$}}
-\index{operator$\ast$@{operator$\ast$}!Concepts@{\-Concepts}}
-\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}unspecified \-Fun\-G\-::\-Concepts\-::operator$\ast$ (
+\hypertarget{group__ConceptGroup_ga10d0693d96a9ea69e9de1d10b0e4da1f}{\index{Concepts@{Concepts}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Concepts@{Concepts}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}unspecified Fun\-G\-::\-Concepts\-::operator$\ast$ (
 \begin{DoxyParamCaption}
 \item[{double}]{, }
-\item[{\-Multiply\-With\-Arithmetic\-From\-Left\-Concept}]{}
+\item[{Multiply\-With\-Arithmetic\-From\-Left\-Concept}]{}
 \end{DoxyParamCaption}
 )}}\label{group__ConceptGroup_ga10d0693d96a9ea69e9de1d10b0e4da1f}
 
 
-\-Multiplication from the left. \-Return type is not checked to support lazy evaluation. 
+Multiplication from the left. Return type is not checked to support lazy evaluation. 
 
-\hypertarget{group__ConceptGroup_ga593fb8c43bd98b8eae6459f77874c7c7}{\index{\-Concepts@{\-Concepts}!operator$\ast$@{operator$\ast$}}
-\index{operator$\ast$@{operator$\ast$}!Concepts@{\-Concepts}}
-\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}unspecified \-Fun\-G\-::\-Concepts\-::operator$\ast$ (
+\hypertarget{group__ConceptGroup_ga593fb8c43bd98b8eae6459f77874c7c7}{\index{Concepts@{Concepts}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Concepts@{Concepts}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}unspecified Fun\-G\-::\-Concepts\-::operator$\ast$ (
 \begin{DoxyParamCaption}
 \item[{int}]{, }
-\item[{\-Multiply\-With\-Arithmetic\-From\-Left\-Concept}]{}
+\item[{Multiply\-With\-Arithmetic\-From\-Left\-Concept}]{}
 \end{DoxyParamCaption}
 )}}\label{group__ConceptGroup_ga593fb8c43bd98b8eae6459f77874c7c7}
 
 
-\-Multiplication from the left. \-Return type is not checked to support lazy evaluation. 
+Multiplication from the left. Return type is not checked to support lazy evaluation. 
 
-\hypertarget{group__ConceptGroup_ga02a0c88d20771819afda900e6bbf16f5}{\index{\-Concepts@{\-Concepts}!operator$\ast$@{operator$\ast$}}
-\index{operator$\ast$@{operator$\ast$}!Concepts@{\-Concepts}}
-\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}unspecified \-Fun\-G\-::\-Concepts\-::operator$\ast$ (
+\hypertarget{group__ConceptGroup_ga02a0c88d20771819afda900e6bbf16f5}{\index{Concepts@{Concepts}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Concepts@{Concepts}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}unspecified Fun\-G\-::\-Concepts\-::operator$\ast$ (
 \begin{DoxyParamCaption}
-\item[{\-Multiplication\-Concept\-::\-Arg1}]{, }
-\item[{\-Multiplication\-Concept\-::\-Arg2}]{}
+\item[{Multiplication\-Concept\-::\-Arg1}]{, }
+\item[{Multiplication\-Concept\-::\-Arg2}]{}
 \end{DoxyParamCaption}
 )}}\label{group__ConceptGroup_ga02a0c88d20771819afda900e6bbf16f5}
 
 
-\-Multiplication. \-Return type is not checked to support lazy evaluation. 
+Multiplication. Return type is not checked to support lazy evaluation. 
 
-\hypertarget{group__ConceptGroup_gab9d1639ea6ed1088ec5bfbee24625f89}{\index{\-Concepts@{\-Concepts}!operator+@{operator+}}
-\index{operator+@{operator+}!Concepts@{\-Concepts}}
-\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}unspecified \-Fun\-G\-::\-Concepts\-::operator+ (
+\hypertarget{group__ConceptGroup_gab9d1639ea6ed1088ec5bfbee24625f89}{\index{Concepts@{Concepts}!operator+@{operator+}}
+\index{operator+@{operator+}!Concepts@{Concepts}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}unspecified Fun\-G\-::\-Concepts\-::operator+ (
 \begin{DoxyParamCaption}
-\item[{\-Summation\-Concept}]{, }
-\item[{\-Summation\-Concept}]{}
+\item[{Summation\-Concept}]{, }
+\item[{Summation\-Concept}]{}
 \end{DoxyParamCaption}
 )}}\label{group__ConceptGroup_gab9d1639ea6ed1088ec5bfbee24625f89}
 
 
-\-Summation. \-Return type is not checked to support lazy evaluation. 
+Summation. Return type is not checked to support lazy evaluation. 
 

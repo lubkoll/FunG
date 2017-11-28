@@ -1,32 +1,32 @@
-\hypertarget{transpose_8hh}{\section{fung/linear\-\_\-algebra/transpose.hh \-File \-Reference}
+\hypertarget{transpose_8hh}{\section{fung/linear\-\_\-algebra/transpose.hh File Reference}
 \label{transpose_8hh}\index{fung/linear\-\_\-algebra/transpose.\-hh@{fung/linear\-\_\-algebra/transpose.\-hh}}
 }
-{\ttfamily \#include $<$type\-\_\-traits$>$}\*
-{\ttfamily \#include \char`\"{}fung/util/at.\-hh\char`\"{}}\*
-{\ttfamily \#include \char`\"{}fung/util/chainer.\-hh\char`\"{}}\*
-{\ttfamily \#include \char`\"{}fung/util/extract\-\_\-rows\-\_\-and\-\_\-cols.\-hh\char`\"{}}\*
-{\ttfamily \#include \char`\"{}fung/util/static\-\_\-checks.\-hh\char`\"{}}\*
-{\ttfamily \#include \char`\"{}fung/util/zero.\-hh\char`\"{}}\*
-{\ttfamily \#include \char`\"{}rows\-\_\-and\-\_\-cols.\-hh\char`\"{}}\*
-{\ttfamily \#include \char`\"{}fung/concept\-\_\-check.\-hh\char`\"{}}\*
-\subsection*{\-Classes}
+{\ttfamily \#include $<$type\-\_\-traits$>$}\\*
+{\ttfamily \#include \char`\"{}fung/util/at.\-hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fung/util/chainer.\-hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fung/util/extract\-\_\-rows\-\_\-and\-\_\-cols.\-hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fung/util/static\-\_\-checks.\-hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fung/util/zero.\-hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}rows\-\_\-and\-\_\-cols.\-hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fung/concept\-\_\-check.\-hh\char`\"{}}\\*
+\subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{classFunG_1_1LinearAlgebra_1_1Transpose_3_01Matrix_00_01Concepts_1_1MatrixConceptCheck_3_01Matrix_01_4_01_4}{\-Fun\-G\-::\-Linear\-Algebra\-::\-Transpose$<$ Matrix, Concepts\-::\-Matrix\-Concept\-Check$<$ Matrix $>$ $>$}
-\begin{DoxyCompactList}\small\item\em \-Represents transposition of constant-\/size matrices. \end{DoxyCompactList}\item 
-struct {\bfseries \-Fun\-G\-::\-Linear\-Algebra\-::\-Transpose$<$ Matrix, Concepts\-::\-Matrix\-Concept\-Check$<$ Matrix $>$ $>$\-::\-Wrapped\-Matrix}
-\end{DoxyCompactItemize}
-\subsection*{\-Namespaces}
+class \hyperlink{classFunG_1_1LinearAlgebra_1_1Transpose}{Fun\-G\-::\-Linear\-Algebra\-::\-Transpose$<$ Matrix, class $>$}
+\item 
+class \hyperlink{classFunG_1_1LinearAlgebra_1_1Transpose_3_01Matrix_00_01Concepts_1_1MatrixConceptCheck_3_01Matrix_01_4_01_4}{Fun\-G\-::\-Linear\-Algebra\-::\-Transpose$<$ Matrix, Concepts\-::\-Matrix\-Concept\-Check$<$ Matrix $>$ $>$}
+\begin{DoxyCompactList}\small\item\em Represents transposition of constant-\/size matrices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
-namespace \hyperlink{namespaceFunG}{\-Fun\-G}
-\begin{DoxyCompactList}\small\item\em \-Main namespace of the \-Fun\-G library. \end{DoxyCompactList}\item 
-namespace \hyperlink{namespaceFunG_1_1LinearAlgebra}{\-Fun\-G\-::\-Linear\-Algebra}
-\begin{DoxyCompactList}\small\item\em \-Functionality from linear algebra such as (modified) principal and mixed matrix invariants. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{\-Functions}
+\hyperlink{namespaceFunG}{Fun\-G}
+\begin{DoxyCompactList}\small\item\em Main namespace of the Fun\-G library. \end{DoxyCompactList}\item 
+\hyperlink{namespaceFunG_1_1LinearAlgebra}{Fun\-G\-::\-Linear\-Algebra}
+\begin{DoxyCompactList}\small\item\em Functionality from linear algebra such as (modified) principal and mixed matrix invariants. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$class Matrix , std\-::enable\-\_\-if\-\_\-t$<$!\-Checks\-::is\-Function$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_ga6110875ecb3c2559f8f4b42a3627a65b}{\-Fun\-G\-::\-Linear\-Algebra\-::transpose} (const \-Matrix \&\-A)
-\begin{DoxyCompactList}\small\item\em \-Generate $A^T\in\mathbb{R}^{n,n}$. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ F $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_ga410ef1b161789c0c9f01ae5f5caf058f}{\-Fun\-G\-::\-Linear\-Algebra\-::transpose} (const \-F \&f)
-\begin{DoxyCompactList}\small\item\em \-Generate $f^T$, where $f:\cdot\mapsto\mathbb{R}^{n,n} $. \end{DoxyCompactList}\end{DoxyCompactItemize}
+{\footnotesize template$<$class Matrix , std\-::enable\-\_\-if\-\_\-t$<$!\-Checks\-::is\-Function$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_ga6110875ecb3c2559f8f4b42a3627a65b}{Fun\-G\-::\-Linear\-Algebra\-::transpose} (const Matrix \&A)
+\begin{DoxyCompactList}\small\item\em Generate $A^T\in\mathbb{R}^{n,n}$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class F , std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ F $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{group__LinearAlgebraGroup_ga410ef1b161789c0c9f01ae5f5caf058f}{Fun\-G\-::\-Linear\-Algebra\-::transpose} (const F \&f)
+\begin{DoxyCompactList}\small\item\em Generate $f^T$, where $f:\cdot\mapsto\mathbb{R}^{n,n} $. \end{DoxyCompactList}\end{DoxyCompactItemize}
