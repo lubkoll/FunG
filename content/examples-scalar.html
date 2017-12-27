@@ -14,10 +14,10 @@ auto generateFunction( const Variable&amp; x )
 
 <pre class="code-style boxshadow">auto f = generateFunction( FunG::variable&lt;0&gt;( 1. ) );
 
-f.template update&lt;0&gt;( 1. ) //  change function argument
+f.template update&lt;0&gt;( 1. ); //  change function argument
 
 auto value = f();
-auto firstDerivative  = f.template d1&lt;0&gt;( 1 );
-auto secondDerivative = f.template d2&lt;0,0&gt;( 1, 1 );
-auto thirdDerivative  = f.template d3&lt;0,0,0&gt;( 1, 1, 1 );
+auto firstDerivative  = f.template d1&lt;0&gt;( 1.0 );
+auto secondDerivative = f.template d2&lt;0,0&gt;( 1.0, 1.0 );
+auto thirdDerivative  = f.template d3&lt;0,0,0&gt;( 1.0, 1.0, 1.0 );
 </pre>
