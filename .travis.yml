@@ -115,9 +115,7 @@ install:
   ############################################################################
   - |
     git clone https://github.com/google/googletest.git
-    cd googletest && mkdir build && cd build && cmake -DCMAKE_CXX_FLAGS="${CXXFLAGS} -std=c++11" -DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}" .. && make
-    sudo cp -r ../googletest/include/gtest /usr/local/include/
-    sudo cp googlemock/gtest/lib*.a /usr/local/lib
+    cd googletest && mkdir build && cd build && cmake -DCMAKE_CXX_FLAGS="$-std=c++11" -DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}" .. && cmake --build . && cmake --build . --target install
 
   ############################################################################
   # Install doxygen and graphviz if documentation is generated
