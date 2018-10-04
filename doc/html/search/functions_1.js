@@ -15,7 +15,7 @@ var searchData=
   ['consistentfirstderivative',['consistentFirstDerivative',['../namespaceFunG_1_1Checks_1_1Has.html#a3c61b3f75ad634464322f21e8acb4e5d',1,'FunG::Checks::Has']]],
   ['consistentsecondderivative',['consistentSecondDerivative',['../namespaceFunG_1_1Checks_1_1Has.html#ab4a78fd7a1175707d748445785a0d37c',1,'FunG::Checks::Has']]],
   ['consistentthirdderivative',['consistentThirdDerivative',['../namespaceFunG_1_1Checks_1_1Has.html#abf6a73e1b599a4aac525bb20931aea4f',1,'FunG::Checks::Has']]],
-  ['constant',['Constant',['../structFunG_1_1Constant.html#a29ead8431e2fadfef397aae5dc5a4511',1,'FunG::Constant::Constant()=default'],['../structFunG_1_1Constant.html#a310783597f488e554de12627bf56aec8',1,'FunG::Constant::Constant(Type const &amp;t_)'],['../namespaceFunG.html#a65c509062b62b3303268cabc97b75a65',1,'FunG::constant()']]],
+  ['constant',['Constant',['../structFunG_1_1Constant.html#a29ead8431e2fadfef397aae5dc5a4511',1,'FunG::Constant::Constant()=default'],['../structFunG_1_1Constant.html#aa01639e517f1224f3cbdc6b3542d8b97',1,'FunG::Constant::Constant(Type t_)'],['../namespaceFunG.html#a65c509062b62b3303268cabc97b75a65',1,'FunG::constant()']]],
   ['copyconcept',['CopyConcept',['../structFunG_1_1Concepts_1_1CopyConcept.html#afc08741d422ff46c2e681efc38913144',1,'FunG::Concepts::CopyConcept']]],
   ['cos',['Cos',['../structFunG_1_1Cos.html#a1c3c7f2efe426de2dab5bb4a307442ce',1,'FunG::Cos::Cos()'],['../group__CMathGroup.html#ga7e9b2ac717cd2350663293cb66ba6cbd',1,'FunG::cos()']]]
 ];
