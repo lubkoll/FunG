@@ -1,0 +1,25 @@
+include(CTest)
+enable_testing()
+find_package(GTest REQUIRED)
+find_package(Threads REQUIRED)
+find_package(Eigen3)
+if(EIGEN3_FOUND)
+    # On travis the examples do not compile due to a strange ambiguity with functionality of Eigen:
+    #  aux_source_directory(examples SRC_LIST)
+    aux_source_directory(linear_algebra SRC_LIST)
+endif()
+
+aux_source_directory(cmath SRC_LIST)
+aux_source_directory(cmath SRC_LIST)
+aux_source_directory(fung SRC_LIST)
+aux_source_directory(mathematical_operations SRC_LIST)
+
+add_executable(tests ${SRC_LIST})
+target_compile_options(tests PRIVATE $<$<CXX_COMPILER_ID:GNU>:-Wall>)
+target_link_libraries(tests GTest::GTest GTest::Main Threads::Threads)
+target_include_directories(tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../include)
+if(EIGEN3_FOUND)
+    target_include_directories(tests PRIVATE ${EIGEN3_INCLUDE_DIR})
+endif()
+set_property(TARGET tests PROPERTY CXX_STANDARD 14)
+
