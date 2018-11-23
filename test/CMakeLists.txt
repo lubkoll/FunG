@@ -21,5 +21,6 @@ target_include_directories(tests PRIVATE ${PROJECT_SOURCE_DIR}/include)
 if(EIGEN3_FOUND)
     target_include_directories(tests PRIVATE ${EIGEN3_INCLUDE_DIR})
 endif()
+add_custom_target(check COMMAND tests)
 set_property(TARGET tests PROPERTY CXX_STANDARD 14)
 
