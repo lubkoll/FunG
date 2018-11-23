@@ -1,0 +1,13 @@
+get_filename_component(FunG_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+include(CMakeFindDependencyMacro)
+
+list(APPEND CMAKE_MODULE_PATH ${FunG_CMAKE_DIR})
+
+find_package(FunG 1.4 REQUIRED MODULE)
+list(REMOVE_AT CMAKE_MODULE_PATH -1)
+
+if(NOT TARGET FunG::FunG)
+    include("${FunG_CMAKE_DIR}/FunGTargets.cmake")
+endif()
+
+set(FunG_LIBRARIES FunG::FunG)

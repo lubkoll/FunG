@@ -1,104 +1,103 @@
-cmake_minimum_required(VERSION 3.1 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.5)
 
-project(fung)
+project(fung VERSION 1.4.0 LANGUAGES CXX)
 
-set (FUNG_MAJOR_VERSION 1)
-set (FUNG_MINOR_VERSION 4)
-set (FUNG_PATCH_VERSION 0)
-set (FUNG_VERSION ${FUNG_MAJOR_VERSION}.${FUNG_MINOR_VERSION}.${FUNG_PATCH_VERSION})
+add_library(fung INTERFACE)
 
-set(CMAKE_MODULE_PATH
-    ${CMAKE_MODULE_PATH}
-    ${CMAKE_CURRENT_SOURCE_DIR}/cmake
-    )
+target_include_directories(fung INTERFACE
+    $<INSTALL_INTERFACE:include>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+)
 
-include(ConfigSafeGuards)
+target_compile_options(fung INTERFACE $<$<CXX_COMPILER_ID:GNU>:-Wall -std=c++1y>)
 
+include(GNUInstallDirs)
+set(INSTALL_CONFIGDIR ${CMAKE_INSTALL_LIBDIR}/cmake/FunG)
 
-include(GenerateExportHeader)
+install(TARGETS fung
+    EXPORT fung-targets
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+)
 
-file(GLOB_RECURSE Headers *.hh)
-MACRO(INSTALL_HEADERS_WITH_DIRECTORY HEADER_LIST)
+#This is required so that the exported target has the name FunG and not fung
+set_target_properties(fung PROPERTIES EXPORT_NAME FunG)
 
-FOREACH(HEADER ${${HEADER_LIST}})
-STRING(REGEX MATCH "${CMAKE_CURRENT_SOURCE_DIR}[/\](.*)[/\]" DIR ${HEADER})
-STRING(REPLACE "${CMAKE_CURRENT_SOURCE_DIR}/" "" DIR ${DIR})
-INSTALL(FILES ${HEADER} DESTINATION include/${DIR})
-ENDFOREACH(HEADER)
+install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 
-ENDMACRO(INSTALL_HEADERS_WITH_DIRECTORY)
+install(EXPORT fung-targets
+  FILE
+    FunGTargets.cmake
+  NAMESPACE
+    FunG::
+  DESTINATION
+    ${CMAKE_INSTALL_LIBDIR}/cmake/FunG
+)
 
-INSTALL_HEADERS_WITH_DIRECTORY(Headers)
-
+#Create a ConfigVersion.cmake file
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file(
-  "${CMAKE_CURRENT_BINARY_DIR}/cmake/FunGConfigVersion.cmake"
-  VERSION ${FUNG_VERSION}
-  COMPATIBILITY AnyNewerVersion
+    ${CMAKE_CURRENT_BINARY_DIR}/FunGConfigVersion.cmake
+    VERSION ${PROJECT_VERSION}
+    COMPATIBILITY AnyNewerVersion
 )
 
-configure_file("${CMAKE_CURRENT_SOURCE_DIR}/cmake/FunGConfig.cmake"
-  "${CMAKE_CURRENT_BINARY_DIR}/cmake/FunGConfig.cmake"
-  COPYONLY
+configure_package_config_file(${CMAKE_CURRENT_LIST_DIR}/cmake/FunGConfig.cmake.in
+    ${CMAKE_CURRENT_BINARY_DIR}/FunGConfig.cmake
+    INSTALL_DESTINATION ${INSTALL_CONFIGDIR}
 )
 
-set(ConfigPackageLocation lib/cmake/FunG)
-install(
-  FILES
-    "${CMAKE_CURRENT_SOURCE_DIR}/cmake/FunGConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/cmake/FunGConfigVersion.cmake"
-  DESTINATION
-    ${ConfigPackageLocation}
-  COMPONENT
-    Devel
+#Install the config, configversion and custom find modules
+install(FILES
+    ${CMAKE_CURRENT_LIST_DIR}/cmake/FindFunG.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/FunGConfig.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/FunGConfigVersion.cmake
+    DESTINATION ${INSTALL_CONFIGDIR}
 )
+
+##############################################
+## Exporting from the build tree
+configure_file(${CMAKE_CURRENT_LIST_DIR}/cmake/FindFunG.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/FindFunG.cmake
+    COPYONLY)
+
+export(EXPORT fung-targets FILE ${CMAKE_CURRENT_BINARY_DIR}/FunGTargets.cmake NAMESPACE FunG::)
+
+#Register package in user's package registry
+export(PACKAGE FunG)
 
 option(BuildTest "BuildTest" OFF)
 
 if(BuildTest)
-  set(CMAKE_BUILD_TYPE Debug)
-
-  enable_testing()
-  if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+    include(CTest)
+    set(CMAKE_BUILD_TYPE Debug)
+    enable_testing()
     find_package(GTest REQUIRED)
-    include_directories(${GTEST_INCLUDE_DIRS})
-  else(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
-    set(CMAKE_CXX_STANDARD 14)
-    find_package(GTest REQUIRED)
-    include_directories( ${GTEST_INCLUDE_DIRS} ${PROJECT_SOURCE_DIR} )
-    set(CMAKE_CXX_FLAGS "-Wall -Wwrite-strings -Wpedantic -Woverloaded-virtual -Wno-unknown-pragmas -Wno-sign-compare -Wno-unused ${CMAKE_CXX_FLAGS}")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
-  endif(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+    find_package(Threads REQUIRED)
+    include_directories( ${GTEST_INCLUDE_DIRS} ${PROJECT_SOURCE_DIR}/include )
+    find_package(Eigen3)
+    if(EIGEN3_FOUND)
+        include_directories(${EIGEN3_INCLUDE_DIR})
 
-  find_package(Eigen3)
-  if(EIGEN3_FOUND)
-    include_directories(${EIGEN3_INCLUDE_DIR})
+        # On travis the examples do not compile due to a strange ambiguity with functionality of Eigen:
+        #  aux_source_directory(test/examples SRC_LIST)
+        aux_source_directory(test/linear_algebra SRC_LIST)
+    endif()
 
-    # On travis the examples do not compile due to a strange ambiguity with functionality of Eigen:
-    #  aux_source_directory(test/examples SRC_LIST)
-    aux_source_directory(test/linear_algebra SRC_LIST)
-  endif()
+    aux_source_directory(test/cmath SRC_LIST)
+    aux_source_directory(test/fung SRC_LIST)
+    aux_source_directory(test/mathematical_operations SRC_LIST)
 
-  include_directories(.)
-  aux_source_directory(test/cmath SRC_LIST)
-  aux_source_directory(test/fung SRC_LIST)
-  aux_source_directory(test/mathematical_operations SRC_LIST)
-
-  add_executable(
-      unit_tests
-      test/test.cpp
-      ${SRC_LIST}
-      )
-    
-  if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
-    target_link_libraries(unit_tests ${GTEST_LIBRARIES})
-  else(${CMAKE_SYSTEM_NAME} MATCHES "Windows") 
-    target_link_libraries(unit_tests ${GTEST_LIBRARIES} pthread)
-  endif(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
-  include(CTest)
-  enable_testing()
-
-  add_test(fung_unit_test ${PROJECT_BINARY_DIR}/unit_tests)
+    foreach(test ${SRC_LIST})
+        get_filename_component(name ${test} NAME_WE)
+        message("testname:  ${name} for ${test}")
+        get_filename_component(dir ${test} DIRECTORY)
+        add_executable(${name} ${test})
+        target_compile_options(${name} PRIVATE $<$<CXX_COMPILER_ID:GNU>:-Wall>)
+        target_link_libraries(${name} GTest::GTest GTest::Main Threads::Threads)
+        set_property(TARGET ${name} PROPERTY CXX_STANDARD 14)
+        add_test(${name} ${name})
+    endforeach()
 endif()
 
 # add a target to generate API documentation with Doxygen
