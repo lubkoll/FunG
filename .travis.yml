@@ -51,12 +51,6 @@ matrix:
       env: COMPILER=clang++-3.8 CCOMPILER=clang-3.8 COMPUTE_COVERAGE=false
       compiler: clang
       
-    # OSX
-    # Xcode 6.4
-    - os: osx
-      env: COMPUTE_COVERAGE=false
-      osx_image: xcode6.4
-      
     # Xcode 7.3
     - os: osx
       env: COMPUTE_COVERAGE=false
