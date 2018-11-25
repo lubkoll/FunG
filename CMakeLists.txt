@@ -2,19 +2,16 @@ cmake_minimum_required(VERSION 3.5)
 
 project(fung VERSION 1.4.0 LANGUAGES CXX)
 
-set(CMAKE_MODULE_PATH
-    ${CMAKE_MODULE_PATH}
-    ${CMAKE_SOURCE_DIR}/cmake
-    )
+list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/cmake)
 
 add_library(fung INTERFACE)
-
 target_include_directories(fung INTERFACE
     $<INSTALL_INTERFACE:include>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 )
-
 target_compile_options(fung INTERFACE $<$<CXX_COMPILER_ID:GNU>:-Wall -std=c++1y>)
+#This is required so that the exported target has the name FunG and not fung
+set_target_properties(fung PROPERTIES EXPORT_NAME FunG)
 
 include(GNUInstallDirs)
 set(INSTALL_CONFIGDIR ${CMAKE_INSTALL_LIBDIR}/cmake/FunG)
@@ -24,12 +21,7 @@ install(TARGETS fung
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
-
-#This is required so that the exported target has the name FunG and not fung
-set_target_properties(fung PROPERTIES EXPORT_NAME FunG)
-
 install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
-
 install(EXPORT fung-targets
   FILE
     FunGTargets.cmake
@@ -67,7 +59,6 @@ configure_file(${CMAKE_CURRENT_LIST_DIR}/cmake/FindFunG.cmake
     COPYONLY)
 
 export(EXPORT fung-targets FILE ${CMAKE_CURRENT_BINARY_DIR}/FunGTargets.cmake NAMESPACE FunG::)
-
 #Register package in user's package registry
 export(PACKAGE FunG)
 
