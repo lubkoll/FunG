@@ -13,13 +13,13 @@
 
 find_package(PkgConfig)
 pkg_check_modules(PC_FunG QUIET FunG)
-message("${FunG_DIR}")
+
 find_path(FunG_INCLUDE_DIR
     NAMES fung/fung.hh
     PATHS ${PC_FunG_INCLUDE_DIRS} ${FunG_DIR}
     PATH_SUFFIXES include
 )
-message("${FunG_INCLUDE_DIR}")
+
 set(FunG_VERSION ${PC_FunG_VERSION})
 
 mark_as_advanced(FunG_FOUND FunG_INCLUDE_DIR FunG_VERSION)
