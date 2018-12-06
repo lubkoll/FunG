@@ -90,6 +90,7 @@ install:
   # Install cmake
   ############################################################################
   - |
+    sudo apt purge cmake
     cd $DEPS
     wget http://github.com/Kitware/CMake/releases/download/v3.13.1/cmake-3.13.1.tar.gz
     tar xzf cmake-3.13.1.tar.gz && cd cmake-3.13.1
@@ -119,8 +120,8 @@ install:
 
 script:
   - cd $TRAVIS_BUILD_DIR
-  - mkdir build && cd build && $DEPS/bin/cmake .. -DBuildTest=ON && $DEPS/bin/cmake --build .
-  - $DEPS/bin/cmake --build . --target check
+  - mkdir build && cd build && cmake .. -DBuildTest=ON && cmake --build .
+  - cmake --build . --target check
 after_success:
   ############################################################################
   # Upload coverage information to coveralls.io
