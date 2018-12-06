@@ -15,6 +15,7 @@ addons:
     - clang-3.6
     - clang-3.7
     - clang-3.8
+    - liblapack-dev
 
 env:
   # Workaround for https://github.com/travis-ci/travis-ci/issues/4681
