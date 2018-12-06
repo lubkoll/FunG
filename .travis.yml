@@ -71,25 +71,15 @@ install:
   ############################################################################
   # Get Eigen library
   ############################################################################
-  - hg clone https://bitbucket.org/eigen/eigen/ eigen
-  - sudo cp -r eigen/Eigen /usr/local/include
+  - cd $DEPS
+  - git clone https://github.com/eigenteam/eigen-git-mirror.git
+  - cd eigen-git-mirror && mkdir build && cd build && cmake .. && make install
   
   ############################################################################
   # Override compiler if needed
   ############################################################################
   - if [[ "${COMPILER}" != "" ]]; then export CXX=${COMPILER}; export CC=${CCOMPILER}; fi
-  
-    ############################################################################
-  # Install a recent CMake (unless already installed on OS X)
-  ############################################################################
-  - |
-    if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
-      CMAKE_URL="http://www.cmake.org/files/v3.5/cmake-3.5.2-Linux-x86_64.tar.gz"
-      mkdir cmake && travis_retry wget --no-check-certificate --quiet -O - ${CMAKE_URL} | tar --strip-components=1 -xz -C cmake
-      export PATH=${DEPS_DIR}/cmake/bin:${PATH}
-    else
-      if ! brew ls --version cmake &>/dev/null; then brew install cmake; fi
-    fi
+
     
   ############################################################################
   # Install lcov
@@ -105,6 +95,15 @@ install:
     fi
 
   ############################################################################
+  # Install cmake
+  ############################################################################
+  - |
+    cd $DEPS
+    wget http://github.com/Kitware/CMake/releases/download/v3.13.1/cmake-3.13.1.tar.gz
+    tar xzf cmake-3.13.1.tar.gz && cd cmake-3.13.1
+    ./bootstrap && make && make install
+
+  ############################################################################
   # Install gtest
   ############################################################################
   - |
@@ -118,15 +117,6 @@ install:
     if [[ "${TRAVIS_OS_NAME}" == "linux" && "${MAKE_DOC}" == "true" ]]; then
       sudo apt-get install doxygen graphviz
     fi
-
-  ############################################################################
-  # Install cmake
-  ############################################################################
-  - |
-    cd $DEPS
-    wget http://github.com/Kitware/CMake/releases/download/v3.13.1/cmake-3.13.1.tar.gz
-    tar xzf cmake-3.13.1.tar.gz && cd cmake-3.13.1
-    ./bootstrap --prefix=$DEPS && make && make install
 
 script:
   - cd $TRAVIS_BUILD_DIR
