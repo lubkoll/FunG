@@ -9,9 +9,10 @@ target_include_directories(fung INTERFACE
     $<INSTALL_INTERFACE:include>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 )
-target_compile_options(fung INTERFACE $<$<CXX_COMPILER_ID:GNU>:-Wall -std=c++1y>)
+target_compile_features(fung INTERFACE cxx_std_14)
 #This is required so that the exported target has the name FunG and not fung
 set_target_properties(fung PROPERTIES EXPORT_NAME FunG)
+add_library(FunG::FunG ALIAS fung)
 
 include(GNUInstallDirs)
 set(INSTALL_CONFIGDIR ${CMAKE_INSTALL_LIBDIR}/cmake/FunG)
