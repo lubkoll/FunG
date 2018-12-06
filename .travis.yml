@@ -15,6 +15,7 @@ addons:
     - clang-3.6
     - clang-3.7
     - clang-3.8
+    - libopenblas-dev
     - liblapack-dev
 
 env:
@@ -63,18 +64,8 @@ matrix:
       osx_image: xcode8
      
 install:
-  ############################################################################
-  # All the dependencies are installed in ${TRAVIS_BUILD_DIR}/deps/
-  ############################################################################
   - DEPS_DIR="${TRAVIS_BUILD_DIR}/deps"
   - mkdir -p ${DEPS_DIR} && cd ${DEPS_DIR}
-  
-  ############################################################################
-  # Get Eigen library
-  ############################################################################
-  - cd $DEPS
-  - git clone https://github.com/eigenteam/eigen-git-mirror.git
-  - cd eigen-git-mirror && mkdir build && cd build && cmake .. && make install
   
   ############################################################################
   # Override compiler if needed
@@ -102,7 +93,14 @@ install:
     cd $DEPS
     wget http://github.com/Kitware/CMake/releases/download/v3.13.1/cmake-3.13.1.tar.gz
     tar xzf cmake-3.13.1.tar.gz && cd cmake-3.13.1
-    ./bootstrap && make && make install
+    ./bootstrap && make && sudo make install
+  
+  ############################################################################
+  # Install Eigen
+  ############################################################################
+  - cd $DEPS
+  - git clone https://github.com/eigenteam/eigen-git-mirror.git
+  - cd eigen-git-mirror && mkdir build && cd build && cmake .. && sudo make install
 
   ############################################################################
   # Install gtest
