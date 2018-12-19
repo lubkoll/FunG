@@ -29,7 +29,7 @@ namespace FunG
              * @param g_ initializer for G
              */
             template < class InitF, class InitG >
-            Sum( InitF&& f_, InitG&& g_ )
+            constexpr Sum( InitF&& f_, InitG&& g_ )
                 : f( std::forward< InitF >( f_ ) ), g( std::forward< InitG >( g_ ) ),
                   value( f() + g() )
             {
@@ -54,7 +54,7 @@ namespace FunG
             }
 
             /// Function value.
-            decltype( auto ) d0() const noexcept
+            constexpr decltype( auto ) d0() const noexcept
             {
                 return value;
             }

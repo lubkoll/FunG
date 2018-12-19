@@ -27,7 +27,7 @@ namespace FunG
              * @param f_ input for constructor of outer function
              */
             template < class... InitF >
-            Scale( Scalar a_, InitF&&... f_ )
+            constexpr Scale( Scalar a_, InitF&&... f_ )
                 : a( a_ ), f( std::forward< InitF >( f_ )... ), value( a * f() )
             {
             }
@@ -49,7 +49,7 @@ namespace FunG
             }
 
             /// Function value.
-            decltype( auto ) d0() const noexcept
+            constexpr decltype( auto ) d0() const noexcept
             {
                 return value;
             }
