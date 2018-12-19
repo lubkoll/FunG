@@ -274,10 +274,14 @@ Functions</h2></td></tr>
 <tr class="memitem:gae03f57bd4efb4449ad1dc60cb74c742d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#gae03f57bd4efb4449ad1dc60cb74c742d">tan</a> (const Function &amp;f)</td></tr>
 <tr class="memdesc:gae03f57bd4efb4449ad1dc60cb74c742d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate \( \tan\circ f \).  <a href="group__CMathGroup.html#gae03f57bd4efb4449ad1dc60cb74c742d">More...</a><br/></td></tr>
 <tr class="separator:gae03f57bd4efb4449ad1dc60cb74c742d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65c509062b62b3303268cabc97b75a65"><td class="memTemplParams" colspan="2">template&lt;class Arg &gt; </td></tr>
-<tr class="memitem:a65c509062b62b3303268cabc97b75a65"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a65c509062b62b3303268cabc97b75a65">constant</a> (const Arg &amp;x)</td></tr>
-<tr class="memdesc:a65c509062b62b3303268cabc97b75a65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a constant function that stores its argument as constant reference.  <a href="#a65c509062b62b3303268cabc97b75a65">More...</a><br/></td></tr>
-<tr class="separator:a65c509062b62b3303268cabc97b75a65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcfb38c2e995436816ea884803302f2d"><td class="memTemplParams" colspan="2">template&lt;class Arg &gt; </td></tr>
+<tr class="memitem:abcfb38c2e995436816ea884803302f2d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#abcfb38c2e995436816ea884803302f2d">constRef</a> (const Arg &amp;x)</td></tr>
+<tr class="memdesc:abcfb38c2e995436816ea884803302f2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a constant function that stores its argument as constant reference.  <a href="#abcfb38c2e995436816ea884803302f2d">More...</a><br/></td></tr>
+<tr class="separator:abcfb38c2e995436816ea884803302f2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a939d13d36c194b402715f12a28147cdc"><td class="memTemplParams" colspan="2">template&lt;class Arg &gt; </td></tr>
+<tr class="memitem:a939d13d36c194b402715f12a28147cdc"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a939d13d36c194b402715f12a28147cdc">constant</a> (Arg x)</td></tr>
+<tr class="memdesc:a939d13d36c194b402715f12a28147cdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrap a constant.  <a href="#a939d13d36c194b402715f12a28147cdc">More...</a><br/></td></tr>
+<tr class="separator:a939d13d36c194b402715f12a28147cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac269eefc1abb994044e1634c20a98061"><td class="memTemplParams" colspan="2">template&lt;class Matrix , int offset = LinearAlgebra::dim&lt;Matrix&gt;()&gt; </td></tr>
 <tr class="memitem:gac269eefc1abb994044e1634c20a98061"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Biomechanics.html#gac269eefc1abb994044e1634c20a98061">incompressibleAdiposeTissue_SommerHolzapfel</a> (double cCells, double k1, double k2, double kappa, const Matrix &amp;M, const Matrix &amp;F)</td></tr>
 <tr class="memdesc:gac269eefc1abb994044e1634c20a98061"><td class="mdescLeft">&#160;</td><td class="mdescRight">Model for adipose tissue of <a class="el" href="citelist.html#CITEREF_Sommer2013">Sommer2013</a>.  <a href="group__Biomechanics.html#gac269eefc1abb994044e1634c20a98061">More...</a><br/></td></tr>
@@ -625,14 +629,35 @@ template&lt;class Vector , class Index , class  = std::enable_if_t&lt; std::is_i
 
 </div>
 </div>
-<a class="anchor" id="a65c509062b62b3303268cabc97b75a65"></a>
+<a class="anchor" id="a939d13d36c194b402715f12a28147cdc"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class Arg &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">auto FunG::constant </td>
+          <td class="memname">constexpr auto FunG::constant </td>
+          <td>(</td>
+          <td class="paramtype">Arg&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wrap a constant. </p>
+<dl class="section return"><dt>Returns</dt><dd>Constant&lt;Arg&gt;(x) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abcfb38c2e995436816ea884803302f2d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Arg &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto FunG::constRef </td>
           <td>(</td>
           <td class="paramtype">const Arg &amp;&#160;</td>
           <td class="paramname"><em>x</em></td><td>)</td>
@@ -642,8 +667,7 @@ template&lt;class Arg &gt; </div>
 </div><div class="memdoc">
 
 <p>Generate a constant function that stores its argument as constant reference. </p>
-<p>This admits to use variable constant arguments, i.e. parameters that we want to study. Wrap a constant. </p>
-<dl class="section return"><dt>Returns</dt><dd>Constant&lt;Arg&gt;(x) </dd></dl>
+<p>This admits to use variable constant arguments, i.e. parameters that we want to study. </p>
 
 </div>
 </div>
@@ -1431,7 +1455,7 @@ template&lt;class Matrix , class  = std::enable_if_t&lt;!Checks::isConstantSize&
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 19 2018 23:01:27 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 19 2018 23:13:38 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

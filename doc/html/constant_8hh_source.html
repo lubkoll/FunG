@@ -102,52 +102,50 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span>FunG</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span>&gt; <span class="keyword">struct </span>ArithmeticConceptCheck;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Type, <span class="keyword">class</span> = ArithmeticConceptCheck&lt;Type&gt; &gt;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="structFunG_1_1Constant.html">   13</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structFunG_1_1Constant.html">Constant</a> : Chainer&lt; Constant&lt;Type , ArithmeticConceptCheck&lt;Type&gt; &gt; &gt;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="structFunG_1_1Constant.html#a29ead8431e2fadfef397aae5dc5a4511">Constant</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structFunG_1_1Constant.html#aa01639e517f1224f3cbdc6b3542d8b97">   18</a></span>&#160;   <a class="code" href="structFunG_1_1Constant.html#aa01639e517f1224f3cbdc6b3542d8b97">Constant</a>(Type t_) : t(std::move(t_))</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;   {}</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structFunG_1_1Constant.html#aad514a9470fbe1c47c0f07da6e160416">   22</a></span>&#160;   <span class="keyword">const</span> Type&amp; <a class="code" href="structFunG_1_1Constant.html#aad514a9470fbe1c47c0f07da6e160416">d0</a>() const noexcept</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;   {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;     <span class="keywordflow">return</span> t;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;   }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    Type t;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  };</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//  /**</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//   * \brief Generate a constant function that stores its argument as constant reference.</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//   *</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//   * This admits to use variable constant arguments, i.e. parameters that we want to study.</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//   */</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//  template &lt;class Arg&gt;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//  auto constRef(const Arg&amp; x)</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//  {</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">//    return Constant&lt;const Arg&amp;&gt;(x);</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//  }</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Arg&gt;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="namespaceFunG.html#a65c509062b62b3303268cabc97b75a65">   47</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="namespaceFunG.html#a65c509062b62b3303268cabc97b75a65">constant</a>(<span class="keyword">const</span> Arg&amp; x)</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structFunG_1_1Constant.html">Constant&lt;Arg&gt;</a>(x);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
-<div class="ttc" id="structFunG_1_1Constant_html_a29ead8431e2fadfef397aae5dc5a4511"><div class="ttname"><a href="structFunG_1_1Constant.html#a29ead8431e2fadfef397aae5dc5a4511">FunG::Constant::Constant</a></div><div class="ttdeci">Constant()=default</div></div>
-<div class="ttc" id="structFunG_1_1Constant_html_aa01639e517f1224f3cbdc6b3542d8b97"><div class="ttname"><a href="structFunG_1_1Constant.html#aa01639e517f1224f3cbdc6b3542d8b97">FunG::Constant::Constant</a></div><div class="ttdeci">Constant(Type t_)</div><div class="ttdoc">Construct constant from copy. </div><div class="ttdef"><b>Definition:</b> constant.hh:18</div></div>
-<div class="ttc" id="structFunG_1_1Constant_html"><div class="ttname"><a href="structFunG_1_1Constant.html">FunG::Constant</a></div><div class="ttdoc">Wrap a constant. </div><div class="ttdef"><b>Definition:</b> constant.hh:13</div></div>
-<div class="ttc" id="namespaceFunG_html_a65c509062b62b3303268cabc97b75a65"><div class="ttname"><a href="namespaceFunG.html#a65c509062b62b3303268cabc97b75a65">FunG::constant</a></div><div class="ttdeci">auto constant(const Arg &amp;x)</div><div class="ttdoc">Generate a constant function that stores its argument as constant reference. </div><div class="ttdef"><b>Definition:</b> constant.hh:47</div></div>
-<div class="ttc" id="structFunG_1_1Constant_html_aad514a9470fbe1c47c0f07da6e160416"><div class="ttname"><a href="structFunG_1_1Constant.html#aad514a9470fbe1c47c0f07da6e160416">FunG::Constant::d0</a></div><div class="ttdeci">const Type &amp; d0() const noexcept</div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> constant.hh:22</div></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> &gt;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">struct </span>ArithmeticConceptCheck;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Type, <span class="keyword">class</span> = ArithmeticConceptCheck&lt; Type &gt; &gt;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="structFunG_1_1Constant.html">   14</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structFunG_1_1Constant.html">Constant</a> : Chainer&lt; Constant&lt; Type, ArithmeticConceptCheck&lt; Type &gt; &gt; &gt;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        constexpr <a class="code" href="structFunG_1_1Constant.html#a278d28a1015016d076389b89a43bf118">Constant</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structFunG_1_1Constant.html#a24482c93ea4fe192f4c1a062c5b2d8a1">   19</a></span>&#160;        constexpr <a class="code" href="structFunG_1_1Constant.html#a24482c93ea4fe192f4c1a062c5b2d8a1">Constant</a>( Type t_ ) : t( t_ )</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structFunG_1_1Constant.html#a1b05280c971ecf127e61b8b52ff6b570">   24</a></span>&#160;        constexpr <span class="keyword">const</span> Type&amp; <a class="code" href="structFunG_1_1Constant.html#a1b05280c971ecf127e61b8b52ff6b570">d0</a>() const noexcept</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordflow">return</span> t;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        Type t;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    };</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Arg &gt;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="namespaceFunG.html#abcfb38c2e995436816ea884803302f2d">   39</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="namespaceFunG.html#abcfb38c2e995436816ea884803302f2d">constRef</a>( <span class="keyword">const</span> Arg&amp; x )</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structFunG_1_1Constant.html">Constant&lt; const Arg&amp; &gt;</a>( x );</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Arg &gt;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="namespaceFunG.html#a939d13d36c194b402715f12a28147cdc">   49</a></span>&#160;    constexpr <span class="keyword">auto</span> <a class="code" href="namespaceFunG.html#a939d13d36c194b402715f12a28147cdc">constant</a>( Arg x )</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structFunG_1_1Constant.html">Constant&lt; Arg &gt;</a>( x );</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="ttc" id="namespaceFunG_html_abcfb38c2e995436816ea884803302f2d"><div class="ttname"><a href="namespaceFunG.html#abcfb38c2e995436816ea884803302f2d">FunG::constRef</a></div><div class="ttdeci">auto constRef(const Arg &amp;x)</div><div class="ttdoc">Generate a constant function that stores its argument as constant reference. </div><div class="ttdef"><b>Definition:</b> constant.hh:39</div></div>
+<div class="ttc" id="structFunG_1_1Constant_html"><div class="ttname"><a href="structFunG_1_1Constant.html">FunG::Constant</a></div><div class="ttdoc">Wrap a constant. </div><div class="ttdef"><b>Definition:</b> constant.hh:14</div></div>
+<div class="ttc" id="namespaceFunG_html_a939d13d36c194b402715f12a28147cdc"><div class="ttname"><a href="namespaceFunG.html#a939d13d36c194b402715f12a28147cdc">FunG::constant</a></div><div class="ttdeci">constexpr auto constant(Arg x)</div><div class="ttdoc">Wrap a constant. </div><div class="ttdef"><b>Definition:</b> constant.hh:49</div></div>
+<div class="ttc" id="structFunG_1_1Constant_html_a278d28a1015016d076389b89a43bf118"><div class="ttname"><a href="structFunG_1_1Constant.html#a278d28a1015016d076389b89a43bf118">FunG::Constant::Constant</a></div><div class="ttdeci">constexpr Constant()=default</div></div>
+<div class="ttc" id="structFunG_1_1Constant_html_a1b05280c971ecf127e61b8b52ff6b570"><div class="ttname"><a href="structFunG_1_1Constant.html#a1b05280c971ecf127e61b8b52ff6b570">FunG::Constant::d0</a></div><div class="ttdeci">constexpr const Type &amp; d0() const noexcept</div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> constant.hh:24</div></div>
+<div class="ttc" id="structFunG_1_1Constant_html_a24482c93ea4fe192f4c1a062c5b2d8a1"><div class="ttname"><a href="structFunG_1_1Constant.html#a24482c93ea4fe192f4c1a062c5b2d8a1">FunG::Constant::Constant</a></div><div class="ttdeci">constexpr Constant(Type t_)</div><div class="ttdoc">Construct constant from copy. </div><div class="ttdef"><b>Definition:</b> constant.hh:19</div></div>
 <div class="ttc" id="chainer_8hh_html"><div class="ttname"><a href="chainer_8hh.html">chainer.hh</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 19 2018 23:01:27 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 19 2018 23:13:37 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

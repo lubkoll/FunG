@@ -114,8 +114,10 @@ using \hyperlink{group__CMathGroup_ga9bcbef859d7ffd0d6570d69e1bd8503a}{Cbrt2} = 
 \begin{DoxyCompactList}\small\item\em Generate $ \sin\circ f $. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$\-Checks\-::is\-Function$<$\-Function$>$()$>$$>$ }\\auto \hyperlink{group__CMathGroup_gae03f57bd4efb4449ad1dc60cb74c742d}{tan} (const Function \&f)
 \begin{DoxyCompactList}\small\item\em Generate $ \tan\circ f $. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Arg $>$ }\\auto \hyperlink{namespaceFunG_a65c509062b62b3303268cabc97b75a65}{constant} (const Arg \&x)
+{\footnotesize template$<$class Arg $>$ }\\auto \hyperlink{namespaceFunG_abcfb38c2e995436816ea884803302f2d}{const\-Ref} (const Arg \&x)
 \begin{DoxyCompactList}\small\item\em Generate a constant function that stores its argument as constant reference. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Arg $>$ }\\constexpr auto \hyperlink{namespaceFunG_a939d13d36c194b402715f12a28147cdc}{constant} (Arg x)
+\begin{DoxyCompactList}\small\item\em Wrap a constant. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Matrix , int offset = Linear\-Algebra\-::dim$<$\-Matrix$>$()$>$ }\\auto \hyperlink{group__Biomechanics_gac269eefc1abb994044e1634c20a98061}{incompressible\-Adipose\-Tissue\-\_\-\-Sommer\-Holzapfel} (double c\-Cells, double k1, double k2, double kappa, const Matrix \&M, const Matrix \&F)
 \begin{DoxyCompactList}\small\item\em Model for adipose tissue of \cite{Sommer2013}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Matrix , int offset = Linear\-Algebra\-::dim$<$\-Matrix$>$()$>$ }\\auto \hyperlink{group__Biomechanics_ga01ab128bcf179f4431b0270179af9e20}{incompressible\-Adipose\-Tissue\-\_\-\-Sommer\-Holzapfel} (const Matrix \&M, const Matrix \&F)
@@ -293,21 +295,32 @@ $A+A^T$
 
 \hyperlink{namespaceFunG_1_1Access}{Access} vector entry. 
 
-\hypertarget{namespaceFunG_a65c509062b62b3303268cabc97b75a65}{\index{Fun\-G@{Fun\-G}!constant@{constant}}
+\hypertarget{namespaceFunG_a939d13d36c194b402715f12a28147cdc}{\index{Fun\-G@{Fun\-G}!constant@{constant}}
 \index{constant@{constant}!FunG@{Fun\-G}}
-\subsubsection[{constant}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg $>$ auto Fun\-G\-::constant (
+\subsubsection[{constant}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg $>$ constexpr auto Fun\-G\-::constant (
+\begin{DoxyParamCaption}
+\item[{Arg}]{x}
+\end{DoxyParamCaption}
+)}}\label{namespaceFunG_a939d13d36c194b402715f12a28147cdc}
+
+
+Wrap a constant. 
+
+\begin{DoxyReturn}{Returns}
+Constant$<$\-Arg$>$(x) 
+\end{DoxyReturn}
+\hypertarget{namespaceFunG_abcfb38c2e995436816ea884803302f2d}{\index{Fun\-G@{Fun\-G}!const\-Ref@{const\-Ref}}
+\index{const\-Ref@{const\-Ref}!FunG@{Fun\-G}}
+\subsubsection[{const\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Arg $>$ auto Fun\-G\-::const\-Ref (
 \begin{DoxyParamCaption}
 \item[{const Arg \&}]{x}
 \end{DoxyParamCaption}
-)}}\label{namespaceFunG_a65c509062b62b3303268cabc97b75a65}
+)}}\label{namespaceFunG_abcfb38c2e995436816ea884803302f2d}
 
 
 Generate a constant function that stores its argument as constant reference. 
 
-This admits to use variable constant arguments, i.\-e. parameters that we want to study. Wrap a constant. \begin{DoxyReturn}{Returns}
-Constant$<$\-Arg$>$(x) 
-\end{DoxyReturn}
-\hypertarget{namespaceFunG_ac73eb907f3d29a9ea60513a43c658270}{\index{Fun\-G@{Fun\-G}!dot@{dot}}
+This admits to use variable constant arguments, i.\-e. parameters that we want to study. \hypertarget{namespaceFunG_ac73eb907f3d29a9ea60513a43c658270}{\index{Fun\-G@{Fun\-G}!dot@{dot}}
 \index{dot@{dot}!FunG@{Fun\-G}}
 \subsubsection[{dot}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class G , std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ std\-::decay\-\_\-t$<$ F $>$ $>$()$\vert$$\vert$\-Checks\-::is\-Function$<$ std\-::decay\-\_\-t$<$ G $>$ $>$() $>$ $\ast$  = nullptr$>$ auto Fun\-G\-::dot (
 \begin{DoxyParamCaption}

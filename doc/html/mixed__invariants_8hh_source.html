@@ -147,14 +147,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;              std::enable_if_t&lt;!Checks::isFunction&lt;Matrix&gt;()&gt;* = <span class="keyword">nullptr</span>&gt;</div>
 <div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="group__InvariantGroup.html#gad9f0627946667bb052212f65ecdd002b">   78</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__InvariantGroup.html#gad9f0627946667bb052212f65ecdd002b">i6</a>(<span class="keyword">const</span> Matrix&amp; A, <span class="keyword">const</span> Matrix&amp; M)</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="group__InvariantGroup.html#gafaead59b618d87239270f8eca2bf75c8">i1</a>( (<a class="code" href="namespaceFunG.html#a65c509062b62b3303268cabc97b75a65">constant</a>(M)^2) * <a class="code" href="namespaceFunG.html#a165e879e76d3a2a8906938f3658445ce">identity</a>(A) );</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="group__InvariantGroup.html#gafaead59b618d87239270f8eca2bf75c8">i1</a>( (<a class="code" href="namespaceFunG.html#a939d13d36c194b402715f12a28147cdc">constant</a>(M)^2) * <a class="code" href="namespaceFunG.html#a165e879e76d3a2a8906938f3658445ce">identity</a>(A) );</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class </span>F, <span class="keyword">class </span>Matrix,</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;              std::enable_if_t&lt;Checks::isFunction&lt;F&gt;()&gt;* = <span class="keyword">nullptr</span>&gt;</div>
 <div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="group__InvariantGroup.html#ga2536c80df733bb3e089487202c3688c1">   90</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__InvariantGroup.html#gad9f0627946667bb052212f65ecdd002b">i6</a>(<span class="keyword">const</span> F&amp; f, <span class="keyword">const</span> Matrix&amp; M)</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="group__InvariantGroup.html#gafaead59b618d87239270f8eca2bf75c8">i1</a>( (<a class="code" href="namespaceFunG.html#a65c509062b62b3303268cabc97b75a65">constant</a>(M)^2) * f );</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="group__InvariantGroup.html#gafaead59b618d87239270f8eca2bf75c8">i1</a>( (<a class="code" href="namespaceFunG.html#a939d13d36c194b402715f12a28147cdc">constant</a>(M)^2) * f );</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
@@ -189,9 +189,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="chain_8hh_html"><div class="ttname"><a href="chain_8hh.html">chain.hh</a></div></div>
 <div class="ttc" id="group__InvariantGroup_html_ga7ee54c5d056877bdefefb8e54ad17791"><div class="ttname"><a href="group__InvariantGroup.html#ga7ee54c5d056877bdefefb8e54ad17791">FunG::LinearAlgebra::mi4</a></div><div class="ttdeci">auto mi4(const Arg &amp;x, const Matrix &amp;M)</div><div class="ttdoc">Isochoric (volume-preserving), first modified mixed invariant , where  is the first mixed and  is the...</div><div class="ttdef"><b>Definition:</b> mixed_invariants.hh:104</div></div>
 <div class="ttc" id="squared_8hh_html"><div class="ttname"><a href="squared_8hh.html">squared.hh</a></div></div>
+<div class="ttc" id="namespaceFunG_html_a939d13d36c194b402715f12a28147cdc"><div class="ttname"><a href="namespaceFunG.html#a939d13d36c194b402715f12a28147cdc">FunG::constant</a></div><div class="ttdeci">constexpr auto constant(Arg x)</div><div class="ttdoc">Wrap a constant. </div><div class="ttdef"><b>Definition:</b> constant.hh:49</div></div>
 <div class="ttc" id="group__InvariantGroup_html_gafaead59b618d87239270f8eca2bf75c8"><div class="ttname"><a href="group__InvariantGroup.html#gafaead59b618d87239270f8eca2bf75c8">FunG::LinearAlgebra::i1</a></div><div class="ttdeci">auto i1(const Arg &amp;x)</div><div class="ttdoc">Generate first principal invariant. </div><div class="ttdef"><b>Definition:</b> principal_invariants.hh:160</div></div>
 <div class="ttc" id="group__LinearAlgebraGroup_html_gadb3017b4b2828e25a0784b10396a836f"><div class="ttname"><a href="group__LinearAlgebraGroup.html#gadb3017b4b2828e25a0784b10396a836f">FunG::LinearAlgebra::det</a></div><div class="ttdeci">auto det(Matrix const &amp;A)</div><div class="ttdoc">Generate . </div><div class="ttdef"><b>Definition:</b> determinant.hh:200</div></div>
-<div class="ttc" id="namespaceFunG_html_a65c509062b62b3303268cabc97b75a65"><div class="ttname"><a href="namespaceFunG.html#a65c509062b62b3303268cabc97b75a65">FunG::constant</a></div><div class="ttdeci">auto constant(const Arg &amp;x)</div><div class="ttdoc">Generate a constant function that stores its argument as constant reference. </div><div class="ttdef"><b>Definition:</b> constant.hh:47</div></div>
 <div class="ttc" id="product_8hh_html"><div class="ttname"><a href="product_8hh.html">product.hh</a></div></div>
 <div class="ttc" id="group__InvariantGroup_html_ga3e451f9e15fa95080f81d0c0f69f93e6"><div class="ttname"><a href="group__InvariantGroup.html#ga3e451f9e15fa95080f81d0c0f69f93e6">FunG::LinearAlgebra::mi6</a></div><div class="ttdeci">auto mi6(const Arg &amp;x, const Matrix &amp;M)</div><div class="ttdoc">Isochoric (volume-preserving), second modified principal invariant , where  is the third mixed and  i...</div><div class="ttdef"><b>Definition:</b> mixed_invariants.hh:131</div></div>
 <div class="ttc" id="principal__invariants_8hh_html"><div class="ttname"><a href="principal__invariants_8hh.html">principal_invariants.hh</a></div></div>
@@ -200,7 +200,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 19 2018 23:01:27 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 19 2018 23:13:37 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

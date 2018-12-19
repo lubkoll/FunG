@@ -2,7 +2,7 @@ var searchData=
 [
   ['cbrt',['cbrt',['../group__CMathGroup.html#gaa7f2552adfb8ec41aeb685adddd8bf98',1,'FunG']]],
   ['cbrt2',['cbrt2',['../group__CMathGroup.html#gafd27322fb64c6df3366f384c93819a06',1,'FunG']]],
-  ['chain',['Chain',['../structFunG_1_1MathematicalOperations_1_1Chain.html#a3167b6304026eb0bd92e57d0dd0087e0',1,'FunG::MathematicalOperations::Chain::Chain(const F &amp;f_, const G &amp;g_)'],['../structFunG_1_1MathematicalOperations_1_1Chain.html#a0c5cc51c17c31db3754edc016a745201',1,'FunG::MathematicalOperations::Chain::Chain(F &amp;&amp;f_, G &amp;&amp;g_)']]],
+  ['chain',['Chain',['../structFunG_1_1MathematicalOperations_1_1Chain.html#aea55b97629df71369488750410e0c66d',1,'FunG::MathematicalOperations::Chain::Chain(const F &amp;f_, const G &amp;g_)'],['../structFunG_1_1MathematicalOperations_1_1Chain.html#a4323e75022efde2e066df2ef11010b21',1,'FunG::MathematicalOperations::Chain::Chain(F &amp;&amp;f_, G &amp;&amp;g_)']]],
   ['checkargument',['checkArgument',['../group__ConceptCheck.html#ga31790e5d021a40ac34b7469323c658f9',1,'FunG::Checks']]],
   ['cols',['cols',['../namespaceFunG_1_1LinearAlgebra.html#ae981b8bee32eea3ce87f41874835c9c1',1,'FunG::LinearAlgebra::cols(const Matrix &amp;A)'],['../namespaceFunG_1_1LinearAlgebra.html#a9eb685419fe4c5f91619d5aa0f973320',1,'FunG::LinearAlgebra::cols()']]],
   ['compressibleadiposetissue_5fsommerholzapfel',['compressibleAdiposeTissue_SommerHolzapfel',['../group__Biomechanics.html#ga5c3388564c0420b62e58f48c739d27f1',1,'FunG::compressibleAdiposeTissue_SommerHolzapfel(double cCells, double k1, double k2, double kappa, double d0, double d1, const Matrix &amp;M, const Matrix &amp;F)'],['../group__Biomechanics.html#ga27bb3f7c579ce8c21a69ea4d4d0169d7',1,'FunG::compressibleAdiposeTissue_SommerHolzapfel(double d0, double d1, const Matrix &amp;M, const Matrix &amp;F)']]],
@@ -15,7 +15,8 @@ var searchData=
   ['consistentfirstderivative',['consistentFirstDerivative',['../namespaceFunG_1_1Checks_1_1Has.html#a3c61b3f75ad634464322f21e8acb4e5d',1,'FunG::Checks::Has']]],
   ['consistentsecondderivative',['consistentSecondDerivative',['../namespaceFunG_1_1Checks_1_1Has.html#ab4a78fd7a1175707d748445785a0d37c',1,'FunG::Checks::Has']]],
   ['consistentthirdderivative',['consistentThirdDerivative',['../namespaceFunG_1_1Checks_1_1Has.html#abf6a73e1b599a4aac525bb20931aea4f',1,'FunG::Checks::Has']]],
-  ['constant',['Constant',['../structFunG_1_1Constant.html#a29ead8431e2fadfef397aae5dc5a4511',1,'FunG::Constant::Constant()=default'],['../structFunG_1_1Constant.html#aa01639e517f1224f3cbdc6b3542d8b97',1,'FunG::Constant::Constant(Type t_)'],['../namespaceFunG.html#a65c509062b62b3303268cabc97b75a65',1,'FunG::constant()']]],
+  ['constant',['Constant',['../structFunG_1_1Constant.html#a278d28a1015016d076389b89a43bf118',1,'FunG::Constant::Constant()=default'],['../structFunG_1_1Constant.html#a24482c93ea4fe192f4c1a062c5b2d8a1',1,'FunG::Constant::Constant(Type t_)'],['../namespaceFunG.html#a939d13d36c194b402715f12a28147cdc',1,'FunG::constant()']]],
+  ['constref',['constRef',['../namespaceFunG.html#abcfb38c2e995436816ea884803302f2d',1,'FunG']]],
   ['copyconcept',['CopyConcept',['../structFunG_1_1Concepts_1_1CopyConcept.html#afc08741d422ff46c2e681efc38913144',1,'FunG::Concepts::CopyConcept']]],
   ['cos',['Cos',['../structFunG_1_1Cos.html#a1c3c7f2efe426de2dab5bb4a307442ce',1,'FunG::Cos::Cos()'],['../group__CMathGroup.html#ga7e9b2ac717cd2350663293cb66ba6cbd',1,'FunG::cos()']]]
 ];

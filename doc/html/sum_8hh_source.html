@@ -117,7 +117,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Sum.html">   24</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="structFunG_1_1MathematicalOperations_1_1Sum.html">Sum</a> : Chainer&lt; Sum&lt; F, G, CheckF, CheckG &gt; &gt;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        {</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keyword">template</span> &lt; <span class="keyword">class</span> InitF, <span class="keyword">class</span> InitG &gt;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Sum.html#a7b04c111c5f6f2bafda3684f262d146e">   32</a></span>&#160;            <a class="code" href="structFunG_1_1MathematicalOperations_1_1Sum.html#a7b04c111c5f6f2bafda3684f262d146e">Sum</a>( InitF&amp;&amp; f_, InitG&amp;&amp; g_ )</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Sum.html#a273a3996fc22e4a41d0fba9269a99c96">   32</a></span>&#160;            constexpr <a class="code" href="structFunG_1_1MathematicalOperations_1_1Sum.html#a273a3996fc22e4a41d0fba9269a99c96">Sum</a>( InitF&amp;&amp; f_, InitG&amp;&amp; g_ )</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                : f( std::forward&lt; InitF &gt;( f_ ) ), g( std::forward&lt; InitG &gt;( g_ ) ),</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                  value( f() + g() )</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            {</div>
@@ -139,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                value = f() + g();</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            decltype( <span class="keyword">auto</span> ) d0() const noexcept</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            constexpr decltype( <span class="keyword">auto</span> ) d0() const noexcept</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            {</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keywordflow">return</span> value;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            }</div>
@@ -200,13 +200,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="concept__check_8hh_html"><div class="ttname"><a href="concept__check_8hh.html">concept_check.hh</a></div></div>
 <div class="ttc" id="evaluate__if__present_8hh_html"><div class="ttname"><a href="evaluate__if__present_8hh.html">evaluate_if_present.hh</a></div></div>
 <div class="ttc" id="compute__sum_8hh_html"><div class="ttname"><a href="compute__sum_8hh.html">compute_sum.hh</a></div></div>
+<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Sum_html_a273a3996fc22e4a41d0fba9269a99c96"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Sum.html#a273a3996fc22e4a41d0fba9269a99c96">FunG::MathematicalOperations::Sum::Sum</a></div><div class="ttdeci">constexpr Sum(InitF &amp;&amp;f_, InitG &amp;&amp;g_)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> sum.hh:32</div></div>
 <div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Sum_html"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Sum.html">FunG::MathematicalOperations::Sum</a></div><div class="ttdoc">Sum of functions of type F and G (F and G must satisfy the requirements of Concepts::FunctionConcept)...</div><div class="ttdef"><b>Definition:</b> sum.hh:24</div></div>
-<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Sum_html_a7b04c111c5f6f2bafda3684f262d146e"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Sum.html#a7b04c111c5f6f2bafda3684f262d146e">FunG::MathematicalOperations::Sum::Sum</a></div><div class="ttdeci">Sum(InitF &amp;&amp;f_, InitG &amp;&amp;g_)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> sum.hh:32</div></div>
 <div class="ttc" id="chainer_8hh_html"><div class="ttname"><a href="chainer_8hh.html">chainer.hh</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 19 2018 23:01:27 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 19 2018 23:13:37 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
