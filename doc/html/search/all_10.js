@@ -1,7 +1,7 @@
 var searchData=
 [
   ['scale',['Scale',['../structFunG_1_1MathematicalOperations_1_1Scale.html',1,'FunG::MathematicalOperations']]],
-  ['scale',['Scale',['../structFunG_1_1MathematicalOperations_1_1Scale.html#a10c61b696b4777db7d5c53b4a96b210a',1,'FunG::MathematicalOperations::Scale']]],
+  ['scale',['Scale',['../structFunG_1_1MathematicalOperations_1_1Scale.html#a8b252a78659ba7ada90bae772ae7178e',1,'FunG::MathematicalOperations::Scale']]],
   ['scale_2ehh',['scale.hh',['../scale_8hh.html',1,'']]],
   ['secondprincipalinvariant',['SecondPrincipalInvariant',['../classFunG_1_1LinearAlgebra_1_1SecondPrincipalInvariant.html',1,'FunG::LinearAlgebra']]],
   ['secondprincipalinvariant',['SecondPrincipalInvariant',['../classFunG_1_1LinearAlgebra_1_1SecondPrincipalInvariant.html#a959bed7e38dae7003556a582a978cdb1',1,'FunG::LinearAlgebra::SecondPrincipalInvariant::SecondPrincipalInvariant()=default'],['../classFunG_1_1LinearAlgebra_1_1SecondPrincipalInvariant.html#ab04cf850a3475333f64e5e4d572d0685',1,'FunG::LinearAlgebra::SecondPrincipalInvariant::SecondPrincipalInvariant(const Matrix &amp;A)']]],
@@ -9,7 +9,7 @@ var searchData=
   ['sin',['Sin',['../structFunG_1_1Sin.html',1,'FunG']]],
   ['sine_2ehh',['sine.hh',['../sine_8hh.html',1,'']]],
   ['skin_5ftissue_5fhendriks_2ehh',['skin_tissue_hendriks.hh',['../skin__tissue__hendriks_8hh.html',1,'']]],
-  ['sqrt',['Sqrt',['../group__CMathGroup.html#gaca80e773d5886f47cd49dc19b130263f',1,'FunG::Sqrt()'],['../group__CMathGroup.html#ga136c890475e48f88469a737d95368d05',1,'FunG::sqrt(const Function &amp;f)']]],
+  ['sqrt',['sqrt',['../group__CMathGroup.html#ga136c890475e48f88469a737d95368d05',1,'FunG::sqrt(const Function &amp;f)'],['../group__CMathGroup.html#gaca80e773d5886f47cd49dc19b130263f',1,'FunG::Sqrt()']]],
   ['squared',['Squared',['../structFunG_1_1MathematicalOperations_1_1Squared.html',1,'FunG::MathematicalOperations']]],
   ['squared',['Squared',['../structFunG_1_1MathematicalOperations_1_1Squared.html#af786c2153ef17b5d0ddf8e0b51d060d6',1,'FunG::MathematicalOperations::Squared::Squared()'],['../namespaceFunG.html#ac4ffc0754104af6ddf114e154251db78',1,'FunG::squared()']]],
   ['squared_2ehh',['squared.hh',['../squared_8hh.html',1,'']]],

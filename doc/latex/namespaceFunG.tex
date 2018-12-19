@@ -73,11 +73,13 @@ using \hyperlink{group__CMathGroup_ga2e4363ad8400e1c8431c10de2152ec2b}{Cbrt} = \
 \begin{DoxyCompactList}\small\item\em Third root including first three derivatives (based on sqrt(double) in $<$cmath$>$). \end{DoxyCompactList}\item 
 using \hyperlink{group__CMathGroup_ga9bcbef859d7ffd0d6570d69e1bd8503a}{Cbrt2} = \hyperlink{structFunG_1_1Pow}{Pow}$<$ 2, 3 $>$
 \begin{DoxyCompactList}\small\item\em Third root squared including first three derivatives (based on sqrt(double) in $<$cmath$>$). \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F $>$ }\\using \hyperlink{namespaceFunG_a195ac37d8696970c89b112c81a1e4d6e}{decay\-\_\-t} = typename \hyperlink{structFunG_1_1Decay}{Decay}$<$ std\-::decay\-\_\-t$<$ F $>$ $>$\-::type
+{\footnotesize template$<$class F $>$ }\\using \hyperlink{namespaceFunG_a7ff91644f18a190ac3d4fc9e970ebe2e}{decay\-\_\-t} = typename \hyperlink{structFunG_1_1Decay}{Decay}$<$ std\-::decay\-\_\-t$<$ F $>$ $>$\-::type
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespaceFunG_1_1Access}{Access} underlying type (if it is hidden by expression templates). \end{DoxyCompactList}\item 
+{\footnotesize template$<$class F $>$ }\\using \hyperlink{namespaceFunG_a40f6d0896c1e3837d442d39418a4f609}{remove\-\_\-reference\-\_\-t} = typename \hyperlink{structFunG_1_1Decay}{Decay}$<$ std\-::remove\-\_\-reference\-\_\-t$<$ F $>$ $>$\-::type
 \begin{DoxyCompactList}\small\item\em \hyperlink{namespaceFunG_1_1Access}{Access} underlying type (if it is hidden by expression templates). \end{DoxyCompactList}\item 
 {\footnotesize template$<$class... Types$>$ }\\using \hyperlink{namespaceFunG_a0cde667596590eb8d32e4a5ee76ddbb9}{void\-\_\-t} = typename Detail\-::voider$<$ Types...$>$\-::type
 \begin{DoxyCompactList}\small\item\em Most fascinating type ever. Is void for all input types. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , int id$>$ }\\using \hyperlink{namespaceFunG_a3d589ef7d011a46a72847eabcbbb4532}{Variable\-\_\-t} = typename Variable\-Detail\-::\-Variable\-Type$<$ F, id $>$\-::type
+{\footnotesize template$<$class F , int id$>$ }\\using \hyperlink{namespaceFunG_afc90c0241d79dc4e02ffe640816ec94f}{Variable\-\_\-t} = typename Variable\-Detail\-::\-Variable\-Type$<$ F, id $>$\-::type
 \begin{DoxyCompactList}\small\item\em Get underlying type of variable with index id. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -174,7 +176,7 @@ using \hyperlink{group__CMathGroup_ga9bcbef859d7ffd0d6570d69e1bd8503a}{Cbrt2} = 
 \begin{DoxyCompactList}\small\item\em Generate squared function. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class F , class G , std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ std\-::decay\-\_\-t$<$ F $>$ $>$()\&\&\-Checks\-::is\-Function$<$ std\-::decay\-\_\-t$<$ G $>$ $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a65436d4494e99629b0177d0df7634a6b}{operator$<$$<$} (F \&\&f, G \&\&g)
 \begin{DoxyCompactList}\small\item\em overload of \char`\"{}$<$$<$\char`\"{}-\/operator for chaining functions $f$ and $g$ to $ f \circ g $. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , class G , std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ std\-::decay\-\_\-t$<$ F $>$ $>$()$\vert$$\vert$\-Checks\-::is\-Function$<$ std\-::decay\-\_\-t$<$ G $>$ $>$()$>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a3af04c2ef5c1b206feb75fffd298cbbf}{operator-\/} (F \&\&f, G \&\&g)
+{\footnotesize template$<$class F , class G , std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ std\-::decay\-\_\-t$<$ F $>$ $>$()$\vert$$\vert$\-Checks\-::is\-Function$<$ std\-::decay\-\_\-t$<$ G $>$ $>$() $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a3af04c2ef5c1b206feb75fffd298cbbf}{operator-\/} (F \&\&f, G \&\&g)
 \begin{DoxyCompactList}\small\item\em overload of \char`\"{}-\/\char`\"{}-\/operator for the generation of functions. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Arg $>$ }\\auto \hyperlink{namespaceFunG_a165e879e76d3a2a8906938f3658445ce}{identity} (const Arg \&x)
 \begin{DoxyCompactList}\small\item\em Construct Identity$<$\-Arg$>$(x). \end{DoxyCompactList}\item 
@@ -206,7 +208,7 @@ using \hyperlink{group__CMathGroup_ga9bcbef859d7ffd0d6570d69e1bd8503a}{Cbrt2} = 
 \begin{DoxyCompactList}\small\item\em Requires that a specialization of struct \hyperlink{structFunG_1_1Zero}{Zero} exists for Matrix. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Matrix , class  = std\-::enable\-\_\-if\-\_\-t$<$!\-Checks\-::is\-Constant\-Size$<$\-Matrix$>$() \&\& !is\-\_\-arithmetic$<$\-Matrix$>$\-::value$>$$>$ }\\constexpr Matrix \hyperlink{namespaceFunG_ae633433339ba30207aa526e54e3924b4}{zero} (int rows, int cols)
 \begin{DoxyCompactList}\small\item\em Requires that a specialization of struct \hyperlink{structFunG_1_1Zero}{Zero} exists for Matrix. \end{DoxyCompactList}\item 
-{\footnotesize template$<$int id, class T $>$ }\\\hyperlink{structFunG_1_1Variable}{Variable}$<$ T, id $>$ \hyperlink{namespaceFunG_a1c474456411f028e14eab67ff6eebe0c}{variable} (const T \&t)
+{\footnotesize template$<$int id, class T $>$ }\\\hyperlink{structFunG_1_1Variable}{Variable}$<$ T, id $>$ \hyperlink{namespaceFunG_a2ead025b35a8cdf3ac8c170524ab61c0}{variable} (const T \&t)
 \begin{DoxyCompactList}\small\item\em Generate variable from input type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -221,16 +223,23 @@ Main namespace of the Fun\-G library. \begin{DoxySeeAlso}{See Also}
 
 
 \subsection{Typedef Documentation}
-\hypertarget{namespaceFunG_a195ac37d8696970c89b112c81a1e4d6e}{\index{Fun\-G@{Fun\-G}!decay\-\_\-t@{decay\-\_\-t}}
+\hypertarget{namespaceFunG_a7ff91644f18a190ac3d4fc9e970ebe2e}{\index{Fun\-G@{Fun\-G}!decay\-\_\-t@{decay\-\_\-t}}
 \index{decay\-\_\-t@{decay\-\_\-t}!FunG@{Fun\-G}}
-\subsubsection[{decay\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F $>$ using {\bf Fun\-G\-::decay\-\_\-t} = typedef typename {\bf Decay}$<$ std\-::decay\-\_\-t$<$F$>$ $>$\-::type}}\label{namespaceFunG_a195ac37d8696970c89b112c81a1e4d6e}
+\subsubsection[{decay\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F $>$ using {\bf Fun\-G\-::decay\-\_\-t} = typedef typename {\bf Decay}$<$ std\-::decay\-\_\-t$<$ F $>$ $>$\-::type}}\label{namespaceFunG_a7ff91644f18a190ac3d4fc9e970ebe2e}
 
 
 \hyperlink{namespaceFunG_1_1Access}{Access} underlying type (if it is hidden by expression templates). 
 
-\hypertarget{namespaceFunG_a3d589ef7d011a46a72847eabcbbb4532}{\index{Fun\-G@{Fun\-G}!Variable\-\_\-t@{Variable\-\_\-t}}
+\hypertarget{namespaceFunG_a40f6d0896c1e3837d442d39418a4f609}{\index{Fun\-G@{Fun\-G}!remove\-\_\-reference\-\_\-t@{remove\-\_\-reference\-\_\-t}}
+\index{remove\-\_\-reference\-\_\-t@{remove\-\_\-reference\-\_\-t}!FunG@{Fun\-G}}
+\subsubsection[{remove\-\_\-reference\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F $>$ using {\bf Fun\-G\-::remove\-\_\-reference\-\_\-t} = typedef typename {\bf Decay}$<$ std\-::remove\-\_\-reference\-\_\-t$<$ F $>$ $>$\-::type}}\label{namespaceFunG_a40f6d0896c1e3837d442d39418a4f609}
+
+
+\hyperlink{namespaceFunG_1_1Access}{Access} underlying type (if it is hidden by expression templates). 
+
+\hypertarget{namespaceFunG_afc90c0241d79dc4e02ffe640816ec94f}{\index{Fun\-G@{Fun\-G}!Variable\-\_\-t@{Variable\-\_\-t}}
 \index{Variable\-\_\-t@{Variable\-\_\-t}!FunG@{Fun\-G}}
-\subsubsection[{Variable\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , int id$>$ using {\bf Fun\-G\-::\-Variable\-\_\-t} = typedef typename Variable\-Detail\-::\-Variable\-Type$<$F,id$>$\-::type}}\label{namespaceFunG_a3d589ef7d011a46a72847eabcbbb4532}
+\subsubsection[{Variable\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , int id$>$ using {\bf Fun\-G\-::\-Variable\-\_\-t} = typedef typename Variable\-Detail\-::\-Variable\-Type$<$ F, id $>$\-::type}}\label{namespaceFunG_afc90c0241d79dc4e02ffe640816ec94f}
 
 
 Get underlying type of variable with index id. 
@@ -467,7 +476,7 @@ overload of \char`\"{}+\char`\"{}-\/operator for the generation of functions.
 
 If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. \hypertarget{namespaceFunG_a3af04c2ef5c1b206feb75fffd298cbbf}{\index{Fun\-G@{Fun\-G}!operator-\/@{operator-\/}}
 \index{operator-\/@{operator-\/}!FunG@{Fun\-G}}
-\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class G , std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ std\-::decay\-\_\-t$<$ F $>$ $>$()$\vert$$\vert$\-Checks\-::is\-Function$<$ std\-::decay\-\_\-t$<$ G $>$ $>$()$>$ $\ast$  = nullptr$>$ auto Fun\-G\-::operator-\/ (
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class G , std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ std\-::decay\-\_\-t$<$ F $>$ $>$()$\vert$$\vert$\-Checks\-::is\-Function$<$ std\-::decay\-\_\-t$<$ G $>$ $>$() $>$ $\ast$  = nullptr$>$ auto Fun\-G\-::operator-\/ (
 \begin{DoxyParamCaption}
 \item[{F \&\&}]{f, }
 \item[{G \&\&}]{g}
@@ -528,13 +537,13 @@ If the resulting type represents a polynomial of order smaller than two, than yo
 \item[{Arg \&\&}]{x}
 \end{DoxyParamCaption}
 )}}\label{namespaceFunG_aed5ddbef97c98202e818bca2b74c75d2}
-\hypertarget{namespaceFunG_a1c474456411f028e14eab67ff6eebe0c}{\index{Fun\-G@{Fun\-G}!variable@{variable}}
+\hypertarget{namespaceFunG_a2ead025b35a8cdf3ac8c170524ab61c0}{\index{Fun\-G@{Fun\-G}!variable@{variable}}
 \index{variable@{variable}!FunG@{Fun\-G}}
-\subsubsection[{variable}]{\setlength{\rightskip}{0pt plus 5cm}template$<$int id, class T $>$ {\bf Variable}$<$T,id$>$ Fun\-G\-::variable (
+\subsubsection[{variable}]{\setlength{\rightskip}{0pt plus 5cm}template$<$int id, class T $>$ {\bf Variable}$<$ T, id $>$ Fun\-G\-::variable (
 \begin{DoxyParamCaption}
 \item[{const T \&}]{t}
 \end{DoxyParamCaption}
-)}}\label{namespaceFunG_a1c474456411f028e14eab67ff6eebe0c}
+)}}\label{namespaceFunG_a2ead025b35a8cdf3ac8c170524ab61c0}
 
 
 Generate variable from input type. 

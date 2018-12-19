@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sqrt',['Sqrt',['../group__CMathGroup.html#gaca80e773d5886f47cd49dc19b130263f',1,'FunG']]]
+  ['remove_5freference_5ft',['remove_reference_t',['../namespaceFunG.html#a40f6d0896c1e3837d442d39418a4f609',1,'FunG']]]
 ];

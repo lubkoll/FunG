@@ -109,87 +109,87 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span>FunG</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">namespace </span>MathematicalOperations</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> F, <span class="keyword">class</span> = Concepts::FunctionConceptCheck&lt;F&gt; &gt;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Scale.html">   21</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structFunG_1_1MathematicalOperations_1_1Scale.html">Scale</a> : Chainer&lt; Scale&lt; F , Concepts::FunctionConceptCheck&lt;F&gt; &gt; &gt;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      <span class="keyword">template</span> &lt;<span class="keyword">class</span>... InitF&gt;</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Scale.html#a10c61b696b4777db7d5c53b4a96b210a">   29</a></span>&#160;      <a class="code" href="structFunG_1_1MathematicalOperations_1_1Scale.html#a10c61b696b4777db7d5c53b4a96b210a">Scale</a>(<span class="keywordtype">double</span> a_, InitF&amp;&amp;... f_)</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        : a(a_), f(std::forward&lt;InitF&gt;(f_)...), value(a*f())</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      {}</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      <span class="keyword">template</span> &lt;<span class="keyword">class</span> Arg&gt;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Scale.html#a78bbb512333a17c72928d3f21de63dee">   35</a></span>&#160;      <span class="keywordtype">void</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Scale.html#a78bbb512333a17c72928d3f21de63dee">update</a>(<span class="keyword">const</span> Arg&amp; x)</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="namespaceFunG.html#a3b9d2e5d07b30c2ee26703b33e9adb9e">update_if_present</a>(f,x);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        value = a*f();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <span class="keyword">template</span> &lt;<span class="keywordtype">int</span> index, <span class="keyword">class</span> Arg&gt;</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Scale.html#a49b277539bf6582956f68d325ce4a44d">   43</a></span>&#160;      <span class="keywordtype">void</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Scale.html#a49b277539bf6582956f68d325ce4a44d">update</a>(<span class="keyword">const</span> Arg&amp; x)</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        update_if_present&lt;index&gt;(f,x);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        value = a*f();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Scale.html#aec01731655fabb0f6fcfd06493aec4af">   50</a></span>&#160;      decltype(<span class="keyword">auto</span>) <a class="code" href="structFunG_1_1MathematicalOperations_1_1Scale.html#aec01731655fabb0f6fcfd06493aec4af">d0</a>() const noexcept</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> value;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">template</span> &lt; <span class="keywordtype">int</span> idx , <span class="keyword">class </span>Arg ,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                 <span class="keyword">class </span>IndexedArg = IndexedType&lt;Arg,idx&gt; ,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                 <span class="keyword">class </span>= std::enable_if_t&lt; D1&lt;F,IndexedArg&gt;::present&gt; &gt;</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Scale.html#aa917dfae80d3682fdbbe1e1c8214c503">   59</a></span>&#160;      <span class="keyword">auto</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Scale.html#aa917dfae80d3682fdbbe1e1c8214c503">d1</a>(<span class="keyword">const</span> Arg&amp; dx)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">      </span>{</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> a * D1_&lt;F,IndexedArg&gt;::apply(f,dx);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <span class="keyword">template</span> &lt; <span class="keywordtype">int</span> idx , <span class="keywordtype">int</span> idy , <span class="keyword">class </span>ArgX , <span class="keyword">class </span>ArgY ,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                 <span class="keyword">class </span>IndexedArgX = IndexedType&lt;ArgX,idx&gt; ,</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                 <span class="keyword">class </span>IndexedArgY = IndexedType&lt;ArgY,idy&gt; ,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                 <span class="keyword">class </span>= std::enable_if_t&lt; D2&lt;F,IndexedArgX,IndexedArgY&gt;::present&gt; &gt;</div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Scale.html#a8be2b6ba1a541617acd73136467c938d">   69</a></span>&#160;      <span class="keyword">auto</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Scale.html#a8be2b6ba1a541617acd73136467c938d">d2</a>(<span class="keyword">const</span> ArgX&amp; dx, <span class="keyword">const</span> ArgY&amp; dy)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">      </span>{</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">return</span> a * D2_&lt;F,IndexedArgX,IndexedArgY&gt;::apply(f,dx,dy);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <span class="keyword">template</span> &lt; <span class="keywordtype">int</span> idx , <span class="keywordtype">int</span> idy , <span class="keywordtype">int</span> idz , <span class="keyword">class </span>ArgX , <span class="keyword">class </span>ArgY , <span class="keyword">class </span>ArgZ ,</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                 <span class="keyword">class </span>IndexedArgX = IndexedType&lt;ArgX,idx&gt; ,</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                 <span class="keyword">class </span>IndexedArgY = IndexedType&lt;ArgY,idy&gt; ,</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                 <span class="keyword">class </span>IndexedArgZ = IndexedType&lt;ArgZ,idz&gt; ,</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                 <span class="keyword">class </span>= std::enable_if_t&lt; D3&lt;F,IndexedArgX,IndexedArgY,IndexedArgZ&gt;::present &gt; &gt;</div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Scale.html#a070452119b00f2983a6e7ff7fdf890ed">   80</a></span>&#160;      <span class="keyword">auto</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Scale.html#a070452119b00f2983a6e7ff7fdf890ed">d3</a>(<span class="keyword">const</span> ArgX&amp; dx, <span class="keyword">const</span> ArgY&amp; dy, <span class="keyword">const</span> ArgZ&amp; dz)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">      </span>{</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span> a * D3_&lt;F,IndexedArgX,IndexedArgY,IndexedArgZ&gt;::apply(f,dx,dy,dz);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <span class="keywordtype">double</span> a = 1.;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      F f;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      std::decay_t&lt;decltype(std::declval&lt;F&gt;()())&gt; value;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    };</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">namespace </span>MathematicalOperations</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">template</span> &lt; <span class="keyword">class</span> Scalar, <span class="keyword">class</span> F, <span class="keyword">class</span> = Concepts::FunctionConceptCheck&lt; F &gt; &gt;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Scale.html">   22</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="structFunG_1_1MathematicalOperations_1_1Scale.html">Scale</a> : Chainer&lt; Scale&lt; Scalar, F, Concepts::FunctionConceptCheck&lt; F &gt; &gt; &gt;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keyword">template</span> &lt; <span class="keyword">class</span>... InitF &gt;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Scale.html#a8b252a78659ba7ada90bae772ae7178e">   30</a></span>&#160;            <a class="code" href="structFunG_1_1MathematicalOperations_1_1Scale.html#a8b252a78659ba7ada90bae772ae7178e">Scale</a>( Scalar a_, InitF&amp;&amp;... f_ )</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                : a( a_ ), f( std::forward&lt; InitF &gt;( f_ )... ), value( a * f() )</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keyword">template</span> &lt; <span class="keyword">class</span> Arg &gt;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Scale.html#a72b90a29758d4a15e4c82c60d9692519">   37</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Scale.html#a72b90a29758d4a15e4c82c60d9692519">update</a>( <span class="keyword">const</span> Arg&amp; x )</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <a class="code" href="namespaceFunG.html#a3b9d2e5d07b30c2ee26703b33e9adb9e">update_if_present</a>( f, x );</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                value = a * f();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keyword">template</span> &lt; <span class="keywordtype">int</span> index, <span class="keyword">class</span> Arg &gt;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Scale.html#ad3bc61a8b77167ff35d7b6027e2146b6">   45</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Scale.html#ad3bc61a8b77167ff35d7b6027e2146b6">update</a>( <span class="keyword">const</span> Arg&amp; x )</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                update_if_present&lt; index &gt;( f, x );</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                value = a * f();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            decltype( <span class="keyword">auto</span> ) d0() const noexcept</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordflow">return</span> value;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keyword">template</span> &lt; <span class="keywordtype">int</span> <span class="keywordtype">id</span>x, <span class="keyword">class</span> Arg, <span class="keyword">class</span> IndexedArg = IndexedType&lt; Arg, <span class="keywordtype">id</span>x &gt;,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                       <span class="keyword">class</span> = std::enable_if_t&lt; D1&lt; F, IndexedArg &gt;::present &gt; &gt;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Scale.html#a3faeb9f1eac07cd6b73004dabadf665b">   60</a></span>&#160;            <span class="keyword">auto</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Scale.html#a3faeb9f1eac07cd6b73004dabadf665b">d1</a>( <span class="keyword">const</span> Arg&amp; dx )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">            </span>{</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordflow">return</span> a * D1_&lt; F, IndexedArg &gt;::apply( f, dx );</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keyword">template</span> &lt; <span class="keywordtype">int</span> idx, <span class="keywordtype">int</span> idy, <span class="keyword">class </span>ArgX, <span class="keyword">class </span>ArgY,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                       <span class="keyword">class </span>IndexedArgX = IndexedType&lt; ArgX, idx &gt;,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                       <span class="keyword">class </span>IndexedArgY = IndexedType&lt; ArgY, idy &gt;,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                       <span class="keyword">class </span>= std::enable_if_t&lt; D2&lt; F, IndexedArgX, IndexedArgY &gt;::present &gt; &gt;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Scale.html#ac0f475d2accde030be697dd6c07f666e">   70</a></span>&#160;            <span class="keyword">auto</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Scale.html#ac0f475d2accde030be697dd6c07f666e">d2</a>( <span class="keyword">const</span> ArgX&amp; dx, <span class="keyword">const</span> ArgY&amp; dy )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">            </span>{</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="keywordflow">return</span> a * D2_&lt; F, IndexedArgX, IndexedArgY &gt;::apply( f, dx, dy );</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keyword">template</span> &lt; <span class="keywordtype">int</span> idx, <span class="keywordtype">int</span> idy, <span class="keywordtype">int</span> idz, <span class="keyword">class </span>ArgX, <span class="keyword">class </span>ArgY, <span class="keyword">class </span>ArgZ,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                       <span class="keyword">class </span>IndexedArgX = IndexedType&lt; ArgX, idx &gt;,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                       <span class="keyword">class </span>IndexedArgY = IndexedType&lt; ArgY, idy &gt;,</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                       <span class="keyword">class </span>IndexedArgZ = IndexedType&lt; ArgZ, idz &gt;,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                       <span class="keyword">class </span>= std::enable_if_t&lt;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                           D3&lt; F, IndexedArgX, IndexedArgY, IndexedArgZ &gt;::present &gt; &gt;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="structFunG_1_1MathematicalOperations_1_1Scale.html#a6ce8474b165f7d6787ced74f89353f8e">   82</a></span>&#160;            <span class="keyword">auto</span> <a class="code" href="structFunG_1_1MathematicalOperations_1_1Scale.html#a6ce8474b165f7d6787ced74f89353f8e">d3</a>( <span class="keyword">const</span> ArgX&amp; dx, <span class="keyword">const</span> ArgY&amp; dy, <span class="keyword">const</span> ArgZ&amp; dz )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">            </span>{</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keywordflow">return</span> a * D3_&lt; F, IndexedArgX, IndexedArgY, IndexedArgZ &gt;::apply( f, dx, dy, dz );</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            Scalar a = 1.;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            F f;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            std::decay_t&lt; decltype( std::declval&lt; F &gt;()() ) &gt; value;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        };</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
 <div class="ttc" id="derivative__wrappers_8hh_html"><div class="ttname"><a href="derivative__wrappers_8hh.html">derivative_wrappers.hh</a></div></div>
-<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Scale_html_a49b277539bf6582956f68d325ce4a44d"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Scale.html#a49b277539bf6582956f68d325ce4a44d">FunG::MathematicalOperations::Scale::update</a></div><div class="ttdeci">void update(const Arg &amp;x)</div><div class="ttdoc">Update variable corresponding to index. </div><div class="ttdef"><b>Definition:</b> scale.hh:43</div></div>
-<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Scale_html"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Scale.html">FunG::MathematicalOperations::Scale</a></div><div class="ttdoc">Scaling  of some function  with a double  (F must satisfy the requirements of Concepts::FunctionConce...</div><div class="ttdef"><b>Definition:</b> scale.hh:21</div></div>
-<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Scale_html_a070452119b00f2983a6e7ff7fdf890ed"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Scale.html#a070452119b00f2983a6e7ff7fdf890ed">FunG::MathematicalOperations::Scale::d3</a></div><div class="ttdeci">auto d3(const ArgX &amp;dx, const ArgY &amp;dy, const ArgZ &amp;dz) const </div><div class="ttdoc">Third directional derivative. </div><div class="ttdef"><b>Definition:</b> scale.hh:80</div></div>
-<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Scale_html_a10c61b696b4777db7d5c53b4a96b210a"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Scale.html#a10c61b696b4777db7d5c53b4a96b210a">FunG::MathematicalOperations::Scale::Scale</a></div><div class="ttdeci">Scale(double a_, InitF &amp;&amp;...f_)</div><div class="ttdoc">Constructor passing arguments to function constructor. </div><div class="ttdef"><b>Definition:</b> scale.hh:29</div></div>
+<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Scale_html"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Scale.html">FunG::MathematicalOperations::Scale</a></div><div class="ttdoc">Scaling  of some function  with a double  (F must satisfy the requirements of Concepts::FunctionConce...</div><div class="ttdef"><b>Definition:</b> scale.hh:22</div></div>
+<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Scale_html_a3faeb9f1eac07cd6b73004dabadf665b"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Scale.html#a3faeb9f1eac07cd6b73004dabadf665b">FunG::MathematicalOperations::Scale::d1</a></div><div class="ttdeci">auto d1(const Arg &amp;dx) const </div><div class="ttdoc">First directional derivative. </div><div class="ttdef"><b>Definition:</b> scale.hh:60</div></div>
+<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Scale_html_ad3bc61a8b77167ff35d7b6027e2146b6"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Scale.html#ad3bc61a8b77167ff35d7b6027e2146b6">FunG::MathematicalOperations::Scale::update</a></div><div class="ttdeci">void update(const Arg &amp;x)</div><div class="ttdoc">Update variable corresponding to index. </div><div class="ttdef"><b>Definition:</b> scale.hh:45</div></div>
+<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Scale_html_a72b90a29758d4a15e4c82c60d9692519"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Scale.html#a72b90a29758d4a15e4c82c60d9692519">FunG::MathematicalOperations::Scale::update</a></div><div class="ttdeci">void update(const Arg &amp;x)</div><div class="ttdoc">Update point of evaluation. </div><div class="ttdef"><b>Definition:</b> scale.hh:37</div></div>
 <div class="ttc" id="namespaceFunG_html_a3b9d2e5d07b30c2ee26703b33e9adb9e"><div class="ttname"><a href="namespaceFunG.html#a3b9d2e5d07b30c2ee26703b33e9adb9e">FunG::update_if_present</a></div><div class="ttdeci">void update_if_present(F &amp;&amp;, Arg &amp;&amp;)</div><div class="ttdef"><b>Definition:</b> evaluate_if_present.hh:41</div></div>
 <div class="ttc" id="indexed__type_8hh_html"><div class="ttname"><a href="indexed__type_8hh.html">indexed_type.hh</a></div></div>
 <div class="ttc" id="concept__check_8hh_html"><div class="ttname"><a href="concept__check_8hh.html">concept_check.hh</a></div></div>
 <div class="ttc" id="evaluate__if__present_8hh_html"><div class="ttname"><a href="evaluate__if__present_8hh.html">evaluate_if_present.hh</a></div></div>
-<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Scale_html_a78bbb512333a17c72928d3f21de63dee"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Scale.html#a78bbb512333a17c72928d3f21de63dee">FunG::MathematicalOperations::Scale::update</a></div><div class="ttdeci">void update(const Arg &amp;x)</div><div class="ttdoc">Update point of evaluation. </div><div class="ttdef"><b>Definition:</b> scale.hh:35</div></div>
-<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Scale_html_aec01731655fabb0f6fcfd06493aec4af"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Scale.html#aec01731655fabb0f6fcfd06493aec4af">FunG::MathematicalOperations::Scale::d0</a></div><div class="ttdeci">decltype(auto) d0() const noexcept</div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> scale.hh:50</div></div>
-<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Scale_html_a8be2b6ba1a541617acd73136467c938d"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Scale.html#a8be2b6ba1a541617acd73136467c938d">FunG::MathematicalOperations::Scale::d2</a></div><div class="ttdeci">auto d2(const ArgX &amp;dx, const ArgY &amp;dy) const </div><div class="ttdoc">Second directional derivative. </div><div class="ttdef"><b>Definition:</b> scale.hh:69</div></div>
-<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Scale_html_aa917dfae80d3682fdbbe1e1c8214c503"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Scale.html#aa917dfae80d3682fdbbe1e1c8214c503">FunG::MathematicalOperations::Scale::d1</a></div><div class="ttdeci">auto d1(const Arg &amp;dx) const </div><div class="ttdoc">First directional derivative. </div><div class="ttdef"><b>Definition:</b> scale.hh:59</div></div>
+<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Scale_html_a8b252a78659ba7ada90bae772ae7178e"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Scale.html#a8b252a78659ba7ada90bae772ae7178e">FunG::MathematicalOperations::Scale::Scale</a></div><div class="ttdeci">Scale(Scalar a_, InitF &amp;&amp;...f_)</div><div class="ttdoc">Constructor passing arguments to function constructor. </div><div class="ttdef"><b>Definition:</b> scale.hh:30</div></div>
+<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Scale_html_a6ce8474b165f7d6787ced74f89353f8e"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Scale.html#a6ce8474b165f7d6787ced74f89353f8e">FunG::MathematicalOperations::Scale::d3</a></div><div class="ttdeci">auto d3(const ArgX &amp;dx, const ArgY &amp;dy, const ArgZ &amp;dz) const </div><div class="ttdoc">Third directional derivative. </div><div class="ttdef"><b>Definition:</b> scale.hh:82</div></div>
+<div class="ttc" id="structFunG_1_1MathematicalOperations_1_1Scale_html_ac0f475d2accde030be697dd6c07f666e"><div class="ttname"><a href="structFunG_1_1MathematicalOperations_1_1Scale.html#ac0f475d2accde030be697dd6c07f666e">FunG::MathematicalOperations::Scale::d2</a></div><div class="ttdeci">auto d2(const ArgX &amp;dx, const ArgY &amp;dy) const </div><div class="ttdoc">Second directional derivative. </div><div class="ttdef"><b>Definition:</b> scale.hh:70</div></div>
 <div class="ttc" id="chainer_8hh_html"><div class="ttname"><a href="chainer_8hh.html">chainer.hh</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 6 2018 19:48:01 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 19 2018 23:01:27 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

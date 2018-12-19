@@ -195,18 +195,22 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga9bcbef859d7ffd0d6570d69e1bd8503a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#ga9bcbef859d7ffd0d6570d69e1bd8503a">Cbrt2</a> = <a class="el" href="structFunG_1_1Pow.html">Pow</a>&lt; 2, 3 &gt;</td></tr>
 <tr class="memdesc:ga9bcbef859d7ffd0d6570d69e1bd8503a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Third root squared including first three derivatives (based on sqrt(double) in &lt;cmath&gt;).  <a href="group__CMathGroup.html#ga9bcbef859d7ffd0d6570d69e1bd8503a">More...</a><br/></td></tr>
 <tr class="separator:ga9bcbef859d7ffd0d6570d69e1bd8503a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a195ac37d8696970c89b112c81a1e4d6e"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
-<tr class="memitem:a195ac37d8696970c89b112c81a1e4d6e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a195ac37d8696970c89b112c81a1e4d6e">decay_t</a> = typename <a class="el" href="structFunG_1_1Decay.html">Decay</a>&lt; std::decay_t&lt; F &gt; &gt;::type</td></tr>
-<tr class="memdesc:a195ac37d8696970c89b112c81a1e4d6e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespaceFunG_1_1Access.html">Access</a> underlying type (if it is hidden by expression templates).  <a href="#a195ac37d8696970c89b112c81a1e4d6e">More...</a><br/></td></tr>
-<tr class="separator:a195ac37d8696970c89b112c81a1e4d6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ff91644f18a190ac3d4fc9e970ebe2e"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
+<tr class="memitem:a7ff91644f18a190ac3d4fc9e970ebe2e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a7ff91644f18a190ac3d4fc9e970ebe2e">decay_t</a> = typename <a class="el" href="structFunG_1_1Decay.html">Decay</a>&lt; std::decay_t&lt; F &gt; &gt;::type</td></tr>
+<tr class="memdesc:a7ff91644f18a190ac3d4fc9e970ebe2e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespaceFunG_1_1Access.html">Access</a> underlying type (if it is hidden by expression templates).  <a href="#a7ff91644f18a190ac3d4fc9e970ebe2e">More...</a><br/></td></tr>
+<tr class="separator:a7ff91644f18a190ac3d4fc9e970ebe2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40f6d0896c1e3837d442d39418a4f609"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
+<tr class="memitem:a40f6d0896c1e3837d442d39418a4f609"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a40f6d0896c1e3837d442d39418a4f609">remove_reference_t</a> = typename <a class="el" href="structFunG_1_1Decay.html">Decay</a>&lt; std::remove_reference_t&lt; F &gt; &gt;::type</td></tr>
+<tr class="memdesc:a40f6d0896c1e3837d442d39418a4f609"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespaceFunG_1_1Access.html">Access</a> underlying type (if it is hidden by expression templates).  <a href="#a40f6d0896c1e3837d442d39418a4f609">More...</a><br/></td></tr>
+<tr class="separator:a40f6d0896c1e3837d442d39418a4f609"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cde667596590eb8d32e4a5ee76ddbb9"><td class="memTemplParams" colspan="2">template&lt;class... Types&gt; </td></tr>
 <tr class="memitem:a0cde667596590eb8d32e4a5ee76ddbb9"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a0cde667596590eb8d32e4a5ee76ddbb9">void_t</a> = typename Detail::voider&lt; Types...&gt;::type</td></tr>
 <tr class="memdesc:a0cde667596590eb8d32e4a5ee76ddbb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Most fascinating type ever. Is void for all input types.  <a href="#a0cde667596590eb8d32e4a5ee76ddbb9">More...</a><br/></td></tr>
 <tr class="separator:a0cde667596590eb8d32e4a5ee76ddbb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d589ef7d011a46a72847eabcbbb4532"><td class="memTemplParams" colspan="2">template&lt;class F , int id&gt; </td></tr>
-<tr class="memitem:a3d589ef7d011a46a72847eabcbbb4532"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a3d589ef7d011a46a72847eabcbbb4532">Variable_t</a> = typename VariableDetail::VariableType&lt; F, id &gt;::type</td></tr>
-<tr class="memdesc:a3d589ef7d011a46a72847eabcbbb4532"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get underlying type of variable with index id.  <a href="#a3d589ef7d011a46a72847eabcbbb4532">More...</a><br/></td></tr>
-<tr class="separator:a3d589ef7d011a46a72847eabcbbb4532"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc90c0241d79dc4e02ffe640816ec94f"><td class="memTemplParams" colspan="2">template&lt;class F , int id&gt; </td></tr>
+<tr class="memitem:afc90c0241d79dc4e02ffe640816ec94f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#afc90c0241d79dc4e02ffe640816ec94f">Variable_t</a> = typename VariableDetail::VariableType&lt; F, id &gt;::type</td></tr>
+<tr class="memdesc:afc90c0241d79dc4e02ffe640816ec94f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get underlying type of variable with index id.  <a href="#afc90c0241d79dc4e02ffe640816ec94f">More...</a><br/></td></tr>
+<tr class="separator:afc90c0241d79dc4e02ffe640816ec94f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -394,7 +398,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a65436d4494e99629b0177d0df7634a6b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a65436d4494e99629b0177d0df7634a6b">operator&lt;&lt;</a> (F &amp;&amp;f, G &amp;&amp;g)</td></tr>
 <tr class="memdesc:a65436d4494e99629b0177d0df7634a6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "&lt;&lt;"-operator for chaining functions \(f\) and \(g\) to \( f \circ g \).  <a href="#a65436d4494e99629b0177d0df7634a6b">More...</a><br/></td></tr>
 <tr class="separator:a65436d4494e99629b0177d0df7634a6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3af04c2ef5c1b206feb75fffd298cbbf"><td class="memTemplParams" colspan="2">template&lt;class F , class G , std::enable_if_t&lt; Checks::isFunction&lt; std::decay_t&lt; F &gt; &gt;()||Checks::isFunction&lt; std::decay_t&lt; G &gt; &gt;()&gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:a3af04c2ef5c1b206feb75fffd298cbbf"><td class="memTemplParams" colspan="2">template&lt;class F , class G , std::enable_if_t&lt; Checks::isFunction&lt; std::decay_t&lt; F &gt; &gt;()||Checks::isFunction&lt; std::decay_t&lt; G &gt; &gt;() &gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:a3af04c2ef5c1b206feb75fffd298cbbf"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a3af04c2ef5c1b206feb75fffd298cbbf">operator-</a> (F &amp;&amp;f, G &amp;&amp;g)</td></tr>
 <tr class="memdesc:a3af04c2ef5c1b206feb75fffd298cbbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload of "-"-operator for the generation of functions.  <a href="#a3af04c2ef5c1b206feb75fffd298cbbf">More...</a><br/></td></tr>
 <tr class="separator:a3af04c2ef5c1b206feb75fffd298cbbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -456,10 +460,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ae633433339ba30207aa526e54e3924b4"><td class="memTemplItemLeft" align="right" valign="top">constexpr Matrix&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#ae633433339ba30207aa526e54e3924b4">zero</a> (int rows, int cols)</td></tr>
 <tr class="memdesc:ae633433339ba30207aa526e54e3924b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Requires that a specialization of struct <a class="el" href="structFunG_1_1Zero.html" title="Specialize this struct for your matrix type if a zero matrix cannot be generated via Matrix(0...">Zero</a> exists for Matrix.  <a href="#ae633433339ba30207aa526e54e3924b4">More...</a><br/></td></tr>
 <tr class="separator:ae633433339ba30207aa526e54e3924b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c474456411f028e14eab67ff6eebe0c"><td class="memTemplParams" colspan="2">template&lt;int id, class T &gt; </td></tr>
-<tr class="memitem:a1c474456411f028e14eab67ff6eebe0c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structFunG_1_1Variable.html">Variable</a>&lt; T, id &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a1c474456411f028e14eab67ff6eebe0c">variable</a> (const T &amp;t)</td></tr>
-<tr class="memdesc:a1c474456411f028e14eab67ff6eebe0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate variable from input type.  <a href="#a1c474456411f028e14eab67ff6eebe0c">More...</a><br/></td></tr>
-<tr class="separator:a1c474456411f028e14eab67ff6eebe0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ead025b35a8cdf3ac8c170524ab61c0"><td class="memTemplParams" colspan="2">template&lt;int id, class T &gt; </td></tr>
+<tr class="memitem:a2ead025b35a8cdf3ac8c170524ab61c0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structFunG_1_1Variable.html">Variable</a>&lt; T, id &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a2ead025b35a8cdf3ac8c170524ab61c0">variable</a> (const T &amp;t)</td></tr>
+<tr class="memdesc:a2ead025b35a8cdf3ac8c170524ab61c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate variable from input type.  <a href="#a2ead025b35a8cdf3ac8c170524ab61c0">More...</a><br/></td></tr>
+<tr class="separator:a2ead025b35a8cdf3ac8c170524ab61c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Main namespace of the FunG library. </p>
@@ -469,14 +473,14 @@ Functions</h2></td></tr>
 <dd>
 <a class="el" href="group__LinearAlgebraGroup.html" title="Functionality from linear algebra such as (modified) principal and mixed matrix invariants. ">Linear Algebra</a> </dd></dl>
 </div><h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="a195ac37d8696970c89b112c81a1e4d6e"></a>
+<a class="anchor" id="a7ff91644f18a190ac3d4fc9e970ebe2e"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class F &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespaceFunG.html#a195ac37d8696970c89b112c81a1e4d6e">FunG::decay_t</a> = typedef typename <a class="el" href="structFunG_1_1Decay.html">Decay</a>&lt; std::decay_t&lt;F&gt; &gt;::type</td>
+          <td class="memname">using <a class="el" href="namespaceFunG.html#a7ff91644f18a190ac3d4fc9e970ebe2e">FunG::decay_t</a> = typedef typename <a class="el" href="structFunG_1_1Decay.html">Decay</a>&lt; std::decay_t&lt; F &gt; &gt;::type</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -485,14 +489,30 @@ template&lt;class F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a3d589ef7d011a46a72847eabcbbb4532"></a>
+<a class="anchor" id="a40f6d0896c1e3837d442d39418a4f609"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceFunG.html#a40f6d0896c1e3837d442d39418a4f609">FunG::remove_reference_t</a> = typedef typename <a class="el" href="structFunG_1_1Decay.html">Decay</a>&lt; std::remove_reference_t&lt; F &gt; &gt;::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="namespaceFunG_1_1Access.html">Access</a> underlying type (if it is hidden by expression templates). </p>
+
+</div>
+</div>
+<a class="anchor" id="afc90c0241d79dc4e02ffe640816ec94f"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class F , int id&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespaceFunG.html#a3d589ef7d011a46a72847eabcbbb4532">FunG::Variable_t</a> = typedef typename VariableDetail::VariableType&lt;F,id&gt;::type</td>
+          <td class="memname">using <a class="el" href="namespaceFunG.html#afc90c0241d79dc4e02ffe640816ec94f">FunG::Variable_t</a> = typedef typename VariableDetail::VariableType&lt; F, id &gt;::type</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -927,7 +947,7 @@ template&lt;class Arg1 , class Arg2 , std::enable_if_t&lt; !Checks::isFunction&l
 </div><div class="memdoc">
 
 <p>Defines operator* for multiplication of non-arithmetic types if undefined and in-place multiplication (operator*=()) is supported. </p>
-<p>Defines operator* for multiplication of non-arithmetic types if undefined and in-place multiplication is provided in terms of the member function <a class="el" href="namespaceFunG_1_1Checks_1_1Has_1_1MemFn.html#adeb3d401c6464514644930596c3a4ccc" title="Check if objects of type Arg1 support multiplication with objects of type Arg2 via call to rightmulti...">rightmultiplyany()</a> (such as for Dune::FieldMatrix). </p>
+<p>Defines operator* for multiplication of non-arithmetic types if undefined and in-place multiplication is provided in terms of the member function <a class="el" href="namespaceFunG_1_1Checks_1_1Has_1_1MemFn.html#adeb3d401c6464514644930596c3a4ccc">rightmultiplyany()</a> (such as for Dune::FieldMatrix). </p>
 
 </div>
 </div>
@@ -1027,7 +1047,7 @@ template&lt;class F , class G , std::enable_if_t&lt; Checks::isFunction&lt; std:
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class F , class G , std::enable_if_t&lt; Checks::isFunction&lt; std::decay_t&lt; F &gt; &gt;()||Checks::isFunction&lt; std::decay_t&lt; G &gt; &gt;()&gt; *  = nullptr&gt; </div>
+template&lt;class F , class G , std::enable_if_t&lt; Checks::isFunction&lt; std::decay_t&lt; F &gt; &gt;()||Checks::isFunction&lt; std::decay_t&lt; G &gt; &gt;() &gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto FunG::operator- </td>
@@ -1193,14 +1213,14 @@ template&lt;int id, class F , class Arg , std::enable_if_t&lt;!Detail::HasUpdate
 
 </div>
 </div>
-<a class="anchor" id="a1c474456411f028e14eab67ff6eebe0c"></a>
+<a class="anchor" id="a2ead025b35a8cdf3ac8c170524ab61c0"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;int id, class T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structFunG_1_1Variable.html">Variable</a>&lt;T,id&gt; FunG::variable </td>
+          <td class="memname"><a class="el" href="structFunG_1_1Variable.html">Variable</a>&lt; T, id &gt; FunG::variable </td>
           <td>(</td>
           <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>t</em></td><td>)</td>
@@ -1411,7 +1431,7 @@ template&lt;class Matrix , class  = std::enable_if_t&lt;!Checks::isConstantSize&
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 6 2018 19:48:02 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 19 2018 23:01:27 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
