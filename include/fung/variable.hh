@@ -1,5 +1,7 @@
 #pragma once
 
+#include <fung/util/traverse.hh>
+
 #include <limits>
 #include <type_traits>
 #include <tuple>
@@ -180,32 +182,8 @@ namespace FunG
         namespace Has
         {
             /// Check if Type contains has variable.
-            template < class Type >
-            struct Variable : IsVariable< Type >
-            {
-            };
-
-            template < template < class, bool > class G, class F >
-            struct Variable< G< F, true > > : std::true_type
-            {
-            };
-
-            template < template < class, class, class > class G, class Scalar, class F >
-            struct Variable< G< Scalar, F, Concepts::FunctionConceptCheck< F > > > : Variable< F >
-            {
-            };
-
-            template < template < class, class > class G, class F >
-            struct Variable< G< F, Concepts::FunctionConceptCheck< F > > > : Variable< F >
-            {
-            };
-
-            template < template < class, class, class, class > class H, class F, class G >
-            struct Variable< H< F, G, Concepts::FunctionConceptCheck< F >,
-                                Concepts::FunctionConceptCheck< G > > >
-                : std::integral_constant< bool, Variable< F >::value || Variable< G >::value >
-            {
-            };
+            template < class F >
+            using Variable = Meta::AnyOf< F, IsVariable >;
 
             template < class, int id >
             struct VariableId : std::false_type
