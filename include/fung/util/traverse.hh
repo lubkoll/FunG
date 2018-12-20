@@ -2,8 +2,6 @@
 
 #include <fung/concept_check.hh>
 
-#include <type_traits>
-
 namespace FunG
 {
     namespace Meta
@@ -44,10 +42,7 @@ namespace FunG
         struct Traverse<
             H< F, G, Concepts::FunctionConceptCheck< F >, Concepts::FunctionConceptCheck< G > >,
             Operation, Combine >
-            : std::conditional< Combine< Operation< F >, Operation< G > >::value,
-                                Combine< Operation< F >, Operation< G > >,
-                                Combine< Traverse< F, Operation, Combine >,
-                                         Traverse< G, Operation, Combine > > >::type
+            : Combine< Traverse< F, Operation, Combine >, Traverse< G, Operation, Combine > >
         {
         };
 

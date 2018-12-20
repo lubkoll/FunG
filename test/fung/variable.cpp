@@ -1,5 +1,9 @@
-#include <gtest/gtest.h>
 #include <fung/fung.hh>
+
+#include <gtest/gtest.h>
+#include <gmock/gmock.h>
+
+using ::testing::Eq;
 
 auto generateTestFunction()
 {
@@ -17,6 +21,8 @@ TEST( HasVariableTest, Sum )
     EXPECT_TRUE( Checks::Has::variable< decltype( g ) >() );
     const auto h = finalize( variable< 0 >( 1. ) + variable< 1 >( 2 ) );
     EXPECT_TRUE( Checks::Has::variable< decltype( h ) >() );
+    const auto k = Pow< 2, 1 >() + variable< 1 >( 1 );
+    EXPECT_TRUE( Checks::Has::variable< decltype( k ) >() );
 }
 
 TEST( HasVariableTest, Scale )
@@ -40,8 +46,87 @@ TEST( HasVariableTest, Multiply )
 TEST( HasVariableTest, Squared )
 {
     using namespace FunG;
-    const auto f = finalize( squared( variable< 0 >( 1. ) ) );
+    auto f = finalize( squared( variable< 0 >( 1. ) ) );
     EXPECT_TRUE( Checks::Has::variable< decltype( f ) >() );
+}
+
+TEST( VariableTypeTest, IF_applied_to_variable_THEN_RETURNS_its_type )
+{
+    using G = FunG::Variable< double, 1 >;
+    const auto result = std::is_same< FunG::Variable_t< G, 1 >, double >::value;
+    EXPECT_TRUE( result );
+}
+
+TEST( VariableTypeTest, IF_applied_to_const_variable_THEN_RETURNS_its_type )
+{
+    using G = const FunG::Variable< double, 1 >;
+    const auto result = std::is_same< FunG::Variable_t< G, 1 >, double >::value;
+    EXPECT_TRUE( result );
+}
+
+TEST( HasVariableIdTest, Sum )
+{
+    using namespace FunG;
+    const auto f = finalize( variable< 0 >( 1. ) + 1 );
+    auto result = Checks::Has::variableId< decltype( f ), 0 >();
+    EXPECT_TRUE( result );
+    result = Checks::Has::variableId< decltype( f ), 1 >();
+    EXPECT_FALSE( result );
+    const auto g = finalize( 1 + variable< 0 >( 1. ) );
+    result = Checks::Has::variableId< decltype( g ), 0 >();
+    EXPECT_TRUE( result );
+    result = Checks::Has::variableId< decltype( g ), 1 >();
+    EXPECT_FALSE( result );
+    const auto h = finalize( variable< 0 >( 1. ) + variable< 1 >( 2 ) );
+    result = Checks::Has::variableId< decltype( h ), 0 >();
+    EXPECT_TRUE( result );
+    result = Checks::Has::variableId< decltype( h ), 1 >();
+    EXPECT_TRUE( result );
+    const auto k = Pow< 2, 1 >() + variable< 1 >( 1 );
+    result = Checks::Has::variableId< decltype( k ), 0 >();
+    EXPECT_FALSE( result );
+    result = Checks::Has::variableId< decltype( k ), 1 >();
+    EXPECT_TRUE( result );
+}
+
+TEST( HasVariableIdTest, Scale )
+{
+    using namespace FunG;
+    const auto f = finalize( variable< 0 >( 1. ) * 2 );
+    auto result = Checks::Has::variableId< decltype( f ), 0 >();
+    EXPECT_TRUE( result );
+    result = Checks::Has::variableId< decltype( f ), 1 >();
+    EXPECT_FALSE( result );
+    const auto g = finalize( 2 * variable< 0 >( 1. ) );
+    result = Checks::Has::variableId< decltype( g ), 0 >();
+    EXPECT_TRUE( result );
+    result = Checks::Has::variableId< decltype( g ), 1 >();
+    EXPECT_FALSE( result );
+}
+
+TEST( HasVariableIdTest, Multiply )
+{
+    using namespace FunG;
+    const auto f = finalize( variable< 0 >( 1. ) * variable< 1 >( 2. ) );
+    auto result = Checks::Has::variableId< decltype( f ), 0 >();
+    EXPECT_TRUE( result );
+    result = Checks::Has::variableId< decltype( f ), 1 >();
+    EXPECT_TRUE( result );
+    const auto g = finalize( FunG::Sin( 1 ) * variable< 0 >( 1. ) );
+    result = Checks::Has::variableId< decltype( g ), 0 >();
+    EXPECT_TRUE( result );
+    result = Checks::Has::variableId< decltype( g ), 1 >();
+    EXPECT_FALSE( result );
+}
+
+TEST( HasVariableIdTest, Squared )
+{
+    using namespace FunG;
+    const auto f = finalize( squared( variable< 0 >( 1. ) ) );
+    auto result = Checks::Has::variableId< decltype( f ), 0 >();
+    EXPECT_TRUE( result );
+    result = Checks::Has::variableId< decltype( f ), 1 >();
+    EXPECT_FALSE( result );
 }
 
 TEST( VariableTest, D0 )
@@ -79,6 +164,108 @@ TEST( VariableTest, D2 )
     EXPECT_DOUBLE_EQ( val, 6. );
     val2 = fun.d2< 2, 1 >();
     EXPECT_DOUBLE_EQ( val, val2 );
+}
+
+TEST( MaxVariableIdTest, IF_applied_to_variable_THEN_RETURNS_its_id )
+{
+    using namespace FunG;
+    auto f = variable< 1 >( 1 );
+    EXPECT_THAT( VariableDetail::MaxVariableId< decltype( f ) >::value, Eq( 1 ) );
+}
+
+TEST( MaxVariableIdTest, IF_applied_to_const_variable_THEN_RETURNS_its_id )
+{
+    using namespace FunG;
+    const auto f = variable< 1 >( 1 );
+    EXPECT_THAT( VariableDetail::MaxVariableId< decltype( f ) >::value, Eq( 1 ) );
+}
+
+TEST( MinVariableIdTest, IF_applied_to_variable_THEN_RETURNS_its_id )
+{
+    using namespace FunG;
+    auto f = variable< 1 >( 1 );
+    EXPECT_THAT( VariableDetail::MinVariableId< decltype( f ) >::value, Eq( 1 ) );
+}
+
+TEST( MinVariableIdTest, IF_applied_to_const_variable_THEN_RETURNS_its_id )
+{
+    using namespace FunG;
+    const auto f = variable< 1 >( 1 );
+    EXPECT_THAT( VariableDetail::MinVariableId< decltype( f ) >::value, Eq( 1 ) );
+}
+
+TEST( MaxVariableIdTest, IF_noVariablesInSum_THEN_RETURNS_lowest_int )
+{
+    using namespace FunG;
+    auto f = finalize( Pow< 1, 2 >() + Pow< 2, 1 >() );
+    EXPECT_THAT( VariableDetail::MaxVariableId< decltype( f ) >::value,
+                 Eq( std::numeric_limits< int >::lowest() ) );
+}
+
+TEST( MinVariableIdTest, IF_noVariablesInSum_THEN_RETURNS_max_int )
+{
+    using namespace FunG;
+    auto f = finalize( Pow< 1, 2 >() + Pow< 2, 1 >() );
+    EXPECT_THAT( VariableDetail::MinVariableId< decltype( f ) >::value,
+                 Eq( std::numeric_limits< int >::max() ) );
+}
+
+TEST( MaxVariableIdTest, IF_oneVariableInSum_THEN_RETURNS_its_id )
+{
+    using namespace FunG;
+    auto f = finalize( Pow< 2, 1 >() + variable< 1 >( 1 ) );
+    EXPECT_THAT( VariableDetail::MaxVariableId< decltype( f ) >::value, Eq( 1 ) );
+}
+
+TEST( MinVariableIdTest, IF_oneVariableInSum_THEN_RETURNS_its_id )
+{
+    using namespace FunG;
+    auto f = Pow< 2, 1 >() + variable< 1 >( 1 );
+    EXPECT_THAT( VariableDetail::MinVariableId< decltype( f ) >::value, Eq( 1 ) );
+}
+
+TEST( MaxVariableIdTest, IF_twoVariablesInSum_THEN_RETURNS_the_bigger_id )
+{
+    using namespace FunG;
+    auto f = variable< -3 >( 1 ) + variable< 2 >( 1 );
+    EXPECT_THAT( VariableDetail::MaxVariableId< decltype( f ) >::value, Eq( 2 ) );
+}
+
+TEST( MinVariableIdTest, IF_twoVariablesInSum_THEN_RETURNS_the_smaller_id )
+{
+    using namespace FunG;
+    auto f = variable< -3 >( 1 ) + variable< 2 >( 1 );
+    EXPECT_THAT( VariableDetail::MinVariableId< decltype( f ) >::value, Eq( -3 ) );
+}
+
+TEST( MaxVariableIdTest, IF_noVariablesInScale_THEN_RETURNS_lowest_int )
+{
+    using namespace FunG;
+    auto f = finalize( 2 * Pow< 2, 1 >() );
+    EXPECT_THAT( VariableDetail::MaxVariableId< decltype( f ) >::value,
+                 Eq( std::numeric_limits< int >::lowest() ) );
+}
+
+TEST( MinVariableIdTest, IF_noVariablesInScale_THEN_RETURNS_max_int )
+{
+    using namespace FunG;
+    auto f = finalize( 2 * Pow< 2, 1 >() );
+    EXPECT_THAT( VariableDetail::MinVariableId< decltype( f ) >::value,
+                 Eq( std::numeric_limits< int >::max() ) );
+}
+
+TEST( MaxVariableIdTest, IF_oneVariableInScale_THEN_RETURNS_its_id )
+{
+    using namespace FunG;
+    auto f = 2 * variable< 1 >( 1 );
+    EXPECT_THAT( VariableDetail::MaxVariableId< decltype( f ) >::value, Eq( 1 ) );
+}
+
+TEST( MinVariableIdTest, IF_oneVariableInScale_THEN_RETURNS_its_id )
+{
+    using namespace FunG;
+    auto f = 2 * variable< 1 >( 1 );
+    EXPECT_THAT( VariableDetail::MinVariableId< decltype( f ) >::value, Eq( 1 ) );
 }
 
 // TEST(VariableTest,D3)

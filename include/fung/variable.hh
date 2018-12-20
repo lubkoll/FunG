@@ -126,11 +126,11 @@ namespace FunG
     {
         Variable() = default;
 
-        explicit Variable( const T& t_ ) : t( t_ )
+        constexpr explicit Variable( const T& t_ ) : t( t_ )
         {
         }
 
-        explicit Variable( T&& t_ ) : t( std::move( t_ ) )
+        constexpr explicit Variable( T&& t_ ) : t( std::move( t_ ) )
         {
         }
 
@@ -142,7 +142,7 @@ namespace FunG
         }
 
         /// Value of the variable.
-        const T& operator()() const noexcept
+        constexpr const T& operator()() const noexcept
         {
             return t;
         }
@@ -179,97 +179,93 @@ namespace FunG
         {
         };
 
+        template < class, int >
+        struct HasVariableWithId : std::false_type
+        {
+        };
+
+        template < class Type, int id0, int id >
+        struct HasVariableWithId< FunG::Variable< Type, id0 >, id >
+            : std::integral_constant< bool, id == id0 >
+        {
+        };
+
         namespace Has
         {
             /// Check if Type contains has variable.
             template < class F >
             using Variable = Meta::AnyOf< F, IsVariable >;
 
-            template < class, int id >
-            struct VariableId : std::false_type
+            template < class F, int id >
+            struct VariableId
+            {
+                template < class G >
+                struct HasVariable
+                {
+                    static constexpr bool value = HasVariableWithId< G, id >::value;
+                };
+                static constexpr bool value = Meta::AnyOf< F, HasVariable >::value;
+            };
+        }
+
+        constexpr bool greater( int a, int b )
+        {
+            return a > b;
+        }
+
+        template < class F, class G >
+        struct Max
+            : std::integral_constant< int, greater( F::value, G::value ) ? F::value : G::value >
+        {
+        };
+
+        template < class F, class G >
+        struct Min
+            : std::integral_constant< int, greater( G::value, F::value ) ? F::value : G::value >
+        {
+        };
+
+        namespace Detail
+        {
+            template < class Type >
+            struct MaxVariableId
+                : std::integral_constant< int, std::numeric_limits< int >::lowest() >
             {
             };
 
-            template < class Type, int id0, int id >
-            struct VariableId< FunG::Variable< Type, id0 >, id >
-                : std::integral_constant< bool, id == id0 >
+            template < class T, int id >
+            struct MaxVariableId< FunG::Variable< T, id > > : std::integral_constant< int, id >
             {
             };
 
-            template < template < class, class > class G, class F, int id >
-            struct VariableId< G< F, Concepts::FunctionConceptCheck< F > >, id >
-                : VariableId< F, id >
+            template < class T, int id >
+            struct MaxVariableId< const FunG::Variable< T, id > >
+                : std::integral_constant< int, id >
             {
             };
 
-            template < template < class, class, class, class > class H, class F, class G, int id >
-            struct VariableId<
-                H< F, G, Concepts::FunctionConceptCheck< F >, Concepts::FunctionConceptCheck< G > >,
-                id > : std::integral_constant< bool, VariableId< F, id >::value ||
-                                                         VariableId< G, id >::value >
+            template < class Type >
+            struct MinVariableId : std::integral_constant< int, std::numeric_limits< int >::max() >
+            {
+            };
+
+            template < class T, int id >
+            struct MinVariableId< FunG::Variable< T, id > > : std::integral_constant< int, id >
+            {
+            };
+
+            template < class T, int id >
+            struct MinVariableId< const FunG::Variable< T, id > >
+                : std::integral_constant< int, id >
             {
             };
         }
 
-        template < class F, class G >
-        struct ComputeMax
-        {
-            static constexpr int value = F::value > G::value ? F::value : G::value;
-        };
+        template < class F >
+        using MaxVariableId = Meta::Traverse< F, Detail::MaxVariableId, Max >;
 
-        template < class F, class G >
-        struct ComputeMin
-        {
-            static constexpr int value = F::value < G::value ? F::value : G::value;
-        };
-
-        template < class Type >
-        struct MaxVariableId : std::integral_constant< int, std::numeric_limits< int >::lowest() >
-        {
-        };
-
-        template < template < class, class > class G, class F >
-        struct MaxVariableId< G< F, Concepts::FunctionConceptCheck< F > > >
-            : std::integral_constant< int, MaxVariableId< F >::value >
-        {
-        };
-
-        template < template < class, class, class, class > class H, class F, class G >
-        struct MaxVariableId<
-            H< F, G, Concepts::FunctionConceptCheck< F >, Concepts::FunctionConceptCheck< F > > >
-            : std::integral_constant< int,
-                                      ComputeMax< MaxVariableId< F >, MaxVariableId< G > >::value >
-        {
-        };
-
-        template < class T, int id >
-        struct MaxVariableId< Variable< T, id > > : std::integral_constant< int, id >
-        {
-        };
-
-        template < class Type >
-        struct MinVariableId : std::integral_constant< int, std::numeric_limits< int >::max() >
-        {
-        };
-
-        template < template < class, class > class G, class F >
-        struct MinVariableId< G< F, Concepts::FunctionConceptCheck< F > > >
-            : std::integral_constant< int, MinVariableId< F >::value >
-        {
-        };
-
-        template < template < class, class, class, class > class H, class F, class G >
-        struct MinVariableId<
-            H< F, G, Concepts::FunctionConceptCheck< F >, Concepts::FunctionConceptCheck< G > > >
-            : std::integral_constant< int,
-                                      ComputeMax< MinVariableId< F >, MinVariableId< G > >::value >
-        {
-        };
-
-        template < class T, int id >
-        struct MinVariableId< Variable< T, id > > : std::integral_constant< int, id >
-        {
-        };
+        template < class F >
+        using MinVariableId = Meta::Traverse< F, Detail::MinVariableId, Min >;
 
         template < class F, int id >
         struct VariableType
@@ -298,12 +294,45 @@ namespace FunG
         {
             using type = T;
         };
+
+        template < class T, int id >
+        struct VariableType< const Variable< T, id >, id >
+        {
+            using type = T;
+        };
+
+        template < class, class >
+        struct ChooseTypeImpl;
+
+        template < class T >
+        struct ChooseTypeImpl< T, void >
+        {
+            using type = T;
+        };
+
+        template < class T >
+        struct ChooseTypeImpl< void, T >
+        {
+            using type = T;
+        };
+
+        template <>
+        struct ChooseTypeImpl< void, void >
+        {
+            using type = void;
+        };
+
+        template < class F, class G >
+        struct ChooseType
+        {
+            using type = typename ChooseTypeImpl< typename F::type, typename G::type >::type;
+        };
     }
     /// @endcond
 
     /// Get underlying type of variable with index id.
     template < class F, int id >
-    using Variable_t = typename VariableDetail::VariableType< F, id >::type;
+    using Variable_t = typename VariableDetail::VariableType< std::decay_t< F >, id >::type;
 
     namespace Checks
     {
@@ -330,15 +359,15 @@ namespace FunG
             template < class T, int id >
             constexpr bool variableId()
             {
-                return VariableDetail::Has::VariableId< T, id >::value;
+                return VariableDetail::Has::VariableId< std::decay_t< T >, id >::value;
             }
 
             /// Check if T contains at least two variables.
-            template < class Type >
+            template < class T >
             constexpr bool moreThanOneVariable()
             {
-                return VariableDetail::MinVariableId< Type >::value <
-                       VariableDetail::MaxVariableId< Type >::value;
+                return VariableDetail::MinVariableId< std::decay_t< T > >::value <
+                       VariableDetail::MaxVariableId< std::decay_t< T > >::value;
             }
         }
 
