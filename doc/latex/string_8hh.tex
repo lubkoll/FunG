@@ -1,0 +1,49 @@
+\hypertarget{string_8hh}{\section{include/fung/util/string.hh File Reference}
+\label{string_8hh}\index{include/fung/util/string.\-hh@{include/fung/util/string.\-hh}}
+}
+{\ttfamily \#include \char`\"{}chainer.\-hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}indexed\-\_\-type.\-hh\char`\"{}}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$type\-\_\-traits$>$}\\*
+{\ttfamily \#include $<$utility$>$}\\*
+{\ttfamily \#include $<$ostream$>$}\\*
+{\ttfamily \#include $<$regex$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structFunG_1_1String}{Fun\-G\-::\-String}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceFunG}{Fun\-G}
+\begin{DoxyCompactList}\small\item\em Main namespace of the Fun\-G library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\String \hyperlink{namespaceFunG_a3ba37cdd71d527a2f15d09a7c886de43}{Fun\-G\-::to\-String} (T \&\&t)
+\item 
+String \hyperlink{namespaceFunG_a262dd18fdad9a576780b797fc2070cb2}{Fun\-G\-::add\-Scope} (String str)
+\item 
+String \hyperlink{namespaceFunG_a2bb32fe9e9cd8e52b21f191024bbf865}{Fun\-G\-::multiply\-If\-Not\-Empty} (const String \&dx)
+\item 
+String \hyperlink{namespaceFunG_aa63a97fd8a8b9edc6a4b68ede627a7f2}{Fun\-G\-::multiply\-If\-Not\-Empty} (const String \&dx, const String \&dy)
+\item 
+String \hyperlink{namespaceFunG_aa63312a6768b8c8bc3b13b89b79bb458}{Fun\-G\-::multiply\-If\-Not\-Empty} (const String \&dx, const String \&dy, const String \&dz)
+\item 
+String \hyperlink{namespaceFunG_a77777736a53db19e90aec100b2bf19eb}{Fun\-G\-::operator+} (const String \&lhs, const String \&rhs)
+\item 
+String \hyperlink{namespaceFunG_aa9fb6597d25acc448cad0a5542a34c36}{Fun\-G\-::operator-\/} (const String \&lhs, const String \&rhs)
+\item 
+String \hyperlink{namespaceFunG_a2d7abd41ff8bf6668ac483f27b695c68}{Fun\-G\-::operator$\ast$} (const String \&lhs, const String \&rhs)
+\item 
+{\footnotesize template$<$class T , std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-arithmetic$<$ T $>$\-::value $>$ $\ast$  = nullptr$>$ }\\String \hyperlink{namespaceFunG_ab9af9ae286e75b48ade1131d34f83dd2}{Fun\-G\-::operator$\ast$} (const T \&lhs, const String \&rhs)
+\item 
+{\footnotesize template$<$class T , std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-arithmetic$<$ T $>$\-::value $>$ $\ast$  = nullptr$>$ }\\String \hyperlink{namespaceFunG_a46702905ca56369a7c0790e674dbff2c}{Fun\-G\-::operator$\ast$} (String lhs, const T \&rhs)
+\item 
+String \hyperlink{namespaceFunG_ab267e162b5fa99ad8244512d4c32d60d}{Fun\-G\-::operator/} (const String \&lhs, const String \&rhs)
+\item 
+std\-::ostream \& \hyperlink{namespaceFunG_a50f870064559f02c5e91f44ad52087a9}{Fun\-G\-::operator$<$$<$} (std\-::ostream \&os, const String \&str)
+\item 
+bool \hyperlink{namespaceFunG_a45449d94c35ab23a7b5a10a628891d62}{Fun\-G\-::operator==} (const String \&lhs, const String \&rhs)
+\end{DoxyCompactItemize}

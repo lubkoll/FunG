@@ -18,5 +18,5 @@ var searchData=
   ['constant',['Constant',['../structFunG_1_1Constant.html#a278d28a1015016d076389b89a43bf118',1,'FunG::Constant::Constant()=default'],['../structFunG_1_1Constant.html#a24482c93ea4fe192f4c1a062c5b2d8a1',1,'FunG::Constant::Constant(Type t_)'],['../namespaceFunG.html#a939d13d36c194b402715f12a28147cdc',1,'FunG::constant()']]],
   ['constref',['constRef',['../namespaceFunG.html#abcfb38c2e995436816ea884803302f2d',1,'FunG']]],
   ['copyconcept',['CopyConcept',['../structFunG_1_1Concepts_1_1CopyConcept.html#afc08741d422ff46c2e681efc38913144',1,'FunG::Concepts::CopyConcept']]],
-  ['cos',['Cos',['../structFunG_1_1Cos.html#a1c3c7f2efe426de2dab5bb4a307442ce',1,'FunG::Cos::Cos()'],['../group__CMathGroup.html#ga7e9b2ac717cd2350663293cb66ba6cbd',1,'FunG::cos()']]]
+  ['cos',['Cos',['../structFunG_1_1Cos.html#a40c049c8842e387ccc5ab5f3720c938e',1,'FunG::Cos::Cos()'],['../structFunG_1_1stringify_1_1Cos.html#a6d3500463ccf52c1a7a8947ff69ffc65',1,'FunG::stringify::Cos::Cos()'],['../group__CMathGroup.html#ga7e9b2ac717cd2350663293cb66ba6cbd',1,'FunG::cos()'],['../group__StringifyCMathGroup.html#gaaa7d5292922e58b22115bc27d784dcfd',1,'FunG::stringify::cos()']]]
 ];

@@ -1,0 +1,101 @@
+\hypertarget{group__StringifyCMathGroup}{\section{Stringify\-C\-Math\-Group}
+\label{group__StringifyCMathGroup}\index{Stringify\-C\-Math\-Group@{Stringify\-C\-Math\-Group}}
+}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceFunG_1_1stringify}{Fun\-G\-::stringify}
+\begin{DoxyCompactList}\small\item\em Arc sine function including first three derivatives (based on asin(\-String) in $<$cmath$>$). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{group__StringifyCMathGroup_gaec458ee50fd7b49de4dc2ed1286e8286}{Fun\-G\-::stringify\-::acos} (const Function \&f)
+\begin{DoxyCompactList}\small\item\em Generate printable version of $ \arccos\circ f $. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{group__StringifyCMathGroup_gab50530d1358bb1d94ecaea4026fd83ea}{Fun\-G\-::stringify\-::asin} (const Function \&f)
+\begin{DoxyCompactList}\small\item\em Generate $ \arcsin\circ f $. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{group__StringifyCMathGroup_gaaa7d5292922e58b22115bc27d784dcfd}{Fun\-G\-::stringify\-::cos} (const Function \&f)
+\begin{DoxyCompactList}\small\item\em Generate $ \cos\circ f $. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{group__StringifyCMathGroup_gaa44ea064dbf1d4befb6766de66a994e5}{Fun\-G\-::stringify\-::sin} (const Function \&f)
+\begin{DoxyCompactList}\small\item\em Generate $ \sin\circ f $. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__StringifyCMathGroup_gaec458ee50fd7b49de4dc2ed1286e8286}{\index{Stringify\-C\-Math\-Group@{Stringify\-C\-Math\-Group}!acos@{acos}}
+\index{acos@{acos}!StringifyCMathGroup@{Stringify\-C\-Math\-Group}}
+\subsubsection[{acos}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ auto Fun\-G\-::stringify\-::acos (
+\begin{DoxyParamCaption}
+\item[{const Function \&}]{f}
+\end{DoxyParamCaption}
+)}}\label{group__StringifyCMathGroup_gaec458ee50fd7b49de4dc2ed1286e8286}
+
+
+Generate printable version of $ \arccos\circ f $. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & function mapping into a scalar space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object of type \hyperlink{structFunG_1_1MathematicalOperations_1_1Chain}{Mathematical\-Operations\-::\-Chain}$<$Printable$<$\-A\-Cos$>$,Function$>$ 
+\end{DoxyReturn}
+\hypertarget{group__StringifyCMathGroup_gab50530d1358bb1d94ecaea4026fd83ea}{\index{Stringify\-C\-Math\-Group@{Stringify\-C\-Math\-Group}!asin@{asin}}
+\index{asin@{asin}!StringifyCMathGroup@{Stringify\-C\-Math\-Group}}
+\subsubsection[{asin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ auto Fun\-G\-::stringify\-::asin (
+\begin{DoxyParamCaption}
+\item[{const Function \&}]{f}
+\end{DoxyParamCaption}
+)}}\label{group__StringifyCMathGroup_gab50530d1358bb1d94ecaea4026fd83ea}
+
+
+Generate $ \arcsin\circ f $. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & function mapping into a scalar space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object of type Mathematical\-Operations\-::\-Chain$<$\-A\-Sin,\-Function$>$ 
+\end{DoxyReturn}
+\hypertarget{group__StringifyCMathGroup_gaaa7d5292922e58b22115bc27d784dcfd}{\index{Stringify\-C\-Math\-Group@{Stringify\-C\-Math\-Group}!cos@{cos}}
+\index{cos@{cos}!StringifyCMathGroup@{Stringify\-C\-Math\-Group}}
+\subsubsection[{cos}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ auto Fun\-G\-::stringify\-::cos (
+\begin{DoxyParamCaption}
+\item[{const Function \&}]{f}
+\end{DoxyParamCaption}
+)}}\label{group__StringifyCMathGroup_gaaa7d5292922e58b22115bc27d784dcfd}
+
+
+Generate $ \cos\circ f $. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & function mapping into a scalar space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object of type Mathematical\-Operations\-::\-Chain$<$\-Cosc,\-Function$>$ 
+\end{DoxyReturn}
+\hypertarget{group__StringifyCMathGroup_gaa44ea064dbf1d4befb6766de66a994e5}{\index{Stringify\-C\-Math\-Group@{Stringify\-C\-Math\-Group}!sin@{sin}}
+\index{sin@{sin}!StringifyCMathGroup@{Stringify\-C\-Math\-Group}}
+\subsubsection[{sin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ auto Fun\-G\-::stringify\-::sin (
+\begin{DoxyParamCaption}
+\item[{const Function \&}]{f}
+\end{DoxyParamCaption}
+)}}\label{group__StringifyCMathGroup_gaa44ea064dbf1d4befb6766de66a994e5}
+
+
+Generate $ \sin\circ f $. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & function mapping into a scalar space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object of type Mathematical\-Operations\-::\-Chain$<$\-Sin,\-Function$>$ 
+\end{DoxyReturn}

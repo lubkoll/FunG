@@ -1,0 +1,123 @@
+\hypertarget{structFunG_1_1stringify_1_1Log10}{\section{Fun\-G\-:\-:stringify\-:\-:Log10 Struct Reference}
+\label{structFunG_1_1stringify_1_1Log10}\index{Fun\-G\-::stringify\-::\-Log10@{Fun\-G\-::stringify\-::\-Log10}}
+}
+
+
+Common (base 10) logarithm including first three derivatives.  
+
+
+
+
+{\ttfamily \#include $<$log.\-hh$>$}
+
+Inheritance diagram for Fun\-G\-:\-:stringify\-:\-:Log10\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structFunG_1_1stringify_1_1Log10}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structFunG_1_1stringify_1_1Log10_adc0f9f883d5440b9b830de1fdb829d62}{Log10} (const \hyperlink{structFunG_1_1String}{String} \&x=\char`\"{}x\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \hyperlink{structFunG_1_1stringify_1_1Log10_aaedc5f1160972edcc2b482b724aee82c}{update} (const \hyperlink{structFunG_1_1String}{String} \&x)
+\begin{DoxyCompactList}\small\item\em Set point of evaluation. \end{DoxyCompactList}\item 
+\hyperlink{structFunG_1_1String}{String} \hyperlink{structFunG_1_1stringify_1_1Log10_a839d0fc542d77763aedd53de85d44def}{d0} () const noexcept
+\begin{DoxyCompactList}\small\item\em Function value. \end{DoxyCompactList}\item 
+\hyperlink{structFunG_1_1String}{String} \hyperlink{structFunG_1_1stringify_1_1Log10_a9fcef111ed931e1f5172bda7d43618dd}{d1} (const \hyperlink{structFunG_1_1String}{String} \&dx=\char`\"{}\char`\"{}) const 
+\begin{DoxyCompactList}\small\item\em First (directional) derivative. \end{DoxyCompactList}\item 
+\hyperlink{structFunG_1_1String}{String} \hyperlink{structFunG_1_1stringify_1_1Log10_a798f87fe876c1953b87328794563c4cb}{d2} (const \hyperlink{structFunG_1_1String}{String} \&dx=\char`\"{}\char`\"{}, const \hyperlink{structFunG_1_1String}{String} \&dy=\char`\"{}\char`\"{}) const 
+\begin{DoxyCompactList}\small\item\em Second (directional) derivative. \end{DoxyCompactList}\item 
+\hyperlink{structFunG_1_1String}{String} \hyperlink{structFunG_1_1stringify_1_1Log10_a93a28b93452a8a1486bf002078fe5cdb}{d3} (const \hyperlink{structFunG_1_1String}{String} \&dx=\char`\"{}\char`\"{}, const \hyperlink{structFunG_1_1String}{String} \&dy=\char`\"{}\char`\"{}, const \hyperlink{structFunG_1_1String}{String} \&dz=\char`\"{}\char`\"{}) const 
+\begin{DoxyCompactList}\small\item\em Third (directional) derivative. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Common (base 10) logarithm including first three derivatives. 
+
+For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur during applications of the chain rule. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structFunG_1_1stringify_1_1Log10_adc0f9f883d5440b9b830de1fdb829d62}{\index{Fun\-G\-::stringify\-::\-Log10@{Fun\-G\-::stringify\-::\-Log10}!Log10@{Log10}}
+\index{Log10@{Log10}!FunG::stringify::Log10@{Fun\-G\-::stringify\-::\-Log10}}
+\subsubsection[{Log10}]{\setlength{\rightskip}{0pt plus 5cm}Fun\-G\-::stringify\-::\-Log10\-::\-Log10 (
+\begin{DoxyParamCaption}
+\item[{const {\bf String} \&}]{x = {\ttfamily \char`\"{}x\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{structFunG_1_1stringify_1_1Log10_adc0f9f883d5440b9b830de1fdb829d62}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & point of evaluation \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structFunG_1_1stringify_1_1Log10_a839d0fc542d77763aedd53de85d44def}{\index{Fun\-G\-::stringify\-::\-Log10@{Fun\-G\-::stringify\-::\-Log10}!d0@{d0}}
+\index{d0@{d0}!FunG::stringify::Log10@{Fun\-G\-::stringify\-::\-Log10}}
+\subsubsection[{d0}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} Fun\-G\-::stringify\-::\-Log10\-::d0 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}}\label{structFunG_1_1stringify_1_1Log10_a839d0fc542d77763aedd53de85d44def}
+
+
+Function value. 
+
+\hypertarget{structFunG_1_1stringify_1_1Log10_a9fcef111ed931e1f5172bda7d43618dd}{\index{Fun\-G\-::stringify\-::\-Log10@{Fun\-G\-::stringify\-::\-Log10}!d1@{d1}}
+\index{d1@{d1}!FunG::stringify::Log10@{Fun\-G\-::stringify\-::\-Log10}}
+\subsubsection[{d1}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} Fun\-G\-::stringify\-::\-Log10\-::d1 (
+\begin{DoxyParamCaption}
+\item[{const {\bf String} \&}]{dx = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structFunG_1_1stringify_1_1Log10_a9fcef111ed931e1f5172bda7d43618dd}
+
+
+First (directional) derivative. 
+
+\hypertarget{structFunG_1_1stringify_1_1Log10_a798f87fe876c1953b87328794563c4cb}{\index{Fun\-G\-::stringify\-::\-Log10@{Fun\-G\-::stringify\-::\-Log10}!d2@{d2}}
+\index{d2@{d2}!FunG::stringify::Log10@{Fun\-G\-::stringify\-::\-Log10}}
+\subsubsection[{d2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} Fun\-G\-::stringify\-::\-Log10\-::d2 (
+\begin{DoxyParamCaption}
+\item[{const {\bf String} \&}]{dx = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{const {\bf String} \&}]{dy = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structFunG_1_1stringify_1_1Log10_a798f87fe876c1953b87328794563c4cb}
+
+
+Second (directional) derivative. 
+
+\hypertarget{structFunG_1_1stringify_1_1Log10_a93a28b93452a8a1486bf002078fe5cdb}{\index{Fun\-G\-::stringify\-::\-Log10@{Fun\-G\-::stringify\-::\-Log10}!d3@{d3}}
+\index{d3@{d3}!FunG::stringify::Log10@{Fun\-G\-::stringify\-::\-Log10}}
+\subsubsection[{d3}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} Fun\-G\-::stringify\-::\-Log10\-::d3 (
+\begin{DoxyParamCaption}
+\item[{const {\bf String} \&}]{dx = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{const {\bf String} \&}]{dy = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{const {\bf String} \&}]{dz = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structFunG_1_1stringify_1_1Log10_a93a28b93452a8a1486bf002078fe5cdb}
+
+
+Third (directional) derivative. 
+
+\hypertarget{structFunG_1_1stringify_1_1Log10_aaedc5f1160972edcc2b482b724aee82c}{\index{Fun\-G\-::stringify\-::\-Log10@{Fun\-G\-::stringify\-::\-Log10}!update@{update}}
+\index{update@{update}!FunG::stringify::Log10@{Fun\-G\-::stringify\-::\-Log10}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Fun\-G\-::stringify\-::\-Log10\-::update (
+\begin{DoxyParamCaption}
+\item[{const {\bf String} \&}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structFunG_1_1stringify_1_1Log10_aaedc5f1160972edcc2b482b724aee82c}
+
+
+Set point of evaluation. 
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+include/fung/cmath/stringify/\hyperlink{stringify_2log_8hh}{log.\-hh}\end{DoxyCompactItemize}

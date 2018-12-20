@@ -1,0 +1,184 @@
+\hypertarget{namespaceFunG_1_1stringify}{\section{Fun\-G\-:\-:stringify Namespace Reference}
+\label{namespaceFunG_1_1stringify}\index{Fun\-G\-::stringify@{Fun\-G\-::stringify}}
+}
+
+
+Arc sine function including first three derivatives (based on asin(\-String) in $<$cmath$>$).  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structFunG_1_1stringify_1_1ACos}{A\-Cos}
+\item 
+struct \hyperlink{structFunG_1_1stringify_1_1ASin}{A\-Sin}
+\item 
+struct \hyperlink{structFunG_1_1stringify_1_1Cos}{Cos}
+\item 
+struct \hyperlink{structFunG_1_1stringify_1_1Exp}{Exp}
+\item 
+struct \hyperlink{structFunG_1_1stringify_1_1Exp2}{Exp2}
+\begin{DoxyCompactList}\small\item\em Function $2^x$ including first three derivatives. \end{DoxyCompactList}\item 
+struct \hyperlink{structFunG_1_1stringify_1_1LN}{L\-N}
+\item 
+struct \hyperlink{structFunG_1_1stringify_1_1Log10}{Log10}
+\begin{DoxyCompactList}\small\item\em Common (base 10) logarithm including first three derivatives. \end{DoxyCompactList}\item 
+struct \hyperlink{structFunG_1_1stringify_1_1Log2}{Log2}
+\begin{DoxyCompactList}\small\item\em Base 2 logarithm including first three derivatives. \end{DoxyCompactList}\item 
+struct \hyperlink{structFunG_1_1stringify_1_1Sin}{Sin}
+\item 
+struct \hyperlink{structFunG_1_1stringify_1_1Tan}{Tan}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{group__StringifyCMathGroup_gaec458ee50fd7b49de4dc2ed1286e8286}{acos} (const Function \&f)
+\begin{DoxyCompactList}\small\item\em Generate printable version of $ \arccos\circ f $. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{group__StringifyCMathGroup_gab50530d1358bb1d94ecaea4026fd83ea}{asin} (const Function \&f)
+\begin{DoxyCompactList}\small\item\em Generate $ \arcsin\circ f $. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{group__StringifyCMathGroup_gaaa7d5292922e58b22115bc27d784dcfd}{cos} (const Function \&f)
+\begin{DoxyCompactList}\small\item\em Generate $ \cos\circ f $. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{namespaceFunG_1_1stringify_a1d842afc06c89ccb71a8fb87cd1d0317}{exp} (const Function \&f)
+\begin{DoxyCompactList}\small\item\em Generate $ \exp(f) $. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{namespaceFunG_1_1stringify_a4c0a6708bd8bc063430245ec7832d66b}{exp2} (const Function \&f)
+\begin{DoxyCompactList}\small\item\em Generate $2^f$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{namespaceFunG_1_1stringify_abefe44a652173ce98927b0d432ad3547}{ln} (const Function \&f)
+\begin{DoxyCompactList}\small\item\em Generate $ \mathrm{ln}\circ f $. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{namespaceFunG_1_1stringify_af0b292572bbf39d619243535b833c17d}{log10} (const Function \&f)
+\begin{DoxyCompactList}\small\item\em Generate $ \mathrm{log}_{10}\circ f $. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{namespaceFunG_1_1stringify_a6815627cdbde7b81d56ec5a6377b5e47}{log2} (const Function \&f)
+\begin{DoxyCompactList}\small\item\em Generate $ \mathrm{log}_{2}\circ f $. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{group__StringifyCMathGroup_gaa44ea064dbf1d4befb6766de66a994e5}{sin} (const Function \&f)
+\begin{DoxyCompactList}\small\item\em Generate $ \sin\circ f $. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{namespaceFunG_1_1stringify_a85e04af673887eb29a630918c8b660ed}{tan} (const Function \&f)
+\begin{DoxyCompactList}\small\item\em Generate $ \tan\circ f $. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Arc sine function including first three derivatives (based on asin(\-String) in $<$cmath$>$). Tangent function including first three derivatives.
+
+Sine function including first three derivatives (based on sin(double) in $<$cmath$>$).
+
+Natural logarithm including first three derivatives.
+
+Exponential function including first three derivatives.
+
+Cosine function including first three derivatives (based on cos(double) in $<$cmath$>$).
+
+For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur during applications of the chain rule. 
+
+\subsection{Function Documentation}
+\hypertarget{namespaceFunG_1_1stringify_a1d842afc06c89ccb71a8fb87cd1d0317}{\index{Fun\-G\-::stringify@{Fun\-G\-::stringify}!exp@{exp}}
+\index{exp@{exp}!FunG::stringify@{Fun\-G\-::stringify}}
+\subsubsection[{exp}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ auto Fun\-G\-::stringify\-::exp (
+\begin{DoxyParamCaption}
+\item[{const Function \&}]{f}
+\end{DoxyParamCaption}
+)}}\label{namespaceFunG_1_1stringify_a1d842afc06c89ccb71a8fb87cd1d0317}
+
+
+Generate $ \exp(f) $. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & function mapping into a scalar space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object of type Mathematical\-Operations\-::\-Chain$<$\-Exp,\-Function$>$ 
+\end{DoxyReturn}
+\hypertarget{namespaceFunG_1_1stringify_a4c0a6708bd8bc063430245ec7832d66b}{\index{Fun\-G\-::stringify@{Fun\-G\-::stringify}!exp2@{exp2}}
+\index{exp2@{exp2}!FunG::stringify@{Fun\-G\-::stringify}}
+\subsubsection[{exp2}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ auto Fun\-G\-::stringify\-::exp2 (
+\begin{DoxyParamCaption}
+\item[{const Function \&}]{f}
+\end{DoxyParamCaption}
+)}}\label{namespaceFunG_1_1stringify_a4c0a6708bd8bc063430245ec7832d66b}
+
+
+Generate $2^f$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & function mapping into a scalar space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object of type Mathematical\-Operations\-::\-Chain$<$\-Exp2,\-Function$>$ 
+\end{DoxyReturn}
+\hypertarget{namespaceFunG_1_1stringify_abefe44a652173ce98927b0d432ad3547}{\index{Fun\-G\-::stringify@{Fun\-G\-::stringify}!ln@{ln}}
+\index{ln@{ln}!FunG::stringify@{Fun\-G\-::stringify}}
+\subsubsection[{ln}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ auto Fun\-G\-::stringify\-::ln (
+\begin{DoxyParamCaption}
+\item[{const Function \&}]{f}
+\end{DoxyParamCaption}
+)}}\label{namespaceFunG_1_1stringify_abefe44a652173ce98927b0d432ad3547}
+
+
+Generate $ \mathrm{ln}\circ f $. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & function mapping into a scalar space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object of type Mathematical\-Operations\-::\-Chain$<$\-Log,\-Function$>$ 
+\end{DoxyReturn}
+\hypertarget{namespaceFunG_1_1stringify_af0b292572bbf39d619243535b833c17d}{\index{Fun\-G\-::stringify@{Fun\-G\-::stringify}!log10@{log10}}
+\index{log10@{log10}!FunG::stringify@{Fun\-G\-::stringify}}
+\subsubsection[{log10}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ auto Fun\-G\-::stringify\-::log10 (
+\begin{DoxyParamCaption}
+\item[{const Function \&}]{f}
+\end{DoxyParamCaption}
+)}}\label{namespaceFunG_1_1stringify_af0b292572bbf39d619243535b833c17d}
+
+
+Generate $ \mathrm{log}_{10}\circ f $. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & function mapping into a scalar space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object of type Mathematical\-Operations\-::\-Chain$<$\-Log10,\-Function$>$ 
+\end{DoxyReturn}
+\hypertarget{namespaceFunG_1_1stringify_a6815627cdbde7b81d56ec5a6377b5e47}{\index{Fun\-G\-::stringify@{Fun\-G\-::stringify}!log2@{log2}}
+\index{log2@{log2}!FunG::stringify@{Fun\-G\-::stringify}}
+\subsubsection[{log2}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ auto Fun\-G\-::stringify\-::log2 (
+\begin{DoxyParamCaption}
+\item[{const Function \&}]{f}
+\end{DoxyParamCaption}
+)}}\label{namespaceFunG_1_1stringify_a6815627cdbde7b81d56ec5a6377b5e47}
+
+
+Generate $ \mathrm{log}_{2}\circ f $. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & function mapping into a scalar space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object of type Mathematical\-Operations\-::\-Chain$<$\-Log2,\-Function$>$ 
+\end{DoxyReturn}
+\hypertarget{namespaceFunG_1_1stringify_a85e04af673887eb29a630918c8b660ed}{\index{Fun\-G\-::stringify@{Fun\-G\-::stringify}!tan@{tan}}
+\index{tan@{tan}!FunG::stringify@{Fun\-G\-::stringify}}
+\subsubsection[{tan}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ auto Fun\-G\-::stringify\-::tan (
+\begin{DoxyParamCaption}
+\item[{const Function \&}]{f}
+\end{DoxyParamCaption}
+)}}\label{namespaceFunG_1_1stringify_a85e04af673887eb29a630918c8b660ed}
+
+
+Generate $ \tan\circ f $. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & function mapping into a scalar space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object of type Mathematical\-Operations\-::\-Chain$<$\-Tan,\-Function$>$ 
+\end{DoxyReturn}

@@ -5,11 +5,15 @@ var searchData=
   ['leftstraintensor',['leftStrainTensor',['../namespaceFunG_1_1LinearAlgebra.html#a5876e082c6e15e8e9a985a855dc698d5',1,'FunG::LinearAlgebra::leftStrainTensor(const Matrix &amp;A)'],['../namespaceFunG_1_1LinearAlgebra.html#a4ed7509f976a86c83048609da5e8bac7',1,'FunG::LinearAlgebra::leftStrainTensor(const F &amp;f)']]],
   ['linear_5falgebra_2ehh',['linear_algebra.hh',['../linear__algebra_8hh.html',1,'']]],
   ['linear_20algebra',['Linear Algebra',['../group__LinearAlgebraGroup.html',1,'']]],
-  ['ln',['LN',['../structFunG_1_1LN.html#a4ce3d29669f550f6033da3e52fdac392',1,'FunG::LN::LN()'],['../group__CMathGroup.html#ga31313571b08f65b853643e14fc8fc714',1,'FunG::ln()']]],
+  ['ln',['LN',['../structFunG_1_1stringify_1_1LN.html',1,'FunG::stringify']]],
+  ['ln',['LN',['../structFunG_1_1LN.html#a4ce3d29669f550f6033da3e52fdac392',1,'FunG::LN::LN()'],['../structFunG_1_1stringify_1_1LN.html#a27f182c8cc57cebe4b0463ed276d119e',1,'FunG::stringify::LN::LN()'],['../group__CMathGroup.html#ga31313571b08f65b853643e14fc8fc714',1,'FunG::ln()'],['../namespaceFunG_1_1stringify.html#abefe44a652173ce98927b0d432ad3547',1,'FunG::stringify::ln()']]],
   ['ln',['LN',['../structFunG_1_1LN.html',1,'FunG']]],
   ['log_2ehh',['log.hh',['../log_8hh.html',1,'']]],
+  ['log_2ehh',['log.hh',['../stringify_2log_8hh.html',1,'']]],
+  ['log10',['Log10',['../structFunG_1_1stringify_1_1Log10.html',1,'FunG::stringify']]],
   ['log10',['Log10',['../structFunG_1_1Log10.html',1,'FunG']]],
-  ['log10',['Log10',['../structFunG_1_1Log10.html#acfc491f166bfb75b593864849f33fbb0',1,'FunG::Log10::Log10()'],['../group__CMathGroup.html#gae9506f4e0e6fad4f756f636044697bfe',1,'FunG::log10()']]],
-  ['log2',['Log2',['../structFunG_1_1Log2.html#ab3fe35bf3d976e51797bff7128d2f16b',1,'FunG::Log2::Log2()'],['../group__CMathGroup.html#gacd6be7e9de7bbd54c852f0acf0c7d2c2',1,'FunG::log2()']]],
-  ['log2',['Log2',['../structFunG_1_1Log2.html',1,'FunG']]]
+  ['log10',['Log10',['../structFunG_1_1Log10.html#acfc491f166bfb75b593864849f33fbb0',1,'FunG::Log10::Log10()'],['../structFunG_1_1stringify_1_1Log10.html#adc0f9f883d5440b9b830de1fdb829d62',1,'FunG::stringify::Log10::Log10()'],['../group__CMathGroup.html#gae9506f4e0e6fad4f756f636044697bfe',1,'FunG::log10()'],['../namespaceFunG_1_1stringify.html#af0b292572bbf39d619243535b833c17d',1,'FunG::stringify::log10()']]],
+  ['log2',['Log2',['../structFunG_1_1Log2.html',1,'FunG']]],
+  ['log2',['Log2',['../structFunG_1_1Log2.html#ab3fe35bf3d976e51797bff7128d2f16b',1,'FunG::Log2::Log2()'],['../structFunG_1_1stringify_1_1Log2.html#a64e1c5864ddabea2de35eeacb5a3a781',1,'FunG::stringify::Log2::Log2()'],['../group__CMathGroup.html#gacd6be7e9de7bbd54c852f0acf0c7d2c2',1,'FunG::log2()'],['../namespaceFunG_1_1stringify.html#a6815627cdbde7b81d56ec5a6377b5e47',1,'FunG::stringify::log2()']]],
+  ['log2',['Log2',['../structFunG_1_1stringify_1_1Log2.html',1,'FunG::stringify']]]
 ];

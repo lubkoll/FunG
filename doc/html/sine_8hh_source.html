@@ -77,7 +77,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -99,64 +99,72 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="sine_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Released under the terms of the GNU General Public License version 3 or later.</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef FUNG_CMATH_SINE_HH</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FUNG_CMATH_SINE_HH</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chainer_8hh.html">fung/util/chainer.hh</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="static__checks_8hh.html">fung/util/static_checks.hh</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span>FunG</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structFunG_1_1Sin.html">   21</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structFunG_1_1Sin.html">Sin</a> : Chainer&lt;Sin&gt;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  {</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structFunG_1_1Sin.html#aa956d10238ebb30a8e037e9f82488a8e">   24</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="structFunG_1_1Sin.html#aa956d10238ebb30a8e037e9f82488a8e">Sin</a>(<span class="keywordtype">double</span> x=0)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      <a class="code" href="structFunG_1_1Sin.html#a3f26e1664a29c03e2f29fc2205873850">update</a>(x);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chainer_8hh.html">fung/util/chainer.hh</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="static__checks_8hh.html">fung/util/static_checks.hh</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>FunG</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structFunG_1_1Sin.html">   21</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structFunG_1_1Sin.html">Sin</a> : Chainer&lt; Sin &gt;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structFunG_1_1Sin.html#aa956d10238ebb30a8e037e9f82488a8e">   24</a></span>&#160;        <span class="keyword">explicit</span> <a class="code" href="structFunG_1_1Sin.html#aa956d10238ebb30a8e037e9f82488a8e">Sin</a>( <span class="keywordtype">double</span> x = 0 )</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="structFunG_1_1Sin.html#a3f26e1664a29c03e2f29fc2205873850">update</a>( x );</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structFunG_1_1Sin.html#a3f26e1664a29c03e2f29fc2205873850">   30</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structFunG_1_1Sin.html#a3f26e1664a29c03e2f29fc2205873850">update</a>(<span class="keywordtype">double</span> x)</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      sinx = <a class="code" href="group__CMathGroup.html#ga663fdbe7a8977cba529c7c33981b7738">::sin</a>(x);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      cosx = <a class="code" href="group__CMathGroup.html#ga7e9b2ac717cd2350663293cb66ba6cbd">::cos</a>(x);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structFunG_1_1Sin.html#a3f26e1664a29c03e2f29fc2205873850">   30</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structFunG_1_1Sin.html#a3f26e1664a29c03e2f29fc2205873850">update</a>( <span class="keywordtype">double</span> x )</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            sinx = <a class="code" href="group__CMathGroup.html#ga663fdbe7a8977cba529c7c33981b7738">::sin</a>( x );</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            cosx = <a class="code" href="group__CMathGroup.html#ga7e9b2ac717cd2350663293cb66ba6cbd">::cos</a>( x );</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="structFunG_1_1Sin.html#abae046eecc58398c73f215087460586b">   37</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structFunG_1_1Sin.html#abae046eecc58398c73f215087460586b">d0</a>() const noexcept { <span class="keywordflow">return</span> sinx; }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="structFunG_1_1Sin.html#aaef53b2343e2185e66ec4e9c0319ebdd">   40</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structFunG_1_1Sin.html#aaef53b2343e2185e66ec4e9c0319ebdd">d1</a>(<span class="keywordtype">double</span> dx=1.)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> cosx*dx; }</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="structFunG_1_1Sin.html#abae046eecc58398c73f215087460586b">   37</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="structFunG_1_1Sin.html#abae046eecc58398c73f215087460586b">d0</a>() const noexcept</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">return</span> sinx;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        }</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structFunG_1_1Sin.html#ae0c92547f5da722f0fc642c2ea8f0539">   43</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structFunG_1_1Sin.html#ae0c92547f5da722f0fc642c2ea8f0539">d2</a>(<span class="keywordtype">double</span> dx=1., <span class="keywordtype">double</span> dy=1.)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> -sinx*dx*dy; }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="structFunG_1_1Sin.html#a8d8affa45264f36cde9db0bb1464934e">   46</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structFunG_1_1Sin.html#a8d8affa45264f36cde9db0bb1464934e">d3</a>(<span class="keywordtype">double</span> dx=1., <span class="keywordtype">double</span> dy=1., <span class="keywordtype">double</span> dz=1.)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> -cosx*dx*dy*dz; }</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structFunG_1_1Sin.html#aaef53b2343e2185e66ec4e9c0319ebdd">   43</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="structFunG_1_1Sin.html#aaef53b2343e2185e66ec4e9c0319ebdd">d1</a>( <span class="keywordtype">double</span> dx = 1. )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">return</span> cosx * dx;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">double</span> sinx = 0, cosx = 1;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  };</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class </span>Function,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keyword">class </span>= std::enable_if_t&lt;Checks::isFunction&lt;Function&gt;()&gt; &gt;</div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="group__CMathGroup.html#ga663fdbe7a8977cba529c7c33981b7738">   60</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="group__CMathGroup.html#ga663fdbe7a8977cba529c7c33981b7738">sin</a>(<span class="keyword">const</span> Function&amp; f)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structFunG_1_1Sin.html">Sin</a>()(f);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif // FUNG_CMATH_SINE_HH</span></div>
-<div class="ttc" id="group__CMathGroup_html_ga7e9b2ac717cd2350663293cb66ba6cbd"><div class="ttname"><a href="group__CMathGroup.html#ga7e9b2ac717cd2350663293cb66ba6cbd">FunG::cos</a></div><div class="ttdeci">auto cos(const Function &amp;f)</div><div class="ttdoc">Generate . </div><div class="ttdef"><b>Definition:</b> cosine.hh:63</div></div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="structFunG_1_1Sin.html#ae0c92547f5da722f0fc642c2ea8f0539">   49</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="structFunG_1_1Sin.html#ae0c92547f5da722f0fc642c2ea8f0539">d2</a>( <span class="keywordtype">double</span> dx = 1., <span class="keywordtype">double</span> dy = 1. )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">return</span> -sinx * dx * dy;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="structFunG_1_1Sin.html#a8d8affa45264f36cde9db0bb1464934e">   55</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="structFunG_1_1Sin.html#a8d8affa45264f36cde9db0bb1464934e">d3</a>( <span class="keywordtype">double</span> dx = 1., <span class="keywordtype">double</span> dy = 1., <span class="keywordtype">double</span> dz = 1. )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">return</span> -cosx * dx * dy * dz;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">double</span> sinx = 0, cosx = 1;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    };</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">template</span> &lt; <span class="keyword">class</span> Function, <span class="keyword">class</span> = std::enable_if_t&lt; Checks::isFunction&lt; Function &gt;() &gt; &gt;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="group__CMathGroup.html#ga663fdbe7a8977cba529c7c33981b7738">   71</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__CMathGroup.html#ga663fdbe7a8977cba529c7c33981b7738">sin</a>( <span class="keyword">const</span> Function&amp; f )</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structFunG_1_1Sin.html">Sin</a>()( f );</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="ttc" id="group__CMathGroup_html_ga7e9b2ac717cd2350663293cb66ba6cbd"><div class="ttname"><a href="group__CMathGroup.html#ga7e9b2ac717cd2350663293cb66ba6cbd">FunG::cos</a></div><div class="ttdeci">auto cos(const Function &amp;f)</div><div class="ttdoc">Generate . </div><div class="ttdef"><b>Definition:</b> cosine.hh:75</div></div>
 <div class="ttc" id="structFunG_1_1Sin_html_a3f26e1664a29c03e2f29fc2205873850"><div class="ttname"><a href="structFunG_1_1Sin.html#a3f26e1664a29c03e2f29fc2205873850">FunG::Sin::update</a></div><div class="ttdeci">void update(double x)</div><div class="ttdoc">Set point of evaluation. </div><div class="ttdef"><b>Definition:</b> sine.hh:30</div></div>
 <div class="ttc" id="structFunG_1_1Sin_html_aa956d10238ebb30a8e037e9f82488a8e"><div class="ttname"><a href="structFunG_1_1Sin.html#aa956d10238ebb30a8e037e9f82488a8e">FunG::Sin::Sin</a></div><div class="ttdeci">Sin(double x=0)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> sine.hh:24</div></div>
 <div class="ttc" id="structFunG_1_1Sin_html"><div class="ttname"><a href="structFunG_1_1Sin.html">FunG::Sin</a></div><div class="ttdoc">Sine function including first three derivatives (based on sin(double) in &lt;cmath&gt;). </div><div class="ttdef"><b>Definition:</b> sine.hh:21</div></div>
-<div class="ttc" id="structFunG_1_1Sin_html_ae0c92547f5da722f0fc642c2ea8f0539"><div class="ttname"><a href="structFunG_1_1Sin.html#ae0c92547f5da722f0fc642c2ea8f0539">FunG::Sin::d2</a></div><div class="ttdeci">double d2(double dx=1., double dy=1.) const </div><div class="ttdoc">Second (directional) derivative. </div><div class="ttdef"><b>Definition:</b> sine.hh:43</div></div>
+<div class="ttc" id="structFunG_1_1Sin_html_ae0c92547f5da722f0fc642c2ea8f0539"><div class="ttname"><a href="structFunG_1_1Sin.html#ae0c92547f5da722f0fc642c2ea8f0539">FunG::Sin::d2</a></div><div class="ttdeci">double d2(double dx=1., double dy=1.) const </div><div class="ttdoc">Second (directional) derivative. </div><div class="ttdef"><b>Definition:</b> sine.hh:49</div></div>
 <div class="ttc" id="static__checks_8hh_html"><div class="ttname"><a href="static__checks_8hh.html">static_checks.hh</a></div></div>
 <div class="ttc" id="structFunG_1_1Sin_html_abae046eecc58398c73f215087460586b"><div class="ttname"><a href="structFunG_1_1Sin.html#abae046eecc58398c73f215087460586b">FunG::Sin::d0</a></div><div class="ttdeci">double d0() const noexcept</div><div class="ttdoc">Function value. </div><div class="ttdef"><b>Definition:</b> sine.hh:37</div></div>
-<div class="ttc" id="group__CMathGroup_html_ga663fdbe7a8977cba529c7c33981b7738"><div class="ttname"><a href="group__CMathGroup.html#ga663fdbe7a8977cba529c7c33981b7738">FunG::sin</a></div><div class="ttdeci">auto sin(const Function &amp;f)</div><div class="ttdoc">Generate . </div><div class="ttdef"><b>Definition:</b> sine.hh:60</div></div>
-<div class="ttc" id="structFunG_1_1Sin_html_a8d8affa45264f36cde9db0bb1464934e"><div class="ttname"><a href="structFunG_1_1Sin.html#a8d8affa45264f36cde9db0bb1464934e">FunG::Sin::d3</a></div><div class="ttdeci">double d3(double dx=1., double dy=1., double dz=1.) const </div><div class="ttdoc">Third (directional) derivative. </div><div class="ttdef"><b>Definition:</b> sine.hh:46</div></div>
+<div class="ttc" id="group__CMathGroup_html_ga663fdbe7a8977cba529c7c33981b7738"><div class="ttname"><a href="group__CMathGroup.html#ga663fdbe7a8977cba529c7c33981b7738">FunG::sin</a></div><div class="ttdeci">auto sin(const Function &amp;f)</div><div class="ttdoc">Generate . </div><div class="ttdef"><b>Definition:</b> sine.hh:71</div></div>
+<div class="ttc" id="structFunG_1_1Sin_html_a8d8affa45264f36cde9db0bb1464934e"><div class="ttname"><a href="structFunG_1_1Sin.html#a8d8affa45264f36cde9db0bb1464934e">FunG::Sin::d3</a></div><div class="ttdeci">double d3(double dx=1., double dy=1., double dz=1.) const </div><div class="ttdoc">Third (directional) derivative. </div><div class="ttdef"><b>Definition:</b> sine.hh:55</div></div>
 <div class="ttc" id="chainer_8hh_html"><div class="ttname"><a href="chainer_8hh.html">chainer.hh</a></div></div>
-<div class="ttc" id="structFunG_1_1Sin_html_aaef53b2343e2185e66ec4e9c0319ebdd"><div class="ttname"><a href="structFunG_1_1Sin.html#aaef53b2343e2185e66ec4e9c0319ebdd">FunG::Sin::d1</a></div><div class="ttdeci">double d1(double dx=1.) const </div><div class="ttdoc">First (directional) derivative. </div><div class="ttdef"><b>Definition:</b> sine.hh:40</div></div>
+<div class="ttc" id="structFunG_1_1Sin_html_aaef53b2343e2185e66ec4e9c0319ebdd"><div class="ttname"><a href="structFunG_1_1Sin.html#aaef53b2343e2185e66ec4e9c0319ebdd">FunG::Sin::d1</a></div><div class="ttdeci">double d1(double dx=1.) const </div><div class="ttdoc">First (directional) derivative. </div><div class="ttdef"><b>Definition:</b> sine.hh:43</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 20 2018 21:23:29 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 20 2018 21:56:30 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

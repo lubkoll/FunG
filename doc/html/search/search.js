@@ -12,10 +12,11 @@ var indexSectionsWithContent =
   2: "f",
   3: "acdefgilmnoprstuvyz",
   4: "acdefghijlmnoprstuvyz",
-  5: "acdforstv",
-  6: "fh",
-  7: "bceilmr",
-  8: "b"
+  5: "s",
+  6: "acdforstv",
+  7: "fh",
+  8: "bceilmrs",
+  9: "b"
 };
 
 var indexSectionNames =
@@ -25,10 +26,11 @@ var indexSectionNames =
   2: "namespaces",
   3: "files",
   4: "functions",
-  5: "typedefs",
-  6: "defines",
-  7: "groups",
-  8: "pages"
+  5: "variables",
+  6: "typedefs",
+  7: "defines",
+  8: "groups",
+  9: "pages"
 };
 
 function convertToId(search)

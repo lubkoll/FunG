@@ -77,7 +77,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -98,24 +98,43 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a href="math_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="arcsine_8hh.html">fung/cmath/arcsine.hh</a>&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="cosine_8hh.html">fung/cmath/cosine.hh</a>&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="exp_8hh.html">fung/cmath/exp.hh</a>&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="log_8hh.html">fung/cmath/log.hh</a>&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="sine_8hh.html">fung/cmath/sine.hh</a>&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="arccos_8hh.html">fung/cmath/arccos.hh</a>&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="arcsine_8hh.html">fung/cmath/arcsine.hh</a>&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="cosine_8hh.html">fung/cmath/cosine.hh</a>&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="exp_8hh.html">fung/cmath/exp.hh</a>&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="log_8hh.html">fung/cmath/log.hh</a>&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="pow_8hh.html">fung/cmath/pow.hh</a>&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="tan_8hh.html">fung/cmath/tan.hh</a>&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="sine_8hh.html">fung/cmath/sine.hh</a>&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="tan_8hh.html">fung/cmath/tan.hh</a>&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="stringify_2arccos_8hh.html">fung/cmath/stringify/arccos.hh</a>&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="stringify_2arcsine_8hh.html">fung/cmath/stringify/arcsine.hh</a>&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="stringify_2cosine_8hh.html">fung/cmath/stringify/cosine.hh</a>&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="stringify_2exp_8hh.html">fung/cmath/stringify/exp.hh</a>&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="stringify_2log_8hh.html">fung/cmath/stringify/log.hh</a>&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="stringify_2pow_8hh.html">fung/cmath/stringify/pow.hh</a>&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="stringify_2sine_8hh.html">fung/cmath/stringify/sine.hh</a>&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="stringify_2tan_8hh.html">fung/cmath/stringify/tan.hh</a>&gt;</span></div>
+<div class="ttc" id="stringify_2arccos_8hh_html"><div class="ttname"><a href="stringify_2arccos_8hh.html">arccos.hh</a></div></div>
 <div class="ttc" id="tan_8hh_html"><div class="ttname"><a href="tan_8hh.html">tan.hh</a></div></div>
+<div class="ttc" id="stringify_2arcsine_8hh_html"><div class="ttname"><a href="stringify_2arcsine_8hh.html">arcsine.hh</a></div></div>
 <div class="ttc" id="pow_8hh_html"><div class="ttname"><a href="pow_8hh.html">pow.hh</a></div></div>
+<div class="ttc" id="stringify_2exp_8hh_html"><div class="ttname"><a href="stringify_2exp_8hh.html">exp.hh</a></div></div>
 <div class="ttc" id="exp_8hh_html"><div class="ttname"><a href="exp_8hh.html">exp.hh</a></div></div>
+<div class="ttc" id="stringify_2pow_8hh_html"><div class="ttname"><a href="stringify_2pow_8hh.html">pow.hh</a></div></div>
+<div class="ttc" id="stringify_2cosine_8hh_html"><div class="ttname"><a href="stringify_2cosine_8hh.html">cosine.hh</a></div></div>
 <div class="ttc" id="sine_8hh_html"><div class="ttname"><a href="sine_8hh.html">sine.hh</a></div></div>
 <div class="ttc" id="cosine_8hh_html"><div class="ttname"><a href="cosine_8hh.html">cosine.hh</a></div></div>
+<div class="ttc" id="stringify_2sine_8hh_html"><div class="ttname"><a href="stringify_2sine_8hh.html">sine.hh</a></div></div>
+<div class="ttc" id="stringify_2tan_8hh_html"><div class="ttname"><a href="stringify_2tan_8hh.html">tan.hh</a></div></div>
 <div class="ttc" id="log_8hh_html"><div class="ttname"><a href="log_8hh.html">log.hh</a></div></div>
+<div class="ttc" id="arccos_8hh_html"><div class="ttname"><a href="arccos_8hh.html">arccos.hh</a></div></div>
 <div class="ttc" id="arcsine_8hh_html"><div class="ttname"><a href="arcsine_8hh.html">arcsine.hh</a></div></div>
+<div class="ttc" id="stringify_2log_8hh_html"><div class="ttname"><a href="stringify_2log_8hh.html">log.hh</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 20 2018 21:23:29 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 20 2018 21:56:30 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

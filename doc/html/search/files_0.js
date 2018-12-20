@@ -4,6 +4,8 @@ var searchData=
   ['add_5ftransposed_5fmatrix_2ehh',['add_transposed_matrix.hh',['../add__transposed__matrix_8hh.html',1,'']]],
   ['adipose_5ftissue_5fsommer_5fholzapfel_2ehh',['adipose_tissue_sommer_holzapfel.hh',['../adipose__tissue__sommer__holzapfel_8hh.html',1,'']]],
   ['arccos_2ehh',['arccos.hh',['../arccos_8hh.html',1,'']]],
+  ['arccos_2ehh',['arccos.hh',['../stringify_2arccos_8hh.html',1,'']]],
+  ['arcsine_2ehh',['arcsine.hh',['../stringify_2arcsine_8hh.html',1,'']]],
   ['arcsine_2ehh',['arcsine.hh',['../arcsine_8hh.html',1,'']]],
   ['at_2ehh',['at.hh',['../at_8hh.html',1,'']]]
 ];

@@ -77,7 +77,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -118,6 +118,9 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespaceFunG_1_1MathematicalOperations"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mathematical operations and corresponding differentation rules. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceFunG_1_1Meta"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFunG_1_1Meta.html">Meta</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceFunG_1_1stringify"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFunG_1_1stringify.html">stringify</a></td></tr>
+<tr class="memdesc:namespaceFunG_1_1stringify"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arc sine function including first three derivatives (based on asin(String) in &lt;cmath&gt;). <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -167,6 +170,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunG_1_1NonSymmetricMatrixException.html">NonSymmetricMatrixException</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception for non-symmetric matrices if symmetric matrices are required.  <a href="classFunG_1_1NonSymmetricMatrixException.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1String.html">String</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1Decay.html">Decay</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identity, i.e. <a class="el" href="structFunG_1_1Decay.html#a4b2916cbb7c8587ab3fccc9b896b9df4">Decay&lt;F&gt;::type</a> == F  <a href="structFunG_1_1Decay.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -188,15 +193,15 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:gaca80e773d5886f47cd49dc19b130263f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#gaca80e773d5886f47cd49dc19b130263f">Sqrt</a> = <a class="el" href="structFunG_1_1Pow.html">Pow</a>&lt; 1, 2 &gt;</td></tr>
-<tr class="memdesc:gaca80e773d5886f47cd49dc19b130263f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Square root including first three derivatives (based on sqrt(double) in &lt;cmath&gt;).  <a href="group__CMathGroup.html#gaca80e773d5886f47cd49dc19b130263f">More...</a><br/></td></tr>
-<tr class="separator:gaca80e773d5886f47cd49dc19b130263f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2e4363ad8400e1c8431c10de2152ec2b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#ga2e4363ad8400e1c8431c10de2152ec2b">Cbrt</a> = <a class="el" href="structFunG_1_1Pow.html">Pow</a>&lt; 1, 3 &gt;</td></tr>
-<tr class="memdesc:ga2e4363ad8400e1c8431c10de2152ec2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Third root including first three derivatives (based on sqrt(double) in &lt;cmath&gt;).  <a href="group__CMathGroup.html#ga2e4363ad8400e1c8431c10de2152ec2b">More...</a><br/></td></tr>
-<tr class="separator:ga2e4363ad8400e1c8431c10de2152ec2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9bcbef859d7ffd0d6570d69e1bd8503a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#ga9bcbef859d7ffd0d6570d69e1bd8503a">Cbrt2</a> = <a class="el" href="structFunG_1_1Pow.html">Pow</a>&lt; 2, 3 &gt;</td></tr>
-<tr class="memdesc:ga9bcbef859d7ffd0d6570d69e1bd8503a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Third root squared including first three derivatives (based on sqrt(double) in &lt;cmath&gt;).  <a href="group__CMathGroup.html#ga9bcbef859d7ffd0d6570d69e1bd8503a">More...</a><br/></td></tr>
-<tr class="separator:ga9bcbef859d7ffd0d6570d69e1bd8503a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga70c69680e967f5ccb79c07e50d44739d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#ga70c69680e967f5ccb79c07e50d44739d">Sqrt</a> = <a class="el" href="structFunG_1_1Pow.html">Pow</a>&lt; 1, 2 &gt;</td></tr>
+<tr class="memdesc:ga70c69680e967f5ccb79c07e50d44739d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Square root including first three derivatives (based on sqrt(double) in &lt;cmath&gt;).  <a href="group__CMathGroup.html#ga70c69680e967f5ccb79c07e50d44739d">More...</a><br/></td></tr>
+<tr class="separator:ga70c69680e967f5ccb79c07e50d44739d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaff369d639f7a316b3f22982e806cb45f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#gaff369d639f7a316b3f22982e806cb45f">Cbrt</a> = <a class="el" href="structFunG_1_1Pow.html">Pow</a>&lt; 1, 3 &gt;</td></tr>
+<tr class="memdesc:gaff369d639f7a316b3f22982e806cb45f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Third root including first three derivatives (based on sqrt(double) in &lt;cmath&gt;).  <a href="group__CMathGroup.html#gaff369d639f7a316b3f22982e806cb45f">More...</a><br/></td></tr>
+<tr class="separator:gaff369d639f7a316b3f22982e806cb45f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab63795eecd1e9a55ea26b24125053f2d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#gab63795eecd1e9a55ea26b24125053f2d">Cbrt2</a> = <a class="el" href="structFunG_1_1Pow.html">Pow</a>&lt; 2, 3 &gt;</td></tr>
+<tr class="memdesc:gab63795eecd1e9a55ea26b24125053f2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Third root squared including first three derivatives (based on sqrt(double) in &lt;cmath&gt;).  <a href="group__CMathGroup.html#gab63795eecd1e9a55ea26b24125053f2d">More...</a><br/></td></tr>
+<tr class="separator:gab63795eecd1e9a55ea26b24125053f2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ff91644f18a190ac3d4fc9e970ebe2e"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
 <tr class="memitem:a7ff91644f18a190ac3d4fc9e970ebe2e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a7ff91644f18a190ac3d4fc9e970ebe2e">decay_t</a> = typename <a class="el" href="structFunG_1_1Decay.html">Decay</a>&lt; std::decay_t&lt; F &gt; &gt;::type</td></tr>
 <tr class="memdesc:a7ff91644f18a190ac3d4fc9e970ebe2e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespaceFunG_1_1Access.html">Access</a> underlying type (if it is hidden by expression templates).  <a href="#a7ff91644f18a190ac3d4fc9e970ebe2e">More...</a><br/></td></tr>
@@ -220,11 +225,11 @@ Functions</h2></td></tr>
 <tr class="memitem:gae9b7d3a479bcd8d48cf25f1c29edefb9"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#gae9b7d3a479bcd8d48cf25f1c29edefb9">acos</a> (const Function &amp;f)</td></tr>
 <tr class="memdesc:gae9b7d3a479bcd8d48cf25f1c29edefb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate \( \arccos\circ f \).  <a href="group__CMathGroup.html#gae9b7d3a479bcd8d48cf25f1c29edefb9">More...</a><br/></td></tr>
 <tr class="separator:gae9b7d3a479bcd8d48cf25f1c29edefb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad26443b289325876cffdaadfca770d51"><td class="memTemplParams" colspan="2">template&lt;class Function , class  = std::enable_if_t&lt;Checks::isFunction&lt;Function&gt;()&gt;&gt; </td></tr>
+<tr class="memitem:gad26443b289325876cffdaadfca770d51"><td class="memTemplParams" colspan="2">template&lt;class Function , class  = std::enable_if_t&lt; Checks::isFunction&lt; Function &gt;() &gt;&gt; </td></tr>
 <tr class="memitem:gad26443b289325876cffdaadfca770d51"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#gad26443b289325876cffdaadfca770d51">asin</a> (const Function &amp;f)</td></tr>
 <tr class="memdesc:gad26443b289325876cffdaadfca770d51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate \( \arcsin\circ f \).  <a href="group__CMathGroup.html#gad26443b289325876cffdaadfca770d51">More...</a><br/></td></tr>
 <tr class="separator:gad26443b289325876cffdaadfca770d51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7e9b2ac717cd2350663293cb66ba6cbd"><td class="memTemplParams" colspan="2">template&lt;class Function , class  = std::enable_if_t&lt; Checks::isFunction&lt;Function&gt;() &gt;&gt; </td></tr>
+<tr class="memitem:ga7e9b2ac717cd2350663293cb66ba6cbd"><td class="memTemplParams" colspan="2">template&lt;class Function , class  = std::enable_if_t&lt; Checks::isFunction&lt; Function &gt;() &gt;&gt; </td></tr>
 <tr class="memitem:ga7e9b2ac717cd2350663293cb66ba6cbd"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#ga7e9b2ac717cd2350663293cb66ba6cbd">cos</a> (const Function &amp;f)</td></tr>
 <tr class="memdesc:ga7e9b2ac717cd2350663293cb66ba6cbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate \( \cos\circ f \).  <a href="group__CMathGroup.html#ga7e9b2ac717cd2350663293cb66ba6cbd">More...</a><br/></td></tr>
 <tr class="separator:ga7e9b2ac717cd2350663293cb66ba6cbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -248,31 +253,31 @@ Functions</h2></td></tr>
 <tr class="memitem:gacd6be7e9de7bbd54c852f0acf0c7d2c2"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#gacd6be7e9de7bbd54c852f0acf0c7d2c2">log2</a> (const Function &amp;f)</td></tr>
 <tr class="memdesc:gacd6be7e9de7bbd54c852f0acf0c7d2c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate \( \mathrm{log}_{2}\circ f \).  <a href="group__CMathGroup.html#gacd6be7e9de7bbd54c852f0acf0c7d2c2">More...</a><br/></td></tr>
 <tr class="separator:gacd6be7e9de7bbd54c852f0acf0c7d2c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga136c890475e48f88469a737d95368d05"><td class="memTemplParams" colspan="2">template&lt;class Function , class  = std::enable_if_t&lt;Checks::isFunction&lt;Function&gt;()&gt;&gt; </td></tr>
+<tr class="memitem:ga136c890475e48f88469a737d95368d05"><td class="memTemplParams" colspan="2">template&lt;class Function , class  = std::enable_if_t&lt; Checks::isFunction&lt; Function &gt;() &gt;&gt; </td></tr>
 <tr class="memitem:ga136c890475e48f88469a737d95368d05"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#ga136c890475e48f88469a737d95368d05">sqrt</a> (const Function &amp;f)</td></tr>
 <tr class="memdesc:ga136c890475e48f88469a737d95368d05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate \( \sqrt{f} \).  <a href="group__CMathGroup.html#ga136c890475e48f88469a737d95368d05">More...</a><br/></td></tr>
 <tr class="separator:ga136c890475e48f88469a737d95368d05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa7f2552adfb8ec41aeb685adddd8bf98"><td class="memTemplParams" colspan="2">template&lt;class Function , class  = std::enable_if_t&lt;Checks::isFunction&lt;Function&gt;()&gt;&gt; </td></tr>
+<tr class="memitem:gaa7f2552adfb8ec41aeb685adddd8bf98"><td class="memTemplParams" colspan="2">template&lt;class Function , class  = std::enable_if_t&lt; Checks::isFunction&lt; Function &gt;() &gt;&gt; </td></tr>
 <tr class="memitem:gaa7f2552adfb8ec41aeb685adddd8bf98"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#gaa7f2552adfb8ec41aeb685adddd8bf98">cbrt</a> (const Function &amp;f)</td></tr>
 <tr class="memdesc:gaa7f2552adfb8ec41aeb685adddd8bf98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate \( \sqrt[3]{f} \).  <a href="group__CMathGroup.html#gaa7f2552adfb8ec41aeb685adddd8bf98">More...</a><br/></td></tr>
 <tr class="separator:gaa7f2552adfb8ec41aeb685adddd8bf98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafd27322fb64c6df3366f384c93819a06"><td class="memTemplParams" colspan="2">template&lt;class Function , class  = std::enable_if_t&lt;Checks::isFunction&lt;Function&gt;()&gt;&gt; </td></tr>
+<tr class="memitem:gafd27322fb64c6df3366f384c93819a06"><td class="memTemplParams" colspan="2">template&lt;class Function , class  = std::enable_if_t&lt; Checks::isFunction&lt; Function &gt;() &gt;&gt; </td></tr>
 <tr class="memitem:gafd27322fb64c6df3366f384c93819a06"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#gafd27322fb64c6df3366f384c93819a06">cbrt2</a> (const Function &amp;f)</td></tr>
 <tr class="memdesc:gafd27322fb64c6df3366f384c93819a06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate \( \sqrt[3]{f^2}\).  <a href="group__CMathGroup.html#gafd27322fb64c6df3366f384c93819a06">More...</a><br/></td></tr>
 <tr class="separator:gafd27322fb64c6df3366f384c93819a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaecae6fa60bbfc0eb1867581ee4577d4e"><td class="memTemplParams" colspan="2">template&lt;int k, int l, class Function , class  = std::enable_if_t&lt;Checks::isFunction&lt;Function&gt;()&gt;&gt; </td></tr>
+<tr class="memitem:gaecae6fa60bbfc0eb1867581ee4577d4e"><td class="memTemplParams" colspan="2">template&lt;int k, int l, class Function , class  = std::enable_if_t&lt; Checks::isFunction&lt; Function &gt;() &gt;&gt; </td></tr>
 <tr class="memitem:gaecae6fa60bbfc0eb1867581ee4577d4e"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#gaecae6fa60bbfc0eb1867581ee4577d4e">pow</a> (const Function &amp;f)</td></tr>
 <tr class="memdesc:gaecae6fa60bbfc0eb1867581ee4577d4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate \( f^{k/l} \).  <a href="group__CMathGroup.html#gaecae6fa60bbfc0eb1867581ee4577d4e">More...</a><br/></td></tr>
 <tr class="separator:gaecae6fa60bbfc0eb1867581ee4577d4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab52ffe2efd379aad7ea322de46103465"><td class="memTemplParams" colspan="2">template&lt;int k, class Function , class  = std::enable_if_t&lt;Checks::isFunction&lt;Function&gt;()&gt;&gt; </td></tr>
+<tr class="memitem:gab52ffe2efd379aad7ea322de46103465"><td class="memTemplParams" colspan="2">template&lt;int k, class Function , class  = std::enable_if_t&lt; Checks::isFunction&lt; Function &gt;() &gt;&gt; </td></tr>
 <tr class="memitem:gab52ffe2efd379aad7ea322de46103465"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#gab52ffe2efd379aad7ea322de46103465">pow</a> (const Function &amp;f)</td></tr>
 <tr class="memdesc:gab52ffe2efd379aad7ea322de46103465"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate \( f^k,\ k\in\mathbb{N}\).  <a href="group__CMathGroup.html#gab52ffe2efd379aad7ea322de46103465">More...</a><br/></td></tr>
 <tr class="separator:gab52ffe2efd379aad7ea322de46103465"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga663fdbe7a8977cba529c7c33981b7738"><td class="memTemplParams" colspan="2">template&lt;class Function , class  = std::enable_if_t&lt;Checks::isFunction&lt;Function&gt;()&gt;&gt; </td></tr>
+<tr class="memitem:ga663fdbe7a8977cba529c7c33981b7738"><td class="memTemplParams" colspan="2">template&lt;class Function , class  = std::enable_if_t&lt; Checks::isFunction&lt; Function &gt;() &gt;&gt; </td></tr>
 <tr class="memitem:ga663fdbe7a8977cba529c7c33981b7738"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#ga663fdbe7a8977cba529c7c33981b7738">sin</a> (const Function &amp;f)</td></tr>
 <tr class="memdesc:ga663fdbe7a8977cba529c7c33981b7738"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate \( \sin\circ f \).  <a href="group__CMathGroup.html#ga663fdbe7a8977cba529c7c33981b7738">More...</a><br/></td></tr>
 <tr class="separator:ga663fdbe7a8977cba529c7c33981b7738"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae03f57bd4efb4449ad1dc60cb74c742d"><td class="memTemplParams" colspan="2">template&lt;class Function , class  = std::enable_if_t&lt;Checks::isFunction&lt;Function&gt;()&gt;&gt; </td></tr>
+<tr class="memitem:gae03f57bd4efb4449ad1dc60cb74c742d"><td class="memTemplParams" colspan="2">template&lt;class Function , class  = std::enable_if_t&lt; Checks::isFunction&lt; Function &gt;() &gt;&gt; </td></tr>
 <tr class="memitem:gae03f57bd4efb4449ad1dc60cb74c742d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#gae03f57bd4efb4449ad1dc60cb74c742d">tan</a> (const Function &amp;f)</td></tr>
 <tr class="memdesc:gae03f57bd4efb4449ad1dc60cb74c742d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate \( \tan\circ f \).  <a href="group__CMathGroup.html#gae03f57bd4efb4449ad1dc60cb74c742d">More...</a><br/></td></tr>
 <tr class="separator:gae03f57bd4efb4449ad1dc60cb74c742d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -458,6 +463,35 @@ Functions</h2></td></tr>
 <tr class="memitem:aed5ddbef97c98202e818bca2b74c75d2"><td class="memTemplParams" colspan="2">template&lt;int id, class F , class Arg , std::enable_if_t&lt;!Detail::HasUpdateWithIndex&lt; F, Arg, id &gt;::value &gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:aed5ddbef97c98202e818bca2b74c75d2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#aed5ddbef97c98202e818bca2b74c75d2">update_if_present</a> (F &amp;&amp;, Arg &amp;&amp;)</td></tr>
 <tr class="separator:aed5ddbef97c98202e818bca2b74c75d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ba37cdd71d527a2f15d09a7c886de43"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a3ba37cdd71d527a2f15d09a7c886de43"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structFunG_1_1String.html">String</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a3ba37cdd71d527a2f15d09a7c886de43">toString</a> (T &amp;&amp;t)</td></tr>
+<tr class="separator:a3ba37cdd71d527a2f15d09a7c886de43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a262dd18fdad9a576780b797fc2070cb2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structFunG_1_1String.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a262dd18fdad9a576780b797fc2070cb2">addScope</a> (<a class="el" href="structFunG_1_1String.html">String</a> str)</td></tr>
+<tr class="separator:a262dd18fdad9a576780b797fc2070cb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bb32fe9e9cd8e52b21f191024bbf865"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structFunG_1_1String.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a2bb32fe9e9cd8e52b21f191024bbf865">multiplyIfNotEmpty</a> (const <a class="el" href="structFunG_1_1String.html">String</a> &amp;dx)</td></tr>
+<tr class="separator:a2bb32fe9e9cd8e52b21f191024bbf865"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa63a97fd8a8b9edc6a4b68ede627a7f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structFunG_1_1String.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#aa63a97fd8a8b9edc6a4b68ede627a7f2">multiplyIfNotEmpty</a> (const <a class="el" href="structFunG_1_1String.html">String</a> &amp;dx, const <a class="el" href="structFunG_1_1String.html">String</a> &amp;dy)</td></tr>
+<tr class="separator:aa63a97fd8a8b9edc6a4b68ede627a7f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa63312a6768b8c8bc3b13b89b79bb458"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structFunG_1_1String.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#aa63312a6768b8c8bc3b13b89b79bb458">multiplyIfNotEmpty</a> (const <a class="el" href="structFunG_1_1String.html">String</a> &amp;dx, const <a class="el" href="structFunG_1_1String.html">String</a> &amp;dy, const <a class="el" href="structFunG_1_1String.html">String</a> &amp;dz)</td></tr>
+<tr class="separator:aa63312a6768b8c8bc3b13b89b79bb458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77777736a53db19e90aec100b2bf19eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structFunG_1_1String.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a77777736a53db19e90aec100b2bf19eb">operator+</a> (const <a class="el" href="structFunG_1_1String.html">String</a> &amp;lhs, const <a class="el" href="structFunG_1_1String.html">String</a> &amp;rhs)</td></tr>
+<tr class="separator:a77777736a53db19e90aec100b2bf19eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9fb6597d25acc448cad0a5542a34c36"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structFunG_1_1String.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#aa9fb6597d25acc448cad0a5542a34c36">operator-</a> (const <a class="el" href="structFunG_1_1String.html">String</a> &amp;lhs, const <a class="el" href="structFunG_1_1String.html">String</a> &amp;rhs)</td></tr>
+<tr class="separator:aa9fb6597d25acc448cad0a5542a34c36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d7abd41ff8bf6668ac483f27b695c68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structFunG_1_1String.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a2d7abd41ff8bf6668ac483f27b695c68">operator*</a> (const <a class="el" href="structFunG_1_1String.html">String</a> &amp;lhs, const <a class="el" href="structFunG_1_1String.html">String</a> &amp;rhs)</td></tr>
+<tr class="separator:a2d7abd41ff8bf6668ac483f27b695c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9af9ae286e75b48ade1131d34f83dd2"><td class="memTemplParams" colspan="2">template&lt;class T , std::enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:ab9af9ae286e75b48ade1131d34f83dd2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structFunG_1_1String.html">String</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#ab9af9ae286e75b48ade1131d34f83dd2">operator*</a> (const T &amp;lhs, const <a class="el" href="structFunG_1_1String.html">String</a> &amp;rhs)</td></tr>
+<tr class="separator:ab9af9ae286e75b48ade1131d34f83dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46702905ca56369a7c0790e674dbff2c"><td class="memTemplParams" colspan="2">template&lt;class T , std::enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:a46702905ca56369a7c0790e674dbff2c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structFunG_1_1String.html">String</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a46702905ca56369a7c0790e674dbff2c">operator*</a> (<a class="el" href="structFunG_1_1String.html">String</a> lhs, const T &amp;rhs)</td></tr>
+<tr class="separator:a46702905ca56369a7c0790e674dbff2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab267e162b5fa99ad8244512d4c32d60d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structFunG_1_1String.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#ab267e162b5fa99ad8244512d4c32d60d">operator/</a> (const <a class="el" href="structFunG_1_1String.html">String</a> &amp;lhs, const <a class="el" href="structFunG_1_1String.html">String</a> &amp;rhs)</td></tr>
+<tr class="separator:ab267e162b5fa99ad8244512d4c32d60d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50f870064559f02c5e91f44ad52087a9"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a50f870064559f02c5e91f44ad52087a9">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="structFunG_1_1String.html">String</a> &amp;str)</td></tr>
+<tr class="separator:a50f870064559f02c5e91f44ad52087a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45449d94c35ab23a7b5a10a628891d62"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a45449d94c35ab23a7b5a10a628891d62">operator==</a> (const <a class="el" href="structFunG_1_1String.html">String</a> &amp;lhs, const <a class="el" href="structFunG_1_1String.html">String</a> &amp;rhs)</td></tr>
+<tr class="separator:a45449d94c35ab23a7b5a10a628891d62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a649b4470d6def401959bfea3a368c48c"><td class="memTemplParams" colspan="2">template&lt;class Matrix , class  = std::enable_if_t&lt;Checks::isConstantSize&lt;Matrix&gt;() || is_arithmetic&lt;Matrix&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:a649b4470d6def401959bfea3a368c48c"><td class="memTemplItemLeft" align="right" valign="top">Matrix&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a649b4470d6def401959bfea3a368c48c">zero</a> ()</td></tr>
 <tr class="memdesc:a649b4470d6def401959bfea3a368c48c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Requires that a specialization of struct <a class="el" href="structFunG_1_1Zero.html" title="Specialize this struct for your matrix type if a zero matrix cannot be generated via Matrix(0...">Zero</a> exists for Matrix.  <a href="#a649b4470d6def401959bfea3a368c48c">More...</a><br/></td></tr>
@@ -544,6 +578,30 @@ template&lt;class... Types&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a262dd18fdad9a576780b797fc2070cb2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structFunG_1_1String.html">String</a> FunG::addScope </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a0211d0d26c669d56b5113fd2292902e5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -796,6 +854,104 @@ template&lt;class Arg &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a2bb32fe9e9cd8e52b21f191024bbf865"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structFunG_1_1String.html">String</a> FunG::multiplyIfNotEmpty </td>
+          <td>(</td>
+          <td class="paramtype">const String &amp;&#160;</td>
+          <td class="paramname"><em>dx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa63a97fd8a8b9edc6a4b68ede627a7f2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structFunG_1_1String.html">String</a> FunG::multiplyIfNotEmpty </td>
+          <td>(</td>
+          <td class="paramtype">const String &amp;&#160;</td>
+          <td class="paramname"><em>dx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const String &amp;&#160;</td>
+          <td class="paramname"><em>dy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa63312a6768b8c8bc3b13b89b79bb458"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structFunG_1_1String.html">String</a> FunG::multiplyIfNotEmpty </td>
+          <td>(</td>
+          <td class="paramtype">const String &amp;&#160;</td>
+          <td class="paramname"><em>dx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const String &amp;&#160;</td>
+          <td class="paramname"><em>dy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const String &amp;&#160;</td>
+          <td class="paramname"><em>dz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a5e258023361844926f485229c62a733b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -977,6 +1133,96 @@ template&lt;class Arg1 , class Arg2 , std::enable_if_t&lt; !Checks::isFunction&l
 
 </div>
 </div>
+<a class="anchor" id="a2d7abd41ff8bf6668ac483f27b695c68"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structFunG_1_1String.html">String</a> FunG::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const String &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const String &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab9af9ae286e75b48ade1131d34f83dd2"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , std::enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value &gt; *  = nullptr&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structFunG_1_1String.html">String</a> FunG::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const String &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a46702905ca56369a7c0790e674dbff2c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , std::enable_if_t&lt; std::is_arithmetic&lt; T &gt;::value &gt; *  = nullptr&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structFunG_1_1String.html">String</a> FunG::operator* </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a267562e725c73ece1c1d057b5f29511f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1005,6 +1251,40 @@ template&lt;class F , class G , std::enable_if_t&lt; Checks::isFunction&lt; std:
 
 <p>overload of "*"-operator for the generation of functions. </p>
 <p>If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. </p>
+
+</div>
+</div>
+<a class="anchor" id="a77777736a53db19e90aec100b2bf19eb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structFunG_1_1String.html">String</a> FunG::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const String &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const String &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -1069,6 +1349,40 @@ template&lt;class F , class G , std::enable_if_t&lt; Checks::isFunction&lt; std:
 
 </div>
 </div>
+<a class="anchor" id="aa9fb6597d25acc448cad0a5542a34c36"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structFunG_1_1String.html">String</a> FunG::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const String &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const String &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a3af04c2ef5c1b206feb75fffd298cbbf"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1100,6 +1414,74 @@ template&lt;class F , class G , std::enable_if_t&lt; Checks::isFunction&lt; std:
 
 </div>
 </div>
+<a class="anchor" id="ab267e162b5fa99ad8244512d4c32d60d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structFunG_1_1String.html">String</a> FunG::operator/ </td>
+          <td>(</td>
+          <td class="paramtype">const String &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const String &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a50f870064559f02c5e91f44ad52087a9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; FunG::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const String &amp;&#160;</td>
+          <td class="paramname"><em>str</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a65436d4494e99629b0177d0df7634a6b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1128,6 +1510,40 @@ template&lt;class F , class G , std::enable_if_t&lt; Checks::isFunction&lt; std:
 
 <p>overload of "&lt;&lt;"-operator for chaining functions \(f\) and \(g\) to \( f \circ g \). </p>
 <p>If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. </p>
+
+</div>
+</div>
+<a class="anchor" id="a45449d94c35ab23a7b5a10a628891d62"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FunG::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const String &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const String &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -1180,6 +1596,24 @@ template&lt;class F , std::enable_if_t&lt; Checks::isFunction&lt; std::decay_t&l
 
 <p>Generate squared function. </p>
 <p>If the resulting type represents a polynomial of order smaller than two, than you need to wrap it into Finalize to generate missing derivatives. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3ba37cdd71d527a2f15d09a7c886de43"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structFunG_1_1String.html">String</a> FunG::toString </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -1457,7 +1891,7 @@ template&lt;class Matrix , class  = std::enable_if_t&lt;!Checks::isConstantSize&
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 20 2018 21:23:29 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 20 2018 21:56:30 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
