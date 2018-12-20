@@ -118,9 +118,18 @@ install:
       sudo apt-get install doxygen graphviz
     fi
 
+
 script:
   - cd $TRAVIS_BUILD_DIR
-  - mkdir build && cd build && cmake .. -DBuildTest=ON && cmake --build .
+  - mkdir build && cd build
+  - |
+    if [[ "${COMPILER}" == "clang++-3.6" ]]; then
+      cmake -- -DBuildTest=ON -Dftemplate-depth=1024
+    else
+      cmake .. -DBuildTest=ON
+    fi
+  - | 
+  - cmake --build .
   - cmake --build . --target check
 after_success:
   ############################################################################
