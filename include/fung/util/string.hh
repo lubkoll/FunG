@@ -9,8 +9,6 @@
 #include <ostream>
 #include <regex>
 
-#define IN_PARENS( ARG ) ::FunG::addScope( ARG )
-
 namespace FunG
 {
     struct String

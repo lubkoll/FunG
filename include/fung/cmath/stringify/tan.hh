@@ -32,7 +32,7 @@ namespace FunG
             //! @copydoc Cos::update()
             void update( const String& x )
             {
-                this->x = IN_PARENS( x );
+                this->x = addScope( x );
             }
 
             //! @copydoc Cos::d0()
@@ -58,7 +58,11 @@ namespace FunG
             //! @copydoc Cos::d3()
             String d3( const String& dx = "", const String& dy = "", const String& dz = "" ) const
             {
-                return (toString(2) * d1("") * String("(1 + 3*tan^2").append(x).append(")").append(multiplyIfNotEmpty(dx,dy,dz));
+                return toString( 2 ) * d1( "" ) *
+                       String( "(1 + 3*tan^2" )
+                           .append( x )
+                           .append( ")" )
+                           .append( multiplyIfNotEmpty( dx, dy, dz ) );
             }
 
         private:

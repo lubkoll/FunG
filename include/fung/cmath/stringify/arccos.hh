@@ -23,7 +23,7 @@ namespace FunG
             //! @copydoc Cos::update()
             void update( const String& x )
             {
-                this->x = IN_PARENS( x );
+                this->x = addScope( x );
             }
 
             //! @copydoc Cos::d0()

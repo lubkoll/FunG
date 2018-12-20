@@ -87,34 +87,34 @@ namespace FunG
             //! @copydoc Cos::d0()
             String d0() const noexcept
             {
-                return IN_PARENS( String( "2^" ).append( x ) );
+                return addScope( String( "2^" ).append( x ) );
             }
 
             //! @copydoc Cos::d1()
             String d1( const String& dx = "" ) const
             {
-                return IN_PARENS( String( "ln(2)*(2^" )
-                                      .append( x )
-                                      .append( ")" )
-                                      .append( multiplyIfNotEmpty( dx ) ) );
+                return addScope( String( "ln(2)*(2^" )
+                                     .append( x )
+                                     .append( ")" )
+                                     .append( multiplyIfNotEmpty( dx ) ) );
             }
 
             //! @copydoc Cos::d2()
             String d2( const String& dx = "", const String& dy = "" ) const
             {
-                return IN_PARENS( String( "(ln(2)^2)*(2^" )
-                                      .append( x )
-                                      .append( ")" )
-                                      .append( multiplyIfNotEmpty( dx, dy ) ) );
+                return addScope( String( "(ln(2)^2)*(2^" )
+                                     .append( x )
+                                     .append( ")" )
+                                     .append( multiplyIfNotEmpty( dx, dy ) ) );
             }
 
             //! @copydoc Cos::d3()
             String d3( const String& dx = "", const String& dy = "", const String& dz = "" ) const
             {
-                return IN_PARENS( String( "(ln(2)^3)*(2^" )
-                                      .append( x )
-                                      .append( ")" )
-                                      .append( multiplyIfNotEmpty( dx, dy, dz ) ) );
+                return addScope( String( "(ln(2)^3)*(2^" )
+                                     .append( x )
+                                     .append( ")" )
+                                     .append( multiplyIfNotEmpty( dx, dy, dz ) ) );
             }
 
         private:

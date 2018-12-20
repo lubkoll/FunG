@@ -36,7 +36,7 @@ namespace FunG
             /// Set point of evaluation.
             void update( const String& x )
             {
-                this->x = IN_PARENS( x );
+                this->x = addScope( x );
             }
 
             /// Function value.

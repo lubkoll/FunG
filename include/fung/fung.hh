@@ -11,5 +11,3 @@
 #include "util/add_missing_operators.hh"
 #include "util/string.hh"
 #include "variable.hh"
-
-#undef IN_PARENS
