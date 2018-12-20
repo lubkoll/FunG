@@ -11,6 +11,7 @@ var searchData=
   ['operator_3d',['operator=',['../structFunG_1_1Concepts_1_1CopyConcept.html#a43c6c112f8164497a4279458af2c0b20',1,'FunG::Concepts::CopyConcept']]],
   ['operator_5b_5d',['operator[]',['../structFunG_1_1Concepts_1_1MatrixConcept.html#ad5d89a552a4dc01fc0d06170cca8f00c',1,'FunG::Concepts::MatrixConcept::operator[]()'],['../structFunG_1_1Concepts_1_1VectorConcept.html#a43c32ede7adc0131b68685ce5fe2bc66',1,'FunG::Concepts::VectorConcept::operator[]()']]],
   ['operator_5e',['operator^',['../namespaceFunG.html#a94273e3ea80324e591bb98ae3c051221',1,'FunG']]],
-  ['outofdomainexception',['OutOfDomainException',['../classFunG_1_1OutOfDomainException.html',1,'FunG']]],
-  ['outofdomainexception',['OutOfDomainException',['../classFunG_1_1OutOfDomainException.html#ab5dcdcbbe00be01b008e1945a1504d1b',1,'FunG::OutOfDomainException']]]
+  ['or',['Or',['../namespaceFunG_1_1Meta.html#a54cebc5541fa7677e239a9b7a84aba7e',1,'FunG::Meta']]],
+  ['outofdomainexception',['OutOfDomainException',['../classFunG_1_1OutOfDomainException.html#ab5dcdcbbe00be01b008e1945a1504d1b',1,'FunG::OutOfDomainException']]],
+  ['outofdomainexception',['OutOfDomainException',['../classFunG_1_1OutOfDomainException.html',1,'FunG']]]
 ];

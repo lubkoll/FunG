@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['cbrt',['cbrt',['../group__CMathGroup.html#gaa7f2552adfb8ec41aeb685adddd8bf98',1,'FunG::cbrt(const Function &amp;f)'],['../group__CMathGroup.html#ga2e4363ad8400e1c8431c10de2152ec2b',1,'FunG::Cbrt()']]],
+  ['cbrt',['Cbrt',['../group__CMathGroup.html#ga2e4363ad8400e1c8431c10de2152ec2b',1,'FunG::Cbrt()'],['../group__CMathGroup.html#gaa7f2552adfb8ec41aeb685adddd8bf98',1,'FunG::cbrt(const Function &amp;f)']]],
   ['cbrt2',['Cbrt2',['../group__CMathGroup.html#ga9bcbef859d7ffd0d6570d69e1bd8503a',1,'FunG::Cbrt2()'],['../group__CMathGroup.html#gafd27322fb64c6df3366f384c93819a06',1,'FunG::cbrt2(const Function &amp;f)']]],
   ['chain',['Chain',['../structFunG_1_1MathematicalOperations_1_1Chain.html#aea55b97629df71369488750410e0c66d',1,'FunG::MathematicalOperations::Chain::Chain(const F &amp;f_, const G &amp;g_)'],['../structFunG_1_1MathematicalOperations_1_1Chain.html#a4323e75022efde2e066df2ef11010b21',1,'FunG::MathematicalOperations::Chain::Chain(F &amp;&amp;f_, G &amp;&amp;g_)']]],
   ['chain',['Chain',['../structFunG_1_1MathematicalOperations_1_1Chain.html',1,'FunG::MathematicalOperations']]],

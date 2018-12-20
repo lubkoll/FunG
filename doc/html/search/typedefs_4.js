@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sqrt',['Sqrt',['../group__CMathGroup.html#gaca80e773d5886f47cd49dc19b130263f',1,'FunG']]]
+  ['or',['Or',['../namespaceFunG_1_1Meta.html#a54cebc5541fa7677e239a9b7a84aba7e',1,'FunG::Meta']]]
 ];

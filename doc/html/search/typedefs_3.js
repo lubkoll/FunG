@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['remove_5freference_5ft',['remove_reference_t',['../namespaceFunG.html#a40f6d0896c1e3837d442d39418a4f609',1,'FunG']]]
+  ['frobeniusnorm',['FrobeniusNorm',['../group__LinearAlgebraGroup.html#gad209833e37a25e863fe72868d37795b8',1,'FunG::LinearAlgebra']]]
 ];
