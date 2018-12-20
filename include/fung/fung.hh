@@ -8,5 +8,8 @@
 #include "linear_algebra.hh"
 #include "math.hh"
 #include "operations.hh"
-#include "variable.hh"
 #include "util/add_missing_operators.hh"
+#include "util/string.hh"
+#include "variable.hh"
+
+#undef IN_PARENS
