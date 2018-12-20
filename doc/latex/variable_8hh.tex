@@ -22,7 +22,7 @@ struct \hyperlink{structFunG_1_1Variable}{Fun\-G\-::\-Variable$<$ T, id $>$}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$class F , int id$>$ }\\using \hyperlink{namespaceFunG_afc90c0241d79dc4e02ffe640816ec94f}{Fun\-G\-::\-Variable\-\_\-t} = typename Variable\-Detail\-::\-Variable\-Type$<$ F, id $>$\-::type
+{\footnotesize template$<$class F , int id$>$ }\\using \hyperlink{namespaceFunG_a1c6fc5c4c7cd6678b9de8962c14b86b5}{Fun\-G\-::\-Variable\-\_\-t} = typename Variable\-Detail\-::\-Variable\-Type$<$ std\-::decay\-\_\-t$<$ F $>$, id $>$\-::type
 \begin{DoxyCompactList}\small\item\em Get underlying type of variable with index id. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -35,7 +35,7 @@ struct \hyperlink{structFunG_1_1Variable}{Fun\-G\-::\-Variable$<$ T, id $>$}
 \begin{DoxyCompactList}\small\item\em Check if T contains a type Variable$<$\-Type,n$>$. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T , int id$>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_1_1Has_a1f263f5816070c632631cace52aa77ee}{Fun\-G\-::\-Checks\-::\-Has\-::variable\-Id} ()
 \begin{DoxyCompactList}\small\item\em Check if T contains a type Variable$<$\-Type,id$>$. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Type $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_1_1Has_a86a3759a80b564e89116ff899e9bfb3f}{Fun\-G\-::\-Checks\-::\-Has\-::more\-Than\-One\-Variable} ()
+{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_1_1Has_a86a3759a80b564e89116ff899e9bfb3f}{Fun\-G\-::\-Checks\-::\-Has\-::more\-Than\-One\-Variable} ()
 \begin{DoxyCompactList}\small\item\em Check if T contains at least two variables. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class F , class Type , int id$>$ }\\constexpr bool \hyperlink{group__ConceptCheck_ga31790e5d021a40ac34b7469323c658f9}{Fun\-G\-::\-Checks\-::check\-Argument} ()
 \begin{DoxyCompactList}\small\item\em Check if variable with index id has type Type. \end{DoxyCompactList}\end{DoxyCompactItemize}

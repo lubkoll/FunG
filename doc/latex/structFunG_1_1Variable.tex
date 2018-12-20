@@ -15,13 +15,13 @@ Independent variable. Can be uniquely identified by its id.
 \item 
 \hyperlink{structFunG_1_1Variable_a20d207e651ee9e93c86dfa4ea1053f56}{Variable} ()=default
 \item 
-\hyperlink{structFunG_1_1Variable_a10238450dac2ec4c98400b106543ff8f}{Variable} (const T \&t\-\_\-)
+constexpr \hyperlink{structFunG_1_1Variable_af77daee887434f3fe1902bdfcb2639a0}{Variable} (const T \&t\-\_\-)
 \item 
-\hyperlink{structFunG_1_1Variable_a9abfae2c2ab06cbe2556600bae7c7ccb}{Variable} (T \&\&t\-\_\-)
+constexpr \hyperlink{structFunG_1_1Variable_ac3e65c76a69913a23d53c84ce01e602a}{Variable} (T \&\&t\-\_\-)
 \item 
 {\footnotesize template$<$int index, class Arg $>$ }\\void \hyperlink{structFunG_1_1Variable_a50f4d34586aa6a89df604503e0a3c2a9}{update} (const Arg \&t\-\_\-)
 \begin{DoxyCompactList}\small\item\em Update variable if index==id. \end{DoxyCompactList}\item 
-const T \& \hyperlink{structFunG_1_1Variable_a84333150762e0e5472ab508ca3f26e4f}{operator()} () const noexcept
+constexpr const T \& \hyperlink{structFunG_1_1Variable_afc527158ee42ca6f9a91a465d077fb65}{operator()} () const noexcept
 \begin{DoxyCompactList}\small\item\em Value of the variable. \end{DoxyCompactList}\item 
 {\footnotesize template$<$int index, class Arg , class  = std\-::enable\-\_\-if\-\_\-t$<$ id == index $>$$>$ }\\const T \& \hyperlink{structFunG_1_1Variable_a9384160b4015767ffe6a058583fef10a}{d1} (const Arg \&dt) const noexcept
 \begin{DoxyCompactList}\small\item\em First directional derivative. Only available if id==index. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -40,20 +40,20 @@ Independent variable. Can be uniquely identified by its id.
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [default]}}}\label{structFunG_1_1Variable_a20d207e651ee9e93c86dfa4ea1053f56}
-\hypertarget{structFunG_1_1Variable_a10238450dac2ec4c98400b106543ff8f}{\index{Fun\-G\-::\-Variable@{Fun\-G\-::\-Variable}!Variable@{Variable}}
+\hypertarget{structFunG_1_1Variable_af77daee887434f3fe1902bdfcb2639a0}{\index{Fun\-G\-::\-Variable@{Fun\-G\-::\-Variable}!Variable@{Variable}}
 \index{Variable@{Variable}!FunG::Variable@{Fun\-G\-::\-Variable}}
-\subsubsection[{Variable}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , int id$>$ {\bf Fun\-G\-::\-Variable}$<$ T, id $>$\-::{\bf Variable} (
+\subsubsection[{Variable}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , int id$>$ constexpr {\bf Fun\-G\-::\-Variable}$<$ T, id $>$\-::{\bf Variable} (
 \begin{DoxyParamCaption}
 \item[{const T \&}]{t\-\_\-}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{structFunG_1_1Variable_a10238450dac2ec4c98400b106543ff8f}
-\hypertarget{structFunG_1_1Variable_a9abfae2c2ab06cbe2556600bae7c7ccb}{\index{Fun\-G\-::\-Variable@{Fun\-G\-::\-Variable}!Variable@{Variable}}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{structFunG_1_1Variable_af77daee887434f3fe1902bdfcb2639a0}
+\hypertarget{structFunG_1_1Variable_ac3e65c76a69913a23d53c84ce01e602a}{\index{Fun\-G\-::\-Variable@{Fun\-G\-::\-Variable}!Variable@{Variable}}
 \index{Variable@{Variable}!FunG::Variable@{Fun\-G\-::\-Variable}}
-\subsubsection[{Variable}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , int id$>$ {\bf Fun\-G\-::\-Variable}$<$ T, id $>$\-::{\bf Variable} (
+\subsubsection[{Variable}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , int id$>$ constexpr {\bf Fun\-G\-::\-Variable}$<$ T, id $>$\-::{\bf Variable} (
 \begin{DoxyParamCaption}
 \item[{T \&\&}]{t\-\_\-}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{structFunG_1_1Variable_a9abfae2c2ab06cbe2556600bae7c7ccb}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{structFunG_1_1Variable_ac3e65c76a69913a23d53c84ce01e602a}
 
 
 \subsection{Member Function Documentation}
@@ -68,13 +68,13 @@ Independent variable. Can be uniquely identified by its id.
 
 First directional derivative. Only available if id==index. 
 
-\hypertarget{structFunG_1_1Variable_a84333150762e0e5472ab508ca3f26e4f}{\index{Fun\-G\-::\-Variable@{Fun\-G\-::\-Variable}!operator()@{operator()}}
+\hypertarget{structFunG_1_1Variable_afc527158ee42ca6f9a91a465d077fb65}{\index{Fun\-G\-::\-Variable@{Fun\-G\-::\-Variable}!operator()@{operator()}}
 \index{operator()@{operator()}!FunG::Variable@{Fun\-G\-::\-Variable}}
-\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , int id$>$ const T\& {\bf Fun\-G\-::\-Variable}$<$ T, id $>$\-::operator() (
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , int id$>$ constexpr const T\& {\bf Fun\-G\-::\-Variable}$<$ T, id $>$\-::operator() (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}}\label{structFunG_1_1Variable_a84333150762e0e5472ab508ca3f26e4f}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}}\label{structFunG_1_1Variable_afc527158ee42ca6f9a91a465d077fb65}
 
 
 Value of the variable. 

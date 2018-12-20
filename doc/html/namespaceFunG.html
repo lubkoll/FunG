@@ -209,10 +209,10 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a0cde667596590eb8d32e4a5ee76ddbb9"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a0cde667596590eb8d32e4a5ee76ddbb9">void_t</a> = typename Detail::voider&lt; Types...&gt;::type</td></tr>
 <tr class="memdesc:a0cde667596590eb8d32e4a5ee76ddbb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Most fascinating type ever. Is void for all input types.  <a href="#a0cde667596590eb8d32e4a5ee76ddbb9">More...</a><br/></td></tr>
 <tr class="separator:a0cde667596590eb8d32e4a5ee76ddbb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc90c0241d79dc4e02ffe640816ec94f"><td class="memTemplParams" colspan="2">template&lt;class F , int id&gt; </td></tr>
-<tr class="memitem:afc90c0241d79dc4e02ffe640816ec94f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#afc90c0241d79dc4e02ffe640816ec94f">Variable_t</a> = typename VariableDetail::VariableType&lt; F, id &gt;::type</td></tr>
-<tr class="memdesc:afc90c0241d79dc4e02ffe640816ec94f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get underlying type of variable with index id.  <a href="#afc90c0241d79dc4e02ffe640816ec94f">More...</a><br/></td></tr>
-<tr class="separator:afc90c0241d79dc4e02ffe640816ec94f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c6fc5c4c7cd6678b9de8962c14b86b5"><td class="memTemplParams" colspan="2">template&lt;class F , int id&gt; </td></tr>
+<tr class="memitem:a1c6fc5c4c7cd6678b9de8962c14b86b5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a1c6fc5c4c7cd6678b9de8962c14b86b5">Variable_t</a> = typename VariableDetail::VariableType&lt; std::decay_t&lt; F &gt;, id &gt;::type</td></tr>
+<tr class="memdesc:a1c6fc5c4c7cd6678b9de8962c14b86b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get underlying type of variable with index id.  <a href="#a1c6fc5c4c7cd6678b9de8962c14b86b5">More...</a><br/></td></tr>
+<tr class="separator:a1c6fc5c4c7cd6678b9de8962c14b86b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -511,14 +511,14 @@ template&lt;class F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="afc90c0241d79dc4e02ffe640816ec94f"></a>
+<a class="anchor" id="a1c6fc5c4c7cd6678b9de8962c14b86b5"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class F , int id&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespaceFunG.html#afc90c0241d79dc4e02ffe640816ec94f">FunG::Variable_t</a> = typedef typename VariableDetail::VariableType&lt; F, id &gt;::type</td>
+          <td class="memname">using <a class="el" href="namespaceFunG.html#a1c6fc5c4c7cd6678b9de8962c14b86b5">FunG::Variable_t</a> = typedef typename VariableDetail::VariableType&lt; std::decay_t&lt; F &gt;, id &gt;::type</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1457,7 +1457,7 @@ template&lt;class Matrix , class  = std::enable_if_t&lt;!Checks::isConstantSize&
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 20 2018 16:14:31 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 20 2018 21:23:29 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -1,9 +1,9 @@
 var searchData=
 [
   ['variable',['Variable',['../structFunG_1_1Variable.html',1,'FunG']]],
-  ['variable',['Variable',['../structFunG_1_1Variable.html#a20d207e651ee9e93c86dfa4ea1053f56',1,'FunG::Variable::Variable()=default'],['../structFunG_1_1Variable.html#a10238450dac2ec4c98400b106543ff8f',1,'FunG::Variable::Variable(const T &amp;t_)'],['../structFunG_1_1Variable.html#a9abfae2c2ab06cbe2556600bae7c7ccb',1,'FunG::Variable::Variable(T &amp;&amp;t_)'],['../namespaceFunG.html#a2ead025b35a8cdf3ac8c170524ab61c0',1,'FunG::variable()'],['../namespaceFunG_1_1Checks_1_1Has.html#ae0ea4bc2bfd6f8d85158529ef4f2be0f',1,'FunG::Checks::Has::variable()']]],
+  ['variable',['Variable',['../structFunG_1_1Variable.html#a20d207e651ee9e93c86dfa4ea1053f56',1,'FunG::Variable::Variable()=default'],['../structFunG_1_1Variable.html#af77daee887434f3fe1902bdfcb2639a0',1,'FunG::Variable::Variable(const T &amp;t_)'],['../structFunG_1_1Variable.html#ac3e65c76a69913a23d53c84ce01e602a',1,'FunG::Variable::Variable(T &amp;&amp;t_)'],['../namespaceFunG.html#a2ead025b35a8cdf3ac8c170524ab61c0',1,'FunG::variable()'],['../namespaceFunG_1_1Checks_1_1Has.html#ae0ea4bc2bfd6f8d85158529ef4f2be0f',1,'FunG::Checks::Has::variable()']]],
   ['variable_2ehh',['variable.hh',['../variable_8hh.html',1,'']]],
-  ['variable_5ft',['Variable_t',['../namespaceFunG.html#afc90c0241d79dc4e02ffe640816ec94f',1,'FunG']]],
+  ['variable_5ft',['Variable_t',['../namespaceFunG.html#a1c6fc5c4c7cd6678b9de8962c14b86b5',1,'FunG']]],
   ['variableid',['variableId',['../namespaceFunG_1_1Checks_1_1Has.html#a1f263f5816070c632631cace52aa77ee',1,'FunG::Checks::Has']]],
   ['vectorconcept',['VectorConcept',['../structFunG_1_1Concepts_1_1VectorConcept.html',1,'FunG::Concepts']]],
   ['vectorconceptcheck',['VectorConceptCheck',['../structFunG_1_1Concepts_1_1VectorConceptCheck.html',1,'FunG::Concepts']]],
