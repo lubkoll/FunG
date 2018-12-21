@@ -40,17 +40,17 @@ matrix:
       
     # Clang 3.6
     - os: linux
-      env: COMPILER=clang++-4.0 CCOMPILER=clang-4.0 COMPUTE_COVERAGE=false
+      env: COMPILER=clang++-3.6 CCOMPILER=clang-3.6 COMPUTE_COVERAGE=false
       compiler: clang
       
     # Clang 3.7
     - os: linux
-      env: COMPILER=clang++-5.0 CCOMPILER=clang-5.0 COMPUTE_COVERAGE=false
+      env: COMPILER=clang++-3.7 CCOMPILER=clang-3.7 COMPUTE_COVERAGE=false
       compiler: clang
       
     # Clang 3.8
     - os: linux
-      env: COMPILER=clang++-6.0 CCOMPILER=clang-6.0 COMPUTE_COVERAGE=false
+      env: COMPILER=clang++-3.8 CCOMPILER=clang-3.8 COMPUTE_COVERAGE=false
       compiler: clang
       
     # Xcode 7.3
@@ -123,7 +123,7 @@ script:
   - cd $TRAVIS_BUILD_DIR
   - mkdir build && cd build
   - |
-    if [[ "${COMPILER}" == "clang++-6.0" ]]; then
+    if [[ "${COMPILER}" == "clang++-3.6" ]]; then
       cmake .. -DBuildTest=ON -DCMAKE_CXX_FLAGS="-ftemplate-depth=1024"
     else
       cmake .. -DBuildTest=ON
