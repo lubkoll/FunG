@@ -47,10 +47,10 @@ DisableFormat:   false
 ExperimentalAutoDetectBinPacking: false
 ForEachMacros:   [ foreach, Q_FOREACH, BOOST_FOREACH ]
 IncludeCategories: 
-  - Regex:           '^(<|")(Spacy)/'
+  - Regex:           '^"'
     Priority:        5
-  - Regex:           '^"(Util|Detail)/'
-    Priority:        1
+  - Regex:           '^<fung/'
+    Priority:        7
   - Regex:           '^((<|")(gtest|isl|json)/)'
     Priority:        10
   - Regex:           '^(<(array|algorithm|cassert|chrono|cmath|cstdlib|iostream|limits|list|map|memory|numeric|random|set|stdexcept|string|vector|type_traits|utility)>)'
