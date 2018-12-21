@@ -10,7 +10,7 @@
 namespace FunG
 {
     /*!
-      @ingroup StringifyCMathGroup
+      @ingroup std::stringifyCMathGroup
 
       @brief Sine function including first three derivatives (based on sin(double) in \<cmath\>).
 
@@ -23,47 +23,48 @@ namespace FunG
         struct Sin : Chainer< Sin >
         {
             //! @copydoc Cos::Cos()
-            explicit Sin( String x = "x" )
+            explicit Sin( std::string x = "x" )
             {
                 update( x );
             }
 
             //! @copydoc Cos::update()
-            void update( const String& x )
+            void update( const std::string& x )
             {
                 this->x = addScope( x );
             }
 
             //! @copydoc Cos::d0()
-            String d0() const noexcept
+            std::string d0() const noexcept
             {
-                return String( "sin" ).append( x );
+                return std::string( "sin" ).append( x );
             }
 
             //! @copydoc Cos::d1()
-            String d1( const String& dx = "" ) const
+            std::string d1( const std::string& dx = "" ) const
             {
-                return String( "cos" ).append( x ).append( multiplyIfNotEmpty( dx ) );
+                return std::string( "cos" ).append( x ).append( multiplyIfNotEmpty( dx ) );
             }
 
             //! @copydoc Cos::d2()
-            String d2( const String& dx = "", const String& dy = "" ) const
+            std::string d2( const std::string& dx = "", const std::string& dy = "" ) const
             {
-                return String( "-sin" ).append( x ).append( multiplyIfNotEmpty( dx, dy ) );
+                return std::string( "-sin" ).append( x ).append( multiplyIfNotEmpty( dx, dy ) );
             }
 
             //! @copydoc Cos::d3()
-            String d3( const String& dx = "", const String& dy = "", const String& dz = "" ) const
+            std::string d3( const std::string& dx = "", const std::string& dy = "",
+                            const std::string& dz = "" ) const
             {
-                return String( "-cos" ).append( x ).append( multiplyIfNotEmpty( dx, dy, dz ) );
+                return std::string( "-cos" ).append( x ).append( multiplyIfNotEmpty( dx, dy, dz ) );
             }
 
         private:
-            String x;
+            std::string x;
         };
 
         /*!
-          @ingroup StringifyCMathGroup
+          @ingroup std::stringifyCMathGroup
           @brief Generate \f$ \sin\circ f \f$.
           @param f function mapping into a scalar space
           @return object of type MathematicalOperations::Chain<Sin,Function>

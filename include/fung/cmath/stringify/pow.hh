@@ -4,6 +4,7 @@
 #pragma once
 
 #include <fung/util/chainer.hh>
+#include <fung/util/mathop_traits.hh>
 #include <fung/util/static_checks.hh>
 #include <fung/util/string.hh>
 
@@ -11,7 +12,7 @@
 
 namespace FunG
 {
-    /** @addtogroup StringifyCMathGroup
+    /** @addtogroup std::stringifyCMathGroup
      *  @{ */
 
     /*!
@@ -30,57 +31,68 @@ namespace FunG
         struct Pow : Chainer< Pow< dividend, divisor > >
         {
             //! @copydoc Cos::Cos()
-            explicit Pow( String x = "x" )
+            explicit Pow( std::string x = "x" )
             {
                 update( x );
             }
 
             //! @copydoc Cos::update()
-            void update( String x )
+            void update( std::string x )
             {
-                this->x = addScope( x );
+                this->x = addStrictScope( x );
             }
 
             //! @copydoc Cos::d0()
-            String d0() const noexcept
+            std::string d0() const noexcept
             {
                 return xtp( k );
             }
 
             //! @copydoc Cos::d1()
-            String d1( const String& dx = "" ) const
+            std::string d1( const std::string& dx = "" ) const
             {
-                return k * xtp( k1 ).append( multiplyIfNotEmpty( dx ) );
+                return multiply_via_traits( k, xtp( k1 ).append( multiplyIfNotEmpty( dx ) ) );
             }
 
             //! @copydoc Cos::d2()
-            String d2( const String& dx = "", const String& dy = "" ) const
+            std::string d2( const std::string& dx = "", const std::string& dy = "" ) const
             {
-                return kk1 * xtp( k2 ).append( multiplyIfNotEmpty( dx, dy ) );
+                return multiply_via_traits( kk1, xtp( k2 ).append( multiplyIfNotEmpty( dx, dy ) ) );
             }
 
             //! @copydoc Cos::d3()
-            String d3( const String& dx = "", const String& dy = "", const String& dz = "" ) const
+            std::string d3( const std::string& dx = "", const std::string& dy = "",
+                            const std::string& dz = "" ) const
             {
-                return kk1k2 * xtp( k3 ).append( multiplyIfNotEmpty( dx, dy, dz ) );
+                return multiply_via_traits( kk1k2,
+                                            xtp( k3 ).append( multiplyIfNotEmpty( dx, dy, dz ) ) );
             }
 
         private:
-            String xtp( const String& k ) const
+            std::string xtp( const std::string& k ) const
             {
-                return String( x ).append( "^" ).append( addScope( k ) );
+                return std::string( x ).append( "^" ).append( addStrictScope( k ) );
             }
 
-            String x;
-            const String k = toString( dividend ) / toString( divisor );
-            const String k1 = toString( dividend - divisor ) / toString( divisor );
-            const String kk1 =
-                toString( dividend * ( dividend - divisor ) ) / toString( divisor * divisor );
-            const String k2 = toString( dividend - 2 * divisor ) / toString( divisor );
-            const String kk1k2 =
-                toString( dividend * ( dividend - divisor ) * ( dividend - 2 * divisor ) ) /
-                toString( divisor * divisor * divisor );
-            const String k3 = toString( dividend - 3 * divisor ) / toString( divisor );
+            std::string x;
+            const std::string k =
+                std::to_string( dividend ).append( "/" ).append( std::to_string( divisor ) );
+            const std::string k1 = std::to_string( dividend - divisor )
+                                       .append( "/" )
+                                       .append( std::to_string( divisor ) );
+            const std::string kk1 = std::to_string( dividend * ( dividend - divisor ) )
+                                        .append( "/" )
+                                        .append( std::to_string( divisor * divisor ) );
+            const std::string k2 = std::to_string( dividend - 2 * divisor )
+                                       .append( "/" )
+                                       .append( std::to_string( divisor ) );
+            const std::string kk1k2 =
+                std::to_string( dividend * ( dividend - divisor ) * ( dividend - 2 * divisor ) )
+                    .append( "/" )
+                    .append( std::to_string( divisor * divisor * divisor ) );
+            const std::string k3 = std::to_string( dividend - 3 * divisor )
+                                       .append( "/" )
+                                       .append( std::to_string( divisor ) );
         };
 
         /// @cond
@@ -88,31 +100,31 @@ namespace FunG
         struct Pow< 1, 1 > : Chainer< Pow< 1, 1 > >
         {
             //! @copydoc Cos::Cos()
-            explicit Pow( String x = "x" )
+            explicit Pow( std::string x = "x" )
             {
                 update( x );
             }
 
             //! @copydoc Cos::update()
-            void update( const String& x )
+            void update( const std::string& x )
             {
                 this->x = x;
             }
 
             //! @copydoc Cos::d0()
-            String d0() const noexcept
+            std::string d0() const noexcept
             {
                 return x;
             }
 
             //! @copydoc Cos::d1()
-            String d1( String dx = "" ) const
+            std::string d1( std::string dx = "" ) const
             {
-                return String( "1" ).append( multiplyIfNotEmpty( dx ) );
+                return std::string( "1" ).append( multiplyIfNotEmpty( dx ) );
             }
 
         private:
-            String x;
+            std::string x;
         };
 
         /// @cond
@@ -120,37 +132,37 @@ namespace FunG
         struct Pow< 2, 1 > : Chainer< Pow< 2, 1 > >
         {
             //! @copydoc Cos::Cos()
-            explicit Pow( String x = "x" )
+            explicit Pow( std::string x = "x" )
             {
                 update( x );
             }
 
             //! @copydoc Cos::update()
-            void update( const String& x )
+            void update( const std::string& x )
             {
-                this->x = addScope( x );
+                this->x = addStrictScope( x );
             }
 
             //! @copydoc Cos::d0()
-            String d0() const noexcept
+            std::string d0() const noexcept
             {
-                return String( x ).append( "^2" );
+                return std::string( x ).append( "^2" );
             }
 
             //! @copydoc Cos::d1()
-            String d1( const String& dx = "" ) const
+            std::string d1( const std::string& dx = "" ) const
             {
-                return String( "2" ).append( x ).append( multiplyIfNotEmpty( dx ) );
+                return std::string( "2" ).append( x ).append( multiplyIfNotEmpty( dx ) );
             }
 
             //! @copydoc Cos::d2()
-            String d2( const String& dx = "", const String& dy = "" ) const
+            std::string d2( const std::string& dx = "", const std::string& dy = "" ) const
             {
-                return String( "2" ).append( multiplyIfNotEmpty( dx, dy ) );
+                return std::string( "2" ).append( multiplyIfNotEmpty( dx, dy ) );
             }
 
         private:
-            String x;
+            std::string x;
         };
 
         /// @cond
@@ -158,98 +170,101 @@ namespace FunG
         struct Pow< 3, 1 > : Chainer< Pow< 3, 1 > >
         {
             //! @copydoc Cos::Cos()
-            explicit Pow( const String& x = "x" )
+            explicit Pow( const std::string& x = "x" )
             {
                 update( x );
             }
 
             //! @copydoc Cos::update()
-            void update( const String& x )
+            void update( const std::string& x )
             {
-                this->x = addScope( x );
+                this->x = addStrictScope( x );
             }
 
             //! @copydoc Cos::d0()
-            String d0() const noexcept
+            std::string d0() const noexcept
             {
-                return String( x ).append( "^3" );
+                return std::string( x ).append( "^3" );
             }
 
             //! @copydoc Cos::d1()
-            String d1( const String& dx = "" ) const
+            std::string d1( const std::string& dx = "" ) const
             {
-                return String( "3" ).append( x ).append( "^2" ).append( multiplyIfNotEmpty( dx ) );
+                return std::string( "3" ).append( x ).append( "^2" ).append(
+                    multiplyIfNotEmpty( dx ) );
             }
 
             //! @copydoc Cos::d2()
-            String d2( const String& dx = "", const String& dy = "" ) const
+            std::string d2( const std::string& dx = "", const std::string& dy = "" ) const
             {
-                return String( "6" ).append( x ).append( multiplyIfNotEmpty( dx, dy ) );
+                return std::string( "6" ).append( x ).append( multiplyIfNotEmpty( dx, dy ) );
             }
 
             //! @copydoc Cos::d3()
-            String d3( const String& dx = "", const String& dy = "", const String& dz = "" ) const
+            std::string d3( const std::string& dx = "", const std::string& dy = "",
+                            const std::string& dz = "" ) const
             {
-                return String( "6" ).append( multiplyIfNotEmpty( dx, dy, dz ) );
+                return std::string( "6" ).append( multiplyIfNotEmpty( dx, dy, dz ) );
             }
 
         private:
-            String x;
+            std::string x;
         };
 
         template < int dividend >
         struct Pow< dividend, 1 > : Chainer< Pow< dividend, 1 > >
         {
             //! @copydoc Cos::Cos()
-            explicit Pow( const String& x = "x" )
+            explicit Pow( const std::string& x = "x" )
             {
                 update( x );
             }
 
             //! @copydoc Cos::update()
-            void update( const String& x )
+            void update( const std::string& x )
             {
-                this->x = addScope( x );
+                this->x = addStrictScope( x );
             }
 
             //! @copydoc Cos::d0()
-            String d0() const noexcept
+            std::string d0() const noexcept
             {
-                return String( x ).append( "^" ).append( toString( dividend ) );
+                return std::string( x ).append( "^" ).append( std::to_string( dividend ) );
             }
 
             //! @copydoc Cos::d1()
-            String d1( const String& dx = "" ) const
+            std::string d1( const std::string& dx = "" ) const
             {
-                return toString( dividend )
+                return std::to_string( dividend )
                     .append( x )
                     .append( "^" )
-                    .append( toString( dividend - 1 ) )
+                    .append( std::to_string( dividend - 1 ) )
                     .append( multiplyIfNotEmpty( dx ) );
             }
 
             //! @copydoc Cos::d2()
-            String d2( const String& dx = "", const String& dy = "" ) const
+            std::string d2( const std::string& dx = "", const std::string& dy = "" ) const
             {
-                return toString( dividend * ( dividend - 1 ) )
+                return std::to_string( dividend * ( dividend - 1 ) )
                     .append( x )
                     .append( "^" )
-                    .append( toString( dividend - 2 ) )
+                    .append( std::to_string( dividend - 2 ) )
                     .append( multiplyIfNotEmpty( dx, dy ) );
             }
 
             //! @copydoc Cos::d3()
-            String d3( const String& dx = "", const String& dy = "", const String& dz = "" ) const
+            std::string d3( const std::string& dx = "", const std::string& dy = "",
+                            const std::string& dz = "" ) const
             {
-                return toString( dividend * ( dividend - 1 ) * ( dividend - 2 ) )
+                return std::to_string( dividend * ( dividend - 1 ) * ( dividend - 2 ) )
                     .append( x )
                     .append( "^" )
-                    .append( toString( dividend - 3 ) )
+                    .append( std::to_string( dividend - 3 ) )
                     .append( multiplyIfNotEmpty( dx, dy, dz ) );
             }
 
         private:
-            String x;
+            std::string x;
         };
 
         /*!

@@ -9,7 +9,7 @@
 
 namespace FunG
 {
-    /** @addtogroup StringifyCMathGroup
+    /** @addtogroup std::stringifyCMathGroup
    *  @{ */
 
     /**
@@ -24,43 +24,44 @@ namespace FunG
         struct LN : Chainer< LN >
         {
             //! @copydoc Cos::Cos()
-            explicit LN( const String& x = "x" )
+            explicit LN( const std::string& x = "x" )
             {
                 update( x );
             }
 
             //! @copydoc Cos::update()
-            void update( const String& x )
+            void update( const std::string& x )
             {
                 this->x = x;
             }
 
             //! @copydoc Cos::d0()
-            String d0() const noexcept
+            std::string d0() const noexcept
             {
-                return String( "ln(" ).append( x ).append( ")" );
+                return std::string( "ln(" ).append( x ).append( ")" );
             }
 
             //! @copydoc Cos::d1()
-            String d1( const String& dx = "" ) const
+            std::string d1( const std::string& dx = "" ) const
             {
-                return String( "(x^-1)" ).append( multiplyIfNotEmpty( dx ) );
+                return std::string( "(x^-1)" ).append( multiplyIfNotEmpty( dx ) );
             }
 
             //! @copydoc Cos::d2()
-            String d2( const String& dx = "", const String& dy = "" ) const
+            std::string d2( const std::string& dx = "", const std::string& dy = "" ) const
             {
-                return String( "-(x^-2)" ).append( multiplyIfNotEmpty( dx, dy ) );
+                return std::string( "-(x^-2)" ).append( multiplyIfNotEmpty( dx, dy ) );
             }
 
             //! @copydoc Cos::d3()
-            String d3( const String& dx = "", const String& dy = "", const String& dz = "" ) const
+            std::string d3( const std::string& dx = "", const std::string& dy = "",
+                            const std::string& dz = "" ) const
             {
-                return String( "2(x^-3)" ).append( multiplyIfNotEmpty( dx, dy, dz ) );
+                return std::string( "2(x^-3)" ).append( multiplyIfNotEmpty( dx, dy, dz ) );
             }
 
         private:
-            String x;
+            std::string x;
         };
 
         /**
@@ -73,33 +74,34 @@ namespace FunG
         struct Log10 : Chainer< Log10 >
         {
             //! @copydoc Cos::Cos()
-            explicit Log10( const String& x = "x" )
+            explicit Log10( const std::string& x = "x" )
             {
                 update( x );
             }
 
             //! @copydoc Cos::update()
-            void update( const String& x )
+            void update( const std::string& x )
             {
                 this->x = x;
             }
 
             //! @copydoc Cos::d0()
-            String d0() const noexcept
+            std::string d0() const noexcept
             {
-                return String( "log_10(" ).append( x ).append( ")" );
+                return std::string( "log_10(" ).append( x ).append( ")" );
             }
 
             //! @copydoc Cos::d1()
-            String d1( const String& dx = "" ) const
+            std::string d1( const std::string& dx = "" ) const
             {
-                return ( ln10 * "x" ).append( "^(-1)" ).append( multiplyIfNotEmpty( dx ) );
+                return std::string( ln10 ).append( "x" ).append( "^(-1)" ).append(
+                    multiplyIfNotEmpty( dx ) );
             }
 
             //! @copydoc Cos::d2()
-            String d2( const String& dx = "", const String& dy = "" ) const
+            std::string d2( const std::string& dx = "", const std::string& dy = "" ) const
             {
-                return String( "-" )
+                return std::string( "-" )
                     .append( ln10 )
                     .append( "^(-1)" )
                     .append( x )
@@ -108,9 +110,10 @@ namespace FunG
             }
 
             //! @copydoc Cos::d3()
-            String d3( const String& dx = "", const String& dy = "", const String& dz = "" ) const
+            std::string d3( const std::string& dx = "", const std::string& dy = "",
+                            const std::string& dz = "" ) const
             {
-                return String( "2" )
+                return std::string( "2" )
                     .append( ln10 )
                     .append( "^(-1)" )
                     .append( x )
@@ -119,8 +122,8 @@ namespace FunG
             }
 
         private:
-            String x;
-            String ln10{"ln(10)"};
+            std::string x;
+            std::string ln10{"ln(10)"};
         };
 
         /**
@@ -133,27 +136,27 @@ namespace FunG
         struct Log2 : Chainer< Log2 >
         {
             //! @copydoc Cos::Cos()
-            explicit Log2( const String& x = 1. )
+            explicit Log2( const std::string& x = "x" )
             {
                 update( x );
             }
 
             //! @copydoc Cos::update()
-            void update( const String& x )
+            void update( const std::string& x )
             {
                 this->x = addScope( x );
             }
 
             //! @copydoc Cos::d0()
-            String d0() const noexcept
+            std::string d0() const noexcept
             {
-                return String( "log_2" ).append( x );
+                return std::string( "log_2" ).append( x );
             }
 
             //! @copydoc Cos::d1()
-            String d1( const String& dx = "" ) const
+            std::string d1( const std::string& dx = "" ) const
             {
-                return String( "(" )
+                return std::string( "(" )
                     .append( ln2 )
                     .append( "*" )
                     .append( x )
@@ -162,9 +165,9 @@ namespace FunG
             }
 
             //! @copydoc Cos::d2()
-            String d2( const String& dx = "", const String& dy = "" ) const
+            std::string d2( const std::string& dx = "", const std::string& dy = "" ) const
             {
-                return String( "-" )
+                return std::string( "-" )
                     .append( ln2 )
                     .append( "^(-1)" )
                     .append( x )
@@ -173,9 +176,10 @@ namespace FunG
             }
 
             //! @copydoc Cos::d3()
-            String d3( const String& dx = "", const String& dy = "", const String& dz = "" ) const
+            std::string d3( const std::string& dx = "", const std::string& dy = "",
+                            const std::string& dz = "" ) const
             {
-                return String( "2" )
+                return std::string( "2" )
                     .append( ln2 )
                     .append( "^(-1)" )
                     .append( x )
@@ -184,8 +188,8 @@ namespace FunG
             }
 
         private:
-            String x;
-            String ln2{"ln(2)"};
+            std::string x;
+            std::string ln2{"ln(2)"};
         };
 
         /*!

@@ -15,48 +15,52 @@ namespace FunG
         struct ACos : Chainer< ACos >
         {
             //! @copydoc Cos::Cos()
-            explicit ACos( String x = "x" )
+            explicit ACos( std::string x = "x" )
             {
                 update( x );
             }
 
             //! @copydoc Cos::update()
-            void update( const String& x )
+            void update( const std::string& x )
             {
                 this->x = addScope( x );
             }
 
             //! @copydoc Cos::d0()
-            String d0() const noexcept
+            std::string d0() const noexcept
             {
-                return String( "acos" ).append( x );
+                return std::string( "acos" ).append( x );
             }
 
             //! @copydoc Cos::d1()
-            String d1( const String& dx = "" ) const
+            std::string d1( const std::string& dx = "" ) const
             {
-                return String( "-1/sqrt(1-" )
+                return std::string( "-1/sqrt(1-" )
                     .append( x )
                     .append( "^2)" )
                     .append( multiplyIfNotEmpty( dx ) );
             }
 
             //! @copydoc Cos::d2()
-            String d2( const String& dx = "", const String& dy = "" ) const
+            std::string d2( const std::string& dx = "", const std::string& dy = "" ) const
             {
-                return String( "-" ).append( x ).append( "*(1" ) -
-                       String( x )
-                           .append( "^2)^-3/2" )
-                           .append( multiplyIfNotEmpty( dx ) )
-                           .append( multiplyIfNotEmpty( dy ) );
+                return std::string( "-" )
+                    .append( x )
+                    .append( "*(1" )
+                    .append( "-" )
+                    .append( x )
+                    .append( "^2)^(-3/2)" )
+                    .append( multiplyIfNotEmpty( dx ) )
+                    .append( multiplyIfNotEmpty( dy ) );
             }
 
             //! @copydoc Cos::d3()
-            String d3( const String& dx = "", const String& dy = "", const String& dz = "" ) const
+            std::string d3( const std::string& dx = "", const std::string& dy = "",
+                            const std::string& dz = "" ) const
             {
-                auto first = String( "-1/(1-" ).append( x ).append( "^2)^(3/2) * " );
+                auto first = std::string( "-1/(1-" ).append( x ).append( "^2)^(3/2) * " );
                 const auto second =
-                    String( "(1 + 3*" ).append( x ).append( "^2" ).append( "/(1-x^2))" );
+                    std::string( "(1 + 3*" ).append( x ).append( "^2" ).append( "/(1-x^2))" );
                 return first.append( second )
                     .append( multiplyIfNotEmpty( dx ) )
                     .append( multiplyIfNotEmpty( dy ) )
@@ -64,11 +68,11 @@ namespace FunG
             }
 
         private:
-            String x;
+            std::string x;
         };
 
         /*!
-          @ingroup StringifyCMathGroup
+          @ingroup std::stringifyCMathGroup
           @brief Generate printable version of \f$ \arccos\circ f \f$.
           @param f function mapping into a scalar space
           @return object of type MathematicalOperations::Chain<Printable<ACos>,Function>

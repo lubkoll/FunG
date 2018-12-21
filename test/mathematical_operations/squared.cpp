@@ -1,5 +1,6 @@
 #include <fung/cmath/pow.hh>
 #include <fung/cmath/stringify/pow.hh>
+#include <fung/cmath/texify/pow.hh>
 #include <fung/finalize.hh>
 #include <fung/generate.hh>
 #include <fung/variable.hh>
@@ -39,7 +40,14 @@ TEST( StringifySquaredTest, D0 )
 {
     using FunG::stringify::Pow;
     auto f = squared( Pow< 2 >() );
-    EXPECT_THAT( f.d0(), StrEq( "(x^2)*(x^2)" ) );
+    EXPECT_THAT( f.d0(), StrEq( "x^2*x^2" ) );
+}
+
+TEST( TexifySquaredTest, D0 )
+{
+    using FunG::texify::Pow;
+    auto f = squared( Pow< 2 >() );
+    EXPECT_THAT( f.d0(), StrEq( "x^2*x^2" ) );
 }
 
 TEST( SquaredTest, D1 )
@@ -53,7 +61,14 @@ TEST( StringifySquaredTest, D1 )
 {
     using FunG::stringify::Pow;
     auto f = FunG::finalize( squared( Pow< 2 >() ) );
-    EXPECT_THAT( f.d1( "" ), StrEq( "(2*(x^2))*2x" ) );
+    EXPECT_THAT( f.d1( "" ), StrEq( "2*x^2*2x" ) );
+}
+
+TEST( TexifySquaredTest, D1 )
+{
+    using FunG::texify::Pow;
+    auto f = FunG::finalize( squared( Pow< 2 >() ) );
+    EXPECT_THAT( f.d1( "" ), StrEq( "2*x^2*2x" ) );
 }
 
 TEST( SquaredTest, D2 )
@@ -67,7 +82,7 @@ TEST( StringifySquaredTest, D2 )
 {
     using FunG::stringify::Pow;
     auto f = FunG::finalize( squared( Pow< 2 >() ) );
-    EXPECT_THAT( f.d2( "", "" ), StrEq( "2*((x^2)*2 + 2x*2x)" ) );
+    EXPECT_THAT( f.d2( "", "" ), StrEq( "2*(x^2*2 + 2x*2x)" ) );
 }
 
 TEST( SquaredTest, D3 )

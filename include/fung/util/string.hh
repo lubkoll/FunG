@@ -1,8 +1,5 @@
 #pragma once
 
-#include "chainer.hh"
-#include "indexed_type.hh"
-
 #include <string>
 #include <type_traits>
 #include <utility>
@@ -11,112 +8,75 @@
 
 namespace FunG
 {
-    struct String
+    inline std::string addScope( std::string str )
     {
-        template < class... Args,
-                   std::enable_if_t< !std::is_constructible< String, Args... >::value >* = nullptr >
-        String( Args&&... args ) : str( std::forward< Args >( args )... )
+        static std::regex notSimple{".*[a-zA-Z0-9]+\\s*[+|-].*"};
+        if ( std::regex_match( str, notSimple ) )
         {
-        }
-
-        template < class... Args,
-                   std::enable_if_t< !std::is_assignable< String, Args... >::value >* = nullptr >
-        String& operator=( Args&&... args )
-        {
-            str = std::string( std::forward< Args >( args )... );
-            return *this;
-        }
-
-        String& append( String&& other )
-        {
-            str.append( std::move( other.str ) );
-            return *this;
-        }
-
-        String& append( const String& other )
-        {
-            str.append( other.str );
-            return *this;
-        }
-
-        bool empty() const noexcept
-        {
-            return str.empty();
-        }
-
-        std::string str;
-    };
-
-    template < class T >
-    String toString( T&& t )
-    {
-        return String{std::to_string( std::forward< T >( t ) )};
-    }
-
-    inline String addScope( String str )
-    {
-        static std::regex notSimple{".*[+|-|\\*|/|\\(|\\^].*"};
-        if ( std::regex_match( str.str, notSimple ) )
-        {
-            return ::FunG::String( "(" ).append( std::move( str ) ).append( ")" );
+            return std::string( "(" ).append( std::move( str ) ).append( ")" );
         }
         return str;
     }
 
-    inline String multiplyIfNotEmpty( const String& dx )
+    inline std::string addStrictScope( std::string str )
     {
-        return dx.empty() ? dx : String( "*" ).append( dx );
+        static std::regex notSimple{".+[+|-|\\*|/|\\(|\\^].*"};
+        if ( std::regex_match( str, notSimple ) )
+        {
+            return std::string( "(" ).append( std::move( str ) ).append( ")" );
+        }
+        return str;
     }
 
-    inline String multiplyIfNotEmpty( const String& dx, const String& dy )
+    inline std::string addTexScope( std::string str )
+    {
+        return std::string( "{" ).append( std::move( str ) ).append( "}" );
+    }
+
+    inline std::string addAllScopes( std::string str )
+    {
+        return addTexScope( addScope( std::move( str ) ) );
+    }
+
+    inline std::string multiplyIfNotEmpty( const std::string& dx )
+    {
+        return dx.empty() ? dx : std::string( "*" ).append( dx );
+    }
+
+    inline std::string multiplyIfNotEmpty( const std::string& dx, const std::string& dy )
     {
         return multiplyIfNotEmpty( dx ).append( multiplyIfNotEmpty( dy ) );
     }
 
-    inline String multiplyIfNotEmpty( const String& dx, const String& dy, const String& dz )
+    inline std::string multiplyIfNotEmpty( const std::string& dx, const std::string& dy,
+                                           const std::string& dz )
     {
         return multiplyIfNotEmpty( dx, dy ).append( multiplyIfNotEmpty( dz ) );
     }
 
-    inline String operator+( const String& lhs, const String& rhs )
+    template <>
+    struct MathOpTraits< std::string, void >
     {
-        return String{lhs.str + " + " + rhs.str};
-    }
+        static auto multiply( const std::string& lhs, const std::string& rhs )
+        {
+            return std::string{addScope( lhs ) + "*" + addScope( rhs )};
+        }
 
-    inline String operator-( const String& lhs, const String& rhs )
-    {
-        return String{lhs.str + " - " + rhs.str};
-    }
+        template < class S, std::enable_if_t< std::is_arithmetic< S >::value >* = nullptr >
+        static auto multiply( S lhs, const std::string& rhs )
+        {
+            return std::to_string( lhs ).append( "*" ).append( addScope( rhs ) );
+        }
 
-    inline String operator*( const String& lhs, const String& rhs )
-    {
-        return String{addScope( lhs ).str + "*" + addScope( rhs ).str};
-    }
+        template < class S, std::enable_if_t< std::is_arithmetic< S >::value >* = nullptr >
+        static auto multiply( const std::string& lhs, S rhs )
+        {
+            return addScope( lhs ).append( "*" ).append( std::to_string( rhs ) );
+        }
 
-    template < class T, std::enable_if_t< std::is_arithmetic< T >::value >* = nullptr >
-    String operator*( const T& lhs, const String& rhs )
-    {
-        return toString( lhs ).append( "*" ).append( addScope( rhs ) );
-    }
-
-    template < class T, std::enable_if_t< std::is_arithmetic< T >::value >* = nullptr >
-    String operator*( String lhs, const T& rhs )
-    {
-        return addScope( lhs ).append( "*" ).append( toString( rhs ) );
-    }
-
-    inline String operator/( const String& lhs, const String& rhs )
-    {
-        return String{addScope( lhs ).str + "/" + addScope( rhs ).str};
-    }
-
-    inline std::ostream& operator<<( std::ostream& os, const String& str )
-    {
-        return os << str.str;
-    }
-
-    inline bool operator==( const String& lhs, const String& rhs )
-    {
-        return lhs.str == rhs.str;
-    }
+        static auto add( const std::string& lhs, const std::string& rhs )
+        {
+            return std::string{lhs + " + " + rhs};
+        }
+    };
 }

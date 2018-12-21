@@ -39,7 +39,7 @@ TEST( StringifyScaleTest, D0 )
 {
     using FunG::stringify::Pow;
     const auto fun = 2 * Pow< 3, 1 >();
-    EXPECT_THAT( fun.d0(), StrEq( "2*(x^3)" ) );
+    EXPECT_THAT( fun.d0(), StrEq( "2*x^3" ) );
 }
 
 TEST( ScaleTest, D1 )
@@ -53,7 +53,7 @@ TEST( StringifyScaleTest, D1 )
 {
     using FunG::stringify::Pow;
     const auto fun = FunG::finalize( 2 * Pow< 3, 1 >() );
-    EXPECT_THAT( fun.d1( "" ), StrEq( "2*(3x^2)" ) );
+    EXPECT_THAT( fun.d1( "" ), StrEq( "2*3x^2" ) );
 }
 
 TEST( ScaleTest, D2 )

@@ -9,7 +9,7 @@
 
 namespace FunG
 {
-    /** @addtogroup StringifyCMathGroup
+    /** @addtogroup std::stringifyCMathGroup
    *  @{ */
 
     /*!
@@ -24,43 +24,44 @@ namespace FunG
         struct Exp : Chainer< Exp >
         {
             //! @copydoc Cos::d0()
-            explicit Exp( const String& x = "x" )
+            explicit Exp( const std::string& x = "x" )
             {
                 update( x );
             }
 
             //! @copydoc Cos::update()
-            void update( const String& x )
+            void update( const std::string& x )
             {
                 this->x = x;
             }
 
             //! @copydoc Cos::d0()
-            String d0() const noexcept
+            std::string d0() const noexcept
             {
-                return String( "(e^" ).append( x ).append( ")" );
+                return std::string( "(e^" ).append( x ).append( ")" );
             }
 
             //! @copydoc Cos::d0()
-            String d1( const String& dx = "" ) const
+            std::string d1( const std::string& dx = "" ) const
             {
                 return d0().append( multiplyIfNotEmpty( dx ) );
             }
 
             //! @copydoc Cos::d0()
-            String d2( const String& dx = "", const String& dy = "" ) const
+            std::string d2( const std::string& dx = "", const std::string& dy = "" ) const
             {
                 return d0().append( multiplyIfNotEmpty( dx, dy ) );
             }
 
             //! @copydoc Cos::d0()
-            String d3( const String& dx = "", const String& dy = "", const String& dz = "" ) const
+            std::string d3( const std::string& dx = "", const std::string& dy = "",
+                            const std::string& dz = "" ) const
             {
                 return d0().append( multiplyIfNotEmpty( dx, dy, dz ) );
             }
 
         private:
-            String x;
+            std::string x;
         };
 
         /*!
@@ -73,53 +74,54 @@ namespace FunG
         struct Exp2 : Chainer< Exp2 >
         {
             //! @copydoc Cos::Cos()
-            explicit Exp2( const String& x = "x" )
+            explicit Exp2( const std::string& x = "x" )
             {
                 update( x );
             }
 
             //! @copydoc Cos::update()
-            void update( const String& x )
+            void update( const std::string& x )
             {
                 this->x = x;
             }
 
             //! @copydoc Cos::d0()
-            String d0() const noexcept
+            std::string d0() const noexcept
             {
-                return addScope( String( "2^" ).append( x ) );
+                return addScope( std::string( "2^" ).append( x ) );
             }
 
             //! @copydoc Cos::d1()
-            String d1( const String& dx = "" ) const
+            std::string d1( const std::string& dx = "" ) const
             {
-                return addScope( String( "ln(2)*(2^" )
+                return addScope( std::string( "ln(2)*(2^" )
                                      .append( x )
                                      .append( ")" )
                                      .append( multiplyIfNotEmpty( dx ) ) );
             }
 
             //! @copydoc Cos::d2()
-            String d2( const String& dx = "", const String& dy = "" ) const
+            std::string d2( const std::string& dx = "", const std::string& dy = "" ) const
             {
-                return addScope( String( "(ln(2)^2)*(2^" )
+                return addScope( std::string( "(ln(2)^2)*(2^" )
                                      .append( x )
                                      .append( ")" )
                                      .append( multiplyIfNotEmpty( dx, dy ) ) );
             }
 
             //! @copydoc Cos::d3()
-            String d3( const String& dx = "", const String& dy = "", const String& dz = "" ) const
+            std::string d3( const std::string& dx = "", const std::string& dy = "",
+                            const std::string& dz = "" ) const
             {
-                return addScope( String( "(ln(2)^3)*(2^" )
+                return addScope( std::string( "(ln(2)^3)*(2^" )
                                      .append( x )
                                      .append( ")" )
                                      .append( multiplyIfNotEmpty( dx, dy, dz ) ) );
             }
 
         private:
-            String x;
-            String ln2{"ln(2)"};
+            std::string x;
+            std::string ln2{"ln(2)"};
         };
 
         /*!

@@ -9,7 +9,7 @@
 
 namespace FunG
 {
-    /** @addtogroup StringifyCMathGroup
+    /** @addtogroup std::stringifyCMathGroup
    *  @{ */
 
     /*!
@@ -24,49 +24,55 @@ namespace FunG
         struct Tan : Chainer< Tan >
         {
             //! @copydoc Cos::Cos()
-            explicit Tan( const String& x = 0. )
+            explicit Tan( const std::string& x = "x" )
             {
                 update( x );
             }
 
             //! @copydoc Cos::update()
-            void update( const String& x )
+            void update( const std::string& x )
             {
                 this->x = addScope( x );
             }
 
             //! @copydoc Cos::d0()
-            String d0() const noexcept
+            std::string d0() const noexcept
             {
-                return String( "tan" ).append( x );
+                return std::string( "tan" ).append( x );
             }
 
             //! @copydoc Cos::d1()
-            String d1( const String& dx = "" ) const
+            std::string d1( const std::string& dx = "" ) const
             {
-                return String( "(1 +" ).append( "tan^2" ).append( x ).append( ")" ).append(
+                return std::string( "(1 +" ).append( "tan^2" ).append( x ).append( ")" ).append(
                     multiplyIfNotEmpty( dx ) );
             }
 
             //! @copydoc Cos::d2()
-            String d2( const String& dx = "", const String& dy = "" ) const
+            std::string d2( const std::string& dx = "", const std::string& dy = "" ) const
             {
-                return ( String( "2" ).append( d0() ) * d1( dx ) )
+                return std::string( "2" )
+                    .append( d0() )
+                    .append( "*" )
+                    .append( d1( dx ) )
                     .append( multiplyIfNotEmpty( dy ) );
             }
 
             //! @copydoc Cos::d3()
-            String d3( const String& dx = "", const String& dy = "", const String& dz = "" ) const
+            std::string d3( const std::string& dx = "", const std::string& dy = "",
+                            const std::string& dz = "" ) const
             {
-                return toString( 2 ) * d1( "" ) *
-                       String( "(1 + 3*tan^2" )
-                           .append( x )
-                           .append( ")" )
-                           .append( multiplyIfNotEmpty( dx, dy, dz ) );
+                return std::string( "2*" )
+                    .append( d1( "" ) )
+                    .append( "*" )
+                    .append( "(1 + 3*tan^2" )
+                    .append( x )
+                    .append( ")" )
+                    .append( multiplyIfNotEmpty( dx, dy, dz ) );
             }
 
         private:
-            String x;
+            std::string x;
         };
 
         /*!

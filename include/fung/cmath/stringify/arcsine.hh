@@ -10,9 +10,10 @@
 namespace FunG
 {
     /*!
-    @ingroup StringifyCMathGroup
+    @ingroup std::stringifyCMathGroup
 
-    @brief Arc sine function including first three derivatives (based on asin(String) in \<cmath\>).
+    @brief Arc sine function including first three derivatives (based on asin(std::string) in
+    \<cmath\>).
 
     For scalar functions directional derivatives are less interesting. Incorporating this function
     as building block for more complex functions requires directional derivatives. These occur
@@ -23,42 +24,44 @@ namespace FunG
         struct ASin : Chainer< ASin >
         {
             //! @copydoc Cos::Cos()
-            explicit ASin( const String& x = 0. )
+            explicit ASin( const std::string& x = "x" )
             {
                 update( x );
             }
 
             //! @copydoc Cos::update()
-            void update( const String& x )
+            void update( const std::string& x )
             {
                 this->x = addScope( x );
             }
 
             //! @copydoc Cos::d0()
-            String d0() const noexcept
+            std::string d0() const noexcept
             {
-                return String( "asin" ).append( x );
+                return std::string( "asin" ).append( x );
             }
 
             //! @copydoc Cos::d1()
-            String d1( const String& dx = "" ) const
+            std::string d1( const std::string& dx = "" ) const
             {
-                return toString( 1 ) /
-                       String( "sqrt(1-" )
-                           .append( x )
-                           .append( "^2)" )
-                           .append( multiplyIfNotEmpty( dx ) );
+                return std::to_string( 1 )
+                    .append( "/" )
+                    .append( "sqrt(1-" )
+                    .append( x )
+                    .append( "^2)" )
+                    .append( multiplyIfNotEmpty( dx ) );
             }
 
             //! @copydoc Cos::d2()
-            String d2( const String& dx = "", const String& dy = "" ) const
+            std::string d2( const std::string& dx = "", const std::string& dy = "" ) const
             {
-                return String( x ).append( "*" ).append( d1p3() ).append(
+                return std::string( x ).append( "*" ).append( d1p3() ).append(
                     multiplyIfNotEmpty( dx, dy ) );
             }
 
             //! @copydoc Cos::d3()
-            String d3( const String& dx = "", const String& dy = "", const String& dz = "" ) const
+            std::string d3( const std::string& dx = "", const std::string& dy = "",
+                            const std::string& dz = "" ) const
             {
                 return d1p3()
                     .append( "(1 + 3*" )
@@ -70,16 +73,16 @@ namespace FunG
             }
 
         private:
-            String d1p3() const
+            std::string d1p3() const
             {
-                return String( "(1-" ).append( x ).append( "^2" ).append( "^(-3/2)" );
+                return std::string( "(1-" ).append( x ).append( "^2" ).append( "^(-3/2)" );
             }
 
-            String x;
+            std::string x;
         };
 
         /*!
-    @ingroup StringifyCMathGroup
+    @ingroup std::stringifyCMathGroup
     @brief Generate \f$ \arcsin\circ f \f$.
     @param f function mapping into a scalar space
     @return object of type MathematicalOperations::Chain<ASin,Function>
