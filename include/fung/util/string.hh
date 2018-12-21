@@ -8,22 +8,27 @@
 
 namespace FunG
 {
-    inline std::string addScope( std::string str )
+    inline std::string forceAddScope( const std::string& str )
+    {
+        return std::string( "(" ).append( std::move( str ) ).append( ")" );
+    }
+
+    inline std::string addScope( const std::string& str )
     {
         static std::regex notSimple{".*[a-zA-Z0-9]+\\s*[+|-].*"};
         if ( std::regex_match( str, notSimple ) )
         {
-            return std::string( "(" ).append( std::move( str ) ).append( ")" );
+            return forceAddScope( str );
         }
         return str;
     }
 
-    inline std::string addStrictScope( std::string str )
+    inline std::string addStrictScope( const std::string& str )
     {
         static std::regex notSimple{".+[+|-|\\*|/|\\(|\\^].*"};
         if ( std::regex_match( str, notSimple ) )
         {
-            return std::string( "(" ).append( std::move( str ) ).append( ")" );
+            return forceAddScope( str );
         }
         return str;
     }

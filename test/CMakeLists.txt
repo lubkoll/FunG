@@ -10,9 +10,18 @@ if(EIGEN3_FOUND)
 endif()
 
 aux_source_directory(cmath SRC_LIST)
-aux_source_directory(cmath SRC_LIST)
 aux_source_directory(fung SRC_LIST)
 aux_source_directory(mathematical_operations SRC_LIST)
+list(APPEND SRC_LIST
+  cmath/texify/arccos.cpp
+  cmath/texify/arcsine.cpp
+  cmath/texify/cosine.cpp
+  cmath/texify/exp.cpp
+  cmath/texify/log.cpp
+  cmath/texify/pow.cpp
+  cmath/texify/sine.cpp
+  cmath/texify/tan.cpp
+)
 
 add_executable(tests ${SRC_LIST})
 target_link_libraries(tests FunG::FunG GTest::GTest GTest::Main Threads::Threads)
