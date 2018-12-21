@@ -9,11 +9,20 @@
 #include <fung/cmath/sine.hh>
 #include <fung/cmath/tan.hh>
 
-#include <fung/cmath/stringify/arccos.hh>
-#include <fung/cmath/stringify/arcsine.hh>
-#include <fung/cmath/stringify/cosine.hh>
-#include <fung/cmath/stringify/exp.hh>
-#include <fung/cmath/stringify/log.hh>
-#include <fung/cmath/stringify/pow.hh>
-#include <fung/cmath/stringify/sine.hh>
-#include <fung/cmath/stringify/tan.hh>
+#include <fung/stringify/cmath/arccos.hh>
+#include <fung/stringify/cmath/arcsine.hh>
+#include <fung/stringify/cmath/cosine.hh>
+#include <fung/stringify/cmath/exp.hh>
+#include <fung/stringify/cmath/log.hh>
+#include <fung/stringify/cmath/pow.hh>
+#include <fung/stringify/cmath/sine.hh>
+#include <fung/stringify/cmath/tan.hh>
+
+#include <fung/texify/cmath/arccos.hh>
+#include <fung/texify/cmath/arcsine.hh>
+#include <fung/texify/cmath/cosine.hh>
+#include <fung/texify/cmath/exp.hh>
+#include <fung/texify/cmath/log.hh>
+#include <fung/texify/cmath/pow.hh>
+#include <fung/texify/cmath/sine.hh>
+#include <fung/texify/cmath/tan.hh>

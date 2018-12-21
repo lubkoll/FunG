@@ -1,7 +1,7 @@
 // Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
 // Released under the terms of the GNU General Public License version 3 or later.
 
-#include <fung/cmath/texify/cosine.hh>
+#include <fung/texify/cmath/cosine.hh>
 
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>

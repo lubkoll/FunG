@@ -1,7 +1,7 @@
 #include <fung/cmath/pow.hh>
-#include <fung/cmath/stringify/pow.hh>
 #include <fung/finalize.hh>
 #include <fung/generate.hh>
+#include <fung/stringify/cmath/pow.hh>
 #include <fung/variable.hh>
 
 #include <gtest/gtest.h>

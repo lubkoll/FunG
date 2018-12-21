@@ -1,8 +1,8 @@
 #include <fung/cmath/pow.hh>
-#include <fung/cmath/stringify/pow.hh>
-#include <fung/cmath/texify/pow.hh>
 #include <fung/finalize.hh>
 #include <fung/generate.hh>
+#include <fung/stringify/cmath/pow.hh>
+#include <fung/texify/cmath/pow.hh>
 
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
