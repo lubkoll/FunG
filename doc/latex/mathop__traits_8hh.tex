@@ -1,0 +1,31 @@
+\hypertarget{mathop__traits_8hh}{\section{include/fung/util/mathop\-\_\-traits.hh File Reference}
+\label{mathop__traits_8hh}\index{include/fung/util/mathop\-\_\-traits.\-hh@{include/fung/util/mathop\-\_\-traits.\-hh}}
+}
+{\ttfamily \#include $<$type\-\_\-traits$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structFunG_1_1MathOpTraits}{Fun\-G\-::\-Math\-Op\-Traits$<$ T, class $>$}
+\item 
+struct \hyperlink{structFunG_1_1MathOpTraits_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__arithmetic_3_01T_01_4_1_1value_01_4_01_4}{Fun\-G\-::\-Math\-Op\-Traits$<$ T, std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-arithmetic$<$ T $>$\-::value $>$ $>$}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceFunG}{Fun\-G}
+\begin{DoxyCompactList}\small\item\em Main namespace of the Fun\-G library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T , class S , std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-same$<$ std\-::decay\-\_\-t$<$ T $>$, std\-::decay\-\_\-t$<$ S $>$ $>$\-::value \&\&!std\-::is\-\_\-arithmetic$<$ std\-::decay\-\_\-t$<$ T $>$ $>$\-::value $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a839a72c59a888ed89d3efe38897cc376}{Fun\-G\-::multiply\-\_\-via\-\_\-traits} (T \&\&lhs, S \&\&rhs)
+\item 
+{\footnotesize template$<$class T , class S , std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-arithmetic$<$ T $>$\-::value \&\&std\-::is\-\_\-arithmetic$<$ S $>$\-::value $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a95f9f46143d0a53a378f776e300c3520}{Fun\-G\-::multiply\-\_\-via\-\_\-traits} (T lhs, S rhs)
+\item 
+{\footnotesize template$<$class T , class S , std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-arithmetic$<$ T $>$\-::value $>$ $\ast$  = nullptr, std\-::enable\-\_\-if\-\_\-t$<$ !std\-::is\-\_\-arithmetic$<$ std\-::decay\-\_\-t$<$ S $>$ $>$\-::value $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a780ef12ebddaa8e729d8629d24ae76c5}{Fun\-G\-::multiply\-\_\-via\-\_\-traits} (T lhs, S \&\&rhs)
+\item 
+{\footnotesize template$<$class T , class S , std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-arithmetic$<$ S $>$\-::value $>$ $\ast$  = nullptr, std\-::enable\-\_\-if\-\_\-t$<$ !std\-::is\-\_\-arithmetic$<$ std\-::decay\-\_\-t$<$ T $>$ $>$\-::value $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_af9f50220300eacbd554ec4b48373535b}{Fun\-G\-::multiply\-\_\-via\-\_\-traits} (T \&\&lhs, S rhs)
+\item 
+{\footnotesize template$<$class T , class S , std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-same$<$ std\-::decay\-\_\-t$<$ T $>$, std\-::decay\-\_\-t$<$ S $>$ $>$\-::value \&\&!std\-::is\-\_\-arithmetic$<$ std\-::decay\-\_\-t$<$ T $>$ $>$\-::value $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a1aa47c6870754d5d74100568cd3ef532}{Fun\-G\-::add\-\_\-via\-\_\-traits} (T \&\&lhs, S \&\&rhs)
+\item 
+{\footnotesize template$<$class T , class S , std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-arithmetic$<$ T $>$\-::value \&\&std\-::is\-\_\-arithmetic$<$ S $>$\-::value $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a6cbaa3b1b61e5834b38db5c831e3c25e}{Fun\-G\-::add\-\_\-via\-\_\-traits} (T lhs, S rhs)
+\end{DoxyCompactItemize}

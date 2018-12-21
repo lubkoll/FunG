@@ -12,5 +12,6 @@ var searchData=
   ['memop',['MemOp',['../namespaceFunG_1_1Checks_1_1Has_1_1MemOp.html',1,'FunG::Checks::Has']]],
   ['meta',['Meta',['../namespaceFunG_1_1Meta.html',1,'FunG']]],
   ['nestedtype',['NestedType',['../namespaceFunG_1_1Checks_1_1Has_1_1NestedType.html',1,'FunG::Checks::Has']]],
-  ['stringify',['stringify',['../namespaceFunG_1_1stringify.html',1,'FunG']]]
+  ['stringify',['stringify',['../namespaceFunG_1_1stringify.html',1,'FunG']]],
+  ['texify',['texify',['../namespaceFunG_1_1texify.html',1,'FunG']]]
 ];

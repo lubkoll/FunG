@@ -2,6 +2,7 @@ var searchData=
 [
   ['tan_2ehh',['tan.hh',['../stringify_2tan_8hh.html',1,'']]],
   ['tan_2ehh',['tan.hh',['../tan_8hh.html',1,'']]],
+  ['tan_2ehh',['tan.hh',['../texify_2tan_8hh.html',1,'']]],
   ['tensor_5fproduct_2ehh',['tensor_product.hh',['../tensor__product_8hh.html',1,'']]],
   ['third_2ehh',['third.hh',['../third_8hh.html',1,'']]],
   ['trace_2ehh',['trace.hh',['../trace_8hh.html',1,'']]],

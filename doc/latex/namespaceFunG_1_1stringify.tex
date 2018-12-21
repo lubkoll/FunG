@@ -3,7 +3,7 @@
 }
 
 
-Arc sine function including first three derivatives (based on asin(\-String) in $<$cmath$>$).  
+Arc sine function including first three derivatives (based on asin(std\-::string) in $<$cmath$>$).  
 
 
 \subsection*{Classes}
@@ -32,11 +32,11 @@ struct \hyperlink{structFunG_1_1stringify_1_1Tan}{Tan}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{group__StringifyCMathGroup_gaec458ee50fd7b49de4dc2ed1286e8286}{acos} (const Function \&f)
+{\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{group__std_gaec458ee50fd7b49de4dc2ed1286e8286}{acos} (const Function \&f)
 \begin{DoxyCompactList}\small\item\em Generate printable version of $ \arccos\circ f $. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{group__StringifyCMathGroup_gab50530d1358bb1d94ecaea4026fd83ea}{asin} (const Function \&f)
+{\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{group__std_gab50530d1358bb1d94ecaea4026fd83ea}{asin} (const Function \&f)
 \begin{DoxyCompactList}\small\item\em Generate $ \arcsin\circ f $. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{group__StringifyCMathGroup_gaaa7d5292922e58b22115bc27d784dcfd}{cos} (const Function \&f)
+{\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{group__std_gaaa7d5292922e58b22115bc27d784dcfd}{cos} (const Function \&f)
 \begin{DoxyCompactList}\small\item\em Generate $ \cos\circ f $. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{namespaceFunG_1_1stringify_a1d842afc06c89ccb71a8fb87cd1d0317}{exp} (const Function \&f)
 \begin{DoxyCompactList}\small\item\em Generate $ \exp(f) $. \end{DoxyCompactList}\item 
@@ -48,14 +48,14 @@ struct \hyperlink{structFunG_1_1stringify_1_1Tan}{Tan}
 \begin{DoxyCompactList}\small\item\em Generate $ \mathrm{log}_{10}\circ f $. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{namespaceFunG_1_1stringify_a6815627cdbde7b81d56ec5a6377b5e47}{log2} (const Function \&f)
 \begin{DoxyCompactList}\small\item\em Generate $ \mathrm{log}_{2}\circ f $. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{group__StringifyCMathGroup_gaa44ea064dbf1d4befb6766de66a994e5}{sin} (const Function \&f)
+{\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{group__std_gaa44ea064dbf1d4befb6766de66a994e5}{sin} (const Function \&f)
 \begin{DoxyCompactList}\small\item\em Generate $ \sin\circ f $. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{namespaceFunG_1_1stringify_a85e04af673887eb29a630918c8b660ed}{tan} (const Function \&f)
 \begin{DoxyCompactList}\small\item\em Generate $ \tan\circ f $. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Arc sine function including first three derivatives (based on asin(\-String) in $<$cmath$>$). Tangent function including first three derivatives.
+Arc sine function including first three derivatives (based on asin(std\-::string) in $<$cmath$>$). Tangent function including first three derivatives.
 
 Sine function including first three derivatives (based on sin(double) in $<$cmath$>$).
 
@@ -64,6 +64,10 @@ Natural logarithm including first three derivatives.
 Exponential function including first three derivatives.
 
 Cosine function including first three derivatives (based on cos(double) in $<$cmath$>$).
+
+\-:\-:
+
+For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur during applications of the chain rule.
 
 For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur during applications of the chain rule. 
 

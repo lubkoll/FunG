@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['stringifycmathgroup',['StringifyCMathGroup',['../group__StringifyCMathGroup.html',1,'']]]
+  ['texifycmathgroup',['TexifyCMathGroup',['../group__TexifyCMathGroup.html',1,'']]]
 ];
