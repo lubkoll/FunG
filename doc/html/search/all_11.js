@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['tan',['Tan',['../structFunG_1_1texify_1_1Tan.html',1,'FunG::texify']]],
   ['tan',['Tan',['../structFunG_1_1stringify_1_1Tan.html',1,'FunG::stringify']]],
-  ['tan',['Tan',['../structFunG_1_1stringify_1_1Tan.html#ab529003b061d3c90e3fc9fd484c831cf',1,'FunG::stringify::Tan::Tan()'],['../structFunG_1_1Tan.html#a8dba98f71a80778db0384acefa7684c7',1,'FunG::Tan::Tan()'],['../structFunG_1_1texify_1_1Tan.html#ace9922f66084ff3db77450cfe1e57a9a',1,'FunG::texify::Tan::Tan()'],['../namespaceFunG_1_1stringify.html#a85e04af673887eb29a630918c8b660ed',1,'FunG::stringify::tan()'],['../group__CMathGroup.html#gae03f57bd4efb4449ad1dc60cb74c742d',1,'FunG::tan()'],['../namespaceFunG_1_1texify.html#a04dd3b4da69850caa4be87e662fd3f5f',1,'FunG::texify::tan()']]],
   ['tan',['Tan',['../structFunG_1_1Tan.html',1,'FunG']]],
-  ['tan_2ehh',['tan.hh',['../stringify_2tan_8hh.html',1,'']]],
-  ['tan_2ehh',['tan.hh',['../tan_8hh.html',1,'']]],
-  ['tan_2ehh',['tan.hh',['../texify_2tan_8hh.html',1,'']]],
+  ['tan',['Tan',['../structFunG_1_1Tan.html#a8dba98f71a80778db0384acefa7684c7',1,'FunG::Tan::Tan()'],['../structFunG_1_1stringify_1_1Tan.html#ab529003b061d3c90e3fc9fd484c831cf',1,'FunG::stringify::Tan::Tan()'],['../structFunG_1_1texify_1_1Tan.html#ace9922f66084ff3db77450cfe1e57a9a',1,'FunG::texify::Tan::Tan()'],['../group__CMathGroup.html#gae03f57bd4efb4449ad1dc60cb74c742d',1,'FunG::tan()'],['../namespaceFunG_1_1stringify.html#a85e04af673887eb29a630918c8b660ed',1,'FunG::stringify::tan()'],['../namespaceFunG_1_1texify.html#a04dd3b4da69850caa4be87e662fd3f5f',1,'FunG::texify::tan()']]],
+  ['tan',['Tan',['../structFunG_1_1texify_1_1Tan.html',1,'FunG::texify']]],
+  ['tan_2ehh',['tan.hh',['../cmath_2tan_8hh.html',1,'']]],
+  ['tan_2ehh',['tan.hh',['../stringify_2cmath_2tan_8hh.html',1,'']]],
+  ['tan_2ehh',['tan.hh',['../texify_2cmath_2tan_8hh.html',1,'']]],
   ['tensor_5fproduct_2ehh',['tensor_product.hh',['../tensor__product_8hh.html',1,'']]],
   ['tensorproduct',['tensorProduct',['../group__LinearAlgebraGroup.html#ga5d0e066e6184fb3324d96d20087b5578',1,'FunG::LinearAlgebra::tensorProduct(const Vector1 &amp;v, const Vector2 &amp;w)'],['../group__LinearAlgebraGroup.html#gae5e82b9e66319511dae5ff0d9304a6b7',1,'FunG::LinearAlgebra::tensorProduct(const Vector &amp;v)']]],
   ['texifycmathgroup',['TexifyCMathGroup',['../group__TexifyCMathGroup.html',1,'']]],

@@ -1,0 +1,27 @@
+\hypertarget{texify_2cmath_2exp_8hh}{\section{include/fung/texify/cmath/exp.hh File Reference}
+\label{texify_2cmath_2exp_8hh}\index{include/fung/texify/cmath/exp.\-hh@{include/fung/texify/cmath/exp.\-hh}}
+}
+{\ttfamily \#include $<$fung/util/chainer.\-hh$>$}\\*
+{\ttfamily \#include $<$fung/util/static\-\_\-checks.\-hh$>$}\\*
+{\ttfamily \#include $<$fung/util/string.\-hh$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structFunG_1_1texify_1_1Exp}{Fun\-G\-::texify\-::\-Exp}
+\item 
+struct \hyperlink{structFunG_1_1texify_1_1Exp2}{Fun\-G\-::texify\-::\-Exp2}
+\begin{DoxyCompactList}\small\item\em Function $2^x$ including first three derivatives. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceFunG}{Fun\-G}
+\begin{DoxyCompactList}\small\item\em Main namespace of the Fun\-G library. \end{DoxyCompactList}\item 
+\hyperlink{namespaceFunG_1_1texify}{Fun\-G\-::texify}
+\begin{DoxyCompactList}\small\item\em Arc sine function including first three derivatives (based on asin(std\-::string) in $<$cmath$>$). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{namespaceFunG_1_1texify_acd550fdbe3e03473c4037109f03ffd7c}{Fun\-G\-::texify\-::exp} (const Function \&f)
+\begin{DoxyCompactList}\small\item\em Generate $ \exp(f) $. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Function , class  = std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{namespaceFunG_1_1texify_aed6a31750c8249e24518f87ac62013a7}{Fun\-G\-::texify\-::exp2} (const Function \&f)
+\begin{DoxyCompactList}\small\item\em Generate $2^f$. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -39,10 +39,10 @@ var searchData=
   ['copyconceptcheck_3c_20matrix_20_3e',['CopyConceptCheck&lt; Matrix &gt;',['../structFunG_1_1Concepts_1_1CopyConceptCheck.html',1,'FunG::Concepts']]],
   ['copyconceptcheck_3c_20vector_20_3e',['CopyConceptCheck&lt; Vector &gt;',['../structFunG_1_1Concepts_1_1CopyConceptCheck.html',1,'FunG::Concepts']]],
   ['cos',['Cos',['../structFunG_1_1Cos.html#a40c049c8842e387ccc5ab5f3720c938e',1,'FunG::Cos::Cos()'],['../structFunG_1_1stringify_1_1Cos.html#a9069519fc6a176ae47f9b70a29da2e44',1,'FunG::stringify::Cos::Cos()'],['../structFunG_1_1texify_1_1Cos.html#afa8ef16bb63bf84ed292cf570a51fe43',1,'FunG::texify::Cos::Cos()'],['../group__CMathGroup.html#ga7e9b2ac717cd2350663293cb66ba6cbd',1,'FunG::cos()'],['../group__std.html#gaaa7d5292922e58b22115bc27d784dcfd',1,'FunG::stringify::cos()'],['../group__TexifyCMathGroup.html#gabbc13b57ec7a869d087fb33109faa98e',1,'FunG::texify::cos()']]],
-  ['cos',['Cos',['../structFunG_1_1texify_1_1Cos.html',1,'FunG::texify']]],
-  ['cos',['Cos',['../structFunG_1_1Cos.html',1,'FunG']]],
   ['cos',['Cos',['../structFunG_1_1stringify_1_1Cos.html',1,'FunG::stringify']]],
-  ['cosine_2ehh',['cosine.hh',['../cosine_8hh.html',1,'']]],
-  ['cosine_2ehh',['cosine.hh',['../texify_2cosine_8hh.html',1,'']]],
-  ['cosine_2ehh',['cosine.hh',['../stringify_2cosine_8hh.html',1,'']]]
+  ['cos',['Cos',['../structFunG_1_1Cos.html',1,'FunG']]],
+  ['cos',['Cos',['../structFunG_1_1texify_1_1Cos.html',1,'FunG::texify']]],
+  ['cosine_2ehh',['cosine.hh',['../cmath_2cosine_8hh.html',1,'']]],
+  ['cosine_2ehh',['cosine.hh',['../texify_2cmath_2cosine_8hh.html',1,'']]],
+  ['cosine_2ehh',['cosine.hh',['../stringify_2cmath_2cosine_8hh.html',1,'']]]
 ];

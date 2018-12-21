@@ -7,7 +7,7 @@ var searchData=
   ['copyconceptcheck_3c_20f_20_3e',['CopyConceptCheck&lt; F &gt;',['../structFunG_1_1Concepts_1_1CopyConceptCheck.html',1,'FunG::Concepts']]],
   ['copyconceptcheck_3c_20matrix_20_3e',['CopyConceptCheck&lt; Matrix &gt;',['../structFunG_1_1Concepts_1_1CopyConceptCheck.html',1,'FunG::Concepts']]],
   ['copyconceptcheck_3c_20vector_20_3e',['CopyConceptCheck&lt; Vector &gt;',['../structFunG_1_1Concepts_1_1CopyConceptCheck.html',1,'FunG::Concepts']]],
-  ['cos',['Cos',['../structFunG_1_1stringify_1_1Cos.html',1,'FunG::stringify']]],
   ['cos',['Cos',['../structFunG_1_1texify_1_1Cos.html',1,'FunG::texify']]],
+  ['cos',['Cos',['../structFunG_1_1stringify_1_1Cos.html',1,'FunG::stringify']]],
   ['cos',['Cos',['../structFunG_1_1Cos.html',1,'FunG']]]
 ];

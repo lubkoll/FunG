@@ -1,9 +1,9 @@
 var searchData=
 [
   ['scale_2ehh',['scale.hh',['../scale_8hh.html',1,'']]],
-  ['sine_2ehh',['sine.hh',['../stringify_2sine_8hh.html',1,'']]],
-  ['sine_2ehh',['sine.hh',['../sine_8hh.html',1,'']]],
-  ['sine_2ehh',['sine.hh',['../texify_2sine_8hh.html',1,'']]],
+  ['sine_2ehh',['sine.hh',['../stringify_2cmath_2sine_8hh.html',1,'']]],
+  ['sine_2ehh',['sine.hh',['../cmath_2sine_8hh.html',1,'']]],
+  ['sine_2ehh',['sine.hh',['../texify_2cmath_2sine_8hh.html',1,'']]],
   ['skin_5ftissue_5fhendriks_2ehh',['skin_tissue_hendriks.hh',['../skin__tissue__hendriks_8hh.html',1,'']]],
   ['squared_2ehh',['squared.hh',['../squared_8hh.html',1,'']]],
   ['static_5fchecks_2ehh',['static_checks.hh',['../static__checks_8hh.html',1,'']]],
