@@ -3,8 +3,10 @@
 
 #pragma once
 
-#include <utility>
+#include "mathop_traits.hh"
 #include "type_traits.hh"
+
+#include <utility>
 
 namespace FunG
 {
@@ -25,7 +27,7 @@ namespace FunG
         {
             static constexpr bool present = true;
 
-            ComputeSumImpl( const X& x, const Y& y ) : value( x() + y() )
+            ComputeSumImpl( const X& x, const Y& y ) : value( add_via_traits( x(), y() ) )
             {
             }
 
@@ -34,7 +36,9 @@ namespace FunG
                 return value;
             }
 
-            remove_reference_t< decltype( std::declval< X >()() + std::declval< Y >()() ) > value;
+            remove_reference_t< decltype(
+                add_via_traits( std::declval< X >()(), std::declval< Y >()() ) ) >
+                value;
         };
 
         template < class X, class Y >

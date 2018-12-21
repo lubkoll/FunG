@@ -10,6 +10,7 @@
 #include <fung/util/derivative_wrappers.hh>
 #include <fung/util/evaluate_if_present.hh>
 #include <fung/util/indexed_type.hh>
+#include <fung/util/mathop_traits.hh>
 #include <fung/util/type_traits.hh>
 
 namespace FunG
@@ -44,7 +45,8 @@ namespace FunG
             template < class InitF,
                        std::enable_if_t< !std::is_same< std::decay_t< InitF >, Squared >::value >* =
                            nullptr >
-            constexpr Squared( InitF&& f_ ) : f( std::forward< InitF >( f_ ) ), value( f() * f() )
+            constexpr Squared( InitF&& f_ )
+                : f( std::forward< InitF >( f_ ) ), value( multiply_via_traits( f(), f() ) )
             {
             }
 
@@ -53,7 +55,7 @@ namespace FunG
             void update( Arg const& x )
             {
                 update_if_present( f, x );
-                value = f() * f();
+                value = multiply_via_traits( f(), f() );
             }
 
             /// Update variable corresponding to index.
@@ -61,7 +63,7 @@ namespace FunG
             void update( const Arg& x )
             {
                 update_if_present< index >( f, x );
-                value = f() * f();
+                value = multiply_via_traits( f(), f() );
             }
 
             /// Function value.
@@ -78,9 +80,11 @@ namespace FunG
                        class = std::enable_if_t<
                            ComputeProduct< D0< F >, D1< F, IndexedArg > >::present > >
             auto d1( Arg const& dx ) const
-                -> decay_t< decltype( std::declval< F >()() * std::declval< F >()() ) >
+                -> decay_t< decltype( multiply_via_traits( std::declval< F >()(),
+                                                           std::declval< F >()() ) ) >
             {
-                return 2 * f() * D1_< F, IndexedArg >::apply( f, dx );
+                return multiply_via_traits(
+                    2, multiply_via_traits( f(), D1_< F, IndexedArg >::apply( f, dx ) ) );
             }
 
             /**
@@ -93,12 +97,13 @@ namespace FunG
                        class IndexedArgY = IndexedType< ArgY, idy >,
                        class = std::enable_if_t< D2Sum< IndexedArgX, IndexedArgY >::present > >
             auto d2( ArgX const& dx, ArgY const& dy ) const
-                -> decay_t< decltype( std::declval< F >()() * std::declval< F >()() ) >
+                -> decay_t< decltype( multiply_via_traits( std::declval< F >()(),
+                                                           std::declval< F >()() ) ) >
             {
-                return 2 *
-                       sum( product( D0< F >( f ), D2< F, IndexedArgX, IndexedArgY >( f, dx, dy ) ),
+                return multiply_via_traits(
+                    2, sum( product( D0< F >( f ), D2< F, IndexedArgX, IndexedArgY >( f, dx, dy ) ),
                             product( D1< F, IndexedArgY >( f, dy ),
-                                     D1< F, IndexedArgX >( f, dx ) ) )();
+                                     D1< F, IndexedArgX >( f, dx ) ) )() );
             }
 
             /**
@@ -114,22 +119,25 @@ namespace FunG
                        class = std::enable_if_t<
                            D3Sum< IndexedArgX, IndexedArgY, IndexedArgZ >::present > >
             auto d3( ArgX const& dx, ArgY const& dy, ArgZ const& dz ) const
-                -> decay_t< decltype( std::declval< F >()() * std::declval< F >()() ) >
+                -> decay_t< decltype( multiply_via_traits( std::declval< F >()(),
+                                                           std::declval< F >()() ) ) >
             {
-                return 2 *
-                       sum( product( D0< F >( f ), D3< F, IndexedArgX, IndexedArgY, IndexedArgZ >(
+                return multiply_via_traits(
+                    2, sum( product( D0< F >( f ), D3< F, IndexedArgX, IndexedArgY, IndexedArgZ >(
                                                        f, dx, dy, dz ) ),
                             product( D1< F, IndexedArgZ >( f, dz ),
                                      D2< F, IndexedArgX, IndexedArgY >( f, dx, dy ) ),
                             product( D1< F, IndexedArgY >( f, dy ),
                                      D2< F, IndexedArgX, IndexedArgZ >( f, dx, dz ) ),
                             product( D2< F, IndexedArgY, IndexedArgZ >( f, dy, dz ),
-                                     D1< F, IndexedArgX >( f, dx ) ) )();
+                                     D1< F, IndexedArgX >( f, dx ) ) )() );
             }
 
         private:
             F f;
-            decay_t< decltype( std::declval< F >()() * std::declval< F >()() ) > value;
+            decay_t< decltype(
+                multiply_via_traits( std::declval< F >()(), std::declval< F >()() ) ) >
+                value;
         };
     }
 }

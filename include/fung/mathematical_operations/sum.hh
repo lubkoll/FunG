@@ -6,6 +6,7 @@
 #include <fung/util/derivative_wrappers.hh>
 #include <fung/util/evaluate_if_present.hh>
 #include <fung/util/indexed_type.hh>
+#include <fung/util/mathop_traits.hh>
 
 #include <type_traits>
 #include <utility>
@@ -31,7 +32,7 @@ namespace FunG
             template < class InitF, class InitG >
             constexpr Sum( InitF&& f_, InitG&& g_ )
                 : f( std::forward< InitF >( f_ ) ), g( std::forward< InitG >( g_ ) ),
-                  value( f() + g() )
+                  value( add_via_traits( f(), g() ) )
             {
             }
 
@@ -41,7 +42,7 @@ namespace FunG
             {
                 update_if_present( f, x );
                 update_if_present( g, std::forward< Arg >( x ) );
-                value = f() + g();
+                value = add_via_traits( f(), g() );
             }
 
             /// Update variable corresponding to index.
@@ -50,7 +51,7 @@ namespace FunG
             {
                 update_if_present< index >( f, x );
                 update_if_present< index >( g, std::forward< Arg >( x ) );
-                value = f() + g();
+                value = add_via_traits( f(), g() );
             }
 
             /// Function value.
@@ -102,7 +103,8 @@ namespace FunG
         private:
             F f;
             G g;
-            decay_t< decltype( std::declval< F >()() + std::declval< G >()() ) > value;
+            decay_t< decltype( add_via_traits( std::declval< F >()(), std::declval< G >()() ) ) >
+                value;
         };
     }
 }

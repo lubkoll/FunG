@@ -57,7 +57,7 @@ namespace FunG
             template < class InitF, class InitG >
             constexpr Product( InitF&& f_, InitG&& g_ )
                 : f( std::forward< InitF >( f_ ) ), g( std::forward< InitG >( g_ ) ),
-                  value( f() * g() )
+                  value( multiply_via_traits( f(), g() ) )
             {
             }
 
@@ -67,7 +67,7 @@ namespace FunG
             {
                 update_if_present( f, x );
                 update_if_present( g, x );
-                value = f() * g();
+                value = multiply_via_traits( f(), g() );
             }
 
             /// Update variable corresponding to index.
@@ -76,7 +76,7 @@ namespace FunG
             {
                 update_if_present< index >( f, x );
                 update_if_present< index >( g, x );
-                value = f() * g();
+                value = multiply_via_traits( f(), g() );
             }
 
             /// Function value.
@@ -151,7 +151,9 @@ namespace FunG
         private:
             F f;
             G g;
-            decay_t< decltype( std::declval< F >()() * std::declval< G >()() ) > value;
+            decay_t< decltype(
+                multiply_via_traits( std::declval< F >()(), std::declval< G >()() ) ) >
+                value;
         };
     }
 }

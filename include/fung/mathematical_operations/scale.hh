@@ -8,6 +8,7 @@
 #include <fung/util/derivative_wrappers.hh>
 #include <fung/util/evaluate_if_present.hh>
 #include <fung/util/indexed_type.hh>
+#include <fung/util/mathop_traits.hh>
 
 namespace FunG
 {
@@ -28,7 +29,8 @@ namespace FunG
              */
             template < class... InitF >
             constexpr Scale( Scalar a_, InitF&&... f_ )
-                : a( a_ ), f( std::forward< InitF >( f_ )... ), value( a * f() )
+                : a( a_ ), f( std::forward< InitF >( f_ )... ),
+                  value( multiply_via_traits( a, f() ) )
             {
             }
 
@@ -37,7 +39,7 @@ namespace FunG
             void update( const Arg& x )
             {
                 update_if_present( f, x );
-                value = a * f();
+                value = multiply_via_traits( a, f() );
             }
 
             /// Update variable corresponding to index.
@@ -45,7 +47,7 @@ namespace FunG
             void update( const Arg& x )
             {
                 update_if_present< index >( f, x );
-                value = a * f();
+                value = multiply_via_traits( a, f() );
             }
 
             /// Function value.
@@ -59,7 +61,7 @@ namespace FunG
                        class = std::enable_if_t< D1< F, IndexedArg >::present > >
             auto d1( const Arg& dx ) const
             {
-                return a * D1_< F, IndexedArg >::apply( f, dx );
+                return multiply_via_traits( a, D1_< F, IndexedArg >::apply( f, dx ) );
             }
 
             /// Second directional derivative.
@@ -69,7 +71,8 @@ namespace FunG
                        class = std::enable_if_t< D2< F, IndexedArgX, IndexedArgY >::present > >
             auto d2( const ArgX& dx, const ArgY& dy ) const
             {
-                return a * D2_< F, IndexedArgX, IndexedArgY >::apply( f, dx, dy );
+                return multiply_via_traits(
+                    a, D2_< F, IndexedArgX, IndexedArgY >::apply( f, dx, dy ) );
             }
 
             /// Third directional derivative.
@@ -81,7 +84,8 @@ namespace FunG
                            D3< F, IndexedArgX, IndexedArgY, IndexedArgZ >::present > >
             auto d3( const ArgX& dx, const ArgY& dy, const ArgZ& dz ) const
             {
-                return a * D3_< F, IndexedArgX, IndexedArgY, IndexedArgZ >::apply( f, dx, dy, dz );
+                return multiply_via_traits(
+                    a, D3_< F, IndexedArgX, IndexedArgY, IndexedArgZ >::apply( f, dx, dy, dz ) );
             }
 
         private:
