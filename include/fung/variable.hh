@@ -375,8 +375,7 @@ namespace FunG
         template < class F, class Type, int id >
         constexpr bool checkArgument()
         {
-            return ContainsType< typename VariableDetail::VariableType< F, id >::type,
-                                 Type >::value;
+            return ContainsType< Variable_t< F, id >, Type >::value;
         }
 
         /** @} */
