@@ -20,11 +20,7 @@ Main namespace of the Fun\-G library.
 \hyperlink{namespaceFunG_1_1MathematicalOperations}{Mathematical\-Operations}
 \begin{DoxyCompactList}\small\item\em Mathematical operations and corresponding differentation rules. \end{DoxyCompactList}\item 
 \hyperlink{namespaceFunG_1_1Meta}{Meta}
-\item 
-\hyperlink{namespaceFunG_1_1stringify}{stringify}
-\begin{DoxyCompactList}\small\item\em Arc sine function including first three derivatives (based on asin(std\-::string) in $<$cmath$>$). \end{DoxyCompactList}\item 
-\hyperlink{namespaceFunG_1_1texify}{texify}
-\begin{DoxyCompactList}\small\item\em Arc sine function including first three derivatives (based on asin(std\-::string) in $<$cmath$>$). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -61,8 +57,6 @@ class \hyperlink{classFunG_1_1NonSymmetricMatrixException}{Non\-Symmetric\-Matri
 struct \hyperlink{structFunG_1_1MathOpTraits}{Math\-Op\-Traits}
 \item 
 struct \hyperlink{structFunG_1_1MathOpTraits_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__arithmetic_3_01T_01_4_1_1value_01_4_01_4}{Math\-Op\-Traits$<$ T, std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-arithmetic$<$ T $>$\-::value $>$ $>$}
-\item 
-struct \hyperlink{structFunG_1_1MathOpTraits_3_01std_1_1string_00_01void_01_4}{Math\-Op\-Traits$<$ std\-::string, void $>$}
 \item 
 struct \hyperlink{structFunG_1_1Decay}{Decay}
 \begin{DoxyCompactList}\small\item\em Identity, i.\-e. \hyperlink{structFunG_1_1Decay_a4b2916cbb7c8587ab3fccc9b896b9df4}{Decay$<$\-F$>$\-::type} == F \end{DoxyCompactList}\item 
@@ -230,22 +224,6 @@ using \hyperlink{group__CMathGroup_gab63795eecd1e9a55ea26b24125053f2d}{Cbrt2} = 
 \item 
 {\footnotesize template$<$class T , class S , std\-::enable\-\_\-if\-\_\-t$<$ std\-::is\-\_\-arithmetic$<$ T $>$\-::value \&\&std\-::is\-\_\-arithmetic$<$ S $>$\-::value $>$ $\ast$  = nullptr$>$ }\\auto \hyperlink{namespaceFunG_a6cbaa3b1b61e5834b38db5c831e3c25e}{add\-\_\-via\-\_\-traits} (T lhs, S rhs)
 \item 
-std\-::string \hyperlink{namespaceFunG_ab53219fedaf7327fc9a4672f1d2eb2f9}{force\-Add\-Scope} (const std\-::string \&str)
-\item 
-std\-::string \hyperlink{namespaceFunG_a5dbb2eda96a2ba227a25bf4d5fdd45b7}{add\-Scope} (const std\-::string \&str)
-\item 
-std\-::string \hyperlink{namespaceFunG_aab80cce1c3236f9056ff38ffe0649e9a}{add\-Strict\-Scope} (const std\-::string \&str)
-\item 
-std\-::string \hyperlink{namespaceFunG_a87878f850f8f115f4e7b6de21cdde6dc}{add\-Tex\-Scope} (std\-::string str)
-\item 
-std\-::string \hyperlink{namespaceFunG_a6740837e0a42b7968c15d005890ae5f7}{add\-All\-Scopes} (std\-::string str)
-\item 
-std\-::string \hyperlink{namespaceFunG_a502b373ca98741d24c2375f5a6fc9773}{multiply\-If\-Not\-Empty} (const std\-::string \&dx)
-\item 
-std\-::string \hyperlink{namespaceFunG_a0111473091231d0560392df37c771d26}{multiply\-If\-Not\-Empty} (const std\-::string \&dx, const std\-::string \&dy)
-\item 
-std\-::string \hyperlink{namespaceFunG_a2df36bba8d082bdd76604be66ae94f26}{multiply\-If\-Not\-Empty} (const std\-::string \&dx, const std\-::string \&dy, const std\-::string \&dz)
-\item 
 {\footnotesize template$<$class Matrix , class  = std\-::enable\-\_\-if\-\_\-t$<$\-Checks\-::is\-Constant\-Size$<$\-Matrix$>$() $\vert$$\vert$ is\-\_\-arithmetic$<$\-Matrix$>$\-::value$>$$>$ }\\Matrix \hyperlink{namespaceFunG_a649b4470d6def401959bfea3a368c48c}{zero} ()
 \begin{DoxyCompactList}\small\item\em Requires that a specialization of struct \hyperlink{structFunG_1_1Zero}{Zero} exists for Matrix. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Matrix , class  = std\-::enable\-\_\-if\-\_\-t$<$!\-Checks\-::is\-Constant\-Size$<$\-Matrix$>$() \&\& !is\-\_\-arithmetic$<$\-Matrix$>$\-::value$>$$>$ }\\constexpr Matrix \hyperlink{namespaceFunG_ae633433339ba30207aa526e54e3924b4}{zero} (int rows, int cols)
@@ -312,34 +290,6 @@ Most fascinating type ever. Is void for all input types.
 \item[{S}]{rhs}
 \end{DoxyParamCaption}
 )}}\label{namespaceFunG_a6cbaa3b1b61e5834b38db5c831e3c25e}
-\hypertarget{namespaceFunG_a6740837e0a42b7968c15d005890ae5f7}{\index{Fun\-G@{Fun\-G}!add\-All\-Scopes@{add\-All\-Scopes}}
-\index{add\-All\-Scopes@{add\-All\-Scopes}!FunG@{Fun\-G}}
-\subsubsection[{add\-All\-Scopes}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Fun\-G\-::add\-All\-Scopes (
-\begin{DoxyParamCaption}
-\item[{std\-::string}]{str}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespaceFunG_a6740837e0a42b7968c15d005890ae5f7}
-\hypertarget{namespaceFunG_a5dbb2eda96a2ba227a25bf4d5fdd45b7}{\index{Fun\-G@{Fun\-G}!add\-Scope@{add\-Scope}}
-\index{add\-Scope@{add\-Scope}!FunG@{Fun\-G}}
-\subsubsection[{add\-Scope}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Fun\-G\-::add\-Scope (
-\begin{DoxyParamCaption}
-\item[{const std\-::string \&}]{str}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespaceFunG_a5dbb2eda96a2ba227a25bf4d5fdd45b7}
-\hypertarget{namespaceFunG_aab80cce1c3236f9056ff38ffe0649e9a}{\index{Fun\-G@{Fun\-G}!add\-Strict\-Scope@{add\-Strict\-Scope}}
-\index{add\-Strict\-Scope@{add\-Strict\-Scope}!FunG@{Fun\-G}}
-\subsubsection[{add\-Strict\-Scope}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Fun\-G\-::add\-Strict\-Scope (
-\begin{DoxyParamCaption}
-\item[{const std\-::string \&}]{str}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespaceFunG_aab80cce1c3236f9056ff38ffe0649e9a}
-\hypertarget{namespaceFunG_a87878f850f8f115f4e7b6de21cdde6dc}{\index{Fun\-G@{Fun\-G}!add\-Tex\-Scope@{add\-Tex\-Scope}}
-\index{add\-Tex\-Scope@{add\-Tex\-Scope}!FunG@{Fun\-G}}
-\subsubsection[{add\-Tex\-Scope}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Fun\-G\-::add\-Tex\-Scope (
-\begin{DoxyParamCaption}
-\item[{std\-::string}]{str}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespaceFunG_a87878f850f8f115f4e7b6de21cdde6dc}
 \hypertarget{namespaceFunG_a0211d0d26c669d56b5113fd2292902e5}{\index{Fun\-G@{Fun\-G}!add\-Transposed@{add\-Transposed}}
 \index{add\-Transposed@{add\-Transposed}!FunG@{Fun\-G}}
 \subsubsection[{add\-Transposed}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Matrix , std\-::enable\-\_\-if\-\_\-t$<$ Checks\-::is\-Constant\-Size$<$ Matrix $>$()$>$ $\ast$  = nullptr$>$ Matrix Fun\-G\-::add\-Transposed (
@@ -427,14 +377,7 @@ If the resulting type represents a polynomial of order smaller than two, than yo
 
 Finish function definition. 
 
-Adds the definition of possibly undefined vanishing higher order derivatives. If the template class \hyperlink{structFunG_1_1Variable}{Variable} is not used, then no ids must be provided for the update-\/function and derivatives. \hypertarget{namespaceFunG_ab53219fedaf7327fc9a4672f1d2eb2f9}{\index{Fun\-G@{Fun\-G}!force\-Add\-Scope@{force\-Add\-Scope}}
-\index{force\-Add\-Scope@{force\-Add\-Scope}!FunG@{Fun\-G}}
-\subsubsection[{force\-Add\-Scope}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Fun\-G\-::force\-Add\-Scope (
-\begin{DoxyParamCaption}
-\item[{const std\-::string \&}]{str}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespaceFunG_ab53219fedaf7327fc9a4672f1d2eb2f9}
-\hypertarget{namespaceFunG_aab17a1468e61f58564333b3fcd7900d6}{\index{Fun\-G@{Fun\-G}!heat\-Model@{heat\-Model}}
+Adds the definition of possibly undefined vanishing higher order derivatives. If the template class \hyperlink{structFunG_1_1Variable}{Variable} is not used, then no ids must be provided for the update-\/function and derivatives. \hypertarget{namespaceFunG_aab17a1468e61f58564333b3fcd7900d6}{\index{Fun\-G@{Fun\-G}!heat\-Model@{heat\-Model}}
 \index{heat\-Model@{heat\-Model}!FunG@{Fun\-G}}
 \subsubsection[{heat\-Model}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Scalar , class Vector $>$ auto Fun\-G\-::heat\-Model (
 \begin{DoxyParamCaption}
@@ -502,30 +445,6 @@ Construct Identity$<$\-Arg$>$(x).
 \item[{S}]{rhs}
 \end{DoxyParamCaption}
 )}}\label{namespaceFunG_af9f50220300eacbd554ec4b48373535b}
-\hypertarget{namespaceFunG_a502b373ca98741d24c2375f5a6fc9773}{\index{Fun\-G@{Fun\-G}!multiply\-If\-Not\-Empty@{multiply\-If\-Not\-Empty}}
-\index{multiply\-If\-Not\-Empty@{multiply\-If\-Not\-Empty}!FunG@{Fun\-G}}
-\subsubsection[{multiply\-If\-Not\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Fun\-G\-::multiply\-If\-Not\-Empty (
-\begin{DoxyParamCaption}
-\item[{const std\-::string \&}]{dx}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespaceFunG_a502b373ca98741d24c2375f5a6fc9773}
-\hypertarget{namespaceFunG_a0111473091231d0560392df37c771d26}{\index{Fun\-G@{Fun\-G}!multiply\-If\-Not\-Empty@{multiply\-If\-Not\-Empty}}
-\index{multiply\-If\-Not\-Empty@{multiply\-If\-Not\-Empty}!FunG@{Fun\-G}}
-\subsubsection[{multiply\-If\-Not\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Fun\-G\-::multiply\-If\-Not\-Empty (
-\begin{DoxyParamCaption}
-\item[{const std\-::string \&}]{dx, }
-\item[{const std\-::string \&}]{dy}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespaceFunG_a0111473091231d0560392df37c771d26}
-\hypertarget{namespaceFunG_a2df36bba8d082bdd76604be66ae94f26}{\index{Fun\-G@{Fun\-G}!multiply\-If\-Not\-Empty@{multiply\-If\-Not\-Empty}}
-\index{multiply\-If\-Not\-Empty@{multiply\-If\-Not\-Empty}!FunG@{Fun\-G}}
-\subsubsection[{multiply\-If\-Not\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Fun\-G\-::multiply\-If\-Not\-Empty (
-\begin{DoxyParamCaption}
-\item[{const std\-::string \&}]{dx, }
-\item[{const std\-::string \&}]{dy, }
-\item[{const std\-::string \&}]{dz}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespaceFunG_a2df36bba8d082bdd76604be66ae94f26}
 \hypertarget{namespaceFunG_a5e258023361844926f485229c62a733b}{\index{Fun\-G@{Fun\-G}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!FunG@{Fun\-G}}
 \subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Scalar , class Other\-Scalar , int n, std\-::enable\-\_\-if\-\_\-t$<$ !\-Checks\-::\-Has\-::\-Free\-::multiplication$<$ Dune\-::\-Field\-Vector$<$ Scalar, n $>$, Dune\-::\-Field\-Vector$<$ Other\-Scalar, n $>$ $>$() $>$ $\ast$  = nullptr$>$ auto Fun\-G\-::operator$\ast$ (

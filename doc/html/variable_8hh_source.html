@@ -88,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_81dd300e79cf22f7c22be34a59ff75ca.html">fung</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_fa81a0b40bd9e8878bcb1c2d8e9b57c6.html">include</a></li><li class="navelem"><a class="el" href="dir_fd47c672f6d66b5c6e237ee1782a0895.html">fung</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -453,12 +453,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        <span class="keyword">template</span> &lt; <span class="keyword">class</span> F, <span class="keyword">class</span> Type, <span class="keywordtype">int</span> <span class="keywordtype">id</span> &gt;</div>
 <div class="line"><a name="l00376"></a><span class="lineno"><a class="line" href="group__ConceptCheck.html#ga31790e5d021a40ac34b7469323c658f9">  376</a></span>&#160;        constexpr <span class="keywordtype">bool</span> <a class="code" href="group__ConceptCheck.html#ga31790e5d021a40ac34b7469323c658f9">checkArgument</a>()</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        {</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            <span class="keywordflow">return</span> ContainsType&lt; typename VariableDetail::VariableType&lt; F, id &gt;::type,</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                                 Type &gt;::value;</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        }</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    }</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;}</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            <span class="keywordflow">return</span> ContainsType&lt; Variable_t&lt; F, id &gt;, Type &gt;::value;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        }</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    }</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;}</div>
 <div class="ttc" id="traverse_8hh_html"><div class="ttname"><a href="traverse_8hh.html">traverse.hh</a></div></div>
 <div class="ttc" id="namespaceFunG_html_a2ead025b35a8cdf3ac8c170524ab61c0"><div class="ttname"><a href="namespaceFunG.html#a2ead025b35a8cdf3ac8c170524ab61c0">FunG::variable</a></div><div class="ttdeci">Variable&lt; T, id &gt; variable(const T &amp;t)</div><div class="ttdoc">Generate variable from input type. </div><div class="ttdef"><b>Definition:</b> variable.hh:163</div></div>
 <div class="ttc" id="namespaceFunG_1_1Checks_1_1Has_html_a1f263f5816070c632631cace52aa77ee"><div class="ttname"><a href="namespaceFunG_1_1Checks_1_1Has.html#a1f263f5816070c632631cace52aa77ee">FunG::Checks::Has::variableId</a></div><div class="ttdeci">constexpr bool variableId()</div><div class="ttdoc">Check if T contains a type Variable&lt;Type,id&gt;. </div><div class="ttdef"><b>Definition:</b> variable.hh:360</div></div>
@@ -477,7 +476,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Dec 21 2018 23:14:38 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Dec 22 2018 17:00:28 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

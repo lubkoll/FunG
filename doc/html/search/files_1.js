@@ -10,7 +10,5 @@ var searchData=
   ['concept_5fcheck_2ehh',['concept_check.hh',['../concept__check_8hh.html',1,'']]],
   ['concepts_2ehh',['concepts.hh',['../concepts_8hh.html',1,'']]],
   ['constant_2ehh',['constant.hh',['../constant_8hh.html',1,'']]],
-  ['cosine_2ehh',['cosine.hh',['../stringify_2cmath_2cosine_8hh.html',1,'']]],
-  ['cosine_2ehh',['cosine.hh',['../texify_2cmath_2cosine_8hh.html',1,'']]],
-  ['cosine_2ehh',['cosine.hh',['../cmath_2cosine_8hh.html',1,'']]]
+  ['cosine_2ehh',['cosine.hh',['../cosine_8hh.html',1,'']]]
 ];
