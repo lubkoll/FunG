@@ -1,15 +1,15 @@
 // Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
 // Released under the terms of the GNU General Public License version 3 or later.
 
-#include <fung/texify/cmath/log.hh>
+#include <texy/cmath/log.hh>
 
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
 
 using ::testing::Eq;
-using FunG::texify::LN;
-using FunG::texify::Log10;
-using FunG::texify::Log2;
+using texy::LN;
+using texy::Log10;
+using texy::Log2;
 
 TEST( TexifyLNTest, D0 )
 {

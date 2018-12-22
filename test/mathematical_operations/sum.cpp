@@ -1,8 +1,8 @@
 #include <fung/cmath/pow.hh>
 #include <fung/finalize.hh>
 #include <fung/generate.hh>
-#include <fung/stringify/cmath/pow.hh>
-#include <fung/texify/cmath/pow.hh>
+#include <stringy/cmath/pow.hh>
+#include <texy/cmath/pow.hh>
 
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
@@ -33,14 +33,14 @@ TEST( SumTest, D0 )
 
 TEST( StringifySumTest, D0 )
 {
-    using FunG::stringify::Pow;
+    using stringy::Pow;
     auto fun = Pow< 3, 1 >( "x" ) + Pow< 3, 2 >( "y" );
     EXPECT_THAT( fun.d0(), StrEq( "x^3 + y^(3/2)" ) );
 }
 
 TEST( TexifySumTest, D0 )
 {
-    using FunG::texify::Pow;
+    using texy::Pow;
     auto fun = Pow< 3, 1 >( "x" ) + Pow< 3, 2 >( "y" );
     EXPECT_THAT( fun.d0(), StrEq( "x^3 + y^{3/2}" ) );
 }
@@ -54,14 +54,14 @@ TEST( SumTest, D1 )
 
 TEST( StringifySumTest, D1 )
 {
-    using FunG::stringify::Pow;
+    using stringy::Pow;
     auto fun = FunG::finalize( Pow< 3, 1 >( "x" ) + Pow< 3, 2 >( "y" ) );
     EXPECT_THAT( fun.d1( "" ), StrEq( "3x^2 + 3/2*y^(1/2)" ) );
 }
 
 TEST( TexifySumTest, D1 )
 {
-    using FunG::texify::Pow;
+    using texy::Pow;
     auto fun = FunG::finalize( Pow< 3, 1 >( "x" ) + Pow< 3, 2 >( "y" ) );
     EXPECT_THAT( fun.d1( "" ), StrEq( "3x^2 + 3/2*y^{1/2}" ) );
 }
@@ -75,14 +75,14 @@ TEST( SumTest, D2 )
 
 TEST( StringifySumTest, D2 )
 {
-    using FunG::stringify::Pow;
+    using stringy::Pow;
     auto fun = FunG::finalize( Pow< 3, 1 >( "x" ) + Pow< 3, 2 >( "y" ) );
     EXPECT_THAT( fun.d2( "", "" ), StrEq( "6x + 3/4*y^(-1/2)" ) );
 }
 
 TEST( TexifySumTest, D2 )
 {
-    using FunG::texify::Pow;
+    using texy::Pow;
     auto fun = FunG::finalize( Pow< 3, 1 >( "x" ) + Pow< 3, 2 >( "y" ) );
     EXPECT_THAT( fun.d2( "", "" ), StrEq( "6x + 3/4*y^{-1/2}" ) );
 }
@@ -96,14 +96,14 @@ TEST( SumTest, D3 )
 
 TEST( StringifySumTest, D3 )
 {
-    using FunG::stringify::Pow;
+    using stringy::Pow;
     auto fun = FunG::finalize( Pow< 3, 1 >( "x" ) + Pow< 3, 2 >( "y" ) );
     EXPECT_THAT( fun.d3( "", "", "" ), StrEq( "6 + -3/8*y^(-3/2)" ) );
 }
 
 TEST( TexifySumTest, D3 )
 {
-    using FunG::texify::Pow;
+    using texy::Pow;
     auto fun = FunG::finalize( Pow< 3, 1 >( "x" ) + Pow< 3, 2 >( "y" ) );
     EXPECT_THAT( fun.d3( "", "", "" ), StrEq( "6 + -3/8*y^{-3/2}" ) );
 }

@@ -1,13 +1,13 @@
 // Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
 // Released under the terms of the GNU General Public License version 3 or later.
 
-#include <fung/texify/cmath/arccos.hh>
+#include <texy/cmath/arccos.hh>
 
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
 
 using ::testing::Eq;
-using FunG::texify::ACos;
+using texy::ACos;
 
 TEST( TexifyArccosTest, D0 )
 {

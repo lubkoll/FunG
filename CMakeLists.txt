@@ -2,14 +2,24 @@ cmake_minimum_required(VERSION 3.8)
 
 project(fung VERSION 1.4.0 LANGUAGES CXX)
 
-list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/cmake)
+list(APPEND CMAKE_MODULE_PATH
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/cmake
+)
 
 add_library(fung INTERFACE)
 target_include_directories(fung INTERFACE
     $<INSTALL_INTERFACE:include>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 )
+
+include(Headers)
+
 target_compile_features(fung INTERFACE cxx_std_14)
+set_target_properties(fung PROPERTIES
+  EXPORT_NAME FunG
+)
+target_sources(fung INTERFACE ${HEADER_FILES})
 #This is required so that the exported target has the name FunG and not fung
 set_target_properties(fung PROPERTIES EXPORT_NAME FunG)
 add_library(FunG::FunG ALIAS fung)

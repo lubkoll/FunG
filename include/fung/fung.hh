@@ -9,5 +9,4 @@
 #include "math.hh"
 #include "operations.hh"
 #include "util/add_missing_operators.hh"
-#include "util/string.hh"
 #include "variable.hh"

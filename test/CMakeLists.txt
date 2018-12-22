@@ -21,6 +21,16 @@ list(APPEND SRC_LIST
   cmath/texify/pow.cpp
   cmath/texify/sine.cpp
   cmath/texify/tan.cpp
+  linear_algebra/texify/cofactor.cpp
+  linear_algebra/texify/determinant.cpp
+#  linear_algebra/texify/deviator.cpp
+#  linear_algebra/texify/deviatoric_invariants.cpp
+  linear_algebra/texify/frobenius_norm.cpp
+#  linear_algebra/texify/mixed_invariants.cpp
+#  linear_algebra/texify/principal_invariants.cpp
+#  linear_algebra/texify/strain_tensor.cpp
+  linear_algebra/texify/trace.cpp
+  linear_algebra/texify/transpose.cpp
 )
 
 add_executable(tests ${SRC_LIST})

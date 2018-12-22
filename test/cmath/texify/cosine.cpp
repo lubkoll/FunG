@@ -1,13 +1,13 @@
 // Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
 // Released under the terms of the GNU General Public License version 3 or later.
 
-#include <fung/texify/cmath/cosine.hh>
+#include <texy/cmath/cosine.hh>
 
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
 
 using ::testing::Eq;
-using FunG::texify::Cos;
+using texy::Cos;
 
 TEST( TexifyCosineTest, D0 )
 {
