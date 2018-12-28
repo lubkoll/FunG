@@ -1,21 +1,13 @@
 #pragma once
 
-#include "transpose.hh"
-#include <fung/mathematical_operations/sum.hh>
-#include <fung/util/add_transposed_matrix.hh>
 #include <fung/util/chainer.hh>
+#include <texy/util/string.hh>
 
-namespace FunG
+#include <string>
+
+namespace texy
 {
-    /// @cond
-    namespace Concepts
-    {
-        template < class >
-        struct SquareMatrixConceptCheck;
-    }
-    ///@endcond
-
-    /** @addtogroup LinearAlgebraGroup
+    /** @addtogroup TexifyLinearAlgebraGroup
      * @{
      */
     namespace LinearAlgebra
@@ -26,10 +18,7 @@ namespace FunG
          * Used in nonlinear material models based on the deformation gradient \f$\nabla\varphi\f$,
          * which takes the role of \f$F\f$.
          */
-        template < class Matrix, class = Concepts::SquareMatrixConceptCheck< Matrix > >
-        class RightCauchyGreenStrainTensor
-            : public Chainer< RightCauchyGreenStrainTensor<
-                  Matrix, Concepts::SquareMatrixConceptCheck< Matrix > > >
+        class RightCauchyGreenStrainTensor : public FunG::Chainer< RightCauchyGreenStrainTensor >
         {
         public:
             RightCauchyGreenStrainTensor() = default;
@@ -37,40 +26,49 @@ namespace FunG
              * @brief Constructor.
              * @param F point of evaluation.
              */
-            explicit RightCauchyGreenStrainTensor( const Matrix& F )
+            explicit RightCauchyGreenStrainTensor( const std::string& F )
             {
                 update( F );
             }
 
             /// Reset point of evaluation.
-            void update( const Matrix& F )
+            void update( const std::string& F )
             {
-                FT = Detail::transpose( F );
-                FTF = FT * F;
+                this->F = F;
             }
 
             /// Function value \f$ F^T * F \f$.
-            const Matrix& d0() const noexcept
+            std::string d0() const noexcept
             {
-                return FTF;
+                return addScope( F ).append( "^T*" ).append( addScope( F ) );
             }
 
             /// First directional derivative \f$ F^T dF_1 + dF_1^T F \f$.
-            Matrix d1( const Matrix& dF1 ) const
+            std::string d1( const std::string& dF ) const
             {
-                Matrix FTdF1 = FT * dF1;
-                return addTransposed( FTdF1 );
+                return addScope( F )
+                    .append( "^T*" )
+                    .append( addScope( dF ) )
+                    .append( "+" )
+                    .append( addScope( dF ) )
+                    .append( "^T*" )
+                    .append( addScope( F ) );
             }
 
             /// Second directional derivative \f$ dF_2^T dF_1 + dF_1^T dF_2 \f$.
-            Matrix d2( const Matrix& dF1, const Matrix& dF2 ) const
+            std::string d2( const std::string& dF1, const std::string& dF2 ) const
             {
-                Matrix dF2TdF1 = Detail::transpose( dF2 ) * dF1;
-                return addTransposed( dF2TdF1 );
+                return addScope( dF2 )
+                    .append( "^T*" )
+                    .append( addScope( dF1 ) )
+                    .append( "+" )
+                    .append( addScope( dF1 ) )
+                    .append( "^T*" )
+                    .append( addScope( dF2 ) );
             }
 
         private:
-            Matrix FT, FTF;
+            std::string F;
         };
 
         /**
@@ -79,10 +77,7 @@ namespace FunG
          * Used in nonlinear material models based on the deformation gradient \f$\nabla\varphi\f$,
          * which takes the role of \f$F\f$.
          */
-        template < class Matrix, class = Concepts::SquareMatrixConceptCheck< Matrix > >
-        class LeftCauchyGreenStrainTensor
-            : public Chainer< LeftCauchyGreenStrainTensor<
-                  Matrix, Concepts::SquareMatrixConceptCheck< Matrix > > >
+        class LeftCauchyGreenStrainTensor : public FunG::Chainer< LeftCauchyGreenStrainTensor >
         {
         public:
             LeftCauchyGreenStrainTensor() = default;
@@ -90,40 +85,51 @@ namespace FunG
              * @brief Constructor.
              * @param F point of evaluation.
              */
-            explicit LeftCauchyGreenStrainTensor( const Matrix& F )
+            explicit LeftCauchyGreenStrainTensor( const std::string& F )
             {
                 update( F );
             }
 
             /// Reset point of evaluation.
-            void update( const Matrix& F )
+            void update( const std::string& F )
             {
-                FT = Detail::transpose( F );
-                FFT = F * FT;
+                this->F = F;
             }
 
             /// Function value \f$ F^T * F \f$.
-            const Matrix& d0() const noexcept
+            std::string d0() const noexcept
             {
-                return FFT;
+                return addScope( F ).append( "*" ).append( addScope( F ) ).append( "^T" );
             }
 
             /// First directional derivative \f$ F^T dF_1 + dF_1^T F \f$.
-            Matrix d1( const Matrix& dF1 ) const
+            std::string d1( const std::string& dF ) const
             {
-                Matrix FTdF1 = dF1 * FT;
-                return addTransposed( FTdF1 );
+                return addScope( F )
+                    .append( "*" )
+                    .append( addScope( dF ) )
+                    .append( "^T+" )
+                    .append( addScope( dF ) )
+                    .append( "*" )
+                    .append( addScope( F ) )
+                    .append( "^T" );
             }
 
             /// Second directional derivative \f$ dF_2^T dF_1 + dF_1^T dF_2 \f$.
-            Matrix d2( const Matrix& dF1, const Matrix& dF2 ) const
+            std::string d2( const std::string& dF1, const std::string& dF2 ) const
             {
-                Matrix dF1dF2T = dF1 * Detail::transpose( dF2 );
-                return addTransposed( dF1dF2T );
+                return addScope( dF2 )
+                    .append( "*" )
+                    .append( addScope( dF1 ) )
+                    .append( "^T+" )
+                    .append( addScope( dF1 ) )
+                    .append( "*" )
+                    .append( addScope( dF2 ) )
+                    .append( "^T" );
             }
 
         private:
-            Matrix FT, FFT;
+            std::string F;
         };
 
         /**
@@ -131,10 +137,9 @@ namespace FunG
          * \param A matrix
          * \return RightCauchyGreenStrainTensor<Matrix>(A)
          */
-        template < class Matrix, std::enable_if_t< !Checks::isFunction< Matrix >() >* = nullptr >
-        auto strainTensor( const Matrix& A )
+        auto strainTensor( const std::string& A )
         {
-            return RightCauchyGreenStrainTensor< Matrix >{A};
+            return RightCauchyGreenStrainTensor{A};
         }
 
         /**
@@ -146,7 +151,7 @@ namespace FunG
         template < class F, std::enable_if_t< Checks::isFunction< F >() >* = nullptr >
         auto strainTensor( const F& f )
         {
-            return RightCauchyGreenStrainTensor< decay_t< decltype( f() ) > >{f()}( f );
+            return RightCauchyGreenStrainTensor{f()}( f );
         }
 
         /**
@@ -154,10 +159,9 @@ namespace FunG
          * \param A matrix
          * \return LeftCauchyGreenStrainTensor<Matrix>(A)
          */
-        template < class Matrix, std::enable_if_t< !Checks::isFunction< Matrix >() >* = nullptr >
-        auto leftStrainTensor( const Matrix& A )
+        auto leftStrainTensor( const std::string& A )
         {
-            return LeftCauchyGreenStrainTensor< Matrix >{A};
+            return LeftCauchyGreenStrainTensor{A};
         }
 
         /**
@@ -169,7 +173,7 @@ namespace FunG
         template < class F, std::enable_if_t< Checks::isFunction< F >() >* = nullptr >
         auto leftStrainTensor( const F& f )
         {
-            return LeftCauchyGreenStrainTensor< decay_t< decltype( f() ) > >{f()}( f );
+            return LeftCauchyGreenStrainTensor{f()}( f );
         }
     }
     /** @} */
