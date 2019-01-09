@@ -49,14 +49,18 @@ ForEachMacros:   [ foreach, Q_FOREACH, BOOST_FOREACH ]
 IncludeCategories: 
   - Regex:           '^"'
     Priority:        5
-  - Regex:           '^<fung/'
-    Priority:        7
-  - Regex:           '^((<|")(gtest|isl|json)/)'
+  - Regex:           '^<stringy/'
     Priority:        10
-  - Regex:           '^(<(array|algorithm|cassert|chrono|cmath|cstdlib|iostream|limits|list|map|memory|numeric|random|set|stdexcept|string|vector|type_traits|utility)>)'
+  - Regex:           '^<texy/'
+    Priority:        10
+  - Regex:           '^<fung/'
     Priority:        20
-  - Regex:           '.*'
+  - Regex:           '^((<|")(gtest|isl|json)/)'
     Priority:        30
+  - Regex:           '^(<(array|algorithm|cassert|chrono|cmath|cstdlib|iostream|limits|list|map|memory|numeric|random|set|stdexcept|string|vector|type_traits|utility)>)'
+    Priority:        40
+  - Regex:           '.*'
+    Priority:        50
 IndentCaseLabels: false
 IndentWidth:     4
 IndentWrappedFunctionNames: false
