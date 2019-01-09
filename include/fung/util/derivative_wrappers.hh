@@ -45,7 +45,9 @@ namespace FunG
             D1Impl& operator=( const D1Impl& ) = delete;
 
         private:
-            decltype( std::declval< F >().template d1< id >( std::declval< Arg >() ) ) value;
+            std::decay_t< decltype(
+                std::declval< F >().template d1< id >( std::declval< Arg >() ) ) >
+                value;
         };
 
         /// Call f.d1(dx).
@@ -67,7 +69,7 @@ namespace FunG
             D1Impl& operator=( const D1Impl& ) = delete;
 
         private:
-            decltype( std::declval< F >().d1( std::declval< Arg >() ) ) value;
+            std::decay_t< decltype( std::declval< F >().d1( std::declval< Arg >() ) ) > value;
         };
 
         /// Don't call f.d2(dx,dy).
@@ -105,8 +107,9 @@ namespace FunG
             D2Impl& operator=( const D2Impl& ) = delete;
 
         private:
-            decltype( std::declval< F >().template d2< idx, idy >( std::declval< ArgX >(),
-                                                                   std::declval< ArgY >() ) ) value;
+            std::decay_t< decltype( std::declval< F >().template d2< idx, idy >(
+                std::declval< ArgX >(), std::declval< ArgY >() ) ) >
+                value;
         };
 
         /// Call f.d2(dx,dy).
@@ -129,8 +132,9 @@ namespace FunG
             D2Impl& operator=( const D2Impl& ) = delete;
 
         private:
-            decltype(
-                std::declval< F >().d2( std::declval< ArgX >(), std::declval< ArgY >() ) ) value;
+            std::decay_t< decltype(
+                std::declval< F >().d2( std::declval< ArgX >(), std::declval< ArgY >() ) ) >
+                value;
         };
 
         /// Don't call f.d3(dx,dy,dz).
@@ -171,8 +175,9 @@ namespace FunG
             D3Impl& operator=( const D3Impl& ) = delete;
 
         private:
-            decltype( std::declval< F >().template d3< idx, idy, idz >(
-                std::declval< ArgX >(), std::declval< ArgY >(), std::declval< ArgZ >() ) ) value;
+            std::decay_t< decltype( std::declval< F >().template d3< idx, idy, idz >(
+                std::declval< ArgX >(), std::declval< ArgY >(), std::declval< ArgZ >() ) ) >
+                value;
         };
 
         /// Call f.d3(dx,dy,dz).
@@ -197,8 +202,9 @@ namespace FunG
             D3Impl& operator=( const D3Impl& ) = delete;
 
         private:
-            decltype( std::declval< F >().d3( std::declval< ArgX >(), std::declval< ArgY >(),
-                                              std::declval< ArgZ >() ) ) value;
+            std::decay_t< decltype( std::declval< F >().d3(
+                std::declval< ArgX >(), std::declval< ArgY >(), std::declval< ArgZ >() ) ) >
+                value;
         };
     }
 

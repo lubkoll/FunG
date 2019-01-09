@@ -15,13 +15,14 @@ namespace FunG
     /// @cond
     namespace GenerateDetail
     {
-        template < class F, class G, bool = Checks::isFunction< std::decay_t< F > >(),
-                   bool = Checks::isFunction< std::decay_t< G > >() >
+        template < class F0, class G0, bool = Checks::isFunction< std::decay_t< F0 > >(),
+                   bool = Checks::isFunction< std::decay_t< G0 > >() >
         struct SumGenerator;
 
-        template < class F, class G >
-        struct SumGenerator< F, G, true, true >
+        template < class F0, class G0 >
+        struct SumGenerator< F0, G0, true, true >
         {
+            template < class F, class G >
             static auto apply( F&& f, G&& g )
             {
                 return MathematicalOperations::Sum< std::decay_t< F >, std::decay_t< G > >(
@@ -29,9 +30,10 @@ namespace FunG
             }
         };
 
-        template < class F, class G >
-        struct SumGenerator< F, G, true, false >
+        template < class F0, class G0 >
+        struct SumGenerator< F0, G0, true, false >
         {
+            template < class F, class G >
             static auto apply( F&& f, G&& g )
             {
                 return MathematicalOperations::Sum< std::decay_t< F >,
@@ -40,9 +42,10 @@ namespace FunG
             }
         };
 
-        template < class F, class G >
-        struct SumGenerator< F, G, false, true >
+        template < class F0, class G0 >
+        struct SumGenerator< F0, G0, false, true >
         {
+            template < class F, class G >
             static auto apply( F&& f, G&& g )
             {
                 return MathematicalOperations::Sum< Constant< std::decay_t< F > >,
@@ -51,15 +54,16 @@ namespace FunG
             }
         };
 
-        template < class F, class G, bool = Checks::isFunction< std::decay_t< F > >(),
-                   bool = Checks::isFunction< std::decay_t< G > >(),
-                   bool = is_arithmetic< std::decay_t< F > >::value,
-                   bool = is_arithmetic< std::decay_t< G > >::value >
+        template < class F0, class G0, bool = Checks::isFunction< std::decay_t< F0 > >(),
+                   bool = Checks::isFunction< std::decay_t< G0 > >(),
+                   bool = is_arithmetic< std::decay_t< F0 > >::value,
+                   bool = is_arithmetic< std::decay_t< G0 > >::value >
         struct ProductGenerator;
 
-        template < class F, class G >
-        struct ProductGenerator< F, G, true, true, false, false >
+        template < class F0, class G0 >
+        struct ProductGenerator< F0, G0, true, true, false, false >
         {
+            template < class F, class G >
             static auto apply( F&& f, G&& g )
             {
                 return MathematicalOperations::Product< std::decay_t< F >, std::decay_t< G > >(
@@ -67,9 +71,10 @@ namespace FunG
             }
         };
 
-        template < class F, class G >
-        struct ProductGenerator< F, G, false, true, true, false >
+        template < class F0, class G0 >
+        struct ProductGenerator< F0, G0, false, true, true, false >
         {
+            template < class F, class G >
             static auto apply( F f, G&& g )
             {
                 return MathematicalOperations::Scale< F, std::decay_t< G > >(
@@ -77,9 +82,10 @@ namespace FunG
             }
         };
 
-        template < class F, class G >
-        struct ProductGenerator< F, G, true, false, false, true >
+        template < class F0, class G0 >
+        struct ProductGenerator< F0, G0, true, false, false, true >
         {
+            template < class F, class G >
             static auto apply( F&& f, G g )
             {
                 return MathematicalOperations::Scale< G, std::decay_t< F > >(
@@ -87,9 +93,10 @@ namespace FunG
             }
         };
 
-        template < class F, class G >
-        struct ProductGenerator< F, G, false, true, false, false >
+        template < class F0, class G0 >
+        struct ProductGenerator< F0, G0, false, true, false, false >
         {
+            template < class F, class G >
             static auto apply( F&& f, G&& g )
             {
                 using Const = Constant< std::decay_t< F > >;
@@ -98,9 +105,10 @@ namespace FunG
             }
         };
 
-        template < class F, class G >
-        struct ProductGenerator< F, G, true, false, false, false >
+        template < class F0, class G0 >
+        struct ProductGenerator< F0, G0, true, false, false, false >
         {
+            template < class F, class G >
             static auto apply( F&& f, G&& g )
             {
                 using Const = Constant< std::decay_t< G > >;
@@ -109,13 +117,14 @@ namespace FunG
             }
         };
 
-        template < class F, class G, bool = Checks::isFunction< std::decay_t< F > >(),
-                   bool = Checks::isFunction< std::decay_t< G > >() >
+        template < class F0, class G0, bool = Checks::isFunction< std::decay_t< F0 > >(),
+                   bool = Checks::isFunction< std::decay_t< G0 > >() >
         struct DotGenerator;
 
-        template < class F, class G >
-        struct DotGenerator< F, G, true, true >
+        template < class F0, class G0 >
+        struct DotGenerator< F0, G0, true, true >
         {
+            template < class F, class G >
             static auto apply( F&& f, G&& g )
             {
                 return MathematicalOperations::Dot< std::decay_t< F >, std::decay_t< G > >(
@@ -123,9 +132,10 @@ namespace FunG
             }
         };
 
-        template < class F, class G >
-        struct DotGenerator< F, G, false, true >
+        template < class F0, class G0 >
+        struct DotGenerator< F0, G0, false, true >
         {
+            template < class F, class G >
             static auto apply( F&& f, G&& g )
             {
                 using Const = Constant< std::decay_t< F > >;
@@ -134,9 +144,10 @@ namespace FunG
             }
         };
 
-        template < class F, class G >
-        struct DotGenerator< F, G, true, false >
+        template < class F0, class G0 >
+        struct DotGenerator< F0, G0, true, false >
         {
+            template < class F, class G >
             static auto apply( F&& f, G&& g )
             {
                 using Const = Constant< std::decay_t< G > >;
