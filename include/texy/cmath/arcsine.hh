@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include <fung/util/chainer.hh>
-#include <fung/util/static_checks.hh>
+#include <texy/util/chainer.hh>
 #include <texy/util/string.hh>
+#include <fung/util/static_checks.hh>
 
 /*!
   @ingroup TexifyCMathGroup
@@ -19,7 +19,7 @@
  */
 namespace texy
 {
-    struct ASin : FunG::Chainer< ASin >
+    struct ASin : Chainer< ASin >
     {
         //! @copydoc Cos::Cos()
         explicit ASin( const std::string& x = "x" )

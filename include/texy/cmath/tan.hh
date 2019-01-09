@@ -1,11 +1,11 @@
-// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
+// Copyright (C) 2019 by Lars Lubkoll. All rights reserved.
 // Released under the terms of the GNU General Public License version 3 or later.
 
 #pragma once
 
-#include <fung/util/chainer.hh>
-#include <fung/util/static_checks.hh>
+#include <texy/util/chainer.hh>
 #include <texy/util/string.hh>
+#include <fung/util/static_checks.hh>
 
 /** @addtogroup TexifyCMathGroup
  *  @{ */
@@ -19,7 +19,7 @@
 */
 namespace texy
 {
-    struct Tan : FunG::Chainer< Tan >
+    struct Tan : Chainer< Tan >
     {
         //! @copydoc Cos::Cos()
         explicit Tan( const std::string& x = "x" )

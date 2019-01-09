@@ -1,113 +1,26 @@
-// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
+// Copyright (C) 2018 by Lars Lubkoll. All rights reserved.
 // Released under the terms of the GNU General Public License version 3 or later.
 
-#ifndef FUNG_LINEAR_ALGEBRA_PRINCIPAL_INVARIANTS_HH
-#define FUNG_LINEAR_ALGEBRA_PRINCIPAL_INVARIANTS_HH
+#pragma once
 
 #include <type_traits>
 
-#include "cofactor.hh"
 #include "determinant.hh"
-#include "dimension.hh"
-#include "fung/cmath/pow.hh"
-#include "fung/util/chainer.hh"
-#include "fung/util/type_traits.hh"
 #include "trace.hh"
+#include <texy/cmath/pow.hh>
+#include <texy/generate.hh>
+#include <fung/util/chainer.hh>
+#include <fung/util/type_traits.hh>
 
-namespace FunG
+namespace texy
 {
-    /// @cond
-    namespace Concepts
-    {
-        template < class >
-        struct MatrixConceptCheck;
-    }
-    /// @endcond
-
     namespace LinearAlgebra
     {
-        /// @cond
-        namespace Detail
-        {
-
-            template < int row, class Matrix >
-            auto symmetricCofactorDerivative( const Matrix& A, const Matrix& dA )
-            {
-                return computeCofactorDirectionalDerivative< row, row >( A, dA ) +
-                       computeCofactorDirectionalDerivative< row, row >( dA, A );
-            }
-
-            template < int >
-            struct Compute;
-
-            template <>
-            struct Compute< 2 >
-            {
-                template < class Matrix >
-                static auto sumOfDiagonalCofactors( const Matrix& A )
-                {
-                    return computeCofactor< 0, 0 >( A ) + computeCofactor< 1, 1 >( A );
-                }
-
-                template < class Matrix >
-                static auto sumOfSymmetricCofactorDerivatives( const Matrix& A, const Matrix& B )
-                {
-                    return symmetricCofactorDerivative< 0 >( A, B ) +
-                           symmetricCofactorDerivative< 1 >( A, B );
-                }
-            };
-
-            template <>
-            struct Compute< 3 >
-            {
-                template < class Matrix >
-                static auto sumOfDiagonalCofactors( const Matrix& A )
-                {
-                    return computeCofactor< 0, 0 >( A ) + computeCofactor< 1, 1 >( A ) +
-                           computeCofactor< 2, 2 >( A );
-                }
-
-                template < class Matrix >
-                static auto sumOfSymmetricCofactorDerivatives( const Matrix& A, const Matrix& B )
-                {
-                    return symmetricCofactorDerivative< 0 >( A, B ) +
-                           symmetricCofactorDerivative< 1 >( A, B ) +
-                           symmetricCofactorDerivative< 2 >( A, B );
-                }
-            };
-
-            /// Fallback implementation if matrix size can not be determined at compile time.
-            template <>
-            struct Compute< -1 >
-            {
-                template < class Matrix >
-                static auto sumOfDiagonalCofactors( const Matrix& A )
-                {
-                    if ( rows( A ) == 2 )
-                        return Compute< 2 >::sumOfDiagonalCofactors( A );
-                    /*if(rows(A) == 3)*/ return Compute< 3 >::sumOfDiagonalCofactors( A );
-                }
-
-                template < class Matrix >
-                static auto sumOfSymmetricCofactorDerivatives( const Matrix& A, const Matrix& B )
-                {
-                    if ( rows( A ) == 2 )
-                        return Compute< 2 >::sumOfSymmetricCofactorDerivatives( A, B );
-                    /*if(rows(A) == 3)*/ return Compute< 3 >::sumOfSymmetricCofactorDerivatives(
-                        A, B );
-                }
-            };
-        }
-        /// @endcond
-
-        /** @addtogroup InvariantGroup, LinearAlgebraGroup
+        /** @addtogroup TexifyInvariantGroup, TexifyLinearAlgebraGroup
          * @{ */
         /// Second principal invariant \f$ \iota_2(A)=\mathrm{tr}(\mathrm{cof}(A)) \f$ for
         /// \f$A\in\mathbb{R}^{n,n}\f$.
-        template < class Matrix, class = Concepts::MatrixConceptCheck< Matrix > >
-        class SecondPrincipalInvariant
-            : public Chainer<
-                  SecondPrincipalInvariant< Matrix, Concepts::MatrixConceptCheck< Matrix > > >
+        class SecondPrincipalInvariant : public FunG::Chainer< SecondPrincipalInvariant >
         {
         public:
             SecondPrincipalInvariant() = default;
@@ -116,38 +29,34 @@ namespace FunG
              * @brief Constructor.
              * @param A matrix to compute second principal invariant from
              */
-            SecondPrincipalInvariant( const Matrix& A )
+            SecondPrincipalInvariant( const std::string& A )
             {
                 update( A );
             }
 
             /// Reset matrix to compute second principal invariant from.
-            void update( const Matrix& A )
+            void update( const std::string& A )
             {
-                if ( !initialized )
-                {
-                    new ( &A_ ) Matrix{A};
-                    initialized = true;
-                }
-                else
-                    A_ = A;
-                value = Detail::Compute< dim< Matrix >() >::sumOfDiagonalCofactors( A );
+                A_ = A;
             }
 
             /// Value of the second principal invariant
             auto d0() const
             {
-                return value;
+                return std::string( "\\mathrm{tr}(\\mathrm{cof}(" ).append( A_ ).append( "))" );
             }
 
             /**
              * @brief First directional derivative
              * @param dA1 direction for which the derivative is computed
              */
-            auto d1( const Matrix& dA1 ) const
+            auto d1( const std::string& dA ) const
             {
-                return Detail::Compute< dim< Matrix >() >::sumOfSymmetricCofactorDerivatives( A_,
-                                                                                              dA1 );
+                return std::string( "\\mathrm{tr}(\\mathrm{cof'}(" )
+                    .append( A_ )
+                    .append( ")(" )
+                    .append( dA )
+                    .append( "))" );
             }
 
             /**
@@ -155,16 +64,19 @@ namespace FunG
              * @param dA1 direction for which the derivative is computed
              * @param dA2 direction for which the derivative is computed
              */
-            auto d2( const Matrix& dA1, const Matrix& dA2 ) const
+            auto d2( const std::string& dA1, const std::string& dA2 ) const
             {
-                return Detail::Compute< dim< Matrix >() >::sumOfSymmetricCofactorDerivatives( dA1,
-                                                                                              dA2 );
+                return std::string( "\\mathrm{tr}(\\mathrm{cof''}(" )
+                    .append( A_ )
+                    .append( ")(" )
+                    .append( dA1 )
+                    .append( "," )
+                    .append( dA2 )
+                    .append( "))" );
             }
 
         private:
-            Matrix A_;
-            std::decay_t< decltype( at( std::declval< Matrix >(), 0, 0 ) ) > value = 0;
-            bool initialized = false;
+            std::string A_;
         };
 
         /**
@@ -188,21 +100,20 @@ namespace FunG
          * \iota_2(A)=\mathrm{tr}(\mathrm{cof}(A)) \f$ for \f$A\in\mathbb{R}^{n,n}\f$.
          * @return SecondPrincipalInvariant<Matrix>(A)
          */
-        template < class Matrix, std::enable_if_t< !Checks::isFunction< Matrix >() >* = nullptr >
-        auto i2( const Matrix& A )
+        auto i2( const std::string& A )
         {
-            return SecondPrincipalInvariant< Matrix >( A );
+            return SecondPrincipalInvariant( A );
         }
 
         /**
          * @brief Convenient generation of second principal invariant \f$ \iota_2\circ f \f$ for
          * \f$f:\cdot\mapsto\mathbb{R}^{n,n}\f$.
-         * @return SecondPrincipalInvariant<Matrix>(A)
+         * @return SecondPrincipalInvariant( f() )( f )
          */
-        template < class F, std::enable_if_t< Checks::isFunction< F >() >* = nullptr >
+        template < class F, std::enable_if_t< FunG::Checks::isFunction< F >() >* = nullptr >
         auto i2( const F& f )
         {
-            return SecondPrincipalInvariant< decay_t< decltype( f() ) > >( f() )( f );
+            return SecondPrincipalInvariant( f() )( f );
         }
 
         /**
@@ -212,7 +123,7 @@ namespace FunG
          *
          * @return if x is a matrix then the this functions returns Determinant<Arg>(x), if x is a
          * function, then it returns
-         * Determinant< std::decay_t<decltype(x())> >( x() )( x );
+         * Determinant( x() )( x );
          */
         template < class Arg >
         auto i3( const Arg& x )
@@ -226,7 +137,7 @@ namespace FunG
          * and \f$\iota_3\f$ is the third principal invariant.
          * @param x either a square matrix or a function returning a square matrix
          */
-        template < class Arg, int n = dim< Arg >() >
+        template < int n, class Arg >
         auto mi1( const Arg& x )
         {
             return i1( x ) * pow< -1, n >( det( x ) );
@@ -238,7 +149,7 @@ namespace FunG
          * and \f$\iota_3\f$ is the third principal invariant.
          * @param x either a square matrix or a function returning a square matrix
          */
-        template < class Arg, int n = dim< Arg >() >
+        template < int n, class Arg >
         auto mi2( const Arg& x )
         {
             return i2( x ) * pow< -2, n >( det( x ) );
@@ -246,5 +157,3 @@ namespace FunG
         /** @} */
     }
 }
-
-#endif // FUNG_LINEAR_ALGEBRA_PRINCIPAL_INVARIANTS_HH

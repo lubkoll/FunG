@@ -1,8 +1,9 @@
+#include <stringy/cmath/pow.hh>
+#include <texy/generate.hh>
 #include <fung/cmath/pow.hh>
 #include <fung/finalize.hh>
 #include <fung/generate.hh>
 #include <fung/variable.hh>
-#include <stringy/cmath/pow.hh>
 
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>

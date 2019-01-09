@@ -2,23 +2,24 @@
 
 #include <type_traits>
 
+#include <texy/cmath/pow.hh>
+#include <texy/mathematical_operations/chain.hh>
+#include <texy/util/chainer.hh>
+#include <texy/util/string.hh>
 #include <fung/concept_check.hh>
-#include <fung/mathematical_operations/chain.hh>
 #include <fung/util/chainer.hh>
 #include <fung/util/static_checks.hh>
-#include <texy/cmath/pow.hh>
-#include <texy/util/string.hh>
 
 namespace texy
 {
     namespace LinearAlgebra
     {
-        /** @addtogroup LinearAlgebraGroup
+        /** @addtogroup TexifyLinearAlgebraGroup
          *   @{ */
 
         /// Compute squared Frobenius norm \f$ \|A\|^2 = A\negthinspace : \negthinspace A =
         /// \mathrm{tr}(A^TA) = \sum_{i,j} A_{ij}^2. \f$
-        struct FrobeniusNormSquared : FunG::Chainer< FrobeniusNormSquared >
+        struct FrobeniusNormSquared : Chainer< FrobeniusNormSquared >
         {
             FrobeniusNormSquared() = default;
 
@@ -64,13 +65,12 @@ namespace texy
             std::string A_;
         };
 
-        struct FrobeniusNorm
-            : FunG::MathematicalOperations::Chain< Pow< 1, 2 >, FrobeniusNormSquared >
+        struct FrobeniusNorm : MathematicalOperations::Chain< Pow< 1, 2 >, FrobeniusNormSquared >
         {
             FrobeniusNorm() = default;
 
             explicit FrobeniusNorm( const std::string& A = "A" )
-                : FunG::MathematicalOperations::Chain< Pow< 1, 2 >, FrobeniusNormSquared >(
+                : MathematicalOperations::Chain< Pow< 1, 2 >, FrobeniusNormSquared >(
                       Pow< 1, 2 >( "" ), FrobeniusNormSquared( A ) )
             {
                 this->update( A );

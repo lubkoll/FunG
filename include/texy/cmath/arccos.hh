@@ -1,16 +1,16 @@
 #pragma once
 
+#include <texy/util/chainer.hh>
+#include <texy/util/string.hh>
 #include <fung/cmath/arccos.hh>
 #include <fung/util/static_checks.hh>
-#include <texy/util/string.hh>
-
-#include <type_traits>
 
 #include <string>
+#include <type_traits>
 
 namespace texy
 {
-    struct ACos : FunG::Chainer< ACos >
+    struct ACos : Chainer< ACos >
     {
         //! @copydoc Cos::Cos()
         explicit ACos( std::string x = "x" )

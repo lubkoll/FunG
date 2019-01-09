@@ -1,15 +1,12 @@
-// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
+// Copyright (C) 2018 by Lars Lubkoll. All rights reserved.
 // Released under the terms of the GNU General Public License version 3 or later.
 
-#ifndef FUNG_LINEAR_ALGEBRA_DEVIATORIC_INVARIANTS_HH
-#define FUNG_LINEAR_ALGEBRA_DEVIATORIC_INVARIANTS_HH
+#pragma once
 
 #include "deviator.hh"
 #include "frobenius_norm.hh"
-#include "fung/mathematical_operations/chain.hh"
-#include "fung/util/static_checks.hh"
 
-namespace FunG
+namespace texy
 {
     namespace LinearAlgebra
     {
@@ -20,11 +17,10 @@ namespace FunG
          * \f$\bar\sigma = \sigma - \frac{\mathrm{tr}(\sigma)}{n}I\f$ and
          * \f$\sigma\in\mathbb{R}^{n,n}\f$.
          */
-        template < class Matrix, std::enable_if_t< !Checks::isFunction< Matrix >() >* = nullptr >
-        auto j2( const Matrix& A )
+        template < int n >
+        auto j2( const std::string& A )
         {
-            return frobeniusNorm( A )( deviator( A ) );
+            return frobeniusNorm( A )( deviator< n >( A ) );
         }
     }
 }
-#endif // FUNG_LINEAR_ALGEBRA_DEVIATORIC_INVARIANTS_HH

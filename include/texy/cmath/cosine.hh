@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include <fung/util/chainer.hh>
-#include <fung/util/static_checks.hh>
+#include <texy/util/chainer.hh>
 #include <texy/util/string.hh>
+#include <fung/util/static_checks.hh>
 
 #include <cmath>
 
@@ -20,7 +20,7 @@
  */
 namespace texy
 {
-    struct Cos : FunG::Chainer< Cos >
+    struct Cos : Chainer< Cos >
     {
         /**
          * @brief Constructor.

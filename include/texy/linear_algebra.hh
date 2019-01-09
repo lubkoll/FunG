@@ -11,6 +11,5 @@
 
 #include "linear_algebra/frobenius_norm.hh"
 #include "linear_algebra/strain_tensor.hh"
-#include "linear_algebra/tensor_product.hh"
 #include "linear_algebra/trace.hh"
 #include "linear_algebra/transpose.hh"

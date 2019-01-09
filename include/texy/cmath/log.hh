@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include <fung/util/chainer.hh>
-#include <fung/util/static_checks.hh>
+#include <texy/util/chainer.hh>
 #include <texy/util/string.hh>
+#include <fung/util/static_checks.hh>
 
 /** @addtogroup TexifyCMathGroup
  *  @{ */
@@ -20,7 +20,7 @@
  */
 namespace texy
 {
-    struct LN : FunG::Chainer< LN >
+    struct LN : Chainer< LN >
     {
         //! @copydoc Cos::Cos()
         explicit LN( const std::string& x = "x" )
@@ -72,7 +72,7 @@ namespace texy
      * occur
      * during applications of the chain rule.
      */
-    struct Log10 : FunG::Chainer< Log10 >
+    struct Log10 : Chainer< Log10 >
     {
         //! @copydoc Cos::Cos()
         explicit Log10( const std::string& x = "x" )
@@ -136,7 +136,7 @@ namespace texy
      * occur
      * during applications of the chain rule.
      */
-    struct Log2 : FunG::Chainer< Log2 >
+    struct Log2 : Chainer< Log2 >
     {
         //! @copydoc Cos::Cos()
         explicit Log2( const std::string& x = "x" )

@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include <fung/util/chainer.hh>
-#include <fung/util/static_checks.hh>
+#include <texy/util/chainer.hh>
 #include <texy/util/string.hh>
+#include <fung/util/static_checks.hh>
 
 namespace texy
 {
@@ -13,7 +13,7 @@ namespace texy
     {
         /** @addtogroup TexifyLinearAlgebraGroup
          *  @{ */
-        class Cofactor : public FunG::Chainer< Cofactor >
+        class Cofactor : public Chainer< Cofactor >
         {
         public:
             Cofactor() = default;

@@ -1,15 +1,16 @@
-// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
+// Copyright (C) 2018 by Lars Lubkoll. All rights reserved.
 // Released under the terms of the GNU General Public License version 3 or later.
 
 #pragma once
 
-#include <fung/util/chainer.hh>
+#include <texy/util/chainer.hh>
 
-namespace FunG
+#include <string>
+
+namespace texy
 {
     /// %Identity mapping \f$ f(x)=x \f$.
-    template < class Arg, class = ArithmeticConceptCheck< Arg > >
-    struct Identity : Chainer< Identity< Arg, ArithmeticConceptCheck< Arg > > >
+    struct Identity : Chainer< Identity >
     {
         /// Default constructor.
         Identity() = default;
@@ -18,38 +19,37 @@ namespace FunG
          * @brief Constructor.
          * @param x point of evaluation.
          */
-        Identity( const Arg& x )
+        Identity( const std::string& x )
         {
             update( x );
         }
 
         /// Reset point of evaluation
-        void update( const Arg& x )
+        void update( const std::string& x )
         {
             x_ = x;
         }
 
         /// Function value.
-        const Arg& d0() const noexcept
+        const std::string& d0() const noexcept
         {
             return x_;
         }
 
         /// First directional derivative.
         template < int >
-        const Arg& d1( const Arg& dx ) const noexcept
+        const std::string& d1( const std::string& dx ) const noexcept
         {
             return dx;
         }
 
     private:
-        Arg x_;
+        std::string x_;
     };
 
-    /// Construct Identity<Arg>(x).
-    template < class Arg >
-    auto identity( const Arg& x )
+    /// @return Identity(x).
+    auto identity( const std::string& x )
     {
-        return Identity< Arg >( x );
+        return Identity( x );
     }
 }

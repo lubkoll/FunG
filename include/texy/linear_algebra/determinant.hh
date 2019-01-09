@@ -7,11 +7,11 @@
 #include "trace.hh"
 #include "transpose.hh"
 
-#include <fung/util/chainer.hh>
+#include <texy/constant.hh>
+#include <texy/util/chainer.hh>
+#include <texy/util/string.hh>
 #include <fung/util/static_checks.hh>
 #include <fung/util/type_traits.hh>
-#include <texy/constant.hh>
-#include <texy/util/string.hh>
 
 #include <type_traits>
 #include <utility>
@@ -22,7 +22,7 @@ namespace texy
     {
         /** @addtogroup TexifyLinearAlgebraGroup
          *  @{ */
-        class Determinant : public FunG::Chainer< Determinant >
+        class Determinant : public Chainer< Determinant >
         {
         public:
             Determinant() = default;
@@ -48,20 +48,23 @@ namespace texy
             /// First (directional) derivative.
             std::string d1( const std::string& dA ) const
             {
-                return trace( transpose( cof( A ) )().append( "*" ).append( dA ) )();
+                return trace( transpose( cof( A ) )().append( "*" ).append( addScope( dA ) ) )();
             }
 
             /// Second (directional) derivative.
             std::string d2( const std::string& dA, const std::string& dB ) const
             {
-                return trace( transpose( cof( A ).d1( dB ) )().append( "*" ).append( dA ) )();
+                return trace( transpose( cof( A ).d1( addScope( dB ) ) )().append( "*" ).append(
+                    addScope( dA ) ) )();
             }
 
             /// Third (directional) derivative.
             std::string d3( const std::string& dA, const std::string& dB,
                             const std::string& dC ) const
             {
-                return trace( transpose( cof( A ).d2( dB, dC ) )().append( "*" ).append( dA ) )();
+                return trace( transpose( cof( A ).d2( addScope( dB ), addScope( dC ) ) )()
+                                  .append( "*" )
+                                  .append( addScope( dA ) ) )();
             }
 
         private:

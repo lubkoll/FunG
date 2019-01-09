@@ -1,6 +1,6 @@
 #pragma once
 
-#include <fung/util/chainer.hh>
+#include <texy/util/chainer.hh>
 #include <texy/util/string.hh>
 
 #include <string>
@@ -18,7 +18,7 @@ namespace texy
          * Used in nonlinear material models based on the deformation gradient \f$\nabla\varphi\f$,
          * which takes the role of \f$F\f$.
          */
-        class RightCauchyGreenStrainTensor : public FunG::Chainer< RightCauchyGreenStrainTensor >
+        class RightCauchyGreenStrainTensor : public Chainer< RightCauchyGreenStrainTensor >
         {
         public:
             RightCauchyGreenStrainTensor() = default;
@@ -77,7 +77,7 @@ namespace texy
          * Used in nonlinear material models based on the deformation gradient \f$\nabla\varphi\f$,
          * which takes the role of \f$F\f$.
          */
-        class LeftCauchyGreenStrainTensor : public FunG::Chainer< LeftCauchyGreenStrainTensor >
+        class LeftCauchyGreenStrainTensor : public Chainer< LeftCauchyGreenStrainTensor >
         {
         public:
             LeftCauchyGreenStrainTensor() = default;
@@ -137,7 +137,7 @@ namespace texy
          * \param A matrix
          * \return RightCauchyGreenStrainTensor<Matrix>(A)
          */
-        auto strainTensor( const std::string& A )
+        RightCauchyGreenStrainTensor strainTensor( const std::string& A )
         {
             return RightCauchyGreenStrainTensor{A};
         }
@@ -148,8 +148,8 @@ namespace texy
          * \param f function object mapping into a space of square matrices
          * \return RightCauchyGreenStrainTensor< decay_t<decltype(f())> >(f())( f )
          */
-        template < class F, std::enable_if_t< Checks::isFunction< F >() >* = nullptr >
-        auto strainTensor( const F& f )
+        template < class F, std::enable_if_t< FunG::Checks::isFunction< F >() >* = nullptr >
+        RightCauchyGreenStrainTensor strainTensor( const F& f )
         {
             return RightCauchyGreenStrainTensor{f()}( f );
         }
@@ -159,7 +159,7 @@ namespace texy
          * \param A matrix
          * \return LeftCauchyGreenStrainTensor<Matrix>(A)
          */
-        auto leftStrainTensor( const std::string& A )
+        LeftCauchyGreenStrainTensor leftStrainTensor( const std::string& A )
         {
             return LeftCauchyGreenStrainTensor{A};
         }
@@ -170,8 +170,8 @@ namespace texy
          * \param f function object mapping into a space of square matrices
          * \return LeftCauchyGreenStrainTensor< decay_t<decltype(f())> >(f())( f )
          */
-        template < class F, std::enable_if_t< Checks::isFunction< F >() >* = nullptr >
-        auto leftStrainTensor( const F& f )
+        template < class F, std::enable_if_t< FunG::Checks::isFunction< F >() >* = nullptr >
+        LeftCauchyGreenStrainTensor leftStrainTensor( const F& f )
         {
             return LeftCauchyGreenStrainTensor{f()}( f );
         }

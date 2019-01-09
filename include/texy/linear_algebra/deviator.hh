@@ -1,17 +1,17 @@
-// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
+// Copyright (C) 2019 by Lars Lubkoll. All rights reserved.
 // Released under the terms of the GNU General Public License version 3 or later.
 
-#ifndef FUNG_LINEAR_ALGEBRA_DEVIATOR_HH
-#define FUNG_LINEAR_ALGEBRA_DEVIATOR_HH
+#pragma once
 
-#include "fung/generate.hh"
-#include "fung/identity.hh"
-#include "fung/util/static_checks.hh"
 #include "trace.hh"
-#include "unit_matrix.hh"
+#include <texy/constant.hh>
+#include <texy/generate.hh>
+#include <texy/identity.hh>
+#include <fung/util/static_checks.hh>
+
 #include <type_traits>
 
-namespace FunG
+namespace texy
 {
     /// @cond
     namespace Concepts
@@ -23,35 +23,19 @@ namespace FunG
 
     namespace LinearAlgebra
     {
-        /** @addtogroup LinearAlgebraGroup
+        /** @addtogroup TexifyLinearAlgebraGroup
          *  @{ */
 
         /// Generate %deviator \f$ \mathrm{dev}(A) = A - \frac{\mathrm{tr}(A)}{n}I \f$ of a matrix
         /// \f$ A\in\mathbb{R}^{n,n} \f$.
-        template < class Matrix, int n = dim< Matrix >(),
-                   std::enable_if_t< Checks::isConstantSize< Matrix >() &&
-                                     !Checks::isFunction< Matrix >() >* = nullptr,
-                   class = Concepts::SquareMatrixConceptCheck< Matrix > >
-        auto deviator( const Matrix& A )
+        template < int n >
+        auto deviator( const std::string& A )
         {
-            return identity( A ) +
-                   ( -1. / n ) * ( trace( A ) * constant( unitMatrix< Matrix >() ) );
-        }
-
-        /// Generate %deviator \f$ \mathrm{dev}(A) = A - \frac{\mathrm{tr}(A)}{n}I \f$ of a matrix
-        /// \f$ A\in\mathbb{R}^{n,n} \f$.
-        template < class Matrix, std::enable_if_t< !Checks::isConstantSize< Matrix >() &&
-                                                   !Checks::isFunction< Matrix >() >* = nullptr,
-                   class = Concepts::SquareMatrixConceptCheck< Matrix > >
-        auto deviator( const Matrix& A )
-        {
-            assert( rows( A ) == cols( A ) );
-            return identity( A ) +
-                   ( -1. / rows( A ) ) * ( trace( A ) * constant( unitMatrix< Matrix >() ) );
+            return identity( A ) + ( -1. / n ) * ( trace( A ) * constant( "I" ) );
         }
 
         /// Generate %deviator \f$ \mathrm{dev}\circ f\f$.
-        template < class F, std::enable_if_t< Checks::isFunction< F >() >* = nullptr >
+        template < class F, std::enable_if_t< FunG::Checks::isFunction< F >() >* = nullptr >
         auto deviator( const F& f )
         {
             return deviator( f() )( f );
@@ -60,5 +44,3 @@ namespace FunG
         /** @} */
     }
 }
-
-#endif // FUNG_LINEAR_ALGEBRA_DEVIATOR_HH

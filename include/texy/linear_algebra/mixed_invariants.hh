@@ -1,23 +1,20 @@
-// Copyright (C) 2015 by Lars Lubkoll. All rights reserved.
+// Copyright (C) 2018 by Lars Lubkoll. All rights reserved.
 // Released under the terms of the GNU General Public License version 3 or later.
 
-#ifndef FUNG_LINEAR_ALGEBRA_MIXED_INVARIANTS_HH
-#define FUNG_LINEAR_ALGEBRA_MIXED_INVARIANTS_HH
+#pragma once
 
-#include "fung/constant.hh"
-#include "fung/generate.hh"
-#include "fung/identity.hh"
-#include "fung/mathematical_operations/chain.hh"
-#include "fung/mathematical_operations/product.hh"
-#include "fung/mathematical_operations/squared.hh"
 #include "principal_invariants.hh"
+#include <texy/constant.hh>
+#include <texy/generate.hh>
+#include <texy/identity.hh>
+#include <fung/util/static_checks.hh>
 
-namespace FunG
+namespace texy
 {
 
     namespace LinearAlgebra
     {
-        /** @addtogroup InvariantGroup, LinearAlgebraGroup
+        /** @addtogroup TexifyInvariantGroup, TexifyLinearAlgebraGroup
          *  @{ */
 
         /**
@@ -27,10 +24,9 @@ namespace FunG
          * \param A square matrix
          * \param M structural tensor describing principal (fiber) direction
          */
-        template < class Matrix, std::enable_if_t< !Checks::isFunction< Matrix >() >* = nullptr >
-        auto i4( const Matrix& A, const Matrix& M )
+        auto i4( const std::string& A, const std::string& M )
         {
-            return i1( identity( A ) * M );
+            return i1( identity( A ) * constant( M ) );
         }
 
         /**
@@ -39,10 +35,10 @@ namespace FunG
          * \param f function returning a square matrix
          * \param M structural tensor describing principal (fiber) direction
          */
-        template < class F, class Matrix, std::enable_if_t< Checks::isFunction< F >() >* = nullptr >
-        auto i4( const F& f, const Matrix& M )
+        template < class F, std::enable_if_t< FunG::Checks::isFunction< F >() >* = nullptr >
+        auto i4( const F& f, const std::string& M )
         {
-            return i1( f * M );
+            return i1( f * constant( M ) );
         }
 
         /**
@@ -52,10 +48,9 @@ namespace FunG
          * \param A square matrix
          * \param M structural tensor describing principal (fiber) direction
          */
-        template < class Matrix, std::enable_if_t< !Checks::isFunction< Matrix >() >* = nullptr >
-        auto i5( const Matrix& A, const Matrix& M )
+        auto i5( const std::string& A, const std::string& M )
         {
-            return i1( ( identity( A ) ^ 2 ) * M );
+            return i1( ( identity( A ) ^ 2 ) * constant( M ) );
         }
 
         /**
@@ -64,10 +59,10 @@ namespace FunG
          * \param f function returning a square matrix
          * \param M structural tensor describing principal (fiber) direction
          */
-        template < class F, class Matrix, std::enable_if_t< Checks::isFunction< F >() >* = nullptr >
-        auto i5( const F& f, const Matrix& M )
+        template < class F, std::enable_if_t< FunG::Checks::isFunction< F >() >* = nullptr >
+        auto i5( const F& f, const std::string& M )
         {
-            return i1( ( f ^ 2 ) * M );
+            return i1( ( f ^ 2 ) * constant( M ) );
         }
 
         /**
@@ -77,8 +72,7 @@ namespace FunG
          * \param A square matrix
          * \param M structural tensor describing principal (fiber) direction
          */
-        template < class Matrix, std::enable_if_t< !Checks::isFunction< Matrix >() >* = nullptr >
-        auto i6( const Matrix& A, const Matrix& M )
+        auto i6( const std::string& A, const std::string& M )
         {
             return i1( ( constant( M ) ^ 2 ) * identity( A ) );
         }
@@ -89,8 +83,8 @@ namespace FunG
          * \param f function returning a square matrix
          * \param M structural tensor describing principal (fiber) direction
          */
-        template < class F, class Matrix, std::enable_if_t< Checks::isFunction< F >() >* = nullptr >
-        auto i6( const F& f, const Matrix& M )
+        template < class F, std::enable_if_t< FunG::Checks::isFunction< F >() >* = nullptr >
+        auto i6( const F& f, const std::string& M )
         {
             return i1( ( constant( M ) ^ 2 ) * f );
         }
@@ -103,8 +97,8 @@ namespace FunG
          * \param M structural tensor describing principal (fiber) direction
          * \return \f$\bar\iota_4(x)\f$ if x is a matrix, else \f$\bar\iota_4 \circ x\f$
          */
-        template < class Arg, class Matrix, int n = dim< Matrix >() >
-        auto mi4( const Arg& x, const Matrix& M )
+        template < int n, class Arg >
+        auto mi4( const Arg& x, const std::string& M )
         {
             return i4( x, M ) * Pow< -1, n >()( det( x ) );
         }
@@ -118,8 +112,8 @@ namespace FunG
          * \param M structural tensor describing principal (fiber) direction
          * \return \f$\bar\iota_5(x)\f$ if x is a matrix, else \f$\bar\iota_5 \circ x\f$
          */
-        template < class Arg, class Matrix, int n = dim< Matrix >() >
-        auto mi5( const Arg& x, const Matrix& M )
+        template < int n, class Arg >
+        auto mi5( const Arg& x, const std::string& M )
         {
             return i5( x, M ) * Pow< -2, n >()( det( x ) );
         }
@@ -132,13 +126,11 @@ namespace FunG
          * \param M structural tensor describing principal (fiber) direction
          * \return \f$\bar\iota_6(x)\f$ if x is a matrix, else \f$\bar\iota_6 \circ x\f$
          */
-        template < class Arg, class Matrix, int n = dim< Matrix >() >
-        auto mi6( const Arg& x, const Matrix& M )
+        template < int n, class Arg >
+        auto mi6( const Arg& x, const std::string& M )
         {
             return i6( x, M ) * ( Pow< -1, n >()( det( x ) ) );
         }
         /** @} */
     }
 }
-
-#endif // FUNG_LINEAR_ALGEBRA_MIXED_INVARIANTS_HH
