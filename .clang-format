@@ -57,7 +57,7 @@ IncludeCategories:
     Priority:        20
   - Regex:           '^((<|")(gtest|isl|json)/)'
     Priority:        30
-  - Regex:           '^(<(array|algorithm|cassert|chrono|cmath|cstdlib|iostream|limits|list|map|memory|numeric|random|set|stdexcept|string|vector|type_traits|utility)>)'
+  - Regex:           '^(<(array|algorithm|cassert|chrono|cmath|cstdlib|iostream|limits|list|map|memory|numeric|random|set|stdexcept|string|vector|type_traits|utility|unordered_map|unordered_set)>)'
     Priority:        40
   - Regex:           '.*'
     Priority:        50
@@ -94,5 +94,6 @@ SpacesInSquareBrackets: true
 Standard:        Cpp11
 TabWidth:        4
 UseTab:          Never
+IncludeBlocks: Regroup
 ...
 
