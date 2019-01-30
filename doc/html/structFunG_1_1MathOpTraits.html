@@ -106,14 +106,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aaba9ac52ae8670b1ad2cde0fd3dc4115"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathOpTraits.html#aaba9ac52ae8670b1ad2cde0fd3dc4115">multiply</a> (const T &amp;lhs, const T &amp;rhs)</td></tr>
-<tr class="separator:aaba9ac52ae8670b1ad2cde0fd3dc4115"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c07489a77b2fb146f8a46cc19defb02"><td class="memTemplParams" colspan="2">template&lt;class S , std::enable_if_t&lt; std::is_arithmetic&lt; S &gt;::value &amp;&amp;!std::is_same&lt; S, T &gt;::value &gt; *  = nullptr&gt; </td></tr>
-<tr class="memitem:a9c07489a77b2fb146f8a46cc19defb02"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathOpTraits.html#a9c07489a77b2fb146f8a46cc19defb02">multiply</a> (S lhs, const T &amp;rhs)</td></tr>
-<tr class="separator:a9c07489a77b2fb146f8a46cc19defb02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6cfac9c721a69624587ed2fc5bbcb30"><td class="memTemplParams" colspan="2">template&lt;class S , std::enable_if_t&lt; std::is_arithmetic&lt; S &gt;::value &amp;&amp;!std::is_same&lt; S, T &gt;::value &gt; *  = nullptr&gt; </td></tr>
-<tr class="memitem:aa6cfac9c721a69624587ed2fc5bbcb30"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathOpTraits.html#aa6cfac9c721a69624587ed2fc5bbcb30">multiply</a> (const T &amp;lhs, S rhs)</td></tr>
-<tr class="separator:aa6cfac9c721a69624587ed2fc5bbcb30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeafa649bb964e8280e50d46bc9de5f48"><td class="memTemplParams" colspan="2">template&lt;class S &gt; </td></tr>
+<tr class="memitem:aeafa649bb964e8280e50d46bc9de5f48"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathOpTraits.html#aeafa649bb964e8280e50d46bc9de5f48">multiply</a> (const T &amp;lhs, const S &amp;rhs)</td></tr>
+<tr class="separator:aeafa649bb964e8280e50d46bc9de5f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41f952d5f51ac17f9ed49218a6894605"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathOpTraits.html#a41f952d5f51ac17f9ed49218a6894605">add</a> (const T &amp;lhs, const T &amp;rhs)</td></tr>
 <tr class="separator:a41f952d5f51ac17f9ed49218a6894605"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -154,11 +149,13 @@ template&lt;class T, class  = void&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="aaba9ac52ae8670b1ad2cde0fd3dc4115"></a>
+<a class="anchor" id="aeafa649bb964e8280e50d46bc9de5f48"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class T, class  = void&gt; </div>
+<div class="memtemplate">
+template&lt;class S &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -172,83 +169,7 @@ template&lt;class T, class  = void&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a9c07489a77b2fb146f8a46cc19defb02"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T, class  = void&gt; </div>
-<div class="memtemplate">
-template&lt;class S , std::enable_if_t&lt; std::is_arithmetic&lt; S &gt;::value &amp;&amp;!std::is_same&lt; S, T &gt;::value &gt; *  = nullptr&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static constexpr auto <a class="el" href="structFunG_1_1MathOpTraits.html">FunG::MathOpTraits</a>&lt; T, class &gt;::multiply </td>
-          <td>(</td>
-          <td class="paramtype">S&#160;</td>
-          <td class="paramname"><em>lhs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aa6cfac9c721a69624587ed2fc5bbcb30"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T, class  = void&gt; </div>
-<div class="memtemplate">
-template&lt;class S , std::enable_if_t&lt; std::is_arithmetic&lt; S &gt;::value &amp;&amp;!std::is_same&lt; S, T &gt;::value &gt; *  = nullptr&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static constexpr auto <a class="el" href="structFunG_1_1MathOpTraits.html">FunG::MathOpTraits</a>&lt; T, class &gt;::multiply </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>lhs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">S&#160;</td>
+          <td class="paramtype">const S &amp;&#160;</td>
           <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
@@ -272,7 +193,7 @@ template&lt;class S , std::enable_if_t&lt; std::is_arithmetic&lt; S &gt;::value 
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 28 2019 14:03:40 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 30 2019 20:00:46 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
