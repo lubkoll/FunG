@@ -7,21 +7,8 @@ namespace FunG
     template < class T, class = void >
     struct MathOpTraits
     {
-        static constexpr auto multiply( const T& lhs, const T& rhs )
-        {
-            return lhs * rhs;
-        }
-
-        template < class S, std::enable_if_t< std::is_arithmetic< S >::value &&
-                                              !std::is_same< S, T >::value >* = nullptr >
-        static constexpr auto multiply( S lhs, const T& rhs )
-        {
-            return lhs * rhs;
-        }
-
-        template < class S, std::enable_if_t< std::is_arithmetic< S >::value &&
-                                              !std::is_same< S, T >::value >* = nullptr >
-        static constexpr auto multiply( const T& lhs, S rhs )
+        template < class S >
+        static constexpr auto multiply( const T& lhs, const S& rhs )
         {
             return lhs * rhs;
         }
@@ -49,6 +36,16 @@ namespace FunG
     template < class T, class S,
                std::enable_if_t< std::is_same< std::decay_t< T >, std::decay_t< S > >::value &&
                                  !std::is_arithmetic< std::decay_t< T > >::value >* = nullptr >
+    auto multiply_via_traits( T&& lhs, S&& rhs )
+    {
+        return MathOpTraits< std::decay_t< T > >::multiply( std::forward< T >( lhs ),
+                                                            std::forward< S >( rhs ) );
+    }
+
+    template < class T, class S,
+               std::enable_if_t< !std::is_same< std::decay_t< T >, std::decay_t< S > >::value &&
+                                 !std::is_arithmetic< std::decay_t< T > >::value &&
+                                 !std::is_arithmetic< std::decay_t< S > >::value >* = nullptr >
     auto multiply_via_traits( T&& lhs, S&& rhs )
     {
         return MathOpTraits< std::decay_t< T > >::multiply( std::forward< T >( lhs ),
