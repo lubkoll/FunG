@@ -13,6 +13,12 @@ namespace FunG
             return lhs * rhs;
         }
 
+        template < class S, std::enable_if_t< !std::is_same< S, T >::value >* = nullptr >
+        static constexpr auto multiply( const S& lhs, const T& rhs )
+        {
+            return lhs * rhs;
+        }
+
         static constexpr auto add( const T& lhs, const T& rhs )
         {
             return lhs + rhs;
