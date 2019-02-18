@@ -9,7 +9,7 @@ auto heatModel( double c, double d, const Vec&amp; u0, const Mat&amp; du0 )
   using namespace FunG;
   auto u = variable&lt;0&gt;( u0 );
   auto du = variable&lt;0&gt;( du0 );
-  auto f = ( c + d*(u^2) ) * du;
+  auto f = ( c + d*squared(u) ) * du;
   return finalize( f );
 }
 </pre>
