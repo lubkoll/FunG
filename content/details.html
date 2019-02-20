@@ -1,5 +1,7 @@
 <h1>Optimization Strategies</h1>
 
+<p>For more details see <a href="https://journals.ub.uni-heidelberg.de/index.php/ans/article/download/27477/29446">FunG - Automatic differentiation for invariant-based modeling.</a></p>
+
 <h3>Inlining</h3>
 <p>Since this library is based on code generation with template meta-programming and inlining, compiler rules for inlining have a strong influence on performance. The default rules, which work quite well in general, 
 can be improved by adjusting specific parameters. For the models in "examples/biomechanics" the choices</p>
@@ -38,21 +40,29 @@ The following graph illustrates the mathematical operations that are performed w
 <h1>Performance</h1>
 
 <h3>Comparison with AD-libraries</h3>
-<p>The performance of FunG is demonstrated by several examples comparing it with forward mode automatic differentation of <a href="http://www.fadbad.com">FADBAD++</a> and <a href="https://trilinos.org/packages/sacado">SACADO</a>. 
-All examples were compiled with <code>-O2</code> compiler option with gcc-4.9.2. They were run on an ASUS UX32V. All examples were evaluated 10.000.000 times (function value + derivative(s)) with varying arguments.</p>
+<p></p>
+<p>The performance of FunG is demonstrated by several examples comparing it with several other automatic differentation libraries (computations with the recent versions available in January 2016):<p>
+<ul>
+<li><a href="https://www.scicomp.uni-kl.de/software/codi/">CoDiPack</a></li>
+<li><a href="https://trilinos.org/packages/sacado">SACADO</a></li>
+<li><a href="http://www.fadbad.com">FADBAD++</a></li>
+<li><a href="http://www.met.reading.ac.uk/~clouds/adept/">Adept</a></li>
+<li><a href="https://projects.coin-or.org/ADOL-C">ADOLC</a></li>
+<li><a href="https://coin-or.github.io/CppAD/doc/cppad.htm">CppAD</a></li>
+</ul>
+<p>All examples were compiled with <code>-O2</code> compiler option with gcc-5.3.1. They were run on an ASUS UX32V. All examples were evaluated 10.000.000 times (function value + derivative(s)) with varying arguments.</p>
 
 <h4>A simple example</h4>
-<p>Consider $f(x)=x^{3/2}+\sin(\sqrt{x})$.</p>
+<p>Consider $f(x)=x^{3/2}+\sin(\sqrt{x})$. As FunG supports chaining of functions, this can be optimized by evaluating $f(x)=g(\sqrt{x}) = (g\circ\sqrt{\cdot})(x)$, with $g(x) = x^3 + \sin(x)$. The corresponding column in the following chart is denoted by FunG(opt).</p>
 <div id="chart1_div" align=center class="googletable boxshadow"></div>
 
-<h4>A more complex example</h4>
-<p>Consider $f(x)= x ( \exp(\sqrt{x}) + 1 ) + \sin(2\exp(\sqrt{x})+1)$.</p>
-<div id="chart2_div" align=center class="googletable boxshadow"></div>
-<p>(here, SACADO fails)</p>
+<h4>A simple example with several operations</h4>
+<p>Consider $f(x)=1+x(1+x(1+x(1+x))) = \sum_{i=0}^4 x^i$.</p>
+<div id="chart1_1_div" align=center class="googletable boxshadow"></div>
 
-<h4>An example with three variables</h4>
-<p>Consider $f(x,y,z)= (y+z) \sqrt{x}+\sin(\sqrt{x})$.</p>
-<div id="chart3_div" align=center class="googletable boxshadow"></div>
+<h4>A simple example with three variables</h4>
+<p>Consider $f(x,y,z)=xyz$.</p>
+<div id="chart1_2_div" align=center class="googletable boxshadow"></div>
 
 <h3>A Model for Muscle Tissue</h3>
 <p>For functions that take matrices as arguments automatic differentation libraries can typically not be used directly. To get an idea of the performance, consider the function</p>

@@ -310,7 +310,7 @@ ol li{
 
 .googletable{
     position:relative;
-    width:500px;
+    width:700px;
     left: 50%;
     transform: translateX(-50%);
 }

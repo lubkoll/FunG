@@ -13,27 +13,56 @@ function drawChart() {
 
     // Create the data table.
     var data1 = google.visualization.arrayToDataTable([
-        ['Library', 'time/s', { role: 'style' }],
-        ['FADBAD++', 0.575, 'blue'],
-        ['SACADO', 0.542, 'blue'],
-        ['FunG', 0.517, 'orange'],
-        ['Manual', 0.507, 'gray']
-    ]);
-    
-    var data2 = google.visualization.arrayToDataTable([
-        ['Library', 'time/s', { role: 'style' }],
-        ['FADBAD++', 1.412, 'blue'],
-        ['FunG', 1.364, 'orange'],
-        ['Manual', 1.325, 'gray']
+        ['Library', 'ns', { role: 'style' }],
+        ['CppAD', 926, 'blue'],
+        ['ADOLC', 401, 'blue'],
+        ['Adept', 304, 'blue'],
+        ['FADBAD++', 222, 'blue'],
+        ['SACADO', 68, 'blue'],
+        ['CoDiPack', 65, 'blue'],
+        ['FunG', 65, 'orange'],
+        ['FunG (opt)', 60, 'orange'],
+        ['Manual', 60, 'gray']
     ]);
 
-    var data3 = google.visualization.arrayToDataTable([
-        ['Library', 'time/s', { role: 'style' }],
-        ['FADBAD++', 0.581, 'blue'],
-        ['SACADO', 0.586, 'blue'],
-        ['FunG', 0.499, 'orange'],
-        ['Manual', 0.475, 'gray']
+    var data1_1 = google.visualization.arrayToDataTable([
+        ['Library', 'ns', { role: 'style' }],
+        ['CppAD', 558, 'blue'],
+        ['ADOLC', 336, 'blue'],
+        ['Adept', 45.8, 'blue'],
+        ['FADBAD++', 13.9, 'blue'],
+        ['SACADO', 4.0, 'blue'],
+        ['CoDiPack', 1.7, 'blue'],
+        ['FunG', 1.7, 'orange'],
+        ['Manual', 1.7, 'gray']
     ]);
+
+    var data1_2 = google.visualization.arrayToDataTable([
+        ['Library', 'ns', { role: 'style' }],
+        ['CppAD', 1781, 'blue'],
+        ['ADOLC', 887, 'blue'],
+        ['Adept', 48, 'blue'],
+        ['FADBAD++', 8.1, 'blue'],
+        ['SACADO', 40, 'blue'],
+        ['CoDiPack', 2.0, 'blue'],
+        ['FunG', 1.7, 'orange'],
+        ['Manual', 1.7, 'gray']
+    ]);
+    
+//    var data2 = google.visualization.arrayToDataTable([
+//        ['Library', 'time/s', { role: 'style' }],
+//        ['FADBAD++', 1.412, 'blue'],
+//        ['FunG', 1.364, 'orange'],
+//        ['Manual', 1.325, 'gray']
+//    ]);
+
+//    var data3 = google.visualization.arrayToDataTable([
+//        ['Library', 'time/s', { role: 'style' }],
+//        ['FADBAD++', 0.581, 'blue'],
+//        ['SACADO', 0.586, 'blue'],
+//        ['FunG', 0.499, 'orange'],
+//        ['Manual', 0.475, 'gray']
+//    ]);
 
     var data4 = google.visualization.arrayToDataTable([
         ['Function','Armadillo','DUNE','Eigen'],
@@ -55,17 +84,18 @@ function drawChart() {
     
     
     // Set chart options
-    var options = {title:'Comparison with different AD implementations',
-                    width:500,
+    var options = {title:'Average computation time for the evaluation of value and gradient',
+                    width:700,
                     height:300,
                     legend : { position:"none"},
                     vAxis: {
-                        title: 'time/s'
+                        'title': 'nanoseconds',
+                        'scaleType': 'mirrorLog'
                     }
                     };
 
         var options_muscle = {title:'Performance for a model of muscle tissue',
-                    width:500,
+                    width:700,
                     height:300,
                     colors: ['blue','orange','gray'],
                     vAxis: {
@@ -77,10 +107,14 @@ function drawChart() {
     // Instantiate and draw our chart, passing in some options.
     var chart1 = new google.visualization.ColumnChart(document.getElementById('chart1_div'));
     chart1.draw(data1, options);
-    var chart2 = new google.visualization.ColumnChart(document.getElementById('chart2_div'));
-    chart2.draw(data2, options);
-    var chart3 = new google.visualization.ColumnChart(document.getElementById('chart3_div'));
-    chart3.draw(data3, options);
+    var chart1_1 = new google.visualization.ColumnChart(document.getElementById('chart1_1_div'));
+    chart1_1.draw(data1_1, options);
+    var chart1_2 = new google.visualization.ColumnChart(document.getElementById('chart1_2_div'));
+    chart1_2.draw(data1_2, options);
+//    var chart2 = new google.visualization.ColumnChart(document.getElementById('chart2_div'));
+//    chart2.draw(data2, options);
+//    var chart3 = new google.visualization.ColumnChart(document.getElementById('chart3_div'));
+//    chart3.draw(data3, options);
     var chart4 = new google.visualization.ColumnChart(document.getElementById('chart4_div'));
     chart4.draw(data4, options_muscle);
     var chart5 = new google.visualization.ColumnChart(document.getElementById('chart5_div'));
