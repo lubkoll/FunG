@@ -106,6 +106,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1Cos.html">FunG::Cos</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cosine function including first three derivatives (based on cos(double) in &lt;cmath&gt;).  <a href="structFunG_1_1Cos.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1Erf.html">FunG::Erf</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error function including first three derivatives.  <a href="structFunG_1_1Erf.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1Exp.html">FunG::Exp</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exponential function including first three derivatives.  <a href="structFunG_1_1Exp.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,6 +160,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ga7e9b2ac717cd2350663293cb66ba6cbd"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#ga7e9b2ac717cd2350663293cb66ba6cbd">FunG::cos</a> (const Function &amp;f)</td></tr>
 <tr class="memdesc:ga7e9b2ac717cd2350663293cb66ba6cbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate \( \cos\circ f \).  <a href="group__CMathGroup.html#ga7e9b2ac717cd2350663293cb66ba6cbd">More...</a><br /></td></tr>
 <tr class="separator:ga7e9b2ac717cd2350663293cb66ba6cbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa0d608a0906520bd48b7e0036e560afa"><td class="memTemplParams" colspan="2">template&lt;class Function , class  = std::enable_if_t&lt; Checks::isFunction&lt; Function &gt;() &gt;&gt; </td></tr>
+<tr class="memitem:gaa0d608a0906520bd48b7e0036e560afa"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#gaa0d608a0906520bd48b7e0036e560afa">FunG::erf</a> (const Function &amp;f)</td></tr>
+<tr class="memdesc:gaa0d608a0906520bd48b7e0036e560afa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate \( \erf\circ f \).  <a href="group__CMathGroup.html#gaa0d608a0906520bd48b7e0036e560afa">More...</a><br /></td></tr>
+<tr class="separator:gaa0d608a0906520bd48b7e0036e560afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga00135c8521411f13813f9b972ea4e231"><td class="memTemplParams" colspan="2">template&lt;class Function , class  = std::enable_if_t&lt;Checks::isFunction&lt;Function&gt;()&gt;&gt; </td></tr>
 <tr class="memitem:ga00135c8521411f13813f9b972ea4e231"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#ga00135c8521411f13813f9b972ea4e231">FunG::exp</a> (const Function &amp;f)</td></tr>
 <tr class="memdesc:ga00135c8521411f13813f9b972ea4e231"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate \( \exp(f) \).  <a href="group__CMathGroup.html#ga00135c8521411f13813f9b972ea4e231">More...</a><br /></td></tr>
@@ -384,6 +391,33 @@ template&lt;class Function , class  = std::enable_if_t&lt; Checks::isFunction&lt
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>object of type MathematicalOperations::Chain&lt;Cos,Function&gt; </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa0d608a0906520bd48b7e0036e560afa"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Function , class  = std::enable_if_t&lt; Checks::isFunction&lt; Function &gt;() &gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto FunG::erf </td>
+          <td>(</td>
+          <td class="paramtype">const Function &amp;&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generate \( \erf\circ f \). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>function mapping into a scalar space </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>object of type MathematicalOperations::Chain&lt;Erf,Function&gt; </dd></dl>
 
 </div>
 </div>
@@ -673,7 +707,7 @@ template&lt;class Function , class  = std::enable_if_t&lt; Checks::isFunction&lt
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 28 2020 14:05:01 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jun 20 2020 10:55:11 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>
