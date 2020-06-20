@@ -11,16 +11,16 @@ namespace FunG
      *  @{ */
 
     /*!
-      @brief Tangent function including first three derivatives.
+      @brief Error function including first three derivatives.
 
       For scalar functions directional derivatives are less interesting. Incorporating this function
       as building block for more complex functions requires directional derivatives. These occur
       during applications of the chain rule.
      */
-    struct Tan : Chainer< Tan >
+    struct Erf : Chainer< Erf >
     {
         //! @copydoc Cos::Cos()
-        explicit Tan( double x = 0. )
+        explicit Erf( double x = 0. )
         {
             update( x );
         }
@@ -28,8 +28,9 @@ namespace FunG
         //! @copydoc Cos::update()
         void update( double x )
         {
-            value = ::tan( x );
-            firstDerivative = 1 + ( value * value );
+            x_ = x;
+            value = std::erf( x_ );
+            firstDerivative = scale * std::exp(-x_*x_);
         }
 
         //! @copydoc Cos::d0()
@@ -47,28 +48,31 @@ namespace FunG
         //! @copydoc Cos::d2()
         double d2( double dx = 1., double dy = 1. ) const
         {
-            return ( 2 * value * firstDerivative ) * dx * dy;
+            return -2*x_*d1(dx)*dy;
         }
 
         //! @copydoc Cos::d3()
         double d3( double dx = 1., double dy = 1., double dz = 1. ) const
         {
-            return 2 * firstDerivative * ( 1 + ( 3 * value * value ) ) * dx * dy * dz;
+            return (4*x_*x_ - 2)*d1(dx)*dy*dz;
         }
 
     private:
-        double value = 0., firstDerivative = 1.;
+        double scale = 2/std::sqrt(M_PI);
+        double value = 0.;
+        double firstDerivative = 1.;
+        double x_ = 0;
     };
 
     /*!
-      @brief Generate \f$ \tan\circ f \f$.
+      @brief Generate \f$ \erf\circ f \f$.
       @param f function mapping into a scalar space
-      @return object of type MathematicalOperations::Chain<Tan,Function>
+      @return object of type MathematicalOperations::Chain<Erf,Function>
      */
     template < class Function, class = std::enable_if_t< Checks::isFunction< Function >() > >
-    auto tan( const Function& f )
+    auto erf( const Function& f )
     {
-        return Tan()( f );
+        return Erf()( f );
     }
     /** @} */
 }
