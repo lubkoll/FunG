@@ -104,7 +104,7 @@ namespace FunG
         }
         F f_;
         G g_;
-        std::decay_t<decltype (std::max(std::declval<F>()(), std::declval<G>()()))> value_;
+        decay_t<decltype(std::declval<F>()())> value_;
         bool f_bigger_than_g_;
     };
 
