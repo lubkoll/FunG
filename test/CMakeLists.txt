@@ -1,6 +1,7 @@
 include(CTest)
 enable_testing()
 find_package(GTest REQUIRED)
+find_package(GMock REQUIRED)
 find_package(Threads REQUIRED)
 find_package(Eigen3)
 if(EIGEN3_FOUND)
@@ -34,10 +35,9 @@ list(APPEND SRC_LIST
 )
 
 add_executable(tests ${SRC_LIST})
-target_link_libraries(tests FunG::FunG GTest::GTest GTest::Main Threads::Threads)
+target_link_libraries(tests FunG::FunG GTest::GTest ${GMOCK_LIBRARY} GTest::Main Threads::Threads)
 if(EIGEN3_FOUND)
     target_include_directories(tests PRIVATE ${EIGEN3_INCLUDE_DIR})
 endif()
 add_custom_target(check COMMAND tests)
-set_property(TARGET tests PROPERTY CXX_STANDARD 14)
 
