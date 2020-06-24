@@ -124,6 +124,12 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1Log2.html">FunG::Log2</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base 2 logarithm including first three derivatives.  <a href="structFunG_1_1Log2.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1Max.html">FunG::Max&lt; F, G &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">max function \( \max(x,y) \) including first three derivatives.  <a href="structFunG_1_1Max.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1Min.html">FunG::Min&lt; F, G &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">min function \( \min(x,y) \) including first three derivatives.  <a href="structFunG_1_1Min.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1Pow.html">FunG::Pow&lt; dividend, divisor &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Power function with rational exponent \( k = \frac{dividend}{divisor} \) including first three derivatives.  <a href="structFunG_1_1Pow.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -184,6 +190,12 @@ Functions</h2></td></tr>
 <tr class="memitem:gacd6be7e9de7bbd54c852f0acf0c7d2c2"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#gacd6be7e9de7bbd54c852f0acf0c7d2c2">FunG::log2</a> (const Function &amp;f)</td></tr>
 <tr class="memdesc:gacd6be7e9de7bbd54c852f0acf0c7d2c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate \( \mathrm{log}_{2}\circ f \).  <a href="group__CMathGroup.html#gacd6be7e9de7bbd54c852f0acf0c7d2c2">More...</a><br /></td></tr>
 <tr class="separator:gacd6be7e9de7bbd54c852f0acf0c7d2c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga012e475862c540ed8a2a083414cb2917"><td class="memTemplParams" colspan="2">template&lt;class F , class G , std::enable_if_t&lt; Checks::isFunction&lt; std::decay_t&lt; F &gt; &gt;()&amp;&amp;Checks::isFunction&lt; std::decay_t&lt; G &gt; &gt;() &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:ga012e475862c540ed8a2a083414cb2917"><td class="memTemplItemLeft" align="right" valign="top">decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#ga012e475862c540ed8a2a083414cb2917">FunG::max</a> (F &amp;&amp;f, G &amp;&amp;g)</td></tr>
+<tr class="separator:ga012e475862c540ed8a2a083414cb2917"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3d156db4f00a5d74a7c43c6d8e32f848"><td class="memTemplParams" colspan="2">template&lt;class F , class G , std::enable_if_t&lt; Checks::isFunction&lt; std::decay_t&lt; F &gt; &gt;()&amp;&amp;Checks::isFunction&lt; std::decay_t&lt; G &gt; &gt;() &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:ga3d156db4f00a5d74a7c43c6d8e32f848"><td class="memTemplItemLeft" align="right" valign="top">decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#ga3d156db4f00a5d74a7c43c6d8e32f848">FunG::min</a> (F &amp;&amp;f, G &amp;&amp;g)</td></tr>
+<tr class="separator:ga3d156db4f00a5d74a7c43c6d8e32f848"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga136c890475e48f88469a737d95368d05"><td class="memTemplParams" colspan="2">template&lt;class Function , class  = std::enable_if_t&lt; Checks::isFunction&lt; Function &gt;() &gt;&gt; </td></tr>
 <tr class="memitem:ga136c890475e48f88469a737d95368d05"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__CMathGroup.html#ga136c890475e48f88469a737d95368d05">FunG::sqrt</a> (const Function &amp;f)</td></tr>
 <tr class="memdesc:ga136c890475e48f88469a737d95368d05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate \( \sqrt{f} \).  <a href="group__CMathGroup.html#ga136c890475e48f88469a737d95368d05">More...</a><br /></td></tr>
@@ -556,6 +568,62 @@ template&lt;class Function , class  = std::enable_if_t&lt;Checks::isFunction&lt;
 
 </div>
 </div>
+<a class="anchor" id="ga012e475862c540ed8a2a083414cb2917"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F , class G , std::enable_if_t&lt; Checks::isFunction&lt; std::decay_t&lt; F &gt; &gt;()&amp;&amp;Checks::isFunction&lt; std::decay_t&lt; G &gt; &gt;() &gt; *  = nullptr&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">decltype(auto) FunG::max </td>
+          <td>(</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">G &amp;&amp;&#160;</td>
+          <td class="paramname"><em>g</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ga3d156db4f00a5d74a7c43c6d8e32f848"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F , class G , std::enable_if_t&lt; Checks::isFunction&lt; std::decay_t&lt; F &gt; &gt;()&amp;&amp;Checks::isFunction&lt; std::decay_t&lt; G &gt; &gt;() &gt; *  = nullptr&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">decltype(auto) FunG::min </td>
+          <td>(</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">G &amp;&amp;&#160;</td>
+          <td class="paramname"><em>g</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="gaecae6fa60bbfc0eb1867581ee4577d4e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -707,7 +775,7 @@ template&lt;class Function , class  = std::enable_if_t&lt; Checks::isFunction&lt
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 20 2020 10:55:11 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jun 24 2020 20:21:35 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

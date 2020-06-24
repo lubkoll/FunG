@@ -4,6 +4,7 @@ var searchData=
   ['chainer_2ehh',['chainer.hh',['../chainer_8hh.html',1,'']]],
   ['cofactor_2ehh',['cofactor.hh',['../cofactor_8hh.html',1,'']]],
   ['compute_5fchain_2ehh',['compute_chain.hh',['../compute__chain_8hh.html',1,'']]],
+  ['compute_5fconditional_2ehh',['compute_conditional.hh',['../compute__conditional_8hh.html',1,'']]],
   ['compute_5fdot_2ehh',['compute_dot.hh',['../compute__dot_8hh.html',1,'']]],
   ['compute_5fproduct_2ehh',['compute_product.hh',['../compute__product_8hh.html',1,'']]],
   ['compute_5fsum_2ehh',['compute_sum.hh',['../compute__sum_8hh.html',1,'']]],

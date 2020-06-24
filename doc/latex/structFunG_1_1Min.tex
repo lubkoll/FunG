@@ -1,0 +1,133 @@
+\hypertarget{structFunG_1_1Min}{}\section{FunG\+:\+:Min$<$ F, G $>$ Struct Template Reference}
+\label{structFunG_1_1Min}\index{Fun\+G\+::\+Min$<$ F, G $>$@{Fun\+G\+::\+Min$<$ F, G $>$}}
+
+
+min function $ \min(x,y) $ including first three derivatives.  
+
+
+
+
+{\ttfamily \#include $<$min.\+hh$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structFunG_1_1Min_afc46c17a7dfe4c0059c961d26c04ecaa}{Min} (const F \&f, const G \&g)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Arg $>$ }\\void \hyperlink{structFunG_1_1Min_a09c10a89b4f6c8129e08273f2048b352}{update} (Arg \&\&x)
+\begin{DoxyCompactList}\small\item\em Update point of evaluation. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int index, class Arg $>$ }\\void \hyperlink{structFunG_1_1Min_a5d575265b40cefd19618662a0c79ffbd}{update} (Arg \&\&x)
+\begin{DoxyCompactList}\small\item\em Update variable corresponding to index. \end{DoxyCompactList}\item 
+double \hyperlink{structFunG_1_1Min_a7877e2f07798225fc3979d6414e882a5}{operator()} () const noexcept
+\begin{DoxyCompactList}\small\item\em Function value. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int id, class Arg , class Indexed\+Arg  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg $>$, id $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$                       Compute\+Conditional$<$ D1$<$ F, Indexed\+Arg $>$, D1$<$ G, Indexed\+Arg $>$ $>$\+::present $>$$>$ }\\auto \hyperlink{structFunG_1_1Min_a0819114c8ea56ce33e41a24c9ebba3dd}{d1} (Arg \&\&dx) const 
+\begin{DoxyCompactList}\small\item\em First directional derivative. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int idx, int idy, class ArgX , class ArgY , class Indexed\+ArgX  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg\+X $>$, idx $>$, class Indexed\+ArgY  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg\+Y $>$, idy $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$                       Compute\+Sum$<$ D2$<$ F, Indexed\+Arg\+X, Indexed\+Arg\+Y $>$,                                   D2$<$ G, Indexed\+Arg\+X, Indexed\+Arg\+Y $>$ $>$\+::present $>$$>$ }\\auto \hyperlink{structFunG_1_1Min_a4ba4840e81aa0a3741dee6aa2dcfee1b}{d2} (ArgX \&\&dx, ArgY \&\&dy) const 
+\begin{DoxyCompactList}\small\item\em Second directional derivative. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int idx, int idy, int idz, class ArgX , class ArgY , class ArgZ , class Indexed\+ArgX  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg\+X $>$, idx $>$, class Indexed\+ArgY  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg\+Y $>$, idy $>$, class Indexed\+ArgZ  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg\+Z $>$, idz $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$                       Compute\+Sum$<$ D3$<$ F, Indexed\+Arg\+X, Indexed\+Arg\+Y, Indexed\+Arg\+Z $>$,                                   D3$<$ G, Indexed\+Arg\+X, Indexed\+Arg\+Y, Indexed\+Arg\+Z $>$ $>$\+::present $>$$>$ }\\auto \hyperlink{structFunG_1_1Min_aea623fee862f72635b83f3fdc45a09d5}{d3} (ArgX \&\&dx, ArgY \&\&dy, ArgZ \&\&dz) const 
+\begin{DoxyCompactList}\small\item\em Third directional derivative. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class F, class G$>$\\*
+struct Fun\+G\+::\+Min$<$ F, G $>$}
+
+min function $ \min(x,y) $ including first three derivatives. 
+
+For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur during applications of the chain rule. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Fun\+G\+::\+Min@{Fun\+G\+::\+Min}!Min@{Min}}
+\index{Min@{Min}!Fun\+G\+::\+Min@{Fun\+G\+::\+Min}}
+\subsubsection[{\texorpdfstring{Min(const F \&f, const G \&g)}{Min(const F &f, const G &g)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F, class G$>$ {\bf Fun\+G\+::\+Min}$<$ F, G $>$\+::{\bf Min} (
+\begin{DoxyParamCaption}
+\item[{const F \&}]{f, }
+\item[{const G \&}]{g}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\hypertarget{structFunG_1_1Min_afc46c17a7dfe4c0059c961d26c04ecaa}{}\label{structFunG_1_1Min_afc46c17a7dfe4c0059c961d26c04ecaa}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & point of evaluation \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Fun\+G\+::\+Min@{Fun\+G\+::\+Min}!d1@{d1}}
+\index{d1@{d1}!Fun\+G\+::\+Min@{Fun\+G\+::\+Min}}
+\subsubsection[{\texorpdfstring{d1(\+Arg \&\&dx) const }{d1(Arg &&dx) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F, class G$>$ template$<$int id, class Arg , class Indexed\+Arg  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg $>$, id $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$                       Compute\+Conditional$<$ D1$<$ F, Indexed\+Arg $>$, D1$<$ G, Indexed\+Arg $>$ $>$\+::present $>$$>$ auto {\bf Fun\+G\+::\+Min}$<$ F, G $>$\+::d1 (
+\begin{DoxyParamCaption}
+\item[{Arg \&\&}]{dx}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structFunG_1_1Min_a0819114c8ea56ce33e41a24c9ebba3dd}{}\label{structFunG_1_1Min_a0819114c8ea56ce33e41a24c9ebba3dd}
+
+
+First directional derivative. 
+
+\index{Fun\+G\+::\+Min@{Fun\+G\+::\+Min}!d2@{d2}}
+\index{d2@{d2}!Fun\+G\+::\+Min@{Fun\+G\+::\+Min}}
+\subsubsection[{\texorpdfstring{d2(\+Arg\+X \&\&dx, Arg\+Y \&\&dy) const }{d2(ArgX &&dx, ArgY &&dy) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F, class G$>$ template$<$int idx, int idy, class ArgX , class ArgY , class Indexed\+ArgX  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg\+X $>$, idx $>$, class Indexed\+ArgY  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg\+Y $>$, idy $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$                       Compute\+Sum$<$ D2$<$ F, Indexed\+Arg\+X, Indexed\+Arg\+Y $>$,                                   D2$<$ G, Indexed\+Arg\+X, Indexed\+Arg\+Y $>$ $>$\+::present $>$$>$ auto {\bf Fun\+G\+::\+Min}$<$ F, G $>$\+::d2 (
+\begin{DoxyParamCaption}
+\item[{ArgX \&\&}]{dx, }
+\item[{ArgY \&\&}]{dy}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structFunG_1_1Min_a4ba4840e81aa0a3741dee6aa2dcfee1b}{}\label{structFunG_1_1Min_a4ba4840e81aa0a3741dee6aa2dcfee1b}
+
+
+Second directional derivative. 
+
+\index{Fun\+G\+::\+Min@{Fun\+G\+::\+Min}!d3@{d3}}
+\index{d3@{d3}!Fun\+G\+::\+Min@{Fun\+G\+::\+Min}}
+\subsubsection[{\texorpdfstring{d3(\+Arg\+X \&\&dx, Arg\+Y \&\&dy, Arg\+Z \&\&dz) const }{d3(ArgX &&dx, ArgY &&dy, ArgZ &&dz) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F, class G$>$ template$<$int idx, int idy, int idz, class ArgX , class ArgY , class ArgZ , class Indexed\+ArgX  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg\+X $>$, idx $>$, class Indexed\+ArgY  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg\+Y $>$, idy $>$, class Indexed\+ArgZ  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg\+Z $>$, idz $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$                       Compute\+Sum$<$ D3$<$ F, Indexed\+Arg\+X, Indexed\+Arg\+Y, Indexed\+Arg\+Z $>$,                                   D3$<$ G, Indexed\+Arg\+X, Indexed\+Arg\+Y, Indexed\+Arg\+Z $>$ $>$\+::present $>$$>$ auto {\bf Fun\+G\+::\+Min}$<$ F, G $>$\+::d3 (
+\begin{DoxyParamCaption}
+\item[{ArgX \&\&}]{dx, }
+\item[{ArgY \&\&}]{dy, }
+\item[{ArgZ \&\&}]{dz}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structFunG_1_1Min_aea623fee862f72635b83f3fdc45a09d5}{}\label{structFunG_1_1Min_aea623fee862f72635b83f3fdc45a09d5}
+
+
+Third directional derivative. 
+
+\index{Fun\+G\+::\+Min@{Fun\+G\+::\+Min}!operator()@{operator()}}
+\index{operator()@{operator()}!Fun\+G\+::\+Min@{Fun\+G\+::\+Min}}
+\subsubsection[{\texorpdfstring{operator()() const noexcept}{operator()() const noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F, class G$>$ double {\bf Fun\+G\+::\+Min}$<$ F, G $>$\+::operator() (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}\hypertarget{structFunG_1_1Min_a7877e2f07798225fc3979d6414e882a5}{}\label{structFunG_1_1Min_a7877e2f07798225fc3979d6414e882a5}
+
+
+Function value. 
+
+\index{Fun\+G\+::\+Min@{Fun\+G\+::\+Min}!update@{update}}
+\index{update@{update}!Fun\+G\+::\+Min@{Fun\+G\+::\+Min}}
+\subsubsection[{\texorpdfstring{update(\+Arg \&\&x)}{update(Arg &&x)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F, class G$>$ template$<$class Arg $>$ void {\bf Fun\+G\+::\+Min}$<$ F, G $>$\+::update (
+\begin{DoxyParamCaption}
+\item[{Arg \&\&}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structFunG_1_1Min_a09c10a89b4f6c8129e08273f2048b352}{}\label{structFunG_1_1Min_a09c10a89b4f6c8129e08273f2048b352}
+
+
+Update point of evaluation. 
+
+\index{Fun\+G\+::\+Min@{Fun\+G\+::\+Min}!update@{update}}
+\index{update@{update}!Fun\+G\+::\+Min@{Fun\+G\+::\+Min}}
+\subsubsection[{\texorpdfstring{update(\+Arg \&\&x)}{update(Arg &&x)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F, class G$>$ template$<$int index, class Arg $>$ void {\bf Fun\+G\+::\+Min}$<$ F, G $>$\+::update (
+\begin{DoxyParamCaption}
+\item[{Arg \&\&}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structFunG_1_1Min_a5d575265b40cefd19618662a0c79ffbd}{}\label{structFunG_1_1Min_a5d575265b40cefd19618662a0c79ffbd}
+
+
+Update variable corresponding to index. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/fung/cmath/\hyperlink{min_8hh}{min.\+hh}\end{DoxyCompactItemize}

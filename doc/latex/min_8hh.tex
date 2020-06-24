@@ -1,0 +1,24 @@
+\hypertarget{min_8hh}{}\section{include/fung/cmath/min.hh File Reference}
+\label{min_8hh}\index{include/fung/cmath/min.\+hh@{include/fung/cmath/min.\+hh}}
+{\ttfamily \#include $<$fung/constant.\+hh$>$}\\*
+{\ttfamily \#include $<$fung/util/compute\+\_\+conditional.\+hh$>$}\\*
+{\ttfamily \#include $<$fung/util/derivative\+\_\+wrappers.\+hh$>$}\\*
+{\ttfamily \#include $<$fung/util/evaluate\+\_\+if\+\_\+present.\+hh$>$}\\*
+{\ttfamily \#include $<$fung/util/static\+\_\+checks.\+hh$>$}\\*
+{\ttfamily \#include $<$fung/util/type\+\_\+traits.\+hh$>$}\\*
+{\ttfamily \#include $<$type\+\_\+traits$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structFunG_1_1Min}{Fun\+G\+::\+Min$<$ F, G $>$}
+\begin{DoxyCompactList}\small\item\em min function $ \min(x,y) $ including first three derivatives. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceFunG}{FunG}
+\begin{DoxyCompactList}\small\item\em Main namespace of the FunG library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class F , class G , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ F $>$ $>$()\&\&\+Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ G $>$ $>$() $>$ $\ast$  = nullptr$>$ }\\decltype(auto) \hyperlink{group__CMathGroup_ga3d156db4f00a5d74a7c43c6d8e32f848}{Fun\+G\+::min} (F \&\&f, G \&\&g)
+\end{DoxyCompactItemize}

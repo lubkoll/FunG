@@ -1,0 +1,133 @@
+\hypertarget{structFunG_1_1Max}{}\section{FunG\+:\+:Max$<$ F, G $>$ Struct Template Reference}
+\label{structFunG_1_1Max}\index{Fun\+G\+::\+Max$<$ F, G $>$@{Fun\+G\+::\+Max$<$ F, G $>$}}
+
+
+max function $ \max(x,y) $ including first three derivatives.  
+
+
+
+
+{\ttfamily \#include $<$max.\+hh$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structFunG_1_1Max_a36634d1a8326fac047a1c7147e446f37}{Max} (const F \&f, const G \&g)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Arg $>$ }\\void \hyperlink{structFunG_1_1Max_a4544a007e03f04ec7bc6aef1f41bb09d}{update} (Arg \&\&x)
+\begin{DoxyCompactList}\small\item\em Update point of evaluation. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int index, class Arg $>$ }\\void \hyperlink{structFunG_1_1Max_a6f3c89a9e33d2a9572a3e3a03c6b35af}{update} (Arg \&\&x)
+\begin{DoxyCompactList}\small\item\em Update variable corresponding to index. \end{DoxyCompactList}\item 
+double \hyperlink{structFunG_1_1Max_a61b78618f4af19680467ef7eef58f96b}{operator()} () const noexcept
+\begin{DoxyCompactList}\small\item\em Function value. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int id, class Arg , class Indexed\+Arg  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg $>$, id $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$                       Compute\+Conditional$<$ D1$<$ F, Indexed\+Arg $>$, D1$<$ G, Indexed\+Arg $>$ $>$\+::present $>$$>$ }\\auto \hyperlink{structFunG_1_1Max_aba38a9cd783b08818779a18b6fef07dd}{d1} (Arg \&\&dx) const 
+\begin{DoxyCompactList}\small\item\em First directional derivative. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int idx, int idy, class ArgX , class ArgY , class Indexed\+ArgX  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg\+X $>$, idx $>$, class Indexed\+ArgY  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg\+Y $>$, idy $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$                       Compute\+Sum$<$ D2$<$ F, Indexed\+Arg\+X, Indexed\+Arg\+Y $>$,                                   D2$<$ G, Indexed\+Arg\+X, Indexed\+Arg\+Y $>$ $>$\+::present $>$$>$ }\\auto \hyperlink{structFunG_1_1Max_a46739797766a13c81d6a61b7bb3d1ccd}{d2} (ArgX \&\&dx, ArgY \&\&dy) const 
+\begin{DoxyCompactList}\small\item\em Second directional derivative. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int idx, int idy, int idz, class ArgX , class ArgY , class ArgZ , class Indexed\+ArgX  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg\+X $>$, idx $>$, class Indexed\+ArgY  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg\+Y $>$, idy $>$, class Indexed\+ArgZ  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg\+Z $>$, idz $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$                       Compute\+Sum$<$ D3$<$ F, Indexed\+Arg\+X, Indexed\+Arg\+Y, Indexed\+Arg\+Z $>$,                                   D3$<$ G, Indexed\+Arg\+X, Indexed\+Arg\+Y, Indexed\+Arg\+Z $>$ $>$\+::present $>$$>$ }\\auto \hyperlink{structFunG_1_1Max_aea2802909b5bc234fd6baafb0e7fdf16}{d3} (ArgX \&\&dx, ArgY \&\&dy, ArgZ \&\&dz) const 
+\begin{DoxyCompactList}\small\item\em Third directional derivative. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class F, class G$>$\\*
+struct Fun\+G\+::\+Max$<$ F, G $>$}
+
+max function $ \max(x,y) $ including first three derivatives. 
+
+For scalar functions directional derivatives are less interesting. Incorporating this function as building block for more complex functions requires directional derivatives. These occur during applications of the chain rule. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Fun\+G\+::\+Max@{Fun\+G\+::\+Max}!Max@{Max}}
+\index{Max@{Max}!Fun\+G\+::\+Max@{Fun\+G\+::\+Max}}
+\subsubsection[{\texorpdfstring{Max(const F \&f, const G \&g)}{Max(const F &f, const G &g)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F, class G$>$ {\bf Fun\+G\+::\+Max}$<$ F, G $>$\+::{\bf Max} (
+\begin{DoxyParamCaption}
+\item[{const F \&}]{f, }
+\item[{const G \&}]{g}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\hypertarget{structFunG_1_1Max_a36634d1a8326fac047a1c7147e446f37}{}\label{structFunG_1_1Max_a36634d1a8326fac047a1c7147e446f37}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & point of evaluation \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Fun\+G\+::\+Max@{Fun\+G\+::\+Max}!d1@{d1}}
+\index{d1@{d1}!Fun\+G\+::\+Max@{Fun\+G\+::\+Max}}
+\subsubsection[{\texorpdfstring{d1(\+Arg \&\&dx) const }{d1(Arg &&dx) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F, class G$>$ template$<$int id, class Arg , class Indexed\+Arg  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg $>$, id $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$                       Compute\+Conditional$<$ D1$<$ F, Indexed\+Arg $>$, D1$<$ G, Indexed\+Arg $>$ $>$\+::present $>$$>$ auto {\bf Fun\+G\+::\+Max}$<$ F, G $>$\+::d1 (
+\begin{DoxyParamCaption}
+\item[{Arg \&\&}]{dx}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structFunG_1_1Max_aba38a9cd783b08818779a18b6fef07dd}{}\label{structFunG_1_1Max_aba38a9cd783b08818779a18b6fef07dd}
+
+
+First directional derivative. 
+
+\index{Fun\+G\+::\+Max@{Fun\+G\+::\+Max}!d2@{d2}}
+\index{d2@{d2}!Fun\+G\+::\+Max@{Fun\+G\+::\+Max}}
+\subsubsection[{\texorpdfstring{d2(\+Arg\+X \&\&dx, Arg\+Y \&\&dy) const }{d2(ArgX &&dx, ArgY &&dy) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F, class G$>$ template$<$int idx, int idy, class ArgX , class ArgY , class Indexed\+ArgX  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg\+X $>$, idx $>$, class Indexed\+ArgY  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg\+Y $>$, idy $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$                       Compute\+Sum$<$ D2$<$ F, Indexed\+Arg\+X, Indexed\+Arg\+Y $>$,                                   D2$<$ G, Indexed\+Arg\+X, Indexed\+Arg\+Y $>$ $>$\+::present $>$$>$ auto {\bf Fun\+G\+::\+Max}$<$ F, G $>$\+::d2 (
+\begin{DoxyParamCaption}
+\item[{ArgX \&\&}]{dx, }
+\item[{ArgY \&\&}]{dy}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structFunG_1_1Max_a46739797766a13c81d6a61b7bb3d1ccd}{}\label{structFunG_1_1Max_a46739797766a13c81d6a61b7bb3d1ccd}
+
+
+Second directional derivative. 
+
+\index{Fun\+G\+::\+Max@{Fun\+G\+::\+Max}!d3@{d3}}
+\index{d3@{d3}!Fun\+G\+::\+Max@{Fun\+G\+::\+Max}}
+\subsubsection[{\texorpdfstring{d3(\+Arg\+X \&\&dx, Arg\+Y \&\&dy, Arg\+Z \&\&dz) const }{d3(ArgX &&dx, ArgY &&dy, ArgZ &&dz) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F, class G$>$ template$<$int idx, int idy, int idz, class ArgX , class ArgY , class ArgZ , class Indexed\+ArgX  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg\+X $>$, idx $>$, class Indexed\+ArgY  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg\+Y $>$, idy $>$, class Indexed\+ArgZ  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg\+Z $>$, idz $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$                       Compute\+Sum$<$ D3$<$ F, Indexed\+Arg\+X, Indexed\+Arg\+Y, Indexed\+Arg\+Z $>$,                                   D3$<$ G, Indexed\+Arg\+X, Indexed\+Arg\+Y, Indexed\+Arg\+Z $>$ $>$\+::present $>$$>$ auto {\bf Fun\+G\+::\+Max}$<$ F, G $>$\+::d3 (
+\begin{DoxyParamCaption}
+\item[{ArgX \&\&}]{dx, }
+\item[{ArgY \&\&}]{dy, }
+\item[{ArgZ \&\&}]{dz}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structFunG_1_1Max_aea2802909b5bc234fd6baafb0e7fdf16}{}\label{structFunG_1_1Max_aea2802909b5bc234fd6baafb0e7fdf16}
+
+
+Third directional derivative. 
+
+\index{Fun\+G\+::\+Max@{Fun\+G\+::\+Max}!operator()@{operator()}}
+\index{operator()@{operator()}!Fun\+G\+::\+Max@{Fun\+G\+::\+Max}}
+\subsubsection[{\texorpdfstring{operator()() const noexcept}{operator()() const noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F, class G$>$ double {\bf Fun\+G\+::\+Max}$<$ F, G $>$\+::operator() (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}\hypertarget{structFunG_1_1Max_a61b78618f4af19680467ef7eef58f96b}{}\label{structFunG_1_1Max_a61b78618f4af19680467ef7eef58f96b}
+
+
+Function value. 
+
+\index{Fun\+G\+::\+Max@{Fun\+G\+::\+Max}!update@{update}}
+\index{update@{update}!Fun\+G\+::\+Max@{Fun\+G\+::\+Max}}
+\subsubsection[{\texorpdfstring{update(\+Arg \&\&x)}{update(Arg &&x)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F, class G$>$ template$<$class Arg $>$ void {\bf Fun\+G\+::\+Max}$<$ F, G $>$\+::update (
+\begin{DoxyParamCaption}
+\item[{Arg \&\&}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structFunG_1_1Max_a4544a007e03f04ec7bc6aef1f41bb09d}{}\label{structFunG_1_1Max_a4544a007e03f04ec7bc6aef1f41bb09d}
+
+
+Update point of evaluation. 
+
+\index{Fun\+G\+::\+Max@{Fun\+G\+::\+Max}!update@{update}}
+\index{update@{update}!Fun\+G\+::\+Max@{Fun\+G\+::\+Max}}
+\subsubsection[{\texorpdfstring{update(\+Arg \&\&x)}{update(Arg &&x)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F, class G$>$ template$<$int index, class Arg $>$ void {\bf Fun\+G\+::\+Max}$<$ F, G $>$\+::update (
+\begin{DoxyParamCaption}
+\item[{Arg \&\&}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structFunG_1_1Max_a6f3c89a9e33d2a9572a3e3a03c6b35af}{}\label{structFunG_1_1Max_a6f3c89a9e33d2a9572a3e3a03c6b35af}
+
+
+Update variable corresponding to index. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/fung/cmath/\hyperlink{max_8hh}{max.\+hh}\end{DoxyCompactItemize}

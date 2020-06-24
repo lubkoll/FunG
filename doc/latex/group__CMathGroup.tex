@@ -26,6 +26,10 @@ struct \hyperlink{structFunG_1_1Log10}{Fun\+G\+::\+Log10}
 \begin{DoxyCompactList}\small\item\em Common (base 10) logarithm including first three derivatives. \end{DoxyCompactList}\item 
 struct \hyperlink{structFunG_1_1Log2}{Fun\+G\+::\+Log2}
 \begin{DoxyCompactList}\small\item\em Base 2 logarithm including first three derivatives. \end{DoxyCompactList}\item 
+struct \hyperlink{structFunG_1_1Max}{Fun\+G\+::\+Max$<$ F, G $>$}
+\begin{DoxyCompactList}\small\item\em max function $ \max(x,y) $ including first three derivatives. \end{DoxyCompactList}\item 
+struct \hyperlink{structFunG_1_1Min}{Fun\+G\+::\+Min$<$ F, G $>$}
+\begin{DoxyCompactList}\small\item\em min function $ \min(x,y) $ including first three derivatives. \end{DoxyCompactList}\item 
 struct \hyperlink{structFunG_1_1Pow}{Fun\+G\+::\+Pow$<$ dividend, divisor $>$}
 \begin{DoxyCompactList}\small\item\em Power function with rational exponent $ k = \frac{dividend}{divisor} $ including first three derivatives. \end{DoxyCompactList}\item 
 struct \hyperlink{structFunG_1_1Sin}{Fun\+G\+::\+Sin}
@@ -62,6 +66,10 @@ using \hyperlink{group__CMathGroup_gab63795eecd1e9a55ea26b24125053f2d}{Fun\+G\+:
 \begin{DoxyCompactList}\small\item\em Generate $ \mathrm{log}_{10}\circ f $. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Function , class  = std\+::enable\+\_\+if\+\_\+t$<$\+Checks\+::is\+Function$<$\+Function$>$()$>$$>$ }\\auto \hyperlink{group__CMathGroup_gacd6be7e9de7bbd54c852f0acf0c7d2c2}{Fun\+G\+::log2} (const Function \&f)
 \begin{DoxyCompactList}\small\item\em Generate $ \mathrm{log}_{2}\circ f $. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class F , class G , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ F $>$ $>$()\&\&\+Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ G $>$ $>$() $>$ $\ast$  = nullptr$>$ }\\decltype(auto) \hyperlink{group__CMathGroup_ga012e475862c540ed8a2a083414cb2917}{Fun\+G\+::max} (F \&\&f, G \&\&g)
+\item 
+{\footnotesize template$<$class F , class G , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ F $>$ $>$()\&\&\+Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ G $>$ $>$() $>$ $\ast$  = nullptr$>$ }\\decltype(auto) \hyperlink{group__CMathGroup_ga3d156db4f00a5d74a7c43c6d8e32f848}{Fun\+G\+::min} (F \&\&f, G \&\&g)
+\item 
 {\footnotesize template$<$class Function , class  = std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{group__CMathGroup_ga136c890475e48f88469a737d95368d05}{Fun\+G\+::sqrt} (const Function \&f)
 \begin{DoxyCompactList}\small\item\em Generate $ \sqrt{f} $. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Function , class  = std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ Function $>$() $>$$>$ }\\auto \hyperlink{group__CMathGroup_gaa7f2552adfb8ec41aeb685adddd8bf98}{Fun\+G\+::cbrt} (const Function \&f)
@@ -317,6 +325,22 @@ Generate $ \mathrm{log}_{2}\circ f $.
 \begin{DoxyReturn}{Returns}
 object of type Mathematical\+Operations\+::\+Chain$<$\+Log2,\+Function$>$ 
 \end{DoxyReturn}
+\index{Common Mathematical Functions@{Common Mathematical Functions}!max@{max}}
+\index{max@{max}!Common Mathematical Functions@{Common Mathematical Functions}}
+\subsubsection[{\texorpdfstring{max(\+F \&\&f, G \&\&g)}{max(F &&f, G &&g)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class G , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ F $>$ $>$()\&\&\+Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ G $>$ $>$() $>$ $\ast$  = nullptr$>$ decltype(auto) Fun\+G\+::max (
+\begin{DoxyParamCaption}
+\item[{F \&\&}]{f, }
+\item[{G \&\&}]{g}
+\end{DoxyParamCaption}
+)}\hypertarget{group__CMathGroup_ga012e475862c540ed8a2a083414cb2917}{}\label{group__CMathGroup_ga012e475862c540ed8a2a083414cb2917}
+\index{Common Mathematical Functions@{Common Mathematical Functions}!min@{min}}
+\index{min@{min}!Common Mathematical Functions@{Common Mathematical Functions}}
+\subsubsection[{\texorpdfstring{min(\+F \&\&f, G \&\&g)}{min(F &&f, G &&g)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class G , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ F $>$ $>$()\&\&\+Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ G $>$ $>$() $>$ $\ast$  = nullptr$>$ decltype(auto) Fun\+G\+::min (
+\begin{DoxyParamCaption}
+\item[{F \&\&}]{f, }
+\item[{G \&\&}]{g}
+\end{DoxyParamCaption}
+)}\hypertarget{group__CMathGroup_ga3d156db4f00a5d74a7c43c6d8e32f848}{}\label{group__CMathGroup_ga3d156db4f00a5d74a7c43c6d8e32f848}
 \index{Common Mathematical Functions@{Common Mathematical Functions}!pow@{pow}}
 \index{pow@{pow}!Common Mathematical Functions@{Common Mathematical Functions}}
 \subsubsection[{\texorpdfstring{pow(const Function \&f)}{pow(const Function &f)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$int k, int l, class Function , class  = std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ Function $>$() $>$$>$ auto Fun\+G\+::pow (

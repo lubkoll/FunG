@@ -1,0 +1,24 @@
+\hypertarget{max_8hh}{}\section{include/fung/cmath/max.hh File Reference}
+\label{max_8hh}\index{include/fung/cmath/max.\+hh@{include/fung/cmath/max.\+hh}}
+{\ttfamily \#include $<$fung/constant.\+hh$>$}\\*
+{\ttfamily \#include $<$fung/util/compute\+\_\+conditional.\+hh$>$}\\*
+{\ttfamily \#include $<$fung/util/derivative\+\_\+wrappers.\+hh$>$}\\*
+{\ttfamily \#include $<$fung/util/evaluate\+\_\+if\+\_\+present.\+hh$>$}\\*
+{\ttfamily \#include $<$fung/util/static\+\_\+checks.\+hh$>$}\\*
+{\ttfamily \#include $<$fung/util/type\+\_\+traits.\+hh$>$}\\*
+{\ttfamily \#include $<$type\+\_\+traits$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structFunG_1_1Max}{Fun\+G\+::\+Max$<$ F, G $>$}
+\begin{DoxyCompactList}\small\item\em max function $ \max(x,y) $ including first three derivatives. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceFunG}{FunG}
+\begin{DoxyCompactList}\small\item\em Main namespace of the FunG library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class F , class G , std\+::enable\+\_\+if\+\_\+t$<$ Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ F $>$ $>$()\&\&\+Checks\+::is\+Function$<$ std\+::decay\+\_\+t$<$ G $>$ $>$() $>$ $\ast$  = nullptr$>$ }\\decltype(auto) \hyperlink{group__CMathGroup_ga012e475862c540ed8a2a083414cb2917}{Fun\+G\+::max} (F \&\&f, G \&\&g)
+\end{DoxyCompactItemize}
