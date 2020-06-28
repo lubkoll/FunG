@@ -24,6 +24,8 @@ Inheritance diagram for FunG\+:\+:Mathematical\+Operations\+:\+:Squared$<$ F, cl
 \begin{DoxyCompactList}\small\item\em Update point of evaluation. \end{DoxyCompactList}\item 
 {\footnotesize template$<$int index, class Arg $>$ }\\void \hyperlink{structFunG_1_1MathematicalOperations_1_1Squared_a1d890825175df9b79fd73bf8248496ad}{update} (const Arg \&x)
 \begin{DoxyCompactList}\small\item\em Update variable corresponding to index. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class... Indexed\+Args$>$ }\\void \hyperlink{structFunG_1_1MathematicalOperations_1_1Squared_aa4364705dd7c5e4005da51de3d9a8d76}{bulk\+\_\+update} (Indexed\+Args \&\&...args)
+\item 
 {\footnotesize template$<$int id, class Arg , class Indexed\+Arg  = Indexed\+Type$<$ Arg, id $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$                           Compute\+Product$<$ D0$<$ F $>$, D1$<$ F, Indexed\+Arg $>$ $>$\+::present $>$$>$ }\\auto \hyperlink{structFunG_1_1MathematicalOperations_1_1Squared_a0aa5fe8ab967ba201af104c430cf466a}{d1} (Arg const \&dx) const -\/$>$ \hyperlink{namespaceFunG_a7ff91644f18a190ac3d4fc9e970ebe2e}{decay\+\_\+t}$<$ decltype(\hyperlink{namespaceFunG_a839a72c59a888ed89d3efe38897cc376}{multiply\+\_\+via\+\_\+traits}(std\+::declval$<$ F $>$()(), std\+::declval$<$ F $>$()())) $>$
 \begin{DoxyCompactList}\small\item\em First directional derivative. \end{DoxyCompactList}\item 
 {\footnotesize template$<$int idx, int idy, class ArgX , class ArgY , class Indexed\+ArgX  = Indexed\+Type$<$ Arg\+X, idx $>$, class Indexed\+ArgY  = Indexed\+Type$<$ Arg\+Y, idy $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$ D2\+Sum$<$ Indexed\+Arg\+X, Indexed\+Arg\+Y $>$\+::present $>$$>$ }\\auto \hyperlink{structFunG_1_1MathematicalOperations_1_1Squared_a56fbf3854a9c39c7c19f1a65c6f1e126}{d2} (ArgX const \&dx, ArgY const \&dy) const -\/$>$ \hyperlink{namespaceFunG_a7ff91644f18a190ac3d4fc9e970ebe2e}{decay\+\_\+t}$<$ decltype(\hyperlink{namespaceFunG_a839a72c59a888ed89d3efe38897cc376}{multiply\+\_\+via\+\_\+traits}(std\+::declval$<$ F $>$()(), std\+::declval$<$ F $>$()())) $>$
@@ -58,6 +60,13 @@ Constructor.
 
 
 \subsection{Member Function Documentation}
+\index{Fun\+G\+::\+Mathematical\+Operations\+::\+Squared@{Fun\+G\+::\+Mathematical\+Operations\+::\+Squared}!bulk\+\_\+update@{bulk\+\_\+update}}
+\index{bulk\+\_\+update@{bulk\+\_\+update}!Fun\+G\+::\+Mathematical\+Operations\+::\+Squared@{Fun\+G\+::\+Mathematical\+Operations\+::\+Squared}}
+\subsubsection[{\texorpdfstring{bulk\+\_\+update(\+Indexed\+Args \&\&...\+args)}{bulk_update(IndexedArgs &&...args)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class  = Concepts\+::\+Function\+Concept\+Check$<$ F $>$$>$ template$<$class... Indexed\+Args$>$ void {\bf Fun\+G\+::\+Mathematical\+Operations\+::\+Squared}$<$ F, class $>$\+::bulk\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{Indexed\+Args \&\&...}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structFunG_1_1MathematicalOperations_1_1Squared_aa4364705dd7c5e4005da51de3d9a8d76}{}\label{structFunG_1_1MathematicalOperations_1_1Squared_aa4364705dd7c5e4005da51de3d9a8d76}
 \index{Fun\+G\+::\+Mathematical\+Operations\+::\+Squared@{Fun\+G\+::\+Mathematical\+Operations\+::\+Squared}!d1@{d1}}
 \index{d1@{d1}!Fun\+G\+::\+Mathematical\+Operations\+::\+Squared@{Fun\+G\+::\+Mathematical\+Operations\+::\+Squared}}
 \subsubsection[{\texorpdfstring{d1(\+Arg const \&dx) const -\/$>$ decay\+\_\+t$<$ decltype(multiply\+\_\+via\+\_\+traits(std\+::declval$<$ F $>$()(), std\+::declval$<$ F $>$()())) $>$}{d1(Arg const &dx) const -> decay_t< decltype(multiply_via_traits(std::declval< F >()(), std::declval< F >()())) >}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class  = Concepts\+::\+Function\+Concept\+Check$<$ F $>$$>$ template$<$int id, class Arg , class Indexed\+Arg  = Indexed\+Type$<$ Arg, id $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$                           Compute\+Product$<$ D0$<$ F $>$, D1$<$ F, Indexed\+Arg $>$ $>$\+::present $>$$>$ auto {\bf Fun\+G\+::\+Mathematical\+Operations\+::\+Squared}$<$ F, class $>$\+::d1 (

@@ -130,6 +130,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1d890825175df9b79fd73bf8248496ad"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Squared.html#a1d890825175df9b79fd73bf8248496ad">update</a> (const Arg &amp;x)</td></tr>
 <tr class="memdesc:a1d890825175df9b79fd73bf8248496ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update variable corresponding to index.  <a href="#a1d890825175df9b79fd73bf8248496ad">More...</a><br /></td></tr>
 <tr class="separator:a1d890825175df9b79fd73bf8248496ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4364705dd7c5e4005da51de3d9a8d76"><td class="memTemplParams" colspan="2">template&lt;class... IndexedArgs&gt; </td></tr>
+<tr class="memitem:aa4364705dd7c5e4005da51de3d9a8d76"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Squared.html#aa4364705dd7c5e4005da51de3d9a8d76">bulk_update</a> (IndexedArgs &amp;&amp;...args)</td></tr>
+<tr class="separator:aa4364705dd7c5e4005da51de3d9a8d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0aa5fe8ab967ba201af104c430cf466a"><td class="memTemplParams" colspan="2">template&lt;int id, class Arg , class IndexedArg  = IndexedType&lt; Arg, id &gt;, class  = std::enable_if_t&lt;                           ComputeProduct&lt; D0&lt; F &gt;, D1&lt; F, IndexedArg &gt; &gt;::present &gt;&gt; </td></tr>
 <tr class="memitem:a0aa5fe8ab967ba201af104c430cf466a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Squared.html#a0aa5fe8ab967ba201af104c430cf466a">d1</a> (Arg const &amp;dx) const -&gt; <a class="el" href="namespaceFunG.html#a7ff91644f18a190ac3d4fc9e970ebe2e">decay_t</a>&lt; decltype(<a class="el" href="namespaceFunG.html#a839a72c59a888ed89d3efe38897cc376">multiply_via_traits</a>(std::declval&lt; F &gt;()(), std::declval&lt; F &gt;()())) &gt;</td></tr>
 <tr class="memdesc:a0aa5fe8ab967ba201af104c430cf466a"><td class="mdescLeft">&#160;</td><td class="mdescRight">First directional derivative.  <a href="#a0aa5fe8ab967ba201af104c430cf466a">More...</a><br /></td></tr>
@@ -186,6 +189,34 @@ template&lt;class InitF , std::enable_if_t&lt; !std::is_same&lt; std::decay_t&lt
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aa4364705dd7c5e4005da51de3d9a8d76"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F , class  = Concepts::FunctionConceptCheck&lt; F &gt;&gt; </div>
+<div class="memtemplate">
+template&lt;class... IndexedArgs&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structFunG_1_1MathematicalOperations_1_1Squared.html">FunG::MathematicalOperations::Squared</a>&lt; F, class &gt;::bulk_update </td>
+          <td>(</td>
+          <td class="paramtype">IndexedArgs &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a0aa5fe8ab967ba201af104c430cf466a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -395,7 +426,7 @@ template&lt;int index, class Arg &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 28 2020 14:05:11 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 28 2020 16:42:04 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

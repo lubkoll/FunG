@@ -24,6 +24,8 @@ Inheritance diagram for FunG\+:\+:Mathematical\+Operations\+:\+:Sum$<$ F, G, Che
 \begin{DoxyCompactList}\small\item\em Update point of evaluation. \end{DoxyCompactList}\item 
 {\footnotesize template$<$int index, class Arg $>$ }\\void \hyperlink{structFunG_1_1MathematicalOperations_1_1Sum_a4e10622e11a29d739f0d4db364980f9a}{update} (Arg \&\&x)
 \begin{DoxyCompactList}\small\item\em Update variable corresponding to index. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class... Indexed\+Args$>$ }\\void \hyperlink{structFunG_1_1MathematicalOperations_1_1Sum_a30ca637596f67ab96a3584ff91c0978f}{bulk\+\_\+update} (Indexed\+Args \&\&...args)
+\item 
 {\footnotesize template$<$int id, class Arg , class Indexed\+Arg  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg $>$, id $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$                           Compute\+Sum$<$ D1$<$ F, Indexed\+Arg $>$, D1$<$ G, Indexed\+Arg $>$ $>$\+::present $>$$>$ }\\auto \hyperlink{structFunG_1_1MathematicalOperations_1_1Sum_aee8c204769ab30f5ae68f9a8b0fa9bf8}{d1} (Arg \&\&dx) const 
 \begin{DoxyCompactList}\small\item\em First directional derivative. \end{DoxyCompactList}\item 
 {\footnotesize template$<$int idx, int idy, class ArgX , class ArgY , class Indexed\+ArgX  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg\+X $>$, idx $>$, class Indexed\+ArgY  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg\+Y $>$, idy $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$                           Compute\+Sum$<$ D2$<$ F, Indexed\+Arg\+X, Indexed\+Arg\+Y $>$,                                       D2$<$ G, Indexed\+Arg\+X, Indexed\+Arg\+Y $>$ $>$\+::present $>$$>$ }\\auto \hyperlink{structFunG_1_1MathematicalOperations_1_1Sum_a2852f378176e93564ad85fa39331e21d}{d2} (ArgX \&\&dx, ArgY \&\&dy) const 
@@ -61,6 +63,13 @@ Constructor.
 
 
 \subsection{Member Function Documentation}
+\index{Fun\+G\+::\+Mathematical\+Operations\+::\+Sum@{Fun\+G\+::\+Mathematical\+Operations\+::\+Sum}!bulk\+\_\+update@{bulk\+\_\+update}}
+\index{bulk\+\_\+update@{bulk\+\_\+update}!Fun\+G\+::\+Mathematical\+Operations\+::\+Sum@{Fun\+G\+::\+Mathematical\+Operations\+::\+Sum}}
+\subsubsection[{\texorpdfstring{bulk\+\_\+update(\+Indexed\+Args \&\&...\+args)}{bulk_update(IndexedArgs &&...args)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class G , class CheckF  = Concepts\+::\+Function\+Concept\+Check$<$ F $>$, class CheckG  = Concepts\+::\+Function\+Concept\+Check$<$ G $>$$>$ template$<$class... Indexed\+Args$>$ void {\bf Fun\+G\+::\+Mathematical\+Operations\+::\+Sum}$<$ F, G, CheckF, CheckG $>$\+::bulk\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{Indexed\+Args \&\&...}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structFunG_1_1MathematicalOperations_1_1Sum_a30ca637596f67ab96a3584ff91c0978f}{}\label{structFunG_1_1MathematicalOperations_1_1Sum_a30ca637596f67ab96a3584ff91c0978f}
 \index{Fun\+G\+::\+Mathematical\+Operations\+::\+Sum@{Fun\+G\+::\+Mathematical\+Operations\+::\+Sum}!d1@{d1}}
 \index{d1@{d1}!Fun\+G\+::\+Mathematical\+Operations\+::\+Sum@{Fun\+G\+::\+Mathematical\+Operations\+::\+Sum}}
 \subsubsection[{\texorpdfstring{d1(\+Arg \&\&dx) const }{d1(Arg &&dx) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class G , class CheckF  = Concepts\+::\+Function\+Concept\+Check$<$ F $>$, class CheckG  = Concepts\+::\+Function\+Concept\+Check$<$ G $>$$>$ template$<$int id, class Arg , class Indexed\+Arg  = Indexed\+Type$<$ std\+::decay\+\_\+t$<$ Arg $>$, id $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$                           Compute\+Sum$<$ D1$<$ F, Indexed\+Arg $>$, D1$<$ G, Indexed\+Arg $>$ $>$\+::present $>$$>$ auto {\bf Fun\+G\+::\+Mathematical\+Operations\+::\+Sum}$<$ F, G, CheckF, CheckG $>$\+::d1 (

@@ -132,6 +132,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa41d754e68072e0a9f1460da79f9913e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Chain.html#aa41d754e68072e0a9f1460da79f9913e">update</a> (const Arg &amp;x)</td></tr>
 <tr class="memdesc:aa41d754e68072e0a9f1460da79f9913e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update variable corresponding to index.  <a href="#aa41d754e68072e0a9f1460da79f9913e">More...</a><br /></td></tr>
 <tr class="separator:aa41d754e68072e0a9f1460da79f9913e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3be7df8e2b9476fa9f6f7f737b65fef9"><td class="memTemplParams" colspan="2">template&lt;class... IndexedArgs&gt; </td></tr>
+<tr class="memitem:a3be7df8e2b9476fa9f6f7f737b65fef9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Chain.html#a3be7df8e2b9476fa9f6f7f737b65fef9">bulk_update</a> (IndexedArgs &amp;&amp;...args)</td></tr>
+<tr class="separator:a3be7df8e2b9476fa9f6f7f737b65fef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfe741dee89257258b39df846fd16cf7"><td class="memTemplParams" colspan="2">template&lt;int id, class Arg , class IndexedArg  = IndexedType&lt; Arg, id &gt;, class IndexedFArg  = IndexedType&lt; FArg, id &gt;, class  = std::enable_if_t&lt;                           ComputeChainD1&lt; F, D1&lt; G, IndexedArg &gt;, IndexedFArg &gt;::present &gt;&gt; </td></tr>
 <tr class="memitem:adfe741dee89257258b39df846fd16cf7"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Chain.html#adfe741dee89257258b39df846fd16cf7">d1</a> (Arg const &amp;dx) const </td></tr>
 <tr class="memdesc:adfe741dee89257258b39df846fd16cf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">First directional derivative.  <a href="#adfe741dee89257258b39df846fd16cf7">More...</a><br /></td></tr>
@@ -242,6 +245,34 @@ template&lt;class F, class G, class  = Concepts::FunctionConceptCheck&lt; F &gt;
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a3be7df8e2b9476fa9f6f7f737b65fef9"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F, class G, class  = Concepts::FunctionConceptCheck&lt; F &gt;, class  = Concepts::FunctionConceptCheck&lt; G &gt;&gt; </div>
+<div class="memtemplate">
+template&lt;class... IndexedArgs&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structFunG_1_1MathematicalOperations_1_1Chain.html">FunG::MathematicalOperations::Chain</a>&lt; F, G, class, class &gt;::bulk_update </td>
+          <td>(</td>
+          <td class="paramtype">IndexedArgs &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="adfe741dee89257258b39df846fd16cf7"></a>
 <div class="memitem">
 <div class="memproto">
@@ -445,7 +476,7 @@ template&lt;int index, class Arg &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 28 2020 14:05:11 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 28 2020 16:42:04 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

@@ -130,6 +130,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4e10622e11a29d739f0d4db364980f9a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Sum.html#a4e10622e11a29d739f0d4db364980f9a">update</a> (Arg &amp;&amp;x)</td></tr>
 <tr class="memdesc:a4e10622e11a29d739f0d4db364980f9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update variable corresponding to index.  <a href="#a4e10622e11a29d739f0d4db364980f9a">More...</a><br /></td></tr>
 <tr class="separator:a4e10622e11a29d739f0d4db364980f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30ca637596f67ab96a3584ff91c0978f"><td class="memTemplParams" colspan="2">template&lt;class... IndexedArgs&gt; </td></tr>
+<tr class="memitem:a30ca637596f67ab96a3584ff91c0978f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Sum.html#a30ca637596f67ab96a3584ff91c0978f">bulk_update</a> (IndexedArgs &amp;&amp;...args)</td></tr>
+<tr class="separator:a30ca637596f67ab96a3584ff91c0978f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee8c204769ab30f5ae68f9a8b0fa9bf8"><td class="memTemplParams" colspan="2">template&lt;int id, class Arg , class IndexedArg  = IndexedType&lt; std::decay_t&lt; Arg &gt;, id &gt;, class  = std::enable_if_t&lt;                           ComputeSum&lt; D1&lt; F, IndexedArg &gt;, D1&lt; G, IndexedArg &gt; &gt;::present &gt;&gt; </td></tr>
 <tr class="memitem:aee8c204769ab30f5ae68f9a8b0fa9bf8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1MathematicalOperations_1_1Sum.html#aee8c204769ab30f5ae68f9a8b0fa9bf8">d1</a> (Arg &amp;&amp;dx) const </td></tr>
 <tr class="memdesc:aee8c204769ab30f5ae68f9a8b0fa9bf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">First directional derivative.  <a href="#aee8c204769ab30f5ae68f9a8b0fa9bf8">More...</a><br /></td></tr>
@@ -197,6 +200,34 @@ template&lt;class InitF , class InitG &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a30ca637596f67ab96a3584ff91c0978f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F , class G , class CheckF  = Concepts::FunctionConceptCheck&lt; F &gt;, class CheckG  = Concepts::FunctionConceptCheck&lt; G &gt;&gt; </div>
+<div class="memtemplate">
+template&lt;class... IndexedArgs&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structFunG_1_1MathematicalOperations_1_1Sum.html">FunG::MathematicalOperations::Sum</a>&lt; F, G, CheckF, CheckG &gt;::bulk_update </td>
+          <td>(</td>
+          <td class="paramtype">IndexedArgs &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="aee8c204769ab30f5ae68f9a8b0fa9bf8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -379,7 +410,7 @@ template&lt;int index, class Arg &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 28 2020 14:05:11 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 28 2020 16:42:04 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

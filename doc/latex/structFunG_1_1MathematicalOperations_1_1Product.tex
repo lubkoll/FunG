@@ -24,6 +24,8 @@ Inheritance diagram for FunG\+:\+:Mathematical\+Operations\+:\+:Product$<$ F, G,
 \begin{DoxyCompactList}\small\item\em Update point of evaluation. \end{DoxyCompactList}\item 
 {\footnotesize template$<$int index, class Arg $>$ }\\void \hyperlink{structFunG_1_1MathematicalOperations_1_1Product_a8db3d935bbe273c0436ff3bc6bb6b786}{update} (const Arg \&x)
 \begin{DoxyCompactList}\small\item\em Update variable corresponding to index. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class... Indexed\+Args$>$ }\\void \hyperlink{structFunG_1_1MathematicalOperations_1_1Product_af35c22f2ac30fc5af8e91c15a9248902}{bulk\+\_\+update} (Indexed\+Args \&\&...args)
+\item 
 {\footnotesize template$<$int id, class Arg , class Indexed\+Arg  = Indexed\+Type$<$ Arg, id $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$ D1\+Type$<$ Indexed\+Arg $>$\+::present $>$$>$ }\\auto \hyperlink{structFunG_1_1MathematicalOperations_1_1Product_aea69feaac16f79717a85d7b089a80f8f}{d1} (Arg const \&dx) const 
 \begin{DoxyCompactList}\small\item\em First directional derivative. \end{DoxyCompactList}\item 
 {\footnotesize template$<$int idx, int idy, class ArgX , class ArgY , class Indexed\+ArgX  = Indexed\+Type$<$ Arg\+X, idx $>$, class Indexed\+ArgY  = Indexed\+Type$<$ Arg\+Y, idy $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$ D2\+Type$<$ Indexed\+Arg\+X, Indexed\+Arg\+Y $>$\+::present $>$$>$ }\\auto \hyperlink{structFunG_1_1MathematicalOperations_1_1Product_a91802ff95963324b5f36016ac5f8c5e0}{d2} (ArgX const \&dx, ArgY const \&dy) const 
@@ -61,6 +63,13 @@ Constructor passing arguments to function constructors.
 
 
 \subsection{Member Function Documentation}
+\index{Fun\+G\+::\+Mathematical\+Operations\+::\+Product@{Fun\+G\+::\+Mathematical\+Operations\+::\+Product}!bulk\+\_\+update@{bulk\+\_\+update}}
+\index{bulk\+\_\+update@{bulk\+\_\+update}!Fun\+G\+::\+Mathematical\+Operations\+::\+Product@{Fun\+G\+::\+Mathematical\+Operations\+::\+Product}}
+\subsubsection[{\texorpdfstring{bulk\+\_\+update(\+Indexed\+Args \&\&...\+args)}{bulk_update(IndexedArgs &&...args)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class G , class  = Concepts\+::\+Function\+Concept\+Check$<$ F $>$, class  = Concepts\+::\+Function\+Concept\+Check$<$ G $>$$>$ template$<$class... Indexed\+Args$>$ void {\bf Fun\+G\+::\+Mathematical\+Operations\+::\+Product}$<$ F, G, class, class $>$\+::bulk\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{Indexed\+Args \&\&...}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structFunG_1_1MathematicalOperations_1_1Product_af35c22f2ac30fc5af8e91c15a9248902}{}\label{structFunG_1_1MathematicalOperations_1_1Product_af35c22f2ac30fc5af8e91c15a9248902}
 \index{Fun\+G\+::\+Mathematical\+Operations\+::\+Product@{Fun\+G\+::\+Mathematical\+Operations\+::\+Product}!d1@{d1}}
 \index{d1@{d1}!Fun\+G\+::\+Mathematical\+Operations\+::\+Product@{Fun\+G\+::\+Mathematical\+Operations\+::\+Product}}
 \subsubsection[{\texorpdfstring{d1(\+Arg const \&dx) const }{d1(Arg const &dx) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F , class G , class  = Concepts\+::\+Function\+Concept\+Check$<$ F $>$, class  = Concepts\+::\+Function\+Concept\+Check$<$ G $>$$>$ template$<$int id, class Arg , class Indexed\+Arg  = Indexed\+Type$<$ Arg, id $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$ D1\+Type$<$ Indexed\+Arg $>$\+::present $>$$>$ auto {\bf Fun\+G\+::\+Mathematical\+Operations\+::\+Product}$<$ F, G, class, class $>$\+::d1 (

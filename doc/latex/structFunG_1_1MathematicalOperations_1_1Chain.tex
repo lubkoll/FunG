@@ -26,6 +26,8 @@ constexpr \hyperlink{structFunG_1_1MathematicalOperations_1_1Chain_a4323e75022ef
 \begin{DoxyCompactList}\small\item\em Update point of evaluation. \end{DoxyCompactList}\item 
 {\footnotesize template$<$int index, class Arg $>$ }\\void \hyperlink{structFunG_1_1MathematicalOperations_1_1Chain_aa41d754e68072e0a9f1460da79f9913e}{update} (const Arg \&x)
 \begin{DoxyCompactList}\small\item\em Update variable corresponding to index. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class... Indexed\+Args$>$ }\\void \hyperlink{structFunG_1_1MathematicalOperations_1_1Chain_a3be7df8e2b9476fa9f6f7f737b65fef9}{bulk\+\_\+update} (Indexed\+Args \&\&...args)
+\item 
 {\footnotesize template$<$int id, class Arg , class Indexed\+Arg  = Indexed\+Type$<$ Arg, id $>$, class Indexed\+F\+Arg  = Indexed\+Type$<$ F\+Arg, id $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$                           Compute\+Chain\+D1$<$ F, D1$<$ G, Indexed\+Arg $>$, Indexed\+F\+Arg $>$\+::present $>$$>$ }\\auto \hyperlink{structFunG_1_1MathematicalOperations_1_1Chain_adfe741dee89257258b39df846fd16cf7}{d1} (Arg const \&dx) const 
 \begin{DoxyCompactList}\small\item\em First directional derivative. \end{DoxyCompactList}\item 
 {\footnotesize template$<$int idx, int idy, class ArgX , class ArgY , class Indexed\+ArgX  = Indexed\+Type$<$ Arg\+X, idx $>$, class Indexed\+ArgY  = Indexed\+Type$<$ Arg\+Y, idy $>$, class Indexed\+F\+ArgX  = Indexed\+Type$<$ F\+Arg, idx $>$, class Indexed\+F\+ArgY  = Indexed\+Type$<$ F\+Arg, idy $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$ D2\+Lazy\+Type$<$ Indexed\+Arg\+X, Indexed\+Arg\+Y, Indexed\+F\+Arg\+X,                                                             Indexed\+F\+Arg\+Y $>$\+::present $>$$>$ }\\auto \hyperlink{structFunG_1_1MathematicalOperations_1_1Chain_a0ab88c09299ce967583408f7f7dcd2bb}{d2} (ArgX const \&dx, ArgY const \&dy) const 
@@ -82,6 +84,13 @@ Constructor taking moving the functions to be chained.
 
 
 \subsection{Member Function Documentation}
+\index{Fun\+G\+::\+Mathematical\+Operations\+::\+Chain@{Fun\+G\+::\+Mathematical\+Operations\+::\+Chain}!bulk\+\_\+update@{bulk\+\_\+update}}
+\index{bulk\+\_\+update@{bulk\+\_\+update}!Fun\+G\+::\+Mathematical\+Operations\+::\+Chain@{Fun\+G\+::\+Mathematical\+Operations\+::\+Chain}}
+\subsubsection[{\texorpdfstring{bulk\+\_\+update(\+Indexed\+Args \&\&...\+args)}{bulk_update(IndexedArgs &&...args)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F, class G, class  = Concepts\+::\+Function\+Concept\+Check$<$ F $>$, class  = Concepts\+::\+Function\+Concept\+Check$<$ G $>$$>$ template$<$class... Indexed\+Args$>$ void {\bf Fun\+G\+::\+Mathematical\+Operations\+::\+Chain}$<$ F, G, class, class $>$\+::bulk\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{Indexed\+Args \&\&...}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structFunG_1_1MathematicalOperations_1_1Chain_a3be7df8e2b9476fa9f6f7f737b65fef9}{}\label{structFunG_1_1MathematicalOperations_1_1Chain_a3be7df8e2b9476fa9f6f7f737b65fef9}
 \index{Fun\+G\+::\+Mathematical\+Operations\+::\+Chain@{Fun\+G\+::\+Mathematical\+Operations\+::\+Chain}!d1@{d1}}
 \index{d1@{d1}!Fun\+G\+::\+Mathematical\+Operations\+::\+Chain@{Fun\+G\+::\+Mathematical\+Operations\+::\+Chain}}
 \subsubsection[{\texorpdfstring{d1(\+Arg const \&dx) const }{d1(Arg const &dx) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class F, class G, class  = Concepts\+::\+Function\+Concept\+Check$<$ F $>$, class  = Concepts\+::\+Function\+Concept\+Check$<$ G $>$$>$ template$<$int id, class Arg , class Indexed\+Arg  = Indexed\+Type$<$ Arg, id $>$, class Indexed\+F\+Arg  = Indexed\+Type$<$ F\+Arg, id $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$                           Compute\+Chain\+D1$<$ F, D1$<$ G, Indexed\+Arg $>$, Indexed\+F\+Arg $>$\+::present $>$$>$ auto {\bf Fun\+G\+::\+Mathematical\+Operations\+::\+Chain}$<$ F, G, class, class $>$\+::d1 (

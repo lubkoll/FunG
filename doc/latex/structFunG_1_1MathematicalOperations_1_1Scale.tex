@@ -24,6 +24,8 @@ Inheritance diagram for FunG\+:\+:Mathematical\+Operations\+:\+:Scale$<$ Scalar,
 \begin{DoxyCompactList}\small\item\em Update point of evaluation. \end{DoxyCompactList}\item 
 {\footnotesize template$<$int index, class Arg $>$ }\\void \hyperlink{structFunG_1_1MathematicalOperations_1_1Scale_ad3bc61a8b77167ff35d7b6027e2146b6}{update} (const Arg \&x)
 \begin{DoxyCompactList}\small\item\em Update variable corresponding to index. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class... Indexed\+Args$>$ }\\void \hyperlink{structFunG_1_1MathematicalOperations_1_1Scale_a794a3c29b8c39fbadd0a059b170e8983}{bulk\+\_\+update} (Indexed\+Args \&\&...args)
+\item 
 {\footnotesize template$<$int idx, class Arg , class Indexed\+Arg  = Indexed\+Type$<$ Arg, idx $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$ D1$<$ F, Indexed\+Arg $>$\+::present $>$$>$ }\\auto \hyperlink{structFunG_1_1MathematicalOperations_1_1Scale_a3faeb9f1eac07cd6b73004dabadf665b}{d1} (const Arg \&dx) const 
 \begin{DoxyCompactList}\small\item\em First directional derivative. \end{DoxyCompactList}\item 
 {\footnotesize template$<$int idx, int idy, class ArgX , class ArgY , class Indexed\+ArgX  = Indexed\+Type$<$ Arg\+X, idx $>$, class Indexed\+ArgY  = Indexed\+Type$<$ Arg\+Y, idy $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$ D2$<$ F, Indexed\+Arg\+X, Indexed\+Arg\+Y $>$\+::present $>$$>$ }\\auto \hyperlink{structFunG_1_1MathematicalOperations_1_1Scale_ac0f475d2accde030be697dd6c07f666e}{d2} (const ArgX \&dx, const ArgY \&dy) const 
@@ -61,6 +63,13 @@ Constructor passing arguments to function constructor.
 
 
 \subsection{Member Function Documentation}
+\index{Fun\+G\+::\+Mathematical\+Operations\+::\+Scale@{Fun\+G\+::\+Mathematical\+Operations\+::\+Scale}!bulk\+\_\+update@{bulk\+\_\+update}}
+\index{bulk\+\_\+update@{bulk\+\_\+update}!Fun\+G\+::\+Mathematical\+Operations\+::\+Scale@{Fun\+G\+::\+Mathematical\+Operations\+::\+Scale}}
+\subsubsection[{\texorpdfstring{bulk\+\_\+update(\+Indexed\+Args \&\&...\+args)}{bulk_update(IndexedArgs &&...args)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Scalar , class F , class  = Concepts\+::\+Function\+Concept\+Check$<$ F $>$$>$ template$<$class... Indexed\+Args$>$ void {\bf Fun\+G\+::\+Mathematical\+Operations\+::\+Scale}$<$ Scalar, F, class $>$\+::bulk\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{Indexed\+Args \&\&...}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structFunG_1_1MathematicalOperations_1_1Scale_a794a3c29b8c39fbadd0a059b170e8983}{}\label{structFunG_1_1MathematicalOperations_1_1Scale_a794a3c29b8c39fbadd0a059b170e8983}
 \index{Fun\+G\+::\+Mathematical\+Operations\+::\+Scale@{Fun\+G\+::\+Mathematical\+Operations\+::\+Scale}!d1@{d1}}
 \index{d1@{d1}!Fun\+G\+::\+Mathematical\+Operations\+::\+Scale@{Fun\+G\+::\+Mathematical\+Operations\+::\+Scale}}
 \subsubsection[{\texorpdfstring{d1(const Arg \&dx) const }{d1(const Arg &dx) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Scalar , class F , class  = Concepts\+::\+Function\+Concept\+Check$<$ F $>$$>$ template$<$int idx, class Arg , class Indexed\+Arg  = Indexed\+Type$<$ Arg, idx $>$, class  = std\+::enable\+\_\+if\+\_\+t$<$ D1$<$ F, Indexed\+Arg $>$\+::present $>$$>$ auto {\bf Fun\+G\+::\+Mathematical\+Operations\+::\+Scale}$<$ Scalar, F, class $>$\+::d1 (

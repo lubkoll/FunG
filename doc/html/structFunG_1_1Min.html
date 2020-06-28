@@ -121,6 +121,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5d575265b40cefd19618662a0c79ffbd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1Min.html#a5d575265b40cefd19618662a0c79ffbd">update</a> (Arg &amp;&amp;x)</td></tr>
 <tr class="memdesc:a5d575265b40cefd19618662a0c79ffbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update variable corresponding to index.  <a href="#a5d575265b40cefd19618662a0c79ffbd">More...</a><br /></td></tr>
 <tr class="separator:a5d575265b40cefd19618662a0c79ffbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a350e4808181eba93cbd1d964e5d45932"><td class="memTemplParams" colspan="2">template&lt;class... IndexedArgs&gt; </td></tr>
+<tr class="memitem:a350e4808181eba93cbd1d964e5d45932"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1Min.html#a350e4808181eba93cbd1d964e5d45932">bulk_update</a> (IndexedArgs &amp;&amp;...args)</td></tr>
+<tr class="separator:a350e4808181eba93cbd1d964e5d45932"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7877e2f07798225fc3979d6414e882a5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1Min.html#a7877e2f07798225fc3979d6414e882a5">operator()</a> () const noexcept</td></tr>
 <tr class="memdesc:a7877e2f07798225fc3979d6414e882a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function value.  <a href="#a7877e2f07798225fc3979d6414e882a5">More...</a><br /></td></tr>
 <tr class="separator:a7877e2f07798225fc3979d6414e882a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,7 +131,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0819114c8ea56ce33e41a24c9ebba3dd"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1Min.html#a0819114c8ea56ce33e41a24c9ebba3dd">d1</a> (Arg &amp;&amp;dx) const </td></tr>
 <tr class="memdesc:a0819114c8ea56ce33e41a24c9ebba3dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">First directional derivative.  <a href="#a0819114c8ea56ce33e41a24c9ebba3dd">More...</a><br /></td></tr>
 <tr class="separator:a0819114c8ea56ce33e41a24c9ebba3dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ba4840e81aa0a3741dee6aa2dcfee1b"><td class="memTemplParams" colspan="2">template&lt;int idx, int idy, class ArgX , class ArgY , class IndexedArgX  = IndexedType&lt; std::decay_t&lt; ArgX &gt;, idx &gt;, class IndexedArgY  = IndexedType&lt; std::decay_t&lt; ArgY &gt;, idy &gt;, class  = std::enable_if_t&lt;                       ComputeSum&lt; D2&lt; F, IndexedArgX, IndexedArgY &gt;,                                   D2&lt; G, IndexedArgX, IndexedArgY &gt; &gt;::present &gt;&gt; </td></tr>
+<tr class="memitem:a4ba4840e81aa0a3741dee6aa2dcfee1b"><td class="memTemplParams" colspan="2">template&lt;int idx, int idy, class ArgX , class ArgY , class IndexedArgX  = IndexedType&lt; std::decay_t&lt; ArgX &gt;, idx &gt;, class IndexedArgY  = IndexedType&lt; std::decay_t&lt; ArgY &gt;, idy &gt;, class  = std::enable_if_t&lt; ComputeSum&lt; D2&lt; F, IndexedArgX, IndexedArgY &gt;,                                                  D2&lt; G, IndexedArgX, IndexedArgY &gt; &gt;::present &gt;&gt; </td></tr>
 <tr class="memitem:a4ba4840e81aa0a3741dee6aa2dcfee1b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structFunG_1_1Min.html#a4ba4840e81aa0a3741dee6aa2dcfee1b">d2</a> (ArgX &amp;&amp;dx, ArgY &amp;&amp;dy) const </td></tr>
 <tr class="memdesc:a4ba4840e81aa0a3741dee6aa2dcfee1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Second directional derivative.  <a href="#a4ba4840e81aa0a3741dee6aa2dcfee1b">More...</a><br /></td></tr>
 <tr class="separator:a4ba4840e81aa0a3741dee6aa2dcfee1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -189,6 +192,34 @@ template&lt;class F, class G&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a350e4808181eba93cbd1d964e5d45932"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F, class G&gt; </div>
+<div class="memtemplate">
+template&lt;class... IndexedArgs&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structFunG_1_1Min.html">FunG::Min</a>&lt; F, G &gt;::bulk_update </td>
+          <td>(</td>
+          <td class="paramtype">IndexedArgs &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a0819114c8ea56ce33e41a24c9ebba3dd"></a>
 <div class="memitem">
 <div class="memproto">
@@ -225,7 +256,7 @@ template&lt;int id, class Arg , class IndexedArg  = IndexedType&lt; std::decay_t
 <div class="memtemplate">
 template&lt;class F, class G&gt; </div>
 <div class="memtemplate">
-template&lt;int idx, int idy, class ArgX , class ArgY , class IndexedArgX  = IndexedType&lt; std::decay_t&lt; ArgX &gt;, idx &gt;, class IndexedArgY  = IndexedType&lt; std::decay_t&lt; ArgY &gt;, idy &gt;, class  = std::enable_if_t&lt;                       ComputeSum&lt; D2&lt; F, IndexedArgX, IndexedArgY &gt;,                                   D2&lt; G, IndexedArgX, IndexedArgY &gt; &gt;::present &gt;&gt; </div>
+template&lt;int idx, int idy, class ArgX , class ArgY , class IndexedArgX  = IndexedType&lt; std::decay_t&lt; ArgX &gt;, idx &gt;, class IndexedArgY  = IndexedType&lt; std::decay_t&lt; ArgY &gt;, idy &gt;, class  = std::enable_if_t&lt; ComputeSum&lt; D2&lt; F, IndexedArgX, IndexedArgY &gt;,                                                  D2&lt; G, IndexedArgX, IndexedArgY &gt; &gt;::present &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -398,7 +429,7 @@ template&lt;int index, class Arg &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 28 2020 14:05:11 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 28 2020 16:42:04 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

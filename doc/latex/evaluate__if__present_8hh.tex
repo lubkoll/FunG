@@ -1,7 +1,8 @@
 \hypertarget{evaluate__if__present_8hh}{}\section{include/fung/util/evaluate\+\_\+if\+\_\+present.hh File Reference}
 \label{evaluate__if__present_8hh}\index{include/fung/util/evaluate\+\_\+if\+\_\+present.\+hh@{include/fung/util/evaluate\+\_\+if\+\_\+present.\+hh}}
-{\ttfamily \#include $<$type\+\_\+traits$>$}\\*
 {\ttfamily \#include \char`\"{}voider.\+hh\char`\"{}}\\*
+{\ttfamily \#include $<$type\+\_\+traits$>$}\\*
+{\ttfamily \#include $<$utility$>$}\\*
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -10,7 +11,9 @@
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$class F , class Arg , std\+::enable\+\_\+if\+\_\+t$<$!\+Detail\+::\+Has\+Update\+Without\+Index$<$ F, Arg $>$\+::value $>$ $\ast$  = nullptr$>$ }\\void \hyperlink{namespaceFunG_a3b9d2e5d07b30c2ee26703b33e9adb9e}{Fun\+G\+::update\+\_\+if\+\_\+present} (F \&\&, Arg \&\&)
+{\footnotesize template$<$class F , class Arg , std\+::enable\+\_\+if\+\_\+t$<$ !\+Detail\+::\+Has\+Update\+Without\+Index$<$ F, Arg $>$\+::value $>$ $\ast$  = nullptr$>$ }\\void \hyperlink{namespaceFunG_a3b9d2e5d07b30c2ee26703b33e9adb9e}{Fun\+G\+::update\+\_\+if\+\_\+present} (F \&\&, Arg \&\&)
 \item 
-{\footnotesize template$<$int id, class F , class Arg , std\+::enable\+\_\+if\+\_\+t$<$!\+Detail\+::\+Has\+Update\+With\+Index$<$ F, Arg, id $>$\+::value $>$ $\ast$  = nullptr$>$ }\\void \hyperlink{namespaceFunG_aed5ddbef97c98202e818bca2b74c75d2}{Fun\+G\+::update\+\_\+if\+\_\+present} (F \&\&, Arg \&\&)
+{\footnotesize template$<$int id, class F , class Arg , std\+::enable\+\_\+if\+\_\+t$<$ !\+Detail\+::\+Has\+Update\+With\+Index$<$ F, Arg, id $>$\+::value $>$ $\ast$  = nullptr$>$ }\\void \hyperlink{namespaceFunG_aed5ddbef97c98202e818bca2b74c75d2}{Fun\+G\+::update\+\_\+if\+\_\+present} (F \&\&, Arg \&\&)
+\item 
+{\footnotesize template$<$class F , class... Index\+Args, std\+::enable\+\_\+if\+\_\+t$<$ Detail\+::\+Bulk\+Update$<$ F, Index\+Args... $>$\+::present $>$ $\ast$  = nullptr$>$ }\\void \hyperlink{namespaceFunG_a3a871f854db9e381d7a09724924971dc}{Fun\+G\+::bulk\+\_\+update\+\_\+if\+\_\+present} (F \&\&f, Index\+Args \&\&...x)
 \end{DoxyCompactItemize}
