@@ -54,6 +54,14 @@ namespace FunG
                 value = add_via_traits( f(), g() );
             }
 
+            template < class... IndexedArgs >
+            void bulk_update( IndexedArgs&&... args )
+            {
+                bulk_update_if_present( f, args... );
+                bulk_update_if_present( g, std::forward< IndexedArgs >( args )... );
+                value = add_via_traits( f(), g() );
+            }
+
             /// Function value.
             constexpr decltype( auto ) d0() const noexcept
             {
@@ -106,5 +114,5 @@ namespace FunG
             decay_t< decltype( add_via_traits( std::declval< F >()(), std::declval< G >()() ) ) >
                 value;
         };
-    }
-}
+    } // namespace MathematicalOperations
+} // namespace FunG

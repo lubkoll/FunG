@@ -5,12 +5,15 @@
 
 using ::testing::Eq;
 
-auto generateTestFunction()
+namespace
 {
-    using namespace FunG;
-    auto f = ( variable< 0 >( 1. ) + variable< 1 >( 2. ) ) * pow< 2 >( variable< 2 >( 3. ) );
-    return finalize( f );
-}
+    auto generateTestFunction()
+    {
+        using namespace FunG;
+        auto f = ( variable< 0 >( 1. ) + variable< 1 >( 2. ) ) * pow< 2 >( variable< 2 >( 3. ) );
+        return finalize( f );
+    }
+} // namespace
 
 TEST( HasVariableTest, Sum )
 {

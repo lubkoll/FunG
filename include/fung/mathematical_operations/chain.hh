@@ -90,6 +90,13 @@ namespace FunG
                 update_if_present( f, g() );
             }
 
+            template < class... IndexedArgs >
+            void bulk_update( IndexedArgs&&... args )
+            {
+                bulk_update_if_present( g, std::forward< IndexedArgs >( args )... );
+                update_if_present( f, g() );
+            }
+
             /// Function value.
             constexpr decltype( auto ) d0() const noexcept
             {
@@ -166,5 +173,5 @@ namespace FunG
             G g;
             F f;
         };
-    }
-}
+    } // namespace MathematicalOperations
+} // namespace FunG

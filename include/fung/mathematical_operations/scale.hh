@@ -50,6 +50,13 @@ namespace FunG
                 value = multiply_via_traits( a, f() );
             }
 
+            template < class... IndexedArgs >
+            void bulk_update( IndexedArgs&&... args )
+            {
+                bulk_update_if_present( f, std::forward< IndexedArgs >( args )... );
+                value = multiply_via_traits( a, f() );
+            }
+
             /// Function value.
             constexpr decltype( auto ) d0() const noexcept
             {
@@ -93,5 +100,5 @@ namespace FunG
             F f;
             std::decay_t< decltype( std::declval< F >()() ) > value;
         };
-    }
-}
+    } // namespace MathematicalOperations
+} // namespace FunG
