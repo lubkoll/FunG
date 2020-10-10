@@ -51,7 +51,7 @@ namespace FunG
         {
             static constexpr auto present = false;
 
-            static bool apply( const F&, const IndexedArg& )
+            static void apply( const F&, const IndexedArg& )
             {
             }
         };
@@ -61,7 +61,7 @@ namespace FunG
         {
             static constexpr auto present = true;
 
-            static bool apply( const F& f, const IndexedArg& arg )
+            static void apply( const F& f, const IndexedArg& arg )
             {
                 f.template update< IndexedArg::index >( arg.value );
             }
@@ -78,7 +78,7 @@ namespace FunG
             static constexpr auto present =
                 BulkUpdate< F, IndexedArg >::present && BulkUpdate< F, IndexedArgs... >::present;
 
-            static bool apply( const F& f, const IndexedArg& arg, const IndexedArgs&... args )
+            static void apply( const F& f, const IndexedArg& arg, const IndexedArgs&... args )
             {
                 BulkUpdate< F, IndexedArg >::apply( f, arg );
                 BulkUpdate< F, IndexedArgs... >::apply( f, args... );
