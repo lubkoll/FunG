@@ -132,6 +132,58 @@ TEST( HasVariableIdTest, Squared )
     EXPECT_FALSE( result );
 }
 
+TEST( VariableT, Variable )
+{
+    using namespace FunG;
+    using F = decltype( variable< 0 >( 1. ) );
+    using VT = Variable_t< F, 0 >;
+    const auto correct_type = std::is_same< VT, double >::value;
+    EXPECT_TRUE( correct_type );
+}
+
+TEST( VariableT, Squared )
+{
+    using namespace FunG;
+    using F = decltype( squared( variable< 0 >( 1. ) ) );
+    using VT = Variable_t< F, 0 >;
+    const auto correct_type = std::is_same< VT, double >::value;
+    EXPECT_TRUE( correct_type );
+}
+
+TEST( VariableT, FinalizeSquared )
+{
+    using namespace FunG;
+    using F = decltype( finalize( squared( variable< 0 >( 1. ) ) ) );
+    using VT = Variable_t< F, 0 >;
+    const auto correct_type = std::is_same< VT, double >::value;
+    EXPECT_TRUE( correct_type );
+}
+
+TEST( CheckArgumentTest, Squared )
+{
+    using namespace FunG;
+    using F = decltype( squared( variable< 0 >( 1. ) ) );
+    const auto value = Checks::checkArgument< F, double, 0 >();
+    EXPECT_TRUE( value );
+}
+
+TEST( CheckArgumentTest, FinalizeSquared )
+{
+    using namespace FunG;
+    using F = decltype( finalize( squared( variable< 0 >( 1. ) ) ) );
+    const auto value = Checks::checkArgument< F, double, 0 >();
+    EXPECT_TRUE( value );
+}
+
+TEST( CheckArgumentTest, FinalizeTrackingType )
+{
+    using namespace FunG;
+    using F = decltype( finalize( squared( variable< 0 >( 1.0 ) - variable< 4 >( 1.0 ) ) +
+                                  2.0 * squared( variable< 1 >( 1.0 ) ) ) );
+    const auto value = Checks::checkArgument< F, double, 0 >();
+    EXPECT_TRUE( value );
+}
+
 TEST( VariableTest, D0 )
 {
     auto fun = generateTestFunction();

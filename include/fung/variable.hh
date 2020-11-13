@@ -117,7 +117,7 @@ namespace FunG
             {
             }
         };
-    }
+    } // namespace VariableDetail
     /// @endcond
 
     /// Independent variable. Can be uniquely identified by its id.
@@ -206,7 +206,7 @@ namespace FunG
                 };
                 static constexpr bool value = Meta::AnyOf< F, HasVariable >::value;
             };
-        }
+        } // namespace Has
 
         constexpr bool greater( int a, int b )
         {
@@ -259,7 +259,7 @@ namespace FunG
                 : std::integral_constant< int, id >
             {
             };
-        }
+        } // namespace Detail
 
         template < class F >
         using MaxVariableId = Meta::Traverse< F, Detail::MaxVariableId, Max >;
@@ -271,6 +271,12 @@ namespace FunG
         struct VariableType
         {
             using type = void;
+        };
+
+        template < template < class, bool > class G, class F, int id, bool has_variable >
+        struct VariableType< G< F, has_variable >, id >
+        {
+            using type = typename VariableType< F, id >::type;
         };
 
         template < template < class, class > class G, class F, int id >
@@ -327,7 +333,7 @@ namespace FunG
         {
             using type = typename ChooseTypeImpl< typename F::type, typename G::type >::type;
         };
-    }
+    } // namespace VariableDetail
     /// @endcond
 
     /// Get underlying type of variable with index id.
@@ -337,7 +343,7 @@ namespace FunG
     namespace Checks
     {
         /** @addtogroup ConceptCheck
-     *  @{ */
+         *  @{ */
 
         /// Check if T is of type Variable<Type,n>.
         template < class T >
@@ -369,7 +375,7 @@ namespace FunG
                 return VariableDetail::MinVariableId< std::decay_t< T > >::value <
                        VariableDetail::MaxVariableId< std::decay_t< T > >::value;
             }
-        }
+        } // namespace Has
 
         /// Check if variable with index id has type Type.
         template < class F, class Type, int id >
@@ -379,5 +385,5 @@ namespace FunG
         }
 
         /** @} */
-    }
-}
+    } // namespace Checks
+} // namespace FunG
