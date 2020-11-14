@@ -44,7 +44,7 @@ script:
       cmake .. -DBuildTest=ON -DCMAKE_TOOLCHAIN_FILE=conan_paths.cmake
     fi
   - cmake --build .
-  - cd test && ctest
+  - cd test && ./tests
 
 after_success:
   ############################################################################
