@@ -1,146 +1,60 @@
-language: c++
+os: linux
+dist: focal
+language: python
+python: "3.7"
 
 addons:
   apt:
-    sources:
-    - ubuntu-toolchain-r-test
-    - llvm-toolchain-precise-3.6
-    - llvm-toolchain-precise-3.7
-    - llvm-toolchain-precise-3.8
     packages:
-    - g++-5
-    - gcc-5
-    - g++-6
-    - gcc-6
-    - clang-3.6
-    - clang-3.7
-    - clang-3.8
+    - g++-10
+    - gcc-10
+    - clang-9
+    - ruby2.7
     - libopenblas-dev
     - liblapack-dev
+    - lcov
+    - cmake
+    - libeigen3-dev
+    - libdune-common-dev
 
-env:
-  # Workaround for https://github.com/travis-ci/travis-ci/issues/4681
-  matrix:
-    - TRAVIS_EMPTY_JOB_WORKAROUND=true
-  
 matrix:
-  exclude:
-    - env: TRAVIS_EMPTY_JOB_WORKAROUND=true
   include:
     # LINUX
-    # GCC 5
+    # GCC 10
     - os: linux
-      env: COMPILER=g++-5 COMPUTE_COVERAGE=false
+      env: CC=gcc-10 CXX=g++-10 COMPILER=g++ VERSION=10 COMPUTE_COVERAGE=true
       compiler: gcc
-
-    # GCC 6
+    # LINUX
+    # CLANG 9
     - os: linux
-      env: COMPILER=g++-6 COMPUTE_COVERAGE=true GCOV=gcov-6 MAKE_DOC=true
-      compiler: gcc
-      
-    # Clang 3.6
-    - os: linux
-      env: COMPILER=clang++-3.6 CCOMPILER=clang-3.6 COMPUTE_COVERAGE=false
+      env: CC=clang-9 CXX=clang++-9 COMPILER=clang VERSION=9 COMPUTE_COVERAGE=false
       compiler: clang
-      
-    # Clang 3.7
-    - os: linux
-      env: COMPILER=clang++-3.7 CCOMPILER=clang-3.7 COMPUTE_COVERAGE=false
-      compiler: clang
-      
-    # Clang 3.8
-    - os: linux
-      env: COMPILER=clang++-3.8 CCOMPILER=clang-3.8 COMPUTE_COVERAGE=false
-      compiler: clang
-      
-#    # Xcode 7.3
-#    - os: osx
-#      env: COMPUTE_COVERAGE=false
-#      osx_image: xcode7.3
-      
-#    # Xcode 8
-#    - os: osx
-#      env: COMPUTE_COVERAGE=false
-#      osx_image: xcode8
      
 install:
-  - DEPS_DIR="${TRAVIS_BUILD_DIR}/deps"
-  - mkdir -p ${DEPS_DIR} && cd ${DEPS_DIR}
-  
-  ############################################################################
-  # Override compiler if needed
-  ############################################################################
-  - if [[ "${COMPILER}" != "" ]]; then export CXX=${COMPILER}; export CC=${CCOMPILER}; fi
-
-    
-  ############################################################################
-  # Install lcov
-  ############################################################################
-  - |
-    if [[ "${TRAVIS_OS_NAME}" == "linux" && "${COMPUTE_COVERAGE}" == "true" ]]; then
-      travis_retry wget --no-check-certificate --quiet http://mirrors.us.kernel.org/ubuntu//pool/universe/l/lcov/lcov_1.12-3_all.deb
-      sudo dpkg -i lcov_1.12-3_all.deb
-      sudo apt-add-repository ppa:brightbox/ruby-ng -y
-      sudo apt-get update -qq
-      sudo apt-get install ruby2.2 -qq
-      sudo gem install coveralls-lcov
-    fi
-
-  ############################################################################
-  # Install cmake
-  ############################################################################
-  - |
-    sudo apt purge cmake
-    cd $DEPS
-    wget http://github.com/Kitware/CMake/releases/download/v3.13.1/cmake-3.13.1.tar.gz
-    tar xzf cmake-3.13.1.tar.gz && cd cmake-3.13.1
-    ./bootstrap && make && sudo make install
-  
-  ############################################################################
-  # Install Eigen
-  ############################################################################
-  - cd $DEPS
-  - git clone https://github.com/eigenteam/eigen-git-mirror.git
-  - cd eigen-git-mirror && mkdir build && cd build && cmake .. && sudo make install
-
-  ############################################################################
-  # Install gtest
-  ############################################################################
-  - |
-    git clone https://github.com/google/googletest.git
-    cd googletest && mkdir build && cd build && cmake -DCMAKE_CXX_FLAGS="-std=c++11" -DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}" .. && sudo make && sudo make install
-
-  ############################################################################
-  # Install doxygen and graphviz if documentation is generated
-  ############################################################################
-  - |
-    if [[ "${TRAVIS_OS_NAME}" == "linux" && "${MAKE_DOC}" == "true" ]]; then
-      sudo apt-get install doxygen graphviz
-    fi
-
+  - pip install conan
+  - sudo gem install coveralls-lcov
 
 script:
-  - cd $TRAVIS_BUILD_DIR
   - mkdir build && cd build
+  - conan install .. --build missing -s compiler=${COMPILER} -s compiler.version=${VERSION} -s compiler.libcxx=libstdc++11
   - |
-    if [[ "${COMPILER}" == "clang++-3.6" ]]; then
-      cmake .. -DBuildTest=ON -DCMAKE_CXX_FLAGS="-ftemplate-depth=4096"
+    if [[ "${COMPUTE_COVERAGE}" == "true" ]]; then
+      cmake .. -DBuildTest=ON -DCMAKE_TOOLCHAIN_FILE=conan_paths.cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="-coverage"
     else
-      cmake .. -DBuildTest=ON
+      cmake .. -DBuildTest=ON -DCMAKE_TOOLCHAIN_FILE=conan_paths.cmake
     fi
-  - | 
   - cmake --build .
-  - cmake --build . --target check
+  - cd test && ./tests
+
 after_success:
   ############################################################################
   # Upload coverage information to coveralls.io
   ############################################################################
   - |
     if [[ "${COMPUTE_COVERAGE}" == "true" ]]; then
-      lcov --gcov-tool ${GCOV} --capture --no-external --directory . --base-directory ../fung -rc lcov_branch_coverage=1 --output-file coverage.info
+      lcov --gcov-tool gcov-10 --capture --no-external --directory . --base-directory ${TRAVIS_BUILD_DIR}/include -rc lcov_branch_coverage=1 --output-file coverage.info
       coveralls-lcov --repo-token ${COVERALLS_TOKEN} coverage.info
     fi
-
   ############################################################################
   # Upload documentation to repository
   ############################################################################
