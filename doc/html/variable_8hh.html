@@ -114,6 +114,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1Variable.html">FunG::Variable&lt; T, id &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Independent variable. Can be uniquely identified by its id.  <a href="structFunG_1_1Variable.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFunG_1_1Checks_1_1CheckArgument.html">FunG::Checks::CheckArgument&lt; F, Type, id &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if variable with index id has type Type.  <a href="structFunG_1_1Checks_1_1CheckArgument.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -128,10 +131,10 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a1c6fc5c4c7cd6678b9de8962c14b86b5"><td class="memTemplParams" colspan="2">template&lt;class F , int id&gt; </td></tr>
-<tr class="memitem:a1c6fc5c4c7cd6678b9de8962c14b86b5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a1c6fc5c4c7cd6678b9de8962c14b86b5">FunG::Variable_t</a> = typename VariableDetail::VariableType&lt; std::decay_t&lt; F &gt;, id &gt;::type</td></tr>
-<tr class="memdesc:a1c6fc5c4c7cd6678b9de8962c14b86b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get underlying type of variable with index id.  <a href="namespaceFunG.html#a1c6fc5c4c7cd6678b9de8962c14b86b5">More...</a><br /></td></tr>
-<tr class="separator:a1c6fc5c4c7cd6678b9de8962c14b86b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87d1f46d16454ba71f1706bc13ef4ab0"><td class="memTemplParams" colspan="2">template&lt;class F , int id&gt; </td></tr>
+<tr class="memitem:a87d1f46d16454ba71f1706bc13ef4ab0"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG.html#a87d1f46d16454ba71f1706bc13ef4ab0">FunG::Variable_t</a> = typename VariableDetail::VariableT&lt; F, id &gt;::type</td></tr>
+<tr class="memdesc:a87d1f46d16454ba71f1706bc13ef4ab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get underlying type of variable with index id.  <a href="namespaceFunG.html#a87d1f46d16454ba71f1706bc13ef4ab0">More...</a><br /></td></tr>
+<tr class="separator:a87d1f46d16454ba71f1706bc13ef4ab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -155,15 +158,11 @@ Functions</h2></td></tr>
 <tr class="memitem:a86a3759a80b564e89116ff899e9bfb3f"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceFunG_1_1Checks_1_1Has.html#a86a3759a80b564e89116ff899e9bfb3f">FunG::Checks::Has::moreThanOneVariable</a> ()</td></tr>
 <tr class="memdesc:a86a3759a80b564e89116ff899e9bfb3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if T contains at least two variables.  <a href="namespaceFunG_1_1Checks_1_1Has.html#a86a3759a80b564e89116ff899e9bfb3f">More...</a><br /></td></tr>
 <tr class="separator:a86a3759a80b564e89116ff899e9bfb3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga31790e5d021a40ac34b7469323c658f9"><td class="memTemplParams" colspan="2">template&lt;class F , class Type , int id&gt; </td></tr>
-<tr class="memitem:ga31790e5d021a40ac34b7469323c658f9"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ConceptCheck.html#ga31790e5d021a40ac34b7469323c658f9">FunG::Checks::checkArgument</a> ()</td></tr>
-<tr class="memdesc:ga31790e5d021a40ac34b7469323c658f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if variable with index id has type Type.  <a href="group__ConceptCheck.html#ga31790e5d021a40ac34b7469323c658f9">More...</a><br /></td></tr>
-<tr class="separator:ga31790e5d021a40ac34b7469323c658f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 13 2020 21:23:43 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Nov 14 2020 10:39:21 for FunG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

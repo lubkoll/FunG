@@ -8,7 +8,9 @@
 \begin{DoxyCompactItemize}
 \item 
 struct \hyperlink{structFunG_1_1Variable}{Fun\+G\+::\+Variable$<$ T, id $>$}
-\begin{DoxyCompactList}\small\item\em Independent variable. Can be uniquely identified by its id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Independent variable. Can be uniquely identified by its id. \end{DoxyCompactList}\item 
+struct \hyperlink{structFunG_1_1Checks_1_1CheckArgument}{Fun\+G\+::\+Checks\+::\+Check\+Argument$<$ F, Type, id $>$}
+\begin{DoxyCompactList}\small\item\em Check if variable with index id has type Type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -21,7 +23,7 @@ struct \hyperlink{structFunG_1_1Variable}{Fun\+G\+::\+Variable$<$ T, id $>$}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$class F , int id$>$ }\\using \hyperlink{namespaceFunG_a1c6fc5c4c7cd6678b9de8962c14b86b5}{Fun\+G\+::\+Variable\+\_\+t} = typename Variable\+Detail\+::\+Variable\+Type$<$ std\+::decay\+\_\+t$<$ F $>$, id $>$\+::type
+{\footnotesize template$<$class F , int id$>$ }\\using \hyperlink{namespaceFunG_a87d1f46d16454ba71f1706bc13ef4ab0}{Fun\+G\+::\+Variable\+\_\+t} = typename Variable\+Detail\+::\+VariableT$<$ F, id $>$\+::type
 \begin{DoxyCompactList}\small\item\em Get underlying type of variable with index id. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -35,6 +37,4 @@ struct \hyperlink{structFunG_1_1Variable}{Fun\+G\+::\+Variable$<$ T, id $>$}
 {\footnotesize template$<$class T , int id$>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_1_1Has_a1f263f5816070c632631cace52aa77ee}{Fun\+G\+::\+Checks\+::\+Has\+::variable\+Id} ()
 \begin{DoxyCompactList}\small\item\em Check if T contains a type Variable$<$\+Type,id$>$. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespaceFunG_1_1Checks_1_1Has_a86a3759a80b564e89116ff899e9bfb3f}{Fun\+G\+::\+Checks\+::\+Has\+::more\+Than\+One\+Variable} ()
-\begin{DoxyCompactList}\small\item\em Check if T contains at least two variables. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class F , class Type , int id$>$ }\\constexpr bool \hyperlink{group__ConceptCheck_ga31790e5d021a40ac34b7469323c658f9}{Fun\+G\+::\+Checks\+::check\+Argument} ()
-\begin{DoxyCompactList}\small\item\em Check if variable with index id has type Type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Check if T contains at least two variables. \end{DoxyCompactList}\end{DoxyCompactItemize}

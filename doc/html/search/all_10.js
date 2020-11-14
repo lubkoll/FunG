@@ -9,7 +9,7 @@ var searchData=
   ['sin',['Sin',['../structFunG_1_1Sin.html',1,'FunG']]],
   ['sine_2ehh',['sine.hh',['../sine_8hh.html',1,'']]],
   ['skin_5ftissue_5fhendriks_2ehh',['skin_tissue_hendriks.hh',['../skin__tissue__hendriks_8hh.html',1,'']]],
-  ['sqrt',['Sqrt',['../group__CMathGroup.html#ga70c69680e967f5ccb79c07e50d44739d',1,'FunG::Sqrt()'],['../group__CMathGroup.html#ga136c890475e48f88469a737d95368d05',1,'FunG::sqrt(const Function &amp;f)']]],
+  ['sqrt',['sqrt',['../group__CMathGroup.html#ga136c890475e48f88469a737d95368d05',1,'FunG::sqrt(const Function &amp;f)'],['../group__CMathGroup.html#ga70c69680e967f5ccb79c07e50d44739d',1,'FunG::Sqrt()']]],
   ['squared',['Squared',['../structFunG_1_1MathematicalOperations_1_1Squared.html',1,'FunG::MathematicalOperations']]],
   ['squared',['Squared',['../structFunG_1_1MathematicalOperations_1_1Squared.html#a025b768a43feca27fa1c2d23cba4281e',1,'FunG::MathematicalOperations::Squared::Squared()'],['../namespaceFunG.html#ac4ffc0754104af6ddf114e154251db78',1,'FunG::squared()']]],
   ['squared_2ehh',['squared.hh',['../squared_8hh.html',1,'']]],

@@ -6,7 +6,7 @@ var searchData=
   ['chain',['Chain',['../structFunG_1_1MathematicalOperations_1_1Chain.html',1,'FunG::MathematicalOperations']]],
   ['chain_2ehh',['chain.hh',['../chain_8hh.html',1,'']]],
   ['chainer_2ehh',['chainer.hh',['../chainer_8hh.html',1,'']]],
-  ['checkargument',['checkArgument',['../group__ConceptCheck.html#ga31790e5d021a40ac34b7469323c658f9',1,'FunG::Checks']]],
+  ['checkargument',['CheckArgument',['../structFunG_1_1Checks_1_1CheckArgument.html',1,'FunG::Checks']]],
   ['common_20mathematical_20functions',['Common Mathematical Functions',['../group__CMathGroup.html',1,'']]],
   ['cofactor_2ehh',['cofactor.hh',['../cofactor_8hh.html',1,'']]],
   ['cols',['cols',['../namespaceFunG_1_1LinearAlgebra.html#ae981b8bee32eea3ce87f41874835c9c1',1,'FunG::LinearAlgebra::cols(const Matrix &amp;A)'],['../namespaceFunG_1_1LinearAlgebra.html#a9eb685419fe4c5f91619d5aa0f973320',1,'FunG::LinearAlgebra::cols()']]],
@@ -29,8 +29,8 @@ var searchData=
   ['consistentfirstderivative',['consistentFirstDerivative',['../namespaceFunG_1_1Checks_1_1Has.html#a3c61b3f75ad634464322f21e8acb4e5d',1,'FunG::Checks::Has']]],
   ['consistentsecondderivative',['consistentSecondDerivative',['../namespaceFunG_1_1Checks_1_1Has.html#ab4a78fd7a1175707d748445785a0d37c',1,'FunG::Checks::Has']]],
   ['consistentthirdderivative',['consistentThirdDerivative',['../namespaceFunG_1_1Checks_1_1Has.html#abf6a73e1b599a4aac525bb20931aea4f',1,'FunG::Checks::Has']]],
-  ['constant',['Constant',['../structFunG_1_1Constant.html',1,'FunG']]],
   ['constant',['Constant',['../structFunG_1_1Constant.html#a278d28a1015016d076389b89a43bf118',1,'FunG::Constant::Constant()=default'],['../structFunG_1_1Constant.html#a24482c93ea4fe192f4c1a062c5b2d8a1',1,'FunG::Constant::Constant(Type t_)'],['../namespaceFunG.html#a939d13d36c194b402715f12a28147cdc',1,'FunG::constant()']]],
+  ['constant',['Constant',['../structFunG_1_1Constant.html',1,'FunG']]],
   ['constant_2ehh',['constant.hh',['../constant_8hh.html',1,'']]],
   ['constref',['constRef',['../namespaceFunG.html#abcfb38c2e995436816ea884803302f2d',1,'FunG']]],
   ['copyconcept',['CopyConcept',['../structFunG_1_1Concepts_1_1CopyConcept.html',1,'FunG::Concepts']]],
@@ -39,7 +39,7 @@ var searchData=
   ['copyconceptcheck_3c_20f_20_3e',['CopyConceptCheck&lt; F &gt;',['../structFunG_1_1Concepts_1_1CopyConceptCheck.html',1,'FunG::Concepts']]],
   ['copyconceptcheck_3c_20matrix_20_3e',['CopyConceptCheck&lt; Matrix &gt;',['../structFunG_1_1Concepts_1_1CopyConceptCheck.html',1,'FunG::Concepts']]],
   ['copyconceptcheck_3c_20vector_20_3e',['CopyConceptCheck&lt; Vector &gt;',['../structFunG_1_1Concepts_1_1CopyConceptCheck.html',1,'FunG::Concepts']]],
-  ['cos',['Cos',['../structFunG_1_1Cos.html',1,'FunG']]],
   ['cos',['Cos',['../structFunG_1_1Cos.html#a40c049c8842e387ccc5ab5f3720c938e',1,'FunG::Cos::Cos()'],['../group__CMathGroup.html#ga7e9b2ac717cd2350663293cb66ba6cbd',1,'FunG::cos()']]],
+  ['cos',['Cos',['../structFunG_1_1Cos.html',1,'FunG']]],
   ['cosine_2ehh',['cosine.hh',['../cosine_8hh.html',1,'']]]
 ];
