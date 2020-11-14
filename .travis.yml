@@ -22,12 +22,12 @@ matrix:
     # LINUX
     # GCC 10
     - os: linux
-      env: CC=gcc-10 CXX=g++-10 COMPILER=g++ VERSION=10 COMPUTE_COVERAGE=true
+      env: CC=gcc-10 CXX=g++-10 VERSION=10 COMPUTE_COVERAGE=true
       compiler: gcc
     # LINUX
     # CLANG 9
     - os: linux
-      env: CC=clang-9 CXX=clang++-9 COMPILER=clang VERSION=9 COMPUTE_COVERAGE=false
+      env: CC=clang-9 CXX=clang++-9 VERSION=9 COMPUTE_COVERAGE=false
       compiler: clang
      
 install:
@@ -36,7 +36,7 @@ install:
 
 script:
   - mkdir build && cd build
-  - conan install .. --build missing -s compiler=${COMPILER} -s compiler.version=${VERSION} -s compiler.libcxx=libstdc++11
+  - conan install .. --build missing -s compiler=${CC_FOR_BUILD} -s compiler.version=${VERSION} -s compiler.libcxx=libstdc++11
   - |
     if [[ "${COMPUTE_COVERAGE}" == "true" ]]; then
       cmake .. -DBuildTest=ON -DCMAKE_TOOLCHAIN_FILE=conan_paths.cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="-coverage"
