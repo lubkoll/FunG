@@ -273,28 +273,6 @@ namespace FunG
             using type = void;
         };
 
-        template < template < class, bool > class G, class F, int id, bool has_variable >
-        struct VariableType< G< F, has_variable >, id >
-        {
-            using type = typename VariableType< F, id >::type;
-        };
-
-        template < template < class, class > class G, class F, int id >
-        struct VariableType< G< F, Concepts::FunctionConceptCheck< F > >, id >
-        {
-            using type = typename VariableType< F, id >::type;
-        };
-
-        template < template < class, class, class, class > class H, class F, class G, int id >
-        struct VariableType<
-            H< F, G, Concepts::FunctionConceptCheck< F >, Concepts::FunctionConceptCheck< G > >,
-            id >
-        {
-            using type = std::conditional_t<
-                std::is_same< void, typename VariableType< F, id >::type >::value,
-                typename VariableType< G, id >::type, typename VariableType< F, id >::type >;
-        };
-
         template < class T, int id >
         struct VariableType< Variable< T, id >, id >
         {
@@ -333,12 +311,21 @@ namespace FunG
         {
             using type = typename ChooseTypeImpl< typename F::type, typename G::type >::type;
         };
+
+        template < class F, int id >
+        struct VariableT
+        {
+            template < class G >
+            using Extractor = VariableType< G, id >;
+
+            using type = typename Meta::Traverse< std::decay_t< F >, Extractor, ChooseType >::type;
+        };
     } // namespace VariableDetail
     /// @endcond
 
     /// Get underlying type of variable with index id.
     template < class F, int id >
-    using Variable_t = typename VariableDetail::VariableType< std::decay_t< F >, id >::type;
+    using Variable_t = typename VariableDetail::VariableT< F, id >::type;
 
     namespace Checks
     {
@@ -379,11 +366,10 @@ namespace FunG
 
         /// Check if variable with index id has type Type.
         template < class F, class Type, int id >
-        constexpr bool checkArgument()
+        struct CheckArgument
         {
-            return ContainsType< Variable_t< F, id >, Type >::value;
-        }
-
+            static constexpr bool value = ContainsType< Variable_t< F, id >, Type >::value;
+        };
         /** @} */
     } // namespace Checks
 } // namespace FunG

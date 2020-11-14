@@ -75,6 +75,13 @@ namespace FunG
             }
         };
 
+        template < typename Assertion >
+        struct AssertValue
+        {
+            static_assert( Assertion::value, "Assertion failed <see below for more information>" );
+            static bool const value = Assertion::value;
+        };
+
         /// Finish function definition. The task of this class is to add undefined higher order
         /// derivatives if undefined.
         template < class F, bool hasVariables >
@@ -98,7 +105,7 @@ namespace FunG
                 static_assert( Checks::Has::variableId< F, id >(),
                                "You are trying to compute the first derivative with respect to a "
                                "variable that is not present" );
-                static_assert( Checks::checkArgument< F, Arg, id >(),
+                static_assert( AssertValue< Checks::CheckArgument< F, Arg, id > >::value,
                                "Incompatible argument in computation of first derivative." );
                 static_assert( Checks::Has::consistentFirstDerivative< F >(),
                                "Inconsistent functional definition encountered." );
@@ -133,10 +140,10 @@ namespace FunG
                                    Checks::Has::variableId< F, idy >(),
                                "You are trying to compute the second derivative with respect to at "
                                "least one variable that is not present" );
-                static_assert( Checks::checkArgument< F, ArgX, idx >(),
+                static_assert( AssertValue< Checks::CheckArgument< F, ArgX, idx > >::value,
                                "Incompatible first argument in computation of second derivative." );
                 static_assert(
-                    Checks::checkArgument< F, ArgY, idy >(),
+                    AssertValue< Checks::CheckArgument< F, ArgY, idy > >::value,
                     "Incompatible second argument in computation of second derivative." );
                 static_assert(
                     Checks::Has::consistentSecondDerivative< F, IndexedType< ArgX, idx >,
@@ -184,11 +191,11 @@ namespace FunG
                                    Checks::Has::variableId< F, idz >(),
                                "You are trying to compute the third derivative with respect to at "
                                "least one variable that is not present" );
-                static_assert( Checks::checkArgument< F, ArgX, idx >(),
+                static_assert( AssertValue< Checks::CheckArgument< F, ArgX, idx > >::value,
                                "Incompatible first argument in computation of third derivative." );
-                static_assert( Checks::checkArgument< F, ArgY, idy >(),
+                static_assert( AssertValue< Checks::CheckArgument< F, ArgY, idy > >::value,
                                "Incompatible second argument in computation of third derivative." );
-                static_assert( Checks::checkArgument< F, ArgZ, idz >(),
+                static_assert( AssertValue< Checks::CheckArgument< F, ArgZ, idz > >::value,
                                "Incompatible third argument in computation of third derivative." );
                 static_assert( Checks::Has::consistentThirdDerivative< F, IndexedType< ArgX, idx >,
                                                                        IndexedType< ArgY, idy >,
@@ -309,7 +316,7 @@ namespace FunG
                     .template print< Arg >( static_cast< const F& >( *this ), dx );
             }
         };
-    }
+    } // namespace Detail
     /// @endcond
 
     /**
@@ -326,4 +333,4 @@ namespace FunG
                                      Checks::Has::variable< std::decay_t< F > >() >(
             std::forward< F >( f ) );
     }
-}
+} // namespace FunG

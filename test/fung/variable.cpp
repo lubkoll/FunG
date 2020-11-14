@@ -163,7 +163,7 @@ TEST( CheckArgumentTest, Squared )
 {
     using namespace FunG;
     using F = decltype( squared( variable< 0 >( 1. ) ) );
-    const auto value = Checks::checkArgument< F, double, 0 >();
+    const auto value = Checks::CheckArgument< F, double, 0 >::value;
     EXPECT_TRUE( value );
 }
 
@@ -171,7 +171,24 @@ TEST( CheckArgumentTest, FinalizeSquared )
 {
     using namespace FunG;
     using F = decltype( finalize( squared( variable< 0 >( 1. ) ) ) );
-    const auto value = Checks::checkArgument< F, double, 0 >();
+    const auto value = Checks::CheckArgument< F, double, 0 >::value;
+    EXPECT_TRUE( value );
+}
+
+TEST( CheckArgumentTest, FinalizeScale )
+{
+    using namespace FunG;
+    using F = decltype( finalize( 2.0 * variable< 0 >( 1. ) ) );
+    const auto value = Checks::CheckArgument< F, double, 0 >::value;
+    EXPECT_TRUE( value );
+}
+
+TEST( CheckArgumentTest, FinalizeSumSquared )
+{
+    using namespace FunG;
+    using F = decltype( finalize( squared( variable< 0 >( 1. ) ) +
+                                  2.0 * squared( variable< 1 >( 1. ) ) ) );
+    const auto value = Checks::CheckArgument< F, double, 1 >::value;
     EXPECT_TRUE( value );
 }
 
@@ -180,7 +197,7 @@ TEST( CheckArgumentTest, FinalizeTrackingType )
     using namespace FunG;
     using F = decltype( finalize( squared( variable< 0 >( 1.0 ) - variable< 4 >( 1.0 ) ) +
                                   2.0 * squared( variable< 1 >( 1.0 ) ) ) );
-    const auto value = Checks::checkArgument< F, double, 0 >();
+    const auto value = Checks::CheckArgument< F, double, 1 >::value;
     EXPECT_TRUE( value );
 }
 
