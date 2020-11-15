@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.8)
 
-project(fung VERSION 1.4.0 LANGUAGES CXX)
+project(fung VERSION 1.5.5 LANGUAGES CXX)
 
 list(APPEND CMAKE_MODULE_PATH
     ${CMAKE_CURRENT_SOURCE_DIR}
